@@ -28,11 +28,20 @@ pure-Rust SQLite reimplementation). It builds a single binary, `biomarker`.
 > orientation only. Labs differ, so set your lab's ranges with
 > `biomarker range set`.
 
+## Install
+
+On Apple Silicon macOS, with Homebrew:
+
+```sh
+brew install davidawad/tap/biomarker-cli
+```
+
 ## Build
 
 fsqlite 0.4 uses `#![feature(...)]` on x86_64, so the crate builds with a
-**nightly** toolchain. `rust-toolchain.toml` selects it automatically under
-rustup.
+**nightly** toolchain there. `rust-toolchain.toml` selects nightly
+automatically under rustup. On aarch64 (Apple Silicon) it also builds on
+stable, which is what the Homebrew formula uses.
 
 ```sh
 cargo build --release          # target/release/biomarker
