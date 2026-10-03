@@ -1,0 +1,7 @@
+[
+  {"person": "alex", "marker": "ldl-c", "date": "2024-09-12", "value": 89, "unit": "mg/dL", "lab": "Synthetic Labs", "fasting": true, "tags": ["follow-up"]},
+  {"person": "alex", "marker": "apob", "date": "2024-09-12", "value": 74, "unit": "mg/dL", "lab": "Synthetic Labs", "fasting": true, "tags": ["follow-up"]},
+  {"person": "alex", "marker": "hscrp", "date": "2024-09-12", "value": "<0.3", "unit": "mg/L", "lab": "Synthetic Labs"},
+  {"person": "sam", "marker": "ferritin", "date": "2024-12-01T08:15:00", "value": 72, "unit": "µg/L", "lab": "Example Clinic", "note": "SI units from a different lab"},
+  {"person": "sam", "marker": "vitamin-d", "date": "2024-12-01T08:15:00", "value": 75, "unit": "nmol/L", "lab": "Example Clinic"}
+]

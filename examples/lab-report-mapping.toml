@@ -1,0 +1,20 @@
+# Mapping for examples/lab-report.csv:
+#   biomarker import examples/lab-report.csv --mapping examples/lab-report-mapping.toml
+date_format = "%m/%d/%Y"
+
+[columns]
+person = "Patient"
+marker = "Test Name"
+value = "Result"
+unit = "Units"
+date = "Collected"
+lab = "Ordering Lab"
+
+[defaults]
+fasting = true
+
+# Source test name -> catalog marker (slug, alias or name).
+[markers]
+"LDL Chol Calc (NIH)" = "ldl-c"
+"Vitamin D 25-Hydroxy" = "vitamin-d"
+"C-Reactive Protein Cardiac" = "hscrp"

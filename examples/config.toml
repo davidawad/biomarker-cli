@@ -1,0 +1,17 @@
+# Example ~/.config/biomarker-cli/config.toml
+# db_path = "~/.local/share/biomarker-cli/biomarker.db"
+default_person = "alex"
+format = "table"
+date_format = "%Y-%m-%d"
+timezone = "local"
+unit_system = "us"        # canonical | us | si
+color = "auto"            # auto | always | never
+precision = 2
+range_flavor = "both"     # reference | optimal | both
+dedupe = "skip"           # skip | replace | error
+null = ""
+
+[csv]
+delimiter = ","
+quote = "\""
+header = true

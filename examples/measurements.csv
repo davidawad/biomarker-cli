@@ -1,0 +1,30 @@
+person,marker,date,qualifier,value,unit,lab,fasting,note,tags
+alex,total-cholesterol,2023-02-14,,212,mg/dL,Synthetic Labs,true,,annual
+alex,ldl-c,2023-02-14,,138,mg/dL,Synthetic Labs,true,,annual
+alex,hdl-c,2023-02-14,,44,mg/dL,Synthetic Labs,true,,annual
+alex,triglycerides,2023-02-14,,150,mg/dL,Synthetic Labs,true,,annual
+alex,glucose,2023-02-14,,5.6,mmol/L,Synthetic Labs,true,,annual
+alex,hba1c,2023-02-14,,5.7,%,Synthetic Labs,true,,annual
+alex,hscrp,2023-02-14,,2.4,mg/L,Synthetic Labs,true,,annual
+alex,vitamin-d,2023-02-14,,22,ng/mL,Synthetic Labs,,,annual
+alex,ldl-c,2023-08-30,,121,mg/dL,Synthetic Labs,true,started diet,
+alex,apob,2023-08-30,,0.98,g/L,Synthetic Labs,true,,
+alex,vitamin-d,2023-08-30,,34,ng/mL,Synthetic Labs,,,
+alex,ldl-c,2024-03-05,,96,mg/dL,Synthetic Labs,true,,annual
+alex,hdl-c,2024-03-05,,51,mg/dL,Synthetic Labs,true,,annual
+alex,glucose,2024-03-05,,92,mg/dL,Synthetic Labs,true,,annual
+alex,hba1c,2024-03-05,,5.4,%,Synthetic Labs,true,,annual
+alex,hscrp,2024-03-05,<,0.5,mg/L,Synthetic Labs,true,,annual
+alex,testosterone-total,2024-03-05,,15.2,nmol/L,Synthetic Labs,,,
+alex,lpa,2024-03-05,,48,mg/dL,Synthetic Labs,,once-in-a-lifetime test,
+sam,ferritin,2023-05-02,,12,ng/mL,Example Clinic,,,
+sam,hemoglobin,2023-05-02,,11.4,g/dL,Example Clinic,,,
+sam,tsh,2023-05-02,,3.1,mIU/L,Example Clinic,,,
+sam,free-t4,2023-05-02,,14.8,pmol/L,Example Clinic,,,
+sam,ferritin,2023-11-20,,38,ng/mL,Example Clinic,,after iron supplement,
+sam,hemoglobin,2023-11-20,,12.9,g/dL,Example Clinic,,,
+sam,tsh,2023-11-20,,2.2,mIU/L,Example Clinic,,,
+sam,vitamin-b12,2023-11-20,,410,pg/mL,Example Clinic,,,
+sam,ferritin,2024-06-11,,61,ng/mL,Example Clinic,,,
+sam,hdl-c,2024-06-11,,1.6,mmol/L,Example Clinic,true,,
+sam,ldl-c,2024-06-11,,2.4,mmol/L,Example Clinic,true,,
