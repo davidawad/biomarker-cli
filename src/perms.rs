@@ -223,6 +223,14 @@ mod imp {
     }
 }
 
+/// Whether SDDL trustee `sid` is the current `user`. SDDL writes the local
+/// built-in Administrator (RID 500) as the alias `LA` rather than its SID,
+/// which is who CI runners and some single-user machines run as.
+#[cfg_attr(not(windows), allow(dead_code))]
+fn is_user(sid: &str, user: &str) -> bool {
+    sid == user || (sid == "LA" && user.starts_with("S-1-5-21-") && user.ends_with("-500"))
+}
+
 /// Classify a DACL in SDDL form: private when every allow ACE is for `user`
 /// or a trustee that is all-powerful anyway (SYSTEM, Administrators, the
 /// owner / creator-owner placeholders).
@@ -235,7 +243,7 @@ fn classify_sddl(sddl: &str, user: &str) -> Access {
         .filter_map(|ace| {
             let f: Vec<&str> = ace.trim_end_matches(')').split(';').collect();
             let (kind, sid) = (*f.first()?, *f.get(5)?);
-            (kind == "A" && sid != user && !TRUSTED.contains(&sid)).then_some(sid)
+            (kind == "A" && !is_user(sid, user) && !TRUSTED.contains(&sid)).then_some(sid)
         })
         .collect();
     if sddl.contains("NO_ACCESS_CONTROL") {
@@ -263,6 +271,9 @@ mod tests {
         let shared = format!("D:(A;OICIID;FA;;;{ME})(A;OICIID;0x1200a9;;;BU)(D;;FA;;;WD)");
         assert_eq!(classify_sddl(&shared, ME), Access::Shared("ACL also grants access to BU".into()));
         assert!(matches!(classify_sddl("D:NO_ACCESS_CONTROL", ME), Access::Shared(_)));
+        let admin = "S-1-5-21-1-2-3-500";
+        assert!(matches!(classify_sddl("D:P(A;OICI;FA;;;LA)(A;OICI;FA;;;SY)", admin), Access::Private(_)));
+        assert!(matches!(classify_sddl("D:P(A;OICI;FA;;;LA)(A;OICI;FA;;;SY)", ME), Access::Shared(_)));
     }
 
     #[test]

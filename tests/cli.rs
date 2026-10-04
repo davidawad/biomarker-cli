@@ -470,7 +470,8 @@ fn layered_config_with_sources() {
     // config set writes the XDG file and is picked up afterwards
     e.run(&["config", "set", "format", "json"]);
     let path = e.run(&["config", "path", "-f", "tsv", "--no-header", "--columns", "path"]);
-    assert_eq!(path.trim(), e.path("config/biomarker-cli/config.toml").to_str().unwrap());
+    let want = e.path("config").join("biomarker-cli").join("config.toml");
+    assert_eq!(path.trim(), want.to_str().unwrap());
     let v: Value = serde_json::from_str(&e.run(&["person", "list"])).unwrap();
     assert_eq!(v["kind"], "people");
     e.cmd().args(["config", "set", "format", "xml"]).assert().code(7);
