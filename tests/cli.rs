@@ -7,6 +7,9 @@ use predicates::prelude::*;
 use serde_json::Value;
 use tempfile::TempDir;
 
+/// Raw 256-bit test KEK (never use a fixed key outside tests).
+const TEST_KEY: &str = "raw:000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f";
+
 struct Env {
     dir: TempDir,
 }
@@ -33,6 +36,9 @@ impl Env {
             .env("XDG_DATA_HOME", self.path("data"))
             .env("BIOMARKER_DB", self.db())
             .env("BIOMARKER_TZ", "UTC")
+            .env("BIOMARKER_KEY", TEST_KEY)
+            .env("BIOMARKER_KEY_SOURCE", "env")
+            .env("BIOMARKER_NO_KEYCHAIN", "1")
             .env("NO_COLOR", "1");
         c
     }

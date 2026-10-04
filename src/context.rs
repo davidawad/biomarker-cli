@@ -1,20 +1,34 @@
 //! Per-invocation context: resolved configuration, output options, database access.
 
-use std::io::IsTerminal;
+use std::cell::{Cell, RefCell};
+use std::io::{IsTerminal, Write};
 use std::path::PathBuf;
+use std::rc::Rc;
 
+use crate::audit;
 use crate::cli::GlobalOpts;
 use crate::config::{self, Layer, Resolved};
 use crate::db::Db;
-use crate::error::Result;
-use crate::output::{Format, OutputOpts, Report};
+use crate::error::{AppError, Result};
+use crate::keys;
+use crate::output::{Body, Format, OutputOpts, Report};
 use crate::util::Tz;
+use crate::vault::{self, OpenOpts};
 
 pub struct Ctx {
     pub resolved: Resolved,
     pub out: OutputOpts,
     pub tz: Tz,
     pub db_path: PathBuf,
+    pub insecure: bool,
+    pub encrypt_output: bool,
+    pub recipients: Vec<String>,
+    /// Set once an encrypted database was unlocked; the command is then audited.
+    audit: RefCell<Option<audit::Sink>>,
+    changes: Rc<Cell<u64>>,
+    rows_out: Cell<u64>,
+    output_kind: Cell<&'static str>,
+    touched_db: Cell<bool>,
 }
 
 /// Translate global flags into the highest-precedence config layer.
@@ -68,12 +82,82 @@ impl Ctx {
         };
         let tz = Tz::parse(resolved.get("timezone"))?;
         let db_path = PathBuf::from(expand_tilde(resolved.get("db_path")));
-        Ok(Self { resolved, out, tz, db_path })
+        Ok(Self {
+            resolved,
+            out,
+            tz,
+            db_path,
+            insecure: g.insecure_plaintext,
+            encrypt_output: g.encrypt_output || !g.recipients.is_empty(),
+            recipients: g.recipients.clone(),
+            audit: RefCell::new(None),
+            changes: Rc::new(Cell::new(0)),
+            rows_out: Cell::new(0),
+            output_kind: Cell::new("stdout"),
+            touched_db: Cell::new(false),
+        })
     }
 
+    pub fn key_source(&self) -> Result<keys::Source> {
+        keys::Source::parse(self.resolved.get("key_source"))
+    }
+
+    pub fn open_opts(&self) -> Result<OpenOpts> {
+        Ok(OpenOpts { source: self.key_source()?, insecure: self.insecure })
+    }
+
+    /// Open (unlocking or creating) the database and apply pending migrations.
     pub fn db(&self) -> Result<Db> {
+        let db = self.db_raw()?;
+        crate::migrations::migrate(&db)?;
+        Ok(db)
+    }
+
+    /// Open the database without applying migrations.
+    pub fn db_raw(&self) -> Result<Db> {
         self.verbose(&format!("database: {}", self.db_path.display()));
-        Db::open(&self.db_path)
+        let db =
+            vault::open(&self.db_path, self.open_opts()?, &|m| self.warn(m))?.with_change_counter(self.changes.clone());
+        if let Some(s) = db.sealed() {
+            self.verbose(&format!("unlocked with key from {}", s.key_source));
+            self.set_audit(s.header.db_id, s.keys.audit.clone());
+        }
+        self.touched_db.set(true);
+        Ok(db)
+    }
+
+    /// Enable auditing of this command for the database with `db_id`.
+    pub fn set_audit(&self, db_id: [u8; crate::crypto::ID_LEN], key: crate::crypto::Key) {
+        *self.audit.borrow_mut() = Some(audit::Sink { db_path: self.db_path.clone(), db_id, key });
+    }
+
+    pub fn audit_sink(&self) -> Option<audit::Sink> {
+        self.audit.borrow().clone()
+    }
+
+    /// Append the audit record for this invocation (if it touched an encrypted database).
+    pub fn finish_audit(&self, command: &str, exit_code: i32) {
+        let Some(sink) = self.audit_sink() else { return };
+        let rec = audit::Record {
+            ts: crate::util::now_iso(),
+            user: audit::current_user(),
+            command: command.to_string(),
+            ok: exit_code == 0 || exit_code == 10,
+            exit_code,
+            rows_changed: self.changes.get(),
+            rows_out: self.rows_out.get(),
+            output: self.output_kind.get().to_string(),
+        };
+        if let Err(e) = sink.append(&rec) {
+            eprintln!("biomarker: warning: could not write audit log: {e}");
+        }
+    }
+
+    /// Security warning on stderr (suppressed by --quiet).
+    pub fn warn(&self, msg: &str) {
+        if !self.quiet() {
+            eprintln!("biomarker: {msg}");
+        }
     }
 
     pub fn quiet(&self) -> bool {
@@ -94,7 +178,42 @@ impl Ctx {
     }
 
     pub fn emit(&self, r: &Report) -> Result<()> {
-        crate::output::emit(r, &self.out)
+        self.emit_with(r, &self.out)
+    }
+
+    /// Render with `o` and write to `--output` (0600, warning when plaintext)
+    /// or stdout, age-encrypting with `--encrypt-output`.
+    pub fn emit_with(&self, r: &Report, o: &OutputOpts) -> Result<()> {
+        let n = match &r.body {
+            Body::List { rows, .. } => rows.len() as u64,
+            Body::Object(_) => 1,
+        };
+        self.rows_out.set(self.rows_out.get() + n);
+        let text = crate::output::render(r, o)?;
+        let file = o.output.as_ref().filter(|p| p.as_os_str() != "-");
+        let bytes = if self.encrypt_output {
+            self.output_kind.set(if file.is_some() { "encrypted-file" } else { "encrypted-stdout" });
+            crate::seal_output::encrypt(text.as_bytes(), &self.recipients)?
+        } else {
+            if file.is_some() {
+                self.output_kind.set("file");
+            }
+            text.into_bytes()
+        };
+        match file {
+            Some(p) => {
+                if !self.encrypt_output && self.touched_db.get() {
+                    self.warn(&format!(
+                        "warning: writing plaintext health data to {}; use --encrypt-output to encrypt it",
+                        p.display()
+                    ));
+                }
+                crate::crypto::create_private(p)
+                    .and_then(|mut f| f.write_all(&bytes))
+                    .map_err(|e| AppError::io(format!("writing {}: {e}", p.display())))
+            }
+            None => crate::output::write_stdout(&bytes),
+        }
     }
 
     /// Emit the result of a mutating command. In table mode the stderr status

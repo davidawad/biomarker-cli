@@ -105,6 +105,11 @@ pub fn latest_version() -> i64 {
 }
 
 fn ensure_table(db: &Db) -> Result<()> {
+    // Check first: a no-op CREATE would still count as a write and re-seal
+    // an encrypted database on every read-only command.
+    if db.query_opt("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'schema_migrations'", &[])?.is_some() {
+        return Ok(());
+    }
     db.execute_batch(
         "CREATE TABLE IF NOT EXISTS schema_migrations (
             version INTEGER PRIMARY KEY,

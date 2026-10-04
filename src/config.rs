@@ -146,6 +146,14 @@ pub const SETTINGS: &[Setting] = &[
         kind: Kind::Str,
     },
     Setting {
+        key: "key_source",
+        env: &["BIOMARKER_KEY_SOURCE"],
+        help:
+            "where the database encryption key comes from (auto = keychain, then BIOMARKER_KEY, then passphrase prompt)",
+        choices: &["auto", "keychain", "env", "passphrase"],
+        kind: Kind::Str,
+    },
+    Setting {
         key: "quiet",
         env: &["BIOMARKER_QUIET"],
         help: "suppress informational messages",
@@ -196,6 +204,7 @@ fn default_value(key: &str) -> String {
         "csv_header" => "true".into(),
         "range_flavor" => "reference".into(),
         "dedupe" => "skip".into(),
+        "key_source" => "auto".into(),
         "quiet" | "verbose" => "false".into(),
         _ => String::new(),
     }

@@ -214,6 +214,7 @@ single JSON line:
 | 5    | `database`  | database engine error, or `db check` failed |
 | 6    | `io`        | file read/write failure |
 | 7    | `config`    | bad config file, key or value |
+| 8    | `key`       | encrypted database cannot be unlocked: no key available or wrong key |
 | 10   |             | `flag --exit-code` found at least one flagged value |
 
 ## Emacs example
