@@ -223,17 +223,18 @@ mod imp {
     }
 }
 
-/// Classify a DACL in SDDL form: private when every allow ACE is for `user`
-/// or a trustee that is all-powerful anyway (SYSTEM, Administrators, the
-/// owner / creator-owner placeholders).
-#[cfg_attr(not(windows), allow(dead_code))]
 /// Whether SDDL trustee `sid` is the current `user`. SDDL writes the local
 /// built-in Administrator (RID 500) as the alias `LA` rather than its SID,
 /// which is who CI runners and some single-user machines run as.
+#[cfg_attr(not(windows), allow(dead_code))]
 fn is_user(sid: &str, user: &str) -> bool {
     sid == user || (sid == "LA" && user.starts_with("S-1-5-21-") && user.ends_with("-500"))
 }
 
+/// Classify a DACL in SDDL form: private when every allow ACE is for `user`
+/// or a trustee that is all-powerful anyway (SYSTEM, Administrators, the
+/// owner / creator-owner placeholders).
+#[cfg_attr(not(windows), allow(dead_code))]
 fn classify_sddl(sddl: &str, user: &str) -> Access {
     const TRUSTED: [&str; 4] = ["SY", "BA", "OW", "CO"];
     let others: Vec<&str> = sddl
