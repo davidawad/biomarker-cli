@@ -95,9 +95,41 @@ CREATE INDEX IF NOT EXISTS idx_measurements_batch ON measurements(batch_id);
 CREATE INDEX IF NOT EXISTS idx_ranges_marker ON ranges(marker_id);
 ";
 
+/// Qualitative results (text, not numbers) and per-person reference ranges.
+const SCHEMA_V3: &str = r"
+CREATE TABLE IF NOT EXISTS observations (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id   INTEGER NOT NULL REFERENCES people(id) ON DELETE CASCADE,
+    marker_id   INTEGER NOT NULL REFERENCES markers(id),
+    taken_at    TEXT NOT NULL,
+    text        TEXT NOT NULL,
+    flag        TEXT,
+    range_low   REAL,
+    range_high  REAL,
+    note        TEXT,
+    lab         TEXT,
+    batch_id    TEXT,
+    created_at  TEXT NOT NULL,
+    UNIQUE (person_id, marker_id, taken_at)
+);
+CREATE INDEX IF NOT EXISTS idx_observations_taken ON observations(taken_at);
+CREATE TABLE IF NOT EXISTS person_ranges (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id   INTEGER NOT NULL REFERENCES people(id) ON DELETE CASCADE,
+    marker_id   INTEGER NOT NULL REFERENCES markers(id) ON DELETE CASCADE,
+    kind        TEXT NOT NULL,
+    low         REAL,
+    high        REAL,
+    note        TEXT,
+    UNIQUE (person_id, marker_id, kind)
+);
+";
+
 pub const MIGRATIONS: &[Migration] = &[
     Migration { version: 1, name: "initial schema", apply: |db| db.execute_batch(SCHEMA_V1) },
     Migration { version: 2, name: "seed built-in marker catalog", apply: crate::seed::seed },
+    Migration { version: 3, name: "observations and person ranges", apply: |db| db.execute_batch(SCHEMA_V3) },
+    Migration { version: 4, name: "seed body and vitals markers", apply: crate::seed::seed_vitals },
 ];
 
 pub fn latest_version() -> i64 {

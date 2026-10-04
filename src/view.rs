@@ -33,7 +33,13 @@ pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Optio
         .convert(marker.id, row.value, &marker.unit, &wanted)
         .map_or_else(|_| (row.value, marker.unit.clone()), |v| (v, wanted));
     let age = age_at(row);
-    let pick = |kind| ranges::select(&cat.ranges, marker.id, kind, row.sex.as_deref(), age).cloned();
+    let pick = |kind| {
+        cat.person_ranges
+            .iter()
+            .find(|r| r.person_id == Some(row.person_id) && r.marker_id == marker.id && r.kind == kind)
+            .or_else(|| ranges::select(&cat.ranges, marker.id, kind, row.sex.as_deref(), age))
+            .cloned()
+    };
     let reference = pick(RangeKind::Reference);
     let optimal = pick(RangeKind::Optimal);
     let q = row.qualifier.as_deref();

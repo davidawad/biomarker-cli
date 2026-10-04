@@ -1,0 +1,22 @@
+# Mapping for the "Labs" sheet of examples/dashboard.xlsx (synthetic data):
+#   biomarker import examples/dashboard.xlsx --mapping examples/dashboard-mapping.toml --dry-run
+sheet = "Labs"
+layout = "transposed"
+# Use the sheet's ref. low / ref. high as this person's reference ranges.
+ranges = "sheet"
+
+# Source name -> marker slug (created with --create-markers when not in the catalog).
+[rename]
+"WBC, Urine" = "urine-wbc"
+
+# The 2024-12-02 column was really drawn on 2024-12-04 (per the lab report).
+[dates]
+"2024-12-02" = "2024-12-04"
+
+# Rows to ignore.
+[skip]
+names = ["Control Sample", "Lipoprotein Particle Score"]
+
+# Category for markers created under the "Urinalysis" section.
+[category]
+"Urinalysis" = "urine"

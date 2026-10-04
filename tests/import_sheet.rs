@@ -174,15 +174,8 @@ fn stop_at_ignores_the_named_row_and_everything_below() {
     let e = Env::new();
     let mapping = e.path("stop.toml");
     std::fs::write(&mapping, "stop_at = \"Urinalysis\"\n").unwrap();
-    let (_, stderr) = e.run_io(&[
-        "import",
-        &e.workbook(),
-        "-p",
-        "alex",
-        "--create-markers",
-        "--mapping",
-        mapping.to_str().unwrap(),
-    ]);
+    let (_, stderr) =
+        e.run_io(&["import", &e.workbook(), "-p", "alex", "--create-markers", "--mapping", mapping.to_str().unwrap()]);
     assert!(stderr.contains("stop_at"), "{stderr}");
     let created: Vec<String> = e.json(&["marker", "list"])["data"]
         .as_array()

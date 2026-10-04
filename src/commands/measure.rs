@@ -230,6 +230,7 @@ fn export_record(e: &Evaluated, with_ids: bool) -> Record {
 }
 
 pub fn export(ctx: &Ctx, a: ExportArgs) -> Result<()> {
+    let filter_args = a.filter.clone();
     let q =
         QueryArgs { filter: a.filter, flagged: false, latest: false, sort: SortKey::Date, reverse: false, limit: None };
     let (_, rows) = select(ctx, &q)?;
@@ -239,7 +240,15 @@ pub fn export(ctx: &Ctx, a: ExportArgs) -> Result<()> {
     }
     // Missing values are always empty cells so exports re-import cleanly.
     out.null = String::new();
-    let report = Report::list("export", rows.iter().map(|e| export_record(e, a.with_ids)).collect()).exact();
+    let mut report = Report::list("export", rows.iter().map(|e| export_record(e, a.with_ids)).collect()).exact();
+    // Qualitative observations ride along in the JSON envelope (not in `data`,
+    // which stays re-importable as measurements).
+    if out.format == crate::output::Format::Json {
+        let db = ctx.db()?;
+        let cat = Catalog::load(&db)?;
+        let filter = build_filter(ctx, &db, &cat, &filter_args)?;
+        report = report.meta("observations", json!(crate::commands::observations::records(&db, &filter, false)?));
+    }
     if !ctx.quiet() && out.output.is_some() {
         eprintln!("exported {} measurement(s)", rows.len());
     }

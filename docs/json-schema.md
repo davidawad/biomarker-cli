@@ -59,6 +59,8 @@ suits streaming and `jq -c`.
 | `diff`                                 | `diff`         | array of [Diff row](#diff-row) |
 | `export`                               | `export`       | array of [Export row](#export-row) |
 | `import`                               | `import`       | [Import summary](#import-summary) |
+| `import FILE --list-sheets`            | `sheets`       | `{index, name, rows, columns, dimensions}` |
+| `observations`                         | `observations` | array of [Observation](#observation) |
 | `person list` / `person show` / `add` / `edit` | `people` / `person` | Person |
 | `marker list` / `show` / `add` / `edit` | `markers` / `marker` | Marker |
 | `marker alias`                         | `aliases`      | `{marker, aliases}` |
@@ -167,6 +169,17 @@ Missing sides are `null`.
 With `--with-ids`, `id` and `batch` are added. Values are the raw recorded
 value and unit, so `import` of an export reproduces the data exactly. CSV
 export joins `tags` with commas and writes missing values as empty cells.
+`export --format json` adds a top-level `observations` array (the same
+filters apply). It sits outside `data`, so the envelope still re-imports as
+measurements.
+
+### Observation
+
+`{id, person, marker, marker_name, category, taken_at, text, flag, range_low,
+range_high, note, lab, batch}`: a qualitative result such as `"Negative"` or
+`"6-10 Abnormal"`. `flag` is `"abnormal"` when the text says so, else `null`.
+`range_low`/`range_high` hold a numeric range from the text (`6-10`) and
+`note` describes it (`"range 6-10"`).
 
 ### Import summary
 
@@ -181,6 +194,17 @@ export joins `tags` with commas and writes missing values as empty cells.
 }
 ```
 
+Every import summary also has `layout` (`long`, `wide`, `transposed`) and these
+report fields, which are mostly filled by spreadsheet imports:
+`matched` (`[{source, marker}]`), `unmatched` (`[{source, cells}]`, skipped),
+`skipped_names` (from the mapping's `[skip]`), `qualitative` (count) and
+`qualitative_values` (`[{line, marker, date, text}]`), `observations`
+(`{inserted, replaced, skipped}` with `--qualitative store`),
+`date_corrections` (`[{from, to, cells}]`), `cells_per_date`
+(`{date: values}`), `ranges_set` (`[{marker, person, low, high, unit}]` with
+`ranges = "sheet"`) and `warnings`. Spreadsheet imports add `sheet` and
+`header_row` (1-based).
+
 ### Person / Marker / Range
 
 * Person: `{id, slug, name, sex, dob, notes, tags, created_at}`.
@@ -188,7 +212,9 @@ export joins `tags` with commas and writes missing values as empty cells.
 * Marker: `{id, slug, name, category, unit, loinc, description, builtin,
   aliases}`. `marker show` adds `measurements, convertible_units, conversions,
   ranges`.
-* Range: `{id, marker, kind, sex, age_min, age_max, low, high, unit, note}`.
+* Range: `{id, person, marker, kind, sex, age_min, age_max, low, high, unit,
+  note}`. `person` is set for person-specific ranges (`range set --person`)
+  and `null` for catalog ranges.
   Bounds are in the marker's canonical unit. `sex` ∈ `any, male, female`.
   The age band is `[age_min, age_max)` in years.
 

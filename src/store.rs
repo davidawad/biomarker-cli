@@ -103,6 +103,8 @@ pub fn update_person(db: &Db, p: &Person) -> Result<Person> {
 pub fn delete_person(db: &Db, id: i64) -> Result<usize> {
     db.transaction(|db| {
         let n = db.execute("DELETE FROM measurements WHERE person_id = ?1", &[int(id)])?;
+        db.execute("DELETE FROM observations WHERE person_id = ?1", &[int(id)])?;
+        db.execute("DELETE FROM person_ranges WHERE person_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM people WHERE id = ?1", &[int(id)])?;
         Ok(n)
     })
@@ -130,6 +132,8 @@ pub struct Marker {
 pub struct Catalog {
     pub markers: Vec<Marker>,
     pub ranges: Vec<Range>,
+    /// Person-specific ranges (`person_id` is set); they win over `ranges`.
+    pub person_ranges: Vec<Range>,
     pub conversions: ConversionSet,
     /// (symbol, system)
     pub units: Vec<(String, String)>,
@@ -166,6 +170,7 @@ impl Catalog {
         Ok(Self {
             markers,
             ranges: load_ranges(db)?,
+            person_ranges: load_person_ranges(db)?,
             conversions: ConversionSet::new(load_conversions(db)?),
             units: db
                 .query("SELECT symbol, system FROM units ORDER BY symbol", &[])?
@@ -293,6 +298,8 @@ pub fn delete_marker(db: &Db, id: i64) -> Result<usize> {
         let n = db.execute("DELETE FROM measurements WHERE marker_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM marker_aliases WHERE marker_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM ranges WHERE marker_id = ?1", &[int(id)])?;
+        db.execute("DELETE FROM observations WHERE marker_id = ?1", &[int(id)])?;
+        db.execute("DELETE FROM person_ranges WHERE marker_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM unit_conversions WHERE marker_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM markers WHERE id = ?1", &[int(id)])?;
         Ok(n)
@@ -324,8 +331,42 @@ pub fn load_ranges(db: &Db) -> Result<Vec<Range>> {
             low: r.f(6),
             high: r.f(7),
             note: r.s(8),
+            person_id: None,
         })
         .collect())
+}
+
+pub fn load_person_ranges(db: &Db) -> Result<Vec<Range>> {
+    Ok(db
+        .query("SELECT id, person_id, marker_id, kind, low, high, note FROM person_ranges ORDER BY person_id, marker_id, kind", &[])?
+        .iter()
+        .map(|r| Range {
+            id: r.i(0).unwrap_or_default(),
+            person_id: r.i(1),
+            marker_id: r.i(2).unwrap_or_default(),
+            kind: r.s(3).and_then(|k| RangeKind::parse(&k)).unwrap_or(RangeKind::Reference),
+            sex: "any".into(),
+            age_min: 0.0,
+            age_max: 200.0,
+            low: r.f(4),
+            high: r.f(5),
+            note: r.s(6),
+        })
+        .collect())
+}
+
+/// Insert or replace the person-specific range identified by (person, marker, kind).
+pub fn upsert_person_range(db: &Db, person_id: i64, r: &Range) -> Result<()> {
+    db.execute(
+        "INSERT INTO person_ranges (person_id, marker_id, kind, low, high, note) VALUES (?1, ?2, ?3, ?4, ?5, ?6)
+         ON CONFLICT (person_id, marker_id, kind) DO UPDATE SET low = excluded.low, high = excluded.high, note = excluded.note",
+        &[int(person_id), int(r.marker_id), text(r.kind.as_str()), opt_real(r.low), opt_real(r.high), opt_text(r.note.as_ref())],
+    )
+    .map(|_| ())
+}
+
+pub fn delete_person_range(db: &Db, id: i64) -> Result<usize> {
+    db.execute("DELETE FROM person_ranges WHERE id = ?1", &[int(id)])
 }
 
 /// Insert or replace the range identified by (marker, kind, sex, age band).
@@ -592,6 +633,123 @@ pub fn query_measurements(db: &Db, f: &Filter) -> Result<Vec<MeasurementRow>> {
             note: r.s(13),
             tags: tags_from_db(r.s(14)),
             batch_id: r.s(15),
+        })
+        .collect())
+}
+
+// ---------------------------------------------------------------------------
+// Observations (qualitative results)
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, PartialEq)]
+pub struct NewObservation {
+    pub person_id: i64,
+    pub marker_id: i64,
+    pub taken_at: String,
+    pub text: String,
+    /// `abnormal` when the source says so; otherwise unset.
+    pub flag: Option<String>,
+    pub range_low: Option<f64>,
+    pub range_high: Option<f64>,
+    pub note: Option<String>,
+    pub lab: Option<String>,
+    pub batch_id: Option<String>,
+}
+
+/// Insert a qualitative observation honouring the duplicate policy.
+pub fn insert_observation(db: &Db, o: &NewObservation, policy: Dedupe) -> Result<Outcome> {
+    let existing = db
+        .query_opt(
+            "SELECT id FROM observations WHERE person_id = ?1 AND marker_id = ?2 AND taken_at = ?3",
+            &[int(o.person_id), int(o.marker_id), text(&o.taken_at)],
+        )?
+        .and_then(|r| r.i(0));
+    let params = vec![
+        int(o.person_id),
+        int(o.marker_id),
+        text(&o.taken_at),
+        text(&o.text),
+        opt_text(o.flag.as_ref()),
+        opt_real(o.range_low),
+        opt_real(o.range_high),
+        opt_text(o.note.as_ref()),
+        opt_text(o.lab.as_ref()),
+        opt_text(o.batch_id.as_ref()),
+        text(crate::util::now_iso()),
+    ];
+    match (existing, policy) {
+        (Some(_), Dedupe::Skip) => Ok(Outcome::Skipped),
+        (Some(_), Dedupe::Error) => {
+            Err(AppError::invalid(format!("duplicate observation at {} (use --dedupe skip|replace)", o.taken_at)))
+        }
+        (Some(id), Dedupe::Replace) => {
+            let mut p = params;
+            p.push(int(id));
+            db.execute(
+                "UPDATE observations SET person_id = ?1, marker_id = ?2, taken_at = ?3, text = ?4, flag = ?5, range_low = ?6,
+                 range_high = ?7, note = ?8, lab = ?9, batch_id = ?10, created_at = ?11 WHERE id = ?12",
+                &p,
+            )?;
+            Ok(Outcome::Replaced)
+        }
+        (None, _) => {
+            db.execute(
+                "INSERT INTO observations (person_id, marker_id, taken_at, text, flag, range_low, range_high, note, lab, batch_id, created_at)
+                 VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)",
+                &params,
+            )?;
+            Ok(Outcome::Inserted)
+        }
+    }
+}
+
+/// An observation joined with its person and marker.
+#[derive(Debug, Clone, PartialEq, Serialize)]
+pub struct ObservationRow {
+    pub id: i64,
+    pub person: String,
+    pub marker: String,
+    pub marker_name: String,
+    pub category: String,
+    pub taken_at: String,
+    pub text: String,
+    pub flag: Option<String>,
+    pub range_low: Option<f64>,
+    pub range_high: Option<f64>,
+    pub note: Option<String>,
+    pub lab: Option<String>,
+    pub batch: Option<String>,
+}
+
+/// Observations matching a measurement filter (the tag filter does not apply).
+pub fn query_observations(db: &Db, f: &Filter) -> Result<Vec<ObservationRow>> {
+    let (where_, params) = filter_sql(&Filter { tag: None, ..f.clone() });
+    let sql = format!(
+        "SELECT m.id, p.slug, k.slug, k.name, k.category, m.taken_at, m.text, m.flag, m.range_low, m.range_high,
+                m.note, m.lab, m.batch_id
+         FROM observations m
+         JOIN people p ON p.id = m.person_id
+         JOIN markers k ON k.id = m.marker_id
+         {where_}
+         ORDER BY m.taken_at, p.slug, k.category, k.slug"
+    );
+    Ok(db
+        .query(&sql, &params)?
+        .iter()
+        .map(|r| ObservationRow {
+            id: r.i(0).unwrap_or_default(),
+            person: r.s(1).unwrap_or_default(),
+            marker: r.s(2).unwrap_or_default(),
+            marker_name: r.s(3).unwrap_or_default(),
+            category: r.s(4).unwrap_or_default(),
+            taken_at: r.s(5).unwrap_or_default(),
+            text: r.s(6).unwrap_or_default(),
+            flag: r.s(7),
+            range_low: r.f(8),
+            range_high: r.f(9),
+            note: r.s(10),
+            lab: r.s(11),
+            batch: r.s(12),
         })
         .collect())
 }

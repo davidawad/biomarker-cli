@@ -108,15 +108,20 @@ $ biomarker trend -m apob --format json | head -n 32
 
 * Any number of people, with sex and date of birth for sex- and age-specific
   ranges.
-* A built-in catalog of 61 markers you can extend: lipid panel, ApoB,
+* A built-in catalog of 70 markers you can extend: lipid panel, ApoB,
   Lp(a), CMP, CBC, thyroid, hormones, HbA1c, insulin, hs-CRP, homocysteine,
-  vitamin D/B12, ferritin and iron studies. Each has aliases and LOINC codes.
+  vitamin D/B12, ferritin and iron studies, plus body composition and vitals
+  (weight, BMI, body fat, biological age, resting HR, HRV, VO2 max, blood
+  pressure). Each has aliases and, where one exists, a LOINC code.
 * Reference ranges and separate *optimal* ranges, by sex and age band.
 * Unit conversions per marker (mg/dL↔mmol/L, ng/dL↔nmol/L, HbA1c %↔mmol/mol,
   …). The raw value and unit are stored **and** a normalized canonical value.
-* Import from CSV, TSV, JSON and JSONL, in long or wide layout. Column
-  mapping comes from flags or a TOML file. Imports support dry-run and a
-  dedupe policy, and record an import batch.
+* Import from CSV, TSV, JSON, JSONL and spreadsheets (xlsx, xls, ods), in
+  long, wide or transposed (one row per test, one column per date) layout.
+  Column mapping comes from flags or a TOML file. Imports support dry-run and
+  a dedupe policy, and record an import batch.
+* Qualitative results ("Negative", "1+ Abnormal") are kept as observations
+  beside the numbers, and a person can have their own reference ranges.
 * Query, latest, flag, trend (min/max/mean/median/stddev/slope, % change over
   windows) and diff.
 * Every command supports `--format table|json|jsonl|csv|tsv` and `--output FILE`.
@@ -217,12 +222,13 @@ without it the data cannot be recovered.
 |---------|---------|
 | `person add/list/show/edit/rm` | manage people (`--sex`, `--dob`, `--notes`, `--tag`) |
 | `marker add/list/show/edit/rm/alias/categories` | manage the catalog. `edit --unit` rescales stored values and ranges |
-| `range set/list/rm` | reference/optimal ranges by `--sex` and `--age-min/--age-max`. `--unit` converts the bounds |
+| `range set/list/rm` | reference/optimal ranges by `--sex` and `--age-min/--age-max`, or for one `--person`. `--unit` converts the bounds |
 | `unit list [--symbols]`, `unit add-conversion`, `unit convert` | conversion table (`to = from * factor + offset`) |
 | `add MARKER VALUE [UNIT]` | record one measurement (`--person --date --lab --fasting --note --tag --dedupe`) |
 | `rm ID...` | delete measurements |
-| `import FILE` | CSV/TSV/JSON/JSONL import (see below) |
-| `export` | re-importable CSV (default), JSON or JSONL. Accepts the same filters as `query` |
+| `import FILE` | CSV/TSV/JSON/JSONL and xlsx/xls/ods import (see below) |
+| `observations` / `obs` | qualitative results (`--flagged` for abnormal ones). Accepts the same filters as `query` |
+| `export` | re-importable CSV (default), JSON or JSONL. Accepts the same filters as `query`. JSON also carries `observations` |
 | `query` / `list` | filters: `-p/--person` (repeatable), `--all-people`, `-m/--marker`, `-c/--category`, `--from/--to`, `--last 90d`, `--lab`, `--tag`, `--batch`, `--flagged`, `--latest`, `--sort date\|person\|marker\|category\|value`, `-r`, `-n` |
 | `latest` | latest value per person × marker |
 | `trend` / `stats` | per-series statistics and `--windows` % change. JSON includes the points |
@@ -283,6 +289,146 @@ cat labs.csv | biomarker import - --input-format csv --person sam
 Round trip: `biomarker export > all.csv`, then importing `all.csv` into an
 empty database (with `--create-people`) reproduces the same export. The same
 holds for `-f json` and `-f jsonl`.
+
+## Import from a spreadsheet
+
+`biomarker import` reads `.xlsx`, `.xlsm`, `.xlsb`, `.xls` and `.ods` files
+directly. It is built for health dashboards kept in Excel, like the synthetic
+[`examples/dashboard.xlsx`](examples/dashboard.xlsx). Its "Labs" sheet has
+one row per test and one column per draw date, section rows such as
+"Complete Blood Count (CBC)", metadata columns (Test, Notes, Control, Units,
+Reference Interval, ref. low, ref. high) and a few qualitative cells. Its
+"Body" sheet is a long log with one row per date and several value columns.
+The mapping file is
+[`examples/dashboard-mapping.toml`](examples/dashboard-mapping.toml).
+
+<!-- readme-import:begin -->
+```console
+$ sh examples/people.sh
+added person alex
+added person sam
+
+$ export BIOMARKER_PERSON=alex
+
+$ biomarker import examples/dashboard.xlsx --list-sheets
+INDEX  NAME  ROWS  COLUMNS  DIMENSIONS
+─────  ────  ────  ───────  ──────────
+    1  Labs    23       11  A1:K23
+    2  Body     5        6  A1:F5
+
+$ biomarker import examples/dashboard.xlsx --mapping examples/dashboard-mapping.toml \
+    --create-markers --dry-run
+import examples/dashboard.xlsx (xlsx, sheet "Labs", transposed layout, header row 3)
+matched (11):
+  White Blood Cell Count (WBC)      -> wbc
+  Red Blood Cell Count (RBC)        -> rbc
+  Hemoglobin (Hgb)                  -> hemoglobin
+  Mean Corpuscular Volume (MCV)     -> mcv
+  Platelets                         -> platelets
+  Low-Density Lipoprotein (LDL-C)   -> ldl-c
+  High-Density Lipoprotein (HDL-C)  -> hdl-c
+  Apolipoprotein B (ApoB)           -> apob
+  Hemoglobin A1c                    -> hba1c
+  ALT (SGPT)                        -> alt
+  Thyroid Stimulating Hormone (TSH) -> tsh
+created (3): urine-protein, urine-appearance, urine-wbc
+skipped by mapping (2): Lipoprotein Particle Score, Control Sample
+qualitative (11, skipped; use --qualitative store to keep them):
+  2024-03-01  urine-protein: Negative
+  2024-08-15  urine-protein: Negative
+  2024-12-04  urine-protein: 1+ Abnormal
+  2025-03-11  urine-protein: Negative
+  2024-03-01  urine-appearance: Clear
+  2024-08-15  urine-appearance: Clear
+  2024-12-04  urine-appearance: Clear
+  2024-03-01  urine-wbc: None seen
+  2024-08-15  urine-wbc: 0-5
+  2024-12-04  urine-wbc: 6-10 Abnormal
+  2025-03-11  urine-wbc: None seen
+date corrections (1):
+  2024-12-02 -> 2024-12-04 (13 values)
+reference ranges from the sheet (12):
+  wbc: 3.4..10.8 10^3/µL
+  rbc: 4.14..5.8 10^6/µL
+  hemoglobin: 13..17.7 g/dL
+  mcv: 79..97 fL
+  platelets: 150..450 10^3/µL
+  ldl-c: 0..99 mg/dL
+  hdl-c: 39.. mg/dL
+  apob: ..90 mg/dL
+  hba1c: 4.8..5.6 %
+  alt: 0..44 U/L
+  tsh: 0.45..4.5 mIU/L
+  urine-wbc: 0..5 /hpf
+values per date:
+  2024-03-01  11
+  2024-08-15  11
+  2024-12-04  10
+  2025-03-11  11
+dry run: 43 inserted, 0 replaced, 0 skipped, 0 invalid (16 rows)
+
+$ biomarker import examples/dashboard.xlsx --sheet Body \
+    --value-column 'weight=Weight (lbs.):lb' --value-column 'bmi=BMI kg/m²'
+import examples/dashboard.xlsx (xlsx, sheet "Body", long layout, header row 1)
+matched (2):
+  Weight (lbs.) -> weight
+  BMI kg/m²     -> bmi
+values per date:
+  2024-01-06  2
+  2024-04-06  2
+  2024-07-06  2
+  2024-10-05  2
+8 inserted, 0 replaced, 0 skipped, 0 invalid (4 rows)
+
+$ biomarker latest -m weight,bmi --units si --columns taken_at,marker,value,unit
+TAKEN_AT    MARKER  VALUE  UNIT
+──────────  ──────  ─────  ─────
+2024-10-05  bmi     24.60  kg/m²
+2024-10-05  weight  80.01  kg
+```
+<!-- readme-import:end -->
+
+* `--sheet NAME` picks a sheet (default: the first). `--list-sheets` prints
+  them with their dimensions.
+* `--layout long|wide|transposed`. A sheet whose header row holds several
+  dates is read as transposed unless you say otherwise. The header row is
+  found automatically, or set it with `--header-row N` (1-based).
+* Transposed sheets: `--marker-col`, `--unit-col`, `--ref-low-col` and
+  `--ref-high-col` take a header name or a column letter. They default to
+  columns named like Test, Units, ref. low and ref. high. Date columns are
+  the header cells that read as dates: Excel date cells or serial numbers,
+  ISO (`2024-12-04`) or US (`12/4/2024`) text.
+* A row with a name but no values, unit or range is a section header. With
+  `--sections-as-category` (the default for transposed sheets), markers
+  created below it get a category from its title, so "Complete Blood Count
+  (CBC)" becomes `cbc` and "Lipid Panel + ApoB" becomes `lipid`.
+* `--value-column SLUG=HEADER[:UNIT]` (repeatable) imports several value
+  columns from a long sheet. Without `:UNIT`, a unit in the header such as
+  `Weight (lbs.)` is used. Pounds are converted to the catalog's kilograms.
+* Test names resolve through slugs, aliases and names, ignoring case and
+  punctuation, then by the part outside or inside parentheses:
+  "Low-Density Lipoprotein (LDL-C)" becomes `ldl-c` and "ALT (SGPT)" becomes
+  `alt`. Unmatched names are reported and skipped. `--create-markers` creates
+  them instead.
+* Units are normalised: `x10E3/uL` and `μm³ (x10E3/uL)` become `10^3/µL`,
+  `μm³` becomes `fL`, `%Hb` becomes `%`. Units that equal the marker's
+  canonical unit 1:1 are stored as it: `IU/L` becomes `U/L`, and `uIU/ml`
+  becomes `mIU/L` for TSH.
+* Qualitative cells ("Negative", "None seen", "6-10 Abnormal") are counted
+  and skipped. `--qualitative store` keeps them in the `observations` table
+  instead, with an `abnormal` flag and the range of values like `6-10`. List
+  them with `biomarker observations`. A value with a trailing flag, like
+  `105 H`, is imported as the number.
+* The mapping file can also hold `[rename]` (source name to slug), `[units]`
+  (source unit to spelling), `[dates]` (correct a column's date, e.g.
+  `"2024-12-02" = "2024-12-04"`), `[skip]` (names to ignore), `[category]`
+  (section or name to category), `[value_columns]`, `sheet`, `layout` and
+  `header_row`. `ranges = "sheet"` (or `--ranges sheet`) turns the sheet's
+  ref. low and ref. high into reference ranges for the imported person only,
+  as `range set --person` would. Other people keep the catalog ranges.
+* `--dry-run` prints the full report and writes nothing. A real import
+  prints the same report. Re-importing the same sheet skips what is already
+  there.
 
 ## Configuration
 
@@ -359,10 +505,14 @@ tracked in `schema_migrations` and `PRAGMA user_version`:
 * `units(symbol, system)` and `unit_conversions(marker_id|0 = generic,
   from_unit, to_unit, factor, offset)`
 * `ranges(marker_id, kind reference|optimal, sex any|male|female, age_min,
-  age_max, low, high, note)`
+  age_max, low, high, note)` and `person_ranges(person_id, marker_id, kind,
+  low, high, note)`, which win over `ranges` for that person
 * `measurements(person_id, marker_id, taken_at, value_raw, unit_raw, value
   (canonical), qualifier, lab, fasting, note, tags, batch_id, created_at)`.
   It is unique on (person, marker, taken_at).
+* `observations(person_id, marker_id, taken_at, text, flag, range_low,
+  range_high, note, lab, batch_id, created_at)` for qualitative results. It
+  is unique on (person, marker, taken_at).
 * `import_batches(id, source, format, created_at, row_count)`
 
 ## Development
@@ -372,7 +522,8 @@ cargo fmt
 cargo clippy --all-targets -- -D warnings
 cargo test        # unit tests + assert_cmd integration tests (tests/cli.rs)
 just test-gate    # all three, as run before merging
-just readme       # regenerate the README session and hero screenshot (needs uv)
+just readme       # regenerate the README sessions and hero screenshot (needs uv)
+cargo run --example make-sheets   # regenerate examples/dashboard.xlsx
 ```
 
 All data in `examples/` is synthetic.

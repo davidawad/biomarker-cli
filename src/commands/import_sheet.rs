@@ -8,8 +8,8 @@ use crate::cli::ImportArgs;
 use crate::commands::import::{Mapping, Planned, RawRow};
 use crate::commands::measure::Input;
 use crate::error::{AppError, Result};
-use crate::sheet::{col_index, col_name, header_date, Cell, Grid};
 use crate::matching::name_key;
+use crate::sheet::{col_index, col_name, header_date, Cell, Grid};
 use crate::util::{parse_value, slugify};
 
 /// How many leading rows are searched for a header.

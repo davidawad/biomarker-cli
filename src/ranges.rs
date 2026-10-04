@@ -37,6 +37,8 @@ pub struct Range {
     pub low: Option<f64>,
     pub high: Option<f64>,
     pub note: Option<String>,
+    /// `Some` for a person-specific range (overrides the catalog ranges for that person).
+    pub person_id: Option<i64>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
@@ -121,6 +123,7 @@ mod tests {
             low: lo,
             high: hi,
             note: None,
+            person_id: None,
         }
     }
 

@@ -3,9 +3,11 @@
 pub mod config_cmd;
 pub mod db_cmd;
 pub mod import;
+pub mod import_sheet;
 pub mod marker;
 pub mod measure;
 pub mod misc;
+pub mod observations;
 pub mod person;
 pub mod range;
 pub mod security;
@@ -39,6 +41,7 @@ pub fn dispatch(ctx: &Ctx, cmd: Command) -> Result<Status> {
         }
         Command::Trend(a) => trend::trend(ctx, a).map(|()| 0),
         Command::Flag(a) => measure::flag(ctx, a),
+        Command::Observations(a) => observations::list(ctx, a).map(|()| 0),
         Command::Diff(a) => trend::diff(ctx, a).map(|()| 0),
         Command::Db(c) => db_cmd::run(ctx, c).map(|()| 0),
         Command::Config(c) => config_cmd::run(ctx, c).map(|()| 0),
