@@ -162,14 +162,49 @@ pub const MARKERS: &[SeedMarker] = &[
     m!("transferrin-saturation", "Transferrin Saturation", "iron", "%", Some("2502-3"), ["tsat", "iron saturation"], [], [("any", s(15.0), s(55.0))], Some((s(25.0), s(45.0)))),
 ];
 
-pub fn seed(db: &Db) -> Result<()> {
-    UNITS.iter().try_for_each(|(sym, sys, desc)| {
+/// Units added with the body / vitals markers (schema v4).
+pub const VITALS_UNITS: &[(&str, &str, &str)] = &[
+    ("kg", "si", "kilograms"),
+    ("lb", "us", "pounds"),
+    ("kg/m²", "both", "kilograms per square metre"),
+    ("years", "both", "years"),
+    ("bpm", "both", "beats per minute"),
+    ("ms", "both", "milliseconds"),
+    ("mL/kg/min", "both", "millilitres of oxygen per kilogram per minute"),
+    ("mmHg", "both", "millimetres of mercury"),
+];
+
+#[rustfmt::skip]
+pub const VITALS_MARKERS: &[SeedMarker] = &[
+    m!("weight", "Body Weight", "body", "kg", Some("29463-7"), ["body weight", "wt"], [("lb", 0.453_592_37, 0.0)], [], None),
+    m!("bmi", "Body Mass Index", "body", "kg/m²", Some("39156-5"), ["body mass index"], [], [("any", s(18.5), s(25.0))], None),
+    m!("body-fat", "Body Fat", "body", "%", Some("41982-0"), ["body fat", "body fat %", "body fat percentage", "bf%"], [], [], None),
+    m!("biological-age", "Biological Age", "body", "years", None, ["bio age", "phenotypic age", "phenoage"], [], [], None),
+    m!("resting-hr", "Resting Heart Rate", "vitals", "bpm", Some("40443-4"), ["resting heart rate", "rhr", "resting hr"], [], [("any", s(60.0), s(100.0))], None),
+    m!("hrv", "Heart Rate Variability", "vitals", "ms", Some("80404-7"), ["heart rate variability"], [], [], None),
+    m!("vo2max", "VO2 Max", "vitals", "mL/kg/min", Some("94122-9"), ["vo2 max", "vo2-max"], [], [], None),
+    m!("bp-systolic", "Blood Pressure, Systolic", "vitals", "mmHg", Some("8480-6"), ["systolic", "systolic bp", "sbp", "blood pressure systolic"], [], [("any", N, s(120.0))], None),
+    m!("bp-diastolic", "Blood Pressure, Diastolic", "vitals", "mmHg", Some("8462-4"), ["diastolic", "diastolic bp", "dbp", "blood pressure diastolic"], [], [("any", N, s(80.0))], None),
+];
+
+/// Schema v4: body composition and vital-sign markers.
+pub fn seed_vitals(db: &Db) -> Result<()> {
+    insert_units(db, VITALS_UNITS)?;
+    VITALS_MARKERS.iter().try_for_each(|m| seed_marker(db, m))
+}
+
+fn insert_units(db: &Db, units: &[(&str, &str, &str)]) -> Result<()> {
+    units.iter().try_for_each(|(sym, sys, desc)| {
         db.execute(
             "INSERT OR IGNORE INTO units (symbol, system, description) VALUES (?1, ?2, ?3)",
             &[text(sym), text(sys), text(desc)],
         )
         .map(|_| ())
-    })?;
+    })
+}
+
+pub fn seed(db: &Db) -> Result<()> {
+    insert_units(db, UNITS)?;
     GENERIC_CONVERSIONS.iter().try_for_each(|(from, to, f)| {
         db.execute(
             "INSERT OR IGNORE INTO unit_conversions (marker_id, from_unit, to_unit, factor, offset, builtin)

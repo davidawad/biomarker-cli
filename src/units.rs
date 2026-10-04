@@ -25,6 +25,7 @@ pub struct Conversion {
 pub fn unit_key(u: &str) -> String {
     let k = u
         .trim()
+        .trim_end_matches('.')
         .to_lowercase()
         .replace(['µ', 'μ'], "u")
         .replace("mcg", "ug")
@@ -44,9 +45,43 @@ pub fn unit_key(u: &str) -> String {
         "109/l" => "10^9/l".into(),
         "1012/l" => "10^12/l".into(),
         "percent" | "pct" => "%".into(),
+        "lbs" | "pound" | "pounds" => "lb".into(),
+        "year" | "yrs" | "yr" => "years".into(),
+        "beats/min" | "/min" => "bpm".into(),
         "iu/l" | "u/l" => k,
         "mlmin1.73m²" | "ml/min/1.73" | "ml/min/1.73m^2" => "ml/min/1.73m²".into(),
         _ => k,
+    }
+}
+
+/// Clean up a unit as written in a spreadsheet before spelling lookup:
+/// `μm³ (x10E3/uL)` -> `x10E3/uL` (a parenthesised unit wins), `%Hb` -> `%`,
+/// `x10E3/mm3` -> `x10E3/µL`, `μm³` -> `fL`.
+pub fn clean_unit(raw: &str) -> String {
+    let t = raw.trim();
+    let paren = t.find('(').and_then(|o| t[o..].find(')').map(|c| (o, o + c)));
+    let t = match paren {
+        Some((o, c)) => {
+            let inner = t[o + 1..c].trim();
+            let outer = format!("{}{}", &t[..o], &t[c + 1..]).trim().to_string();
+            if inner.contains(['/', '%', '^']) || outer.is_empty() {
+                inner.to_string()
+            } else {
+                outer
+            }
+        }
+        None => t.to_string(),
+    };
+    let k = t.to_lowercase().replace(['µ', 'μ'], "u").replace(' ', "");
+    if k.starts_with('%') {
+        return "%".into();
+    }
+    if matches!(k.as_str(), "um3" | "um³" | "um^3" | "cubicmicrons") {
+        return "fL".into();
+    }
+    match k.strip_suffix("/mm3").or_else(|| k.strip_suffix("/mm³")) {
+        Some(_) => format!("{}/µL", &t[..t.rfind('/').unwrap_or(t.len())]),
+        None => t,
     }
 }
 
@@ -179,6 +214,19 @@ mod tests {
         assert_eq!(unit_key("K/uL"), unit_key("10^3/µL"));
         assert_eq!(unit_key("x10E9/L"), unit_key("10^9/L"));
         assert!(same_unit("MG/DL", "mg/dL"));
+        assert!(same_unit("lbs", "lb"));
+    }
+
+    #[test]
+    fn cleans_spreadsheet_units() {
+        assert_eq!(unit_key(&clean_unit("μm³ (x10E3/uL)")), unit_key("10^3/µL"));
+        assert_eq!(unit_key(&clean_unit("x10E3/uL")), unit_key("10^3/µL"));
+        assert_eq!(unit_key(&clean_unit("x10E3/mm3")), unit_key("10^3/µL"));
+        assert_eq!(clean_unit("%Hb"), "%");
+        assert_eq!(clean_unit("% of total"), "%");
+        assert_eq!(clean_unit("μm³"), "fL");
+        assert_eq!(clean_unit("mg/dL (fasting)"), "mg/dL");
+        assert_eq!(unit_key(&clean_unit("uIU/ml")), unit_key("µIU/mL"));
     }
 
     #[test]

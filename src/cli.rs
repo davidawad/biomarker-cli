@@ -106,7 +106,7 @@ pub enum Command {
     Add(AddArgs),
     /// Remove a measurement by id
     Rm(RmMeasurementArgs),
-    /// Import measurements from CSV, JSON or JSONL
+    /// Import measurements from CSV, JSON, JSONL or a spreadsheet (xlsx/xls/ods)
     Import(ImportArgs),
     /// Export measurements (CSV/JSON/JSONL, re-importable)
     Export(ExportArgs),
@@ -120,6 +120,9 @@ pub enum Command {
     Trend(TrendArgs),
     /// Show values outside reference/optimal ranges
     Flag(FlagArgs),
+    /// Qualitative results (e.g. "Negative", "1+ Abnormal") kept beside the numbers
+    #[command(alias = "obs")]
+    Observations(ObservationsArgs),
     /// Compare values between two dates
     Diff(DiffArgs),
     /// Database maintenance
@@ -311,9 +314,17 @@ pub enum RangeCmd {
         marker: Option<String>,
         #[arg(long, value_enum)]
         kind: Option<KindArg>,
+        /// Only ranges for this person (their own ranges plus the catalog's)
+        #[arg(short, long)]
+        person: Option<String>,
     },
     /// Remove a range by id
-    Rm { id: i64 },
+    Rm {
+        id: i64,
+        /// The id is a person-specific range (see `range list --person`)
+        #[arg(long)]
+        personal: bool,
+    },
 }
 
 #[derive(Debug, Args)]
@@ -338,6 +349,10 @@ pub struct RangeSetArgs {
     pub unit: Option<String>,
     #[arg(long)]
     pub note: Option<String>,
+    /// Set a range for this person only; it overrides the catalog ranges for them
+    /// at any age (--sex/--age-min/--age-max do not apply)
+    #[arg(short, long)]
+    pub person: Option<String>,
 }
 
 #[derive(Debug, Subcommand)]
@@ -442,6 +457,35 @@ pub enum InputFormat {
     Tsv,
     Json,
     Jsonl,
+    /// xlsx, xlsm, xlsb, xls or ods (detected from the extension)
+    Spreadsheet,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+pub enum Layout {
+    /// One row per measurement (marker, value, date columns), or one row per
+    /// date with several --value-column columns
+    Long,
+    /// One row per date, one column per marker
+    Wide,
+    /// One row per marker, one column per date (dates in the header row)
+    Transposed,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+pub enum QualitativeArg {
+    /// Count qualitative results in the summary and import nothing for them
+    Skip,
+    /// Store them as observations (see `biomarker observations`)
+    Store,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+pub enum RangesArg {
+    /// Keep the catalog's reference ranges
+    Catalog,
+    /// Set person-specific reference ranges from the sheet's ref low/high columns
+    Sheet,
 }
 
 #[derive(Debug, Args)]
@@ -457,10 +501,10 @@ pub struct ImportArgs {
     /// Column mapping FIELD=COLUMN (fields: person, marker, value, unit, date, time, lab, fasting, note, tags, qualifier)
     #[arg(long = "map", value_name = "FIELD=COLUMN", value_delimiter = ',')]
     pub maps: Vec<String>,
-    /// TOML mapping file ([columns], [defaults], [markers])
+    /// TOML mapping file ([columns], [defaults], [markers]/[rename], [units], [dates], [skip], [category], ranges)
     #[arg(long, value_name = "FILE")]
     pub mapping: Option<PathBuf>,
-    /// Wide layout: one row per date, one column per marker (`marker` or `marker (unit)`)
+    /// Wide layout: one row per date, one column per marker (`marker` or `marker (unit)`); same as --layout wide
     #[arg(long)]
     pub wide: bool,
     /// Default unit when a row has none (otherwise the marker's canonical unit)
@@ -493,6 +537,46 @@ pub struct ImportArgs {
     /// CSV input delimiter (default: config csv_delimiter, or tab for .tsv)
     #[arg(long, value_name = "CHAR")]
     pub input_delimiter: Option<String>,
+    /// Spreadsheet: sheet to read (default: the first sheet)
+    #[arg(long, value_name = "NAME")]
+    pub sheet: Option<String>,
+    /// Spreadsheet: list the workbook's sheets with their dimensions and exit
+    #[arg(long)]
+    pub list_sheets: bool,
+    /// Row layout (default: long, or transposed for a spreadsheet whose header
+    /// row holds several dates)
+    #[arg(long, value_enum)]
+    pub layout: Option<Layout>,
+    /// Spreadsheet: 1-based header row (default: auto-detected)
+    #[arg(long, value_name = "N")]
+    pub header_row: Option<usize>,
+    /// Transposed: column holding the test name (header text or letter; default: Test/Marker/Name, else the first column)
+    #[arg(long, value_name = "COL")]
+    pub marker_col: Option<String>,
+    /// Transposed: column holding the unit (default: Units/Unit)
+    #[arg(long, value_name = "COL")]
+    pub unit_col: Option<String>,
+    /// Transposed: column holding the reference low (default: ref. low/Low)
+    #[arg(long, value_name = "COL")]
+    pub ref_low_col: Option<String>,
+    /// Transposed: column holding the reference high (default: ref. high/High)
+    #[arg(long, value_name = "COL")]
+    pub ref_high_col: Option<String>,
+    /// Transposed: rows with a name but no values are section headers whose
+    /// title becomes the category of markers created below them (default: on)
+    #[arg(long, value_name = "BOOL", num_args = 0..=1, default_missing_value = "true")]
+    pub sections_as_category: Option<bool>,
+    /// Long: import a value column as a marker, SLUG=HEADER or SLUG=HEADER:UNIT
+    /// (repeatable), e.g. `weight=Weight (lbs.):lb`
+    #[arg(long = "value-column", value_name = "SLUG=HEADER[:UNIT]")]
+    pub value_columns: Vec<String>,
+    /// Non-numeric results such as "Negative" or "1+ Abnormal" (default for
+    /// spreadsheets: skip; text formats treat them as invalid rows)
+    #[arg(long, value_enum)]
+    pub qualitative: Option<QualitativeArg>,
+    /// Reference ranges from the sheet (default: catalog; mapping `ranges = "sheet"`)
+    #[arg(long, value_enum)]
+    pub ranges: Option<RangesArg>,
 }
 
 #[derive(Debug, Args, Clone, Default)]
@@ -553,6 +637,15 @@ pub struct QueryArgs {
     pub reverse: bool,
     #[arg(long, short = 'n')]
     pub limit: Option<usize>,
+}
+
+#[derive(Debug, Args)]
+pub struct ObservationsArgs {
+    #[command(flatten)]
+    pub filter: FilterArgs,
+    /// Only observations flagged abnormal
+    #[arg(long)]
+    pub flagged: bool,
 }
 
 #[derive(Debug, Args)]
