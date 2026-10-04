@@ -95,6 +95,14 @@ fn init_and_catalog_seeded() {
 }
 
 #[test]
+fn source_date_epoch_pins_generated_at() {
+    let e = Env::new();
+    let out = e.cmd().args(["person", "list", "-f", "json"]).env("SOURCE_DATE_EPOCH", "1767225600").output().unwrap();
+    let v: Value = serde_json::from_slice(&out.stdout).unwrap();
+    assert_eq!(v["generated_at"], "2026-01-01T00:00:00Z");
+}
+
+#[test]
 fn person_crud() {
     let e = Env::new();
     e.people();

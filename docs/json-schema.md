@@ -36,7 +36,7 @@ process exit codes.
 |----------------|-----------------|-------|
 | `schema`       | string          | always `biomarker/v1` |
 | `kind`         | string          | what `data` contains (see below) |
-| `generated_at` | string          | UTC timestamp |
+| `generated_at` | string          | UTC timestamp (`$SOURCE_DATE_EPOCH` pins it for reproducible output) |
 | `count`        | integer         | present when `data` is an array |
 | `data`         | array \| object | the payload |
 | *(extra)*      | any             | command-specific metadata, e.g. `unit_system`, `range_flavor`, `windows`, `person`, `from`, `to`, `config_path`, `current_version` |
