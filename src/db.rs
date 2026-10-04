@@ -52,18 +52,14 @@ fn runtime() -> Result<Runtime> {
     RuntimeBuilder::current_thread().build().map_err(|e| AppError::db(format!("starting fsqlite runtime: {e}")))
 }
 
-/// Create the database's directory when missing, owner-only (0700 on Unix)
-/// so the sealed files are not even listable by other local users. An
-/// existing directory the user chose is left as it is.
+/// Create the database's directory when missing, owner-only (0700 on Unix,
+/// an owner-only ACL on Windows) so the sealed files are not even listable by
+/// other local users. An existing directory the user chose is left as it is.
 fn ensure_parent(path: &Path) -> Result<()> {
     if let Some(parent) = path.parent().filter(|p| !p.as_os_str().is_empty() && !p.exists()) {
         std::fs::create_dir_all(parent).map_err(|e| AppError::io(format!("creating {}: {e}", parent.display())))?;
-        #[cfg(unix)]
-        {
-            use std::os::unix::fs::PermissionsExt;
-            std::fs::set_permissions(parent, std::fs::Permissions::from_mode(0o700))
-                .map_err(|e| AppError::io(format!("restricting {}: {e}", parent.display())))?;
-        }
+        crate::perms::restrict_dir(parent)
+            .map_err(|e| AppError::io(format!("restricting {}: {e}", parent.display())))?;
     }
     Ok(())
 }

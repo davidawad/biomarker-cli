@@ -8,6 +8,7 @@ use crate::crypto::{self, KekKind};
 use crate::error::Result;
 use crate::keys;
 use crate::output::{to_record, Report};
+use crate::perms::{self, Access};
 use crate::vault::{self, State};
 
 pub fn audit(ctx: &Ctx, cmd: AuditCmd) -> Result<()> {
@@ -33,16 +34,6 @@ fn check(name: &str, status: &str, detail: impl Into<String>) -> crate::output::
     to_record(&json!({"check": name, "status": status, "detail": detail.into()}))
 }
 
-#[cfg(unix)]
-fn mode(p: &std::path::Path) -> Option<u32> {
-    use std::os::unix::fs::PermissionsExt;
-    std::fs::metadata(p).ok().map(|m| m.permissions().mode() & 0o777)
-}
-#[cfg(not(unix))]
-fn mode(_: &std::path::Path) -> Option<u32> {
-    None
-}
-
 type Row = crate::output::Record;
 
 fn database_row(state: &State, path: &std::path::Path, insecure: bool) -> Row {
@@ -63,9 +54,14 @@ fn database_row(state: &State, path: &std::path::Path, insecure: bool) -> Row {
 }
 
 fn key_rows(ctx: &Ctx, source: keys::Source) -> Vec<Row> {
+    let backend = keys::keychain_backend();
     let keychain = match keys::keychain_status() {
-        Ok(()) => check("keychain", "ok", "OS keychain available"),
-        Err(e) => check("keychain", "warn", format!("unavailable: {e}")),
+        Ok(()) => check("keychain", "ok", format!("{backend} available")),
+        Err(e) => check(
+            "keychain",
+            "warn",
+            format!("{backend} unavailable: {e}; falling back to {} / passphrase prompt", keys::ENV_KEY),
+        ),
     };
     let env_key = match keys::parse_env_key(keys::ENV_KEY) {
         Ok(Some(keys::EnvKey::Raw(_))) => check("env_key", "ok", format!("{} is set (raw 256-bit key)", keys::ENV_KEY)),
@@ -130,16 +126,16 @@ fn sealed_rows(ctx: &Ctx, path: &std::path::Path, source: keys::Source, h: &cryp
     rows
 }
 
-/// File-mode rows for the database and its audit log, and plaintext sidecar detection.
+/// Permission rows (Unix mode or Windows ACL) for the database, its audit
+/// log and its directory, and plaintext sidecar detection.
 fn file_rows(state: &State, path: &std::path::Path) -> Vec<Row> {
     let mut rows = Vec::new();
     if !matches!(state, State::Missing) {
-        for p in [path.to_path_buf(), crate::audit::path_for(path)] {
-            match mode(&p) {
-                Some(m) if m & 0o077 != 0 => {
-                    rows.push(check("permissions", "warn", format!("{} is mode {m:o}; expected 600", p.display())))
-                }
-                Some(m) => rows.push(check("permissions", "ok", format!("{} is mode {m:o}", p.display()))),
+        let dir = path.parent().filter(|d| !d.as_os_str().is_empty()).map(std::path::Path::to_path_buf);
+        for p in [Some(path.to_path_buf()), Some(crate::audit::path_for(path)), dir].into_iter().flatten() {
+            match perms::inspect(&p) {
+                Some(Access::Shared(d)) => rows.push(check("permissions", "warn", format!("{} is {d}", p.display()))),
+                Some(Access::Private(d)) => rows.push(check("permissions", "ok", format!("{} is {d}", p.display()))),
                 None => {}
             }
         }

@@ -355,32 +355,37 @@ pub fn sidecar(path: &Path, suffix: &str) -> PathBuf {
     sibling(path, suffix)
 }
 
-/// Create a file readable and writable only by the owner (0600 on Unix).
-pub fn create_private(path: &Path) -> std::io::Result<std::fs::File> {
-    let mut o = std::fs::OpenOptions::new();
-    o.write(true).create(true).truncate(true);
+/// Open `path` with `o`, creating it readable and writable only by the owner
+/// (0600 on Unix, an owner-only ACL on Windows; see [`crate::perms`]).
+fn open_private(path: &Path, o: &mut std::fs::OpenOptions) -> std::io::Result<std::fs::File> {
     #[cfg(unix)]
     {
         use std::os::unix::fs::OpenOptionsExt;
         o.mode(0o600);
     }
-    o.open(path)
+    let existed = path.exists();
+    let f = o.open(path)?;
+    if !existed {
+        crate::perms::restrict_file(path)?;
+    }
+    Ok(f)
 }
 
-/// Open (creating 0600 if needed) a file for appending.
+/// Create (or truncate) a file readable and writable only by the owner.
+pub fn create_private(path: &Path) -> std::io::Result<std::fs::File> {
+    open_private(path, std::fs::OpenOptions::new().write(true).create(true).truncate(true))
+}
+
+/// Open (creating it owner-only if needed) a file for appending.
 pub fn open_private_append(path: &Path) -> std::io::Result<std::fs::File> {
-    let mut o = std::fs::OpenOptions::new();
-    o.append(true).create(true).read(true);
-    #[cfg(unix)]
-    {
-        use std::os::unix::fs::OpenOptionsExt;
-        o.mode(0o600);
-    }
-    o.open(path)
+    open_private(path, std::fs::OpenOptions::new().append(true).create(true).read(true))
 }
 
 /// Atomically replace `path` with `bytes`: write a private temp file in the
 /// same directory, fsync it, rename it over `path`, fsync the directory.
+/// `std::fs::rename` replaces an existing target on Windows too
+/// (`MoveFileExW` with `MOVEFILE_REPLACE_EXISTING`); directories cannot be
+/// opened for fsync there, so that last step is skipped.
 pub fn atomic_write(path: &Path, bytes: &[u8]) -> Result<()> {
     let tmp = sibling(path, &format!(".tmp-{}", std::process::id()));
     let res = (|| {

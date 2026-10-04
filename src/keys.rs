@@ -4,9 +4,12 @@
 //! KEK (see [`crate::crypto`]). The KEK comes from, in order (configurable
 //! with the `key_source` setting / `BIOMARKER_KEY_SOURCE`):
 //!
-//! 1. the OS keychain: macOS Keychain (security-framework) or the freedesktop
-//!    Secret Service on Linux (keyring-core + zbus store). A random 256-bit
-//!    KEK is stored per database under service `biomarker-cli`;
+//! 1. the OS keychain: macOS Keychain (security-framework), the freedesktop
+//!    Secret Service on Linux/BSD (keyring-core + zbus store) or the Windows
+//!    Credential Manager (keyring-core + windows-native store). A random
+//!    256-bit KEK is stored per database under service `biomarker-cli`.
+//!    Without a usable keychain (headless server, CI, no D-Bus session) the
+//!    next sources are used;
 //! 2. the `BIOMARKER_KEY` environment variable: `raw:<64 hex chars>` is used
 //!    directly as the KEK, anything else is a passphrase run through Argon2id;
 //! 3. an interactive passphrase (Argon2id), when stdin is a terminal.
@@ -152,8 +155,14 @@ pub fn new_kek(source: Source, env_var: &str, db_id: [u8; crypto::ID_LEN], what:
                 Ok(()) => {
                     let kek = Key::random()?;
                     let staged = kek_next_account(&db_id);
-                    keychain::store(&staged, kek.as_bytes())?;
-                    return Ok(NewKek { kind: KekKind::Raw, kek, source: *s, staged: Some(staged), db_id });
+                    // A reachable but unusable keychain (e.g. a D-Bus session
+                    // without a Secret Service provider) falls through too.
+                    match keychain::store(&staged, kek.as_bytes()) {
+                        Ok(()) => {
+                            return Ok(NewKek { kind: KekKind::Raw, kek, source: *s, staged: Some(staged), db_id })
+                        }
+                        Err(e) => why.push(format!("keychain unusable ({})", e.message)),
+                    }
                 }
                 Err(e) => why.push(format!("keychain unavailable ({e})")),
             },
@@ -277,6 +286,11 @@ pub fn keychain_status() -> std::result::Result<(), String> {
     keychain::available()
 }
 
+/// Name of this platform's keychain backend, e.g. "Windows Credential Manager".
+pub fn keychain_backend() -> &'static str {
+    keychain::BACKEND
+}
+
 /// Time-limited cached KEKs created by `db unlock`.
 pub mod session {
     use super::{keychain, session_account, Key, KEY_LEN};
@@ -354,7 +368,7 @@ mod keychain {
         }
     }
 
-    #[cfg(all(unix, not(target_os = "macos")))]
+    #[cfg(any(windows, all(unix, not(target_os = "macos"))))]
     mod imp {
         use std::sync::OnceLock;
 
@@ -362,19 +376,26 @@ mod keychain {
         use crate::error::Result;
         use keyring_core::{Entry, Error};
 
-        /// Connect to the Secret Service once per process.
+        #[cfg(windows)]
+        use windows_native_keyring_store::Store;
+        #[cfg(not(windows))]
+        use zbus_secret_service_keyring_store::Store;
+
+        #[cfg(windows)]
+        const NAME: &str = "credential manager";
+        #[cfg(not(windows))]
+        const NAME: &str = "secret service";
+
+        /// Open the platform store once per process. On Linux this connects
+        /// to the D-Bus session bus, which fails on headless machines.
         fn connect() -> std::result::Result<(), String> {
             static INIT: OnceLock<std::result::Result<(), String>> = OnceLock::new();
-            INIT.get_or_init(|| {
-                zbus_secret_service_keyring_store::Store::new()
-                    .map(|s| keyring_core::set_default_store(s))
-                    .map_err(|e| e.to_string())
-            })
-            .clone()
+            INIT.get_or_init(|| Store::new().map(|s| keyring_core::set_default_store(s)).map_err(|e| e.to_string()))
+                .clone()
         }
         fn entry(account: &str) -> Result<Entry> {
-            connect().map_err(|e| key_error(format!("secret service: {e}")))?;
-            Entry::new(KEYCHAIN_SERVICE, account).map_err(|e| key_error(format!("secret service: {e}")))
+            connect().map_err(|e| key_error(format!("{NAME}: {e}")))?;
+            Entry::new(KEYCHAIN_SERVICE, account).map_err(|e| key_error(format!("{NAME}: {e}")))
         }
 
         pub fn available() -> std::result::Result<(), String> {
@@ -384,22 +405,22 @@ mod keychain {
             match entry(account)?.get_secret() {
                 Ok(v) => Ok(Some(v)),
                 Err(Error::NoEntry) => Ok(None),
-                Err(e) => Err(key_error(format!("secret service: {e}"))),
+                Err(e) => Err(key_error(format!("{NAME}: {e}"))),
             }
         }
         pub fn store(account: &str, secret: &[u8]) -> Result<()> {
-            entry(account)?.set_secret(secret).map_err(|e| key_error(format!("secret service: {e}")))
+            entry(account)?.set_secret(secret).map_err(|e| key_error(format!("{NAME}: {e}")))
         }
         pub fn delete(account: &str) -> Result<bool> {
             match entry(account)?.delete_credential() {
                 Ok(()) => Ok(true),
                 Err(Error::NoEntry) => Ok(false),
-                Err(e) => Err(key_error(format!("secret service: {e}"))),
+                Err(e) => Err(key_error(format!("{NAME}: {e}"))),
             }
         }
     }
 
-    #[cfg(not(unix))]
+    #[cfg(not(any(unix, windows)))]
     mod imp {
         use super::super::key_error;
         use crate::error::Result;
@@ -417,6 +438,15 @@ mod keychain {
             Ok(false)
         }
     }
+
+    #[cfg(target_os = "macos")]
+    pub const BACKEND: &str = "macOS Keychain";
+    #[cfg(windows)]
+    pub const BACKEND: &str = "Windows Credential Manager";
+    #[cfg(all(unix, not(target_os = "macos")))]
+    pub const BACKEND: &str = "freedesktop Secret Service (D-Bus)";
+    #[cfg(not(any(unix, windows)))]
+    pub const BACKEND: &str = "none";
 
     /// Tests and CI can force the keychain off (`BIOMARKER_NO_KEYCHAIN=1`) so
     /// they never touch the developer's real keychain.
