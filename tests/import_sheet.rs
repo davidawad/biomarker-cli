@@ -114,23 +114,26 @@ fn lists_sheets_with_dimensions() {
     e.cmd().args(["import", &repo("examples/wide.csv"), "--list-sheets"]).assert().code(2);
 }
 
+fn matched_pairs(v: &Value) -> Vec<(String, String)> {
+    v["data"]["matched"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|m| (m["source"].as_str().unwrap().into(), m["marker"].as_str().unwrap().into()))
+        .collect()
+}
+
 #[test]
-fn transposed_dashboard() {
+fn transposed_dashboard_report() {
     let e = Env::new();
-    let book = e.workbook();
-    let v = e.json(&["import", &book, "-p", "alex"]);
+    let v = e.json(&["import", &e.workbook(), "-p", "alex"]);
     let d = &v["data"];
     assert_eq!(d["layout"], "transposed", "{v}");
     assert_eq!(d["sheet"], "Labs");
     assert_eq!(d["header_row"], 3);
     assert_eq!(d["inserted"], 43);
     assert_eq!(d["invalid"], 0);
-    let matched: Vec<(String, String)> = d["matched"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|m| (m["source"].as_str().unwrap().into(), m["marker"].as_str().unwrap().into()))
-        .collect();
+    let matched = matched_pairs(&v);
     for (src, slug) in [
         ("Low-Density Lipoprotein (LDL-C)", "ldl-c"),
         ("ALT (SGPT)", "alt"),
@@ -150,7 +153,12 @@ fn transposed_dashboard() {
         d["cells_per_date"],
         serde_json::json!({"2024-03-01": 11, "2024-08-15": 11, "2024-12-02": 10, "2025-03-11": 11})
     );
+}
 
+#[test]
+fn transposed_dashboard_units_values_and_ranges() {
+    let e = Env::new();
+    e.run(&["import", &e.workbook(), "-p", "alex"]);
     // units normalised to catalog spellings; 1:1 units collapse to the canonical one
     let unit = |m: &str| e.query(m)[0]["unit_raw"].as_str().unwrap().to_string();
     assert_eq!(unit("wbc"), "10^3/µL");
@@ -272,13 +280,16 @@ fn long_sheet_with_value_columns() {
     approx(&e2.query("weight")[3]["value_canonical"], 176.4 * 0.453_592_37);
 }
 
+/// Import the synthetic dashboard with examples/dashboard-mapping.toml; returns the report.
+fn import_with_mapping(e: &Env) -> Value {
+    let (book, map) = (e.workbook(), repo("examples/dashboard-mapping.toml"));
+    e.json(&["import", &book, "-p", "alex", "--mapping", &map, "--create-markers", "--qualitative", "store"])
+}
+
 #[test]
-fn mapping_renames_dates_skip_and_sheet_ranges() {
+fn mapping_renames_dates_and_skip() {
     let e = Env::new();
-    let book = e.workbook();
-    let map = repo("examples/dashboard-mapping.toml");
-    let args = ["import", &book, "-p", "alex", "--mapping", &map, "--create-markers", "--qualitative", "store"];
-    let v = e.json(&args);
+    let v = import_with_mapping(&e);
     let d = &v["data"];
     assert_eq!(d["inserted"], 43, "{v}");
     assert_eq!(d["skipped_names"], serde_json::json!(["Lipoprotein Particle Score", "Control Sample"]));
@@ -292,9 +303,14 @@ fn mapping_renames_dates_skip_and_sheet_ranges() {
     assert_eq!(obs["data"][0]["range_low"], 6.0);
     assert_eq!(obs["data"][0]["range_high"], 10.0);
     assert_eq!(obs["data"][0]["note"], "range 6-10");
+}
 
+#[test]
+fn mapping_sheet_ranges_are_person_specific() {
+    let e = Env::new();
+    let v = import_with_mapping(&e);
     // ranges = "sheet": person ranges replace the catalog's for alex only
-    assert_eq!(d["ranges_set"].as_array().unwrap().len(), 12);
+    assert_eq!(v["data"]["ranges_set"].as_array().unwrap().len(), 12);
     let ldl = e.query("ldl-c");
     approx(&ldl[0]["ref_high"], 99.0);
     assert_eq!(ldl[0]["ref_flag"], "high");
@@ -306,24 +322,29 @@ fn mapping_renames_dates_skip_and_sheet_ranges() {
     e.run(&["add", "ldl-c", "99.5", "-p", "sam", "--date", "2024-01-01"]);
     let sam = e.json(&["query", "-p", "sam"]);
     approx(&sam["data"][0]["ref_high"], 100.0);
+}
 
-    // idempotent: a second run writes nothing new
-    let again = e.json(&args);
+fn person_range_count(e: &Env, person: &str) -> usize {
+    e.json(&["range", "list", "-p", person])["data"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .filter(|r| r["person"] == person)
+        .count()
+}
+
+#[test]
+fn mapping_import_is_idempotent() {
+    let e = Env::new();
+    import_with_mapping(&e);
+    let again = import_with_mapping(&e);
     assert_eq!(again["data"]["inserted"], 0);
     assert_eq!(again["data"]["skipped"], 43);
     assert_eq!(again["data"]["observations"]["skipped"], 11);
     assert_eq!(again["data"]["markers_created"], serde_json::json!([]));
     assert_eq!(e.json(&["query", "-p", "alex"])["count"], 43);
     assert_eq!(e.json(&["observations"])["count"], 11);
-    assert_eq!(
-        e.json(&["range", "list", "-p", "alex"])["data"]
-            .as_array()
-            .unwrap()
-            .iter()
-            .filter(|r| r["person"] == "alex")
-            .count(),
-        12
-    );
+    assert_eq!(person_range_count(&e, "alex"), 12);
     assert_eq!(e.json(&["db", "check"])["data"]["ok"], true);
 }
 

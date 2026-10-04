@@ -1146,11 +1146,12 @@ fn set_sheet_ranges(
     Ok(())
 }
 
-/// Human-readable import report (stderr): what matched, what did not, and why.
-pub fn render_report(s: &Summary, qualitative: Option<QualitativeArg>) -> String {
+fn str_of(v: &Value) -> &str {
+    v.as_str().unwrap_or("")
+}
+
+fn report_header(o: &mut String, s: &Summary) {
     use std::fmt::Write;
-    let mut o = String::new();
-    let width = |items: &mut dyn Iterator<Item = usize>| items.max().unwrap_or(0);
     let _ = write!(o, "import {} ({}", s.source, s.format);
     if let Some(sh) = &s.sheet {
         let _ = write!(o, ", sheet \"{sh}\"");
@@ -1160,11 +1161,15 @@ pub fn render_report(s: &Summary, qualitative: Option<QualitativeArg>) -> String
         let _ = write!(o, ", header row {h}");
     }
     let _ = writeln!(o, ")");
-    let w = width(&mut s.matched.iter().map(|m| m["source"].as_str().unwrap_or("").chars().count()));
+}
+
+fn report_matching(o: &mut String, s: &Summary) {
+    use std::fmt::Write;
+    let w = s.matched.iter().map(|m| str_of(&m["source"]).chars().count()).max().unwrap_or(0);
     let _ = writeln!(o, "matched ({}):", s.matched.len());
     for m in &s.matched {
-        let src = m["source"].as_str().unwrap_or("");
-        let _ = writeln!(o, "  {src}{} -> {}", " ".repeat(w - src.chars().count()), m["marker"].as_str().unwrap_or(""));
+        let src = str_of(&m["source"]);
+        let _ = writeln!(o, "  {src}{} -> {}", " ".repeat(w - src.chars().count()), str_of(&m["marker"]));
     }
     if !s.markers_created.is_empty() {
         let _ = writeln!(o, "created ({}): {}", s.markers_created.len(), s.markers_created.join(", "));
@@ -1173,69 +1178,72 @@ pub fn render_report(s: &Summary, qualitative: Option<QualitativeArg>) -> String
         let _ = writeln!(o, "unmatched ({}, skipped; use --create-markers or a [rename] entry):", s.unmatched.len());
         for u in &s.unmatched {
             let n = u["cells"].as_u64().unwrap_or(0);
-            let _ =
-                writeln!(o, "  {} ({n} value{})", u["source"].as_str().unwrap_or(""), if n == 1 { "" } else { "s" });
+            let _ = writeln!(o, "  {} ({n} value{})", str_of(&u["source"]), if n == 1 { "" } else { "s" });
         }
     }
     if !s.skipped_names.is_empty() {
         let _ = writeln!(o, "skipped by mapping ({}): {}", s.skipped_names.len(), s.skipped_names.join(", "));
     }
-    if s.qualitative > 0 {
-        let how = match qualitative {
-            Some(QualitativeArg::Store) => "stored as observations",
-            _ => "skipped; use --qualitative store to keep them",
-        };
-        let _ = writeln!(o, "qualitative ({}, {how}):", s.qualitative);
-        for q in &s.qualitative_values {
-            let _ = writeln!(
-                o,
-                "  {}  {}: {}",
-                q["date"].as_str().unwrap_or(""),
-                q["marker"].as_str().unwrap_or(""),
-                q["text"].as_str().unwrap_or("")
-            );
-        }
+}
+
+fn report_qualitative(o: &mut String, s: &Summary, qualitative: Option<QualitativeArg>) {
+    use std::fmt::Write;
+    if s.qualitative == 0 {
+        return;
     }
+    let how = match qualitative {
+        Some(QualitativeArg::Store) => "stored as observations",
+        _ => "skipped; use --qualitative store to keep them",
+    };
+    let _ = writeln!(o, "qualitative ({}, {how}):", s.qualitative);
+    for q in &s.qualitative_values {
+        let _ = writeln!(o, "  {}  {}: {}", str_of(&q["date"]), str_of(&q["marker"]), str_of(&q["text"]));
+    }
+}
+
+fn report_corrections(o: &mut String, s: &Summary) {
+    use std::fmt::Write;
     if !s.date_corrections.is_empty() {
         let _ = writeln!(o, "date corrections ({}):", s.date_corrections.len());
         for d in &s.date_corrections {
-            let _ = writeln!(
-                o,
-                "  {} -> {} ({} values)",
-                d["from"].as_str().unwrap_or(""),
-                d["to"].as_str().unwrap_or(""),
-                d["cells"]
-            );
+            let _ = writeln!(o, "  {} -> {} ({} values)", str_of(&d["from"]), str_of(&d["to"]), d["cells"]);
         }
     }
     if !s.ranges_set.is_empty() {
+        let b =
+            |v: &Value| v.as_f64().map_or_else(String::new, |x| crate::sheet::fmt_number(crate::util::round_to(x, 4)));
         let _ = writeln!(o, "reference ranges from the sheet ({}):", s.ranges_set.len());
         for r in &s.ranges_set {
-            let b = |v: &Value| {
-                v.as_f64().map_or_else(String::new, |x| crate::sheet::fmt_number(crate::util::round_to(x, 4)))
-            };
-            let _ = writeln!(
-                o,
-                "  {}: {}..{} {}",
-                r["marker"].as_str().unwrap_or(""),
-                b(&r["low"]),
-                b(&r["high"]),
-                r["unit"].as_str().unwrap_or("")
-            );
+            let _ =
+                writeln!(o, "  {}: {}..{} {}", str_of(&r["marker"]), b(&r["low"]), b(&r["high"]), str_of(&r["unit"]));
         }
     }
-    s.warnings.iter().for_each(|w| {
+}
+
+fn report_problems_and_dates(o: &mut String, s: &Summary) {
+    use std::fmt::Write;
+    for w in &s.warnings {
         let _ = writeln!(o, "warning: {w}");
-    });
-    s.errors.iter().take(20).for_each(|e| {
-        let _ = writeln!(o, "invalid: line {}: {}", e["line"], e["error"].as_str().unwrap_or(""));
-    });
+    }
+    for e in s.errors.iter().take(20) {
+        let _ = writeln!(o, "invalid: line {}: {}", e["line"], str_of(&e["error"]));
+    }
     if !s.cells_per_date.is_empty() {
         let _ = writeln!(o, "values per date:");
         for (d, n) in &s.cells_per_date {
             let _ = writeln!(o, "  {d}  {n}");
         }
     }
+}
+
+/// Human-readable import report (stderr): what matched, what did not, and why.
+pub fn render_report(s: &Summary, qualitative: Option<QualitativeArg>) -> String {
+    let mut o = String::new();
+    report_header(&mut o, s);
+    report_matching(&mut o, s);
+    report_qualitative(&mut o, s, qualitative);
+    report_corrections(&mut o, s);
+    report_problems_and_dates(&mut o, s);
     o
 }
 
