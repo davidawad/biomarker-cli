@@ -19,6 +19,8 @@ pub enum ErrorKind {
     Io,
     /// Configuration file or value problem.
     Config,
+    /// Encryption key missing or wrong (database cannot be unlocked).
+    Key,
 }
 
 impl ErrorKind {
@@ -31,6 +33,7 @@ impl ErrorKind {
             Self::Database => 5,
             Self::Io => 6,
             Self::Config => 7,
+            Self::Key => 8,
         }
     }
 
@@ -43,6 +46,7 @@ impl ErrorKind {
             Self::Database => "database",
             Self::Io => "io",
             Self::Config => "config",
+            Self::Key => "key",
         }
     }
 }

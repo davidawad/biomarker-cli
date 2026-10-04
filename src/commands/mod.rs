@@ -8,6 +8,7 @@ pub mod measure;
 pub mod misc;
 pub mod person;
 pub mod range;
+pub mod security;
 pub mod trend;
 pub mod unit;
 
@@ -41,6 +42,8 @@ pub fn dispatch(ctx: &Ctx, cmd: Command) -> Result<Status> {
         Command::Diff(a) => trend::diff(ctx, a).map(|()| 0),
         Command::Db(c) => db_cmd::run(ctx, c).map(|()| 0),
         Command::Config(c) => config_cmd::run(ctx, c).map(|()| 0),
+        Command::Audit(c) => security::audit(ctx, c).map(|()| 0),
+        Command::Doctor => security::doctor(ctx).map(|()| 0),
         Command::Completions(a) => misc::completions(a).map(|()| 0),
         Command::Man(a) => misc::man(a).map(|()| 0),
     }

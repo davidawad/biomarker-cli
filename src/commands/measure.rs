@@ -243,5 +243,5 @@ pub fn export(ctx: &Ctx, a: ExportArgs) -> Result<()> {
     if !ctx.quiet() && out.output.is_some() {
         eprintln!("exported {} measurement(s)", rows.len());
     }
-    crate::output::emit(&report, &out)
+    ctx.emit_with(&report, &out)
 }

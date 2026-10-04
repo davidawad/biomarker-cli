@@ -34,6 +34,10 @@ unset BIOMARKER_CONFIG BIOMARKER_PERSON BIOMARKER_FORMAT BIOMARKER_UNITS \
 export HOME="$tmp" XDG_CONFIG_HOME="$tmp/config" XDG_DATA_HOME="$tmp/data"
 export BIOMARKER_DB="$tmp/labs.db" BIOMARKER_TZ=UTC SOURCE_DATE_EPOCH=1767225600
 export BIOMARKER_COLOR="${BIOMARKER_COLOR:-never}"
+# The database is encrypted; use a fixed throwaway test key from the
+# environment and never touch the caller's OS keychain.
+export BIOMARKER_KEY_SOURCE=env BIOMARKER_NO_KEYCHAIN=1
+export BIOMARKER_KEY=raw:000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
 cd "$repo"
 
 # `*` = also shown in the hero screenshot, `-` = full session only. A line

@@ -125,6 +125,11 @@ $ biomarker trend -m apob --format json | head -n 32
   can consume it.
 * Layered configuration: defaults < TOML file < `BIOMARKER_*` env < flags.
   `config show --effective` shows where each value came from.
+* **Encrypted at rest by default.** The database is an XChaCha20-Poly1305
+  sealed container. Its key lives in the macOS Keychain or Linux Secret
+  Service, in `BIOMARKER_KEY`, or behind an Argon2id passphrase. An encrypted
+  audit log records who did what. Exports can be age-encrypted. See
+  [Encryption](#encryption).
 
 > **Not medical advice.** The built-in ranges are typical adult values for
 > orientation only. Labs differ, so set your lab's ranges with
@@ -185,6 +190,27 @@ ID  PERSON  TAKEN_AT    MARKER   QUALIFIER  VALUE  UNIT   REF_LOW  REF_HIGH  FLA
  2  alex    2024-03-05  glucose             91.88  mg/dL    70.00     99.00  normal
 ```
 
+## Encryption
+
+Everything biomarker writes about people is encrypted. On first use `db init`
+(or any command) creates an encrypted database. Its key goes in the OS
+keychain or comes from `BIOMARKER_KEY`, or you are prompted for a passphrase.
+
+```sh
+export BIOMARKER_KEY="raw:$(openssl rand -hex 32)"   # CI / scripts; or a passphrase
+biomarker db encrypt            # migrate an existing plaintext database in place
+biomarker db rekey --to passphrase [--rotate-dek]
+biomarker db unlock --ttl 30m   # cache a passphrase-derived key; `db lock` ends it
+biomarker doctor                # encryption, keys, permissions, audit-log check
+biomarker audit log -n 20       # who did what (no values are logged)
+biomarker export --recipient age1... -o labs.csv.age   # or --encrypt-output with a passphrase
+```
+
+Plaintext databases need `--insecure-plaintext` and print a warning every
+time. `docs/security.md` covers the design, the threat model and what is
+*not* protected (memory, swap, a compromised account). Back up your key:
+without it the data cannot be recovered.
+
 ## Commands
 
 | command | purpose |
@@ -203,6 +229,7 @@ ID  PERSON  TAKEN_AT    MARKER   QUALIFIER  VALUE  UNIT   REF_LOW  REF_HIGH  FLA
 | `flag` | out-of-range values (`--latest`, `--exit-code` → status 10) |
 | `diff FROM TO` | compare values at two dates (`--exact`, `--changed`) |
 | `db path/init/migrate/backup/vacuum/check/info` | maintenance. Migrations are versioned and applied automatically |
+| `db encrypt/rekey/unlock/lock`, `doctor`, `audit log` | encryption at rest, key management and the audit trail (see [docs/security.md](docs/security.md)) |
 | `config show [--effective]/set/unset/path/keys` | configuration |
 | `completions bash\|zsh\|fish\|nushell\|elvish\|powershell` | shell completions |
 | `man [--dir DIR]` | roff man page(s) |
@@ -317,7 +344,7 @@ versioned envelope:
 ```
 
 The fields, all `kind`s, the error object, and the exit codes (0 ok, 1 error,
-2 usage, 3 not found, 4 invalid data, 5 database, 6 io, 7 config, 10 flagged
+2 usage, 3 not found, 4 invalid data, 5 database, 6 io, 7 config, 8 key, 10 flagged
 values with `flag --exit-code`) are documented in
 [docs/json-schema.md](docs/json-schema.md).
 

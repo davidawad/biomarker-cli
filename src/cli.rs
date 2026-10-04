@@ -15,7 +15,7 @@ use crate::output::Format;
         Data lives in a local FrankenSQLite (fsqlite) database. Every command can \
         emit table, json, jsonl, csv or tsv output; JSON output uses the versioned \
         `biomarker/v1` envelope documented in docs/json-schema.md.",
-    after_help = "Exit codes: 0 ok, 1 error, 2 usage, 3 not found, 4 invalid data, 5 database, 6 io, 7 config, 10 flagged values found (flag --exit-code)."
+    after_help = "Exit codes: 0 ok, 1 error, 2 usage, 3 not found, 4 invalid data, 5 database, 6 io, 7 config, 8 key (database locked: missing or wrong encryption key), 10 flagged values found (flag --exit-code)."
 )]
 pub struct Cli {
     #[command(flatten)]
@@ -77,6 +77,15 @@ pub struct GlobalOpts {
     /// Print extra diagnostics to stderr
     #[arg(short, long, global = true)]
     pub verbose: bool,
+    /// Allow an UNENCRYPTED database (create one, or open a legacy plaintext one)
+    #[arg(long, global = true)]
+    pub insecure_plaintext: bool,
+    /// Encrypt --output (or stdout) as an ASCII-armored age file
+    #[arg(long, global = true)]
+    pub encrypt_output: bool,
+    /// age X25519 recipient (age1...) for --encrypt-output (repeatable; default: passphrase)
+    #[arg(long = "recipient", global = true, value_name = "AGE_PUBKEY")]
+    pub recipients: Vec<String>,
 }
 
 #[derive(Debug, Subcommand)]
@@ -119,6 +128,11 @@ pub enum Command {
     /// Configuration
     #[command(subcommand)]
     Config(ConfigCmd),
+    /// Encrypted audit trail of commands that read or modify data
+    #[command(subcommand)]
+    Audit(AuditCmd),
+    /// Check encryption, keys, file permissions and the audit log
+    Doctor,
     /// Generate shell completions
     Completions(CompletionsArgs),
     /// Generate man page(s)
@@ -601,8 +615,31 @@ pub struct DiffArgs {
 pub enum DbCmd {
     /// Print the database path
     Path,
-    /// Create the database and apply migrations
-    Init,
+    /// Create the database (encrypted unless --insecure-plaintext) and apply migrations
+    Init {
+        /// Encrypt the new database (the default; plaintext needs --insecure-plaintext)
+        #[arg(long)]
+        encrypt: bool,
+    },
+    /// Encrypt an existing plaintext database in place (verified, then the plaintext is wiped)
+    Encrypt,
+    /// Re-wrap the database key under a new key-encryption key
+    Rekey {
+        /// Source of the new key: keychain, env (BIOMARKER_NEW_KEY) or passphrase (default: key_source setting)
+        #[arg(long, value_name = "SOURCE")]
+        to: Option<String>,
+        /// Also re-encrypt the data under a fresh data key
+        #[arg(long)]
+        rotate_dek: bool,
+    },
+    /// Cache the unlocked key in the OS keychain for a while (no more passphrase prompts)
+    Unlock {
+        /// How long the session lasts, e.g. 15m, 2h
+        #[arg(long, default_value = "15m")]
+        ttl: String,
+    },
+    /// End a `db unlock` session
+    Lock,
     /// Apply pending migrations (or show status)
     Migrate {
         /// Only report migration status
@@ -617,6 +654,16 @@ pub enum DbCmd {
     Check,
     /// Row counts and schema version
     Info,
+}
+
+#[derive(Debug, Subcommand)]
+pub enum AuditCmd {
+    /// Show (and verify) the audit log
+    Log {
+        /// Only the newest N entries
+        #[arg(long, short = 'n')]
+        limit: Option<usize>,
+    },
 }
 
 #[derive(Debug, Subcommand)]

@@ -294,20 +294,12 @@ pub fn render(r: &Report, o: &OutputOpts) -> Result<String> {
     }
 }
 
-/// Render and write to `--output` or stdout.
-pub fn emit(r: &Report, o: &OutputOpts) -> Result<()> {
-    let text = render(r, o)?;
-    match &o.output {
-        Some(p) if p.as_os_str() != "-" => {
-            std::fs::write(p, text).map_err(|e| AppError::io(format!("writing {}: {e}", p.display())))
-        }
-        _ => {
-            let mut out = std::io::stdout().lock();
-            match out.write_all(text.as_bytes()).and_then(|()| out.flush()) {
-                Err(e) if e.kind() == std::io::ErrorKind::BrokenPipe => Ok(()),
-                other => other.map_err(AppError::from),
-            }
-        }
+/// Write rendered output to stdout, ignoring a closed pipe.
+pub fn write_stdout(bytes: &[u8]) -> Result<()> {
+    let mut out = std::io::stdout().lock();
+    match out.write_all(bytes).and_then(|()| out.flush()) {
+        Err(e) if e.kind() == std::io::ErrorKind::BrokenPipe => Ok(()),
+        other => other.map_err(AppError::from),
     }
 }
 
