@@ -33,7 +33,7 @@ impl Tz {
 
     /// Current wall-clock time in this zone.
     pub fn now(&self) -> NaiveDateTime {
-        self.from_utc(&Utc::now())
+        self.from_utc(&utc_now())
     }
 
     pub fn from_utc(&self, t: &DateTime<Utc>) -> NaiveDateTime {
@@ -49,8 +49,18 @@ impl Tz {
     }
 }
 
+/// Current UTC time, or `$SOURCE_DATE_EPOCH` (Unix seconds) when set, so that
+/// output such as `generated_at` can be made reproducible.
+pub fn utc_now() -> DateTime<Utc> {
+    std::env::var("SOURCE_DATE_EPOCH")
+        .ok()
+        .and_then(|s| s.trim().parse::<i64>().ok())
+        .and_then(|secs| DateTime::from_timestamp(secs, 0))
+        .unwrap_or_else(Utc::now)
+}
+
 pub fn now_iso() -> String {
-    Utc::now().format("%Y-%m-%dT%H:%M:%SZ").to_string()
+    utc_now().format("%Y-%m-%dT%H:%M:%SZ").to_string()
 }
 
 const DATE_FMT: &str = "%Y-%m-%d";
