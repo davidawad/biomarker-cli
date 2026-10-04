@@ -142,18 +142,118 @@ $ biomarker trend -m apob --format json | head -n 32
 
 ## Install
 
-On Apple Silicon macOS, with Homebrew:
+Prebuilt binaries for Linux (x86_64, aarch64), macOS (Apple Silicon, Intel)
+and Windows (x86_64) are attached to every
+[GitHub release](https://github.com/davidawad/biomarker-cli/releases), each
+with a `.sha256` file and one `SHA256SUMS` for all archives. They need no Rust
+toolchain. See [docs/platforms.md](docs/platforms.md) for what differs per OS
+(key storage, file locations, permissions).
+
+**macOS (Homebrew).**
 
 ```sh
 brew install davidawad/tap/biomarker-cli
 ```
 
+The formula currently builds from source on Apple Silicon only; see
+[Homebrew formula](#homebrew-formula) for switching it to the prebuilt
+archives, which also covers Intel Macs and Linux.
+
+**Linux and macOS (prebuilt archive).** Pick the target for your machine:
+`x86_64-unknown-linux-gnu` (glibc 2.35+), `aarch64-unknown-linux-gnu`,
+`aarch64-apple-darwin` or `x86_64-apple-darwin`.
+
+```sh
+v=v0.3.0 t=aarch64-apple-darwin
+curl -LO "https://github.com/davidawad/biomarker-cli/releases/download/$v/biomarker-cli-$v-$t.tar.gz"
+curl -LO "https://github.com/davidawad/biomarker-cli/releases/download/$v/biomarker-cli-$v-$t.tar.gz.sha256"
+shasum -a 256 -c "biomarker-cli-$v-$t.tar.gz.sha256"     # or: sha256sum -c
+tar -xzf "biomarker-cli-$v-$t.tar.gz"
+install -m 755 "biomarker-cli-$v-$t/biomarker" ~/.local/bin/
+```
+
+On macOS, binaries downloaded with a browser are quarantined; `curl` downloads
+are not. Clear it with `xattr -d com.apple.quarantine ~/.local/bin/biomarker`.
+
+**Windows (prebuilt archive, PowerShell).**
+
+```powershell
+$v = "v0.3.0"; $t = "x86_64-pc-windows-msvc"
+$zip = "biomarker-cli-$v-$t.zip"
+Invoke-WebRequest "https://github.com/davidawad/biomarker-cli/releases/download/$v/$zip" -OutFile $zip
+(Get-FileHash $zip -Algorithm SHA256).Hash   # compare with $zip.sha256
+Expand-Archive $zip -DestinationPath .
+# put biomarker-cli-$v-$t\biomarker.exe on your PATH, e.g. in %LOCALAPPDATA%\Programs\biomarker
+```
+
+**From source (`cargo install`).** fsqlite needs a nightly toolchain on x86_64
+and on Windows (see [Build](#build)); aarch64 builds on stable.
+
+```sh
+cargo +nightly install --locked --git https://github.com/davidawad/biomarker-cli   # x86_64, Windows
+cargo install --locked --git https://github.com/davidawad/biomarker-cli            # aarch64
+```
+
+### Homebrew formula
+
+The tap lives in a separate repository. To move it from a source build to
+the release archives (no Rust, no nightly, all four macOS/Linux targets), drop
+`depends_on arch: :arm64` and the `rust` build dependency, and use one
+`url`/`sha256` per platform. The hashes come from the release's `SHA256SUMS`:
+
+```ruby
+class BiomarkerCli < Formula
+  desc "Track biomarkers (lab results) for any number of people"
+  homepage "https://gitlab.com/davidawad/biomarker-cli"
+  version "0.3.0"
+  license "MIT"
+
+  base = "https://github.com/davidawad/biomarker-cli/releases/download/v#{version}"
+  on_macos do
+    on_arm do
+      url "#{base}/biomarker-cli-v#{version}-aarch64-apple-darwin.tar.gz"
+      sha256 "<sha256 from SHA256SUMS>"
+    end
+    on_intel do
+      url "#{base}/biomarker-cli-v#{version}-x86_64-apple-darwin.tar.gz"
+      sha256 "<sha256 from SHA256SUMS>"
+    end
+  end
+  on_linux do
+    on_arm do
+      url "#{base}/biomarker-cli-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "<sha256 from SHA256SUMS>"
+    end
+    on_intel do
+      url "#{base}/biomarker-cli-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "<sha256 from SHA256SUMS>"
+    end
+  end
+
+  def install
+    bin.install "biomarker"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/biomarker --version")
+  end
+end
+```
+
+Each archive unpacks to a `biomarker-cli-<tag>-<target>/` directory; Homebrew
+`cd`s into a single top-level directory automatically, so `bin.install
+"biomarker"` works as written. Bump `version` and the four hashes on each
+release.
+
 ## Build
 
-fsqlite 0.4 uses `#![feature(...)]` on x86_64, so the crate builds with a
-**nightly** toolchain there. `rust-toolchain.toml` selects nightly
-automatically under rustup. On aarch64 (Apple Silicon) it also builds on
-stable, which is what the Homebrew formula uses.
+fsqlite 0.4 enables unstable Rust features on x86_64 (`core_intrinsics`, for
+prefetch hints in its pager and B-tree) and on Windows (`windows_by_handle`, in
+its VFS), so those targets need a **nightly** toolchain. No fsqlite feature
+flag or newer release (checked up to 0.4.9) lifts this. `rust-toolchain.toml`
+selects nightly automatically under rustup. aarch64 Linux and Apple Silicon
+also build on stable (`cargo +stable build`), which CI checks. Release
+archives are built by CI, so installing them needs no toolchain at all.
 
 ```sh
 cargo build --release          # target/release/biomarker
@@ -199,7 +299,10 @@ ID  PERSON  TAKEN_AT    MARKER   QUALIFIER  VALUE  UNIT   REF_LOW  REF_HIGH  FLA
 
 Everything biomarker writes about people is encrypted. On first use `db init`
 (or any command) creates an encrypted database. Its key goes in the OS
-keychain or comes from `BIOMARKER_KEY`, or you are prompted for a passphrase.
+keychain (macOS Keychain, Secret Service on Linux, Windows Credential Manager)
+or comes from `BIOMARKER_KEY`, or you are prompted for a passphrase. Headless
+Linux machines without a D-Bus session use `BIOMARKER_KEY` or the prompt;
+`biomarker doctor` shows which backend is in use.
 
 ```sh
 export BIOMARKER_KEY="raw:$(openssl rand -hex 32)"   # CI / scripts; or a passphrase
@@ -437,13 +540,14 @@ Settings resolve in this order, lowest to highest precedence:
 1. built-in defaults
 2. the config file: `--config FILE`, else `$BIOMARKER_CONFIG`, else
    `$XDG_CONFIG_HOME/biomarker-cli/config.toml` (default
-   `~/.config/biomarker-cli/config.toml`)
+   `~/.config/biomarker-cli/config.toml`; on Windows
+   `%APPDATA%\biomarker-cli\config.toml`)
 3. environment variables `BIOMARKER_*` (`NO_COLOR` is honoured too)
 4. command-line flags
 
 | key | env | default | values |
 |-----|-----|---------|--------|
-| `db_path` | `BIOMARKER_DB` | `$XDG_DATA_HOME/biomarker-cli/biomarker.db` | path (`~` expanded) |
+| `db_path` | `BIOMARKER_DB` | `$XDG_DATA_HOME/biomarker-cli/biomarker.db` (`~/.local/share/…`; Windows `%LOCALAPPDATA%\biomarker-cli\biomarker.db`) | path (`~` expanded) |
 | `default_person` | `BIOMARKER_PERSON` | — | person slug |
 | `format` | `BIOMARKER_FORMAT` | `table` | `table json jsonl csv tsv` |
 | `date_format` | `BIOMARKER_DATE_FORMAT` | `%Y-%m-%d` | strftime. Used for table/csv/tsv display, and accepted on input |
@@ -475,6 +579,11 @@ unit_system     si                                        file
 precision       3                                         env
 ...
 ```
+
+macOS uses the same XDG-style paths as Linux (as every release so far has),
+not `~/Library/Application Support`, so existing databases stay where they
+are. `XDG_CONFIG_HOME` / `XDG_DATA_HOME` are honoured on every OS. See
+[docs/platforms.md](docs/platforms.md#file-locations).
 
 The config file is flat TOML. One level of tables is flattened, so
 `[csv] delimiter = ";"` is the same as `csv_delimiter = ";"`. See
@@ -521,7 +630,7 @@ tracked in `schema_migrations` and `PRAGMA user_version`:
 cargo fmt
 cargo clippy --all-targets -- -D warnings
 cargo test        # unit tests + assert_cmd integration tests (tests/cli.rs)
-just test-gate    # all three, as run before merging
+just test-gate    # all three, as run before merging (CI runs them on all five targets)
 just readme       # regenerate the README sessions and hero screenshot (needs uv)
 cargo run --example make-sheets   # regenerate examples/dashboard.xlsx
 ```

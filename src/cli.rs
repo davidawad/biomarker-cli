@@ -26,7 +26,8 @@ pub struct Cli {
 
 #[derive(Debug, Clone, Args, Default)]
 pub struct GlobalOpts {
-    /// Config file (default: $XDG_CONFIG_HOME/biomarker-cli/config.toml; env BIOMARKER_CONFIG)
+    /// Config file (default: biomarker-cli/config.toml under $XDG_CONFIG_HOME, ~/.config,
+    /// or %APPDATA% on Windows; env BIOMARKER_CONFIG)
     #[arg(long, global = true, value_name = "FILE")]
     pub config: Option<PathBuf>,
     /// Database file (env BIOMARKER_DB)

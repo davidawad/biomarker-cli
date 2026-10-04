@@ -81,7 +81,7 @@ impl Ctx {
             columns: g.columns.clone(),
         };
         let tz = Tz::parse(resolved.get("timezone"))?;
-        let db_path = PathBuf::from(expand_tilde(resolved.get("db_path")));
+        let db_path = PathBuf::from(crate::paths::expand_tilde(resolved.get("db_path")));
         Ok(Self {
             resolved,
             out,
@@ -241,12 +241,5 @@ impl Ctx {
     /// Extra date format accepted when parsing input dates.
     pub fn input_date_formats(&self) -> Vec<String> {
         vec![self.out.date_format.clone()]
-    }
-}
-
-pub fn expand_tilde(p: &str) -> String {
-    match (p.strip_prefix("~/"), std::env::var("HOME")) {
-        (Some(rest), Ok(home)) => format!("{home}/{rest}"),
-        _ => p.to_string(),
     }
 }

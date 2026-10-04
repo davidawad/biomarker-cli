@@ -2,8 +2,6 @@
 //! the copy embedded in README.md) must match what the binary prints now.
 //! Regenerate both with `just readme` (scripts/readme-samples.sh).
 
-#![cfg(unix)]
-
 use std::path::Path;
 use std::process::Command;
 
@@ -53,21 +51,25 @@ fn check_embedded(name: &str, golden: &str) {
 }
 
 #[test]
+#[cfg_attr(not(unix), ignore = "replays scripts/readme-session.sh, which needs a POSIX sh (checked on Linux/macOS)")]
 fn readme_session_matches_binary() {
     check_session("full", "docs/readme-session.txt");
 }
 
 #[test]
+#[cfg_attr(not(unix), ignore = "replays scripts/readme-session.sh, which needs a POSIX sh (checked on Linux/macOS)")]
 fn readme_embeds_session() {
     check_embedded("readme-session", "docs/readme-session.txt");
 }
 
 #[test]
+#[cfg_attr(not(unix), ignore = "replays scripts/readme-session.sh, which needs a POSIX sh (checked on Linux/macOS)")]
 fn readme_import_matches_binary() {
     check_session("import", "docs/readme-import.txt");
 }
 
 #[test]
+#[cfg_attr(not(unix), ignore = "replays scripts/readme-session.sh, which needs a POSIX sh (checked on Linux/macOS)")]
 fn readme_embeds_import() {
     check_embedded("readme-import", "docs/readme-import.txt");
 }

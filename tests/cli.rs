@@ -31,6 +31,8 @@ impl Env {
     fn cmd(&self) -> Command {
         let mut c = Command::cargo_bin("biomarker").unwrap();
         c.env_clear()
+            // Windows system DLLs expect SYSTEMROOT even in a cleared environment.
+            .envs(std::env::var_os("SYSTEMROOT").map(|v| ("SYSTEMROOT", v)))
             .env("HOME", self.dir.path())
             .env("XDG_CONFIG_HOME", self.path("config"))
             .env("XDG_DATA_HOME", self.path("data"))

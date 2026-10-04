@@ -15,6 +15,8 @@ pub mod keys;
 pub mod matching;
 pub mod migrations;
 pub mod output;
+pub mod paths;
+pub mod perms;
 pub mod ranges;
 pub mod seal_output;
 pub mod seed;

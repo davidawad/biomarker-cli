@@ -5,6 +5,7 @@ use std::path::{Path, PathBuf};
 use std::time::Instant;
 
 use assert_cmd::Command;
+use biomarker_cli::perms;
 use serde_json::Value;
 use tempfile::TempDir;
 
@@ -36,6 +37,8 @@ impl Env {
     fn cmd(&self) -> Command {
         let mut c = Command::cargo_bin("biomarker").unwrap();
         c.env_clear()
+            // Windows system DLLs expect SYSTEMROOT even in a cleared environment.
+            .envs(std::env::var_os("SYSTEMROOT").map(|v| ("SYSTEMROOT", v)))
             .env("HOME", self.dir.path())
             .env("XDG_CONFIG_HOME", self.path("data/config"))
             .env("XDG_DATA_HOME", self.path("data/xdg"))
@@ -201,27 +204,38 @@ fn no_plaintext_in_any_written_file() {
     assert_eq!(e.json(&["person", "show", "alex"])["data"]["name"], MARK_NAME);
 }
 
-#[cfg(unix)]
+/// Unix mode or Windows ACL of `p` is owner-only (see `perms`).
+fn assert_private(p: &Path, unix_mode: u32) {
+    match perms::inspect(p) {
+        Some(perms::Access::Private(_)) => {}
+        other => panic!("{} is not owner-only: {other:?}", p.display()),
+    }
+    #[cfg(unix)]
+    {
+        use std::os::unix::fs::PermissionsExt;
+        let m = std::fs::metadata(p).unwrap().permissions().mode() & 0o777;
+        assert_eq!(m, unix_mode, "{} mode {m:o}", p.display());
+    }
+    let _ = unix_mode;
+}
+
 #[test]
 fn files_are_private() {
-    use std::os::unix::fs::PermissionsExt;
     let e = Env::new();
     e.populate(&[]);
-    for f in ["data/labs.db", "data/labs.db.audit"] {
-        let m = std::fs::metadata(e.path(f)).unwrap().permissions().mode() & 0o777;
-        assert_eq!(m, 0o600, "{f} mode {m:o}");
+    for f in ["data/labs.db", "data/labs.db.audit", "data/labs.db.lock"] {
+        assert_private(&e.path(f), 0o600);
     }
 }
 
 #[test]
 fn new_database_directory_is_owner_only() {
-    use std::os::unix::fs::PermissionsExt;
     let e = Env::new();
     let fresh = e.path("data/fresh/labs.db");
     let out = e.cmd().env("BIOMARKER_DB", &fresh).args(["db", "init"]).output().unwrap();
     assert!(out.status.success(), "{}", String::from_utf8_lossy(&out.stderr));
-    let m = std::fs::metadata(e.path("data/fresh")).unwrap().permissions().mode() & 0o777;
-    assert_eq!(m, 0o700, "new db directory mode {m:o}");
+    assert_private(&e.path("data/fresh"), 0o700);
+    assert_private(&fresh, 0o600);
 }
 
 #[test]
@@ -399,6 +413,13 @@ fn doctor_reports_encryption_state() {
     assert_eq!(status("audit_log").as_deref(), Some("ok"));
     assert_eq!(status("sidecars").as_deref(), Some("ok"));
     assert_eq!(status("keychain").as_deref(), Some("warn"));
+    // The keychain row names this platform's backend and the fallback.
+    let keychain = rows.iter().find(|r| r["check"] == "keychain").unwrap()["detail"].as_str().unwrap();
+    assert!(keychain.contains("BIOMARKER_NO_KEYCHAIN") && keychain.contains("falling back"), "{keychain}");
+    let files =
+        rows.iter().filter(|r| r["check"] == "permissions" && r["detail"].as_str().unwrap().contains("labs.db"));
+    assert_eq!(files.clone().count(), 2, "{rows:?}");
+    assert!(files.into_iter().all(|r| r["status"] == "ok"), "{rows:?}");
 }
 
 #[test]

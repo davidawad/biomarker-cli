@@ -174,21 +174,7 @@ pub fn setting(key: &str) -> Option<&'static Setting> {
     SETTINGS.iter().find(|s| s.key == k)
 }
 
-fn home() -> PathBuf {
-    std::env::var_os("HOME").map_or_else(|| PathBuf::from("."), PathBuf::from)
-}
-
-fn xdg(var: &str, fallback: &str) -> PathBuf {
-    std::env::var_os(var).map(PathBuf::from).filter(|p| p.is_absolute()).unwrap_or_else(|| home().join(fallback))
-}
-
-pub fn default_config_path() -> PathBuf {
-    xdg("XDG_CONFIG_HOME", ".config").join("biomarker-cli").join("config.toml")
-}
-
-pub fn default_db_path() -> PathBuf {
-    xdg("XDG_DATA_HOME", ".local/share").join("biomarker-cli").join("biomarker.db")
-}
+pub use crate::paths::{default_config_path, default_db_path};
 
 fn default_value(key: &str) -> String {
     match key {
@@ -286,7 +272,8 @@ pub fn resolve_layers(layers: &[(Source, Layer)]) -> Result<BTreeMap<&'static st
     })
 }
 
-/// Locate the config file: `--config` > `BIOMARKER_CONFIG` > XDG default.
+/// Locate the config file: `--config` > `BIOMARKER_CONFIG` > platform default
+/// (see [`crate::paths`]).
 pub fn locate(flag: Option<&Path>) -> (PathBuf, Source) {
     flag.map(|p| (p.to_path_buf(), Source::Flag))
         .or_else(|| {

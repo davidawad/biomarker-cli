@@ -46,12 +46,16 @@ biomarker uses this:
    file, journal, WAL or temp file is created.
 2. **Commit**: after every committing statement or transaction,
    `export_bytes`, encrypt the image under the DEK, write it to
-   `<db>.tmp-<pid>` (mode 0600), `fsync`, `rename` over the database, then
-   `fsync` the directory. A crash leaves either the old or the new container,
-   never a half-written one. Read-only commands never rewrite the file.
-3. **Concurrency**: every process takes an exclusive advisory lock on
-   `<db>.lock` (an empty file) for as long as it has the database open, so
-   whole-image re-sealing cannot lose a concurrent update.
+   `<db>.tmp-<pid>` (owner-only: mode 0600, or an owner-only ACL on Windows),
+   `fsync`, `rename` over the database, then `fsync` the directory (not
+   possible on Windows, where `rename` is `MoveFileExW`/POSIX-semantics
+   replace and NTFS journals it). A crash leaves either the old or the new
+   container, never a half-written one. Read-only commands never rewrite the
+   file.
+3. **Concurrency**: every process takes an exclusive lock on `<db>.lock` (an
+   empty file; `flock` on Unix, `LockFileEx` on Windows, via `std::fs::File::lock`)
+   for as long as it has the database open, so whole-image re-sealing cannot
+   lose a concurrent update.
 
 ### Container format (`BMSEAL01`)
 
@@ -114,10 +118,14 @@ or `BIOMARKER_KEY_SOURCE` (`auto`, `keychain`, `env`, `passphrase`):
 
 1. **OS keychain.** On macOS this is the Keychain, via `security-framework`. On
    Linux it is the freedesktop Secret Service (GNOME Keyring, KWallet, …) via
-   `keyring-core` and its zbus store. biomarker generates a random KEK per
-   database and stores it under service `biomarker-cli`, account
-   `kek-<database id>`. Anyone who can unlock your login keychain can open
-   the database.
+   `keyring-core` and its zbus store. On Windows it is the Credential Manager
+   (generic credentials) via `keyring-core` and its windows-native store.
+   biomarker generates a random KEK per database and stores it under service
+   `biomarker-cli`, account `kek-<database id>`. Anyone who can unlock your
+   login keychain (or, on Windows, log in as you) can open the database. When
+   the keychain is unusable, for example on a headless Linux server or in CI
+   with no D-Bus session bus, `auto` moves on to the next sources, and
+   `doctor`'s `keychain` row names the backend and why it is unavailable.
 2. **`BIOMARKER_KEY` environment variable** (CI, scripts, servers).
    `raw:<64 hex chars>` is used directly as the KEK. Any other value is a
    passphrase and goes through Argon2id.
@@ -138,7 +146,7 @@ README script set it so they never touch a developer's real keychain.
 | `db unlock [--ttl 15m]` | caches the KEK in the OS keychain (`session-<id>`) until the TTL expires, so passphrase databases stop prompting |
 | `db lock` | ends a `db unlock` session (keychain-stored KEKs stay; the note says so) |
 | `db backup FILE` | writes an encrypted copy under the same keys |
-| `doctor` | reports encryption state, KEK kind, available key sources, session state, whether unlocking works without a prompt, file permissions, stray plaintext sidecars, and audit-log verification |
+| `doctor` | reports encryption state, KEK kind, the keychain backend and available key sources, session state, whether unlocking works without a prompt, file permissions (Unix mode or Windows ACL), stray plaintext sidecars, and audit-log verification |
 
 Exit code 8 (`key`) means no key was available, the key was wrong, or the database
 is plaintext and `--insecure-plaintext` was not given.
@@ -170,8 +178,9 @@ them with. Plaintext (`--insecure-plaintext`) databases are not audited.
 
 ## 5. Exports and output
 
-* `--output FILE` writes files with mode 0600. When the command read the
-  database and the output is not encrypted, biomarker warns on stderr:
+* `--output FILE` writes owner-only files (0600; an owner-only ACL on
+  Windows). When the command read the database and the output is not
+  encrypted, biomarker warns on stderr:
   `warning: writing plaintext health data to FILE; use --encrypt-output`.
 * `--encrypt-output` writes an ASCII-armored **age** file, which you can decrypt
   with `age -d` or `rage -d`. The recipients come from `--recipient age1…`
@@ -192,7 +201,7 @@ them with. Plaintext (`--insecure-plaintext`) databases are not audited.
 * Plaintext leaking through SQLite side files. Encrypted databases never create
   `-wal`, `-journal`, `-shm` or temp files: the engine runs on an in-memory VFS.
 * Accidental plaintext exports. You get a warning, `--encrypt-output` exists, and
-  output files are 0600.
+  output files are owner-only (0600, or an owner-only ACL on Windows).
 
 **Not protected:**
 
