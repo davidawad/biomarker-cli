@@ -45,7 +45,9 @@ impl Prompter for Terminal {
     }
 
     fn secret(&mut self, prompt: &str) -> Result<Zeroizing<String>> {
-        rpassword::prompt_password(prompt).map(Zeroizing::new).map_err(|e| key_error(format!("reading passphrase: {e}")))
+        rpassword::prompt_password(prompt)
+            .map(Zeroizing::new)
+            .map_err(|e| key_error(format!("reading passphrase: {e}")))
     }
 }
 

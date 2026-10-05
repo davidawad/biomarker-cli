@@ -6,6 +6,8 @@ use clap::{Args, Parser, Subcommand, ValueEnum};
 
 use crate::output::Format;
 
+pub use crate::cli_admin::{AuditCmd, ConfigCmd, DbCmd, KeyCmd};
+
 #[derive(Debug, Parser)]
 #[command(
     name = "biomarker",
@@ -135,6 +137,9 @@ pub enum Command {
     /// Encrypted audit trail of commands that read or modify data
     #[command(subcommand)]
     Audit(AuditCmd),
+    /// Which keys can decrypt the database; add or remove them
+    #[command(subcommand)]
+    Key(KeyCmd),
     /// Check encryption, keys, file permissions and the audit log
     Doctor,
     /// Generate shell completions
@@ -703,79 +708,6 @@ pub struct DiffArgs {
     /// Only markers whose value changed
     #[arg(long)]
     pub changed: bool,
-}
-
-#[derive(Debug, Subcommand)]
-pub enum DbCmd {
-    /// Print the database path
-    Path,
-    /// Create the database (encrypted unless --insecure-plaintext) and apply migrations
-    Init {
-        /// Encrypt the new database (the default; plaintext needs --insecure-plaintext)
-        #[arg(long)]
-        encrypt: bool,
-    },
-    /// Encrypt an existing plaintext database in place (verified, then the plaintext is wiped)
-    Encrypt,
-    /// Re-wrap the database key under a new key-encryption key
-    Rekey {
-        /// Source of the new key: keychain, env (BIOMARKER_NEW_KEY) or passphrase (default: key_source setting)
-        #[arg(long, value_name = "SOURCE")]
-        to: Option<String>,
-        /// Also re-encrypt the data under a fresh data key
-        #[arg(long)]
-        rotate_dek: bool,
-    },
-    /// Cache the unlocked key in the OS keychain for a while (no more passphrase prompts)
-    Unlock {
-        /// How long the session lasts, e.g. 15m, 2h
-        #[arg(long, default_value = "15m")]
-        ttl: String,
-    },
-    /// End a `db unlock` session
-    Lock,
-    /// Apply pending migrations (or show status)
-    Migrate {
-        /// Only report migration status
-        #[arg(long)]
-        status: bool,
-    },
-    /// Copy the database to FILE
-    Backup { dest: PathBuf },
-    /// Rebuild the database file to reclaim space
-    Vacuum,
-    /// Run integrity and consistency checks
-    Check,
-    /// Row counts and schema version
-    Info,
-}
-
-#[derive(Debug, Subcommand)]
-pub enum AuditCmd {
-    /// Show (and verify) the audit log
-    Log {
-        /// Only the newest N entries
-        #[arg(long, short = 'n')]
-        limit: Option<usize>,
-    },
-}
-
-#[derive(Debug, Subcommand)]
-pub enum ConfigCmd {
-    /// Show configuration (file values, or all resolved values with --effective)
-    Show {
-        /// Show every setting with its resolved value and source layer
-        #[arg(long, short)]
-        effective: bool,
-    },
-    /// Set a value in the config file
-    Set { key: String, value: String },
-    /// Remove a value from the config file
-    Unset { key: String },
-    /// Print the config file path
-    Path,
-    /// List available settings
-    Keys,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]

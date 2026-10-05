@@ -4,9 +4,11 @@ use crate::cli::DbCmd;
 use crate::context::Ctx;
 use crate::db::RowExt;
 use crate::error::{AppError, Result};
+use crate::keychain;
 use crate::keys::{self, Source};
 use crate::migrations;
 use crate::output::{to_record, Report};
+use crate::prompt::Terminal;
 use crate::store::Catalog;
 use crate::vault;
 
@@ -149,13 +151,14 @@ fn info(ctx: &Ctx) -> Result<()> {
 }
 
 fn encrypt(ctx: &Ctx) -> Result<()> {
-    let r = vault::encrypt_in_place(&ctx.db_path, ctx.key_source()?)?;
+    let r = vault::encrypt_in_place(&ctx.db_path, &ctx.open_opts()?, &mut Terminal)?;
     ctx.info(&format!(
         "encrypted {} (key from {}); plaintext overwritten and removed",
         ctx.db_path.display(),
         r.key_source
     ));
-    if let Ok((h, u)) = vault::unlock(&ctx.db_path, ctx.key_source()?, false) {
+    if let Ok((h, u)) = vault::unlock(&ctx.db_path, ctx.key_source()?, false, &mut Terminal) {
+        ctx.record_keys(&h);
         ctx.set_audit(h.db_id, u.keys.audit);
     }
     let tables: serde_json::Map<String, serde_json::Value> =
@@ -175,8 +178,9 @@ fn encrypt(ctx: &Ctx) -> Result<()> {
 fn rekey(ctx: &Ctx, to: Option<&str>, rotate_dek: bool) -> Result<()> {
     let current = ctx.key_source()?;
     let to = to.map_or(Ok(current), Source::parse)?;
-    let r = vault::rekey(&ctx.db_path, current, to, rotate_dek)?;
+    let r = vault::rekey(&ctx.db_path, &ctx.open_opts()?, to, rotate_dek, &mut Terminal)?;
     ctx.set_audit(r.db_id, r.audit_key.clone());
+    ctx.record_keys(&r.header);
     ctx.info(&format!("rekeyed {} ({} -> {})", ctx.db_path.display(), r.from, r.to));
     if r.to == "env" {
         ctx.info(&format!("set {} to the value of {} from now on", keys::ENV_KEY, keys::ENV_NEW_KEY));
@@ -207,9 +211,15 @@ fn parse_ttl(s: &str) -> Result<u64> {
 
 fn unlock(ctx: &Ctx, ttl: &str) -> Result<()> {
     let secs = parse_ttl(ttl)?;
-    let (h, u) = vault::unlock(&ctx.db_path, ctx.key_source()?, true)?;
-    keys::keychain_status().map_err(|e| keys::key_error(format!("db unlock needs the OS keychain: {e}")))?;
-    let expires = keys::session::put(&h.db_id, &u.kek, secs)?;
+    let (h, u) = vault::unlock(&ctx.db_path, ctx.key_source()?, true, &mut Terminal)?;
+    let kek = u.kek.ok_or_else(|| {
+        keys::key_error(format!(
+            "db unlock caches a passphrase or raw key; this database opened with its {} key",
+            u.source
+        ))
+    })?;
+    keychain::available().map_err(|e| keys::key_error(format!("db unlock needs the OS keychain: {e}")))?;
+    let expires = keychain::session::put(&h.db_id, &kek, secs)?;
     ctx.set_audit(h.db_id, u.keys.audit);
     ctx.info(&format!("unlocked {} for {}", ctx.db_path.display(), ttl));
     ctx.emit_mutation(&Report::object(
@@ -223,15 +233,14 @@ fn lock(ctx: &Ctx) -> Result<()> {
         vault::State::Sealed(h) => h,
         _ => return Err(AppError::invalid(format!("{} is not an encrypted database", ctx.db_path.display()))),
     };
-    let had = keys::session::clear(&h.db_id)?;
+    let had = keychain::session::clear(&h.db_id)?;
     ctx.info(&if had { format!("locked {}", ctx.db_path.display()) } else { "no unlock session was active".into() });
-    if keys::keychain_has(&h.db_id) {
+    let in_keychain = keys::keychain_relevant(ctx.key_source()?, &h) && keychain::has(&h.db_id);
+    if in_keychain {
         ctx.info("note: this database's key itself is stored in the OS keychain, which stays available while you are logged in");
     }
     ctx.emit_mutation(&Report::object(
         "db_lock",
-        to_record(
-            &json!({"path": ctx.db_path, "session_cleared": had, "key_in_keychain": keys::keychain_has(&h.db_id)}),
-        ),
+        to_record(&json!({"path": ctx.db_path, "session_cleared": had, "key_in_keychain": in_keychain})),
     ))
 }

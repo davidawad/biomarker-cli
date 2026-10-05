@@ -26,7 +26,8 @@ pub struct NewSlots {
     pub slots: Vec<Slot>,
     db_id: [u8; ID_LEN],
     staged_file: bool,
-    staged_keychain: Option<String>,
+    /// Staged keychain account and the KEK to promote.
+    staged_keychain: Option<(String, Key)>,
 }
 
 impl NewSlots {
@@ -45,9 +46,8 @@ impl NewSlots {
         if self.staged_file {
             keyfile::commit(&self.db_id)?;
         }
-        if let Some(staged) = &self.staged_keychain {
-            let item = keychain::load(staged)?.ok_or_else(|| key_error("staged keychain key disappeared"))?;
-            keychain::store(&keychain::kek_account(&self.db_id), &item)?;
+        if let Some((staged, kek)) = &self.staged_keychain {
+            keychain::store(&keychain::kek_account(&self.db_id), kek.as_bytes())?;
             let _ = keychain::delete(staged);
         }
         Ok(())
@@ -85,7 +85,7 @@ fn keychain_slot(db_id: [u8; ID_LEN], keys: &DataKeys) -> Result<NewSlots> {
     let staged = keychain::kek_next_account(&db_id);
     keychain::store(&staged, kek.as_bytes())?;
     let slot = Slot::with_kek(SlotKind::Raw(Holder::Keychain), &db_id, &kek, keys)?;
-    Ok(NewSlots { staged_keychain: Some(staged), ..NewSlots::one(slot, db_id) })
+    Ok(NewSlots { staged_keychain: Some((staged, kek)), ..NewSlots::one(slot, db_id) })
 }
 
 fn passphrase_slot(pass: &[u8], db_id: [u8; ID_LEN], keys: &DataKeys) -> Result<Slot> {
@@ -113,7 +113,9 @@ pub fn new_passphrase_slot(env_var: &str, db_id: [u8; ID_LEN], keys: &DataKeys, 
 
 fn env_slot(env_var: &str, db_id: [u8; ID_LEN], keys: &DataKeys) -> Result<NewSlots> {
     match parse_env_key(env_var)? {
-        Some(EnvKey::Raw(kek)) => Ok(NewSlots::one(Slot::with_kek(SlotKind::Raw(Holder::Env), &db_id, &kek, keys)?, db_id)),
+        Some(EnvKey::Raw(kek)) => {
+            Ok(NewSlots::one(Slot::with_kek(SlotKind::Raw(Holder::Env), &db_id, &kek, keys)?, db_id))
+        }
         Some(EnvKey::Passphrase(p)) => Ok(NewSlots::one(passphrase_slot(p.as_bytes(), db_id, keys)?, db_id)),
         None => Err(key_error(format!("key_source is env but {env_var} is not set"))),
     }
@@ -139,7 +141,10 @@ fn ssh_notice(key: &SshKey, db_id: &[u8; ID_LEN], s: &Setup) -> String {
             keyfile::path_for(db_id).display()
         ));
     }
-    let how = format!("On another machine: copy {} and the database there, then run `biomarker doctor`.", key.identity.display());
+    let how = format!(
+        "On another machine: copy {} and the database there, then run `biomarker doctor`.",
+        key.identity.display()
+    );
     lines.push(recover_line(s, &how));
     lines.join("\n")
 }
@@ -147,7 +152,12 @@ fn ssh_notice(key: &SshKey, db_id: &[u8; ID_LEN], s: &Setup) -> String {
 fn file_notice(db_id: &[u8; ID_LEN], s: &Setup, why: &str) -> String {
     let path = keyfile::path_for(db_id);
     let how = format!("Back up {} separately from the database.", path.display());
-    format!("biomarker: {why}; encrypting {} with a new key file {}.\n{}", s.what, path.display(), recover_line(s, &how))
+    format!(
+        "biomarker: {why}; encrypting {} with a new key file {}.\n{}",
+        s.what,
+        path.display(),
+        recover_line(s, &how)
+    )
 }
 
 /// `auto` for a new database: the user's SSH key, confirmed on a terminal;
@@ -171,7 +181,13 @@ fn auto_slots(db_id: [u8; ID_LEN], keys: &DataKeys, s: &mut Setup) -> Result<New
 
 /// Key slots for a new database (or a rekey target): `source` picks the
 /// kind; `auto` uses `env_var` when set, else [`auto_slots`].
-pub fn new_slots(source: Source, env_var: &str, db_id: [u8; ID_LEN], keys: &DataKeys, s: &mut Setup) -> Result<NewSlots> {
+pub fn new_slots(
+    source: Source,
+    env_var: &str,
+    db_id: [u8; ID_LEN],
+    keys: &DataKeys,
+    s: &mut Setup,
+) -> Result<NewSlots> {
     let env_set = std::env::var_os(env_var).is_some_and(|v| !v.is_empty());
     match source {
         Source::Auto if env_set => env_slot(env_var, db_id, keys),
@@ -187,7 +203,11 @@ pub fn new_slots(source: Source, env_var: &str, db_id: [u8; ID_LEN], keys: &Data
             }
             (None, skipped) => Err(key_error(format!(
                 "key_source is ssh but no usable SSH key was found ({}); set ssh_key / BIOMARKER_SSH_KEY",
-                if skipped.is_empty() { "tried ~/.ssh/id_ed25519, ~/.ssh/id_rsa".to_string() } else { skipped.join("; ") }
+                if skipped.is_empty() {
+                    "tried ~/.ssh/id_ed25519, ~/.ssh/id_rsa".to_string()
+                } else {
+                    skipped.join("; ")
+                }
             ))),
         },
     }

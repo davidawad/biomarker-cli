@@ -82,6 +82,11 @@ impl Ctx {
         };
         let tz = Tz::parse(resolved.get("timezone"))?;
         let db_path = PathBuf::from(crate::paths::expand_tilde(resolved.get("db_path")));
+        let setting_path = |k: &str| {
+            Some(resolved.get(k)).filter(|p| !p.is_empty()).map(|p| PathBuf::from(crate::paths::expand_tilde(p)))
+        };
+        crate::keyfile::set_override(setting_path("key_file"));
+        crate::sshkey::set_override(setting_path("ssh_key"));
         Ok(Self {
             resolved,
             out,
@@ -103,7 +108,17 @@ impl Ctx {
     }
 
     pub fn open_opts(&self) -> Result<OpenOpts> {
-        Ok(OpenOpts { source: self.key_source()?, insecure: self.insecure })
+        Ok(OpenOpts { source: self.key_source()?, insecure: self.insecure, config: self.resolved.config_path.clone() })
+    }
+
+    /// Record how the database at `db_path` opens in the config file's
+    /// `[encryption]` section (best effort: a read-only config only warns).
+    pub fn record_keys(&self, header: &crate::crypto::Header) {
+        match crate::enc_config::sync(&self.resolved.config_path, &self.db_path, header) {
+            Ok(true) => self.verbose(&format!("recorded keys in {}", self.resolved.config_path.display())),
+            Ok(false) => {}
+            Err(e) => self.warn(&format!("warning: could not record keys in the config file: {}", e.message)),
+        }
     }
 
     /// Open (unlocking or creating) the database and apply pending migrations.
@@ -116,9 +131,10 @@ impl Ctx {
     /// Open the database without applying migrations.
     pub fn db_raw(&self) -> Result<Db> {
         self.verbose(&format!("database: {}", self.db_path.display()));
-        let db =
-            vault::open(&self.db_path, self.open_opts()?, &|m| self.warn(m))?.with_change_counter(self.changes.clone());
+        let db = vault::open(&self.db_path, &self.open_opts()?, &|m| self.warn(m), &mut crate::prompt::Terminal)?
+            .with_change_counter(self.changes.clone());
         if let Some(s) = db.sealed() {
+            self.record_keys(&s.header);
             self.verbose(&format!("unlocked with key from {}", s.key_source));
             self.set_audit(s.header.db_id, s.keys.audit.clone());
         }

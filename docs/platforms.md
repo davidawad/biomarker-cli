@@ -42,10 +42,24 @@ notice, so we use a real nightly instead. The release archives are prebuilt,
 so people installing biomarker (including through Homebrew) need no Rust
 toolchain.
 
-## Key storage
+## Keys
 
-`src/keys.rs` puts one facade (`keychain::{available, load, store, delete}`)
-over a backend per OS. All backends store binary secrets under service
+The default keys work the same everywhere and need no OS service:
+
+* **SSH keys** are read from `~/.ssh` (`%USERPROFILE%\.ssh` on Windows, where
+  the built-in OpenSSH client keeps them): `id_ed25519`, then `id_rsa`, or the
+  `ssh_key` setting. OpenSSH private keys are parsed by the `age` crate (pure
+  Rust), so no `ssh` binary or agent is needed.
+* **Key files** live under the config directory and are made owner-only with
+  the same code as the database: mode 0600 in a 0700 directory on Unix, a
+  protected DACL granting only you and SYSTEM on Windows. A key file other
+  users can read is refused on every platform.
+
+### The OS keychain (opt-in)
+
+`src/keychain.rs` puts one facade (`available, load, store, delete`) over a
+backend per OS, used only for `key_source = "keychain"`, 0.2/0.3 databases and
+`db unlock` sessions. All backends store binary secrets under service
 `biomarker-cli`.
 
 | OS | backend | crate |
@@ -54,17 +68,15 @@ over a backend per OS. All backends store binary secrets under service
 | Linux, BSD | freedesktop Secret Service over D-Bus (GNOME Keyring, KWallet, KeePassXC) | `keyring-core` + `zbus-secret-service-keyring-store` |
 | Windows | Credential Manager (generic credentials) | `keyring-core` + `windows-native-keyring-store` |
 
-When the backend cannot be reached (a headless server or container with no
-D-Bus session bus, a CI runner, or `BIOMARKER_NO_KEYCHAIN=1`), `key_source =
-auto` falls back to `BIOMARKER_KEY` and then to an interactive passphrase.
-`biomarker doctor` reports the backend and whether it is usable, for example:
+With `key_source = "keychain"` on a machine whose backend cannot be reached
+(a headless server or container with no D-Bus session bus, a CI runner, or
+`BIOMARKER_NO_KEYCHAIN=1`), creating or opening fails with the reason;
+`biomarker doctor` reports the backend and whether it is usable. Under `auto`
+the keychain is never probed.
 
-```
-keychain  warn  freedesktop Secret Service (D-Bus) unavailable: … Failed to connect to address `unix:path=/run/user/1000/bus` …; falling back to BIOMARKER_KEY / passphrase prompt
-```
-
-The test suite always uses `BIOMARKER_KEY` with `BIOMARKER_NO_KEYCHAIN=1` and
-never touches a real keychain.
+The test suite runs with `BIOMARKER_NO_KEYCHAIN=1` and never touches a real
+keychain or `~/.ssh`: SSH keys are generated in-process into a temporary HOME,
+and every key test runs on Linux, macOS and Windows in CI.
 
 ## File locations
 

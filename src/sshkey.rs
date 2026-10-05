@@ -62,9 +62,13 @@ pub fn fingerprint(line: &str) -> Option<String> {
     Some(format!("SHA256:{}", base64::engine::general_purpose::STANDARD_NO_PAD.encode(Sha256::digest(&blob))))
 }
 
+/// Parse an OpenSSH private key file; CRLF line endings (a key copied
+/// through Windows tools or git) are accepted.
 fn read_identity(path: &Path) -> Result<Identity> {
-    let f = std::fs::File::open(path).map_err(|e| key_error(format!("reading SSH key {}: {e}", path.display())))?;
-    Identity::from_buffer(BufReader::new(f), Some(path.display().to_string()))
+    let text =
+        std::fs::read_to_string(path).map_err(|e| key_error(format!("reading SSH key {}: {e}", path.display())))?;
+    let text = zeroize::Zeroizing::new(text.replace("\r\n", "\n"));
+    Identity::from_buffer(BufReader::new(text.as_bytes()), Some(path.display().to_string()))
         .map_err(|e| key_error(format!("{} is not an OpenSSH private key: {e}", path.display())))
 }
 
@@ -195,6 +199,15 @@ mod tests {
         let pubfile = t.path().join("locked.pub");
         let (_, fp3, identity) = parse_public(pubfile.to_str().unwrap()).unwrap();
         assert_eq!((fp3, identity), (fp2, locked.display().to_string()));
+    }
+
+    #[test]
+    fn crlf_key_files_load() {
+        let t = tempfile::TempDir::new().unwrap();
+        let (p, fp) = testkeys::ed25519(t.path(), "id_ed25519", None);
+        let crlf = std::fs::read_to_string(&p).unwrap().replace('\n', "\r\n");
+        std::fs::write(&p, crlf).unwrap();
+        assert_eq!(load(&p).unwrap().fingerprint, fp);
     }
 
     #[test]

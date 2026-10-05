@@ -262,7 +262,13 @@ fn uses_session(source: Source, header: &Header) -> bool {
 
 /// Unlock a container header. Prompts (SSH key passphrase, database
 /// passphrase) only if `allow_prompt` and `p` is interactive.
-pub fn unlock(source: Source, header: &Header, what: &str, allow_prompt: bool, p: &mut dyn Prompter) -> Result<Unlocked> {
+pub fn unlock(
+    source: Source,
+    header: &Header,
+    what: &str,
+    allow_prompt: bool,
+    p: &mut dyn Prompter,
+) -> Result<Unlocked> {
     let mut a = Attempt { header, what, allow_prompt, prompter: p, tried: Vec::new() };
     if uses_session(source, header) {
         if let Some(u) = a.session() {

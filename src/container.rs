@@ -79,7 +79,11 @@ pub enum SlotKind {
     Passphrase(KdfParams),
     /// `recipient` is the OpenSSH public key line, `identity` the private key
     /// path it was created from (a hint; `ssh_key` / `BIOMARKER_SSH_KEY` win).
-    Ssh { recipient: String, fingerprint: String, identity: String },
+    Ssh {
+        recipient: String,
+        fingerprint: String,
+        identity: String,
+    },
 }
 
 impl SlotKind {
@@ -149,10 +153,15 @@ impl Slot {
     }
 
     /// Wrap `keys` to an SSH public key with age.
-    pub fn ssh(recipient: &age::ssh::Recipient, fingerprint: String, identity: String, keys: &DataKeys) -> Result<Self> {
+    pub fn ssh(
+        recipient: &age::ssh::Recipient,
+        fingerprint: String,
+        identity: String,
+        keys: &DataKeys,
+    ) -> Result<Self> {
         let err = |e: &dyn std::fmt::Display| AppError::invalid(format!("age: {e}"));
-        let enc = age::Encryptor::with_recipients(std::iter::once(recipient as &dyn age::Recipient))
-            .map_err(|e| err(&e))?;
+        let enc =
+            age::Encryptor::with_recipients(std::iter::once(recipient as &dyn age::Recipient)).map_err(|e| err(&e))?;
         let mut sealed = Vec::new();
         let mut w = enc.wrap_output(&mut sealed).map_err(|e| err(&e))?;
         std::io::Write::write_all(&mut w, &keys_bytes(keys)[..]).map_err(|e| err(&e))?;
@@ -316,7 +325,8 @@ impl Header {
             return Ok((Self::decode_v1(b)?, len));
         }
         let table: Value = serde_json::from_slice(&b[V2_FIXED..len]).map_err(|e| bad(&format!("slot table: {e}")))?;
-        let slots = table.as_array().ok_or_else(|| bad("slot table"))?.iter().map(Slot::from_json).collect::<Option<Vec<_>>>();
+        let slots =
+            table.as_array().ok_or_else(|| bad("slot table"))?.iter().map(Slot::from_json).collect::<Option<Vec<_>>>();
         let slots = slots.filter(|s| !s.is_empty()).ok_or_else(|| bad("unreadable key slot"))?;
         Ok((Self { db_id: b[8..24].try_into().expect("16 bytes"), slots, v1: false }, len))
     }

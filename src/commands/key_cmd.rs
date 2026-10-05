@@ -32,7 +32,10 @@ fn slot_state(h: &Header, kind: &SlotKind) -> (&'static str, String) {
         SlotKind::Raw(Holder::Keychain) => ("ok", "OS keychain".into()),
         SlotKind::Raw(Holder::Legacy) => (
             "warn",
-            format!("OS keychain or {}=raw:<hex> (0.3 and earlier); `biomarker db rekey --to ssh` moves it", keys::ENV_KEY),
+            format!(
+                "OS keychain or {}=raw:<hex> (0.3 and earlier); `biomarker db rekey --to ssh` moves it",
+                keys::ENV_KEY
+            ),
         ),
         SlotKind::Passphrase(p) => ("ok", format!("Argon2id m={}KiB t={} p={}", p.m_cost, p.t_cost, p.p_cost)),
     }
@@ -75,7 +78,9 @@ fn status(ctx: &Ctx) -> Result<()> {
     let db = ctx.db_path.display().to_string();
     let mut rows: Vec<_> = slot_rows(&h)
         .into_iter()
-        .map(|(n, kind, status, detail)| to_record(&json!({"slot": n, "kind": kind, "status": status, "detail": detail})))
+        .map(|(n, kind, status, detail)| {
+            to_record(&json!({"slot": n, "kind": kind, "status": status, "detail": detail}))
+        })
         .collect();
     rows.push(to_record(&json!({"slot": null, "kind": "recover", "status": "info",
         "detail": crate::enc_config::recovery(&db, &h)})));
@@ -84,7 +89,11 @@ fn status(ctx: &Ctx) -> Result<()> {
     ctx.emit(&Report::list("key_status", rows).table_columns(&["slot", "kind", "status", "detail"]))
 }
 
-fn edit(ctx: &Ctx, what: &str, f: impl FnOnce(&Header, &crate::crypto::DataKeys, &mut dyn crate::prompt::Prompter) -> Result<Edit>) -> Result<()> {
+fn edit(
+    ctx: &Ctx,
+    what: &str,
+    f: impl FnOnce(&Header, &crate::crypto::DataKeys, &mut dyn crate::prompt::Prompter) -> Result<Edit>,
+) -> Result<()> {
     let (h, from) = vault::change_slots(&ctx.db_path, &ctx.open_opts()?, &mut Terminal, f)?;
     ctx.record_keys(&h);
     ctx.info(&format!("{what} ({} key slots; unlocked with {from})", h.slots.len()));

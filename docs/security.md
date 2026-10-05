@@ -57,19 +57,36 @@ biomarker uses this:
    for as long as it has the database open, so whole-image re-sealing cannot
    lose a concurrent update.
 
-### Container format (`BMSEAL01`)
+### Container format (`BMSEAL02`)
 
 | offset | size | field |
 |-------:|-----:|-------|
-| 0   | 8  | magic `BMSEAL01` |
-| 8   | 1  | KEK kind: 1 = raw 256-bit key, 2 = Argon2id passphrase |
-| 12  | 12 | Argon2id m_cost (KiB), t_cost, p_cost (kind 2) |
-| 24  | 16 | Argon2id salt (kind 2) |
-| 40  | 16 | database id (random, stable across rekeys) |
-| 56  | 24 | key-wrap nonce |
-| 80  | 80 | DEK ‖ audit key, wrapped with XChaCha20-Poly1305 under the KEK (AAD = bytes 0..56) |
-| 160 | 24 | body nonce (fresh on every write) |
-| 184 | …  | SQLite image encrypted under the DEK, then a 16-byte Poly1305 tag (AAD = magic ‖ database id) |
+| 0    | 8  | magic `BMSEAL02` |
+| 8    | 16 | database id (random, stable across rekeys) |
+| 24   | 4  | slot table length L |
+| 28   | L  | key slots (JSON array) |
+| 28+L | 24 | body nonce (fresh on every write) |
+| 52+L | …  | SQLite image encrypted under the DEK, then a 16-byte Poly1305 tag (AAD = `BMSEAL01` ‖ database id) |
+
+Each **key slot** wraps the same `DEK ‖ audit key` (64 bytes), and any one slot
+opens the database:
+
+| slot | wrap |
+|------|------|
+| `ssh` | an [age](https://age-encryption.org) message to an SSH public key (ssh-ed25519 or ssh-rsa); the slot also records the key's SHA256 fingerprint and the private key path it was made from |
+| `file` | XChaCha20-Poly1305 under a random 256-bit KEK kept in an owner-only key file |
+| `env` | XChaCha20-Poly1305 under `BIOMARKER_KEY=raw:<hex>` |
+| `keychain` | XChaCha20-Poly1305 under a random KEK in the OS keychain |
+| `passphrase` | XChaCha20-Poly1305 under Argon2id(passphrase), parameters and salt in the slot |
+| `legacy` | a 0.2/0.3 raw key (OS keychain or `BIOMARKER_KEY=raw:`), read-only |
+
+Raw and passphrase wraps use AAD = magic ‖ database id ‖ slot kind (‖ Argon2id
+parameters), so a slot cannot be moved to another database or relabelled.
+
+**Version 1** (`BMSEAL01`, written by 0.2 and 0.3) has a fixed 160-byte header
+with exactly one raw or passphrase wrap. It is still read; the first slot
+change (`key add-*`, `key remove`, `db rekey`) rewrites it as version 2. The
+body AAD is the same in both versions, so slot changes never re-encrypt the body.
 
 * Cipher: XChaCha20-Poly1305 (`chacha20poly1305` crate). 192-bit random nonces
   make nonce reuse across rewrites a non-issue.
@@ -77,9 +94,11 @@ biomarker uses this:
   The parameters are stored in the header so they can be raised later.
 * Keys (`Key`, `DataKeys`) are zeroized on drop (`zeroize`). Decrypted images
   are held in `Zeroizing` buffers where biomarker owns them.
-* Every byte of the header is authenticated (by the key wrap), and so is the body.
-  Flipping any byte gives either "wrong key" (header, exit 8) or "failed
-  authentication: … tampered with" (body, exit 5).
+* The database id and every wrap are authenticated, and so is the body. Flipping
+  a byte gives either "wrong key" (database id or a wrap, exit 8), an unreadable
+  slot table (exit 5) or "failed authentication: … tampered with" (body, exit 5).
+  Slot metadata that is only a hint (an `ssh` slot's private key path) is not
+  trusted: the key still has to decrypt the slot.
 
 ### Cost
 
@@ -102,7 +121,8 @@ encrypt + fsync (commit). Both are linear in the database size. XChaCha20-Poly13
 runs at well over 1 GB/s, so the remaining cost is fsqlite's own image import
 and export plus the write. A passphrase KEK adds one Argon2id derivation per
 command (about 0.1–0.3 s with the default parameters). `db unlock` avoids that by
-caching the derived KEK in the keychain for a while.
+caching the derived KEK in the keychain for a while. An `ssh` slot costs one
+X25519 (or RSA) operation.
 
 Biomarker databases are small (thousands to tens of thousands of lab values),
 so this costs a few hundred milliseconds at worst. genome-cli's multi-million-row
@@ -112,28 +132,66 @@ chunk index, see §7). Do not reuse this whole-image design there.
 ## 3. Key management
 
 Each database has a random 256-bit **DEK**, which encrypts the image, and a random
-**audit key**, which encrypts audit records. Both are wrapped by a **KEK**. The
-KEK sources are tried in this order. Restrict them with the `key_source` setting
-or `BIOMARKER_KEY_SOURCE` (`auto`, `keychain`, `env`, `passphrase`):
+**audit key**, which encrypts audit records. Both are wrapped in one or more key
+slots (above). The `key_source` setting / `BIOMARKER_KEY_SOURCE` (`auto`, `ssh`,
+`file`, `env`, `keychain`, `passphrase`) decides what a new database gets and
+which slots are tried when opening.
 
-1. **OS keychain.** On macOS this is the Keychain, via `security-framework`. On
-   Linux it is the freedesktop Secret Service (GNOME Keyring, KWallet, …) via
-   `keyring-core` and its zbus store. On Windows it is the Credential Manager
-   (generic credentials) via `keyring-core` and its windows-native store.
-   biomarker generates a random KEK per database and stores it under service
-   `biomarker-cli`, account `kek-<database id>`. Anyone who can unlock your
-   login keychain (or, on Windows, log in as you) can open the database. When
-   the keychain is unusable, for example on a headless Linux server or in CI
-   with no D-Bus session bus, `auto` moves on to the next sources, and
-   `doctor`'s `keychain` row names the backend and why it is unavailable.
-2. **`BIOMARKER_KEY` environment variable** (CI, scripts, servers).
-   `raw:<64 hex chars>` is used directly as the KEK. Any other value is a
-   passphrase and goes through Argon2id.
-3. **Interactive passphrase** (Argon2id), prompted on the terminal when stdin
-   is a TTY. New passphrases must be at least 8 characters and are confirmed.
+### First run (`auto`, the default)
 
-`BIOMARKER_NO_KEYCHAIN=1` disables the keychain entirely. The test suite and the
-README script set it so they never touch a developer's real keychain.
+Encryption is never optional and needs no setup. The first command that creates
+a database:
+
+1. looks for your SSH key: the `ssh_key` setting / `BIOMARKER_SSH_KEY`, else
+   `~/.ssh/id_ed25519`, then `~/.ssh/id_rsa` (on Windows `%USERPROFILE%\.ssh`,
+   where OpenSSH keeps them). ed25519 and RSA keys work, with or without a
+   passphrase; FIDO (`-sk`) keys and ECDSA keys are skipped;
+2. prints which key it will use (path and SHA256 fingerprint, as
+   `ssh-keygen -l` shows it), where that is recorded and how to recover, and on a
+   terminal asks `Encrypt with this SSH key? [Y/n]`. Without a terminal it
+   proceeds and the notice goes to stderr;
+3. if the SSH key has a passphrase, also adds a **key file** slot so daily use
+   never prompts; the SSH key stays the recovery key;
+4. with no usable SSH key (or if you answer no), uses a key file slot alone and
+   says so;
+5. writes an `[encryption]` section at the end of the config file
+   (`biomarker config path`): for every database, the keys that open it and
+   plain-English recovery steps. biomarker rewrites that section when keys
+   change; your settings above it are left alone.
+
+`BIOMARKER_KEY`, when set, makes an `env` slot instead (CI, scripts).
+
+### Opening
+
+`auto` tries, in order: the key file (if one exists for the database), the SSH
+key (silently if it has no passphrase; otherwise its passphrase from
+`BIOMARKER_SSH_PASSPHRASE` or a prompt), `BIOMARKER_KEY`, the OS keychain
+(**only** for a `keychain` or `legacy` slot), then a passphrase prompt. Prompts
+happen only on a terminal. An explicit `key_source` restricts this to that one
+kind.
+
+### Key files
+
+`<config dir>/biomarker-cli/keys/<database id>.key` (the `key_file` setting /
+`BIOMARKER_KEY_FILE` points elsewhere): one line of hex, created owner-only
+(0600 in a 0700 directory on Unix, an owner-only ACL on Windows). Like ssh with
+a private key, biomarker refuses a key file other users can read. It lives
+under the config directory, not next to the database, so syncing or backing up
+the data directory does not carry its key along. New key files are written as
+`<name>.next` and renamed once the database sealed with them is on disk.
+
+### The OS keychain
+
+Only used when you ask for it (`key_source = "keychain"`), for `legacy`
+databases from 0.2/0.3, and for `db unlock` sessions. Moving a 0.3 database off
+the keychain is one command, after which the keychain item is deleted:
+
+```sh
+biomarker db rekey --to ssh      # or --to file / --to passphrase
+```
+
+It may ask for keychain access one last time. `BIOMARKER_NO_KEYCHAIN=1`
+disables the keychain entirely; the test suite and README script set it.
 
 ### Commands
 
@@ -142,19 +200,24 @@ README script set it so they never touch a developer's real keychain.
 | `db init` | creates an **encrypted** database (`--encrypt` is accepted and is the default) |
 | `--insecure-plaintext` (global) | the only way to create or open an unencrypted database; prints a warning every time |
 | `db encrypt` | migrates a plaintext database in place: seals it to `<db>.encrypting`, verifies the round trip from disk (integrity check and identical row counts per table), swaps it in, then overwrites the plaintext file and any `-wal`/`-shm`/`-journal` with random bytes, fsyncs and deletes them |
-| `db rekey [--to SOURCE] [--rotate-dek]` | re-wraps the data keys under a new KEK. For `env` the new key is read from `BIOMARKER_NEW_KEY`. With `--rotate-dek` the image is also re-encrypted under a fresh DEK. The audit key is kept so old audit records stay readable. Keychain KEKs are staged (`kek-<id>-next`) and promoted only after the new container is on disk. |
-| `db unlock [--ttl 15m]` | caches the KEK in the OS keychain (`session-<id>`) until the TTL expires, so passphrase databases stop prompting |
-| `db lock` | ends a `db unlock` session (keychain-stored KEKs stay; the note says so) |
+| `key status` | lists the slots, whether each key is present on this machine, the recovery advice and the config file |
+| `key add-ssh KEY.pub` | adds an SSH public key (a line or a `.pub` path), e.g. a second machine's or an offline recovery key |
+| `key add-passphrase` | adds a passphrase (from `BIOMARKER_NEW_KEY`, or asked twice) |
+| `key add-file` | adds a key file |
+| `key remove N` | removes slot N; the last slot cannot be removed |
+| `db rekey [--to SOURCE] [--rotate-dek]` | replaces every slot with a new key from SOURCE (`ssh`, `file`, `env` via `BIOMARKER_NEW_KEY`, `keychain`, `passphrase`). With `--rotate-dek` the image is also re-encrypted under a fresh DEK. The audit key is kept so old audit records stay readable. Key files and keychain KEKs are staged and promoted only after the new container is on disk |
+| `db unlock [--ttl 15m]` | caches a passphrase (or raw) KEK in the OS keychain (`session-<id>`) until the TTL expires |
+| `db lock` | ends a `db unlock` session |
 | `db backup FILE` | writes an encrypted copy under the same keys |
-| `doctor` | reports encryption state, KEK kind, the keychain backend and available key sources, session state, whether unlocking works without a prompt, file permissions (Unix mode or Windows ACL), stray plaintext sidecars, and audit-log verification |
+| `doctor` | reports encryption state, every key slot and whether its key is here, recovery advice, session state, whether unlocking works without a prompt, file permissions (Unix mode or Windows ACL), stray plaintext sidecars, and audit-log verification |
 
 Exit code 8 (`key`) means no key was available, the key was wrong, or the database
 is plaintext and `--insecure-plaintext` was not given.
 
-**Back up your key.** A database whose KEK exists only in one machine's
-keychain cannot be opened anywhere else. Before you move it, rekey it to a
-passphrase (`db rekey --to passphrase`) or to an env key. Lose the key and the
-data is gone; there is no recovery.
+**Keep a key off this machine.** Lose every key in a database's slots and the
+data is gone; there is no recovery. Your SSH key is usually already backed up or
+on another machine; `key add-ssh` adds another machine's key, and `key
+add-passphrase` adds a passphrase you can write down.
 
 ## 4. Audit trail
 
@@ -210,12 +273,16 @@ them with. Plaintext (`--insecure-plaintext`) databases are not audited.
   fsqlite's internal buffers are not zeroized by biomarker.
 * **Swap, hibernation files and core dumps** can capture that memory. Use
   encrypted swap (default on macOS) and disable core dumps if that matters to you.
-* **A compromised account.** Malware running as you can read the keychain item
-  or `BIOMARKER_KEY`, or wait for you to unlock. Keychain mode trades this for
-  convenience. Use passphrase mode without `db unlock` for the strongest
-  at-rest posture.
+* **Anyone running as you.** A key file, an unprotected SSH key, `BIOMARKER_KEY`
+  and the OS keychain all open the database for any program running under your
+  account; that is what makes them prompt-free. The same is true of your SSH key
+  itself, which already opens your servers. A key file protects against copying
+  the database (or a backup, or a synced data folder) without the key; it does
+  not protect against malware, or another admin, on the same account. For that,
+  use only a passphrase slot (or a passphrase-protected SSH key with no key file:
+  `key remove` the file slot) and skip `db unlock`.
 * **Environment variables** can leak into shell history, `ps e` and CI logs.
-  Prefer the keychain or a passphrase on interactive machines.
+  Prefer an SSH key, a key file or a passphrase on interactive machines.
 * **Secure deletion.** `db encrypt` overwrites the plaintext before deleting
   it. On SSDs, copy-on-write filesystems (APFS, btrfs, ZFS) and snapshotting
   backups (Time Machine) old blocks may survive. Full-disk encryption
@@ -225,7 +292,8 @@ them with. Plaintext (`--insecure-plaintext`) databases are not audited.
   read, never copied).
 * **Metadata:** file sizes, modification times, and the existence of the
   `.audit`/`.lock` files. The config file (which may contain
-  `default_person`) is not encrypted.
+  `default_person`, and lists each database's path and key fingerprints in its
+  `[encryption]` section) is not encrypted; it holds no key material.
 * **External tools.** The genome pipeline's BAM/VCF intermediates are written by
   third-party programs (see §7).
 

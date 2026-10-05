@@ -12,9 +12,9 @@
 //! place once the database sealed with them is on disk ([`commit`]), so a
 //! crash in between never loses the key: [`load`] also tries the `.next` file.
 
+use std::cell::RefCell;
 use std::io::Write;
 use std::path::{Path, PathBuf};
-use std::sync::Mutex;
 
 use zeroize::Zeroizing;
 
@@ -23,14 +23,15 @@ use crate::error::Result;
 use crate::keys::key_error;
 use crate::perms::{self, Access};
 
-static OVERRIDE: Mutex<Option<PathBuf>> = Mutex::new(None);
+thread_local! {
+    static OVERRIDE: RefCell<Option<PathBuf>> = const { RefCell::new(None) };
+}
 
-/// Use `path` as the key file for every database this process opens
-/// (`key_file` setting); an empty path restores the per-database default.
+/// Use `path` as the key file for the databases this thread opens
+/// (`key_file` setting); `None` restores the per-database default. Per
+/// thread, so tests can run in parallel.
 pub fn set_override(path: Option<PathBuf>) {
-    if let Ok(mut o) = OVERRIDE.lock() {
-        *o = path.filter(|p| !p.as_os_str().is_empty());
-    }
+    OVERRIDE.with(|o| *o.borrow_mut() = path.filter(|p| !p.as_os_str().is_empty()));
 }
 
 /// Directory holding the per-database key files.
@@ -40,7 +41,7 @@ pub fn default_dir() -> PathBuf {
 
 /// The key file for database `db_id`.
 pub fn path_for(db_id: &[u8; ID_LEN]) -> PathBuf {
-    let o = OVERRIDE.lock().ok().and_then(|o| o.clone());
+    let o = OVERRIDE.with(|o| o.borrow().clone());
     o.unwrap_or_else(|| default_dir().join(format!("{}.key", hex(db_id))))
 }
 

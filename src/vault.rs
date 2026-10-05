@@ -53,7 +53,13 @@ pub fn plaintext_error(path: &Path) -> AppError {
 }
 
 /// Slots for a brand-new database at `path` (announced through `p`).
-fn first_slots(path: &Path, o: &OpenOpts, id: [u8; crypto::ID_LEN], keys: &DataKeys, p: &mut dyn Prompter) -> Result<NewSlots> {
+fn first_slots(
+    path: &Path,
+    o: &OpenOpts,
+    id: [u8; crypto::ID_LEN],
+    keys: &DataKeys,
+    p: &mut dyn Prompter,
+) -> Result<NewSlots> {
     let what = disp(path);
     let mut s = Setup { what: &what, config: &o.config, prompter: p };
     keysetup::new_slots(o.source, keys::ENV_KEY, id, keys, &mut s)
@@ -89,7 +95,12 @@ pub fn open(path: &Path, o: &OpenOpts, warn: &dyn Fn(&str), p: &mut dyn Prompter
 }
 
 /// Unlock an existing encrypted database's keys without loading it.
-pub fn unlock(path: &Path, source: Source, allow_prompt: bool, p: &mut dyn Prompter) -> Result<(Header, keys::Unlocked)> {
+pub fn unlock(
+    path: &Path,
+    source: Source,
+    allow_prompt: bool,
+    p: &mut dyn Prompter,
+) -> Result<(Header, keys::Unlocked)> {
     match state(path)? {
         State::Sealed(h) => {
             let u = keys::unlock(source, &h, &disp(path), allow_prompt, p)?;
@@ -246,42 +257,31 @@ pub fn rekey(path: &Path, o: &OpenOpts, to: Source, rotate_dek: bool, p: &mut dy
     })
 }
 
-/// A change to a database's key slots (`key add-*` / `key remove`).
-pub enum SlotChange {
-    Add(Slot),
-    AddFile,
-    /// Remove the slot at this index.
-    Remove(usize),
+/// New slots for a database plus anything staged that must be committed
+/// once they are written.
+pub struct Edit {
+    pub slots: Vec<Slot>,
+    pub staged: Option<NewSlots>,
 }
 
-/// Apply `change` to the database's slots (same data keys, body untouched).
-/// Returns the new header and what unlocked the database.
-pub fn change_slots(path: &Path, o: &OpenOpts, change: SlotChange, p: &mut dyn Prompter) -> Result<(Header, &'static str)> {
+/// Replace the database's slots with what `edit` returns (same data keys,
+/// body untouched). `edit` gets the current header, the unlocked keys and
+/// the prompter. Returns the new header and what unlocked the database.
+pub fn change_slots(
+    path: &Path,
+    o: &OpenOpts,
+    p: &mut dyn Prompter,
+    edit: impl FnOnce(&Header, &DataKeys, &mut dyn Prompter) -> Result<Edit>,
+) -> Result<(Header, &'static str)> {
     let _lock = crate::db::lock(path)?;
     let (header, u) = unlock(path, o.source, true, p)?;
-    let mut slots = header.slots.clone();
-    let mut staged = None;
-    match change {
-        SlotChange::Add(slot) => slots.push(slot),
-        SlotChange::AddFile => {
-            if slots.iter().any(|s| s.kind == SlotKind::Raw(Holder::File)) {
-                return Err(AppError::invalid("the database already has a key file slot"));
-            }
-            let ns = keysetup::file_slot(header.db_id, &u.keys)?;
-            slots.extend(ns.slots.iter().cloned());
-            staged = Some(ns);
-        }
-        SlotChange::Remove(i) if i >= slots.len() => {
-            return Err(AppError::invalid(format!("no key slot {} (see `biomarker key status`)", i + 1)))
-        }
-        SlotChange::Remove(_) if slots.len() == 1 => {
-            return Err(AppError::invalid("refusing to remove the only key: the database could never be opened again"))
-        }
-        SlotChange::Remove(i) => drop(slots.remove(i)),
+    let e = edit(&header, &u.keys, p)?;
+    if e.slots.is_empty() {
+        return Err(AppError::invalid("refusing to remove the last key: the database could never be opened again"));
     }
-    let new_header = header.with_slots(slots);
+    let new_header = header.with_slots(e.slots);
     swap_header(path, &header, &u.keys, &new_header)?;
-    if let Some(ns) = staged {
+    if let Some(ns) = e.staged {
         ns.commit()?;
     }
     forget_dropped(&header, &new_header, u.source);

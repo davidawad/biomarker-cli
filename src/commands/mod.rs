@@ -4,6 +4,7 @@ pub mod config_cmd;
 pub mod db_cmd;
 pub mod import;
 pub mod import_sheet;
+pub mod key_cmd;
 pub mod marker;
 pub mod measure;
 pub mod misc;
@@ -46,6 +47,7 @@ pub fn dispatch(ctx: &Ctx, cmd: Command) -> Result<Status> {
         Command::Db(c) => db_cmd::run(ctx, c).map(|()| 0),
         Command::Config(c) => config_cmd::run(ctx, c).map(|()| 0),
         Command::Audit(c) => security::audit(ctx, c).map(|()| 0),
+        Command::Key(c) => key_cmd::run(ctx, c).map(|()| 0),
         Command::Doctor => security::doctor(ctx).map(|()| 0),
         Command::Completions(a) => misc::completions(a).map(|()| 0),
         Command::Man(a) => misc::man(a).map(|()| 0),

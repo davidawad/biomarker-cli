@@ -68,7 +68,8 @@ impl Env {
     }
     fn ok(&self, c: &mut Command) -> (String, String) {
         let out = c.output().unwrap();
-        let (o, e) = (String::from_utf8_lossy(&out.stdout).into_owned(), String::from_utf8_lossy(&out.stderr).into_owned());
+        let (o, e) =
+            (String::from_utf8_lossy(&out.stdout).into_owned(), String::from_utf8_lossy(&out.stderr).into_owned());
         assert!(out.status.success(), "stdout: {o}\nstderr: {e}");
         (o, e)
     }
@@ -102,7 +103,10 @@ fn first_run_encrypts_with_the_ssh_key_and_records_how() {
     assert_eq!((slots[0]["kind"].as_str(), slots[0]["status"].as_str()), (Some("ssh"), Some("ok")));
     // The config file says which key opens the database and how to recover it.
     let cfg = std::fs::read_to_string(e.config()).unwrap();
-    assert!(cfg.contains("[encryption.") && cfg.contains(&fp) && cfg.contains("# recover:"), "{cfg}");
+    assert!(
+        cfg.contains("[encryption.") && cfg.contains(&fp) && cfg.contains("#   recover: on another machine"),
+        "{cfg}"
+    );
     // ... and stays a valid config file.
     e.run(&["config", "set", "format", "json"]);
     let cfg = std::fs::read_to_string(e.config()).unwrap();
@@ -133,7 +137,7 @@ fn protected_ssh_key_gets_a_private_daily_key_file() {
         assert!(matches!(a, Access::Private(_)), "{a:?}");
     }
     e.run(&["person", "list"]); // no passphrase needed day to day
-    // Key file gone: the SSH key is the way back in.
+                                // Key file gone: the SSH key is the way back in.
     std::fs::remove_file(&files[0]).unwrap();
     let err = e.fail(e.cmd().args(["person", "list"]), 8);
     assert!(err.contains("none of its keys"), "{err}");
