@@ -9,6 +9,13 @@
 //! `XDG_CONFIG_HOME` / `XDG_DATA_HOME` are honoured on every platform when
 //! set to an absolute path, and `BIOMARKER_CONFIG` / `BIOMARKER_DB` override
 //! both (see [`crate::config`]).
+//!
+//! These functions are the only place default locations are decided, and the
+//! resolved `db_path` setting is what every command opens. Up to 0.2,
+//! biomarker used `~/.config` and `~/.local/share` on every OS; on Windows
+//! those are now legacy locations. When nothing exists at the platform
+//! location but a file exists at a legacy one, the legacy file is used, so a
+//! new empty database (or config) never shadows an existing one.
 
 use std::path::PathBuf;
 
@@ -46,19 +53,37 @@ fn platform_data() -> PathBuf {
 fn platform_config() -> PathBuf {
     directories::BaseDirs::new().map_or_else(|| home().join("AppData").join("Roaming"), |b| b.config_dir().into())
 }
-/// `%LOCALAPPDATA%`: the database stays on this machine (its key may live in
-/// this machine's Credential Manager).
+/// `%LOCALAPPDATA%`: the database stays on this machine.
 #[cfg(windows)]
 fn platform_data() -> PathBuf {
     directories::BaseDirs::new().map_or_else(|| home().join("AppData").join("Local"), |b| b.data_local_dir().into())
 }
 
+/// `preferred` unless it is missing and one of `legacy` exists.
+pub fn resolve(preferred: PathBuf, legacy: &[PathBuf]) -> PathBuf {
+    if preferred.exists() {
+        return preferred;
+    }
+    legacy.iter().find(|p| p.exists()).cloned().unwrap_or(preferred)
+}
+
+/// Where 0.2 and earlier kept `file` under `dir` (`.config` / `.local/share`).
+fn legacy(var: &str, dir: &[&str], file: &str) -> Vec<PathBuf> {
+    if std::env::var_os(var).is_some_and(|v| std::path::Path::new(&v).is_absolute()) {
+        return Vec::new(); // XDG_* set: same location as before
+    }
+    let p = dir.iter().fold(home(), |p, d| p.join(d)).join(APP).join(file);
+    vec![p]
+}
+
 pub fn default_config_path() -> PathBuf {
-    base("XDG_CONFIG_HOME", platform_config).join(APP).join("config.toml")
+    let preferred = base("XDG_CONFIG_HOME", platform_config).join(APP).join("config.toml");
+    resolve(preferred, &legacy("XDG_CONFIG_HOME", &[".config"], "config.toml"))
 }
 
 pub fn default_db_path() -> PathBuf {
-    base("XDG_DATA_HOME", platform_data).join(APP).join("biomarker.db")
+    let preferred = base("XDG_DATA_HOME", platform_data).join(APP).join("biomarker.db");
+    resolve(preferred, &legacy("XDG_DATA_HOME", &[".local", "share"], "biomarker.db"))
 }
 
 /// Expand a leading `~/` (also `~\` on Windows) to the home directory.
@@ -78,6 +103,19 @@ mod tests {
     fn defaults_end_in_app_dir() {
         assert!(default_db_path().ends_with(format!("{APP}/biomarker.db")));
         assert!(default_config_path().ends_with(format!("{APP}/config.toml")));
+    }
+
+    #[test]
+    fn an_existing_legacy_file_wins_over_a_missing_preferred_one() {
+        let t = tempfile::TempDir::new().unwrap();
+        let (new, old) = (t.path().join("new").join("x.db"), t.path().join("old").join("x.db"));
+        assert_eq!(resolve(new.clone(), std::slice::from_ref(&old)), new, "nothing anywhere: preferred");
+        std::fs::create_dir_all(old.parent().unwrap()).unwrap();
+        std::fs::write(&old, b"db").unwrap();
+        assert_eq!(resolve(new.clone(), std::slice::from_ref(&old)), old, "legacy exists: never shadow it");
+        std::fs::create_dir_all(new.parent().unwrap()).unwrap();
+        std::fs::write(&new, b"db").unwrap();
+        assert_eq!(resolve(new.clone(), &[old]), new, "both: preferred");
     }
 
     #[test]

@@ -148,9 +148,22 @@ pub const SETTINGS: &[Setting] = &[
     Setting {
         key: "key_source",
         env: &["BIOMARKER_KEY_SOURCE"],
-        help:
-            "where the database encryption key comes from (auto = keychain, then BIOMARKER_KEY, then passphrase prompt)",
-        choices: &["auto", "keychain", "env", "passphrase"],
+        help: "how databases are encrypted (auto = your SSH key, else a key file; BIOMARKER_KEY when set)",
+        choices: &["auto", "ssh", "file", "env", "passphrase"],
+        kind: Kind::Str,
+    },
+    Setting {
+        key: "ssh_key",
+        env: &["BIOMARKER_SSH_KEY"],
+        help: "SSH private key for encryption (default: ~/.ssh/id_ed25519, then ~/.ssh/id_rsa)",
+        choices: &[],
+        kind: Kind::Str,
+    },
+    Setting {
+        key: "key_file",
+        env: &["BIOMARKER_KEY_FILE"],
+        help: "key file for the database (default: <config dir>/keys/<database id>.key)",
+        choices: &[],
         kind: Kind::Str,
     },
     Setting {
@@ -303,10 +316,13 @@ fn toml_scalar(v: &toml::Value) -> Option<String> {
 
 /// Accepts flat keys and one level of tables (`[csv] delimiter = ";"` ==
 /// `csv_delimiter = ";"`).
+/// The `[encryption]` section is biomarker's record of database keys
+/// ([`crate::enc_config`]), not settings.
 pub fn parse_toml_layer(text: &str) -> Result<Layer> {
     let table: toml::Table = text.parse().map_err(|e| AppError::config(format!("TOML: {e}")))?;
     table
         .iter()
+        .filter(|(k, _)| k.as_str() != "encryption")
         .flat_map(|(k, v)| match v {
             toml::Value::Table(t) => t.iter().map(|(k2, v2)| (format!("{k}_{k2}"), v2.clone())).collect::<Vec<_>>(),
             other => vec![(k.clone(), other.clone())],
@@ -346,7 +362,8 @@ pub fn resolve(config_flag: Option<&Path>, flags: Layer) -> Result<Resolved> {
 pub fn write_setting(path: &Path, key: &str, value: Option<&str>) -> Result<()> {
     let s = setting(key).ok_or_else(|| AppError::config(format!("unknown config key '{key}'")))?;
     let text = std::fs::read_to_string(path).unwrap_or_default();
-    let mut table: toml::Table = text.parse().map_err(|e| AppError::config(format!("{}: {e}", path.display())))?;
+    let (head, block) = crate::enc_config::split(&text);
+    let mut table: toml::Table = head.parse().map_err(|e| AppError::config(format!("{}: {e}", path.display())))?;
     match value {
         Some(v) => {
             let v = normalize(s.key, v)?;
@@ -364,7 +381,10 @@ pub fn write_setting(path: &Path, key: &str, value: Option<&str>) -> Result<()> 
     if let Some(parent) = path.parent() {
         std::fs::create_dir_all(parent)?;
     }
-    let out = toml::to_string_pretty(&table).map_err(|e| AppError::config(e.to_string()))?;
+    let mut out = toml::to_string_pretty(&table).map_err(|e| AppError::config(e.to_string()))?;
+    if !block.is_empty() {
+        out = format!("{}\n\n{block}", out.trim_end());
+    }
     std::fs::write(path, out).map_err(|e| AppError::io(format!("writing {}: {e}", path.display())))
 }
 

@@ -45,7 +45,6 @@ impl Env {
             .env("BIOMARKER_DB", self.db())
             .env("BIOMARKER_TZ", "UTC")
             .env("BIOMARKER_KEY_SOURCE", "env")
-            .env("BIOMARKER_NO_KEYCHAIN", "1")
             .env("NO_COLOR", "1");
         if !self.key.is_empty() {
             c.env("BIOMARKER_KEY", &self.key);
@@ -260,7 +259,7 @@ fn missing_and_wrong_key_fail_cleanly() {
     assert!(e.fail(&["query"], 8).contains("wrong key"));
     e.key = String::new();
     let err = e.fail(&["query"], 8);
-    assert!(err.contains("no key is available"), "{err}");
+    assert!(err.contains("none of its keys is available"), "{err}");
     let v: Value = serde_json::from_slice(&e.out(&["query", "--format", "json"]).stderr).unwrap();
     assert_eq!(v["error"]["kind"], "key");
 }
@@ -270,16 +269,19 @@ fn tampering_is_detected() {
     let e = Env::new();
     e.populate(&[]);
     let good = std::fs::read(e.db()).unwrap();
-    // A flipped byte in the encrypted body.
+    // A flipped byte in the encrypted body (after the v2 header: 28 bytes +
+    // the slot table + the 24-byte body nonce).
+    assert_eq!(&good[..8], b"BMSEAL02");
+    let body = 28 + u32::from_le_bytes(good[24..28].try_into().unwrap()) as usize + 24;
     let mut bad = good.clone();
-    let mid = 184 + (bad.len() - 184) / 2;
+    let mid = body + (bad.len() - body) / 2;
     bad[mid] ^= 0x01;
     std::fs::write(e.db(), &bad).unwrap();
     let err = e.fail(&["query"], 5);
     assert!(err.contains("tampered"), "{err}");
     // A flipped byte in the authenticated header (database id).
     let mut bad = good.clone();
-    bad[44] ^= 0x01;
+    bad[10] ^= 0x01;
     std::fs::write(e.db(), &bad).unwrap();
     e.fail(&["query"], 8);
     // The trailing tag.
@@ -304,7 +306,7 @@ fn tampering_is_detected() {
 fn rekey_to_passphrase_and_back_with_dek_rotation() {
     let mut e = Env::new();
     e.populate(&[]);
-    let id_before = std::fs::read(e.db()).unwrap()[40..56].to_vec();
+    let id_before = std::fs::read(e.db()).unwrap()[8..24].to_vec();
     // raw key -> env passphrase (Argon2id)
     let out = e.cmd().args(["db", "rekey"]).env("BIOMARKER_NEW_KEY", "correct horse battery staple").output().unwrap();
     assert!(out.status.success(), "{}", String::from_utf8_lossy(&out.stderr));
@@ -312,14 +314,14 @@ fn rekey_to_passphrase_and_back_with_dek_rotation() {
     e.key = "correct horse battery staple".into();
     assert_eq!(e.json(&["query", "--all-people"])["count"], 2);
     let doctor = e.run(&["doctor"]);
-    assert!(doctor.contains("passphrase-argon2id"), "{doctor}");
+    assert!(doctor.contains("passphrase: Argon2id"), "{doctor}");
     // passphrase -> raw key, rotating the data key
     let out = e.cmd().args(["db", "rekey", "--rotate-dek"]).env("BIOMARKER_NEW_KEY", KEY_B).output().unwrap();
     assert!(out.status.success(), "{}", String::from_utf8_lossy(&out.stderr));
     e.fail(&["query"], 8);
     e.key = KEY_B.into();
     assert_eq!(e.json(&["query", "--all-people"])["count"], 2);
-    assert_eq!(std::fs::read(e.db()).unwrap()[40..56], id_before[..], "database id survives rekey");
+    assert_eq!(std::fs::read(e.db()).unwrap()[8..24], id_before[..], "database id survives rekey");
     // The audit log written under the old keys is still readable.
     let log = e.json(&["audit", "log"]);
     let cmds: Vec<&str> = log["data"].as_array().unwrap().iter().map(|r| r["command"].as_str().unwrap()).collect();
@@ -412,23 +414,12 @@ fn doctor_reports_encryption_state() {
     assert_eq!(status("unlock").as_deref(), Some("ok"));
     assert_eq!(status("audit_log").as_deref(), Some("ok"));
     assert_eq!(status("sidecars").as_deref(), Some("ok"));
-    assert_eq!(status("keychain").as_deref(), Some("warn"));
-    // The keychain row names this platform's backend and the fallback.
-    let keychain = rows.iter().find(|r| r["check"] == "keychain").unwrap()["detail"].as_str().unwrap();
-    assert!(keychain.contains("BIOMARKER_NO_KEYCHAIN") && keychain.contains("falling back"), "{keychain}");
+    assert!(rows.iter().all(|r| r["check"] != "keychain" && r["check"] != "session"), "{rows:?}");
+    assert_eq!(status("key 1").as_deref(), Some("ok"), "{rows:?}");
     let files =
         rows.iter().filter(|r| r["check"] == "permissions" && r["detail"].as_str().unwrap().contains("labs.db"));
     assert_eq!(files.clone().count(), 2, "{rows:?}");
     assert!(files.into_iter().all(|r| r["status"] == "ok"), "{rows:?}");
-}
-
-#[test]
-fn db_lock_unlock_need_keychain() {
-    let e = Env::new();
-    e.populate(&[]);
-    let err = e.fail(&["db", "unlock"], 8);
-    assert!(err.contains("keychain"), "{err}");
-    e.run(&["db", "lock"]);
 }
 
 /// Performance smoke test: open + query and commit latency on a few thousand

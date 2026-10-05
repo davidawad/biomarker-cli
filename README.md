@@ -130,11 +130,11 @@ $ biomarker trend -m apob --format json | head -n 32
   can consume it.
 * Layered configuration: defaults < TOML file < `BIOMARKER_*` env < flags.
   `config show --effective` shows where each value came from.
-* **Encrypted at rest by default.** The database is an XChaCha20-Poly1305
-  sealed container. Its key lives in the macOS Keychain or Linux Secret
-  Service, in `BIOMARKER_KEY`, or behind an Argon2id passphrase. An encrypted
-  audit log records who did what. Exports can be age-encrypted. See
-  [Encryption](#encryption).
+* **Encrypted at rest, with nothing to set up.** The database is an
+  XChaCha20-Poly1305 sealed container, locked to your SSH key by default (or a
+  private key file when there is none), on macOS, Linux and Windows alike. Add
+  a passphrase or more SSH keys any time. An encrypted audit log records who
+  did what. Exports can be age-encrypted. See [Encryption](#encryption).
 
 > **Not medical advice.** The built-in ranges are typical adult values for
 > orientation only. Labs differ, so set your lab's ranges with
@@ -297,27 +297,44 @@ ID  PERSON  TAKEN_AT    MARKER   QUALIFIER  VALUE  UNIT   REF_LOW  REF_HIGH  FLA
 
 ## Encryption
 
-Everything biomarker writes about people is encrypted. On first use `db init`
-(or any command) creates an encrypted database. Its key goes in the OS
-keychain (macOS Keychain, Secret Service on Linux, Windows Credential Manager)
-or comes from `BIOMARKER_KEY`, or you are prompted for a passphrase. Headless
-Linux machines without a D-Bus session use `BIOMARKER_KEY` or the prompt;
-`biomarker doctor` shows which backend is in use.
+Everything biomarker writes about people is encrypted, and you do not have to
+set anything up. The first command creates an encrypted database locked to
+your SSH key (`~/.ssh/id_ed25519`, then `~/.ssh/id_rsa`; `%USERPROFILE%\.ssh`
+on Windows). It tells you which key (path and fingerprint) and, on a terminal,
+asks before using it:
+
+```console
+$ biomarker person add alex
+biomarker: encrypting ~/.local/share/biomarker-cli/biomarker.db with your SSH key ~/.ssh/id_ed25519 (SHA256:…).
+  How to open it again is written to ~/.config/biomarker-cli/config.toml (the [encryption] section). On another machine: copy ~/.ssh/id_ed25519 and the database there, then run `biomarker doctor`. Without that key the data cannot be recovered.
+Encrypt with this SSH key? [Y/n]
+```
+
+From then on it just opens; nothing prompts. If your SSH key has a passphrase,
+biomarker also makes a private key file so daily use stays prompt-free and the
+SSH key becomes the recovery key. With no SSH key it uses a key file
+(owner-only, under the config directory, refused if others can read it, like
+ssh does). biomarker never uses the OS keychain, so it behaves the same on
+macOS, Linux and Windows, and the keys move between machines.
 
 ```sh
+biomarker key status            # which keys open the database, and how to recover it
+biomarker key add-ssh ~/.ssh/laptop.pub   # another machine's key (or an offline recovery key)
+biomarker key add-passphrase    # a passphrase you can write down
+biomarker key remove 2
+biomarker db rekey --to ssh     # replace every key with your SSH key
 export BIOMARKER_KEY="raw:$(openssl rand -hex 32)"   # CI / scripts; or a passphrase
 biomarker db encrypt            # migrate an existing plaintext database in place
-biomarker db rekey --to passphrase [--rotate-dek]
-biomarker db unlock --ttl 30m   # cache a passphrase-derived key; `db lock` ends it
 biomarker doctor                # encryption, keys, permissions, audit-log check
 biomarker audit log -n 20       # who did what (no values are logged)
 biomarker export --recipient age1... -o labs.csv.age   # or --encrypt-output with a passphrase
 ```
 
 Plaintext databases need `--insecure-plaintext` and print a warning every
-time. `docs/security.md` covers the design, the threat model and what is
-*not* protected (memory, swap, a compromised account). Back up your key:
-without it the data cannot be recovered.
+time. `docs/security.md` covers the design and the threat model: an SSH key or
+key file protects the data against the database (or a backup, or a synced
+folder) being copied, not against programs running as you. Keep at least one
+key somewhere else: lose them all and the data cannot be recovered.
 
 ## Commands
 
@@ -338,6 +355,7 @@ without it the data cannot be recovered.
 | `flag` | out-of-range values (`--latest`, `--exit-code` → status 10) |
 | `diff FROM TO` | compare values at two dates (`--exact`, `--changed`) |
 | `db path/init/migrate/backup/vacuum/check/info` | maintenance. Migrations are versioned and applied automatically |
+| `key status/add-ssh/add-passphrase/add-file/remove` | the keys that can open the database |
 | `db encrypt/rekey/unlock/lock`, `doctor`, `audit log` | encryption at rest, key management and the audit trail (see [docs/security.md](docs/security.md)) |
 | `config show [--effective]/set/unset/path/keys` | configuration |
 | `completions bash\|zsh\|fish\|nushell\|elvish\|powershell` | shell completions |

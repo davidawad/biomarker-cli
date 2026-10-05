@@ -20,8 +20,6 @@ concurrency:
 
 env:
   CARGO_TERM_COLOR: always
-  # Tests use BIOMARKER_KEY; never touch a runner's keychain.
-  BIOMARKER_NO_KEYCHAIN: "1"
 
 jobs:
   test:
