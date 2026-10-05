@@ -113,6 +113,16 @@ fn columns_and_no_header_are_honoured() {
     assert!(md.starts_with("| marker | value |\n|---|---|\n"), "{md}");
 }
 
+/// Numbers as f64, so `112.0` (JSON) equals TOON's canonical `112`.
+fn numbers_as_f64(v: Value) -> Value {
+    match v {
+        Value::Number(n) => serde_json::json!(n.as_f64()),
+        Value::Array(a) => Value::Array(a.into_iter().map(numbers_as_f64).collect()),
+        Value::Object(o) => Value::Object(o.into_iter().map(|(k, v)| (k, numbers_as_f64(v))).collect()),
+        other => other,
+    }
+}
+
 #[test]
 fn yaml_and_toon_carry_the_json_envelope() {
     let e = Env::seeded();
@@ -120,7 +130,7 @@ fn yaml_and_toon_carry_the_json_envelope() {
     let yaml: Value = yaml_serde::from_str(&e.run(&["latest", "--person", "alex", "-f", "yaml"])).unwrap();
     assert_eq!(yaml, json);
     let toon: Value = toon_format::decode_no_coerce(&e.run(&["latest", "--person", "alex", "-f", "toon"])).unwrap();
-    assert_eq!(toon, json);
+    assert_eq!(numbers_as_f64(toon), numbers_as_f64(json));
 }
 
 #[test]

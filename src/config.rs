@@ -65,13 +65,13 @@ pub const SETTINGS: &[Setting] = &[
         key: "format",
         env: &["BIOMARKER_FORMAT"],
         help: "default output format",
-        choices: &["table", "json", "jsonl", "csv", "tsv"],
+        choices: crate::output::Format::NAMES,
         kind: Kind::Str,
     },
     Setting {
         key: "date_format",
         env: &["BIOMARKER_DATE_FORMAT"],
-        help: "strftime format for dates in table/csv/tsv output and extra import format",
+        help: "strftime format for dates in text output (table/csv/tsv/markdown/html/org) and extra import format",
         choices: &[],
         kind: Kind::Str,
     },
@@ -99,7 +99,7 @@ pub const SETTINGS: &[Setting] = &[
     Setting {
         key: "precision",
         env: &["BIOMARKER_PRECISION"],
-        help: "decimal places in table/csv/tsv output",
+        help: "decimal places in text output (table/csv/tsv/markdown/html/org)",
         choices: &[],
         kind: Kind::Uint,
     },
@@ -127,7 +127,7 @@ pub const SETTINGS: &[Setting] = &[
     Setting {
         key: "null",
         env: &["BIOMARKER_NULL"],
-        help: "text for missing values in table/csv/tsv output",
+        help: "text for missing values in text output (table/csv/tsv/markdown/html/org)",
         choices: &[],
         kind: Kind::Str,
     },

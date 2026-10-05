@@ -1,4 +1,6 @@
-//! Rendering reports as table, JSON (versioned envelope), JSONL, CSV or TSV.
+//! Rendering reports. Structured formats (JSON, YAML, TOON) carry the
+//! versioned envelope; JSONL streams the records; CSV/TSV are delimited;
+//! table, Markdown, HTML and Org are text tables built from the same cells.
 
 use std::io::Write;
 use std::path::PathBuf;
@@ -11,16 +13,46 @@ pub const SCHEMA: &str = "biomarker/v1";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, clap::ValueEnum)]
 pub enum Format {
+    /// Aligned text table (the default)
+    #[value(alias = "text", alias = "plain")]
     Table,
+    /// Versioned JSON envelope
     Json,
+    /// One JSON object per line
+    #[value(alias = "ndjson")]
     Jsonl,
+    /// Comma-separated values
     Csv,
+    /// Tab-separated values
     Tsv,
+    /// YAML document of the JSON envelope
+    #[value(alias = "yml")]
+    Yaml,
+    /// TOON (Token-Oriented Object Notation) of the JSON envelope
+    Toon,
+    /// GitHub-flavoured Markdown table
+    #[value(alias = "md")]
+    Markdown,
+    /// HTML table
+    Html,
+    /// Org-mode table
+    Org,
 }
 
 impl Format {
+    /// Every accepted name (canonical spellings, then aliases), for config validation.
+    pub const NAMES: &'static [&'static str] = &[
+        "table", "json", "jsonl", "csv", "tsv", "yaml", "toon", "markdown", "html", "org", "text", "plain", "ndjson",
+        "yml", "md",
+    ];
+
     pub fn parse(s: &str) -> Result<Self> {
         <Self as clap::ValueEnum>::from_str(s, true).map_err(|_| AppError::usage(format!("unknown format '{s}'")))
+    }
+
+    /// Formats that serialize the whole versioned envelope (schema, kind, meta, data).
+    pub fn is_envelope(self) -> bool {
+        matches!(self, Self::Json | Self::Yaml | Self::Toon)
     }
 }
 
@@ -284,6 +316,71 @@ pub fn render_jsonl(r: &Report) -> String {
     items.iter().map(|v| v.to_string() + "\n").collect()
 }
 
+/// Header and cell rows shared by the Markdown, HTML and Org tables. Object
+/// bodies become FIELD/VALUE pairs; column selection applies as in table mode.
+fn grid(r: &Report, o: &OutputOpts) -> (Vec<String>, Vec<Vec<String>>) {
+    let cols = selected_columns(r, o, true);
+    let rows = text_rows(r, o, &cols);
+    (cols, rows)
+}
+
+fn md_escape(s: &str) -> String {
+    s.replace('\\', "\\\\").replace('|', "\\|").replace('\n', "<br>")
+}
+
+fn pipe_row(cells: &[String], escape: fn(&str) -> String) -> String {
+    format!("| {} |\n", cells.iter().map(|c| escape(c)).collect::<Vec<_>>().join(" | "))
+}
+
+/// GitHub-flavoured Markdown needs a header row, so `--no-header` is ignored.
+pub fn render_markdown(r: &Report, o: &OutputOpts) -> String {
+    let (cols, rows) = grid(r, o);
+    if rows.is_empty() {
+        return String::new();
+    }
+    let rule = format!("|{}|\n", vec!["---"; cols.len()].join("|"));
+    [pipe_row(&cols, md_escape), rule].into_iter().chain(rows.iter().map(|row| pipe_row(row, md_escape))).collect()
+}
+
+fn html_escape(s: &str) -> String {
+    s.replace('&', "&amp;").replace('<', "&lt;").replace('>', "&gt;").replace('"', "&quot;")
+}
+
+fn html_row(tag: &str, cells: &[String]) -> String {
+    let tds: String = cells.iter().map(|c| format!("<{tag}>{}</{tag}>", html_escape(c))).collect();
+    format!("    <tr>{tds}</tr>\n")
+}
+
+pub fn render_html(r: &Report, o: &OutputOpts) -> String {
+    let (cols, rows) = grid(r, o);
+    let head = if o.header { format!("  <thead>\n{}  </thead>\n", html_row("th", &cols)) } else { String::new() };
+    let body: String = rows.iter().map(|row| html_row("td", row)).collect();
+    format!("<table class=\"biomarker {}\">\n{head}  <tbody>\n{body}  </tbody>\n</table>\n", r.kind)
+}
+
+fn org_escape(s: &str) -> String {
+    s.replace('|', "\\vert{}").replace('\n', " ")
+}
+
+/// Org table; Org aligns the columns itself (`C-c C-c`), so cells are only escaped.
+pub fn render_org(r: &Report, o: &OutputOpts) -> String {
+    let (cols, rows) = grid(r, o);
+    if rows.is_empty() {
+        return String::new();
+    }
+    let rule = format!("|{}|\n", vec!["---"; cols.len()].join("+"));
+    let head = if o.header { vec![pipe_row(&cols, org_escape), rule] } else { Vec::new() };
+    head.into_iter().chain(rows.iter().map(|row| pipe_row(row, org_escape))).collect()
+}
+
+fn render_yaml(r: &Report) -> Result<String> {
+    yaml_serde::to_string(&envelope(r)).map_err(|e| AppError::io(format!("yaml: {e}")))
+}
+
+fn render_toon(r: &Report) -> Result<String> {
+    toon_format::encode_default(&envelope(r)).map(|s| s + "\n").map_err(|e| AppError::io(format!("toon: {e}")))
+}
+
 pub fn render(r: &Report, o: &OutputOpts) -> Result<String> {
     match o.format {
         Format::Table => Ok(render_table(r, o)),
@@ -291,6 +388,11 @@ pub fn render(r: &Report, o: &OutputOpts) -> Result<String> {
         Format::Jsonl => Ok(render_jsonl(r)),
         Format::Csv => render_delimited(r, o, o.delimiter),
         Format::Tsv => render_delimited(r, o, b'\t'),
+        Format::Yaml => render_yaml(r),
+        Format::Toon => render_toon(r),
+        Format::Markdown => Ok(render_markdown(r, o)),
+        Format::Html => Ok(render_html(r, o)),
+        Format::Org => Ok(render_org(r, o)),
     }
 }
 
@@ -345,6 +447,47 @@ mod tests {
         assert_eq!(s, "marker,date,value,n,note\nldl-c,02/01/2024,101.3,3,-\n\"hdl, c\",03/02/2024,55.0,1,x\n");
         let exact = render(&report().exact(), &opts(Format::Csv)).unwrap();
         assert!(exact.contains("ldl-c,2024-01-02,101.26,3,-"));
+    }
+
+    fn tricky() -> Report {
+        let rows = vec![to_record(&json!({"marker": "a|b", "note": "<i>&\"x\"\nline2"}))];
+        Report::list("measurements", rows)
+    }
+
+    #[test]
+    fn markdown_escapes_pipes_and_newlines() {
+        let s = render(&tricky(), &opts(Format::Markdown)).unwrap();
+        assert_eq!(s, "| marker | note |\n|---|---|\n| a\\|b | <i>&\"x\"<br>line2 |\n");
+    }
+
+    #[test]
+    fn html_escapes_and_drops_header_on_request() {
+        let s = render(&tricky(), &opts(Format::Html)).unwrap();
+        assert!(s.contains("<td>a|b</td><td>&lt;i&gt;&amp;&quot;x&quot;\nline2</td>"), "{s}");
+        let o = OutputOpts { header: false, ..opts(Format::Html) };
+        assert!(!render(&tricky(), &o).unwrap().contains("<thead>"));
+    }
+
+    #[test]
+    fn org_escapes_pipes() {
+        let s = render(&tricky(), &opts(Format::Org)).unwrap();
+        assert_eq!(s, "| marker | note |\n|---+---|\n| a\\vert{}b | <i>&\"x\" line2 |\n");
+    }
+
+    #[test]
+    fn empty_lists_render_nothing_in_text_tables() {
+        let empty = Report::list("measurements", Vec::new());
+        for f in [Format::Markdown, Format::Org, Format::Table] {
+            assert_eq!(render(&empty, &opts(f)).unwrap(), "", "{f:?}");
+        }
+    }
+
+    #[test]
+    fn envelope_formats() {
+        let structured: Vec<Format> =
+            <Format as clap::ValueEnum>::value_variants().iter().copied().filter(|f| f.is_envelope()).collect();
+        assert_eq!(structured, [Format::Json, Format::Yaml, Format::Toon]);
+        assert!(Format::NAMES.iter().all(|n| Format::parse(n).is_ok()));
     }
 
     #[test]

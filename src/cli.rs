@@ -36,7 +36,7 @@ pub struct GlobalOpts {
     #[arg(long, global = true, value_name = "FILE")]
     pub db: Option<PathBuf>,
     /// Output format
-    #[arg(short = 'f', long, global = true, value_enum)]
+    #[arg(short = 'f', long, global = true, value_enum, ignore_case = true)]
     pub format: Option<Format>,
     /// Write output to FILE instead of stdout
     #[arg(short = 'o', long, global = true, value_name = "FILE")]
@@ -44,10 +44,10 @@ pub struct GlobalOpts {
     /// Display units: canonical, us or si
     #[arg(long, global = true, value_name = "SYSTEM")]
     pub units: Option<String>,
-    /// Decimal places for table/csv/tsv output
+    /// Decimal places for text output (table/csv/tsv/markdown/html/org)
     #[arg(long, global = true, value_name = "N")]
     pub precision: Option<String>,
-    /// strftime date format for table/csv/tsv output (also accepted on import)
+    /// strftime date format for text output (table/csv/tsv/markdown/html/org) (also accepted on import)
     #[arg(long, global = true, value_name = "FMT")]
     pub date_format: Option<String>,
     /// Time zone: local, UTC, IANA name or +HH:MM
@@ -65,13 +65,13 @@ pub struct GlobalOpts {
     /// Omit the header row in csv/tsv output
     #[arg(long, global = true)]
     pub no_header: bool,
-    /// Text for missing values in table/csv/tsv output
+    /// Text for missing values in text output (table/csv/tsv/markdown/html/org)
     #[arg(long, global = true, value_name = "TEXT")]
     pub null: Option<String>,
     /// Ranges used for flagging: reference, optimal, both
     #[arg(long, global = true, value_name = "FLAVOR")]
     pub range_flavor: Option<String>,
-    /// Comma-separated list of columns to output (table/csv/tsv)
+    /// Comma-separated list of columns to output (text formats)
     #[arg(long, global = true, value_name = "COLS", value_delimiter = ',')]
     pub columns: Option<Vec<String>>,
     /// Suppress informational messages
