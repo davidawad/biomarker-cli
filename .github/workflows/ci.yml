@@ -1,8 +1,10 @@
-# fmt, clippy and the full test suite on every supported platform.
+# Fast default CI: fmt, clippy -D warnings and tests on one runner, in minutes.
 #
-# Toolchains: fsqlite 0.4 needs nightly on x86_64 and on Windows (see
-# rust-toolchain.toml); aarch64 Linux and Apple Silicon run on stable to keep
-# that path honest. RUSTUP_TOOLCHAIN overrides rust-toolchain.toml per job.
+# aarch64 Linux builds fsqlite on stable Rust (no nightly needed there), and
+# rust-cache keeps dependency builds warm. The slow cross-platform matrix
+# (Windows, macOS x86_64/arm64, nightly x86_64) lives in ci-full.yml: run it by
+# hand (Actions > CI full matrix > Run workflow, or `gh workflow run ci-full.yml`);
+# it also runs on version tags and weekly.
 name: CI
 
 on:
@@ -20,43 +22,19 @@ concurrency:
 
 env:
   CARGO_TERM_COLOR: always
+  RUSTUP_TOOLCHAIN: stable
 
 jobs:
   test:
-    name: ${{ matrix.name }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - name: linux-x86_64
-            os: ubuntu-latest
-            toolchain: nightly
-          - name: linux-aarch64
-            os: ubuntu-24.04-arm
-            toolchain: stable
-          - name: macos-arm64
-            os: macos-latest
-            toolchain: stable
-          # GitHub retired the macos-13 image in December 2025; macos-15-intel
-          # is the remaining x86_64 macOS runner.
-          - name: macos-x86_64
-            os: macos-15-intel
-            toolchain: nightly
-          - name: windows-x86_64
-            os: windows-latest
-            toolchain: nightly
-    env:
-      RUSTUP_TOOLCHAIN: ${{ matrix.toolchain }}
+    name: linux-aarch64 (stable)
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: ${{ matrix.toolchain }}
-          components: clippy, rustfmt
+      - name: Install Rust stable
+        run: rustup toolchain install stable --profile minimal --component clippy,rustfmt
       - uses: Swatinem/rust-cache@v2
         with:
-          key: ${{ matrix.toolchain }}
+          key: stable
       - run: cargo fmt --check
-      - run: cargo clippy --locked --all-targets -- -D warnings
+      - run: cargo clippy --all-targets --locked -- -D warnings
       - run: cargo test --locked --no-fail-fast
