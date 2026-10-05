@@ -9,13 +9,12 @@
 //!   (plus a `file` slot when that key has a passphrase), or a `file` slot
 //!   when there is no SSH key; `BIOMARKER_KEY`, when set, makes an `env`
 //!   slot instead. Unlocking tries the key file, then the SSH key (silently,
-//!   or with its passphrase), then `BIOMARKER_KEY`, then the OS keychain for
-//!   a keychain or 0.2/0.3 slot, then a passphrase prompt.
-//! * `ssh`, `file`, `env`, `keychain`, `passphrase`: only that kind.
+//!   or with its passphrase), then `BIOMARKER_KEY`, then a passphrase prompt.
+//! * `ssh`, `file`, `env`, `passphrase`: only that kind.
 //!
-//! The OS keychain is never touched unless the database has a keychain slot
-//! (made with `key_source = "keychain"`, or a raw-key database from 0.2/0.3)
-//! or a `db unlock` session can apply.
+//! biomarker never uses the OS keychain. Databases from 0.3 and earlier whose
+//! key was kept there must be moved to an SSH key first with a build that
+//! still reads it (see [`LEGACY_HELP`]).
 
 use zeroize::Zeroizing;
 
@@ -23,22 +22,26 @@ use crate::container::{Header, Holder, Slot, SlotKind};
 use crate::crypto::{derive_kek, unhex, DataKeys, Key, KEY_LEN};
 use crate::error::{AppError, ErrorKind, Result};
 use crate::prompt::Prompter;
-use crate::{keychain, keyfile, sshkey};
+use crate::{keyfile, sshkey};
 
 pub const ENV_KEY: &str = "BIOMARKER_KEY";
 pub const ENV_NEW_KEY: &str = "BIOMARKER_NEW_KEY";
+
+/// What to do with a database whose only key is a 0.3-era raw key.
+pub const LEGACY_HELP: &str = "it was made by biomarker 0.3 or earlier, whose key lived in the OS keychain, which \
+biomarker no longer uses: set BIOMARKER_KEY=raw:<its key>, or move it to your SSH key with biomarker 0.3 \
+(`biomarker db rekey --to passphrase`) and then `biomarker key add-ssh`";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Source {
     Auto,
     Ssh,
     File,
-    Keychain,
     Env,
     Passphrase,
 }
 
-const ALL: [Source; 6] = [Source::Auto, Source::Ssh, Source::File, Source::Keychain, Source::Env, Source::Passphrase];
+const ALL: [Source; 5] = [Source::Auto, Source::Ssh, Source::File, Source::Env, Source::Passphrase];
 
 impl Source {
     pub fn parse(s: &str) -> Result<Self> {
@@ -56,7 +59,6 @@ impl Source {
             Self::Auto => "auto",
             Self::Ssh => "ssh",
             Self::File => "file",
-            Self::Keychain => "keychain",
             Self::Env => "env",
             Self::Passphrase => "passphrase",
         }
@@ -65,10 +67,9 @@ impl Source {
     /// Unlock steps, in order.
     fn unlock_order(self) -> &'static [Self] {
         match self {
-            Self::Auto => &[Self::File, Self::Ssh, Self::Env, Self::Keychain, Self::Passphrase],
+            Self::Auto => &[Self::File, Self::Ssh, Self::Env, Self::Passphrase],
             Self::Ssh => &[Self::Ssh],
             Self::File => &[Self::File],
-            Self::Keychain => &[Self::Keychain],
             Self::Env => &[Self::Env],
             Self::Passphrase => &[Self::Passphrase],
         }
@@ -103,10 +104,8 @@ pub fn parse_env_key(var: &str) -> Result<Option<EnvKey>> {
 /// Result of unlocking a container.
 pub struct Unlocked {
     pub keys: DataKeys,
-    /// What opened it: "session", "file", "ssh", "keychain", "env" or "passphrase".
+    /// What opened it: "file", "ssh", "env" or "passphrase".
     pub source: &'static str,
-    /// The KEK of the slot that opened (raw and passphrase slots), for `db unlock`.
-    pub kek: Option<Key>,
 }
 
 /// One unlock attempt over a header's slots.
@@ -122,16 +121,12 @@ fn is_raw(s: &Slot) -> bool {
     matches!(s.kind, SlotKind::Raw(_))
 }
 
-fn is_keychain(s: &Slot) -> bool {
-    matches!(s.kind, SlotKind::Raw(Holder::Keychain | Holder::Legacy))
-}
-
 impl Attempt<'_> {
     /// Try `kek` on every slot accepted by `fits`.
     fn with_kek(&self, kek: Key, fits: fn(&Slot) -> bool, src: &'static str) -> Option<Unlocked> {
         let id = &self.header.db_id;
         let keys = self.header.slots.iter().filter(|s| fits(s)).find_map(|s| s.open_kek(id, &kek))?;
-        Some(Unlocked { keys, source: src, kek: Some(kek) })
+        Some(Unlocked { keys, source: src })
     }
 
     fn file(&mut self) -> Result<Option<Unlocked>> {
@@ -152,7 +147,7 @@ impl Attempt<'_> {
             let Some(id) = sshkey::identity(&path, self.prompter, self.allow_prompt)? else { continue };
             self.tried.push("ssh key");
             if let Some(keys) = slot.open_identity(id.as_ref()) {
-                return Ok(Some(Unlocked { keys, source: "ssh", kek: None }));
+                return Ok(Some(Unlocked { keys, source: "ssh" }));
             }
         }
         Ok(None)
@@ -172,28 +167,11 @@ impl Attempt<'_> {
             if let SlotKind::Passphrase(params) = &slot.kind {
                 let kek = derive_kek(pass, params)?;
                 if let Some(keys) = slot.open_kek(&self.header.db_id, &kek) {
-                    return Ok(Some(Unlocked { keys, source: src, kek: Some(kek) }));
+                    return Ok(Some(Unlocked { keys, source: src }));
                 }
             }
         }
         Ok(None)
-    }
-
-    /// Only a keychain or 0.2/0.3 raw-key slot looks in the OS keychain.
-    fn keychain(&mut self) -> Option<Unlocked> {
-        if !self.header.slots.iter().any(is_keychain) {
-            return None;
-        }
-        let id = self.header.db_id;
-        for account in [keychain::kek_account(&id), keychain::kek_next_account(&id)] {
-            if let Ok(Some(secret)) = keychain::load(&account) {
-                self.tried.push("keychain");
-                if let Some(u) = Key::from_bytes(&secret).and_then(|k| self.with_kek(k, is_keychain, "keychain")) {
-                    return Some(u);
-                }
-            }
-        }
-        None
     }
 
     fn prompt(&mut self) -> Result<Option<Unlocked>> {
@@ -208,25 +186,21 @@ impl Attempt<'_> {
         }
     }
 
-    fn session(&self) -> Option<Unlocked> {
-        let kek = keychain::session::get(&self.header.db_id)?;
-        let id = &self.header.db_id;
-        let keys = self.header.slots.iter().find_map(|s| s.open_kek(id, &kek))?;
-        Some(Unlocked { keys, source: "session", kek: Some(kek) })
-    }
-
     fn step(&mut self, s: Source) -> Result<Option<Unlocked>> {
         match s {
             Source::File => self.file(),
             Source::Ssh => self.ssh(),
             Source::Env => self.env(),
-            Source::Keychain => Ok(self.keychain()),
             Source::Passphrase => self.prompt(),
             Source::Auto => Ok(None),
         }
     }
 
     fn failure(&self) -> AppError {
+        let legacy_only = self.header.slots.iter().all(|s| s.kind == SlotKind::Raw(Holder::Legacy));
+        if legacy_only && self.tried.is_empty() {
+            return key_error(format!("cannot open {}: {LEGACY_HELP}", self.what));
+        }
         if !self.tried.is_empty() {
             return key_error(format!("wrong key for {} (tried: {})", self.what, self.tried.join(", ")));
         }
@@ -246,18 +220,10 @@ pub fn describe_slots(h: &Header) -> Vec<String> {
             SlotKind::Ssh { fingerprint, identity, .. } => format!("SSH key {identity} ({fingerprint})"),
             SlotKind::Raw(Holder::File) => format!("key file {}", keyfile::path_for(&h.db_id).display()),
             SlotKind::Raw(Holder::Env) => format!("{ENV_KEY}=raw:<hex>"),
-            SlotKind::Raw(Holder::Keychain) => "the OS keychain".into(),
-            SlotKind::Raw(Holder::Legacy) => format!("the OS keychain or {ENV_KEY}=raw:<hex> (0.3 and earlier)"),
+            SlotKind::Raw(Holder::Legacy) => format!("{ENV_KEY}=raw:<hex> (a 0.3-era key)"),
             SlotKind::Passphrase(_) => "a passphrase".into(),
         })
         .collect()
-}
-
-/// Whether a `db unlock` session (kept in the keychain) may apply: the
-/// keychain source, or a passphrase slot under `auto`.
-fn uses_session(source: Source, header: &Header) -> bool {
-    source == Source::Keychain
-        || (source == Source::Auto && header.slots.iter().any(|s| matches!(s.kind, SlotKind::Passphrase(_))))
 }
 
 /// Unlock a container header. Prompts (SSH key passphrase, database
@@ -270,23 +236,12 @@ pub fn unlock(
     p: &mut dyn Prompter,
 ) -> Result<Unlocked> {
     let mut a = Attempt { header, what, allow_prompt, prompter: p, tried: Vec::new() };
-    if uses_session(source, header) {
-        if let Some(u) = a.session() {
-            return Ok(u);
-        }
-    }
     for s in source.unlock_order() {
         if let Some(u) = a.step(*s)? {
             return Ok(u);
         }
     }
     Err(a.failure())
-}
-
-/// Whether the keychain can hold this database's key under `source` (so
-/// status checks may look there without surprising anyone).
-pub fn keychain_relevant(source: Source, header: &Header) -> bool {
-    source == Source::Keychain || header.slots.iter().any(is_keychain)
 }
 
 #[cfg(test)]
@@ -341,6 +296,14 @@ mod tests {
     }
 
     #[test]
+    fn a_0_3_keychain_database_says_what_to_do() {
+        let (id, keys, kek) = ([3u8; 16], DataKeys::random().unwrap(), Key::random().unwrap());
+        let h = Header::legacy_v1(id, None, &kek, &keys).unwrap();
+        let e = unlock(Source::Auto, &h, "old.db", true, &mut quiet()).err().unwrap();
+        assert!(e.message.contains("0.3 or earlier") && e.message.contains("no longer uses"), "{}", e.message);
+    }
+
+    #[test]
     fn explicit_sources_only_try_their_slot() {
         let (id, keys) = ([2u8; 16], DataKeys::random().unwrap());
         let params = KdfParams { m_cost: 8, t_cost: 1, p_cost: 1, salt: [4; 16] };
@@ -349,6 +312,5 @@ mod tests {
         let mut p = Scripted { input: b"correct horse\n" as &[u8], output: Vec::new(), interactive: true };
         assert_eq!(unlock(Source::Passphrase, &h, "db", true, &mut p).unwrap().source, "passphrase");
         assert!(unlock(Source::File, &h, "db", true, &mut quiet()).is_err());
-        assert!(!keychain_relevant(Source::Auto, &h));
     }
 }

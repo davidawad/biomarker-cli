@@ -50,7 +50,6 @@ impl Env {
             .env("BIOMARKER_TZ", "UTC")
             .env("BIOMARKER_KEY", TEST_KEY)
             .env("BIOMARKER_KEY_SOURCE", "env")
-            .env("BIOMARKER_NO_KEYCHAIN", "1")
             .env("NO_COLOR", "1");
         c
     }

@@ -149,7 +149,7 @@ pub const SETTINGS: &[Setting] = &[
         key: "key_source",
         env: &["BIOMARKER_KEY_SOURCE"],
         help: "how databases are encrypted (auto = your SSH key, else a key file; BIOMARKER_KEY when set)",
-        choices: &["auto", "ssh", "file", "keychain", "env", "passphrase"],
+        choices: &["auto", "ssh", "file", "env", "passphrase"],
         kind: Kind::Str,
     },
     Setting {

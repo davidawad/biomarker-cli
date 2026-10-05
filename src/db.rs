@@ -26,7 +26,7 @@ pub type Row = Vec<Value>;
 pub struct Sealed {
     pub header: Header,
     pub keys: DataKeys,
-    /// Where the KEK came from ("keychain", "env", ...), for diagnostics.
+    /// What opened it ("ssh", "file", "env", ...), for diagnostics.
     pub key_source: &'static str,
 }
 

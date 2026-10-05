@@ -7,10 +7,10 @@ use crate::container::{Holder, Slot, SlotKind};
 use crate::crypto::{self, random_array, DataKeys, Header};
 use crate::db::{Db, RowExt, Sealed};
 use crate::error::{AppError, Result};
+use crate::keyfile;
 use crate::keys::{self, key_error, Source};
 use crate::keysetup::{self, NewSlots, Setup};
 use crate::prompt::Prompter;
-use crate::{keychain, keyfile};
 
 pub const INSECURE_WARNING: &str = "warning: --insecure-plaintext: health data is stored UNENCRYPTED on disk";
 
@@ -191,20 +191,10 @@ pub fn encrypt_in_place(path: &Path, o: &OpenOpts, p: &mut dyn Prompter) -> Resu
     Ok(EncryptReport { tables, bytes: sealed.len() as u64, key_source: ns.label(), wiped })
 }
 
-/// Remove keys that no slot of `new` uses any more: the keychain item (and
-/// `db unlock` session) only when the keychain was actually used to unlock,
-/// so other databases never touch it; the key file when no file slot is left.
-fn forget_dropped(old: &Header, new: &Header, unlocked_from: &str) {
-    let had = |h: &Header, f: fn(&SlotKind) -> bool| h.slots.iter().any(|s| f(&s.kind));
-    let keychain = |k: &SlotKind| matches!(k, SlotKind::Raw(Holder::Keychain | Holder::Legacy));
-    let file = |k: &SlotKind| matches!(k, SlotKind::Raw(Holder::File));
-    if matches!(unlocked_from, "keychain" | "session") {
-        let _ = keychain::session::clear(&old.db_id);
-        if !had(new, keychain) {
-            keychain::forget(&old.db_id);
-        }
-    }
-    if had(old, file) && !had(new, file) {
+/// Delete the key file when no file slot is left.
+fn forget_dropped(old: &Header, new: &Header) {
+    let file = |h: &Header| h.slots.iter().any(|s| s.kind == SlotKind::Raw(Holder::File));
+    if file(old) && !file(new) {
         keyfile::forget(&old.db_id);
     }
 }
@@ -246,7 +236,7 @@ pub fn rekey(path: &Path, o: &OpenOpts, to: Source, rotate_dek: bool, p: &mut dy
         swap_header(path, &header, &u.keys, &new_header)?;
     }
     ns.commit()?;
-    forget_dropped(&header, &new_header, u.source);
+    forget_dropped(&header, &new_header);
     Ok(RekeyReport {
         from: u.source,
         to: ns.label(),
@@ -284,6 +274,6 @@ pub fn change_slots(
     if let Some(ns) = e.staged {
         ns.commit()?;
     }
-    forget_dropped(&header, &new_header, u.source);
+    forget_dropped(&header, &new_header);
     Ok((new_header, u.source))
 }

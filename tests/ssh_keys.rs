@@ -2,7 +2,7 @@
 //! setup from ~/.ssh, a key file for passphrase-protected SSH keys, the
 //! config file record, `key` slot management and moving a 0.3 database to
 //! an SSH key. Keys are generated in-process; the real ~/.ssh and the OS
-//! keychain are never touched (HOME is a temp dir, BIOMARKER_NO_KEYCHAIN=1).
+//! keychain are never touched (HOME is a temp dir; biomarker has no keychain code).
 
 use std::path::{Path, PathBuf};
 
@@ -62,7 +62,6 @@ impl Env {
             .env("HOME", self.home())
             .env("XDG_CONFIG_HOME", self.home().join("config"))
             .env("XDG_DATA_HOME", self.home().join("data"))
-            .env("BIOMARKER_NO_KEYCHAIN", "1")
             .env("NO_COLOR", "1");
         c
     }
@@ -224,7 +223,7 @@ fn a_0_3_database_moves_to_the_ssh_key() {
     let mut c = e.cmd();
     let legacy = e.slots(c.env("BIOMARKER_KEY", RAW));
     assert_eq!(legacy[0]["kind"], "legacy");
-    // Rekey to the SSH key; afterwards no BIOMARKER_KEY (or keychain) is needed.
+    // Rekey to the SSH key; afterwards no BIOMARKER_KEY is needed.
     let mut c = e.cmd();
     e.ok(c.env("BIOMARKER_KEY", RAW).args(["db", "rekey", "--to", "ssh"]));
     assert_eq!(&std::fs::read(e.db()).unwrap()[..8], b"BMSEAL02");

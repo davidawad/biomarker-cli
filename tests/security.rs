@@ -45,7 +45,6 @@ impl Env {
             .env("BIOMARKER_DB", self.db())
             .env("BIOMARKER_TZ", "UTC")
             .env("BIOMARKER_KEY_SOURCE", "env")
-            .env("BIOMARKER_NO_KEYCHAIN", "1")
             .env("NO_COLOR", "1");
         if !self.key.is_empty() {
             c.env("BIOMARKER_KEY", &self.key);
@@ -415,24 +414,12 @@ fn doctor_reports_encryption_state() {
     assert_eq!(status("unlock").as_deref(), Some("ok"));
     assert_eq!(status("audit_log").as_deref(), Some("ok"));
     assert_eq!(status("sidecars").as_deref(), Some("ok"));
-    assert_eq!(status("keychain").as_deref(), Some("ok"));
-    // The OS keychain is not consulted unless key_source = "keychain".
-    let keychain = rows.iter().find(|r| r["check"] == "keychain").unwrap()["detail"].as_str().unwrap();
-    assert!(keychain.contains("not used") && keychain.contains("untouched"), "{keychain}");
+    assert!(rows.iter().all(|r| r["check"] != "keychain" && r["check"] != "session"), "{rows:?}");
     assert_eq!(status("key 1").as_deref(), Some("ok"), "{rows:?}");
     let files =
         rows.iter().filter(|r| r["check"] == "permissions" && r["detail"].as_str().unwrap().contains("labs.db"));
     assert_eq!(files.clone().count(), 2, "{rows:?}");
     assert!(files.into_iter().all(|r| r["status"] == "ok"), "{rows:?}");
-}
-
-#[test]
-fn db_lock_unlock_need_keychain() {
-    let e = Env::new();
-    e.populate(&[]);
-    let err = e.fail(&["db", "unlock"], 8);
-    assert!(err.contains("keychain"), "{err}");
-    e.run(&["db", "lock"]);
 }
 
 /// Performance smoke test: open + query and commit latency on a few thousand

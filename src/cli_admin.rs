@@ -18,21 +18,13 @@ pub enum DbCmd {
     Encrypt,
     /// Replace every key that can open the database with a new one (see also `biomarker key`)
     Rekey {
-        /// New key: ssh, file, keychain, env (BIOMARKER_NEW_KEY) or passphrase (default: key_source setting)
+        /// New key: ssh, file, env (BIOMARKER_NEW_KEY) or passphrase (default: key_source setting)
         #[arg(long, value_name = "SOURCE")]
         to: Option<String>,
         /// Also re-encrypt the data under a fresh data key
         #[arg(long)]
         rotate_dek: bool,
     },
-    /// Cache the unlocked key in the OS keychain for a while (no more passphrase prompts)
-    Unlock {
-        /// How long the session lasts, e.g. 15m, 2h
-        #[arg(long, default_value = "15m")]
-        ttl: String,
-    },
-    /// End a `db unlock` session
-    Lock,
     /// Apply pending migrations (or show status)
     Migrate {
         /// Only report migration status

@@ -4,11 +4,9 @@ use serde_json::json;
 
 use crate::cli::AuditCmd;
 use crate::commands::key_cmd;
-use crate::container::SlotKind;
 use crate::context::Ctx;
 use crate::crypto;
 use crate::error::Result;
-use crate::keychain;
 use crate::keys;
 use crate::output::{to_record, Report};
 use crate::perms::{self, Access};
@@ -57,20 +55,7 @@ fn database_row(state: &State, path: &std::path::Path, insecure: bool) -> Row {
     }
 }
 
-/// The OS keychain row: probed only when `key_source = "keychain"`.
-fn keychain_row(source: keys::Source) -> Row {
-    let backend = keychain::BACKEND;
-    if source != keys::Source::Keychain {
-        return check("keychain", "ok", format!("not used (key_source {}); {backend} untouched", source.as_str()));
-    }
-    match keychain::available() {
-        Ok(()) => check("keychain", "ok", format!("{backend} available")),
-        Err(e) => check("keychain", "fail", format!("{backend} unavailable: {e}")),
-    }
-}
-
 fn key_rows(ctx: &Ctx, source: keys::Source) -> Vec<Row> {
-    let keychain = keychain_row(source);
     let env_key = match keys::parse_env_key(keys::ENV_KEY) {
         Ok(Some(keys::EnvKey::Raw(_))) => check("env_key", "ok", format!("{} is set (raw 256-bit key)", keys::ENV_KEY)),
         Ok(Some(keys::EnvKey::Passphrase(_))) => {
@@ -85,26 +70,11 @@ fn key_rows(ctx: &Ctx, source: keys::Source) -> Vec<Row> {
             "ok",
             format!("{} (setting key_source, source: {})", source.as_str(), ctx.resolved.source("key_source").as_str()),
         ),
-        keychain,
         env_key,
     ]
 }
 
-/// The `db unlock` session row, for databases where a session can apply.
-fn session_row(source: keys::Source, h: &crypto::Header) -> Option<Row> {
-    let passphrase = h.slots.iter().any(|s| matches!(s.kind, SlotKind::Passphrase(_)));
-    if !(passphrase || keys::keychain_relevant(source, h)) {
-        return None;
-    }
-    Some(match keychain::session::get_with_expiry(&h.db_id) {
-        Some((_, exp)) => {
-            check("session", "ok", format!("unlocked (db unlock) until unix time {exp}; `db lock` ends it"))
-        }
-        None => check("session", "ok", "locked (no db unlock session)"),
-    })
-}
-
-/// Container, key slot, session, unlock and audit-chain rows for a sealed database.
+/// Container, key slot, unlock and audit-chain rows for a sealed database.
 fn sealed_rows(ctx: &Ctx, path: &std::path::Path, source: keys::Source, h: &crypto::Header) -> Vec<Row> {
     let mut rows = vec![check(
         "container",
@@ -117,7 +87,6 @@ fn sealed_rows(ctx: &Ctx, path: &std::path::Path, source: keys::Source, h: &cryp
             .map(|(n, kind, st, detail)| check(&format!("key {n}"), st, format!("{kind}: {detail}"))),
     );
     rows.push(check("recover", "ok", crate::enc_config::recovery(&path.display().to_string(), h)));
-    rows.extend(session_row(source, h));
     match vault::unlock(path, source, false, &mut Terminal) {
         Ok((h, u)) => {
             rows.push(check("unlock", "ok", format!("unlocks with its {} key", u.source)));

@@ -40,16 +40,7 @@ base64 = "0.22"
 calamine = "0.36.1"
 directories = "6"
 
-[target.'cfg(target_os = "macos")'.dependencies]
-security-framework = "3"
-
-[target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]
-keyring-core = "1"
-zbus-secret-service-keyring-store = { version = "1", features = ["crypto-rust"] }
-
 [target.'cfg(windows)'.dependencies]
-keyring-core = "1"
-windows-native-keyring-store = "1"
 windows-sys = { version = "0.61", features = [
     "Win32_Foundation",
     "Win32_Security",

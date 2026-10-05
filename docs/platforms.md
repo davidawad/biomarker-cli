@@ -55,28 +55,12 @@ The default keys work the same everywhere and need no OS service:
   protected DACL granting only you and SYSTEM on Windows. A key file other
   users can read is refused on every platform.
 
-### The OS keychain (opt-in)
+There is no OS keychain code: no macOS Keychain, Secret Service (D-Bus) or
+Windows Credential Manager dependency, so nothing behaves differently on a
+headless server, in a container or in CI.
 
-`src/keychain.rs` puts one facade (`available, load, store, delete`) over a
-backend per OS, used only for `key_source = "keychain"`, 0.2/0.3 databases and
-`db unlock` sessions. All backends store binary secrets under service
-`biomarker-cli`.
-
-| OS | backend | crate |
-|----|---------|-------|
-| macOS | Keychain (generic passwords) | `security-framework` |
-| Linux, BSD | freedesktop Secret Service over D-Bus (GNOME Keyring, KWallet, KeePassXC) | `keyring-core` + `zbus-secret-service-keyring-store` |
-| Windows | Credential Manager (generic credentials) | `keyring-core` + `windows-native-keyring-store` |
-
-With `key_source = "keychain"` on a machine whose backend cannot be reached
-(a headless server or container with no D-Bus session bus, a CI runner, or
-`BIOMARKER_NO_KEYCHAIN=1`), creating or opening fails with the reason;
-`biomarker doctor` reports the backend and whether it is usable. Under `auto`
-the keychain is never probed.
-
-The test suite runs with `BIOMARKER_NO_KEYCHAIN=1` and never touches a real
-keychain or `~/.ssh`: SSH keys are generated in-process into a temporary HOME,
-and every key test runs on Linux, macOS and Windows in CI.
+The test suite never touches `~/.ssh`: SSH keys are generated in-process into
+a temporary HOME, and every key test runs on Linux, macOS and Windows in CI.
 
 ## File locations
 
@@ -90,10 +74,11 @@ and every key test runs on Linux, macOS and Windows in CI.
   Homebrew) has stored the database in `~/.local/share/biomarker-cli`.
   Switching to `~/Library/Application Support` would make existing databases
   look missing, so the shipped location stays the default.
-* **Windows** uses the known folders (via the `directories` crate). The
-  database goes in the *local* AppData because its key may live in this
-  machine's Credential Manager; the small config file roams. No earlier
-  release supported Windows, so there is no older location to migrate from.
+* **Windows** uses the known folders (via the `directories` crate): the
+  database in the *local* AppData (large, machine-specific), the small config
+  file in the roaming AppData. Builds of 0.2 and earlier used `~/.config` and
+  `~/.local/share` on Windows too; an existing file there is still found
+  (below).
 * **Overrides** work everywhere. `XDG_CONFIG_HOME` / `XDG_DATA_HOME` are
   honoured on every OS when set to an absolute path. `BIOMARKER_CONFIG` /
   `--config` and `BIOMARKER_DB` / `--db` override everything. A leading `~/`
@@ -101,6 +86,13 @@ and every key test runs on Linux, macOS and Windows in CI.
   is unset.
 
 biomarker uses no cache directory.
+
+Up to 0.2, biomarker used `~/.config` and `~/.local/share` on every OS. On
+Windows those are now legacy: if nothing exists at `%APPDATA%` /
+`%LOCALAPPDATA%` but a config or database exists at the old location, the old
+one is used, so a new empty database never shadows an existing one
+(`src/paths.rs` is the single resolver every command goes through;
+`tests/legacy_location.rs` checks it on all platforms).
 
 ## Permissions
 

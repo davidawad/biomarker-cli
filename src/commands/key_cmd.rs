@@ -16,7 +16,7 @@ use crate::vault::{self, Edit, State};
 use crate::{keyfile, sshkey};
 
 /// (status, detail) for one slot, checked against this machine without
-/// unlocking anything or touching the OS keychain.
+/// unlocking anything.
 fn slot_state(h: &Header, kind: &SlotKind) -> (&'static str, String) {
     match kind {
         SlotKind::Ssh { fingerprint, identity, .. } => {
@@ -29,14 +29,7 @@ fn slot_state(h: &Header, kind: &SlotKind) -> (&'static str, String) {
             let set = std::env::var_os(keys::ENV_KEY).is_some_and(|v| !v.is_empty());
             ("ok", format!("{}=raw:<hex> ({})", keys::ENV_KEY, if set { "set" } else { "not set" }))
         }
-        SlotKind::Raw(Holder::Keychain) => ("ok", "OS keychain".into()),
-        SlotKind::Raw(Holder::Legacy) => (
-            "warn",
-            format!(
-                "OS keychain or {}=raw:<hex> (0.3 and earlier); `biomarker db rekey --to ssh` moves it",
-                keys::ENV_KEY
-            ),
-        ),
+        SlotKind::Raw(Holder::Legacy) => ("warn", format!("0.3-era key: {}", keys::LEGACY_HELP)),
         SlotKind::Passphrase(p) => ("ok", format!("Argon2id m={}KiB t={} p={}", p.m_cost, p.t_cost, p.p_cost)),
     }
 }

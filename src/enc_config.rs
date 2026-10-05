@@ -58,8 +58,7 @@ pub fn recovery(db: &str, h: &Header) -> String {
     if first(|k| matches!(k, SlotKind::Raw(Holder::Env))).is_some() {
         return format!("set {} to the same raw key wherever {db} is opened", keys::ENV_KEY);
     }
-    "only this machine's OS keychain holds the key: run `biomarker db rekey --to ssh` to make it recoverable elsewhere"
-        .into()
+    format!("this is a 0.3-era database: {}", keys::LEGACY_HELP)
 }
 
 fn quote(s: &str) -> String {

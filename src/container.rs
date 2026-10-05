@@ -14,7 +14,7 @@
 //! ```
 //!
 //! A slot wraps `DEK || audit key` (64 bytes): `ssh` slots as an age message
-//! to an SSH public key; `file`, `env` and `keychain` slots under a raw
+//! to an SSH public key; `file` and `env` slots under a raw
 //! 256-bit KEK; `passphrase` slots under an Argon2id-derived KEK. Raw and
 //! passphrase wraps are XChaCha20-Poly1305 with AAD = magic || db id || slot
 //! kind (|| Argon2id parameters), so a slot cannot be relabelled.
@@ -51,9 +51,8 @@ pub enum Holder {
     File,
     /// `BIOMARKER_KEY=raw:<hex>`.
     Env,
-    /// The OS keychain (`key_source = "keychain"`).
-    Keychain,
-    /// A 0.2/0.3 raw key: the OS keychain or `BIOMARKER_KEY=raw:<hex>`.
+    /// A raw key from biomarker 0.3 or earlier, kept in the OS keychain (no
+    /// longer used) or in `BIOMARKER_KEY=raw:<hex>`; only the latter opens it.
     Legacy,
 }
 
@@ -62,13 +61,16 @@ impl Holder {
         match self {
             Self::File => "file",
             Self::Env => "env",
-            Self::Keychain => "keychain",
             Self::Legacy => "legacy",
         }
     }
 
     fn parse(s: &str) -> Option<Self> {
-        [Self::File, Self::Env, Self::Keychain, Self::Legacy].into_iter().find(|h| h.as_str() == s)
+        match s {
+            // pre-release keychain slots read as legacy: unopenable here, with a clear error
+            "keychain" => Some(Self::Legacy),
+            s => [Self::File, Self::Env, Self::Legacy].into_iter().find(|h| h.as_str() == s),
+        }
     }
 }
 

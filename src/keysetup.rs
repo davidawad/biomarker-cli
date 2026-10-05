@@ -6,10 +6,10 @@ use std::path::Path;
 use crate::container::{Holder, Slot, SlotKind};
 use crate::crypto::{derive_kek, DataKeys, KdfParams, Key, ID_LEN};
 use crate::error::Result;
+use crate::keyfile;
 use crate::keys::{key_error, parse_env_key, EnvKey, Source};
 use crate::prompt::Prompter;
 use crate::sshkey::{self, SshKey};
-use crate::{keychain, keyfile};
 
 /// Who is asking, for notices and prompts.
 pub struct Setup<'a> {
@@ -26,13 +26,11 @@ pub struct NewSlots {
     pub slots: Vec<Slot>,
     db_id: [u8; ID_LEN],
     staged_file: bool,
-    /// Staged keychain account and the KEK to promote.
-    staged_keychain: Option<(String, Key)>,
 }
 
 impl NewSlots {
     fn one(slot: Slot, db_id: [u8; ID_LEN]) -> Self {
-        Self { slots: vec![slot], db_id, staged_file: false, staged_keychain: None }
+        Self { slots: vec![slot], db_id, staged_file: false }
     }
 
     /// Kinds of the new slots, e.g. "ssh+file".
@@ -40,15 +38,11 @@ impl NewSlots {
         self.slots.iter().map(|s| s.kind.name()).collect::<Vec<_>>().join("+")
     }
 
-    /// Make staged key files / keychain items live. Call after the container
+    /// Make a staged key file live. Call after the container
     /// sealed with these slots has been durably written.
     pub fn commit(&self) -> Result<()> {
         if self.staged_file {
             keyfile::commit(&self.db_id)?;
-        }
-        if let Some((staged, kek)) = &self.staged_keychain {
-            keychain::store(&keychain::kek_account(&self.db_id), kek.as_bytes())?;
-            let _ = keychain::delete(staged);
         }
         Ok(())
     }
@@ -77,15 +71,6 @@ fn ssh_slots(key: &SshKey, db_id: [u8; ID_LEN], keys: &DataKeys) -> Result<NewSl
 pub fn public_ssh_slot(arg: &str, keys: &DataKeys) -> Result<Slot> {
     let (recipient, fp, identity) = sshkey::parse_public(arg)?;
     Slot::ssh(&recipient, fp, identity, keys)
-}
-
-fn keychain_slot(db_id: [u8; ID_LEN], keys: &DataKeys) -> Result<NewSlots> {
-    keychain::available().map_err(|e| key_error(format!("keychain unavailable: {e}")))?;
-    let kek = Key::random()?;
-    let staged = keychain::kek_next_account(&db_id);
-    keychain::store(&staged, kek.as_bytes())?;
-    let slot = Slot::with_kek(SlotKind::Raw(Holder::Keychain), &db_id, &kek, keys)?;
-    Ok(NewSlots { staged_keychain: Some((staged, kek)), ..NewSlots::one(slot, db_id) })
 }
 
 fn passphrase_slot(pass: &[u8], db_id: [u8; ID_LEN], keys: &DataKeys) -> Result<Slot> {
@@ -194,7 +179,6 @@ pub fn new_slots(
         Source::Auto => auto_slots(db_id, keys, s),
         Source::Env => env_slot(env_var, db_id, keys),
         Source::File => file_slot(db_id, keys),
-        Source::Keychain => keychain_slot(db_id, keys),
         Source::Passphrase => Ok(NewSlots::one(new_passphrase_slot(env_var, db_id, keys, s)?, db_id)),
         Source::Ssh => match sshkey::find() {
             (Some(key), _) => {

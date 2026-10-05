@@ -4,7 +4,6 @@ use crate::cli::DbCmd;
 use crate::context::Ctx;
 use crate::db::RowExt;
 use crate::error::{AppError, Result};
-use crate::keychain;
 use crate::keys::{self, Source};
 use crate::migrations;
 use crate::output::{to_record, Report};
@@ -40,8 +39,6 @@ pub fn run(ctx: &Ctx, cmd: DbCmd) -> Result<()> {
         }
         DbCmd::Encrypt => encrypt(ctx),
         DbCmd::Rekey { to, rotate_dek } => rekey(ctx, to.as_deref(), rotate_dek),
-        DbCmd::Unlock { ttl } => unlock(ctx, &ttl),
-        DbCmd::Lock => lock(ctx),
         DbCmd::Migrate { status } => migrate(ctx, status),
         DbCmd::Backup { dest } => {
             if dest.exists() {
@@ -188,59 +185,5 @@ fn rekey(ctx: &Ctx, to: Option<&str>, rotate_dek: bool) -> Result<()> {
     ctx.emit_mutation(&Report::object(
         "db_rekey",
         to_record(&json!({"path": ctx.db_path, "from": r.from, "to": r.to, "rotated_dek": r.rotated_dek})),
-    ))
-}
-
-/// `15m`, `2h`, `1d`, `90s` (bare numbers are minutes).
-fn parse_ttl(s: &str) -> Result<u64> {
-    let t = s.trim();
-    let (num, mult) = match t.char_indices().last() {
-        Some((i, 's')) => (&t[..i], 1),
-        Some((i, 'm')) => (&t[..i], 60),
-        Some((i, 'h')) => (&t[..i], 3600),
-        Some((i, 'd')) => (&t[..i], 86400),
-        _ => (t, 60),
-    };
-    num.trim()
-        .parse::<u64>()
-        .ok()
-        .filter(|n| *n > 0)
-        .map(|n| n.saturating_mul(mult))
-        .ok_or_else(|| AppError::usage(format!("invalid --ttl '{s}' (e.g. 15m, 2h)")))
-}
-
-fn unlock(ctx: &Ctx, ttl: &str) -> Result<()> {
-    let secs = parse_ttl(ttl)?;
-    let (h, u) = vault::unlock(&ctx.db_path, ctx.key_source()?, true, &mut Terminal)?;
-    let kek = u.kek.ok_or_else(|| {
-        keys::key_error(format!(
-            "db unlock caches a passphrase or raw key; this database opened with its {} key",
-            u.source
-        ))
-    })?;
-    keychain::available().map_err(|e| keys::key_error(format!("db unlock needs the OS keychain: {e}")))?;
-    let expires = keychain::session::put(&h.db_id, &kek, secs)?;
-    ctx.set_audit(h.db_id, u.keys.audit);
-    ctx.info(&format!("unlocked {} for {}", ctx.db_path.display(), ttl));
-    ctx.emit_mutation(&Report::object(
-        "db_unlock",
-        to_record(&json!({"path": ctx.db_path, "key_source": u.source, "expires_at_unix": expires})),
-    ))
-}
-
-fn lock(ctx: &Ctx) -> Result<()> {
-    let h = match vault::state(&ctx.db_path)? {
-        vault::State::Sealed(h) => h,
-        _ => return Err(AppError::invalid(format!("{} is not an encrypted database", ctx.db_path.display()))),
-    };
-    let had = keychain::session::clear(&h.db_id)?;
-    ctx.info(&if had { format!("locked {}", ctx.db_path.display()) } else { "no unlock session was active".into() });
-    let in_keychain = keys::keychain_relevant(ctx.key_source()?, &h) && keychain::has(&h.db_id);
-    if in_keychain {
-        ctx.info("note: this database's key itself is stored in the OS keychain, which stays available while you are logged in");
-    }
-    ctx.emit_mutation(&Report::object(
-        "db_lock",
-        to_record(&json!({"path": ctx.db_path, "session_cleared": had, "key_in_keychain": in_keychain})),
     ))
 }

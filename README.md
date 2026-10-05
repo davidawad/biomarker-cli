@@ -314,14 +314,15 @@ From then on it just opens; nothing prompts. If your SSH key has a passphrase,
 biomarker also makes a private key file so daily use stays prompt-free and the
 SSH key becomes the recovery key. With no SSH key it uses a key file
 (owner-only, under the config directory, refused if others can read it, like
-ssh does). The OS keychain is not used unless you ask for it.
+ssh does). biomarker never uses the OS keychain, so it behaves the same on
+macOS, Linux and Windows, and the keys move between machines.
 
 ```sh
 biomarker key status            # which keys open the database, and how to recover it
 biomarker key add-ssh ~/.ssh/laptop.pub   # another machine's key (or an offline recovery key)
 biomarker key add-passphrase    # a passphrase you can write down
 biomarker key remove 2
-biomarker db rekey --to ssh     # e.g. move a 0.3 keychain database to your SSH key
+biomarker db rekey --to ssh     # replace every key with your SSH key
 export BIOMARKER_KEY="raw:$(openssl rand -hex 32)"   # CI / scripts; or a passphrase
 biomarker db encrypt            # migrate an existing plaintext database in place
 biomarker doctor                # encryption, keys, permissions, audit-log check
