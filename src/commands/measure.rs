@@ -243,7 +243,7 @@ pub fn export(ctx: &Ctx, a: ExportArgs) -> Result<()> {
     let mut report = Report::list("export", rows.iter().map(|e| export_record(e, a.with_ids)).collect()).exact();
     // Qualitative observations ride along in the JSON envelope (not in `data`,
     // which stays re-importable as measurements).
-    if out.format == crate::output::Format::Json {
+    if out.format.is_envelope() {
         let db = ctx.db()?;
         let cat = Catalog::load(&db)?;
         let filter = build_filter(ctx, &db, &cat, &filter_args)?;

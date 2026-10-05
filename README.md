@@ -124,8 +124,9 @@ $ biomarker trend -m apob --format json | head -n 32
   beside the numbers, and a person can have their own reference ranges.
 * Query, latest, flag, trend (min/max/mean/median/stddev/slope, % change over
   windows) and diff.
-* Every command supports `--format table|json|jsonl|csv|tsv` and `--output FILE`.
-  JSON uses a stable, versioned envelope (`biomarker/v1`, see
+* Every command supports `--format` (table, json, jsonl, csv, tsv, yaml,
+  toon, markdown, html, org; see [Output formats](#output-formats)) and
+  `--output FILE`. JSON uses a stable, versioned envelope (`biomarker/v1`, see
   [docs/json-schema.md](docs/json-schema.md)) so tools like `health-charts.el`
   can consume it.
 * Layered configuration: defaults < TOML file < `BIOMARKER_*` env < flags.
@@ -366,6 +367,29 @@ Global flags work on every command: `--format`, `--output`, `--units`,
 `--no-header`, `--null`, `--range-flavor`, `--columns`, `--db`, `--config`,
 `-q`, `-v`.
 
+## Output formats
+
+`-f/--format` (or the `format` setting / `BIOMARKER_FORMAT`) picks one; names
+are case-insensitive.
+
+| format | aliases | shape | `--columns` | `--no-header` |
+|--------|---------|-------|-------------|---------------|
+| `table` | `text`, `plain` | aligned text table (default; colour on a TTY) | yes | — |
+| `json` | | versioned `biomarker/v1` envelope | — | — |
+| `jsonl` | `ndjson` | one record per line | — | — |
+| `csv` | | RFC 4180, `--delimiter`/`--quote` | yes | yes |
+| `tsv` | | tab-separated | yes | yes |
+| `yaml` | `yml` | the JSON envelope as YAML | — | — |
+| `toon` | | the JSON envelope as [TOON](https://toonformat.dev) (fewer tokens for LLM prompts) | — | — |
+| `markdown` | `md` | GitHub-flavoured table | yes | ignored (GFM needs a header) |
+| `html` | | `<table class="biomarker KIND">` | yes | yes |
+| `org` | | Org-mode table (`C-c C-c` aligns it) | yes | yes |
+
+The text formats (table, csv, tsv, markdown, html, org) honour `--precision`,
+`--date-format` and `--null`; the structured ones (json, jsonl, yaml, toon)
+keep exact stored values. `export` defaults to csv and, in json/yaml/toon,
+also carries qualitative observations in the envelope.
+
 ## Importing
 
 Long format is one measurement per row. The default columns are `person,
@@ -567,12 +591,12 @@ Settings resolve in this order, lowest to highest precedence:
 |-----|-----|---------|--------|
 | `db_path` | `BIOMARKER_DB` | `$XDG_DATA_HOME/biomarker-cli/biomarker.db` (`~/.local/share/…`; Windows `%LOCALAPPDATA%\biomarker-cli\biomarker.db`) | path (`~` expanded) |
 | `default_person` | `BIOMARKER_PERSON` | — | person slug |
-| `format` | `BIOMARKER_FORMAT` | `table` | `table json jsonl csv tsv` |
-| `date_format` | `BIOMARKER_DATE_FORMAT` | `%Y-%m-%d` | strftime. Used for table/csv/tsv display, and accepted on input |
+| `format` | `BIOMARKER_FORMAT` | `table` | `table json jsonl csv tsv yaml toon markdown html org` |
+| `date_format` | `BIOMARKER_DATE_FORMAT` | `%Y-%m-%d` | strftime. Used for text-format display, and accepted on input |
 | `timezone` | `BIOMARKER_TZ` | `local` | `local`, `UTC`, IANA name, `+HH:MM` |
 | `unit_system` | `BIOMARKER_UNITS` | `canonical` | `canonical us si` |
 | `color` | `BIOMARKER_COLOR` | `auto` | `auto always never` |
-| `precision` | `BIOMARKER_PRECISION` | `2` | decimals in table/csv/tsv |
+| `precision` | `BIOMARKER_PRECISION` | `2` | decimals in text formats |
 | `csv_delimiter` | `BIOMARKER_CSV_DELIMITER` | `,` | one char or `tab` |
 | `csv_quote` | `BIOMARKER_CSV_QUOTE` | `"` | one char |
 | `csv_header` | `BIOMARKER_CSV_HEADER` | `true` | bool |
