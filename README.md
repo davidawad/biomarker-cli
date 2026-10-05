@@ -150,22 +150,21 @@ with a `.sha256` file and one `SHA256SUMS` for all archives. They need no Rust
 toolchain. See [docs/platforms.md](docs/platforms.md) for what differs per OS
 (key storage, file locations, permissions).
 
-**macOS (Homebrew).**
+**macOS and Linux (Homebrew).**
 
 ```sh
 brew install davidawad/tap/biomarker-cli
 ```
 
-The formula currently builds from source on Apple Silicon only; see
-[Homebrew formula](#homebrew-formula) for switching it to the prebuilt
-archives, which also covers Intel Macs and Linux.
+The formula installs the prebuilt release binary for macOS and Linux on
+arm64 and x86_64, so no Rust toolchain is needed.
 
 **Linux and macOS (prebuilt archive).** Pick the target for your machine:
 `x86_64-unknown-linux-gnu` (glibc 2.35+), `aarch64-unknown-linux-gnu`,
 `aarch64-apple-darwin` or `x86_64-apple-darwin`.
 
 ```sh
-v=v0.3.0 t=aarch64-apple-darwin
+v=v0.5.0 t=aarch64-apple-darwin
 curl -LO "https://github.com/davidawad/biomarker-cli/releases/download/$v/biomarker-cli-$v-$t.tar.gz"
 curl -LO "https://github.com/davidawad/biomarker-cli/releases/download/$v/biomarker-cli-$v-$t.tar.gz.sha256"
 shasum -a 256 -c "biomarker-cli-$v-$t.tar.gz.sha256"     # or: sha256sum -c
@@ -179,7 +178,7 @@ are not. Clear it with `xattr -d com.apple.quarantine ~/.local/bin/biomarker`.
 **Windows (prebuilt archive, PowerShell).**
 
 ```powershell
-$v = "v0.3.0"; $t = "x86_64-pc-windows-msvc"
+$v = "v0.5.0"; $t = "x86_64-pc-windows-msvc"
 $zip = "biomarker-cli-$v-$t.zip"
 Invoke-WebRequest "https://github.com/davidawad/biomarker-cli/releases/download/$v/$zip" -OutFile $zip
 (Get-FileHash $zip -Algorithm SHA256).Hash   # compare with $zip.sha256
@@ -194,57 +193,6 @@ and on Windows (see [Build](#build)); aarch64 builds on stable.
 cargo +nightly install --locked --git https://github.com/davidawad/biomarker-cli   # x86_64, Windows
 cargo install --locked --git https://github.com/davidawad/biomarker-cli            # aarch64
 ```
-
-### Homebrew formula
-
-The tap lives in a separate repository. To move it from a source build to
-the release archives (no Rust, no nightly, all four macOS/Linux targets), drop
-`depends_on arch: :arm64` and the `rust` build dependency, and use one
-`url`/`sha256` per platform. The hashes come from the release's `SHA256SUMS`:
-
-```ruby
-class BiomarkerCli < Formula
-  desc "Track biomarkers (lab results) for any number of people"
-  homepage "https://gitlab.com/davidawad/biomarker-cli"
-  version "0.3.0"
-  license "MIT"
-
-  base = "https://github.com/davidawad/biomarker-cli/releases/download/v#{version}"
-  on_macos do
-    on_arm do
-      url "#{base}/biomarker-cli-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "<sha256 from SHA256SUMS>"
-    end
-    on_intel do
-      url "#{base}/biomarker-cli-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "<sha256 from SHA256SUMS>"
-    end
-  end
-  on_linux do
-    on_arm do
-      url "#{base}/biomarker-cli-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "<sha256 from SHA256SUMS>"
-    end
-    on_intel do
-      url "#{base}/biomarker-cli-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "<sha256 from SHA256SUMS>"
-    end
-  end
-
-  def install
-    bin.install "biomarker"
-  end
-
-  test do
-    assert_match version.to_s, shell_output("#{bin}/biomarker --version")
-  end
-end
-```
-
-Each archive unpacks to a `biomarker-cli-<tag>-<target>/` directory; Homebrew
-`cd`s into a single top-level directory automatically, so `bin.install
-"biomarker"` works as written. Bump `version` and the four hashes on each
-release.
 
 ## Build
 
