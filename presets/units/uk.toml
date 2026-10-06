@@ -1,0 +1,6 @@
+description = "UK / NHS style: SI units, HbA1c in mmol/mol, haemoglobin in g/L"
+extends = "si"
+
+[units]
+hba1c = "mmol/mol"
+hemoglobin = "g/L"

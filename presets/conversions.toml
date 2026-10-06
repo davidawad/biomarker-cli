@@ -1,0 +1,27 @@
+# Generic conversions always available, in addition to the database's.
+# They make per-marker unit overrides such as `glucose = "mg/mL"` possible.
+
+[[conversion]]
+from = "mg/dL"
+to = "mg/mL"
+factor = 0.01
+
+[[conversion]]
+from = "mg/mL"
+to = "mg/L"
+factor = 1000.0
+
+[[conversion]]
+from = "µg/dL"
+to = "µg/mL"
+factor = 0.01
+
+[[conversion]]
+from = "ng/dL"
+to = "ng/mL"
+factor = 0.01
+
+[[conversion]]
+from = "g/dL"
+to = "g/mL"
+factor = 0.01
