@@ -25,20 +25,47 @@ fn age_at(row: &MeasurementRow) -> Option<f64> {
     date_of(&row.taken_at).ok().map(|on| age_years(dob, on))
 }
 
+/// The range that applies, and where it came from: the person's own ranges
+/// (profile file, then `range set --person`), their range set, the catalog.
+#[allow(clippy::too_many_arguments)]
+pub fn pick_range(
+    cat: &Catalog,
+    person: &str,
+    person_id: i64,
+    marker: &Marker,
+    kind: RangeKind,
+    sex: Option<&str>,
+    age: Option<f64>,
+    lab: Option<&str>,
+) -> Option<(Range, String)> {
+    let mut own = cat.profiles.personal_ranges(person, marker.id, kind, lab);
+    own.extend(
+        cat.person_ranges
+            .iter()
+            .filter(|r| r.person_id == Some(person_id) && r.marker_id == marker.id && r.kind == kind)
+            .cloned(),
+    );
+    ranges::select(&own, marker.id, kind, sex, age)
+        .map(|r| (r.clone(), "person".to_string()))
+        .or_else(|| {
+            let set = cat.profiles.range_set_for(person)?;
+            let in_set = cat.profiles.set_ranges(set, marker.id, kind, lab);
+            ranges::select(&in_set, marker.id, kind, sex, age).map(|r| (r.clone(), format!("set:{set}")))
+        })
+        .or_else(|| ranges::select(&cat.ranges, marker.id, kind, sex, age).map(|r| (r.clone(), "catalog".to_string())))
+}
+
 pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Option<Evaluated> {
     let marker = cat.by_id(row.marker_id)?.clone();
-    let wanted = cat.display_unit(&marker, unit_system);
+    let wanted = cat.display_unit(&marker, unit_system, Some(&row.person));
     let (display_value, display_unit) = cat
         .conversions
         .convert(marker.id, row.value, &marker.unit, &wanted)
         .map_or_else(|_| (row.value, marker.unit.clone()), |v| (v, wanted));
     let age = age_at(row);
     let pick = |kind| {
-        cat.person_ranges
-            .iter()
-            .find(|r| r.person_id == Some(row.person_id) && r.marker_id == marker.id && r.kind == kind)
-            .or_else(|| ranges::select(&cat.ranges, marker.id, kind, row.sex.as_deref(), age))
-            .cloned()
+        pick_range(cat, &row.person, row.person_id, &marker, kind, row.sex.as_deref(), age, row.lab.as_deref())
+            .map(|(r, _)| r)
     };
     let reference = pick(RangeKind::Reference);
     let optimal = pick(RangeKind::Optimal);

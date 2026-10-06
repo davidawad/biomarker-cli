@@ -22,6 +22,7 @@ pub mod migrations;
 pub mod output;
 pub mod paths;
 pub mod perms;
+pub mod profiles;
 pub mod prompt;
 pub mod ranges;
 pub mod seal_output;

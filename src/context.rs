@@ -246,6 +246,20 @@ impl Ctx {
         Some(self.resolved.get("default_person").to_string()).filter(|s| !s.is_empty())
     }
 
+    /// The marker catalog with unit presets, range sets and person profiles
+    /// (files next to the config file) applied.
+    pub fn catalog(&self, db: &Db) -> Result<crate::store::Catalog> {
+        let forced = matches!(self.resolved.source("unit_system"), config::Source::Env | config::Source::Flag);
+        let profiles =
+            crate::profiles::Profiles::load(&self.resolved.config_path, self.resolved.get("range_set"), forced)?;
+        let cat = profiles.apply(crate::store::Catalog::load(db)?)?;
+        let preset = self.unit_system();
+        cat.profiles
+            .has_preset(preset)
+            .then_some(cat)
+            .ok_or_else(|| AppError::config(format!("unknown unit preset '{preset}' (see: biomarker profile list)")))
+    }
+
     pub fn unit_system(&self) -> &str {
         self.resolved.get("unit_system")
     }

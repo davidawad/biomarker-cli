@@ -10,6 +10,7 @@ pub mod measure;
 pub mod misc;
 pub mod observations;
 pub mod person;
+pub mod profile;
 pub mod range;
 pub mod security;
 pub mod trend;
@@ -31,6 +32,7 @@ pub fn dispatch(ctx: &Ctx, cmd: Command) -> Result<Status> {
         Command::Marker(c) => marker::run(ctx, c).map(|()| 0),
         Command::Range(c) => range::run(ctx, c).map(|()| 0),
         Command::Unit(c) => unit::run(ctx, c).map(|()| 0),
+        Command::Profile(c) => profile::run(ctx, c).map(|()| 0),
         Command::Add(a) => measure::add(ctx, a).map(|()| 0),
         Command::Rm(a) => measure::rm(ctx, a).map(|()| 0),
         Command::Import(a) => import::run(ctx, a).map(|()| 0),

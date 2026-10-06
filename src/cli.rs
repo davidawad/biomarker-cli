@@ -41,7 +41,7 @@ pub struct GlobalOpts {
     /// Write output to FILE instead of stdout
     #[arg(short = 'o', long, global = true, value_name = "FILE")]
     pub output: Option<PathBuf>,
-    /// Display units: canonical, us or si
+    /// Unit preset for display: canonical, us, si, uk or your own (see `profile list`)
     #[arg(long, global = true, value_name = "SYSTEM")]
     pub units: Option<String>,
     /// Decimal places for text output (table/csv/tsv/markdown/html/org)
@@ -105,6 +105,9 @@ pub enum Command {
     /// Units and conversions
     #[command(subcommand)]
     Unit(UnitCmd),
+    /// Unit presets, range sets and per-person profile files
+    #[command(subcommand)]
+    Profile(ProfileCmd),
     /// Record a single measurement
     Add(AddArgs),
     /// Remove a measurement by id
@@ -359,6 +362,30 @@ pub struct RangeSetArgs {
     /// at any age (--sex/--age-min/--age-max do not apply)
     #[arg(short, long)]
     pub person: Option<String>,
+}
+
+#[derive(Debug, Subcommand)]
+pub enum ProfileCmd {
+    /// List unit presets, range sets and person profiles (built-in and from files)
+    #[command(alias = "ls")]
+    List,
+    /// Write a starter profile file for a person (<config dir>/people/<person>.toml)
+    Init {
+        person: String,
+        /// Unit preset for this person (e.g. si, us, uk, or your own)
+        #[arg(long)]
+        unit_preset: Option<String>,
+        /// Range set for this person
+        #[arg(long)]
+        range_set: Option<String>,
+    },
+    /// Show the units and ranges in effect for a person
+    Show {
+        person: String,
+        /// Only this marker
+        #[arg(long)]
+        marker: Option<String>,
+    },
 }
 
 #[derive(Debug, Subcommand)]

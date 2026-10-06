@@ -161,7 +161,8 @@ fn read_dir<T: DeserializeOwned>(dir: &Path) -> Result<Vec<(String, PathBuf, T)>
         .into_iter()
         .map(|p| {
             let stem = p.file_stem().map(|s| s.to_string_lossy().to_lowercase()).unwrap_or_default();
-            let text = std::fs::read_to_string(&p).map_err(|e| AppError::io(format!("reading {}: {e}", p.display())))?;
+            let text =
+                std::fs::read_to_string(&p).map_err(|e| AppError::io(format!("reading {}: {e}", p.display())))?;
             parse(&text, &p.display().to_string()).map(|v| (stem, p, v))
         })
         .collect()
@@ -267,6 +268,10 @@ impl Profiles {
         presets.chain(sets).chain(people).collect()
     }
 
+    pub fn has_preset(&self, name: &str) -> bool {
+        self.presets.contains_key(&name.to_lowercase())
+    }
+
     pub fn has_person(&self, slug: &str) -> bool {
         self.people.contains_key(&slug.to_lowercase())
     }
@@ -348,8 +353,12 @@ impl Profiles {
     }
 
     fn validate_names(&self) -> Result<()> {
-        self.presets.keys().try_for_each(|n| chain(&self.presets, n, |p| p.extends.as_deref(), "unit preset").map(|_| ()))?;
-        self.range_sets.keys().try_for_each(|n| chain(&self.range_sets, n, |s| s.extends.as_deref(), "range set").map(|_| ()))?;
+        self.presets
+            .keys()
+            .try_for_each(|n| chain(&self.presets, n, |p| p.extends.as_deref(), "unit preset").map(|_| ()))?;
+        self.range_sets
+            .keys()
+            .try_for_each(|n| chain(&self.range_sets, n, |s| s.extends.as_deref(), "range set").map(|_| ()))?;
         let ctx = |p: &PersonProfile| p.origin.as_ref().map_or_else(String::new, |o| o.display().to_string());
         self.people.values().try_for_each(|p| {
             p.unit_preset
@@ -373,15 +382,9 @@ impl Profiles {
     }
 
     fn add_conversions(&self, cat: &mut Catalog) -> Result<()> {
-        let specs = self
-            .extra_conversions
-            .iter()
-            .map(|c| (c, "built-in conversions".to_string()))
-            .chain(
-                self.presets
-                    .iter()
-                    .flat_map(|(n, p)| p.conversions.iter().map(move |c| (c, format!("unit preset '{n}'")))),
-            );
+        let specs = self.extra_conversions.iter().map(|c| (c, "built-in conversions".to_string())).chain(
+            self.presets.iter().flat_map(|(n, p)| p.conversions.iter().map(move |c| (c, format!("unit preset '{n}'")))),
+        );
         let added = specs
             .map(|(c, origin)| {
                 if c.factor == 0.0 || !c.factor.is_finite() {
@@ -414,40 +417,38 @@ impl Profiles {
                     return Ok(());
                 }
                 let m = cat.get(key).map_err(|e| e.context(&origin))?;
-                cat.conversions
-                    .reachable(m.id, &m.unit)
-                    .iter()
-                    .any(|k| same_unit(k, unit))
-                    .then_some(())
-                    .ok_or_else(|| {
+                cat.conversions.reachable(m.id, &m.unit).iter().any(|k| same_unit(k, unit)).then_some(()).ok_or_else(
+                    || {
                         AppError::config(format!(
                             "{origin}: {} cannot be shown in '{unit}' (no conversion from {}; add a [[conversion]])",
                             m.slug, m.unit
                         ))
-                    })
+                    },
+                )
             })
         };
-        self.presets.iter().filter(|(_, p)| p.origin.is_some()).try_for_each(|(n, p)| check(format!("unit preset '{n}'"), &p.units))?;
+        self.presets
+            .iter()
+            .filter(|(_, p)| p.origin.is_some())
+            .try_for_each(|(n, p)| check(format!("unit preset '{n}'"), &p.units))?;
         self.people.iter().try_for_each(|(n, p)| check(format!("person profile '{n}'"), &p.units))?;
         check("config.toml [units]".to_string(), &self.overrides)
     }
 
     fn compile_set(&self, cat: &Catalog, name: &str) -> Result<Vec<Compiled>> {
-        chain(&self.range_sets, name, |s| s.extends.as_deref(), "range set")?
-            .into_iter()
-            .try_fold(Vec::new(), |mut acc, s| {
+        chain(&self.range_sets, name, |s| s.extends.as_deref(), "range set")?.into_iter().try_fold(
+            Vec::new(),
+            |mut acc, s| {
                 acc.extend(compile(cat, &s.ranges, s.origin.as_deref(), name)?);
                 Ok(acc)
-            })
+            },
+        )
     }
 }
 
 fn compile(cat: &Catalog, specs: &[RangeSpec], origin: Option<&Path>, owner: &str) -> Result<Vec<Compiled>> {
     let where_ = origin.map_or_else(|| owner.to_string(), |o| o.display().to_string());
-    specs
-        .iter()
-        .map(|s| compile_one(cat, s).map_err(|e| e.context(&where_)))
-        .collect()
+    specs.iter().map(|s| compile_one(cat, s).map_err(|e| e.context(&where_))).collect()
 }
 
 fn compile_one(cat: &Catalog, s: &RangeSpec) -> Result<Compiled> {
@@ -470,13 +471,29 @@ fn compile_one(cat: &Catalog, s: &RangeSpec) -> Result<Compiled> {
     let (low, high) = (conv(s.low)?, conv(s.high)?);
     if let (Some(l), Some(h)) = (low, high) {
         if l > h {
-            return Err(AppError::config(format!("{}: low ({}) is above high ({})", m.slug, s.low.unwrap_or(l), s.high.unwrap_or(h))));
+            return Err(AppError::config(format!(
+                "{}: low ({}) is above high ({})",
+                m.slug,
+                s.low.unwrap_or(l),
+                s.high.unwrap_or(h)
+            )));
         }
     }
     Ok(Compiled {
         marker_id: m.id,
         lab: s.lab.as_ref().map(|l| l.trim().to_lowercase()).filter(|l| !l.is_empty()),
-        range: Range { id: 0, marker_id: m.id, kind, sex, age_min, age_max, low, high, note: s.note.clone(), person_id: None },
+        range: Range {
+            id: 0,
+            marker_id: m.id,
+            kind,
+            sex,
+            age_min,
+            age_max,
+            low,
+            high,
+            note: s.note.clone(),
+            person_id: None,
+        },
     })
 }
 
@@ -485,8 +502,7 @@ fn compile_one(cat: &Catalog, s: &RangeSpec) -> Result<Compiled> {
 fn select_compiled(all: &[Compiled], marker_id: i64, kind: RangeKind, lab: Option<&str>) -> Vec<Range> {
     let lab = lab.map(str::to_lowercase);
     let mine: Vec<&Compiled> = all.iter().filter(|c| c.marker_id == marker_id && c.range.kind == kind).collect();
-    let specific: Vec<&Compiled> =
-        mine.iter().copied().filter(|c| c.lab.is_some() && c.lab == lab).collect();
+    let specific: Vec<&Compiled> = mine.iter().copied().filter(|c| c.lab.is_some() && c.lab == lab).collect();
     let chosen = if specific.is_empty() { mine.into_iter().filter(|c| c.lab.is_none()).collect() } else { specific };
     chosen.into_iter().map(|c| c.range.clone()).collect()
 }
@@ -510,7 +526,12 @@ fn overrides_from_config(path: &Path) -> Result<BTreeMap<String, String>> {
 }
 
 /// Write a starter profile for `slug` (refuses to overwrite). Returns its path.
-pub fn init_person(config_path: &Path, slug: &str, unit_preset: Option<&str>, range_set: Option<&str>) -> Result<PathBuf> {
+pub fn init_person(
+    config_path: &Path,
+    slug: &str,
+    unit_preset: Option<&str>,
+    range_set: Option<&str>,
+) -> Result<PathBuf> {
     let dir = config_path.parent().map(Path::to_path_buf).unwrap_or_default().join("people");
     let path = dir.join(format!("{}.toml", slug.to_lowercase()));
     if path.exists() {
@@ -587,7 +608,10 @@ mod tests {
         let mut m: BTreeMap<String, UnitPreset> = BTreeMap::new();
         m.insert("a".into(), UnitPreset { extends: Some("b".into()), ..Default::default() });
         m.insert("b".into(), UnitPreset { extends: Some("a".into()), ..Default::default() });
-        assert!(chain(&m, "a", |p| p.extends.as_deref(), "unit preset").unwrap_err().message.contains("extends itself"));
+        assert!(chain(&m, "a", |p| p.extends.as_deref(), "unit preset")
+            .unwrap_err()
+            .message
+            .contains("extends itself"));
         assert!(chain(&m, "zzz", |p| p.extends.as_deref(), "unit preset").unwrap_err().message.contains("unknown"));
     }
 
@@ -633,7 +657,8 @@ mod tests {
     #[test]
     fn lab_specific_ranges_replace_general_ones() {
         let all = vec![rs(None, 1.0), rs(Some("quest"), 2.0)];
-        let low = |lab| select_compiled(&all, 1, RangeKind::Reference, lab).into_iter().map(|r| r.low).collect::<Vec<_>>();
+        let low =
+            |lab| select_compiled(&all, 1, RangeKind::Reference, lab).into_iter().map(|r| r.low).collect::<Vec<_>>();
         assert_eq!(low(Some("Quest")), vec![Some(2.0)]);
         assert_eq!(low(Some("labcorp")), vec![Some(1.0)]);
         assert_eq!(low(None), vec![Some(1.0)]);

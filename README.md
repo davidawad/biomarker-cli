@@ -542,7 +542,8 @@ Settings resolve in this order, lowest to highest precedence:
 | `format` | `BIOMARKER_FORMAT` | `table` | `table json jsonl csv tsv yaml toon markdown html org` |
 | `date_format` | `BIOMARKER_DATE_FORMAT` | `%Y-%m-%d` | strftime. Used for text-format display, and accepted on input |
 | `timezone` | `BIOMARKER_TZ` | `local` | `local`, `UTC`, IANA name, `+HH:MM` |
-| `unit_system` | `BIOMARKER_UNITS` | `canonical` | `canonical us si` |
+| `unit_system` | `BIOMARKER_UNITS` | `canonical` | a unit preset: `canonical us si uk` or your own (see Profiles) |
+| `range_set` | `BIOMARKER_RANGE_SET` | — | a named range set (see Profiles) |
 | `color` | `BIOMARKER_COLOR` | `auto` | `auto always never` |
 | `precision` | `BIOMARKER_PRECISION` | `2` | decimals in text formats |
 | `csv_delimiter` | `BIOMARKER_CSV_DELIMITER` | `,` | one char or `tab` |
@@ -578,6 +579,59 @@ are. `XDG_CONFIG_HOME` / `XDG_DATA_HOME` are honoured on every OS. See
 The config file is flat TOML. One level of tables is flattened, so
 `[csv] delimiter = ";"` is the same as `csv_delimiter = ";"`. See
 [`examples/config.toml`](examples/config.toml).
+
+## Profiles: unit presets, range sets, per-person settings
+
+Everything below is optional TOML next to `config.toml` (`biomarker config path`
+shows where). `biomarker profile list` shows what is loaded and from which
+file; `biomarker profile show PERSON` shows the units and ranges in effect for
+one person and where each range came from. A mistake in a file is an error
+that names the file.
+
+**Unit presets**: `units/<name>.toml`. Built in: `canonical`, `us`, `si`, `uk`.
+Select one with `unit_system` / `--units`.
+
+```toml
+# units/mass-per-ml.toml
+description = "mg/mL style"
+extends = "us"                    # inherit another preset
+[units]
+glucose = "mg/mL"                 # marker slug or alias
+"@lipid" = "mmol/L"               # a whole category
+[[conversion]]                    # only if the conversion is not already known
+marker = "glucose"
+from = "mg/dL"
+to = "mg/mL"
+factor = 0.01
+```
+
+A `[units]` table in `config.toml` overrides single markers on top of the
+global preset. A per-marker display unit must be reachable by a conversion; one
+that is not is an error, not a silent fallback.
+
+**Range sets**: `ranges/<name>.toml` is a list of `[[range]]` entries (`marker`,
+`kind`, `sex`, `age_min`, `age_max`, `low`, `high`, `unit`, `lab`, `note`),
+optionally `extends = "<set>"`. Select one globally with `range_set`, or per
+person. An entry with `lab = "quest"` applies only to results from that lab, and
+when any entry matches a result's lab only those are used.
+
+**Person profiles**: `people/<slug>.toml` (`biomarker profile init PERSON`
+writes a starter).
+
+```toml
+unit_preset = "si"                # this person's units (a --units flag still wins)
+range_set = "labcorp"
+[units]
+glucose = "mg/dL"
+[[range]]                         # personal ranges: bands, units and labs allowed
+marker = "ldl-c"
+kind = "optimal"
+high = 1.8
+unit = "mmol/L"
+```
+
+Range precedence per measurement: the person's own ranges (profile file, then
+`range set --person`), then their (or the global) range set, then the catalog.
 
 ## Machine interface
 

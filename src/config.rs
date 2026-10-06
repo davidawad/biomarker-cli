@@ -85,8 +85,15 @@ pub const SETTINGS: &[Setting] = &[
     Setting {
         key: "unit_system",
         env: &["BIOMARKER_UNITS", "BIOMARKER_UNIT_SYSTEM"],
-        help: "display units: canonical, us, si",
-        choices: &["canonical", "us", "si"],
+        help: "unit preset for display: canonical, us, si, uk or any preset in <config dir>/units/",
+        choices: &[],
+        kind: Kind::Str,
+    },
+    Setting {
+        key: "range_set",
+        env: &["BIOMARKER_RANGE_SET"],
+        help: "named range set (<config dir>/ranges/<name>.toml) used before the catalog ranges",
+        choices: &[],
         kind: Kind::Str,
     },
     Setting {
@@ -237,6 +244,7 @@ pub fn normalize(key: &str, raw: &str) -> Result<String> {
             }
         }
         Kind::Str if s.key == "timezone" => Tz::parse(v).map(|_| v.to_string()),
+        Kind::Str if matches!(s.key, "unit_system" | "range_set") => Ok(v.to_ascii_lowercase()),
         Kind::Str => Ok(v.to_string()),
     }
 }
@@ -317,12 +325,13 @@ fn toml_scalar(v: &toml::Value) -> Option<String> {
 /// Accepts flat keys and one level of tables (`[csv] delimiter = ";"` ==
 /// `csv_delimiter = ";"`).
 /// The `[encryption]` section is biomarker's record of database keys
-/// ([`crate::enc_config`]), not settings.
+/// ([`crate::enc_config`]) and `[units]` holds per-marker unit overrides
+/// ([`crate::profiles`]); neither is a setting.
 pub fn parse_toml_layer(text: &str) -> Result<Layer> {
     let table: toml::Table = text.parse().map_err(|e| AppError::config(format!("TOML: {e}")))?;
     table
         .iter()
-        .filter(|(k, _)| k.as_str() != "encryption")
+        .filter(|(k, _)| !matches!(k.as_str(), "encryption" | "units"))
         .flat_map(|(k, v)| match v {
             toml::Value::Table(t) => t.iter().map(|(k2, v2)| (format!("{k}_{k2}"), v2.clone())).collect::<Vec<_>>(),
             other => vec![(k.clone(), other.clone())],

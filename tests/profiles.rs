@@ -64,7 +64,7 @@ impl Env {
         e.run(&["person", "add", "alex", "--sex", "male", "--dob", "1984-06-01"]);
         e.run(&["person", "add", "sam", "--sex", "female", "--dob", "1991-09-23"]);
         for p in ["alex", "sam"] {
-            e.run(&["add", "glucose", "99", "--unit", "mg/dL", "--person", p, "--date", "2024-01-01", "--lab", "quest"]);
+            e.run(&["add", "glucose", "99", "mg/dL", "--person", p, "--date", "2024-01-01", "--lab", "quest"]);
             e.run(&["add", "hba1c", "5.4", "--person", p, "--date", "2024-01-01"]);
         }
         e
