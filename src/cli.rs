@@ -259,6 +259,15 @@ pub enum MarkerCmd {
         #[arg(long)]
         remove: bool,
     },
+    /// Create or update markers (aliases, conversions, ranges) from a markers.toml
+    Sync {
+        /// File to read (default: markers.toml next to the config file)
+        #[arg(long)]
+        file: Option<PathBuf>,
+        /// Report what would change without writing
+        #[arg(long)]
+        dry_run: bool,
+    },
     /// List marker categories
     Categories,
 }
@@ -695,14 +704,15 @@ pub struct TrendArgs {
     #[command(flatten)]
     pub filter: FilterArgs,
     /// Windows for % change, e.g. 90d,6m,1y
-    #[arg(long, value_delimiter = ',', default_value = "3m,6m,1y")]
-    pub windows: Vec<String>,
+    /// (default: the `trend_windows` setting, `3m,6m,1y`)
+    #[arg(long, value_delimiter = ',')]
+    pub windows: Option<Vec<String>>,
     /// Omit individual points from JSON output
     #[arg(long)]
     pub no_points: bool,
-    /// Minimum number of points for a series to be reported
-    #[arg(long, default_value_t = 1)]
-    pub min_points: usize,
+    /// Minimum number of points for a series to be reported (default: the `trend_min_points` setting)
+    #[arg(long)]
+    pub min_points: Option<usize>,
 }
 
 #[derive(Debug, Args)]
@@ -715,6 +725,12 @@ pub struct FlagArgs {
     /// Exit with status 10 when any flagged value is found
     #[arg(long)]
     pub exit_code: bool,
+    /// Only critical results (needs critical_low / critical_high in a range)
+    #[arg(long)]
+    pub critical: bool,
+    /// Also list results inside the range but within the `borderline_margin` of a bound
+    #[arg(long)]
+    pub borderline: bool,
 }
 
 #[derive(Debug, Args)]

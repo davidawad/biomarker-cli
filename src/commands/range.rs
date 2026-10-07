@@ -70,6 +70,8 @@ fn set(ctx: &Ctx, a: RangeSetArgs) -> Result<()> {
             high,
             note: a.note,
             person_id: Some(person.id),
+            critical_low: None,
+            critical_high: None,
         };
         store::upsert_person_range(&db, person.id, &r)?;
         let cat = Catalog::load(&db)?;
@@ -97,6 +99,8 @@ fn set(ctx: &Ctx, a: RangeSetArgs) -> Result<()> {
         high,
         note: a.note,
         person_id: None,
+        critical_low: None,
+        critical_high: None,
     };
     store::upsert_range(&db, &r)?;
     let cat = Catalog::load(&db)?;

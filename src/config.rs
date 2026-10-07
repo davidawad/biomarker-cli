@@ -42,7 +42,12 @@ pub struct Setting {
 pub enum Kind {
     Str,
     Bool,
+    /// Decimal places (0..=12).
     Uint,
+    /// A whole number (counts).
+    Count,
+    /// A percentage, 0..=100 (fractions allowed).
+    Percent,
     Char,
 }
 
@@ -109,6 +114,27 @@ pub const SETTINGS: &[Setting] = &[
         help: "decimal places in text output (table/csv/tsv/markdown/html/org)",
         choices: &[],
         kind: Kind::Uint,
+    },
+    Setting {
+        key: "borderline_margin",
+        env: &["BIOMARKER_BORDERLINE_MARGIN"],
+        help: "percent of the range width inside a bound that counts as borderline (0 = off)",
+        choices: &[],
+        kind: Kind::Percent,
+    },
+    Setting {
+        key: "trend_windows",
+        env: &["BIOMARKER_TREND_WINDOWS"],
+        help: "default windows for `trend` % change, comma separated (e.g. 3m,6m,1y)",
+        choices: &[],
+        kind: Kind::Str,
+    },
+    Setting {
+        key: "trend_min_points",
+        env: &["BIOMARKER_TREND_MIN_POINTS"],
+        help: "default minimum number of points for a series to appear in `trend`",
+        choices: &[],
+        kind: Kind::Count,
     },
     Setting {
         key: "csv_delimiter",
@@ -205,6 +231,9 @@ fn default_value(key: &str) -> String {
         "unit_system" => "canonical".into(),
         "color" => "auto".into(),
         "precision" => "2".into(),
+        "borderline_margin" => "0".into(),
+        "trend_windows" => "3m,6m,1y".into(),
+        "trend_min_points" => "1".into(),
         "csv_delimiter" => ",".into(),
         "csv_quote" => "\"".into(),
         "csv_header" => "true".into(),
@@ -230,6 +259,13 @@ pub fn normalize(key: &str, raw: &str) -> Result<String> {
         Kind::Uint => {
             v.parse::<u8>().map(|n| n.min(12).to_string()).map_err(|_| bad("expected a small non-negative integer"))
         }
+        Kind::Count => v.parse::<u32>().map(|n| n.to_string()).map_err(|_| bad("expected a whole number")),
+        Kind::Percent => v
+            .parse::<f64>()
+            .ok()
+            .filter(|n| (0.0..=100.0).contains(n))
+            .map(|n| n.to_string())
+            .ok_or_else(|| bad("expected a percentage between 0 and 100")),
         Kind::Char => match raw {
             "tab" | "\\t" | "\t" => Ok("\t".into()),
             c if c.chars().count() == 1 && c.is_ascii() => Ok(c.into()),
@@ -325,13 +361,14 @@ fn toml_scalar(v: &toml::Value) -> Option<String> {
 /// Accepts flat keys and one level of tables (`[csv] delimiter = ";"` ==
 /// `csv_delimiter = ";"`).
 /// The `[encryption]` section is biomarker's record of database keys
-/// ([`crate::enc_config`]) and `[units]` holds per-marker unit overrides
-/// ([`crate::profiles`]); neither is a setting.
+/// ([`crate::enc_config`]). The `[units]`, `[marker_precision]` and `[unit_aliases]`
+/// tables hold per-marker overrides ([`crate::profiles`], [`crate::units`]),
+/// not settings.
 pub fn parse_toml_layer(text: &str) -> Result<Layer> {
     let table: toml::Table = text.parse().map_err(|e| AppError::config(format!("TOML: {e}")))?;
     table
         .iter()
-        .filter(|(k, _)| !matches!(k.as_str(), "encryption" | "units"))
+        .filter(|(k, _)| !matches!(k.as_str(), "encryption" | "units" | "marker_precision" | "unit_aliases"))
         .flat_map(|(k, v)| match v {
             toml::Value::Table(t) => t.iter().map(|(k2, v2)| (format!("{k}_{k2}"), v2.clone())).collect::<Vec<_>>(),
             other => vec![(k.clone(), other.clone())],
@@ -378,7 +415,8 @@ pub fn write_setting(path: &Path, key: &str, value: Option<&str>) -> Result<()> 
             let v = normalize(s.key, v)?;
             let tv = match s.kind {
                 Kind::Bool => toml::Value::Boolean(v == "true"),
-                Kind::Uint => toml::Value::Integer(v.parse().unwrap_or(2)),
+                Kind::Uint | Kind::Count => toml::Value::Integer(v.parse().unwrap_or(2)),
+                Kind::Percent => toml::Value::Float(v.parse().unwrap_or(0.0)),
                 _ => toml::Value::String(v),
             };
             table.insert(s.key.to_string(), tv);

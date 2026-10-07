@@ -70,6 +70,8 @@ pub struct UnitPreset {
 #[derive(Debug, Clone, Default, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct RangeSpec {
+    /// Required, except inside a `[[marker]]` table of markers.toml.
+    #[serde(default)]
     pub marker: String,
     /// `reference` (default) or `optimal`.
     pub kind: Option<String>,
@@ -79,7 +81,10 @@ pub struct RangeSpec {
     pub age_max: Option<f64>,
     pub low: Option<f64>,
     pub high: Option<f64>,
-    /// Unit of `low` / `high` (default: the marker's canonical unit).
+    /// Beyond these the result is flagged critical (same unit as `low` / `high`).
+    pub critical_low: Option<f64>,
+    pub critical_high: Option<f64>,
+    /// Unit of the bounds (default: the marker's canonical unit).
     pub unit: Option<String>,
     /// Only applies to measurements from this lab.
     pub lab: Option<String>,
@@ -109,6 +114,11 @@ pub struct PersonProfile {
     pub units: BTreeMap<String, String>,
     #[serde(default, rename = "range")]
     pub ranges: Vec<RangeSpec>,
+    /// Display decimals per marker slug or `@category`.
+    #[serde(default)]
+    pub marker_precision: BTreeMap<String, usize>,
+    /// `reference`, `optimal` or `both` for this person's flags.
+    pub range_flavor: Option<String>,
     #[serde(skip)]
     pub origin: Option<PathBuf>,
 }
@@ -118,6 +128,71 @@ struct Compiled {
     marker_id: i64,
     lab: Option<String>,
     range: Range,
+}
+
+/// A conversion into the marker's own unit (`to` defaults to the marker's unit).
+#[derive(Debug, Clone, Default, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct MarkerConversion {
+    pub from: String,
+    pub to: Option<String>,
+    pub factor: f64,
+    #[serde(default)]
+    pub offset: f64,
+}
+
+/// One `[[marker]]` of markers.toml: a catalog entry to create or update.
+#[derive(Debug, Clone, Default, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct MarkerSpec {
+    pub slug: String,
+    pub name: Option<String>,
+    pub category: Option<String>,
+    /// Required for a new marker. An existing marker's unit cannot change.
+    pub unit: Option<String>,
+    pub loinc: Option<String>,
+    pub description: Option<String>,
+    #[serde(default)]
+    pub aliases: Vec<String>,
+    #[serde(default, rename = "conversion")]
+    pub conversions: Vec<MarkerConversion>,
+    /// Catalog ranges (sex / age bands); `marker` is implied.
+    #[serde(default, rename = "range")]
+    pub ranges: Vec<RangeSpec>,
+}
+
+#[derive(Debug, Clone, Default, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct MarkerFile {
+    #[serde(default, rename = "marker")]
+    pub markers: Vec<MarkerSpec>,
+}
+
+/// Parse a markers.toml (errors name the file).
+pub fn load_marker_file(path: &Path) -> Result<MarkerFile> {
+    let text = std::fs::read_to_string(path).map_err(|e| AppError::io(format!("reading {}: {e}", path.display())))?;
+    parse(&text, &path.display().to_string())
+}
+
+/// `<config dir>/markers.toml`.
+pub fn default_marker_file(config_path: &Path) -> PathBuf {
+    config_path.parent().map(Path::to_path_buf).unwrap_or_default().join("markers.toml")
+}
+
+/// Turn a range entry into a catalog range (bounds converted to the marker's unit).
+pub fn range_from_spec(cat: &Catalog, spec: &RangeSpec) -> Result<Range> {
+    compile_one(cat, spec).map(|c| c.range)
+}
+
+/// Settings that shape how profiles are applied (from the resolved config).
+#[derive(Debug, Clone, Default)]
+pub struct LoadOpts {
+    pub range_set: String,
+    /// `unit_system` came from a flag or the environment.
+    pub force_units: bool,
+    /// `range_flavor` came from a flag or the environment.
+    pub force_flavor: bool,
+    pub borderline_margin: f64,
 }
 
 /// One row of `profile list`.
@@ -142,6 +217,10 @@ pub struct Profiles {
     default_range_set: Option<String>,
     /// `--units` / `BIOMARKER_UNITS` was given: it beats per-person unit settings.
     force_units: bool,
+    /// Same for `range_flavor`.
+    force_flavor: bool,
+    /// The `borderline_margin` setting (percent).
+    pub borderline_margin: f64,
     extra_conversions: Vec<ConversionSpec>,
     compiled_people: BTreeMap<String, Vec<Compiled>>,
     compiled_sets: BTreeMap<String, Vec<Compiled>>,
@@ -209,11 +288,13 @@ fn lowercase_keys(m: &BTreeMap<String, String>) -> BTreeMap<String, String> {
 
 impl Profiles {
     /// Built-ins plus the files under the config file's directory.
-    pub fn load(config_path: &Path, default_range_set: &str, force_units: bool) -> Result<Self> {
+    pub fn load(config_path: &Path, opts: &LoadOpts) -> Result<Self> {
         let dir = config_path.parent().map(Path::to_path_buf).unwrap_or_default();
         let mut p = Self {
-            default_range_set: Some(default_range_set.trim().to_lowercase()).filter(|s| !s.is_empty()),
-            force_units,
+            default_range_set: Some(opts.range_set.trim().to_lowercase()).filter(|s| !s.is_empty()),
+            force_units: opts.force_units,
+            force_flavor: opts.force_flavor,
+            borderline_margin: opts.borderline_margin,
             ..Self::default()
         };
         for (name, text) in BUILTIN_PRESETS {
@@ -266,6 +347,11 @@ impl Profiles {
             origin: v.origin.clone(),
         });
         presets.chain(sets).chain(people).collect()
+    }
+
+    /// The person's own `range_flavor`, unless a flag or variable forced one.
+    pub fn flavor_for(&self, person: &str) -> Option<&str> {
+        (!self.force_flavor).then(|| self.people.get(person).and_then(|p| p.range_flavor.as_deref())).flatten()
     }
 
     pub fn has_preset(&self, name: &str) -> bool {
@@ -353,6 +439,12 @@ impl Profiles {
     }
 
     fn validate_names(&self) -> Result<()> {
+        self.people.iter().try_for_each(|(n, p)| match p.range_flavor.as_deref() {
+            None | Some("reference" | "optimal" | "both") => Ok(()),
+            Some(f) => Err(AppError::config(format!(
+                "person profile '{n}': range_flavor '{f}' must be reference, optimal or both"
+            ))),
+        })?;
         self.presets
             .keys()
             .try_for_each(|n| chain(&self.presets, n, |p| p.extends.as_deref(), "unit preset").map(|_| ()))?;
@@ -469,6 +561,10 @@ fn compile_one(cat: &Catalog, s: &RangeSpec) -> Result<Compiled> {
     let unit = s.unit.clone().unwrap_or_else(|| m.unit.clone());
     let conv = |v: Option<f64>| v.map(|x| cat.to_canonical(m, x, &unit)).transpose();
     let (low, high) = (conv(s.low)?, conv(s.high)?);
+    let (critical_low, critical_high) = (conv(s.critical_low)?, conv(s.critical_high)?);
+    if critical_low.zip(low).is_some_and(|(c, l)| c > l) || critical_high.zip(high).is_some_and(|(c, h)| c < h) {
+        return Err(AppError::config(format!("{}: critical bounds must lie outside low / high", m.slug)));
+    }
     if let (Some(l), Some(h)) = (low, high) {
         if l > h {
             return Err(AppError::config(format!(
@@ -493,6 +589,8 @@ fn compile_one(cat: &Catalog, s: &RangeSpec) -> Result<Compiled> {
             high,
             note: s.note.clone(),
             person_id: None,
+            critical_low,
+            critical_high,
         },
     })
 }
@@ -507,21 +605,75 @@ fn select_compiled(all: &[Compiled], marker_id: i64, kind: RangeKind, lab: Optio
     chosen.into_iter().map(|c| c.range.clone()).collect()
 }
 
-/// `[units]` table of config.toml (marker -> unit).
-fn overrides_from_config(path: &Path) -> Result<BTreeMap<String, String>> {
+/// A `[name]` table of config.toml (empty when absent).
+fn config_table(path: &Path, name: &str) -> Result<BTreeMap<String, toml::Value>> {
     let Ok(text) = std::fs::read_to_string(path) else { return Ok(BTreeMap::new()) };
     let (head, _) = crate::enc_config::split(&text);
     let table: toml::Table = head.parse().map_err(|e| AppError::config(format!("{}: {e}", path.display())))?;
-    match table.get("units") {
+    match table.get(name) {
         None => Ok(BTreeMap::new()),
-        Some(toml::Value::Table(t)) => t
-            .iter()
-            .map(|(k, v)| match v {
-                toml::Value::String(s) => Ok((k.trim().to_lowercase(), s.trim().to_string())),
-                _ => Err(AppError::config(format!("{}: [units] {k} must be a unit string", path.display()))),
-            })
-            .collect(),
-        Some(_) => Err(AppError::config(format!("{}: 'units' must be a table of marker = \"unit\"", path.display()))),
+        Some(toml::Value::Table(t)) => Ok(t.iter().map(|(k, v)| (k.trim().to_lowercase(), v.clone())).collect()),
+        Some(_) => Err(AppError::config(format!("{}: '{name}' must be a table", path.display()))),
+    }
+}
+
+fn string_table(path: &Path, name: &str) -> Result<BTreeMap<String, String>> {
+    config_table(path, name)?
+        .into_iter()
+        .map(|(k, v)| match v {
+            toml::Value::String(s) => Ok((k, s.trim().to_string())),
+            _ => Err(AppError::config(format!("{}: [{name}] {k} must be a string", path.display()))),
+        })
+        .collect()
+}
+
+/// `[units]` table of config.toml (marker -> unit).
+fn overrides_from_config(path: &Path) -> Result<BTreeMap<String, String>> {
+    string_table(path, "units")
+}
+
+/// `[unit_aliases]` of config.toml: extra unit spellings (alias -> unit).
+pub fn unit_aliases(config_path: &Path) -> Result<BTreeMap<String, String>> {
+    string_table(config_path, "unit_aliases")
+}
+
+/// Per-marker display precision: the `[marker_precision]` table of
+/// config.toml (marker slug or `@category` -> decimals) and each person
+/// profile's own. Lenient: a broken file is ignored here and reported by the
+/// commands that load profiles.
+#[derive(Debug, Clone, Default)]
+pub struct PrecisionRules {
+    global: BTreeMap<String, usize>,
+    people: BTreeMap<String, BTreeMap<String, usize>>,
+}
+
+impl PrecisionRules {
+    pub fn load(config_path: &Path) -> Self {
+        let digits = |m: BTreeMap<String, toml::Value>| {
+            m.into_iter()
+                .filter_map(|(k, v)| v.as_integer().and_then(|n| usize::try_from(n).ok()).map(|n| (k, n.min(12))))
+                .collect::<BTreeMap<_, _>>()
+        };
+        let dir = config_path.parent().map(Path::to_path_buf).unwrap_or_default();
+        Self {
+            global: config_table(config_path, "marker_precision").map(digits).unwrap_or_default(),
+            people: read_dir::<PersonProfile>(&dir.join("people"))
+                .unwrap_or_default()
+                .into_iter()
+                .map(|(n, _, p)| {
+                    (n, p.marker_precision.into_iter().map(|(k, v)| (k.to_lowercase(), v.min(12))).collect())
+                })
+                .collect(),
+        }
+    }
+
+    /// Decimals for a row of `person` / `marker` / `category`, if configured:
+    /// the person's setting wins, then the global one; slug before `@category`.
+    pub fn for_row(&self, person: Option<&str>, marker: &str, category: Option<&str>) -> Option<usize> {
+        let find = |m: &BTreeMap<String, usize>| {
+            m.get(marker).or_else(|| category.and_then(|c| m.get(&format!("@{c}")))).copied()
+        };
+        person.and_then(|p| self.people.get(p)).and_then(find).or_else(|| find(&self.global))
     }
 }
 
@@ -580,7 +732,7 @@ mod tests {
     }
 
     fn builtin() -> Profiles {
-        Profiles::load(Path::new("/nonexistent/config.toml"), "", false).unwrap()
+        Profiles::load(Path::new("/nonexistent/config.toml"), &LoadOpts::default()).unwrap()
     }
 
     #[test]
@@ -650,6 +802,8 @@ mod tests {
                 high: None,
                 note: None,
                 person_id: None,
+                critical_low: None,
+                critical_high: None,
             },
         }
     }

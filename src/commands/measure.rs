@@ -172,15 +172,25 @@ pub fn query(ctx: &Ctx, q: QueryArgs) -> Result<()> {
 }
 
 pub fn flag(ctx: &Ctx, a: FlagArgs) -> Result<Status> {
+    let severity_filter = a.critical || a.borderline;
     let q = QueryArgs {
         filter: a.filter,
-        flagged: true,
+        flagged: !severity_filter,
         latest: a.latest,
         sort: SortKey::Date,
         reverse: false,
         limit: None,
     };
     let (cat, rows) = select(ctx, &q)?;
+    let flavor = ctx.range_flavor();
+    let rows: Vec<_> = rows
+        .into_iter()
+        .filter(|e| match (a.critical, e.level(flavor)) {
+            _ if !severity_filter => true,
+            (true, l) => l.is_some_and(|l| l.is_critical()),
+            (false, l) => e.is_flagged(flavor) || l.is_some_and(|l| l.severity() >= 1),
+        })
+        .collect();
     let report = Report::list("flags", records(ctx, &cat, &rows))
         .table_columns(&[
             "id",

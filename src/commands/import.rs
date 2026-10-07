@@ -1139,6 +1139,8 @@ fn set_sheet_ranges(
             high,
             note: Some("from spreadsheet".into()),
             person_id: Some(pid),
+            critical_low: None,
+            critical_high: None,
         };
         store::upsert_person_range(db, pid, &range)?;
         summary.ranges_set.push(json!({"marker": m.slug, "person": slug, "low": low, "high": high, "unit": m.unit}));

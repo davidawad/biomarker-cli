@@ -61,6 +61,8 @@ pub struct OutputOpts {
     pub format: Format,
     pub output: Option<PathBuf>,
     pub precision: usize,
+    /// Per-marker / per-person decimals that override `precision` in text output.
+    pub precision_rules: crate::profiles::PrecisionRules,
     pub delimiter: u8,
     pub quote: u8,
     pub header: bool,
@@ -166,7 +168,7 @@ pub fn envelope(r: &Report) -> Value {
 }
 
 /// Render a cell for text formats.
-fn cell(v: &Value, key: &str, r: &Report, o: &OutputOpts) -> String {
+fn cell(v: &Value, key: &str, r: &Report, o: &OutputOpts, precision: usize) -> String {
     match v {
         Value::Null => o.null.clone(),
         Value::String(s) if !r.exact && r.date_fields.contains(&key) => crate::util::display_when(s, &o.date_format),
@@ -174,10 +176,10 @@ fn cell(v: &Value, key: &str, r: &Report, o: &OutputOpts) -> String {
         Value::Bool(b) => b.to_string(),
         Value::Number(n) if n.is_f64() && !r.exact => {
             let f = n.as_f64().unwrap_or_default();
-            format!("{:.*}", o.precision, f)
+            format!("{:.*}", precision, f)
         }
         Value::Number(n) => n.to_string(),
-        Value::Array(a) => a.iter().map(|x| cell(x, "", r, o)).collect::<Vec<_>>().join(","),
+        Value::Array(a) => a.iter().map(|x| cell(x, "", r, o, precision)).collect::<Vec<_>>().join(","),
         Value::Object(_) => v.to_string(),
     }
 }
@@ -208,12 +210,20 @@ fn text_rows(r: &Report, o: &OutputOpts, cols: &[String]) -> Vec<Vec<String>> {
     match &r.body {
         Body::List { rows, .. } => rows
             .iter()
-            .map(|row| cols.iter().map(|c| row.get(c).map_or_else(|| o.null.clone(), |v| cell(v, c, r, o))).collect())
+            .map(|row| {
+                let text = |k: &str| row.get(k).and_then(Value::as_str);
+                let precision = text("marker")
+                    .and_then(|m| o.precision_rules.for_row(text("person"), m, text("category")))
+                    .unwrap_or(o.precision);
+                cols.iter()
+                    .map(|c| row.get(c).map_or_else(|| o.null.clone(), |v| cell(v, c, r, o, precision)))
+                    .collect()
+            })
             .collect(),
         Body::Object(obj) => obj
             .iter()
             .filter(|(k, _)| o.columns.as_ref().is_none_or(|c| c.contains(k)))
-            .map(|(k, v)| vec![k.clone(), cell(v, k, r, o)])
+            .map(|(k, v)| vec![k.clone(), cell(v, k, r, o, o.precision)])
             .collect(),
     }
 }
@@ -414,6 +424,7 @@ mod tests {
             format,
             output: None,
             precision: 1,
+            precision_rules: Default::default(),
             delimiter: b',',
             quote: b'"',
             header: true,

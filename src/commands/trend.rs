@@ -46,13 +46,16 @@ fn flag_str(f: Option<Flag>) -> Option<&'static str> {
 pub fn trend(ctx: &Ctx, a: TrendArgs) -> Result<()> {
     let windows = a
         .windows
+        .clone()
+        .unwrap_or_else(|| ctx.trend_windows())
         .iter()
         .filter(|w| !w.trim().is_empty())
         .map(|w| parse_span(w).map(|s| (w.trim().to_string(), s)))
         .collect::<Result<Vec<_>>>()?;
+    let min_points = a.min_points.unwrap_or_else(|| ctx.trend_min_points());
     let (cat, rows) = select(ctx, &query_all(a.filter))?;
     let flavor = ctx.range_flavor();
-    let groups: Vec<Vec<Evaluated>> = series(rows).into_iter().filter(|g| g.len() >= a.min_points).collect();
+    let groups: Vec<Vec<Evaluated>> = series(rows).into_iter().filter(|g| g.len() >= min_points).collect();
 
     let build = |g: &[Evaluated]| -> Option<(Record, Value)> {
         let pts: Vec<Point> =

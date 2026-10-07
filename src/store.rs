@@ -341,6 +341,8 @@ pub fn load_ranges(db: &Db) -> Result<Vec<Range>> {
             high: r.f(7),
             note: r.s(8),
             person_id: None,
+            critical_low: None,
+            critical_high: None,
         })
         .collect())
 }
@@ -352,6 +354,8 @@ pub fn load_person_ranges(db: &Db) -> Result<Vec<Range>> {
         .map(|r| Range {
             id: r.i(0).unwrap_or_default(),
             person_id: r.i(1),
+            critical_low: None,
+            critical_high: None,
             marker_id: r.i(2).unwrap_or_default(),
             kind: r.s(3).and_then(|k| RangeKind::parse(&k)).unwrap_or(RangeKind::Reference),
             sex: "any".into(),

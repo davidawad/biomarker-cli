@@ -204,6 +204,121 @@ fn profile_commands() {
 }
 
 #[test]
+fn critical_and_borderline_levels() {
+    let e = Env::seeded();
+    e.run(&["add", "glucose", "200", "mg/dL", "--person", "alex", "--date", "2024-02-01"]);
+    e.write(
+        "ranges/tight.toml",
+        "[[range]]\nmarker = \"glucose\"\nlow = 70\nhigh = 100\ncritical_low = 54\ncritical_high = 126\n",
+    );
+    e.write("config.toml", "range_set = \"tight\"\nborderline_margin = 10\n");
+    let rows = e.json(&["query", "--person", "alex", "--marker", "glucose"]);
+    let levels: Vec<&str> = rows["data"].as_array().unwrap().iter().map(|r| r["level"].as_str().unwrap()).collect();
+    assert_eq!(levels, ["borderline-high", "critical-high"]);
+    // 99 is within 10% of the 30-wide range of the high bound, but still "normal" as a flag
+    assert_eq!(rows["data"][0]["flag"], "normal");
+    let crit = e.json(&["flag", "--person", "alex", "--critical"]);
+    assert_eq!(crit["data"].as_array().unwrap().len(), 1);
+    let border = e.json(&["flag", "--person", "alex", "--borderline"]);
+    assert_eq!(border["data"].as_array().unwrap().len(), 2);
+    assert_eq!(e.json(&["flag", "--person", "alex"])["data"].as_array().unwrap().len(), 1, "plain flag is unchanged");
+}
+
+#[test]
+fn per_person_range_flavor_and_critical_validation() {
+    let e = Env::seeded();
+    e.write("people/alex.toml", "range_flavor = \"optimal\"\n");
+    assert_eq!(e.row("alex", "glucose", &[])["flag"], "high", "optimal glucose tops out at 90");
+    assert_eq!(e.row("sam", "glucose", &[])["flag"], "normal");
+    assert_eq!(
+        e.row("alex", "glucose", &["--range-flavor", "reference"])["flag"],
+        "normal",
+        "a flag beats the profile"
+    );
+    e.write("people/alex.toml", "range_flavor = \"sometimes\"\n");
+    assert!(!e.try_run(&["latest", "--person", "alex"]).status.success());
+    e.write("people/alex.toml", "[[range]]\nmarker = \"glucose\"\nlow = 70\nhigh = 100\ncritical_high = 90\n");
+    assert!(String::from_utf8_lossy(&e.try_run(&["latest", "--person", "alex"]).stderr).contains("critical bounds"));
+}
+
+#[test]
+fn per_marker_and_per_person_precision() {
+    let e = Env::seeded();
+    let csv = |person: &str| {
+        e.run(&["latest", "--person", person, "--marker", "glucose", "--format", "csv", "--columns", "marker,value"])
+    };
+    assert_eq!(csv("alex").trim(), "marker,value\nglucose,99.00");
+    e.write("config.toml", "[marker_precision]\nglucose = 0\n");
+    assert_eq!(csv("alex").trim(), "marker,value\nglucose,99");
+    e.write("people/sam.toml", "[marker_precision]\n\"@metabolic\" = 3\n");
+    assert_eq!(csv("sam").trim(), "marker,value\nglucose,99.000", "person beats global; category works");
+    assert_eq!(csv("alex").trim(), "marker,value\nglucose,99");
+    // JSON stays exact
+    assert_eq!(e.row("alex", "glucose", &[])["value"], 99.0);
+}
+
+#[test]
+fn trend_defaults_come_from_settings() {
+    let e = Env::seeded();
+    let windows = |e: &Env| -> Vec<String> {
+        e.json(&["trend", "--person", "alex", "--marker", "glucose"])["data"][0]["windows"]
+            .as_object()
+            .unwrap()
+            .keys()
+            .cloned()
+            .collect()
+    };
+    assert_eq!(windows(&e), ["3m", "6m", "1y"]);
+    e.run(&["config", "set", "trend_windows", "30d,2y"]);
+    assert_eq!(windows(&e), ["30d", "2y"]);
+    let out = e.json(&["trend", "--person", "alex", "--windows", "1y"]);
+    assert!(out["data"][0]["windows"].get("1y").is_some(), "the flag still wins");
+    e.run(&["config", "set", "trend_min_points", "2"]);
+    assert_eq!(e.json(&["trend", "--person", "alex"])["data"].as_array().unwrap().len(), 0);
+    assert_eq!(e.json(&["trend", "--person", "alex", "--min-points", "1"])["data"].as_array().unwrap().len(), 2);
+    assert!(!e.try_run(&["config", "set", "borderline_margin", "150"]).status.success());
+}
+
+#[test]
+fn unit_aliases_teach_new_spellings() {
+    let e = Env::seeded();
+    let add = |e: &Env| e.try_run(&["add", "glucose", "88", "mg per dl", "--person", "alex", "--date", "2024-03-01"]);
+    assert!(!add(&e).status.success());
+    e.write("config.toml", "[unit_aliases]\n\"mg per dl\" = \"mg/dL\"\n");
+    assert!(add(&e).status.success());
+}
+
+#[test]
+fn marker_sync_creates_updates_and_is_idempotent() {
+    let e = Env::seeded();
+    e.write(
+        "markers.toml",
+        "[[marker]]\nslug = \"ferritin-x\"\nname = \"Ferritin X\"\ncategory = \"iron\"\nunit = \"ng/mL\"\naliases = [\"ferr-x\"]\n\
+         [[marker.conversion]]\nfrom = \"pmol/L\"\nfactor = 0.445\n\
+         [[marker.range]]\nsex = \"male\"\nlow = 30\nhigh = 400\n\
+         [[marker.range]]\nsex = \"female\"\nlow = 13\nhigh = 150\n\n\
+         [[marker]]\nslug = \"glucose\"\naliases = [\"gluc-x\"]\ncategory = \"metabolic\"\n",
+    );
+    let first = e.json(&["marker", "sync"]);
+    let acts: Vec<&str> = first["data"].as_array().unwrap().iter().map(|r| r["action"].as_str().unwrap()).collect();
+    assert_eq!(acts, ["created", "updated"]);
+    let again = e.json(&["marker", "sync"]);
+    assert!(again["data"].as_array().unwrap().iter().all(|r| r["action"] == "unchanged"));
+    e.run(&["add", "ferr-x", "20", "--person", "alex", "--date", "2024-01-01"]);
+    assert_eq!(e.row("alex", "ferritin-x", &[])["ref_flag"], "low", "male band 30-400");
+    e.run(&["add", "gluc-x", "95", "--person", "sam", "--date", "2024-04-01"]);
+    // dry run writes nothing
+    e.write("markers.toml", "[[marker]]\nslug = \"brand-new\"\nunit = \"mg/dL\"\n");
+    assert_eq!(e.json(&["marker", "sync", "--dry-run"])["data"][0]["action"], "created");
+    assert!(!e.try_run(&["marker", "show", "brand-new"]).status.success());
+    // an existing unit cannot change; critical bounds are refused
+    e.write("markers.toml", "[[marker]]\nslug = \"glucose\"\nunit = \"mmol/L\"\n");
+    assert!(String::from_utf8_lossy(&e.try_run(&["marker", "sync"]).stderr).contains("cannot change"));
+    e.write("markers.toml", "[[marker]]\nslug = \"glucose\"\n[[marker.range]]\nhigh = 99\ncritical_high = 300\n");
+    assert!(String::from_utf8_lossy(&e.try_run(&["marker", "sync"]).stderr).contains("critical bounds"));
+}
+
+#[test]
 fn config_file_with_units_table_still_round_trips_settings() {
     let e = Env::seeded();
     e.write("config.toml", "[units]\nglucose = \"mg/mL\"\n");

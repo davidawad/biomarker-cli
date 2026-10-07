@@ -546,6 +546,9 @@ Settings resolve in this order, lowest to highest precedence:
 | `range_set` | `BIOMARKER_RANGE_SET` | — | a named range set (see Profiles) |
 | `color` | `BIOMARKER_COLOR` | `auto` | `auto always never` |
 | `precision` | `BIOMARKER_PRECISION` | `2` | decimals in text formats |
+| `borderline_margin` | `BIOMARKER_BORDERLINE_MARGIN` | `0` | percent (0-100) of the range width inside a bound that counts as borderline; 0 = off |
+| `trend_windows` | `BIOMARKER_TREND_WINDOWS` | `3m,6m,1y` | default `trend --windows` |
+| `trend_min_points` | `BIOMARKER_TREND_MIN_POINTS` | `1` | default `trend --min-points` |
 | `csv_delimiter` | `BIOMARKER_CSV_DELIMITER` | `,` | one char or `tab` |
 | `csv_quote` | `BIOMARKER_CSV_QUOTE` | `"` | one char |
 | `csv_header` | `BIOMARKER_CSV_HEADER` | `true` | bool |
@@ -632,6 +635,63 @@ unit = "mmol/L"
 
 Range precedence per measurement: the person's own ranges (profile file, then
 `range set --person`), then their (or the global) range set, then the catalog.
+
+**Critical and borderline levels.** `[[range]]` entries (in range sets and
+person profiles) accept `critical_low` / `critical_high`. With
+`borderline_margin = 10` in `config.toml`, a normal value within 10% of the
+range width of a bound is `borderline-low` / `borderline-high`. JSON records
+carry `level`, `ref_level` and `opt_level`; the `flag` fields are unchanged.
+`biomarker flag --critical` lists only critical results, `flag --borderline`
+adds borderline ones.
+
+**Per-person flavor.** `range_flavor = "optimal"` in a person profile; an
+explicit flag or environment variable still wins.
+
+**Display precision per marker.** `precision` is the default number of
+decimals in text formats (JSON stays exact). Override it per marker slug or
+`@category`, globally and per person:
+
+```toml
+# config.toml
+[marker_precision]
+glucose = 0
+"@cbc" = 1
+```
+
+The same `[marker_precision]` table works in `people/<slug>.toml` and wins
+there. Aliases are not matched: use the slug or `@category`.
+
+**Unit spellings.** Teach the importer extra spellings in `config.toml`:
+
+```toml
+[unit_aliases]
+"mg per dl" = "mg/dL"
+"gms/dl" = "g/dL"
+```
+
+**Your own markers.** `markers.toml` next to the config file creates or
+updates catalog markers; `biomarker marker sync` (`--dry-run`, `--file F`)
+applies it and is idempotent. An existing marker keeps its unit.
+
+```toml
+[[marker]]
+slug = "ferritin-x"
+name = "Ferritin X"
+category = "iron"
+unit = "ng/mL"
+aliases = ["ferr-x"]
+[[marker.conversion]]          # into the marker's unit
+from = "pmol/L"
+factor = 0.445
+[[marker.range]]               # catalog ranges: sex / age bands, unit, kind
+sex = "male"
+low = 30
+high = 400
+```
+
+Not configurable on purpose: the duplicate key of a measurement (person,
+marker, date) and the length of a year used for slopes and ages (365.2425
+days). Critical bounds live in range sets and profiles, not the catalog.
 
 ## Machine interface
 

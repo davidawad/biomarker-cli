@@ -21,7 +21,7 @@ pub fn run(ctx: &Ctx, cmd: ProfileCmd) -> Result<()> {
 }
 
 fn list(ctx: &Ctx) -> Result<()> {
-    let p = profiles::Profiles::load(&ctx.resolved.config_path, ctx.resolved.get("range_set"), false)?;
+    let p = profiles::Profiles::load(&ctx.resolved.config_path, &ctx.profile_opts())?;
     let rows = p
         .entries()
         .into_iter()
