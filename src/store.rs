@@ -5,7 +5,7 @@ use serde::Serialize;
 use crate::db::{int, opt_bool, opt_real, opt_text, real, text, Db, Row, RowExt, Value};
 use crate::error::{AppError, Result};
 use crate::ranges::{Range, RangeKind};
-use crate::units::{canonical_spelling, unit_key, Conversion, ConversionSet};
+use crate::units::{canonical_spelling, same_unit, unit_key, Conversion, ConversionSet};
 use crate::util::{tags_from_db, tags_to_json};
 
 // ---------------------------------------------------------------------------
@@ -137,6 +137,8 @@ pub struct Catalog {
     pub conversions: ConversionSet,
     /// (symbol, system)
     pub units: Vec<(String, String)>,
+    /// Unit presets, range sets and person profiles (see [`crate::profiles`]).
+    pub profiles: crate::profiles::Profiles,
 }
 
 impl Catalog {
@@ -177,6 +179,7 @@ impl Catalog {
                 .iter()
                 .map(|r| (r.s(0).unwrap_or_default(), r.s(1).unwrap_or_default()))
                 .collect(),
+            profiles: Default::default(),
         })
     }
 
@@ -227,16 +230,22 @@ impl Catalog {
         self.conversions.convert(m.id, value, unit, &m.unit).map_err(|e| e.context(format!("marker {}", m.slug)))
     }
 
-    /// Display unit for a marker under a unit-system preference.
-    pub fn display_unit(&self, m: &Marker, system: &str) -> String {
-        if system == "canonical" || matches!(self.unit_system(&m.unit), Some(s) if s == system || s == "both") {
+    /// Display unit for a marker under unit preset `system`, honouring the
+    /// person's own profile (`person` is a slug).
+    pub fn display_unit(&self, m: &Marker, system: &str, person: Option<&str>) -> String {
+        let reachable = self.conversions.reachable(m.id, &m.unit);
+        let chosen = self.profiles.unit_for(person, system, m).filter(|u| reachable.iter().any(|k| same_unit(k, u)));
+        if let Some(u) = chosen {
+            return self.spell_unit(&u);
+        }
+        let tag = self.profiles.system_tag(self.profiles.preset_name(person, system)).unwrap_or(system);
+        if tag == "canonical" || matches!(self.unit_system(&m.unit), Some(s) if s == tag || s == "both") {
             return m.unit.clone();
         }
-        self.conversions
-            .reachable(m.id, &m.unit)
+        reachable
             .into_iter()
             .skip(1)
-            .find(|k| matches!(self.unit_system(k), Some(s) if s == system))
+            .find(|k| matches!(self.unit_system(k), Some(s) if s == tag))
             .map_or_else(|| m.unit.clone(), |k| self.spell_unit(&k))
     }
 
@@ -332,6 +341,8 @@ pub fn load_ranges(db: &Db) -> Result<Vec<Range>> {
             high: r.f(7),
             note: r.s(8),
             person_id: None,
+            critical_low: None,
+            critical_high: None,
         })
         .collect())
 }
@@ -343,6 +354,8 @@ pub fn load_person_ranges(db: &Db) -> Result<Vec<Range>> {
         .map(|r| Range {
             id: r.i(0).unwrap_or_default(),
             person_id: r.i(1),
+            critical_low: None,
+            critical_high: None,
             marker_id: r.i(2).unwrap_or_default(),
             kind: r.s(3).and_then(|k| RangeKind::parse(&k)).unwrap_or(RangeKind::Reference),
             sex: "any".into(),

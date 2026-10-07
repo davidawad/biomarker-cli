@@ -4,7 +4,7 @@
 use serde_json::json;
 
 use crate::output::Record;
-use crate::ranges::{self, Flag, Range, RangeKind};
+use crate::ranges::{self, Flag, Level, Range, RangeKind};
 use crate::store::{Catalog, Marker, MeasurementRow};
 use crate::util::{age_years, date_of};
 
@@ -18,6 +18,10 @@ pub struct Evaluated {
     pub optimal: Option<Range>,
     pub ref_flag: Option<Flag>,
     pub opt_flag: Option<Flag>,
+    pub ref_level: Option<Level>,
+    pub opt_level: Option<Level>,
+    /// The person's own `range_flavor`, when their profile sets one.
+    pub flavor: Option<String>,
 }
 
 fn age_at(row: &MeasurementRow) -> Option<f64> {
@@ -25,27 +29,61 @@ fn age_at(row: &MeasurementRow) -> Option<f64> {
     date_of(&row.taken_at).ok().map(|on| age_years(dob, on))
 }
 
+/// The range that applies, and where it came from: the person's own ranges
+/// (profile file, then `range set --person`), their range set, the catalog.
+#[allow(clippy::too_many_arguments)]
+pub fn pick_range(
+    cat: &Catalog,
+    person: &str,
+    person_id: i64,
+    marker: &Marker,
+    kind: RangeKind,
+    sex: Option<&str>,
+    age: Option<f64>,
+    lab: Option<&str>,
+) -> Option<(Range, String)> {
+    let mut own = cat.profiles.personal_ranges(person, marker.id, kind, lab);
+    own.extend(
+        cat.person_ranges
+            .iter()
+            .filter(|r| r.person_id == Some(person_id) && r.marker_id == marker.id && r.kind == kind)
+            .cloned(),
+    );
+    let af = cat.profiles.age_first;
+    ranges::select_by(&own, marker.id, kind, sex, age, af)
+        .map(|r| (r.clone(), "person".to_string()))
+        .or_else(|| {
+            let set = cat.profiles.range_set_for(person)?;
+            let in_set = cat.profiles.set_ranges(set, marker.id, kind, lab);
+            ranges::select_by(&in_set, marker.id, kind, sex, age, af).map(|r| (r.clone(), format!("set:{set}")))
+        })
+        .or_else(|| {
+            ranges::select_by(&cat.ranges, marker.id, kind, sex, age, af).map(|r| (r.clone(), "catalog".to_string()))
+        })
+}
+
 pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Option<Evaluated> {
     let marker = cat.by_id(row.marker_id)?.clone();
-    let wanted = cat.display_unit(&marker, unit_system);
+    let wanted = cat.display_unit(&marker, unit_system, Some(&row.person));
     let (display_value, display_unit) = cat
         .conversions
         .convert(marker.id, row.value, &marker.unit, &wanted)
         .map_or_else(|_| (row.value, marker.unit.clone()), |v| (v, wanted));
     let age = age_at(row);
     let pick = |kind| {
-        cat.person_ranges
-            .iter()
-            .find(|r| r.person_id == Some(row.person_id) && r.marker_id == marker.id && r.kind == kind)
-            .or_else(|| ranges::select(&cat.ranges, marker.id, kind, row.sex.as_deref(), age))
-            .cloned()
+        pick_range(cat, &row.person, row.person_id, &marker, kind, row.sex.as_deref(), age, row.lab.as_deref())
+            .map(|(r, _)| r)
     };
     let reference = pick(RangeKind::Reference);
     let optimal = pick(RangeKind::Optimal);
     let q = row.qualifier.as_deref();
+    let margin = cat.profiles.borderline_margin;
     Some(Evaluated {
         ref_flag: reference.as_ref().map(|r| ranges::flag(row.value, q, r)),
         opt_flag: optimal.as_ref().map(|r| ranges::flag(row.value, q, r)),
+        ref_level: reference.as_ref().map(|r| ranges::level(row.value, q, r, margin)),
+        opt_level: optimal.as_ref().map(|r| ranges::level(row.value, q, r, margin)),
+        flavor: cat.profiles.flavor_for(&row.person).map(str::to_string),
         row: row.clone(),
         marker,
         display_value,
@@ -58,7 +96,7 @@ pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Optio
 impl Evaluated {
     /// Overall flag for the configured range flavor.
     pub fn flag(&self, flavor: &str) -> Option<Flag> {
-        match flavor {
+        match self.flavor.as_deref().unwrap_or(flavor) {
             "optimal" => self.opt_flag,
             "both" => match (self.ref_flag, self.opt_flag) {
                 (Some(r), _) if r.is_out() => Some(r),
@@ -66,6 +104,19 @@ impl Evaluated {
                 (r, o) => r.or(o),
             },
             _ => self.ref_flag,
+        }
+    }
+
+    /// Severity-aware classification for the configured range flavor
+    /// (with `both`, the more severe of the two).
+    pub fn level(&self, flavor: &str) -> Option<Level> {
+        match self.flavor.as_deref().unwrap_or(flavor) {
+            "optimal" => self.opt_level,
+            "both" => match (self.ref_level, self.opt_level) {
+                (Some(r), Some(o)) => Some(if o.severity() > r.severity() { o } else { r }),
+                (r, o) => r.or(o),
+            },
+            _ => self.ref_level,
         }
     }
 
@@ -82,6 +133,7 @@ impl Evaluated {
     pub fn record(&self, cat: &Catalog, flavor: &str) -> Record {
         let r = &self.row;
         let flag_str = |f: Option<Flag>| f.map(Flag::as_str);
+        let level_str = |l: Option<Level>| l.map(Level::as_str);
         let rec = json!({
             "id": r.id,
             "person": r.person,
@@ -103,6 +155,9 @@ impl Evaluated {
             "opt_high": self.bound(cat, self.optimal.as_ref().and_then(|x| x.high)),
             "opt_flag": flag_str(self.opt_flag),
             "flag": flag_str(self.flag(flavor)),
+            "ref_level": level_str(self.ref_level),
+            "opt_level": level_str(self.opt_level),
+            "level": level_str(self.level(flavor)),
             "lab": r.lab,
             "fasting": r.fasting,
             "note": r.note,

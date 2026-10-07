@@ -72,6 +72,7 @@ impl Ctx {
             format: Format::parse(resolved.get("format"))?,
             output: g.output.clone(),
             precision: resolved.get("precision").parse().unwrap_or(2),
+            precision_rules: crate::profiles::PrecisionRules::load(&resolved.config_path),
             delimiter: first_byte(resolved.get("csv_delimiter"), b','),
             quote: first_byte(resolved.get("csv_quote"), b'"'),
             header: resolved.flag("csv_header"),
@@ -80,6 +81,8 @@ impl Ctx {
             date_format: resolved.get("date_format").to_string(),
             columns: g.columns.clone(),
         };
+        let aliases = crate::profiles::unit_aliases(&resolved.config_path)?;
+        crate::units::set_aliases(aliases.iter().map(|(a, t)| (a.as_str(), t.as_str())));
         let tz = Tz::parse(resolved.get("timezone"))?;
         let db_path = PathBuf::from(crate::paths::expand_tilde(resolved.get("db_path")));
         let setting_path = |k: &str| {
@@ -244,6 +247,38 @@ impl Ctx {
 
     pub fn default_person(&self) -> Option<String> {
         Some(self.resolved.get("default_person").to_string()).filter(|s| !s.is_empty())
+    }
+
+    /// Settings that shape how profile files are applied.
+    pub fn profile_opts(&self) -> crate::profiles::LoadOpts {
+        let forced = |k: &str| matches!(self.resolved.source(k), config::Source::Env | config::Source::Flag);
+        crate::profiles::LoadOpts {
+            range_set: self.resolved.get("range_set").to_string(),
+            force_units: forced("unit_system"),
+            force_flavor: forced("range_flavor"),
+            borderline_margin: self.resolved.get("borderline_margin").parse().unwrap_or(0.0),
+            age_first: self.resolved.get("range_specificity") == "age",
+        }
+    }
+
+    /// The marker catalog with unit presets, range sets and person profiles
+    /// (files next to the config file) applied.
+    pub fn catalog(&self, db: &Db) -> Result<crate::store::Catalog> {
+        let profiles = crate::profiles::Profiles::load(&self.resolved.config_path, &self.profile_opts())?;
+        let cat = profiles.apply(crate::store::Catalog::load(db)?)?;
+        let preset = self.unit_system();
+        cat.profiles
+            .has_preset(preset)
+            .then_some(cat)
+            .ok_or_else(|| AppError::config(format!("unknown unit preset '{preset}' (see: biomarker profile list)")))
+    }
+
+    pub fn trend_windows(&self) -> Vec<String> {
+        self.resolved.get("trend_windows").split(',').map(|w| w.trim().to_string()).filter(|w| !w.is_empty()).collect()
+    }
+
+    pub fn trend_min_points(&self) -> usize {
+        self.resolved.get("trend_min_points").parse().unwrap_or(1)
     }
 
     pub fn unit_system(&self) -> &str {

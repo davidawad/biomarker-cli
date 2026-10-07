@@ -1,4 +1,4 @@
-id	person	marker	marker_name	category	taken_at	qualifier	value	unit	value_raw	unit_raw	value_canonical	unit_canonical	ref_low	ref_high	ref_flag	opt_low	opt_high	opt_flag	flag	lab	fasting	note	tags	batch
-3	alex	apob	Apolipoprotein B	lipid	2024-03-05		112.00	mg/dL	112.00	mg/dL	112.00	mg/dL		90.00	high		80.00	high	high					
-2	alex	hdl-c	HDL Cholesterol	lipid	2024-03-05		55.00	mg/dL	55.00	mg/dL	55.00	mg/dL	40.00		normal	60.00		low	normal	Quest <East>				
-1	alex	ldl-c	LDL Cholesterol	lipid	2024-03-05		96.00	mg/dL	96.00	mg/dL	96.00	mg/dL		100.00	normal		70.00	high	normal			fasting | am		
+id	person	marker	marker_name	category	taken_at	qualifier	value	unit	value_raw	unit_raw	value_canonical	unit_canonical	ref_low	ref_high	ref_flag	opt_low	opt_high	opt_flag	flag	ref_level	opt_level	level	lab	fasting	note	tags	batch
+3	alex	apob	Apolipoprotein B	lipid	2024-03-05		112.00	mg/dL	112.00	mg/dL	112.00	mg/dL		90.00	high		80.00	high	high	high	high	high					
+2	alex	hdl-c	HDL Cholesterol	lipid	2024-03-05		55.00	mg/dL	55.00	mg/dL	55.00	mg/dL	40.00		normal	60.00		low	normal	normal	low	normal	Quest <East>				
+1	alex	ldl-c	LDL Cholesterol	lipid	2024-03-05		96.00	mg/dL	96.00	mg/dL	96.00	mg/dL		100.00	normal		70.00	high	normal	normal	high	normal			fasting | am		

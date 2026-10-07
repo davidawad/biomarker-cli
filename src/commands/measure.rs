@@ -59,7 +59,7 @@ pub fn build(
 
 pub fn add(ctx: &Ctx, a: AddArgs) -> Result<()> {
     let db = ctx.db()?;
-    let cat = Catalog::load(&db)?;
+    let cat = ctx.catalog(&db)?;
     let person = store::get_person(&db, &person_slug(ctx, a.person.as_deref())?)?;
     let marker = cat.get(&a.marker)?;
     let input = Input {
@@ -139,7 +139,7 @@ fn sort_rows(mut rows: Vec<Evaluated>, key: SortKey, reverse: bool) -> Vec<Evalu
 /// Shared pipeline for query/latest/flag: fetch, evaluate, filter, sort, limit.
 pub fn select(ctx: &Ctx, q: &QueryArgs) -> Result<(Catalog, Vec<Evaluated>)> {
     let db = ctx.db()?;
-    let cat = Catalog::load(&db)?;
+    let cat = ctx.catalog(&db)?;
     let filter = build_filter(ctx, &db, &cat, &q.filter)?;
     ctx.verbose(&format!("filter: {filter:?}"));
     let rows = store::query_measurements(&db, &filter)?;
@@ -172,15 +172,25 @@ pub fn query(ctx: &Ctx, q: QueryArgs) -> Result<()> {
 }
 
 pub fn flag(ctx: &Ctx, a: FlagArgs) -> Result<Status> {
+    let severity_filter = a.critical || a.borderline;
     let q = QueryArgs {
         filter: a.filter,
-        flagged: true,
+        flagged: !severity_filter,
         latest: a.latest,
         sort: SortKey::Date,
         reverse: false,
         limit: None,
     };
     let (cat, rows) = select(ctx, &q)?;
+    let flavor = ctx.range_flavor();
+    let rows: Vec<_> = rows
+        .into_iter()
+        .filter(|e| match (a.critical, e.level(flavor)) {
+            _ if !severity_filter => true,
+            (true, l) => l.is_some_and(|l| l.is_critical()),
+            (false, l) => e.is_flagged(flavor) || l.is_some_and(|l| l.severity() >= 1),
+        })
+        .collect();
     let report = Report::list("flags", records(ctx, &cat, &rows))
         .table_columns(&[
             "id",

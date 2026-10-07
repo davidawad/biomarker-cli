@@ -25,6 +25,9 @@ data:
   opt_high: 80.0
   opt_flag: high
   flag: high
+  ref_level: high
+  opt_level: high
+  level: high
   lab: null
   fasting: null
   note: null
@@ -50,6 +53,9 @@ data:
   opt_high: null
   opt_flag: low
   flag: normal
+  ref_level: normal
+  opt_level: low
+  level: normal
   lab: Quest <East>
   fasting: null
   note: null
@@ -75,6 +81,9 @@ data:
   opt_high: 70.0
   opt_flag: high
   flag: normal
+  ref_level: normal
+  opt_level: high
+  level: normal
   lab: null
   fasting: null
   note: fasting | am

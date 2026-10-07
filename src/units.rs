@@ -20,9 +20,28 @@ pub struct Conversion {
     pub offset: f64,
 }
 
+/// User-defined spellings (`[unit_aliases]` in the config file): built-in key
+/// of the alias -> built-in key of the unit it means.
+static ALIASES: std::sync::RwLock<Option<HashMap<String, String>>> = std::sync::RwLock::new(None);
+
+/// Install extra unit spellings: `alias -> unit` pairs such as
+/// `"mcg/dl" -> "µg/dL"`. Replaces any previously installed set.
+pub fn set_aliases<'a>(pairs: impl IntoIterator<Item = (&'a str, &'a str)>) {
+    let map: HashMap<String, String> = pairs.into_iter().map(|(a, t)| (builtin_key(a), builtin_key(t))).collect();
+    if let Ok(mut w) = ALIASES.write() {
+        *w = Some(map).filter(|m| !m.is_empty());
+    }
+}
+
 /// Comparison key for unit spellings: case-insensitive, micro-sign agnostic,
-/// common lab shorthands folded together (`mcg/dl` == `µg/dL`, `K/uL` == `10^3/µL`).
+/// common lab shorthands folded together (`mcg/dl` == `µg/dL`, `K/uL` == `10^3/µL`),
+/// plus the user's `[unit_aliases]`.
 pub fn unit_key(u: &str) -> String {
+    let k = builtin_key(u);
+    ALIASES.read().ok().and_then(|a| a.as_ref().and_then(|m| m.get(&k).cloned())).unwrap_or(k)
+}
+
+fn builtin_key(u: &str) -> String {
     let k = u
         .trim()
         .trim_end_matches('.')
@@ -205,6 +224,15 @@ mod tests {
             conv(0, "g/L", "mg/dL", 100.0, 0.0),
             conv(0, "mg/dL", "mg/L", 10.0, 0.0),
         ])
+    }
+
+    #[test]
+    fn aliases_fold_extra_spellings() {
+        assert_ne!(builtin_key("gms/dl"), builtin_key("g/dL"));
+        set_aliases([("gms/dl", "g/dL")]);
+        assert_eq!(unit_key("GMS/dL"), unit_key("g/dL"));
+        set_aliases([]);
+        assert_ne!(unit_key("gms/dl"), unit_key("g/dL"));
     }
 
     #[test]
