@@ -119,6 +119,15 @@ suits streaming and `jq -c`.
 * `flag` is the overall flag for the active `range_flavor`. `reference` uses
   `ref_flag` and `optimal` uses `opt_flag`. `both` uses `ref_flag` if it is
   out of range, otherwise `opt_flag`.
+* `ref_level`/`opt_level`/`level` (added in 0.6, additive) are finer than the
+  flags: `"critical-low"`, `"low"`, `"borderline-low"`, `"normal"`,
+  `"borderline-high"`, `"high"`, `"critical-high"`, or `null`. Critical comes
+  from `critical_low`/`critical_high` in a range set or person profile;
+  borderline from the `borderline_margin` setting (percent of the range width
+  inside a bound, off at 0). `level` follows `range_flavor`; with `both` it is
+  the more severe of the two. The `*_flag` fields never change meaning.
+* `unit_system` (top-level metadata) is the name of the unit preset in use:
+  a built-in (`canonical`, `us`, `si`, `uk`) or one you defined.
 * `qualifier` is `"<"`, `">"`, `"<="`, `">="` or `null` for censored results
   such as `<0.5`. When flagging, `<x` is never "high" and `>x` is never "low".
 

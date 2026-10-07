@@ -5,7 +5,9 @@ use crate::context::Ctx;
 use crate::db::{int, opt_real, real, Db, RowExt};
 use crate::error::{AppError, Result};
 use crate::output::{to_record, Record, Report};
+use crate::profiles;
 use crate::store::{self, Catalog, Marker};
+use crate::units::{canonical_spelling, same_unit, Conversion};
 use crate::util::validate_slug;
 
 pub fn run(ctx: &Ctx, cmd: MarkerCmd) -> Result<()> {
@@ -17,6 +19,7 @@ pub fn run(ctx: &Ctx, cmd: MarkerCmd) -> Result<()> {
         MarkerCmd::Rm { marker, force } => rm(ctx, &marker, force),
         MarkerCmd::Alias { marker, aliases, remove } => alias(ctx, &marker, &aliases, remove),
         MarkerCmd::Categories => categories(ctx),
+        MarkerCmd::Sync { file, dry_run } => sync(ctx, file.as_deref(), dry_run),
     }
 }
 
@@ -177,4 +180,109 @@ fn categories(ctx: &Ctx) -> Result<()> {
         .map(|r| to_record(&json!({"category": r.s(0), "markers": r.i(1)})))
         .collect();
     ctx.emit(&Report::list("categories", rows))
+}
+
+/// Create or update catalog markers from a markers.toml (default: next to the
+/// config file). Idempotent; an existing marker keeps its unit.
+fn sync(ctx: &Ctx, file: Option<&std::path::Path>, dry_run: bool) -> Result<()> {
+    let path = file.map_or_else(|| profiles::default_marker_file(&ctx.resolved.config_path), Into::into);
+    let spec = profiles::load_marker_file(&path)?;
+    let db = ctx.db()?;
+    let cat = Catalog::load(&db)?;
+    let known_units = cat.unit_symbols();
+    let mut actions: Vec<(String, &'static str)> = Vec::new();
+    for s in &spec.markers {
+        let slug = validate_slug(&s.slug)?;
+        let at = |e: AppError| e.context(format!("{} ({slug})", path.display()));
+        if s.ranges.iter().any(|r| r.critical_low.is_some() || r.critical_high.is_some()) {
+            return Err(at(AppError::config(
+                "critical bounds are not stored in the catalog; put them in a range set or person profile",
+            )));
+        }
+        let action = match cat.markers.iter().find(|m| m.slug == slug) {
+            Some(old) => {
+                let unit = s.unit.as_deref().map(|u| canonical_spelling(u, &known_units));
+                if unit.as_ref().is_some_and(|u| !same_unit(u, &old.unit)) {
+                    return Err(at(AppError::invalid(format!(
+                        "unit is {} in the database; an existing marker's unit cannot change",
+                        old.unit
+                    ))));
+                }
+                let new = Marker {
+                    name: s.name.clone().unwrap_or_else(|| old.name.clone()),
+                    category: s.category.as_ref().map_or_else(|| old.category.clone(), |c| c.to_lowercase()),
+                    loinc: s.loinc.clone().or_else(|| old.loinc.clone()),
+                    description: s.description.clone().or_else(|| old.description.clone()),
+                    ..old.clone()
+                };
+                let new_aliases = s.aliases.iter().any(|a| !old.aliases.contains(&a.trim().to_lowercase()));
+                let changed = new != *old || new_aliases;
+                if changed && !dry_run {
+                    store::update_marker(&db, &new)?;
+                    s.aliases.iter().try_for_each(|a| store::add_alias(&db, old.id, a)).map_err(at)?;
+                }
+                if changed {
+                    "updated"
+                } else {
+                    "unchanged"
+                }
+            }
+            None => {
+                let unit = s.unit.as_deref().ok_or_else(|| at(AppError::invalid("a new marker needs a unit")))?;
+                let m = Marker {
+                    id: 0,
+                    name: s.name.clone().unwrap_or_else(|| slug.clone()),
+                    slug: slug.clone(),
+                    category: s.category.as_deref().unwrap_or("other").to_lowercase(),
+                    unit: canonical_spelling(unit, &known_units),
+                    loinc: s.loinc.clone(),
+                    description: s.description.clone(),
+                    builtin: false,
+                    aliases: s.aliases.clone(),
+                };
+                if !dry_run {
+                    store::insert_marker(&db, &m).map_err(at)?;
+                    store::ensure_unit(&db, &m.unit, "both")?;
+                }
+                "created"
+            }
+        };
+        actions.push((slug, action));
+    }
+    if !dry_run {
+        let cat = Catalog::load(&db)?;
+        for s in &spec.markers {
+            let m = cat.get(&s.slug)?.clone();
+            let at = |e: AppError| e.context(format!("{} ({})", path.display(), m.slug));
+            for c in &s.conversions {
+                if c.factor == 0.0 || !c.factor.is_finite() {
+                    return Err(at(AppError::invalid("conversion factor must be a non-zero number")));
+                }
+                let conv = Conversion {
+                    id: 0,
+                    marker_id: m.id,
+                    from_unit: cat.spell_unit(&c.from),
+                    to_unit: c.to.as_deref().map_or_else(|| m.unit.clone(), |t| cat.spell_unit(t)),
+                    factor: c.factor,
+                    offset: c.offset,
+                };
+                store::ensure_unit(&db, &conv.from_unit, "both")?;
+                store::upsert_conversion(&db, &conv)?;
+            }
+            let cat = Catalog::load(&db)?;
+            for r in &s.ranges {
+                let one = profiles::RangeSpec { marker: m.slug.clone(), ..r.clone() };
+                store::upsert_range(&db, &profiles::range_from_spec(&cat, &one).map_err(at)?)?;
+            }
+        }
+    }
+    let rows =
+        actions.iter().map(|(slug, a)| to_record(&json!({"marker": slug, "action": a, "dry_run": dry_run}))).collect();
+    ctx.info(&format!(
+        "{} {} marker(s) from {}",
+        if dry_run { "checked" } else { "synced" },
+        actions.len(),
+        path.display()
+    ));
+    ctx.emit(&Report::list("marker_sync", rows).table_columns(&["marker", "action"]))
 }
