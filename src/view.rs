@@ -49,14 +49,17 @@ pub fn pick_range(
             .filter(|r| r.person_id == Some(person_id) && r.marker_id == marker.id && r.kind == kind)
             .cloned(),
     );
-    ranges::select(&own, marker.id, kind, sex, age)
+    let af = cat.profiles.age_first;
+    ranges::select_by(&own, marker.id, kind, sex, age, af)
         .map(|r| (r.clone(), "person".to_string()))
         .or_else(|| {
             let set = cat.profiles.range_set_for(person)?;
             let in_set = cat.profiles.set_ranges(set, marker.id, kind, lab);
-            ranges::select(&in_set, marker.id, kind, sex, age).map(|r| (r.clone(), format!("set:{set}")))
+            ranges::select_by(&in_set, marker.id, kind, sex, age, af).map(|r| (r.clone(), format!("set:{set}")))
         })
-        .or_else(|| ranges::select(&cat.ranges, marker.id, kind, sex, age).map(|r| (r.clone(), "catalog".to_string())))
+        .or_else(|| {
+            ranges::select_by(&cat.ranges, marker.id, kind, sex, age, af).map(|r| (r.clone(), "catalog".to_string()))
+        })
 }
 
 pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Option<Evaluated> {

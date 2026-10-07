@@ -547,6 +547,7 @@ Settings resolve in this order, lowest to highest precedence:
 | `color` | `BIOMARKER_COLOR` | `auto` | `auto always never` |
 | `precision` | `BIOMARKER_PRECISION` | `2` | decimals in text formats |
 | `borderline_margin` | `BIOMARKER_BORDERLINE_MARGIN` | `0` | percent (0-100) of the range width inside a bound that counts as borderline; 0 = off |
+| `range_specificity` | `BIOMARKER_RANGE_SPECIFICITY` | `sex` | `sex age`: which range wins when several match (sex-specific first, or narrowest age band first) |
 | `trend_windows` | `BIOMARKER_TREND_WINDOWS` | `3m,6m,1y` | default `trend --windows` |
 | `trend_min_points` | `BIOMARKER_TREND_MIN_POINTS` | `1` | default `trend --min-points` |
 | `csv_delimiter` | `BIOMARKER_CSV_DELIMITER` | `,` | one char or `tab` |
@@ -692,6 +693,7 @@ high = 400
 Not configurable on purpose: the duplicate key of a measurement (person,
 marker, date) and the length of a year used for slopes and ages (365.2425
 days). Critical bounds live in range sets and profiles, not the catalog.
+Which range wins when several match is the `range_specificity` setting.
 
 ## Machine interface
 

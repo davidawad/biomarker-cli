@@ -123,6 +123,13 @@ pub const SETTINGS: &[Setting] = &[
         kind: Kind::Percent,
     },
     Setting {
+        key: "range_specificity",
+        env: &["BIOMARKER_RANGE_SPECIFICITY"],
+        help: "which range wins when several match: sex (sex-specific first) or age (narrowest age band first)",
+        choices: &["sex", "age"],
+        kind: Kind::Str,
+    },
+    Setting {
         key: "trend_windows",
         env: &["BIOMARKER_TREND_WINDOWS"],
         help: "default windows for `trend` % change, comma separated (e.g. 3m,6m,1y)",
@@ -232,6 +239,7 @@ fn default_value(key: &str) -> String {
         "color" => "auto".into(),
         "precision" => "2".into(),
         "borderline_margin" => "0".into(),
+        "range_specificity" => "sex".into(),
         "trend_windows" => "3m,6m,1y".into(),
         "trend_min_points" => "1".into(),
         "csv_delimiter" => ",".into(),

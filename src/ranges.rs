@@ -157,6 +157,19 @@ pub fn select<'a>(
     sex: Option<&str>,
     age: Option<f64>,
 ) -> Option<&'a Range> {
+    select_by(ranges, marker_id, kind, sex, age, false)
+}
+
+/// [`select`] with a choice of what matters first: with `age_first`, the
+/// narrowest age band wins and sex only breaks ties.
+pub fn select_by<'a>(
+    ranges: &'a [Range],
+    marker_id: i64,
+    kind: RangeKind,
+    sex: Option<&str>,
+    age: Option<f64>,
+    age_first: bool,
+) -> Option<&'a Range> {
     let sex = sex.map(str::to_ascii_lowercase);
     ranges
         .iter()
@@ -168,7 +181,11 @@ pub fn select<'a>(
             let spec = |r: &Range| (i32::from(r.sex == "any"), width(r));
             let (sa, wa) = spec(a);
             let (sb, wb) = spec(b);
-            sa.cmp(&sb).then(wa.total_cmp(&wb))
+            if age_first {
+                wa.total_cmp(&wb).then(sa.cmp(&sb))
+            } else {
+                sa.cmp(&sb).then(wa.total_cmp(&wb))
+            }
         })
 }
 
@@ -250,6 +267,17 @@ mod tests {
         assert_eq!(lv(31.0, Some("<"), 10.0), Level::Normal, "a '<31' result may well be normal");
         assert!(Level::CriticalHigh.severity() > Level::High.severity());
         assert!(Level::High.severity() > Level::BorderlineHigh.severity());
+    }
+
+    #[test]
+    fn age_first_prefers_the_narrow_band_over_a_sex_match() {
+        let rs = vec![
+            r(1, RangeKind::Reference, "male", (0.0, 200.0), Some(12.0), Some(22.0)),
+            r(2, RangeKind::Reference, "any", (50.0, 70.0), Some(8.0), Some(18.0)),
+        ];
+        let by = |first| select_by(&rs, 1, RangeKind::Reference, Some("male"), Some(60.0), first).map(|r| r.id);
+        assert_eq!(by(false), Some(1), "default: sex first");
+        assert_eq!(by(true), Some(2), "age first");
     }
 
     #[test]

@@ -257,6 +257,7 @@ impl Ctx {
             force_units: forced("unit_system"),
             force_flavor: forced("range_flavor"),
             borderline_margin: self.resolved.get("borderline_margin").parse().unwrap_or(0.0),
+            age_first: self.resolved.get("range_specificity") == "age",
         }
     }
 

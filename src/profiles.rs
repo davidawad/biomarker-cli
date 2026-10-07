@@ -193,6 +193,7 @@ pub struct LoadOpts {
     /// `range_flavor` came from a flag or the environment.
     pub force_flavor: bool,
     pub borderline_margin: f64,
+    pub age_first: bool,
 }
 
 /// One row of `profile list`.
@@ -221,6 +222,8 @@ pub struct Profiles {
     force_flavor: bool,
     /// The `borderline_margin` setting (percent).
     pub borderline_margin: f64,
+    /// `range_specificity = "age"`: the narrowest age band beats a sex match.
+    pub age_first: bool,
     extra_conversions: Vec<ConversionSpec>,
     compiled_people: BTreeMap<String, Vec<Compiled>>,
     compiled_sets: BTreeMap<String, Vec<Compiled>>,
@@ -295,6 +298,7 @@ impl Profiles {
             force_units: opts.force_units,
             force_flavor: opts.force_flavor,
             borderline_margin: opts.borderline_margin,
+            age_first: opts.age_first,
             ..Self::default()
         };
         for (name, text) in BUILTIN_PRESETS {
