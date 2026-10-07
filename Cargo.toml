@@ -1,6 +1,6 @@
 [package]
 name = "biomarker-cli"
-version = "0.5.0"
+version = "0.6.0"
 edition = "2021"
 description = "Track biomarkers (lab results) for any number of people, backed by FrankenSQLite (fsqlite)"
 license = "MIT"
