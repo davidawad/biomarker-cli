@@ -312,6 +312,9 @@ pub struct MarkerEditArgs {
 pub enum KindArg {
     Reference,
     Optimal,
+    /// Near-limit bounds: with the reference limits they delimit the
+    /// near-low / near-high zones of a row's `status`
+    Warn,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]

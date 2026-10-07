@@ -19,6 +19,7 @@ fn kind_of(k: KindArg) -> RangeKind {
     match k {
         KindArg::Reference => RangeKind::Reference,
         KindArg::Optimal => RangeKind::Optimal,
+        KindArg::Warn => RangeKind::Warn,
     }
 }
 

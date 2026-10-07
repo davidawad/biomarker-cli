@@ -4,7 +4,7 @@
 use serde_json::json;
 
 use crate::output::Record;
-use crate::ranges::{self, Flag, Level, Range, RangeKind};
+use crate::ranges::{self, Flag, Level, Range, RangeKind, Status};
 use crate::store::{Catalog, Marker, MeasurementRow};
 use crate::util::{age_years, date_of};
 
@@ -16,6 +16,15 @@ pub struct Evaluated {
     pub display_unit: String,
     pub reference: Option<Range>,
     pub optimal: Option<Range>,
+    /// Near-limit bounds (see [`ranges::status`]).
+    pub warn: Option<Range>,
+    /// Where each of `reference`, `optimal`, `warn` came from, as
+    /// [`pick_range`] reports it (`person`, `set:<name>` or `catalog`).
+    pub sources: [Option<String>; 3],
+    /// Age in years at `taken_at`, when the person has a birth date.
+    pub age: Option<f64>,
+    /// Classification against the reference range and the warn bounds.
+    pub status: Status,
     pub ref_flag: Option<Flag>,
     pub opt_flag: Option<Flag>,
     pub ref_level: Option<Level>,
@@ -71,14 +80,16 @@ pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Optio
         .map_or_else(|_| (row.value, marker.unit.clone()), |v| (v, wanted));
     let age = age_at(row);
     let pick = |kind| {
-        pick_range(cat, &row.person, row.person_id, &marker, kind, row.sex.as_deref(), age, row.lab.as_deref())
-            .map(|(r, _)| r)
+        pick_range(cat, &row.person, row.person_id, &marker, kind, row.sex.as_deref(), age, row.lab.as_deref()).unzip()
     };
-    let reference = pick(RangeKind::Reference);
-    let optimal = pick(RangeKind::Optimal);
+    let (reference, ref_src) = pick(RangeKind::Reference);
+    let (optimal, opt_src) = pick(RangeKind::Optimal);
+    let (warn, warn_src) = pick(RangeKind::Warn);
     let q = row.qualifier.as_deref();
     let margin = cat.profiles.borderline_margin;
     Some(Evaluated {
+        status: ranges::status(row.value, q, reference.as_ref(), warn.as_ref()),
+        sources: [ref_src, opt_src, warn_src],
         ref_flag: reference.as_ref().map(|r| ranges::flag(row.value, q, r)),
         opt_flag: optimal.as_ref().map(|r| ranges::flag(row.value, q, r)),
         ref_level: reference.as_ref().map(|r| ranges::level(row.value, q, r, margin)),
@@ -90,6 +101,24 @@ pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Optio
         display_unit,
         reference,
         optimal,
+        warn,
+        age,
+    })
+}
+
+/// Which range applied: its source (person, range set or catalog), sex and
+/// age band. `id` is the database id (`range list`, with `--person` for a
+/// person's range); ranges from profile or range-set files have none.
+fn range_set(r: Option<&Range>, source: Option<&str>) -> serde_json::Value {
+    r.map_or(serde_json::Value::Null, |r| {
+        json!({
+            "id": (r.id != 0).then_some(r.id),
+            "source": source,
+            "sex": r.sex,
+            "age_min": r.age_min,
+            "age_max": r.age_max,
+            "note": r.note,
+        })
     })
 }
 
@@ -158,6 +187,16 @@ impl Evaluated {
             "ref_level": level_str(self.ref_level),
             "opt_level": level_str(self.opt_level),
             "level": level_str(self.level(flavor)),
+            "warn_low": self.bound(cat, self.warn.as_ref().and_then(|x| x.low)),
+            "warn_high": self.bound(cat, self.warn.as_ref().and_then(|x| x.high)),
+            "status": self.status.as_str(),
+            "sex": r.sex,
+            "age": self.age.map(|a| (a * 100.0).floor() / 100.0),
+            "range_set": {
+                "reference": range_set(self.reference.as_ref(), self.sources[0].as_deref()),
+                "optimal": range_set(self.optimal.as_ref(), self.sources[1].as_deref()),
+                "warn": range_set(self.warn.as_ref(), self.sources[2].as_deref()),
+            },
             "lab": r.lab,
             "fasting": r.fasting,
             "note": r.note,

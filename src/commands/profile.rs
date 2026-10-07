@@ -58,7 +58,7 @@ fn show(ctx: &Ctx, person: &str, marker: Option<&str>) -> Result<()> {
         .flat_map(|m| {
             let unit = cat.display_unit(m, ctx.unit_system(), Some(&who.slug));
             let (cat, who) = (&cat, &who);
-            [RangeKind::Reference, RangeKind::Optimal].into_iter().filter_map(move |kind| {
+            [RangeKind::Reference, RangeKind::Optimal, RangeKind::Warn].into_iter().filter_map(move |kind| {
                 let (r, source) = pick_range(cat, &who.slug, who.id, m, kind, who.sex.as_deref(), age, None)?;
                 let shown = |v: Option<f64>| v.map(|x| cat.conversions.convert(m.id, x, &m.unit, &unit).unwrap_or(x));
                 Some(to_record(&json!({
