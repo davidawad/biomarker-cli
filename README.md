@@ -650,8 +650,23 @@ profiles or `range set --kind warn`) give the bounds of a near-low / near-high
 zone; they are picked by sex, age and person like the other kinds. JSON
 records carry `warn_low`, `warn_high` and a `status` (`low`, `near-low`,
 `in-range`, `near-high`, `high`, `unknown`) judged against the reference
-range. The catalog ships warn zones for glucose, HbA1c, total cholesterol,
-LDL-C, triglycerides, eGFR and systolic blood pressure.
+range. The catalog ships default warn zones, taken from common clinical
+cut-offs:
+
+| Marker | Near-limit zone | Meaning |
+|---|---|---|
+| Glucose (fasting) | 100-125 mg/dL | prediabetes |
+| HbA1c | 5.7-6.4 % | prediabetes |
+| Total cholesterol | 200-239 mg/dL | borderline high |
+| LDL-C | 100-159 mg/dL | near optimal to borderline high |
+| Triglycerides | 150-199 mg/dL | borderline high |
+| eGFR | 60-89 mL/min/1.73m² | mildly decreased |
+| Systolic blood pressure | 120-129 mmHg | elevated |
+
+These are defaults, not medical advice: check them against your own
+guidelines and lab, and override them like any other range, with
+`range set --kind warn` (by sex, age or `--person`) or `kind = "warn"`
+entries in a range set or person profile.
 
 **Per-person flavor.** `range_flavor = "optimal"` in a person profile; an
 explicit flag or environment variable still wins.
