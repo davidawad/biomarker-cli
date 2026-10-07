@@ -28,6 +28,27 @@ data[3]:
     ref_level: high
     opt_level: high
     level: high
+    warn_low: null
+    warn_high: null
+    status: high
+    sex: male
+    age: 39.75
+    range_set:
+      reference:
+        id: 13
+        source: catalog
+        sex: any
+        age_min: 0
+        age_max: 200
+        note: null
+      optimal:
+        id: 14
+        source: catalog
+        sex: any
+        age_min: 0
+        age_max: 200
+        note: null
+      warn: null
     lab: null
     fasting: null
     note: null
@@ -56,6 +77,27 @@ data[3]:
     ref_level: normal
     opt_level: low
     level: normal
+    warn_low: null
+    warn_high: null
+    status: "in-range"
+    sex: male
+    age: 39.75
+    range_set:
+      reference:
+        id: 5
+        source: catalog
+        sex: male
+        age_min: 0
+        age_max: 200
+        note: null
+      optimal:
+        id: 8
+        source: catalog
+        sex: any
+        age_min: 0
+        age_max: 200
+        note: null
+      warn: null
     lab: Quest <East>
     fasting: null
     note: null
@@ -84,6 +126,33 @@ data[3]:
     ref_level: normal
     opt_level: high
     level: normal
+    warn_low: null
+    warn_high: 159
+    status: "in-range"
+    sex: male
+    age: 39.75
+    range_set:
+      reference:
+        id: 3
+        source: catalog
+        sex: any
+        age_min: 0
+        age_max: 200
+        note: null
+      optimal:
+        id: 4
+        source: catalog
+        sex: any
+        age_min: 0
+        age_max: 200
+        note: null
+      warn:
+        id: 115
+        source: catalog
+        sex: any
+        age_min: 0
+        age_max: 200
+        note: "100-159 mg/dL: near optimal to borderline high"
     lab: null
     fasting: null
     note: fasting | am

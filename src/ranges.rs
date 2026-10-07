@@ -7,6 +7,10 @@ use serde::Serialize;
 pub enum RangeKind {
     Reference,
     Optimal,
+    /// Near-limit ("approaching") thresholds: `low`/`high` are the warn
+    /// bounds that, together with the reference limits, delimit the near-low
+    /// and near-high zones (see [`status`]).
+    Warn,
 }
 
 impl RangeKind {
@@ -14,12 +18,14 @@ impl RangeKind {
         match self {
             Self::Reference => "reference",
             Self::Optimal => "optimal",
+            Self::Warn => "warn",
         }
     }
     pub fn parse(s: &str) -> Option<Self> {
         match s.to_ascii_lowercase().as_str() {
             "reference" | "ref" => Some(Self::Reference),
             "optimal" | "opt" => Some(Self::Optimal),
+            "warn" | "near" => Some(Self::Warn),
             _ => None,
         }
     }
@@ -144,6 +150,70 @@ pub fn level(value: f64, qualifier: Option<&str>, range: &Range, margin_pct: f64
                 Level::Normal
             }
         }
+    }
+}
+
+/// Where a value sits relative to the reference range and the near-limit
+/// (warn) bounds: the per-row `status` of the JSON interface.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "kebab-case")]
+pub enum Status {
+    Low,
+    NearLow,
+    InRange,
+    NearHigh,
+    High,
+    Unknown,
+}
+
+impl Status {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Low => "low",
+            Self::NearLow => "near-low",
+            Self::InRange => "in-range",
+            Self::NearHigh => "near-high",
+            Self::High => "high",
+            Self::Unknown => "unknown",
+        }
+    }
+}
+
+/// Classify a value by the reference range and the optional warn bounds.
+///
+/// On each side the reference limit and the warn bound are two cut points:
+/// beyond the outer one is `low`/`high`, between them is `near-low`/
+/// `near-high`. A warn bound inside the reference range marks a margin
+/// before the limit (eGFR 60-89); one outside it marks an approaching zone
+/// before the clinical cut-off (HbA1c 5.7-6.4 above a 5.6 reference limit),
+/// so `status` can be `near-high` where `ref_flag` is `high`. Without a
+/// reference range the status is `unknown`. Censored values follow
+/// [`flag`]: `<x` is never (near-)high and `>x` never (near-)low.
+pub fn status(value: f64, qualifier: Option<&str>, reference: Option<&Range>, warn: Option<&Range>) -> Status {
+    let Some(reference) = reference else { return Status::Unknown };
+    let warn_low = warn.and_then(|w| w.low);
+    let warn_high = warn.and_then(|w| w.high);
+    let can_be_low = !matches!(qualifier, Some(">") | Some(">="));
+    let can_be_high = !matches!(qualifier, Some("<") | Some("<="));
+    // (outer, inner) cut points; `None` when that side has no bound.
+    let low = match (reference.low, warn_low) {
+        (Some(r), Some(w)) => (Some(r.min(w)), Some(r.max(w))),
+        (r, w) => (r, w),
+    };
+    let high = match (reference.high, warn_high) {
+        (Some(r), Some(w)) => (Some(r.max(w)), Some(r.min(w))),
+        (r, w) => (r, w),
+    };
+    if can_be_low && low.0.is_some_and(|lo| value < lo) {
+        Status::Low
+    } else if can_be_high && high.0.is_some_and(|hi| value > hi) {
+        Status::High
+    } else if can_be_low && low.1.is_some_and(|lo| value < lo) {
+        Status::NearLow
+    } else if can_be_high && high.1.is_some_and(|hi| value > hi) {
+        Status::NearHigh
+    } else {
+        Status::InRange
     }
 }
 
@@ -292,5 +362,46 @@ mod tests {
         let open = r(2, RangeKind::Reference, "any", (0.0, 200.0), None, Some(3.0));
         assert_eq!(flag(0.1, Some("<"), &open), Flag::Normal);
         assert_eq!(flag(4.0, None, &open), Flag::High);
+    }
+
+    #[test]
+    fn status_with_warn_outside_reference() {
+        // HbA1c: reference 4.0-5.6, prediabetes 5.7-6.4 approaches the 6.5 cut-off
+        let reference = r(1, RangeKind::Reference, "any", (0.0, 200.0), Some(4.0), Some(5.6));
+        let warn = r(2, RangeKind::Warn, "any", (0.0, 200.0), None, Some(6.4));
+        let st = |v, q| status(v, q, Some(&reference), Some(&warn));
+        assert_eq!(st(3.9, None), Status::Low);
+        assert_eq!(st(5.2, None), Status::InRange);
+        assert_eq!(st(5.6, None), Status::InRange);
+        assert_eq!(st(5.7, None), Status::NearHigh);
+        assert_eq!(st(6.4, None), Status::NearHigh);
+        assert_eq!(st(6.5, None), Status::High);
+        assert_eq!(st(7.0, Some("<")), Status::InRange);
+        assert_eq!(flag(5.9, None, &reference), Flag::High);
+    }
+
+    #[test]
+    fn status_with_warn_inside_reference() {
+        // eGFR: reference >= 60, 60-89 is mildly decreased
+        let reference = r(1, RangeKind::Reference, "any", (0.0, 200.0), Some(60.0), None);
+        let warn = r(2, RangeKind::Warn, "any", (0.0, 200.0), Some(90.0), None);
+        let st = |v, q| status(v, q, Some(&reference), Some(&warn));
+        assert_eq!(st(55.0, None), Status::Low);
+        assert_eq!(st(60.0, None), Status::NearLow);
+        assert_eq!(st(89.0, None), Status::NearLow);
+        assert_eq!(st(90.0, None), Status::InRange);
+        assert_eq!(st(150.0, None), Status::InRange);
+        assert_eq!(st(30.0, Some(">")), Status::InRange);
+    }
+
+    #[test]
+    fn status_without_warn_or_reference() {
+        let reference = r(1, RangeKind::Reference, "any", (0.0, 200.0), Some(10.0), Some(20.0));
+        assert_eq!(status(5.0, None, Some(&reference), None), Status::Low);
+        assert_eq!(status(15.0, None, Some(&reference), None), Status::InRange);
+        assert_eq!(status(25.0, None, Some(&reference), None), Status::High);
+        assert_eq!(status(15.0, None, None, None), Status::Unknown);
+        assert_eq!(Status::NearHigh.as_str(), "near-high");
+        assert_eq!(RangeKind::parse("warn"), Some(RangeKind::Warn));
     }
 }

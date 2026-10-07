@@ -130,6 +130,7 @@ pub const MIGRATIONS: &[Migration] = &[
     Migration { version: 2, name: "seed built-in marker catalog", apply: crate::seed::seed },
     Migration { version: 3, name: "observations and person ranges", apply: |db| db.execute_batch(SCHEMA_V3) },
     Migration { version: 4, name: "seed body and vitals markers", apply: crate::seed::seed_vitals },
+    Migration { version: 5, name: "seed near-limit (warn) zones", apply: crate::seed::seed_warn_zones },
 ];
 
 pub fn latest_version() -> i64 {

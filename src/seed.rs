@@ -193,6 +193,35 @@ pub fn seed_vitals(db: &Db) -> Result<()> {
     VITALS_MARKERS.iter().try_for_each(|m| seed_marker(db, m))
 }
 
+/// (marker slug, sex, low, high, note)
+type WarnZone = (&'static str, &'static str, Option<f64>, Option<f64>, &'static str);
+
+/// Near-limit (warn) bounds for markers with a clinically meaningful
+/// "approaching" zone: (slug, sex, low, high, note). With the reference
+/// limits they delimit a row's near-low / near-high `status`.
+#[rustfmt::skip]
+pub const WARN_ZONES: &[WarnZone] = &[
+    ("glucose", "any", N, s(125.0), "fasting 100-125 mg/dL: prediabetes"),
+    ("hba1c", "any", N, s(6.4), "5.7-6.4 %: prediabetes"),
+    ("total-cholesterol", "any", N, s(239.0), "200-239 mg/dL: borderline high"),
+    ("ldl-c", "any", N, s(159.0), "100-159 mg/dL: near optimal to borderline high"),
+    ("triglycerides", "any", N, s(199.0), "150-199 mg/dL: borderline high"),
+    ("egfr", "any", s(90.0), N, "60-89: mildly decreased"),
+    ("bp-systolic", "any", N, s(129.0), "120-129 mmHg: elevated"),
+];
+
+/// Schema v5: near-limit zones.
+pub fn seed_warn_zones(db: &Db) -> Result<()> {
+    WARN_ZONES.iter().try_for_each(|(slug, sex, lo, hi, note)| {
+        db.execute(
+            "INSERT OR IGNORE INTO ranges (marker_id, kind, sex, low, high, note)
+             SELECT id, 'warn', ?2, ?3, ?4, ?5 FROM markers WHERE slug = ?1",
+            &[text(slug), text(sex), opt_real(*lo), opt_real(*hi), text(note)],
+        )
+        .map(|_| ())
+    })
+}
+
 fn insert_units(db: &Db, units: &[(&str, &str, &str)]) -> Result<()> {
     units.iter().try_for_each(|(sym, sys, desc)| {
         db.execute(

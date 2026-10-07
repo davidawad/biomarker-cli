@@ -98,6 +98,20 @@ suits streaming and `jq -c`.
   "opt_high": 70.0,
   "opt_flag": "high",
   "flag": "normal",
+  "ref_level": "normal",
+  "opt_level": "high",
+  "level": "normal",
+  "warn_low": null,
+  "warn_high": 159.0,
+  "status": "in-range",
+  "sex": "male",
+  "age": 39.76,
+  "range_set": {
+    "reference": {"id": 2, "source": "catalog", "sex": "any", "age_min": 0.0, "age_max": 200.0, "note": null},
+    "optimal": {"id": 3, "source": "catalog", "sex": "any", "age_min": 0.0, "age_max": 200.0, "note": null},
+    "warn": {"id": 90, "source": "catalog", "sex": "any", "age_min": 0.0, "age_max": 200.0,
+             "note": "100-159 mg/dL: near optimal to borderline high"}
+  },
   "lab": "Synthetic Labs",
   "fasting": true,
   "note": null,
@@ -114,6 +128,39 @@ suits streaming and `jq -c`.
 * `ref_*`/`opt_*` are the applicable reference/optimal range bounds, in the
   display unit. The range is chosen by the person's sex and age at
   measurement time; the most specific match wins.
+* `sex` is the person's sex and `age` their age in years at `taken_at`
+  (from the birth date, truncated to two decimals). Both are `null` when the
+  person has none. Each row's ranges are resolved per draw, so a series that
+  crosses an age band (`range set --age-min 50`) switches ranges at that draw.
+* `range_set` tells which range applied for each kind (`reference`,
+  `optimal`, `warn`): `{id, source, sex, age_min, age_max, note}` or `null`.
+  `source` follows the range precedence (as in `profile show`): `"person"`
+  for a person's own range (person profile file, then `range set --person`;
+  it beats everything else at any age), `"set:<name>"` for an entry of the
+  range set in effect, or `"catalog"` for the most specific catalog row.
+  `id` is the `range list` id (`range list --person` for a person's database
+  range) and `null` for entries from profile or range-set files.
+* `warn_low`/`warn_high` are the near-limit bounds (range kind `warn`, display
+  unit) for markers with a clinically meaningful "approaching" zone. The
+  catalog ships them for glucose (fasting 100-125 mg/dL), HbA1c (5.7-6.4 %),
+  total cholesterol, LDL-C, triglycerides, eGFR (60-89) and systolic blood
+  pressure. Set or override them with `range set MARKER --kind warn` (with
+  `--sex`/`--age-min`/`--age-max`, or `--person`) or with `kind = "warn"`
+  entries in a range set or person profile, which are selected by sex, age
+  band, lab and person exactly like reference and optimal ranges. `null` means the marker
+  has no such zone; a consumer may then apply its own margin as a fallback.
+* `status` is `"low"`, `"near-low"`, `"in-range"`, `"near-high"`, `"high"`
+  or `"unknown"` (no reference range). On each side the reference limit and
+  the warn bound are two cut points: beyond the outer one is `low`/`high`,
+  between them is `near-low`/`near-high`. A warn bound inside the reference
+  range marks a margin before the limit (eGFR reference low 60, warn low 90:
+  60-89 is `near-low`). One outside it marks an approaching zone before the
+  clinical cut-off (HbA1c reference high 5.6, warn high 6.4: 5.7-6.4 is
+  `near-high`, 6.5 and above `high`); there `ref_flag` and `flag` still say
+  `"high"`. Without a warn bound, `status` follows the reference range.
+  Censored values follow the flag rules. `status` always uses the reference
+  range, whatever the `range_flavor`. It is independent of `ref_level`:
+  the borderline band of `borderline_margin` does not affect it.
 * `ref_flag`/`opt_flag` are `"low"`, `"normal"`, `"high"`, or `null` when no
   range applies.
 * `flag` is the overall flag for the active `range_flavor`. `reference` uses
@@ -141,19 +188,23 @@ suits streaming and `jq -c`.
   "min": 90.0, "max": 140.0, "mean": 112.5, "median": 110.0, "stddev": 22.17,
   "first": 140.0, "last": 90.0, "change": -50.0, "change_pct": -35.71,
   "slope_per_year": -24.9,
-  "last_flag": "normal",
+  "last_flag": "normal", "last_status": "in-range",
   "windows": {
     "6m": {"days": 184, "change": -10.0, "change_pct": -10.0},
     "1y": {"days": 366, "change": -10.0, "change_pct": -10.0}
   },
   "ref_low": null, "ref_high": 100.0, "opt_low": null, "opt_high": 70.0,
+  "warn_low": null, "warn_high": 159.0, "range_set": { ... },
   "points": [
-    {"id": 1, "taken_at": "2023-01-01", "value": 140.0, "qualifier": null, "flag": "high"}
+    {"id": 1, "taken_at": "2023-01-01", "value": 140.0, "qualifier": null, "flag": "high", "status": "near-high"}
   ]
 }
 ```
 
 * All values are in the display unit.
+* The range fields (`ref_*`, `opt_*`, `warn_*`, `range_set`) and
+  `last_status` are those of the last measurement. Each point's `status` is
+  computed with the ranges that applied at that draw.
 * `slope_per_year` is the least-squares slope of value over time, in value
   units per year. It is `null` with fewer than two distinct dates.
 * `windows[w]` compares the last value with the most recent value at or
@@ -222,7 +273,7 @@ report fields, which are mostly filled by spreadsheet imports:
   aliases}`. `marker show` adds `measurements, convertible_units, conversions,
   ranges`.
 * Range: `{id, person, marker, kind, sex, age_min, age_max, low, high, unit,
-  note}`. `person` is set for person-specific ranges (`range set --person`)
+  note}`. `kind` ∈ `reference, optimal, warn`. `person` is set for person-specific ranges (`range set --person`)
   and `null` for catalog ranges.
   Bounds are in the marker's canonical unit. `sex` ∈ `any, male, female`.
   The age band is `[age_min, age_max)` in years.

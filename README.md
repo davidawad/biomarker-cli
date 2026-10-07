@@ -291,7 +291,7 @@ key somewhere else: lose them all and the data cannot be recovered.
 |---------|---------|
 | `person add/list/show/edit/rm` | manage people (`--sex`, `--dob`, `--notes`, `--tag`) |
 | `marker add/list/show/edit/rm/alias/categories` | manage the catalog. `edit --unit` rescales stored values and ranges |
-| `range set/list/rm` | reference/optimal ranges by `--sex` and `--age-min/--age-max`, or for one `--person`. `--unit` converts the bounds |
+| `range set/list/rm` | reference/optimal/warn (near-limit) ranges by `--sex` and `--age-min/--age-max`, or for one `--person`. `--unit` converts the bounds |
 | `unit list [--symbols]`, `unit add-conversion`, `unit convert` | conversion table (`to = from * factor + offset`) |
 | `add MARKER VALUE [UNIT]` | record one measurement (`--person --date --lab --fasting --note --tag --dedupe`) |
 | `rm ID...` | delete measurements |
@@ -645,6 +645,29 @@ carry `level`, `ref_level` and `opt_level`; the `flag` fields are unchanged.
 `biomarker flag --critical` lists only critical results, `flag --borderline`
 adds borderline ones.
 
+**Near-limit (warn) ranges.** `kind = "warn"` entries (in range sets, person
+profiles or `range set --kind warn`) give the bounds of a near-low / near-high
+zone; they are picked by sex, age and person like the other kinds. JSON
+records carry `warn_low`, `warn_high` and a `status` (`low`, `near-low`,
+`in-range`, `near-high`, `high`, `unknown`) judged against the reference
+range. The catalog ships default warn zones, taken from common clinical
+cut-offs:
+
+| Marker | Near-limit zone | Meaning |
+|---|---|---|
+| Glucose (fasting) | 100-125 mg/dL | prediabetes |
+| HbA1c | 5.7-6.4 % | prediabetes |
+| Total cholesterol | 200-239 mg/dL | borderline high |
+| LDL-C | 100-159 mg/dL | near optimal to borderline high |
+| Triglycerides | 150-199 mg/dL | borderline high |
+| eGFR | 60-89 mL/min/1.73m² | mildly decreased |
+| Systolic blood pressure | 120-129 mmHg | elevated |
+
+These are defaults, not medical advice: check them against your own
+guidelines and lab, and override them like any other range, with
+`range set --kind warn` (by sex, age or `--person`) or `kind = "warn"`
+entries in a range set or person profile.
+
 **Per-person flavor.** `range_flavor = "optimal"` in a person profile; an
 explicit flag or environment variable still wins.
 
@@ -719,7 +742,7 @@ tracked in `schema_migrations` and `PRAGMA user_version`:
   `marker_aliases(alias, marker_id)`
 * `units(symbol, system)` and `unit_conversions(marker_id|0 = generic,
   from_unit, to_unit, factor, offset)`
-* `ranges(marker_id, kind reference|optimal, sex any|male|female, age_min,
+* `ranges(marker_id, kind reference|optimal|warn, sex any|male|female, age_min,
   age_max, low, high, note)` and `person_ranges(person_id, marker_id, kind,
   low, high, note)`, which win over `ranges` for that person
 * `measurements(person_id, marker_id, taken_at, value_raw, unit_raw, value

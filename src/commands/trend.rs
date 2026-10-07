@@ -94,6 +94,7 @@ pub fn trend(ctx: &Ctx, a: TrendArgs) -> Result<()> {
             "change_pct": s.change_pct,
             "slope_per_year": s.slope_per_year,
             "last_flag": flag_str(last.flag(flavor)),
+            "last_status": last.status.as_str(),
         }));
         win.iter().for_each(|(name, _, w)| {
             flat.insert(format!("change_pct_{name}"), json!(w.map(|w| w.1)));
@@ -112,7 +113,7 @@ pub fn trend(ctx: &Ctx, a: TrendArgs) -> Result<()> {
                     .collect(),
             ),
         );
-        ["ref_low", "ref_high", "opt_low", "opt_high"].iter().for_each(|k| {
+        ["ref_low", "ref_high", "opt_low", "opt_high", "warn_low", "warn_high", "range_set"].iter().for_each(|k| {
             nested.insert((*k).into(), rec.get(*k).cloned().unwrap_or(Value::Null));
         });
         if !a.no_points {
@@ -127,6 +128,7 @@ pub fn trend(ctx: &Ctx, a: TrendArgs) -> Result<()> {
                                 "value": e.display_value,
                                 "qualifier": e.row.qualifier,
                                 "flag": flag_str(e.flag(flavor)),
+                                "status": e.status.as_str(),
                             })
                         })
                         .collect(),
