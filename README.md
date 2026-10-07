@@ -164,7 +164,7 @@ arm64 and x86_64, so no Rust toolchain is needed.
 `aarch64-apple-darwin` or `x86_64-apple-darwin`.
 
 ```sh
-v=v0.5.0 t=aarch64-apple-darwin
+v=v0.6.0 t=aarch64-apple-darwin
 curl -LO "https://github.com/davidawad/biomarker-cli/releases/download/$v/biomarker-cli-$v-$t.tar.gz"
 curl -LO "https://github.com/davidawad/biomarker-cli/releases/download/$v/biomarker-cli-$v-$t.tar.gz.sha256"
 shasum -a 256 -c "biomarker-cli-$v-$t.tar.gz.sha256"     # or: sha256sum -c
@@ -178,7 +178,7 @@ are not. Clear it with `xattr -d com.apple.quarantine ~/.local/bin/biomarker`.
 **Windows (prebuilt archive, PowerShell).**
 
 ```powershell
-$v = "v0.5.0"; $t = "x86_64-pc-windows-msvc"
+$v = "v0.6.0"; $t = "x86_64-pc-windows-msvc"
 $zip = "biomarker-cli-$v-$t.zip"
 Invoke-WebRequest "https://github.com/davidawad/biomarker-cli/releases/download/$v/$zip" -OutFile $zip
 (Get-FileHash $zip -Algorithm SHA256).Hash   # compare with $zip.sha256
