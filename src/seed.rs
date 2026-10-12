@@ -142,6 +142,7 @@ pub const MARKERS: &[SeedMarker] = &[
     m!("testosterone-total", "Testosterone, Total", "hormone", "ng/dL", Some("2986-8"), ["testosterone", "total testosterone", "tt"], [("nmol/L", 28.84, 0.0)], [("male", s(264.0), s(916.0)), ("female", s(8.0), s(48.0))], None),
     m!("testosterone-free", "Testosterone, Free", "hormone", "pg/mL", Some("2991-8"), ["free testosterone", "ft"], [("pmol/L", 0.2884, 0.0)], [("male", s(46.0), s(224.0)), ("female", s(0.0), s(4.2))], None),
     m!("estradiol", "Estradiol", "hormone", "pg/mL", Some("2243-4"), ["e2", "oestradiol"], [("pmol/L", 0.2724, 0.0)], [("male", s(7.6), s(42.6))], None),
+    m!("igf-1", "Insulin-like Growth Factor 1", "hormone", "ng/mL", Some("2484-4"), ["igf1", "igf-i", "somatomedin c"], [("nmol/L", 7.649, 0.0)], [], None),
     m!("shbg", "Sex Hormone Binding Globulin", "hormone", "nmol/L", Some("13967-5"), ["sex hormone binding globulin"], [], [("male", s(16.5), s(55.9)), ("female", s(24.6), s(122.0))], None),
     m!("dhea-s", "DHEA-Sulfate", "hormone", "µg/dL", Some("2191-5"), ["dheas", "dhea sulfate"], [("µmol/L", 36.81, 0.0)], [("any", s(35.0), s(430.0))], None),
     m!("cortisol", "Cortisol (AM)", "hormone", "µg/dL", Some("2143-6"), ["am cortisol"], [("nmol/L", 0.036_25, 0.0)], [("any", s(6.2), s(19.4))], None),

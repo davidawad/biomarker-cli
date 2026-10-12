@@ -37,6 +37,7 @@ const BUILTIN_PRESETS: &[(&str, &str)] = &[
     ("si", include_str!("../presets/units/si.toml")),
     ("uk", include_str!("../presets/units/uk.toml")),
 ];
+const BUILTIN_RANGE_SETS: &[(&str, &str)] = &[("blueprint", include_str!("../presets/ranges/blueprint.toml"))];
 const BUILTIN_CONVERSIONS: &str = include_str!("../presets/conversions.toml");
 
 #[derive(Debug, Clone, Default, Deserialize)]
@@ -303,6 +304,9 @@ impl Profiles {
         };
         for (name, text) in BUILTIN_PRESETS {
             p.presets.insert((*name).to_string(), parse(text, &format!("built-in preset {name}"))?);
+        }
+        for (name, text) in BUILTIN_RANGE_SETS {
+            p.range_sets.insert((*name).to_string(), parse(text, &format!("built-in range set {name}"))?);
         }
         #[derive(Deserialize)]
         struct Extra {
