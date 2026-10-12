@@ -326,3 +326,39 @@ fn config_file_with_units_table_still_round_trips_settings() {
     let text = std::fs::read_to_string(e.path("config").join("biomarker-cli/config.toml")).unwrap();
     assert!(text.contains("mg/mL") && text.contains("precision"), "{text}");
 }
+
+#[test]
+fn blueprint_range_set_is_built_in_and_flags_optimal() {
+    let e = Env::new();
+    e.run(&["person", "add", "bj", "--sex", "male", "--dob", "1977-08-22"]);
+    let list = e.json(&["profile", "list"]);
+    assert!(list["data"].as_array().unwrap().iter().any(|r| r["kind"] == "range-set" && r["name"] == "blueprint"));
+    // (marker, value, expected optimal flag) around the Blueprint bounds
+    for (m, v, flag) in [
+        ("alt", "18", "high"),
+        ("alt", "12", "normal"),
+        ("glucose", "82", "normal"),
+        ("glucose", "96", "high"),
+        ("hba1c", "4.4", "low"),
+        ("hba1c", "5.0", "normal"),
+        ("igf-1", "151", "high"),
+        ("igf-1", "100", "normal"),
+        ("tsh", "0.9", "low"),
+        ("triglycerides", "55", "normal"),
+        ("hscrp", "0.2", "normal"),
+        ("wbc", "6.5", "high"),
+        ("ldl-c", "74", "normal"),
+        ("ggt", "10", "normal"),
+        ("bmi", "22.8", "high"),
+        ("body-fat", "6.9", "normal"),
+        ("hdl-c", "73", "high"),
+    ] {
+        let e2 = Env::new();
+        e2.run(&["person", "add", "bj", "--sex", "male", "--dob", "1977-08-22"]);
+        e2.run(&["add", m, v, "--person", "bj", "--date", "2024-01-01"]);
+        e2.write("config.toml", "range_set = \"blueprint\"\nrange_flavor = \"both\"\n");
+        let r = e2.json(&["latest", "--person", "bj", "--marker", m]);
+        assert_eq!(r["data"][0]["opt_flag"], flag, "{m}={v}: {}", r["data"][0]);
+    }
+    drop(e);
+}
