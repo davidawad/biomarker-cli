@@ -85,8 +85,11 @@ pub struct NewRegimen {
 }
 
 pub fn insert(db: &Db, r: &NewRegimen) -> Result<i64> {
-    if r.stopped_on.as_deref().is_some_and(|s| s <= r.started_on.as_str()) {
-        return Err(AppError::invalid("the stop date must be after the start date"));
+    if let Some(stop) = r.stopped_on.as_deref().filter(|s| *s <= r.started_on.as_str()) {
+        return Err(AppError::invalid(format!(
+            "stop date {stop} must be after start date {} (stop is the first day not taken)",
+            r.started_on
+        )));
     }
     db.execute(
         "INSERT INTO regimens (person_id, intervention_id, dose, unit, frequency, time_slot, started_on, stopped_on, note, created_at)

@@ -99,10 +99,23 @@ Design decisions:
   when `started_on <= D` and (`stopped_on` is NULL or `D < stopped_on`). A
   measurement's day is the date part of its `taken_at`. A regimen whose
   start is after D is *planned* as of D.
-* **No uniqueness on regimens.** A person may take the same intervention
-  twice in a day (different slots), or restart it later. `regimen add`
-  warns when it overlaps an active regimen of the same intervention for the
-  same person, but still adds it.
+* **Stop must be after start.** `regimen add --stop` and `regimen stop
+  --on` must be later than the start day. An equal or earlier stop would
+  be a regimen of zero or negative days, so it is rejected (exit 4) with
+  `stop date S must be after start date T (stop is the first day not
+  taken)`.
+* **Overlapping regimens are allowed, with a warning.** Two regimens of the
+  same intervention for the same person overlap when each starts before
+  the other stops (`a.start < b.stop` and `b.start < a.stop`, an open stop
+  being infinitely late). There is no uniqueness on regimens: a person may
+  take the same intervention twice a day (different slots or doses), or
+  restart it later. `regimen add` warns `overlaps regimen N` on stderr and
+  still adds it (exit 0). A hand-over, where one regimen stops on the day
+  the next starts (a dose change), is not an overlap and does not warn.
+  Regimens of other people never overlap. On any day the intervention
+  counts once in `regimens` joins and in the grid, while `regimen ls`
+  lists each regimen. `regimen stop INTERVENTION` stops every overlapping
+  regimen that is active on `--on`.
 * **Deletion.** `person rm` deletes the person's regimens with the person.
   `intervention rm` refuses while regimens reference the intervention, unless
   `--force` is given, which deletes them. It always deletes the
@@ -289,7 +302,8 @@ opt-in `regimens`/`interferences`/`events` fields described above, plus
 
 * **Import summary**: `{dry_run, files, interventions_created,
   interventions_updated, interactions_inserted, interactions_updated,
-  interactions_unchanged, invalid, errors: [{file, index, error}]}`.
+  interactions_unchanged, invalid, errors: [{file, index, error}],
+  unresolved_targets, warnings}`.
 
 ## 5. Importing `supplement-interactions/1`
 
@@ -352,9 +366,15 @@ What an import does, in one transaction across every input file:
    severity, mechanism, citations or note are updated, the rest are
    unchanged. Edges are never deleted by import, so re-running an import is
    idempotent.
-3. Targets of type intervention are **not** created. They resolve once the
-   target has its own document imported or is added with `intervention
-   add`.
+3. Targets of type intervention are **not** created (no stubs) and their
+   edges are **not** skipped. The edge is stored and reads as
+   `"resolved": false` until the target has its own document imported or
+   is added with `intervention add`. Then it resolves, with no re-import
+   needed. A target that is still not in the catalog at the end of the
+   import (a target imported in the same run counts as present) is listed
+   in the summary's `unresolved_targets`, and the import warns on stderr:
+   `intervention 'warfarin' is not in the catalog; its edges are kept
+   unresolved until it is added`. The exit code stays 0.
 
 `--dry-run` runs everything in a transaction that is rolled back and
 reports the same summary. Invalid entries (an unknown kind, a missing
@@ -394,3 +414,19 @@ people `alex`/`sam` as in the existing tests):
   `trend --with-regimens` events, `regimen impact` before/after values, the
   migration from a version 4 database, no plaintext in written files, and
   audit entries for the new commands.
+* Truth-table tests (`tests/interventions_truth.rs` and the unit tests in
+  `src/interventions/join.rs`), see section 8.
+
+## 8. Truth table
+
+| # | case | expected | test |
+|---|------|----------|------|
+| 1 | Schema-5 database (with the #3 warn zones, a custom range, a personal warn zone, measurements, an observation) runs `db migrate` | Version 6, `user_version` 6. Every row of `people`, `markers`, `marker_aliases`, `ranges`, `person_ranges`, `measurements`, `observations` is unchanged. Warn zones still set `status` (glucose 110 is `near-high`, hba1c 6.2 is `high` under the personal warn bound 6.0). The new tables are empty and usable. | `row1_schema_5_with_warn_zones_migrates_to_6_losslessly` |
+| 2 | `regimen add --stop` earlier than or equal to `--start`; `regimen stop --on` the start day | Rejected, exit 4, `stop date S must be after start date T (stop is the first day not taken)`. Nothing is written. A one-day regimen (stop = start + 1) is accepted. | `row2_stop_not_after_start_is_rejected` |
+| 3 | Overlapping regimens of one intervention for one person | Added with an `overlaps regimen N` warning, exit 0. A hand-over (stop = next start) and other people's regimens do not warn. The grid and joins list the intervention once. `regimen stop INTERVENTION` stops all active ones. | `row3_overlapping_regimens_are_kept_with_a_warning` |
+| 4 | `interaction grid` with no regimen active on `--as-of` (none at all, or only stopped and planned ones), with and without `--catalog` | Exit 0. `rows`, `columns`, `cells`, `other` are all `[]`. stderr says `P is taking nothing on D`. | `row4_grid_without_active_regimens_is_empty` |
+| 5 | Imported edge names an intervention that is not in the catalog | The edge is stored unresolved (`resolved: false`). No stub is created, nothing is skipped. A warning plus `unresolved_targets` in the summary, also on `--dry-run`. The edge resolves once the target is added. Targets imported in the same run are not reported. | `row5_edges_to_unknown_interventions_are_kept_unresolved_with_a_warning` |
+| 6a | Regimen starts on the draw day (draw at 08:30) | Taking at the draw. Not taking the day before. | `join::tests::regimen_starting_on_the_draw_day_counts` |
+| 6b | Regimen stopped the day before the draw (`stopped_on` = draw - 1), or on the draw day | Not taking at the draw. Stopped the day after the draw: taking. | `join::tests::regimen_stopped_before_the_draw_day_does_not_count` |
+| 6c | Hand-over on the draw day (old stops, new starts) | Taking, listed once. A lab-interference edge still applies. | `join::tests::adjacent_regimens_hand_over_on_the_boundary_day` |
+| 6d | `trend` events at the span's first and last day | Both boundary days are included (by day, timestamps cut to dates). | `join::tests::events_include_both_boundary_days` |

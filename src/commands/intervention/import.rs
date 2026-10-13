@@ -27,7 +27,12 @@ struct Summary {
     interactions_unchanged: usize,
     invalid: usize,
     errors: Vec<Value>,
+    /// Intervention targets of the imported edges that are not in the catalog
+    /// after the import. Their edges are stored and resolve once the target is added.
+    unresolved_targets: Vec<String>,
     warnings: Vec<String>,
+    #[serde(skip)]
+    iv_targets: Vec<String>,
 }
 
 /// Files to read: plain files as given; for a directory, `interactions.json`
@@ -129,6 +134,9 @@ fn apply(db: &Db, file: &Path, d: &Doc, sum: &mut Summary) -> Result<()> {
                 continue;
             }
         };
+        if spec.target_kind == "intervention" {
+            sum.iv_targets.push(spec.target.clone());
+        }
         let edge = NewEdge {
             a_id,
             target_kind: spec.target_kind.clone(),
@@ -149,6 +157,22 @@ fn apply(db: &Db, file: &Path, d: &Doc, sum: &mut Summary) -> Result<()> {
     Ok(())
 }
 
+/// Edge targets naming an intervention that is still not in the catalog: the
+/// edge is kept (no stub is created) and a warning names the missing target.
+fn unresolved(db: &Db, sum: &mut Summary) -> Result<()> {
+    let ivs = IvCatalog::load(db)?;
+    let mut missing: Vec<String> = sum.iv_targets.iter().filter(|t| ivs.find(t).is_none()).cloned().collect();
+    missing.sort();
+    missing.dedup();
+    sum.warnings.extend(
+        missing.iter().map(|t| {
+            format!("intervention '{t}' is not in the catalog; its edges are kept unresolved until it is added")
+        }),
+    );
+    sum.unresolved_targets = missing;
+    Ok(())
+}
+
 pub fn run(ctx: &Ctx, a: InterventionImportArgs) -> Result<()> {
     let files = expand(&a.paths)?;
     let docs: Vec<(PathBuf, Vec<Doc>)> =
@@ -156,7 +180,10 @@ pub fn run(ctx: &Ctx, a: InterventionImportArgs) -> Result<()> {
     let db = ctx.db()?;
     let mut sum = Summary { dry_run: a.dry_run, files: files.len(), ..Summary::default() };
     db.begin()?;
-    let outcome = docs.iter().try_for_each(|(f, ds)| ds.iter().try_for_each(|d| apply(&db, f, d, &mut sum)));
+    let outcome = docs
+        .iter()
+        .try_for_each(|(f, ds)| ds.iter().try_for_each(|d| apply(&db, f, d, &mut sum)))
+        .and_then(|()| unresolved(&db, &mut sum));
     let failed = sum.invalid > 0 && !a.skip_invalid;
     match (&outcome, a.dry_run || failed) {
         (Ok(()), false) => db.commit()?,
