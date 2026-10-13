@@ -223,6 +223,52 @@ fn invalid_documents_abort_unless_skipped() {
 }
 
 #[test]
+fn imports_real_shape_edges_with_sibling_target_kind() {
+    let e = Env::new();
+    let f = e.path("thyroid-support/interactions.json");
+    std::fs::create_dir_all(f.parent().unwrap()).unwrap();
+    std::fs::write(
+        &f,
+        r#"{
+        "schema":"supplement-interactions/1", "supplement":"Thyroid Support",
+        "slug":"thyroid-support", "aliases":[], "category":"supplement",
+        "rx_status":"otc", "evidence_certainty_overall":"moderate", "citations":[],
+        "edges":[{"with":"thyroid hormone", "with_kind":"drug-class", "kind":"monitor",
+          "severity":"moderate", "mechanism":"synthetic monitoring note", "evidence":"synthetic",
+          "citations":["PMID:00000001"]}]
+    }"#,
+    )
+    .unwrap();
+    let v = e.json(&["intervention", "import", &f.to_string_lossy()]);
+    assert_eq!(v["data"]["interactions_inserted"], 1);
+    let edges = e.json(&["interaction", "ls", "--intervention", "thyroid-support"]);
+    assert_eq!(edges["data"][0]["target_kind"], "drug-class");
+    assert_eq!(edges["data"][0]["target"], "thyroid-hormone");
+}
+
+#[test]
+fn nonempty_unparseable_edges_fail_and_warn_when_skipped() {
+    let e = Env::new();
+    let f = e.path("zinc/interactions.json");
+    std::fs::create_dir_all(f.parent().unwrap()).unwrap();
+    std::fs::write(
+        &f,
+        r#"{"schema":"supplement-interactions/1", "supplement":"zinc",
+        "interactions":[], "edges":[{"unexpected":"shape"}]}"#,
+    )
+    .unwrap();
+    let file = f.to_string_lossy().into_owned();
+    assert!(e.fail(&["intervention", "import", &file], 4).contains("interaction has no target"));
+    let skipped = e.json(&["intervention", "import", &file, "--skip-invalid"]);
+    assert_eq!(skipped["data"]["invalid"], 1);
+    assert!(skipped["data"]["warnings"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|w| w.as_str().unwrap().contains("zero parsed edges")));
+}
+
+#[test]
 fn regimen_status_as_of_and_stop() {
     let e = Env::new();
     e.catalog();

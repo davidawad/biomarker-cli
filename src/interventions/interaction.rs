@@ -13,7 +13,7 @@ use crate::util::slugify;
 /// Relation kinds, most important first.
 pub const KINDS: &[&str] = &["contraindicated", "avoid", "caution", "monitor", "lab-interference", "synergy"];
 pub const SEVERITIES: &[&str] = &["major", "moderate", "minor", "unknown"];
-pub const TARGET_KINDS: &[&str] = &["intervention", "drug-class", "condition", "lab-test", "genotype"];
+pub const TARGET_KINDS: &[&str] = &["intervention", "drug-class", "condition", "food", "lab-test", "genotype"];
 
 /// Normalise a relation kind (accepting common synonyms).
 pub fn parse_kind(s: &str) -> Result<String> {
@@ -45,6 +45,7 @@ pub fn parse_target_kind(s: &str) -> Result<String> {
         "" | "intervention" | "supplement" | "drug" | "medication" => "intervention",
         "drug-class" | "class" | "drug-classes" => "drug-class",
         "condition" | "disease" => "condition",
+        "food" => "food",
         "lab-test" | "lab" | "marker" | "test" | "biomarker" => "lab-test",
         "genotype" | "gene" | "snp" | "variant" => "genotype",
         _ => return Err(AppError::invalid(format!("unknown target type '{s}' ({})", TARGET_KINDS.join("|")))),

@@ -77,8 +77,9 @@ fn subject(doc: &Value, fallback_slug: Option<&str>) -> Result<Subject> {
     let s = ["supplement", "subject", "intervention"].iter().find_map(|k| doc.get(*k));
     let obj = s.filter(|v| v.is_object());
     let slug = s
-        .and_then(Value::as_str)
-        .or_else(|| obj.and_then(|o| str_of(o, &["slug", "id", "name"])))
+        .and_then(|_| obj.and_then(|o| str_of(o, &["slug", "id", "name"])))
+        .or_else(|| doc.get("slug").and_then(Value::as_str))
+        .or_else(|| s.and_then(Value::as_str))
         .or(fallback_slug)
         .map(slugify)
         .filter(|s| !s.is_empty())
@@ -88,7 +89,10 @@ fn subject(doc: &Value, fallback_slug: Option<&str>) -> Result<Subject> {
     let Some(o) = obj else { return Ok(Subject { slug, ..Default::default() }) };
     Ok(Subject {
         slug,
-        name: str_of(o, &["name", "display_name"]).map(str::to_string),
+        name: str_of(o, &["name", "display_name"])
+            .or_else(|| doc.get("name").and_then(Value::as_str))
+            .or_else(|| s.and_then(Value::as_str))
+            .map(str::to_string),
         aliases: strings(o.get("aliases")),
         category: str_of(o, &["category", "type"]).map(str::to_lowercase),
         rx_status: str_of(o, &["rx_status", "rx", "status"]).map(parse_rx_status).transpose()?,
@@ -128,7 +132,14 @@ fn edge(e: &Value) -> Result<EdgeSpec> {
         .iter()
         .find_map(|k| e.get(*k))
         .ok_or_else(|| AppError::invalid("interaction has no target (`with`)"))?;
-    let (target_kind, target) = target(t)?;
+    let (target_kind, target) = match t {
+        Value::String(s) => {
+            let kind = str_of(e, &["with_kind", "target_kind"]);
+            let prefixed = kind.map(|k| format!("{k}:{s}"));
+            super::interaction::parse_target(prefixed.as_deref().unwrap_or(s))?
+        }
+        _ => target(t)?,
+    };
     let kind = parse_kind(str_of(e, &["kind", "type", "relation"]).unwrap_or(""))?;
     Ok(EdgeSpec {
         target_kind,
@@ -151,11 +162,23 @@ pub fn parse_doc(doc: &Value, fallback_slug: Option<&str>) -> Result<Doc> {
         None => warnings.push(format!("no `schema` field; assuming {SCHEMA}")),
     }
     let subject = subject(doc, fallback_slug)?;
-    let edges = doc
-        .get("interactions")
+    let edge_key = ["interactions", "edges"]
+        .iter()
+        .filter_map(|key| doc.get(*key).filter(|v| v.is_array()).map(|v| (*key, v)))
+        .find(|(_, value)| value.as_array().is_some_and(|a| !a.is_empty()))
+        .or_else(|| {
+            ["interactions", "edges"].iter().find_map(|key| doc.get(*key).filter(|v| v.is_array()).map(|v| (*key, v)))
+        });
+    let edges: Vec<(usize, std::result::Result<EdgeSpec, String>)> = edge_key
+        .map(|(_, value)| value)
         .and_then(Value::as_array)
         .map(|a| a.iter().enumerate().map(|(i, e)| (i, edge(e).map_err(|e| e.message))).collect())
         .unwrap_or_default();
+    if edge_key.is_some_and(|(_, value)| value.as_array().is_some_and(|a| !a.is_empty()))
+        && !edges.iter().any(|(_, e)| e.is_ok())
+    {
+        warnings.push("non-empty interaction array yielded zero parsed edges".into());
+    }
     Ok(Doc { subject, edges, warnings })
 }
 

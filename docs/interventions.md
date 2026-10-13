@@ -61,7 +61,7 @@ CREATE TABLE regimens (
 CREATE TABLE interactions (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     a_id        INTEGER NOT NULL REFERENCES interventions(id) ON DELETE CASCADE,
-    b_kind      TEXT NOT NULL,   -- intervention | drug-class | condition | lab-test | genotype
+    b_kind      TEXT NOT NULL,   -- intervention | drug-class | condition | food | lab-test | genotype
     b_ref       TEXT NOT NULL,   -- normalised slug of the target
     kind        TEXT NOT NULL,   -- contraindicated | avoid | caution | monitor | synergy | lab-interference
     severity    TEXT NOT NULL DEFAULT 'unknown',  -- major | moderate | minor | unknown
@@ -345,12 +345,15 @@ Leniency rules (the producer is a research pipeline, not a fixed schema):
 * The subject may be called `supplement`, `subject` or `intervention`. It
   may be a string (the slug). Without one, the slug is taken from the parent
   directory name (`<slug>/interactions.json`).
-* A target (`with`, `target` or `b`) is either a string `type:slug` (a bare
-  slug means an intervention) or an object with `type`/`kind`/`target_kind`
+* Edges may be supplied under `interactions` or `edges`. A target (`with`,
+  `target` or `b`) is either a string `type:slug` (a bare slug means an
+  intervention) or an object with `type`/`kind`/`target_kind`
   and `slug`/`id`/`name`. Type spellings `drug`, `supplement` and
   `intervention` all mean intervention. `class` means `drug-class`, `lab`
-  and `marker` mean `lab-test`, `gene` and `snp` mean `genotype`. Slugs are
-  normalised with the same `slugify` as markers.
+  and `marker` mean `lab-test`, `gene` and `snp` mean `genotype`; `food` is
+  also a supported target kind. For string targets, sibling `with_kind` or
+  `target_kind` supplies the type. Display names are slugified (for example
+  `thyroid hormone` becomes `thyroid-hormone`).
 * `citations` may be a single string, an array of strings, or an array of
   objects. It is stored as an array, exactly as given.
 * A top-level array of such documents is accepted too.
@@ -379,7 +382,10 @@ What an import does, in one transaction across every input file:
 `--dry-run` runs everything in a transaction that is rolled back and
 reports the same summary. Invalid entries (an unknown kind, a missing
 target) abort the import with exit code 4 and the list of errors, unless
-`--skip-invalid` is given.
+`--skip-invalid` is given. A non-empty `interactions` or `edges` array that
+produces no valid parsed edge also emits a warning and retains its invalid
+entries in the error summary, so the default import fails and `--skip-invalid`
+reports the problem loudly.
 
 ## 6. Encryption and audit
 
