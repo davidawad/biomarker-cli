@@ -77,8 +77,9 @@ fn subject(doc: &Value, fallback_slug: Option<&str>) -> Result<Subject> {
     let s = ["supplement", "subject", "intervention"].iter().find_map(|k| doc.get(*k));
     let obj = s.filter(|v| v.is_object());
     let slug = s
-        .and_then(Value::as_str)
-        .or_else(|| obj.and_then(|o| str_of(o, &["slug", "id", "name"])))
+        .and_then(|_| obj.and_then(|o| str_of(o, &["slug", "id", "name"])))
+        .or_else(|| doc.get("slug").and_then(Value::as_str).map(str::trim).filter(|s| !s.is_empty()))
+        .or_else(|| s.and_then(Value::as_str))
         .or(fallback_slug)
         .map(slugify)
         .filter(|s| !s.is_empty())
@@ -88,7 +89,10 @@ fn subject(doc: &Value, fallback_slug: Option<&str>) -> Result<Subject> {
     let Some(o) = obj else { return Ok(Subject { slug, ..Default::default() }) };
     Ok(Subject {
         slug,
-        name: str_of(o, &["name", "display_name"]).map(str::to_string),
+        name: str_of(o, &["name", "display_name"])
+            .or_else(|| doc.get("name").and_then(Value::as_str))
+            .or_else(|| s.and_then(Value::as_str))
+            .map(str::to_string),
         aliases: strings(o.get("aliases")),
         category: str_of(o, &["category", "type"]).map(str::to_lowercase),
         rx_status: str_of(o, &["rx_status", "rx", "status"]).map(parse_rx_status).transpose()?,
@@ -128,7 +132,27 @@ fn edge(e: &Value) -> Result<EdgeSpec> {
         .iter()
         .find_map(|k| e.get(*k))
         .ok_or_else(|| AppError::invalid("interaction has no target (`with`)"))?;
-    let (target_kind, target) = target(t)?;
+    let (target_kind, target) = match t {
+        Value::String(s) => {
+            let (explicit_kind, _) = super::interaction::parse_target(s)?;
+            if s.contains(':') {
+                if let Some(sibling_kind) = str_of(e, &["with_kind", "target_kind"]) {
+                    let sibling_kind = parse_target_kind(sibling_kind)?;
+                    if sibling_kind != explicit_kind {
+                        return Err(AppError::invalid(format!(
+                            "interaction target '{s}' explicitly names type '{explicit_kind}', conflicting with sibling target type '{sibling_kind}'"
+                        )));
+                    }
+                }
+                super::interaction::parse_target(s)?
+            } else {
+                let kind = str_of(e, &["with_kind", "target_kind"]);
+                let prefixed = kind.map(|k| format!("{k}:{s}"));
+                super::interaction::parse_target(prefixed.as_deref().unwrap_or(s))?
+            }
+        }
+        _ => target(t)?,
+    };
     let kind = parse_kind(str_of(e, &["kind", "type", "relation"]).unwrap_or(""))?;
     Ok(EdgeSpec {
         target_kind,
@@ -151,11 +175,18 @@ pub fn parse_doc(doc: &Value, fallback_slug: Option<&str>) -> Result<Doc> {
         None => warnings.push(format!("no `schema` field; assuming {SCHEMA}")),
     }
     let subject = subject(doc, fallback_slug)?;
-    let edges = doc
-        .get("interactions")
-        .and_then(Value::as_array)
-        .map(|a| a.iter().enumerate().map(|(i, e)| (i, edge(e).map_err(|e| e.message))).collect())
-        .unwrap_or_default();
+    let edge_arrays: Vec<(&str, &Vec<Value>)> = ["interactions", "edges"]
+        .iter()
+        .filter_map(|key| doc.get(*key).and_then(Value::as_array).map(|a| (*key, a)))
+        .collect();
+    let mut edges = Vec::new();
+    for (key, array) in edge_arrays {
+        let start = edges.len();
+        edges.extend(array.iter().enumerate().map(|(i, e)| (i, edge(e).map_err(|e| e.message))));
+        if !array.is_empty() && !edges[start..].iter().any(|(_, e)| e.is_ok()) {
+            warnings.push(format!("non-empty `{key}` interaction array yielded zero parsed edges"));
+        }
+    }
     Ok(Doc { subject, edges, warnings })
 }
 
@@ -215,5 +246,69 @@ mod tests {
         assert!(parse_doc(&json!({"schema": "other/2", "supplement": "x"}), None).is_err());
         assert!(parse_doc(&json!({"schema": SCHEMA}), None).is_err());
         assert_eq!(parse(&json!([{"supplement": "a"}, {"supplement": "b"}]), None).unwrap().len(), 2);
+    }
+
+    #[test]
+    fn imports_real_edges_shape_and_slugifies_display_names() {
+        let d = parse_doc(
+            &json!({
+                "schema": SCHEMA,
+                "supplement": {"slug": "synthetic-supplement"},
+                "edges": [
+                    {"with": "thyroid hormone", "with_kind": "drug-class", "kind": "caution", "severity": "moderate", "mechanism": "synthetic", "evidence": "synthetic evidence", "citations": ["PMID:00000000"]},
+                    {"with": "Vitamin D-3", "target_kind": "supplement", "kind": "synergy"},
+                    {"with": "hypothyroidism", "with_kind": "condition", "kind": "monitor"},
+                    {"with": "grapefruit", "with_kind": "food", "kind": "avoid"}
+                ]
+            }),
+            None,
+        )
+        .unwrap();
+        assert_eq!(d.edges.len(), 4);
+        let parsed: Vec<&EdgeSpec> = d.edges.iter().map(|(_, e)| e.as_ref().unwrap()).collect();
+        assert_eq!((parsed[0].target_kind.as_str(), parsed[0].target.as_str()), ("drug-class", "thyroid-hormone"));
+        assert_eq!((parsed[1].target_kind.as_str(), parsed[1].target.as_str()), ("intervention", "vitamin-d-3"));
+        assert_eq!((parsed[2].target_kind.as_str(), parsed[2].target.as_str()), ("condition", "hypothyroidism"));
+        assert_eq!((parsed[3].target_kind.as_str(), parsed[3].target.as_str()), ("food", "grapefruit"));
+    }
+
+    #[test]
+    fn explicit_target_prefix_wins_and_conflicts_are_invalid() {
+        let d = parse_doc(
+            &json!({"supplement": "synthetic", "edges": [
+                {"with": "drug:warfarin", "with_kind": "drug", "kind": "caution"},
+                {"with": "drug:warfarin", "with_kind": "food", "kind": "caution"}
+            ]}),
+            None,
+        )
+        .unwrap();
+        assert_eq!(d.edges[0].1.as_ref().unwrap().target_kind, "intervention");
+        let err = d.edges[1].1.as_ref().unwrap_err();
+        assert!(err.contains("explicitly names type 'intervention'"));
+        assert!(err.contains("conflicting with sibling target type 'food'"));
+    }
+
+    #[test]
+    fn parses_both_interaction_arrays_and_reports_each_invalid_entry() {
+        let d = parse_doc(
+            &json!({"supplement": "synthetic", "interactions": [
+                {"with": "", "kind": "caution"}, {"with": "valid-one", "kind": "caution"}
+            ], "edges": [
+                {"with": "valid-two", "kind": "monitor"}, {"kind": "avoid"}
+            ]}),
+            None,
+        )
+        .unwrap();
+        assert_eq!(d.edges.len(), 4);
+        assert!(d.edges[0].1.is_err());
+        assert!(d.edges[1].1.is_ok());
+        assert!(d.edges[2].1.is_ok());
+        assert!(d.edges[3].1.is_err());
+    }
+
+    #[test]
+    fn blank_top_level_slug_does_not_mask_scalar_subject() {
+        let d = parse_doc(&json!({"slug": "  ", "subject": "Magnesium"}), None).unwrap();
+        assert_eq!(d.subject.slug, "magnesium");
     }
 }
