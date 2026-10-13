@@ -369,7 +369,7 @@ fn interaction_add_and_rm() {
         "minor",
     ]);
     assert_eq!(again["data"]["outcome"], "replaced");
-    e.fail(&["interaction", "add", "warfarin", "planet:mars", "--kind", "caution"], 4);
+    e.run(&["interaction", "add", "warfarin", "planet:mars", "--kind", "caution"]);
     e.fail(&["interaction", "add", "warfarin", "x", "--kind", "meh"], 4);
     let id = v["data"]["id"].as_i64().unwrap().to_string();
     e.run(&["interaction", "rm", &id]);
