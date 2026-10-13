@@ -56,7 +56,8 @@ pub fn parse_target_kind(s: &str) -> Result<String> {
 /// Parse `slug` or `TYPE:slug` into (target kind, normalised slug).
 pub fn parse_target(s: &str) -> Result<(String, String)> {
     let (kind, slug) = match s.split_once(':') {
-        Some((k, v)) => (parse_target_kind(k)?, v),
+        Some((k, v)) if is_target_type_spelling(k) => (parse_target_kind(k)?, v),
+        Some(_) => ("intervention".to_string(), s),
         None => ("intervention".to_string(), s),
     };
     let slug = slugify(slug);
@@ -64,6 +65,25 @@ pub fn parse_target(s: &str) -> Result<(String, String)> {
         return Err(AppError::invalid(format!("empty interaction target '{s}'")));
     }
     Ok((kind, slug))
+}
+
+pub fn is_target_type_spelling(s: &str) -> bool {
+    matches!(
+        slugify(s).as_str(),
+        "intervention"
+            | "drug"
+            | "supplement"
+            | "drug-class"
+            | "class"
+            | "condition"
+            | "food"
+            | "lab-test"
+            | "lab"
+            | "marker"
+            | "genotype"
+            | "gene"
+            | "snp"
+    )
 }
 
 /// Rank of a kind (higher is more important); unknown kinds rank 0.
@@ -304,7 +324,7 @@ mod tests {
         assert_eq!(parse_target("Warfarin").unwrap(), ("intervention".into(), "warfarin".into()));
         assert_eq!(parse_target("class:Anti Coagulant").unwrap(), ("drug-class".into(), "anti-coagulant".into()));
         assert_eq!(parse_target("snp:MTHFR C677T").unwrap(), ("genotype".into(), "mthfr-c677t".into()));
-        assert!(parse_target("planet:mars").is_err());
+        assert_eq!(parse_target("planet:mars").unwrap(), ("intervention".into(), "planet-mars".into()));
         assert!(parse_target("lab:").is_err());
         assert!(kind_rank("contraindicated") > kind_rank("caution"));
         assert!(kind_rank("lab-interference") > kind_rank("synergy"));

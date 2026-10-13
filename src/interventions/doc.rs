@@ -135,7 +135,7 @@ fn edge(e: &Value) -> Result<EdgeSpec> {
     let (target_kind, target) = match t {
         Value::String(s) => {
             let (explicit_kind, _) = super::interaction::parse_target(s)?;
-            if s.contains(':') {
+            if s.split_once(':').is_some_and(|(prefix, _)| super::interaction::is_target_type_spelling(prefix)) {
                 if let Some(sibling_kind) = str_of(e, &["with_kind", "target_kind"]) {
                     let sibling_kind = parse_target_kind(sibling_kind)?;
                     if sibling_kind != explicit_kind {
@@ -234,7 +234,7 @@ mod tests {
             (ok[1].target.as_str(), ok[1].kind.as_str(), ok[1].severity.as_str()),
             ("vitamin-e", "synergy", "unknown")
         );
-        assert_eq!(d.edges.iter().filter(|(_, e)| e.is_err()).map(|(i, _)| *i).collect::<Vec<_>>(), [2, 3]);
+        assert_eq!(d.edges.iter().filter(|(_, e)| e.is_err()).map(|(i, _)| *i).collect::<Vec<_>>(), [3]);
     }
 
     #[test]
@@ -286,6 +286,26 @@ mod tests {
         let err = d.edges[1].1.as_ref().unwrap_err();
         assert!(err.contains("explicitly names type 'intervention'"));
         assert!(err.contains("conflicting with sibling target type 'food'"));
+    }
+
+    #[test]
+    fn colon_in_target_names_is_preserved_with_sibling_kind() {
+        let d = parse_doc(
+            &json!({"supplement": "synthetic", "edges": [
+                {"with": "HLA-B*35:01", "with_kind": "gene", "kind": "caution"},
+                {"with": "omega-3 index / EPA", "with_kind": "lab-test", "kind": "caution"},
+                {"with": "plasma amino acid profile (tyrosine, Phe", "with_kind": "lab", "kind": "caution"}
+            ]}),
+            None,
+        )
+        .unwrap();
+        let targets: Vec<_> = d.edges.iter().map(|edge| edge.1.as_ref().unwrap()).collect();
+        assert_eq!(targets[0].target_kind, "genotype");
+        assert_eq!(targets[0].target, "hla-b-35-01");
+        assert_eq!(targets[1].target_kind, "lab-test");
+        assert_eq!(targets[1].target, "omega-3-index-epa");
+        assert_eq!(targets[2].target_kind, "lab-test");
+        assert_eq!(targets[2].target, "plasma-amino-acid-profile-tyrosine-phe");
     }
 
     #[test]
