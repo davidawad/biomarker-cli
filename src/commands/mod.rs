@@ -4,6 +4,8 @@ pub mod config_cmd;
 pub mod db_cmd;
 pub mod import;
 pub mod import_sheet;
+pub mod interaction;
+pub mod intervention;
 pub mod key_cmd;
 pub mod marker;
 pub mod measure;
@@ -12,6 +14,7 @@ pub mod observations;
 pub mod person;
 pub mod profile;
 pub mod range;
+pub mod regimen;
 pub mod security;
 pub mod trend;
 pub mod unit;
@@ -46,6 +49,9 @@ pub fn dispatch(ctx: &Ctx, cmd: Command) -> Result<Status> {
         Command::Flag(a) => measure::flag(ctx, a),
         Command::Observations(a) => observations::list(ctx, a).map(|()| 0),
         Command::Diff(a) => trend::diff(ctx, a).map(|()| 0),
+        Command::Intervention(c) => intervention::run(ctx, c).map(|()| 0),
+        Command::Regimen(c) => regimen::run(ctx, c).map(|()| 0),
+        Command::Interaction(c) => interaction::run(ctx, c).map(|()| 0),
         Command::Db(c) => db_cmd::run(ctx, c).map(|()| 0),
         Command::Config(c) => config_cmd::run(ctx, c).map(|()| 0),
         Command::Audit(c) => security::audit(ctx, c).map(|()| 0),

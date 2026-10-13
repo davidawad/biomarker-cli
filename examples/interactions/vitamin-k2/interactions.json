@@ -1,0 +1,10 @@
+{
+  "schema": "supplement-interactions/1",
+  "supplement": {"slug": "vitamin-k2", "name": "Vitamin K2 (MK-7)", "aliases": ["mk-7"], "rx_status": "otc",
+                 "ingredients": ["menaquinone-7=100mcg"]},
+  "interactions": [
+    {"with": "intervention:warfarin", "kind": "contraindicated", "severity": "major",
+     "mechanism": "synthetic example: opposes the anticoagulant effect", "citations": "PMID:00000002"},
+    {"with": {"type": "genotype", "slug": "vkorc1-1639g-a"}, "kind": "monitor", "severity": "moderate"}
+  ]
+}

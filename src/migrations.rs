@@ -125,12 +125,62 @@ CREATE TABLE IF NOT EXISTS person_ranges (
 );
 ";
 
+/// Supplement/drug catalog, per-person regimens and interaction edges (docs/interventions.md).
+const SCHEMA_V6: &str = r"
+CREATE TABLE IF NOT EXISTS interventions (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    slug        TEXT NOT NULL UNIQUE,
+    name        TEXT NOT NULL,
+    category    TEXT NOT NULL DEFAULT 'supplement',
+    rx_status   TEXT NOT NULL DEFAULT 'unknown',
+    ingredients TEXT NOT NULL DEFAULT '[]',
+    classes     TEXT NOT NULL DEFAULT '[]',
+    description TEXT,
+    source      TEXT,
+    created_at  TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS intervention_aliases (
+    alias           TEXT PRIMARY KEY,
+    intervention_id INTEGER NOT NULL REFERENCES interventions(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS regimens (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id       INTEGER NOT NULL REFERENCES people(id) ON DELETE CASCADE,
+    intervention_id INTEGER NOT NULL REFERENCES interventions(id),
+    dose            REAL,
+    unit            TEXT,
+    frequency       TEXT,
+    time_slot       TEXT,
+    started_on      TEXT NOT NULL,
+    stopped_on      TEXT,
+    note            TEXT,
+    created_at      TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS interactions (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    a_id        INTEGER NOT NULL REFERENCES interventions(id) ON DELETE CASCADE,
+    b_kind      TEXT NOT NULL,
+    b_ref       TEXT NOT NULL,
+    kind        TEXT NOT NULL,
+    severity    TEXT NOT NULL DEFAULT 'unknown',
+    mechanism   TEXT,
+    citations   TEXT NOT NULL DEFAULT '[]',
+    note        TEXT,
+    source      TEXT,
+    created_at  TEXT NOT NULL,
+    UNIQUE (a_id, b_kind, b_ref, kind)
+);
+CREATE INDEX IF NOT EXISTS idx_regimens_person ON regimens(person_id);
+CREATE INDEX IF NOT EXISTS idx_interactions_b ON interactions(b_kind, b_ref);
+";
+
 pub const MIGRATIONS: &[Migration] = &[
     Migration { version: 1, name: "initial schema", apply: |db| db.execute_batch(SCHEMA_V1) },
     Migration { version: 2, name: "seed built-in marker catalog", apply: crate::seed::seed },
     Migration { version: 3, name: "observations and person ranges", apply: |db| db.execute_batch(SCHEMA_V3) },
     Migration { version: 4, name: "seed body and vitals markers", apply: crate::seed::seed_vitals },
     Migration { version: 5, name: "seed near-limit (warn) zones", apply: crate::seed::seed_warn_zones },
+    Migration { version: 6, name: "interventions, regimens and interactions", apply: |db| db.execute_batch(SCHEMA_V6) },
 ];
 
 pub fn latest_version() -> i64 {

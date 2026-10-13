@@ -6,6 +6,7 @@
 pub mod audit;
 pub mod cli;
 pub mod cli_admin;
+pub mod cli_interventions;
 pub mod commands;
 pub mod config;
 pub mod container;
@@ -14,6 +15,7 @@ pub mod crypto;
 pub mod db;
 pub mod enc_config;
 pub mod error;
+pub mod interventions;
 pub mod keyfile;
 pub mod keys;
 pub mod keysetup;

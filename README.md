@@ -303,6 +303,9 @@ key somewhere else: lose them all and the data cannot be recovered.
 | `trend` / `stats` | per-series statistics and `--windows` % change. JSON includes the points |
 | `flag` | out-of-range values (`--latest`, `--exit-code` → status 10) |
 | `diff FROM TO` | compare values at two dates (`--exact`, `--changed`) |
+| `intervention add/ls/show/rm/import` (`iv`) | supplement and drug catalog: `--category`, `--rx-status`, `--ingredient magnesium=120mg`, `--class`, `--alias`. `import` reads health-cli `supplement-interactions/1` files or a directory of `<slug>/interactions.json` |
+| `regimen add/stop/ls/rm/impact` (`rx`) | who takes what: `--dose --unit --frequency --slot --start --stop`. `ls --as-of DATE --status taking` shows what was taken on a day. `impact` compares marker values before and after each start and stop |
+| `interaction add/ls/grid/rm` (`ix`) | interaction edges (contraindicated, avoid, caution, monitor, synergy, lab-interference) and `grid`, a person's contraindication matrix (`--catalog` widens it to the whole catalog) |
 | `db path/init/migrate/backup/vacuum/check/info` | maintenance. Migrations are versioned and applied automatically |
 | `key status/add-ssh/add-passphrase/add-file/remove` | the keys that can open the database |
 | `db encrypt/rekey/unlock/lock`, `doctor`, `audit log` | encryption at rest, key management and the audit trail (see [docs/security.md](docs/security.md)) |
@@ -752,6 +755,11 @@ tracked in `schema_migrations` and `PRAGMA user_version`:
   range_high, note, lab, batch_id, created_at)` for qualitative results. It
   is unique on (person, marker, taken_at).
 * `import_batches(id, source, format, created_at, row_count)`
+* `interventions(slug, name, category, rx_status, ingredients, classes,
+  description, source)` with `intervention_aliases`, `regimens(person_id,
+  intervention_id, dose, unit, frequency, time_slot, started_on, stopped_on,
+  note)` and `interactions(a_id, b_kind, b_ref, kind, severity, mechanism,
+  citations, note)`. See [docs/interventions.md](docs/interventions.md).
 
 ## Development
 

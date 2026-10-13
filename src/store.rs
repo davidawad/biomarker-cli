@@ -105,6 +105,7 @@ pub fn delete_person(db: &Db, id: i64) -> Result<usize> {
         let n = db.execute("DELETE FROM measurements WHERE person_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM observations WHERE person_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM person_ranges WHERE person_id = ?1", &[int(id)])?;
+        db.execute("DELETE FROM regimens WHERE person_id = ?1", &[int(id)])?;
         db.execute("DELETE FROM people WHERE id = ?1", &[int(id)])?;
         Ok(n)
     })
