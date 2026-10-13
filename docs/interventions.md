@@ -345,15 +345,19 @@ Leniency rules (the producer is a research pipeline, not a fixed schema):
 * The subject may be called `supplement`, `subject` or `intervention`. It
   may be a string (the slug). Without one, the slug is taken from the parent
   directory name (`<slug>/interactions.json`).
-* Edges may be supplied under `interactions` or `edges`. A target (`with`,
+* Edges may be supplied under `interactions` or `edges`; when both arrays are
+  present, both are imported and every entry is either imported or reported
+  invalid. A target (`with`,
   `target` or `b`) is either a string `type:slug` (a bare slug means an
   intervention) or an object with `type`/`kind`/`target_kind`
   and `slug`/`id`/`name`. Type spellings `drug`, `supplement` and
   `intervention` all mean intervention. `class` means `drug-class`, `lab`
   and `marker` mean `lab-test`, `gene` and `snp` mean `genotype`; `food` is
-  also a supported target kind. For string targets, sibling `with_kind` or
-  `target_kind` supplies the type. Display names are slugified (for example
-  `thyroid hormone` becomes `thyroid-hormone`).
+  also a supported target kind. For bare string targets, sibling `with_kind`
+  or `target_kind` supplies the type. A string already prefixed with
+  `type:slug` keeps its explicit type; a conflicting sibling type makes that
+  edge invalid. Display names are slugified (for example `thyroid hormone`
+  becomes `thyroid-hormone`).
 * `citations` may be a single string, an array of strings, or an array of
   objects. It is stored as an array, exactly as given.
 * A top-level array of such documents is accepted too.
