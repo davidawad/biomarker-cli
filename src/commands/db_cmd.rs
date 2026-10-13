@@ -143,6 +143,9 @@ fn info(ctx: &Ctx) -> Result<()> {
             "ranges": count("ranges")?,
             "conversions": count("unit_conversions")?,
             "import_batches": count("import_batches")?,
+            "interventions": count("interventions")?,
+            "regimens": count("regimens")?,
+            "interactions": count("interactions")?,
         })),
     ))
 }

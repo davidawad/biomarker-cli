@@ -1,0 +1,9 @@
+{
+  "schema": "supplement-interactions/1",
+  "supplement": {"slug": "biotin", "name": "Biotin", "rx_status": "over-the-counter",
+                 "ingredients": [{"name": "biotin", "amount": 5000, "unit": "mcg"}]},
+  "interactions": [
+    {"with": {"type": "lab", "slug": "tsh"}, "kind": "interference", "severity": "moderate",
+     "mechanism": "synthetic example: streptavidin immunoassay interference", "note": "pause 72h before labs"}
+  ]
+}

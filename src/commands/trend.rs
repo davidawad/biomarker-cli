@@ -5,6 +5,7 @@ use crate::commands::measure::select;
 use crate::commands::person_slug;
 use crate::context::Ctx;
 use crate::error::Result;
+use crate::interventions::join::RegimenIndex;
 use crate::output::{to_record, Record, Report};
 use crate::ranges::Flag;
 use crate::stats::{self, Point};
@@ -36,7 +37,15 @@ fn series(rows: Vec<Evaluated>) -> Vec<Vec<Evaluated>> {
 }
 
 fn query_all(filter: FilterArgs) -> QueryArgs {
-    QueryArgs { filter, flagged: false, latest: false, sort: SortKey::Date, reverse: false, limit: None }
+    QueryArgs {
+        filter,
+        flagged: false,
+        latest: false,
+        sort: SortKey::Date,
+        reverse: false,
+        limit: None,
+        with_regimens: false,
+    }
 }
 
 fn flag_str(f: Option<Flag>) -> Option<&'static str> {
@@ -54,6 +63,7 @@ pub fn trend(ctx: &Ctx, a: TrendArgs) -> Result<()> {
         .collect::<Result<Vec<_>>>()?;
     let min_points = a.min_points.unwrap_or_else(|| ctx.trend_min_points());
     let (cat, rows) = select(ctx, &query_all(a.filter))?;
+    let regimens = a.with_regimens.then(|| RegimenIndex::load(&ctx.db()?, &cat)).transpose()?;
     let flavor = ctx.range_flavor();
     let groups: Vec<Vec<Evaluated>> = series(rows).into_iter().filter(|g| g.len() >= min_points).collect();
 
@@ -116,20 +126,30 @@ pub fn trend(ctx: &Ctx, a: TrendArgs) -> Result<()> {
         ["ref_low", "ref_high", "opt_low", "opt_high", "warn_low", "warn_high", "range_set"].iter().for_each(|k| {
             nested.insert((*k).into(), rec.get(*k).cloned().unwrap_or(Value::Null));
         });
+        if let Some(idx) = &regimens {
+            nested.insert(
+                "events".into(),
+                json!(idx.events(last.row.person_id, &first.row.taken_at, &last.row.taken_at)),
+            );
+        }
         if !a.no_points {
             nested.insert(
                 "points".into(),
                 Value::Array(
                     g.iter()
                         .map(|e| {
-                            json!({
+                            let mut p = json!({
                                 "id": e.row.id,
                                 "taken_at": e.row.taken_at,
                                 "value": e.display_value,
                                 "qualifier": e.row.qualifier,
                                 "flag": flag_str(e.flag(flavor)),
                                 "status": e.status.as_str(),
-                            })
+                            });
+                            if let Some(idx) = &regimens {
+                                p["regimens"] = json!(idx.taking(e.row.person_id, &e.row.taken_at));
+                            }
+                            p
                         })
                         .collect(),
                 ),

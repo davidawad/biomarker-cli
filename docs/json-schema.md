@@ -69,6 +69,12 @@ suits streaming and `jq -c`.
 | `unit list`                            | `conversions`  | `{id, marker, from, to, factor, offset}` |
 | `unit list --symbols`                  | `units`        | `{unit, system}` |
 | `unit convert`                         | `conversion_result` | `{marker, value, from, result, to}` |
+| `intervention ls` / `show` / `add`    | `interventions` / `intervention` | [Intervention](#interventions-regimens-interactions) |
+| `intervention import`                  | `intervention_import` | import summary (see docs/interventions.md) |
+| `regimen ls` / `add` / `stop`          | `regimens` / `regimen` / `regimens` | Regimen |
+| `regimen impact`                       | `regimen_impact` | Impact row |
+| `interaction ls` / `add`               | `interactions` / `interaction` | Interaction |
+| `interaction grid`                     | `interaction_grid` | Grid object |
 | `*  rm`                                | `removed`      | what was removed |
 | `config show`                          | `config`       | `{key, value, source}`; `source` ∈ `default, file, env, flag` |
 | `config keys` / `path` / `set` / `unset` | `config_keys` / `config_path` / `config_set` / `config_unset` | |
@@ -277,6 +283,32 @@ report fields, which are mostly filled by spreadsheet imports:
   and `null` for catalog ranges.
   Bounds are in the marker's canonical unit. `sex` ∈ `any, male, female`.
   The age band is `[age_min, age_max)` in years.
+
+### Interventions, regimens, interactions
+
+These kinds and fields are additive within v1. The full description,
+including the `supplement-interactions/1` import format, is in
+[interventions.md](interventions.md).
+
+* Intervention: `{id, slug, name, category, rx_status, ingredients: [{name,
+  amount, unit}], classes, aliases, description, source, created_at}`.
+  `show` adds `regimens`, `active_regimens` and `interactions`.
+* Regimen: `{id, person, intervention, intervention_name, dose, unit,
+  frequency, time_slot, started_on, stopped_on, note, status, as_of, days}`.
+  `status` ∈ `taking, stopped, planned` as of `as_of`; `stopped_on` is the
+  first day not taken.
+* Interaction: `{id, a, a_name, target_kind, target, target_name, resolved,
+  kind, severity, mechanism, citations, note, source}`.
+* Impact row: `{person, intervention, regimen_id, event, event_date,
+  window_days, marker, unit, n_before, before, before_date, before_mean,
+  n_after, after, after_date, after_mean, change, change_pct}`.
+* Grid object: `{person, as_of, rows, columns, cells: [{row, column, kind,
+  severity, edges}], other}`.
+* `query --with-regimens` adds `regimens` and `interferences` (intervention
+  slugs) to each measurement. `trend --with-regimens` adds `regimens` to each
+  point and `events` (`[{date, event, intervention, regimen_id}]`) to each
+  series. `db info` adds `interventions`, `regimens` and `interactions`
+  counts.
 
 ## Errors
 

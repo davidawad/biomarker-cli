@@ -159,11 +159,26 @@ fn records(ctx: &Ctx, cat: &Catalog, rows: &[Evaluated]) -> Vec<Record> {
     rows.iter().map(|e| e.record(cat, ctx.range_flavor())).collect()
 }
 
+/// Add the regimens taken on each measurement's day and the lab interferences among them.
+fn with_regimens(ctx: &Ctx, cat: &Catalog, rows: &[Evaluated], recs: &mut [Record]) -> Result<()> {
+    let idx = crate::interventions::join::RegimenIndex::load(&ctx.db()?, cat)?;
+    rows.iter().zip(recs.iter_mut()).for_each(|(e, rec)| {
+        let taking = idx.taking(e.row.person_id, &e.row.taken_at);
+        rec.insert("interferences".into(), json!(idx.interferences(&taking, e.row.marker_id)));
+        rec.insert("regimens".into(), json!(taking));
+    });
+    Ok(())
+}
+
 pub fn query(ctx: &Ctx, q: QueryArgs) -> Result<()> {
     let (cat, rows) = select(ctx, &q)?;
     let kind = if q.latest { "latest" } else { "measurements" };
+    let mut recs = records(ctx, &cat, &rows);
+    if q.with_regimens {
+        with_regimens(ctx, &cat, &rows, &mut recs)?;
+    }
     ctx.emit(
-        &Report::list(kind, records(ctx, &cat, &rows))
+        &Report::list(kind, recs)
             .table_columns(MEASUREMENT_TABLE)
             .dates(&["taken_at"])
             .meta("unit_system", json!(ctx.unit_system()))
@@ -180,6 +195,7 @@ pub fn flag(ctx: &Ctx, a: FlagArgs) -> Result<Status> {
         sort: SortKey::Date,
         reverse: false,
         limit: None,
+        with_regimens: false,
     };
     let (cat, rows) = select(ctx, &q)?;
     let flavor = ctx.range_flavor();
@@ -241,8 +257,15 @@ fn export_record(e: &Evaluated, with_ids: bool) -> Record {
 
 pub fn export(ctx: &Ctx, a: ExportArgs) -> Result<()> {
     let filter_args = a.filter.clone();
-    let q =
-        QueryArgs { filter: a.filter, flagged: false, latest: false, sort: SortKey::Date, reverse: false, limit: None };
+    let q = QueryArgs {
+        filter: a.filter,
+        flagged: false,
+        latest: false,
+        sort: SortKey::Date,
+        reverse: false,
+        limit: None,
+        with_regimens: false,
+    };
     let (_, rows) = select(ctx, &q)?;
     let mut out = ctx.out.clone();
     if out.format == crate::output::Format::Table {

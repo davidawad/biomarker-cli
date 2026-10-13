@@ -1,0 +1,26 @@
+{
+  "schema": "supplement-interactions/1",
+  "supplement": {
+    "slug": "fish-oil",
+    "name": "Fish oil (EPA/DHA)",
+    "aliases": ["omega-3", "epa-dha"],
+    "category": "supplement",
+    "rx_status": "otc",
+    "classes": ["omega-3-fatty-acid"],
+    "ingredients": [{"name": "epa", "amount": 500, "unit": "mg"}, {"name": "dha", "amount": 250, "unit": "mg"}]
+  },
+  "interactions": [
+    {
+      "with": {"type": "drug-class", "slug": "anticoagulant", "name": "Anticoagulants"},
+      "kind": "caution",
+      "severity": "moderate",
+      "mechanism": "synthetic example: additive antiplatelet effect",
+      "citations": ["PMID:00000001", {"title": "Synthetic review", "url": "https://example.org/fish-oil"}],
+      "note": "synthetic fixture"
+    },
+    {"with": "vitamin-k2", "kind": "synergy", "severity": "minor"},
+    {"with": {"type": "lab-test", "slug": "triglycerides"}, "kind": "lab-interference", "severity": "minor",
+     "mechanism": "synthetic example: lowers the measured value"},
+    {"with": "condition:bleeding-disorder", "kind": "avoid", "severity": "major"}
+  ]
+}

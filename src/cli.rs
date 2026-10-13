@@ -7,6 +7,7 @@ use clap::{Args, Parser, Subcommand, ValueEnum};
 use crate::output::Format;
 
 pub use crate::cli_admin::{AuditCmd, ConfigCmd, DbCmd, KeyCmd};
+pub use crate::cli_interventions::{InteractionCmd, InterventionCmd, RegimenCmd};
 
 #[derive(Debug, Parser)]
 #[command(
@@ -131,6 +132,15 @@ pub enum Command {
     Observations(ObservationsArgs),
     /// Compare values between two dates
     Diff(DiffArgs),
+    /// Supplement and drug catalog (see docs/interventions.md)
+    #[command(subcommand, alias = "iv")]
+    Intervention(InterventionCmd),
+    /// What each person takes: dose, frequency, start and stop
+    #[command(subcommand, alias = "rx")]
+    Regimen(RegimenCmd),
+    /// Interaction edges and a person's contraindication matrix
+    #[command(subcommand, alias = "ix")]
+    Interaction(InteractionCmd),
     /// Database maintenance
     #[command(subcommand)]
     Db(DbCmd),
@@ -682,6 +692,9 @@ pub struct QueryArgs {
     pub reverse: bool,
     #[arg(long, short = 'n')]
     pub limit: Option<usize>,
+    /// Add the regimens taken on each measurement's day (and lab interferences)
+    #[arg(long)]
+    pub with_regimens: bool,
 }
 
 #[derive(Debug, Args)]
@@ -716,6 +729,9 @@ pub struct TrendArgs {
     /// Minimum number of points for a series to be reported (default: the `trend_min_points` setting)
     #[arg(long)]
     pub min_points: Option<usize>,
+    /// Add regimens to each point and regimen start/stop events to each series
+    #[arg(long)]
+    pub with_regimens: bool,
 }
 
 #[derive(Debug, Args)]
