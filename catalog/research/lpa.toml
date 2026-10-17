@@ -61,3 +61,27 @@ note = "EAS/EFLM 2016 laboratory flag: Lp(a) at or above 50 mg/dL (80th percenti
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract (laboratory flagging recommendation)", quote = "lipoprotein(a) >=50 mg/dL (80th percentile)" },
 ]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 125
+unit = "nmol/L"
+population = "Adults; 2026 US multi-society (ACC/AHA) dyslipidemia guideline as summarised in the cited review"
+evidence = "guideline"
+note = "2026 ACC/AHA: Lp(a) >= 125 nmol/L (about 50 mg/dL) is a risk-enhancing factor. Quoted in nmol/L as the source states it; the review notes mg/dL and nmol/L are not interchangeable."
+citations = [
+  { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Introduction / risk stratification", quote = "The 2026 U.S. multi-society guideline classifies Lp(a) >= 125 nmol/L as a risk-enhancing factor and >=250 nmol/L as a major risk enhancer." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 250
+unit = "nmol/L"
+population = "Adults; 2026 US multi-society (ACC/AHA) dyslipidemia guideline as summarised in the cited review"
+evidence = "guideline"
+note = "2026 ACC/AHA: Lp(a) >= 250 nmol/L is a major risk enhancer. Quoted in nmol/L as the source states it."
+citations = [
+  { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Introduction / risk stratification", quote = "The 2026 U.S. multi-society guideline classifies Lp(a) >= 125 nmol/L as a risk-enhancing factor and >=250 nmol/L as a major risk enhancer." },
+]

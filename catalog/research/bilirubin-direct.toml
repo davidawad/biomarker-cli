@@ -79,3 +79,49 @@ note = "NASPGHAN/ESPGHAN joint guideline: an elevated direct bilirubin prompts t
 citations = [
   { pmid = "27429428", doi = "10.1097/MPG.0000000000001334", title = "Guideline for the Evaluation of Cholestatic Jaundice in Infants: Joint Recommendations of the North American Society for Pediatric Gastroenterology, Hepatology, and Nutrition and the European Society for Pediatric Gastroenterology, Hepatology, and Nutrition.", locator = "Abstract", quote = "an elevated serum direct bilirubin level (direct bilirubin levels >1.0 mg/dL or >17 umol/L) warrants timely consideration for evaluation and referral to a pediatric gastroenterologist or hepatologist" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.04
+high = 0.37
+when = { sex = "male", age_min = 18, age_max = 65 }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+note = "Adult male 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
+citations = [ { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", locator = "Table 3", quote = "| DBil | mmol/L | (-) | M | 18~65 | 289 | 0.52 | 0.72 | 0.62 | 2.16 | 6.31 | 5.56 | 7.06 | ug/dL | 0.04 | 0.13 | 0.37" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.03
+high = 0.21
+when = { sex = "female", age_min = 18, age_max = 65 }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
+evidence = "reference-interval-study"
+note = "Adult female 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
+citations = [ { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", locator = "Table 3", quote = "| (-) | F | 18~65 | 327 | 0.37 | 0.53 | 0.45 | 1.56 | 3.65 | 3.21 | 4.09 | 0.03 | 0.09 | 0.21" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.73
+high = 4.52
+unit = "µmol/L"
+when = { age_min = 1, age_max = 10 }
+population = "Healthy Chinese children aged 1 to under 10 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Pediatric 95% interval; the source states this in umol/L."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| DBIL | umol/L ... | 1 -<10 years | 570 | 2.05 | 1.82 | 0.73 | 4.52" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.00
+high = 7.11
+unit = "µmol/L"
+when = { age_min = 10, age_max = 18 }
+population = "Healthy Chinese children aged 10 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Pediatric 95% interval; the source states this in umol/L."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| DBIL | umol/L ... | 10 -<18 years | 273 | 3.17 | 2.72 | 1.00 | 7.11" } ]

@@ -68,3 +68,14 @@ note = "Source states the value in g/L; not CALIPER or NORIP."
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Reference interval table (TP rows)", quote = "| 6-<18 years | 234 | 70.55 | 70.47 | 61.90 | 80.70 | 56.06-63.75 | 78.83-82.15" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.0
+high = 8.2
+when = { age_min = 18, age_max = 65 }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); sexes combined"
+evidence = "reference-interval-study"
+note = "Sex-combined adult 95% reference interval. The source's conventional-unit block is labelled g/L, but the values are g/dL (the SI block is 60-82 g/L); used as g/dL, not converted."
+citations = [ { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", locator = "Table 3", quote = "| TP | g/L | (-) | MF | 18~65 | 620 | 58.5 | 60.8 | 60 | 71 | 82 | 80.9 | 82.8 | g/L | 6.0 | 7.1 | 8.2" } ]

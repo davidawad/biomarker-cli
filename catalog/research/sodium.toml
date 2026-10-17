@@ -98,3 +98,43 @@ note = "One-sided: the source reports that mortality risk rises as sodium falls 
 citations = [
   { pmid = "26036812", doi = "10.1530/EJE-15-0111", title = "Hyponatremia and mortality risk: a Danish cohort study of 279 508 acutely hospitalized patients.", locator = "Results", quote = "The probability of death increased when serum sodium decreased from 139 to 132 mmol/l." },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 131
+high = 148
+when = { age_min = 18, age_max = 65 }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
+evidence = "reference-interval-study"
+note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| Na | mmol/L | (-) | MF | 18~65 | 544 | 130.1 | 131.5 | 131 | 139 | 148 | 147.0 | 148.7 | mmol/L | 131 | 140 | 148" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 136.40
+high = 143.86
+when = { age_min = 1, age_max = 18 }
+population = "Healthy Chinese children aged 1 to under 18 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+note = "Serum sodium in mmol/L as stated in the source (not converted). Infants under 1 year are not encoded because the source bands are split at 6 months."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Na | mmol/L | 28 days-<6 months | 160 | 140.92 | 140.57 | 136.35 | 147.96 | 135.78-137.30 | 146.01-153.49 ... | 1-<18 years | 788 | 140.40 | 140.40 | 136.40 | 143.86" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 136
+high = 141
+when = { specimen = "arterial" }
+population = "Healthy medical students (aged 20-32) and health professionals (aged 21-76) with arterial blood gas analyser samples (Radiometer ABL)"
+evidence = "reference-interval-study"
+note = "Sodium reference interval derived non-parametrically on a blood gas analyser (arterial samples), stated as smaller differences from previously published intervals. Not a serum interval."
+citations = [
+  { pmid = "21619466", doi = "10.1515/CCLM.2011.603", title = "Reference intervals and age and gender dependency for arterial blood gases and electrolytes in adults.", locator = "Abstract", quote = "sodium (136-141 mmol/L)" },
+]

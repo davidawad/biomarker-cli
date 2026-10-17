@@ -24,3 +24,36 @@ population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 ye
 evidence = "reference-interval-study"
 note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women. Higher than the men's limit as published; confirmed in full-text Table 2 (women n=252)."
 citations = [ { pmid = "41255223", doi = "10.1111/liv.70440", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", locator = "Abstract, Results", quote = "The updated reference limits (97.5th percentile) in the healthiest subpopulation for men and women, respectively, were: ALT 57 and 35 U/L, AST 49 and 33 U/L, GGT 48 and 75 U/L, ALP 108 and 93 U/L, and total bilirubin 28 and 25 umol/L." } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 14
+high = 72
+when = { sex = "male", age_min = 18, age_max = 65 }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+note = "Adult male 95% reference interval (LAVE-corrected in the source)."
+citations = [ { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", locator = "Table 3", quote = "| GGT | U/L | (-) | M | 18~65 | 288 | 13 | 16 | 14 | 32 | 72 | 65 | 80 | U/L | 14 | 32 | 72" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 11
+high = 38
+when = { sex = "female", age_min = 18, age_max = 45 }
+population = "Females aged 18 to under 45 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+note = "Adult female 95% reference interval (under 45 years), LAVE-corrected in the source."
+citations = [ { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", locator = "Table 3", quote = "| GGT | U/L ... | (+) | F | ~45 | 155 | 9 | 13 | 11 | 20 | 38 | 32 | 43 | 11 | 20 | 38" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 12
+high = 62
+when = { sex = "female", age_min = 45 }
+population = "Females aged 45 years and older, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+note = "Adult female 95% reference interval (45 years and over), LAVE-corrected in the source."
+citations = [ { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", locator = "Table 3", quote = "| GGT | U/L ... | (+) | F | 45~ | 123 | 9 | 15 | 12 | 26 | 62 | 49 | 75 | 12 | 26 | 62" } ]

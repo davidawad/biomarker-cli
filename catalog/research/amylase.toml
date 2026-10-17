@@ -12,7 +12,7 @@ high = 142
 when = { sex = "male", age_min = 18, age_max = 65 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
 evidence = "reference-interval-study"
-note = "Indirect reference interval (parametric method), values in U/L as stated in the source."
+note = "Direct reference interval (IFCC C-RIDL protocol, parametric method), values in U/L as stated in the source."
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| AMY | U/L | (-) | M | 18~65 | 290 | 24 | 31 | 28 | 69 | 142 | 134 | 149 | U/L | 28 | 69 | 142" },
 ]
@@ -25,7 +25,7 @@ high = 113
 when = { sex = "female", age_min = 18, age_max = 65 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
 evidence = "reference-interval-study"
-note = "Indirect reference interval (parametric method), values in U/L as stated in the source."
+note = "Direct reference interval (IFCC C-RIDL protocol, parametric method), values in U/L as stated in the source."
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| (-) | F | 18~65 | 332 | 21 | 30 | 26 | 60 | 113 | 105 | 122 | 26 | 60 | 113" },
 ]

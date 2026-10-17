@@ -28,3 +28,28 @@ note = "Osmolal gap at or above 20 mOsm/kg (source's practice threshold for susp
 citations = [
   { pmid = "31809199", doi = "10.1080/00365513.2019.1672086", title = "Reference values for osmolal gap in healthy subjects and in medical inpatients.", locator = "Abstract", quote = "to keep today's practice for suspecting poisoning with toxic alcohols at an elevated OG of >=20 mOsm/kg H2O" },
 ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 300
+when = { age_min = 65 }
+population = "Hospitalised adults aged 65 years and over (low-intake dehydration; directly measured serum or plasma osmolality)"
+evidence = "meta-analysis"
+note = "Low-intake dehydration threshold: measured osmolality strictly above 300 mOsm/kg (low = 300 means strictly greater than 300). Threshold as used by the 19 included studies."
+citations = [
+  { pmid = "42158549", doi = "10.1136/bmjph-2025-002985", title = "Prevalence of low-intake dehydration in hospitalised older adults: systematic review and meta-analysis.", locator = "Abstract (Results)", quote = "directly measured osmolality >300 mOsm/kg, calculated osmolarity using Khajuria Krahn equation >300 mmol/L" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 295
+high = 300
+when = { age_min = 65 }
+population = "Older people aged 65 years and over in five cohorts (community and hospital; directly measured serum/plasma osmolality)"
+evidence = "outcome-study"
+note = "Impending dehydration band: osmolality at or above 295 mOsm/kg up to the 300 mOsm/kg current-dehydration threshold (the source gives >=295 and >300 separately; high = 300 marks where the current-dehydration cut-off starts)."
+citations = [
+  { pmid = "26490100", doi = "10.1136/bmjopen-2015-008846", title = "Diagnostic accuracy of calculated serum osmolarity to predict dehydration in older people: adding value to pathology laboratory reports.", locator = "Abstract", quote = "current dehydration (serum osmolality>300 mOsm/kg), impending/current dehydration (>=295 mOsm/kg)" },
+]

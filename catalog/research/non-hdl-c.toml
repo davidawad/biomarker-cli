@@ -114,3 +114,42 @@ note = "Laboratory flag for abnormal fasting non-HDL-C."
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Results / flagging section (full text)", quote = "non-HDL cholesterol >=3.8 mmol/L (145 mg/dL)" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 73
+high = 220
+when = { sex = "male", age_min = 18, age_max = 66 }
+population = "Apparently healthy Egyptian men aged 18-65 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 1.88-5.69 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| nonHDL | mmol/L | (-) | M | 18~65 | 290 | 1.69 | 2.07 | 1.88 | 3.58 | 5.69 | 5.43 | 5.95 | mg/dL | 73 | 139 | 220" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 71
+high = 187
+when = { sex = "female", age_min = 18, age_max = 45 }
+population = "Apparently healthy Egyptian women aged 18 to under 45 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 1.83-4.84 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| nonHDL | mmol/L | (-) | M | 18~65 | 290 ... 220 | (-) | F | ~45 | 195 | 1.56 | 2.09 | 1.83 | 3.17 | 4.84 | 4.59 | 5.09 | 71 | 123 | 187" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 89
+high = 226
+when = { sex = "female", age_min = 45 }
+population = "Apparently healthy Egyptian women aged 45 and over (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 2.31-5.85 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| nonHDL | mmol/L ... | (-) | F | 45~ | 167 | 2.09 | 2.53 | 2.31 | 3.85 | 5.85 | 5.60 | 6.10 | 89 | 149 | 226" },
+]

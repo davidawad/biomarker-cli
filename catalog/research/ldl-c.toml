@@ -242,3 +242,57 @@ note = "95% reference interval, third trimester. Numbers are in mmol/L as the so
 citations = [
   { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| LDL-C | 1.26-3.80 | 1.30-3.61 | 3.08-5.26 | 1.93-5.90 | 1.97-5.84 | 2.03-1.03 | 13.67" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 55
+high = 166
+when = { age_min = 18, age_max = 45 }
+population = "Apparently healthy Egyptian adults aged 18 to under 45 years, both sexes combined (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egypt, under 45 years. Conventional mg/dL values from Table 3 (SI 1.42-4.28 mmol/L). Age-partitioned in the source."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| LDL-C | mmol/L | (-) | MF | ~45 | 373 | 1.31 | 1.53 | 1.42 | 2.66 | 4.28 | 4.09 | 4.48 | mg/dL | 55 | 103 | 166" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 54
+high = 185
+when = { age_min = 45 }
+population = "Apparently healthy Egyptian adults aged 45 and over, both sexes combined (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egypt, 45 years and over. Conventional mg/dL values from Table 3 (SI 1.38-4.79 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| LDL-C | mmol/L | (-) | MF | ~45 | 373 ... 166 | (-) | MF | 45~ | 310 | 1.22 | 1.55 | 1.38 | 2.98 | 4.79 | 4.59 | 4.98 | 54 | 115 | 185" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.28
+high = 3.40
+unit = "mmol/L"
+when = { age_min = 2, age_max = 11 }
+population = "Apparently healthy check-up children in Shenzhen, China, 2 to under 11 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Infant bands (28 days to 2 years) not encoded because they are not whole-year ages."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| LDL-C | mmol/L ... | 2-<11 years | 332 | 2.38 | 2.37 | 1.28 | 3.40 | 1.13-1.44 | 3.33-3.47" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.28
+high = 3.27
+unit = "mmol/L"
+when = { age_min = 11, age_max = 18 }
+population = "Apparently healthy check-up children in Shenzhen, China, 11 to under 18 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| LDL-C | mmol/L ... | 11 -<18 years | 149 | 2.16 | 2.18 | 1.28 | 3.27 | 0.83-1.36 | 3.13-3.40" },
+]

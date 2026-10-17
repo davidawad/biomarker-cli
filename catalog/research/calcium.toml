@@ -65,3 +65,71 @@ note = "Severe hypercalcaemia (strictly above 14 mg/dL), grading as stated in a 
 citations = [
   { pmid = "35217631", doi = "10.12659/MSM.935821", title = "A Review of Current Clinical Concepts in the Pathophysiology, Etiology, Diagnosis, and Management of Hypercalcemia.", locator = "Definition, Epidemiology, and Screening for Hypercalcemia", quote = "mild 10.5-12 mg/dL, moderate 12.1-14 mg/dL, and severe >14 mg/dL" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 8.7
+high = 10.7
+when = { age_min = 18, age_max = 65 }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled; sex-specific total calcium intervals were not reported"
+evidence = "reference-interval-study"
+note = "Total serum calcium, central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| Ca | mmol/L | (-) | MF | 18~65 | 619 | 2.14 | 2.19 | 2.17 | 2.41 | 2.68 | 2.66 | 2.71 | mg/dL | 8.7 | 9.6 | 10.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 8.3
+high = 10.2
+when = { age_min = 18, age_max = 65, method = "albumin-adjusted" }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
+evidence = "reference-interval-study"
+note = "Albumin-adjusted calcium (aCa), not total calcium. Central 95 % reference interval in mg/dL (conventional-unit columns of the source)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| aCa | mmol/L | (-) | MF | 18~65 | 618 | 2.04 | 2.11 | 2.08 | 2.33 | 2.54 | 2.52 | 2.57 | mg/dL | 8.3 | 9.3 | 10.2" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 2.34
+high = 2.73
+when = { age_min = 0, age_max = 2 }
+population = "Healthy Chinese children aged 28 days to under 2 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+note = "Total calcium in mmol/L as stated in the source (not converted). Sex partitions were not reported for calcium in this age band."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Ca | mmol/L | 28 days-<2 years | 248 | 2.54 | 2.54 | 2.34 | 2.73 | 2.31-2.36 | 2.71-2.75" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 2.39
+high = 2.68
+when = { age_min = 2, age_max = 5 }
+population = "Healthy Chinese children aged 2 to under 5 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+note = "Total calcium in mmol/L as stated in the source (not converted)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Ca | mmol/L | 28 days-<2 years | 248 | 2.54 | 2.54 | 2.34 | 2.73 | 2.31-2.36 | 2.71-2.75 ... | 2-<5 years | 160 | 2.53 | 2.54 | 2.39 | 2.68" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 2.36
+high = 2.63
+when = { age_min = 5, age_max = 18 }
+population = "Healthy Chinese children aged 5 to under 18 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+note = "Total calcium in mmol/L as stated in the source (not converted)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Ca | mmol/L | 28 days-<2 years | 248 | 2.54 | 2.54 | 2.34 | 2.73 | 2.31-2.36 | 2.71-2.75 ... | 5-<18 years | 249 | 2.50 | 2.50 | 2.36 | 2.63 | 2.35-2.37 | 2.61-2.67" },
+]

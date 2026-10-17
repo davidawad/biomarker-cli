@@ -116,3 +116,99 @@ note = "Age- and sex-partitioned reference interval (females 71 y and over). Sam
 citations = [
   { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3", quote = "| >= 71 | 51.9 (50.4 to 58.1) | 98.6 (95.6 to 107.6) | 94 | 40.52 (39.0 to 45.4) | 76.6 (74.4 to 84.9) | 95" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.54
+high = 1.19
+when = { sex = "male", age_min = 18, age_max = 66 }
+population = "Apparently healthy adults aged 18-65 years, Egypt (IFCC C-RIDL protocol; n = 287 males; conventional mg/dL block of the source table; central 95 percent, mean +/- 1.96 SD on a transformed scale)"
+evidence = "reference-interval-study"
+note = "Sex-partitioned reference interval, males. The source table has no age split for creatinine. Numbers taken from the conventional-unit columns (mg/dL)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| Cre | umol/L | (-) | M | 18~65 | 287 | 43 | 52 | 47 | 79 | 105 | 101 | 110 | mg/dL | 0.54 | 0.90 | 1.19" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.46
+high = 0.90
+when = { sex = "female", age_min = 18, age_max = 66 }
+population = "Apparently healthy adults aged 18-65 years, Egypt (IFCC C-RIDL protocol; n = 333 females; conventional mg/dL block of the source table; central 95 percent, mean +/- 1.96 SD on a transformed scale)"
+evidence = "reference-interval-study"
+note = "Sex-partitioned reference interval, females. The source table has no age split for creatinine. Numbers taken from the conventional-unit columns (mg/dL)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| Cre | umol/L | (-) | M | 18~65 | 287 | 43 | 52 | 47 | 79 | 105 | 101 | 110 | mg/dL | 0.54 | 0.90 | 1.19 ... | (-) | F | 18~65 | 333 | 39 | 43 | 41 | 60 | 80 | 77 | 82 | 0.46 | 0.68 | 0.90" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 16.88
+high = 34.54
+unit = "µmol/L"
+when = { age_max = 2 }
+population = "Apparently healthy children aged 28 days to under 2 years, Shenzhen, China (n = 471; Table 1 reference limits; both sexes)"
+evidence = "reference-interval-study"
+note = "Age-partitioned reference interval, 28 days to under 2 years. Source numbers in umol/L (not converted). Table 1 limits are LL/UL as printed; the paper uses two-sided or one-sided percentile limits by analyte, and the analyte-level assignment is not restated in the retrieved text."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Crea | umol/L | 28 days-<2 years | 471 | 23.51 | 23.01 | 16.88 | 34.54" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 21.74
+high = 42.19
+unit = "µmol/L"
+when = { age_min = 2, age_max = 4 }
+population = "Apparently healthy children aged 2 to under 4 years, Shenzhen, China (n = 290; Table 1; both sexes)"
+evidence = "reference-interval-study"
+note = "Age-partitioned reference interval, 2 to under 4 years. Source numbers in umol/L (not converted). Limits as printed in Table 1."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Crea | umol/L | 28 days-<2 years | 471 | 23.51 | 23.01 | 16.88 | 34.54 ... | 2-<4 years | 290 | 30.5 | 30.14 | 21.74 | 42.19" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 27.83
+high = 54.36
+unit = "µmol/L"
+when = { age_min = 4, age_max = 12 }
+population = "Apparently healthy children aged 4 to under 12 years, Shenzhen, China (n = 555; Table 1; both sexes)"
+evidence = "reference-interval-study"
+note = "Age-partitioned reference interval, 4 to under 12 years. Source numbers in umol/L (not converted). Limits as printed in Table 1."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Crea | umol/L | 28 days-<2 years | 471 | 23.51 | 23.01 | 16.88 | 34.54 ... | 4-<12 years | 555 | 38.6 | 37.28 | 27.83 | 54.36" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 39.77
+high = 93.51
+unit = "µmol/L"
+when = { sex = "male", age_min = 12, age_max = 18 }
+population = "Apparently healthy males aged 12 to under 18 years, Shenzhen, China (n = 30; Table 1)"
+evidence = "reference-interval-study"
+note = "Sex-partitioned reference interval, males 12 to under 18 years. Sample size is small. Source numbers in umol/L (not converted)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Crea | umol/L | 28 days-<2 years | 471 | 23.51 | 23.01 | 16.88 | 34.54 ... | 12-<18 years | Male 30 Female 33 | Male 58.52 Female 56.29 | Male 57.88 Female 57.64 | Male 39.77 Female 35.24 | Male 93.51 Female 77.70" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 35.24
+high = 77.70
+unit = "µmol/L"
+when = { sex = "female", age_min = 12, age_max = 18 }
+population = "Apparently healthy females aged 12 to under 18 years, Shenzhen, China (n = 33; Table 1)"
+evidence = "reference-interval-study"
+note = "Sex-partitioned reference interval, females 12 to under 18 years. Sample size is small. Source numbers in umol/L (not converted)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Crea | umol/L | 28 days-<2 years | 471 | 23.51 | 23.01 | 16.88 | 34.54 ... | 12-<18 years | Male 30 Female 33 | Male 58.52 Female 56.29 | Male 57.88 Female 57.64 | Male 39.77 Female 35.24 | Male 93.51 Female 77.70" },
+]

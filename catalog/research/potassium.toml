@@ -124,3 +124,42 @@ note = "Potassium below 4.0 and above 5.0 mmol/L was associated with higher all-
 citations = [
   { pmid = "26228532", doi = "10.1159/000437151", title = "Serum Potassium, End-Stage Renal Disease and Mortality in Chronic Kidney Disease.", locator = "Conclusion", quote = "In patients with stage 3-4 CKD, serum potassium levels <4.0 and >5.0 mmol/l are associated with higher mortality but not with ESRD." },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.4
+high = 5.3
+when = { age_min = 18, age_max = 65, specimen = "serum" }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
+evidence = "reference-interval-study"
+note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| K | mmol/L | (-) | MF | 18~65 | 543 | 3.27 | 3.45 | 3.4 | 4.3 | 5.3 | 5.24 | 5.43 | mmol/L | 3.4 | 4.3 | 5.3" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.5
+high = 5.1
+when = { specimen = "serum" }
+population = "Adults (textbook serum potassium reference interval as quoted in a simulation study)"
+evidence = "textbook"
+note = "Serum potassium runs about 0.35 mmol/L higher than plasma because of K release on clotting. Values are the textbook intervals quoted by the cited simulation study, not a measured population interval."
+citations = [
+  { pmid = "37391118", doi = "10.1016/j.clinbiochem.2023.110606", title = "Characterizing ability of serum potassium (K) and the serum K reference interval to flag hypokalemia or hyperkalemia as observed in plasma: A simulation study.", locator = "Abstract", quote = "textbook K reference intervals for plasma (PRI = 3.4-4.5 mmol/L) and serum (SRI = 3.5-5.1 mmol/L)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.4
+high = 4.5
+when = { specimen = "plasma" }
+population = "Adults (textbook plasma potassium reference interval as quoted in a simulation study)"
+evidence = "textbook"
+note = "Plasma potassium textbook interval quoted by the cited simulation study, for comparison with the serum interval in the same source."
+citations = [
+  { pmid = "37391118", doi = "10.1016/j.clinbiochem.2023.110606", title = "Characterizing ability of serum potassium (K) and the serum K reference interval to flag hypokalemia or hyperkalemia as observed in plasma: A simulation study.", locator = "Abstract", quote = "textbook K reference intervals for plasma (PRI = 3.4-4.5 mmol/L) and serum (SRI = 3.5-5.1 mmol/L)" },
+]

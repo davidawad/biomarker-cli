@@ -15,3 +15,41 @@ note = "Blood beta-hydroxybutyrate of 3.0 mmol/L or higher supports a diagnosis 
 citations = [
   { pmid = "38907161", doi = "10.1007/s00125-024-06183-8", title = "Hyperglycaemic crises in adults with diabetes: a consensus report.", locator = "Full text, diagnosis of DKA", quote = "Blood concentrations of β-hydroxybutyrate >=3.0 mmol/l correlate well with acid-base changes, with >90% sensitivity and specificity for the diagnosis of DKA" },
 ]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.6
+high = 1.5
+when = { conditions = ["diabetes"] }
+population = "People with diabetes on sick-day rules (euglycaemic DKA prevention, medication stopped during illness)"
+evidence = "consensus"
+note = "Trace/small ketones or blood ketones 0.6-1.5 mmol/L during illness: take carbohydrate, correction insulin, fluids and recheck ketones every 3-4 hours, per the sick-day advice in the source review. This is a home-monitoring action level, not a diagnosis."
+citations = [
+  { pmid = "40900206", doi = "10.1007/s11892-025-01604-3", title = "Developing a Protocol for Management of Euglycemic Diabetic Ketoacidosis.", locator = "Management, sick day rules paragraph", quote = "If ketones are trace/small or 0.6-1.5 mmol/L it is advised that patients ingest 15-30 g of carbohydrate" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.6
+high = 3.0
+when = { conditions = ["diabetes"] }
+population = "People with diabetes on sick-day rules (euglycaemic DKA prevention)"
+evidence = "consensus"
+note = "Moderate ketones: the source says the same advice can be followed, but medical attention is recommended. Above 3.0 mmol/L the source advises immediate action (wording is cut off in the retrieved text); the DKA threshold of 3.0 mmol/L is in the diagnostic range above."
+citations = [
+  { pmid = "40900206", doi = "10.1007/s11892-025-01604-3", title = "Developing a Protocol for Management of Euglycemic Diabetic Ketoacidosis.", locator = "Management, sick day rules paragraph", quote = "These recommendations can also be followed for moderate ketones in urine or blood ketones 1.6-3.0 mmol/L although medical attention is recommended" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 0.5
+when = { }
+population = "Adults following a ketogenic diet (14-day daily beta-hydroxybutyrate monitoring, 217 people)"
+evidence = "outcome-study"
+note = "Nutritional ketosis threshold associated with weight loss in one cohort. Not a diagnostic or clinical safety range; the source gives no upper limit."
+citations = [
+  { pmid = "42449121", doi = "10.1038/s41387-026-00454-6", title = "Defining a ketone threshold for weight loss: evidence from 14 day daily β-hydroxybutyrate monitoring in 217 subjects on a ketogenic diet.", locator = "Abstract (Conclusions)", quote = "Achieving and maintaining a ketonemia of at least 0.5 mmol/L may represent a clinically meaningful threshold to optimize weight loss" },
+]

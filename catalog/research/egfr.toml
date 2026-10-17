@@ -93,3 +93,55 @@ note = "Pediatric practice point: an eGFRcr below 90 can be flagged as low in ch
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Practice Point 1.2.3.5", quote = "An eGFRcr level <90 ml/min per 1.73 m2 can be flagged as ... over the age of 2 years" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 79
+high = 144
+when = { sex = "male", age_max = 45 }
+population = "Apparently healthy males younger than 45 years, Egypt (IFCC C-RIDL protocol; n = 174; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (males, under 45 y). The source partitions age at 45 years (under 45 vs 45 and over). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 58
+high = 113
+when = { sex = "male", age_min = 45 }
+population = "Apparently healthy males aged 45 years and older, Egypt (IFCC C-RIDL protocol; n = 141; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (males, 45 y and older). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144 ... | (-) | M | 45~ | 141 | 52 | 63 | 58 | 89 | 113 | 108 | 119 | 58 | 89 | 113" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 87
+high = 123
+when = { sex = "female", age_max = 45 }
+population = "Apparently healthy females younger than 45 years, Egypt (IFCC C-RIDL protocol; n = 196; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (females, under 45 y). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144 ... | (-) | F | ~45 | 196 | 84 | 90 | 87 | 107 | 123 | 121 | 125 | 87 | 107 | 123" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 61
+high = 105
+when = { sex = "female", age_min = 45 }
+population = "Apparently healthy females aged 45 years and older, Egypt (IFCC C-RIDL protocol; n = 163; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (females, 45 y and older). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144 ... | (-) | F | 45~ | 163 | 55 | 68 | 61 | 90 | 105 | 104 | 107 | 61 | 90 | 105" },
+]

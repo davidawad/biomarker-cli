@@ -214,3 +214,84 @@ note = "95% reference interval, third trimester. Numbers are in mmol/L as the so
 citations = [
   { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| TG | 0.54-2.33 | 0.48-2.20 | 12.50-5.91 | 1.68-5.67 | 1.53-5.52 | 9.80-2.72 | 20.79" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 44
+high = 359
+when = { sex = "male", age_min = 18, age_max = 66 }
+population = "Apparently healthy Egyptian men aged 18-65 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 0.50-4.06 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TG | mmol/L | (-) | M | 18~65 | 286 | 0.43 | 0.56 | 0.50 | 1.27 | 4.06 | 3.63 | 4.48 | mg/dL | 44 | 112 | 359" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 36
+high = 240
+when = { sex = "female", age_min = 18, age_max = 45 }
+population = "Apparently healthy Egyptian women aged 18 to under 45 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 0.40-2.72 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TG | mmol/L | (-) | M | 18~65 | 286 ... 359 | (-) | F | ~45 | 197 | 0.36 | 0.44 | 0.40 | 0.92 | 2.72 | 2.40 | 3.03 | 36 | 82 | 240" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 51
+high = 311
+when = { sex = "female", age_min = 45 }
+population = "Apparently healthy Egyptian women aged 45 and over (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 0.57-3.52 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TG | mmol/L ... | (+) | F | 45~ | 125 | 0.45 | 0.70 | 0.57 | 1.28 | 3.52 | 2.87 | 4.17 | 51 | 113 | 311" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.44
+high = 2.54
+unit = "mmol/L"
+when = { age_min = 0, age_max = 2 }
+population = "Apparently healthy check-up children in Shenzhen, China, 28 days to under 2 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TG | mmol/L | 28 days-<2 years | 681 | 1.22 | 1.09 | 0.44 | 2.54 | 0.41-0.47 | 2.43-2.71" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.31
+high = 2.08
+unit = "mmol/L"
+when = { age_min = 2, age_max = 10 }
+population = "Apparently healthy check-up children in Shenzhen, China, 2 to under 10 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TG | mmol/L ... | 2-<10 years | 727 | 0.84 | 0.73 | 0.31 | 2.08 | 0.29-0.34 | 1.85-2.23" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.35
+high = 1.85
+unit = "mmol/L"
+when = { age_min = 10, age_max = 18 }
+population = "Apparently healthy check-up children in Shenzhen, China, 10 to under 18 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TG | mmol/L ... | 10-<18 years | 260 | 0.89 | 0.79 | 0.35 | 1.85 | 0.32-0.41 | 1.66-2.02" },
+]

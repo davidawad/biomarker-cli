@@ -12,7 +12,7 @@ high = 282
 when = { age_min = 18, age_max = 65 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); sexes combined"
 evidence = "reference-interval-study"
-note = "Sex-combined indirect reference interval in the source (no sex partition). Values in U/L."
+note = "Sex-combined reference interval in the source (IFCC C-RIDL protocol) (no sex partition). Values in U/L."
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| LDH | U/L | (-) | MF | 18~65 | 613 | 82 | 99 | 91 | 181 | 282 | 271 | 294 | U/L | 91 | 181 | 282" },
 ]

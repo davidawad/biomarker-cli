@@ -116,3 +116,111 @@ note = "Level 2 (clinically significant) hypoglycaemia: strictly below 54 mg/dL.
 citations = [
   { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 1 (CGM metrics)", quote = "10. Time below range (TBR): % of readings and time <54 mg/dL (<3.0 mmol/L) | Level 2" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 56
+high = 111
+when = { age_min = 18, age_max = 45 }
+population = "Apparently healthy adults aged 18 to under 45 years, Egypt (IFCC C-RIDL protocol, 277 people in this age group, both sexes)"
+evidence = "reference-interval-study"
+note = "Egyptian reference interval for glucose, age partition only: the source did not partition glucose by sex (MF = both sexes). Fasting status is not stated in the quoted text. Source reports 3.15-6.19 mmol/L; the mg/dL conversion in the same row is used here."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| Glu | mmol/L | (+) | MF | ~45 | 277 | 2.96 | 3.35 | 3.15 | 4.61 | 6.19 | 5.94 | 6.44 | mg/dL | 56 | 83 | 111" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 58
+high = 128
+when = { age_min = 45 }
+population = "Apparently healthy adults aged 45 and over, Egypt (IFCC C-RIDL protocol, 301 people in this age group, both sexes)"
+evidence = "reference-interval-study"
+note = "Egyptian reference interval for glucose, age partition only (MF = both sexes, no sex partition). Fasting status is not stated in the quoted text. Source reports 3.22-7.56 mmol/L; the mg/dL values in the same row are used here."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| (-) | MF | 45~ | 301 | 3.00 | 3.43 | 3.22 | 5.04 | 7.10 | 6.64 | 7.56 | 58 | 91 | 128" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.86
+high = 5.80
+unit = "mmol/L"
+when = { age_min = 0, age_max = 2, method = "hexokinase" }
+population = "Healthy Chinese children from 28 days to under 2 years (Shenzhen, CLSI EP28, 243 children)"
+evidence = "reference-interval-study"
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. The glucose-oxidase method (Glu-GOD) in the same table gives 3.86-5.78 mmol/L for this age group."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "Table 1 | | Analyte | Unit | Group | n | Mean | Median | LL | UL | 90% CI for LL | 90% CI for UL ... | Glu-HK | mmol/L | 28 days-<2 years | 243 | 4.99 | 5.07 | 3.86 | 5.80" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.60
+high = 5.90
+unit = "mmol/L"
+when = { age_min = 2, age_max = 5, method = "hexokinase" }
+population = "Healthy Chinese children aged 2 to under 5 years (Shenzhen, CLSI EP28, 169 children)"
+evidence = "reference-interval-study"
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Glucose-oxidase (Glu-GOD) gives 3.63-6.02 mmol/L for this age group."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Glu-HK | mmol/L | 28 days-<2 years | 243 | 4.99 | 5.07 | 3.86 | 5.80 ... | 2-<5 years | 169 | 4.62 | 4.61 | 3.60 | 5.90" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.55
+high = 6.00
+unit = "mmol/L"
+when = { sex = "male", age_min = 5, age_max = 18, method = "hexokinase" }
+population = "Healthy Chinese boys aged 5 to under 18 years (Shenzhen, CLSI EP28, 121 boys)"
+evidence = "reference-interval-study"
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Male interval only; see the female range for the sex-specific value."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Glu-HK | mmol/L | 28 days-<2 years | 243 | 4.99 | 5.07 | 3.86 | 5.80 ... | 5-<18 years | Male 121 Female 149 | Male 4.83 Female 4.58 | Male 4.86 Female 4.52 | Male 3.55 Female 3.48 | Male 6.00 Female 5.93" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.48
+high = 5.93
+unit = "mmol/L"
+when = { sex = "female", age_min = 5, age_max = 18, method = "hexokinase" }
+population = "Healthy Chinese girls aged 5 to under 18 years (Shenzhen, CLSI EP28, 149 girls)"
+evidence = "reference-interval-study"
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Female interval from the same row as the male range."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Glu-HK | mmol/L | 28 days-<2 years | 243 | 4.99 | 5.07 | 3.86 | 5.80 ... | 5-<18 years | Male 121 Female 149 | Male 4.83 Female 4.58 | Male 4.86 Female 4.52 | Male 3.55 Female 3.48 | Male 6.00 Female 5.93" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 80
+high = 130
+when = { age_min = 65, conditions = ["diabetes"] }
+population = "Older adults with diabetes in good health (few coexisting chronic illnesses, intact cognitive and functional status)"
+evidence = "guideline"
+note = "Fasting or pre-prandial glucose goal for healthy older adults with diabetes, as tabulated by a review of the ADA 2023 recommendation. Units given in mg/dL in the source."
+citations = [
+  { pmid = "37841649", doi = "10.2147/cia.s423122", title = "Management of Glucose-Lowering Therapy in Older Adults with Type 2 Diabetes: Challenges and Opportunities.", locator = "Table (Glycemic targets in older adults, ADA 2023 row)", quote = "Healthy (few coexisting chronic illnesses, intact cognitive and functional status) | <7.0-7.5% (53-58 mmol/mol) | 80-130 mg/dL (4.4-7.2 mmol/L) | 80-180 mg/dL (4.4-10.0 mmol/L)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 90
+high = 150
+when = { age_min = 65, conditions = ["diabetes", "complex-intermediate-health"] }
+population = "Older adults with diabetes and complex/intermediate health (3 or more chronic illnesses, 2 or more instrumental ADL impairments, or mild-to-moderate cognitive impairment)"
+evidence = "guideline"
+note = "Fasting or pre-prandial glucose goal for complex/intermediate older adults with diabetes, as tabulated from ADA 2023 by a review. The matching HbA1c goal is <8.0%."
+citations = [
+  { pmid = "37841649", doi = "10.2147/cia.s423122", title = "Management of Glucose-Lowering Therapy in Older Adults with Type 2 Diabetes: Challenges and Opportunities.", locator = "Table (Glycemic targets in older adults, ADA 2023 row)", quote = "chronic illnesses* or >=2 instrumental ADL€ impairments or mild-to-moderate cognitive impairment) | <8.0% (64 mmol/mol) | 90-150 mg/dL (5.0-8.3 mmol/L)" },
+]

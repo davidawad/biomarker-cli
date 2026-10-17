@@ -63,3 +63,14 @@ note = "Risk-enhancing factor in the 2018 AHA/ACC cholesterol guideline, particu
 citations = [
   { pmid = "42876934", doi = "10.3389/fcvm.2026.1857230", title = "Apolipoprotein B in cardiovascular risk assessment: beyond traditional lipid markers.", locator = "Introduction / risk-enhancing factors paragraph", quote = "identified ApoB >=130 mg/dL as a" },
 ]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 130
+population = "Adults; apoB as a risk-enhancing biomarker (as restated in a 2026 review)"
+evidence = "guideline"
+note = "apoB >= 130 mg/dL as a risk-enhancing biomarker supporting therapy initiation or intensification, as restated in the cited 2026 review. The review does not name the guideline edition; the 2026 ACC/AHA text itself was not retrievable."
+citations = [
+  { pmid = "42629510", doi = "10.1007/s40119-026-00473-5", title = "Beyond LDL-C: Modern Lipid Management for ASCVD Prevention in Primary Care.", locator = "Lipid management section", quote = "apoB is recognized as a risk-enhancing biomarker, with levels >= 130 mg/dl supporting consideration of therapy initiation or intensification" },
+]

@@ -228,3 +228,29 @@ note = "Age- and sex-partitioned reference interval (females 71 y and over). Sam
 citations = [
   { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3", quote = "| >= 71 | 0.72 (0.76 to 0.85) | 1.46 (1.42 to 1.84) | 94 | 0.75 (0.76 to 0.85) | 1.40 (1.34 to 1.63) | 95" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.72
+high = 1.18
+when = { sex = "male", age_min = 1, age_max = 18 }
+population = "Apparently healthy males aged 1 to under 18 years, Shenzhen, China (n = 342; Table 1 reference limits)"
+evidence = "reference-interval-study"
+note = "Sex-partitioned reference interval, males 1 to under 18 years. The paper's infant bands (28 days to under 5 months, and 5 months to under 1 year) are not encoded because their limits cannot be expressed in whole years. Source numbers in mg/L."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| CysC | mg/L | 28 days-<5 months | 128 | 1.44 | 1.42 | 1 | 1.9 ... | 1-<18 years | Male 342 Female 282 | Male 0.94 Female 0.93 | Male 0.90 Female 0.90 | Male 0.72 Female 0.69 | Male 1.18 Female 1.10" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.69
+high = 1.10
+when = { sex = "female", age_min = 1, age_max = 18 }
+population = "Apparently healthy females aged 1 to under 18 years, Shenzhen, China (n = 282; Table 1 reference limits)"
+evidence = "reference-interval-study"
+note = "Sex-partitioned reference interval, females 1 to under 18 years. The paper's infant bands are not encoded (see the male range). Source numbers in mg/L."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| CysC | mg/L | 28 days-<5 months | 128 | 1.44 | 1.42 | 1 | 1.9 ... | 1-<18 years | Male 342 Female 282 | Male 0.94 Female 0.93 | Male 0.90 Female 0.90 | Male 0.72 Female 0.69 | Male 1.18 Female 1.10" },
+]
