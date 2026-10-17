@@ -1,0 +1,41 @@
+slug = "papp-a"
+name = "Pregnancy-Associated Plasma Protein A"
+category = "pregnancy"
+unit = "MoM"
+description = "Placenta-derived protein measured in maternal serum in the first trimester, expressed as a multiple of the median (MoM) for gestational age and maternal weight. Low values are associated with aneuploidy and with later placenta-related complications such as pre-eclampsia, growth restriction and preterm birth."
+
+[[range]]
+set = "papp-a-first-trimester-outcome-2022"
+kind = "diagnostic"
+high = 0.4
+when = { pregnancy = true, trimester = 1 }
+population = "2636 singleton pregnancies screened at the first-trimester combined scan (Athens, 2017-2019), prospective cohort"
+evidence = "outcome"
+note = "Cut-off at the 5th centile. Values at or below 0.4 MoM were associated with pre-eclampsia or pre-eclampsia/pregnancy-induced hypertension, IUGR and a combined adverse outcome. Values at or below the bound are flagged."
+citations = [
+  { pmid = "36505175", doi = "10.7759/cureus.31256", title = "Importance of Low Pregnancy Associated Plasma Protein-A (PAPP-A) Levels During the First Trimester as a Predicting Factor for Adverse Pregnancy Outcomes: A Prospective Cohort Study of 2636 Pregnant Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36505175/", locator = "Abstract, Methods", quote = "The cut-off value of the PAPP-A level was defined as the 0.4 multiple of median (MoM) which is in correspondence with the fifth centile." },
+]
+
+[[range]]
+set = "papp-a-first-trimester-outcome-2022"
+kind = "diagnostic"
+high = 0.4
+when = { pregnancy = true, trimester = 1 }
+population = "Retrospective cohort of first-trimester PAPP-A screening, with adverse pregnancy outcomes (SGA, hypertensive disorder of pregnancy, preterm birth) as endpoints"
+evidence = "outcome"
+note = "Proposed primary screening cut-off for adverse pregnancy outcomes. The same paper reports that 0.30 MoM is a better cut-off for SGA alone and roughly halves SGA and preterm detection."
+citations = [
+  { pmid = "36131518", doi = "10.1515/jpm-2022-0241", title = "First trimester low maternal serum pregnancy associated plasma protein-A (PAPP-A) as a screening method for adverse pregnancy outcomes.", url = "https://pubmed.ncbi.nlm.nih.gov/36131518/", locator = "Abstract, Conclusions", quote = "PAPP-A ≤0.40 MoM should be considered as a primary screening cut-off for adverse pregnancy outcomes" },
+]
+
+[[range]]
+set = "papp-a-first-trimester-malformation-2026"
+kind = "diagnostic"
+high = 0.3
+when = { pregnancy = true, trimester = 1 }
+population = "Retrospective study of 180 euploid pregnancies with PAPP-A below 0.3 MoM and 104 controls with PAPP-A at or above 0.3 MoM, first-trimester screening 2010-2020"
+evidence = "outcome"
+note = "Low PAPP-A below 0.3 MoM was independently associated with antenatal diagnosis of fetal malformation in euploid fetuses (11.1% vs 2.9%). Single-centre retrospective data."
+citations = [
+  { pmid = "42717479", doi = "10.1002/jcu.70357", title = "Low Maternal Serum PAPP-A (< 0.3 MoM) at First Trimester Screening and Fetal Malformations in Euploid Fetuses.", url = "https://pubmed.ncbi.nlm.nih.gov/42717479/", locator = "Abstract, Results", quote = "PAPP-A < 0.3 MoM was the only factor independently associated with a diagnosis of fetal malformation at univariable" },
+]

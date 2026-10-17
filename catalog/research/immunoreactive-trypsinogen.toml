@@ -1,0 +1,28 @@
+slug = "immunoreactive-trypsinogen"
+name = "Immunoreactive Trypsinogen (newborn screen)"
+category = "pediatric"
+unit = "ng/mL"
+description = "Trypsinogen measured in newborn dried blood spots as the first-tier test in cystic fibrosis newborn screening. A raised value triggers CFTR genetic testing or a sweat test; it is a screening marker, not a diagnostic test."
+
+[[range]]
+set = "georgia-cf-nbs-algorithm"
+kind = "diagnostic"
+low = 55
+when = { specimen = "dried-blood-spot" }
+population = "Newborns screened in the Georgia (US) cystic fibrosis newborn screening program"
+evidence = "outcome"
+note = "Program-specific first-tier cut-off. Values at or above 55 ng/mL trigger CFTR genetic testing. Cut-offs differ between programs and need local validation, so this is not a universal threshold."
+citations = [
+  { pmid = "41133699", doi = "10.3390/ijns11040087", title = "Evaluating Georgia's Cystic Fibrosis Newborn Screening Algorithm to Inform Improvement Recommendations.", url = "https://pubmed.ncbi.nlm.nih.gov/41133699/", locator = "Abstract", quote = "with values ≥ 55 ng/mL triggering Cystic Fibrosis Transmembrane Conductance Regulator (CFTR) genetic testing" },
+]
+
+[[range]]
+set = "brazil-irt-irt-2024"
+kind = "diagnostic"
+low = 70
+population = "Newborns in a Northeastern Brazil cystic fibrosis newborn screening program, using the IRT/IRT two-tier protocol"
+evidence = "outcome"
+note = "Second-tier IRT cut-off of the current protocol in that program (70 ng/mL). The same study found that raising it to 90 ng/mL performed similarly with fewer false positives. This value is program-specific and not a general standard."
+citations = [
+  { pmid = "39194088", title = "IRT/IRT as a newborn cystic fibrosis screening method: optimal cutoff points for a mixed population.", doi = "10.1590/0102-311XEN150623", url = "https://pubmed.ncbi.nlm.nih.gov/39194088/", locator = "Abstract", quote = "changing the IRT2 cut point from 70ng/mL to 90ng/mL seems to have advantages" },
+]

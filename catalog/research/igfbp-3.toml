@@ -1,0 +1,65 @@
+slug = "igfbp-3"
+name = "Insulin-like Growth Factor Binding Protein 3"
+category = "growth"
+unit = "mg/L"
+description = "Main binding protein carrying IGF-1 in plasma and a GH-dependent marker of GH action. Concentrations rise through childhood and puberty, so age- and sex-specific intervals are needed; assay differences are large."
+
+[[range]]
+set = "jiangsu-children-capillary-2026"
+kind = "reference"
+low = 1.01
+high = 3.16
+unit = "μg/ml"
+when = { sex = "male", age_min = 0, age_max = 0.5, specimen = "capillary-blood", method = "chemiluminescence immunoassay" }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band >0 to under 0.5 years"
+evidence = "reference-interval"
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. Units as printed (ug/ml is numerically equal to mg/L). Age bands are those of the IGF-1 sentence cited as the second citation."
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "The P50 of IGFBP-3 in boys increased from 2.00 μg/ml to 3.93 μg/ml, with the corresponding reference interval changing from 1.01-3.16 μg/ml to 2.44-5.62 μg/ml." },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "GAMLSS fitting showed that the P50 of IGF-1 in boys increased from 49.52 ng/ml in the >0-<0.5 years age group to 139.68 ng/ml in the ≥6-<7 years age group" },
+]
+
+[[range]]
+set = "jiangsu-children-capillary-2026"
+kind = "reference"
+low = 2.44
+high = 5.62
+unit = "μg/ml"
+when = { sex = "male", age_min = 6, age_max = 7, specimen = "capillary-blood", method = "chemiluminescence immunoassay" }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band 6 to under 7 years"
+evidence = "reference-interval"
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. Units as printed."
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "The P50 of IGFBP-3 in boys increased from 2.00 μg/ml to 3.93 μg/ml, with the corresponding reference interval changing from 1.01-3.16 μg/ml to 2.44-5.62 μg/ml." },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "GAMLSS fitting showed that the P50 of IGF-1 in boys increased from 49.52 ng/ml in the >0-<0.5 years age group to 139.68 ng/ml in the ≥6-<7 years age group" },
+]
+
+[[range]]
+set = "jiangsu-children-capillary-2026"
+kind = "reference"
+low = 0.96
+high = 3.01
+unit = "μg/ml"
+when = { sex = "female", age_min = 0, age_max = 0.5, specimen = "capillary-blood", method = "chemiluminescence immunoassay" }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band >0 to under 0.5 years"
+evidence = "reference-interval"
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. The girls' sentence gives no age labels; age bands follow the boys' sentence cited as the second citation."
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "In girls, the P50 of IGFBP-3 increased from 1.99 μg/ml to 4.23 μg/ml, and the corresponding reference interval changed from 0.96-3.01 μg/ml to 2.47-5.99 μg/ml." },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "GAMLSS fitting showed that the P50 of IGF-1 in boys increased from 49.52 ng/ml in the >0-<0.5 years age group" },
+]
+
+[[range]]
+set = "jiangsu-children-capillary-2026"
+kind = "reference"
+low = 2.47
+high = 5.99
+unit = "μg/ml"
+when = { sex = "female", age_min = 6, age_max = 7, specimen = "capillary-blood", method = "chemiluminescence immunoassay" }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band 6 to under 7 years"
+evidence = "reference-interval"
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. Age bands follow the boys' sentence cited as the second citation."
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "In girls, the P50 of IGFBP-3 increased from 1.99 μg/ml to 4.23 μg/ml, and the corresponding reference interval changed from 0.96-3.01 μg/ml to 2.47-5.99 μg/ml." },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "GAMLSS fitting showed that the P50 of IGF-1 in boys increased from 49.52 ng/ml in the >0-<0.5 years age group to 139.68 ng/ml in the ≥6-<7 years age group" },
+]

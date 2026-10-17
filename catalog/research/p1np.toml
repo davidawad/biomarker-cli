@@ -1,0 +1,151 @@
+slug = "p1np"
+name = "Procollagen Type 1 N-Terminal Propeptide"
+category = "bone"
+unit = "ng/mL"
+description = "Propeptide released when type I procollagen is cleaved during bone formation. A bone formation marker used with serum CTX to monitor osteoporosis treatment. Results depend strongly on the assay used."
+
+[[range]]
+set = "bone-turnover-premenopausal-europe-2012"
+kind = "reference"
+low = 17.3
+high = 83.4
+unit = "ng/mL"
+when = { sex = "female", menopause = "pre", age_min = 35, age_max = 39, specimen = "serum", method = "immunoassay" }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark)"
+evidence = "reference-interval"
+note = "Central 95% range for total PINP on the Elecsys 2010 system. PINP was not affected by assay choice in this study."
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", locator = "Abstract, Results", quote = "17.3-83.4ng/mL for PINP" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", locator = "Abstract, Methods", quote = "healthy, premenopausal, European Caucasian women aged 35 to 39years" },
+]
+
+[[range]]
+set = "bone-turnover-premenopausal-europe-2012"
+kind = "reference"
+low = 19.5
+high = 75.2
+unit = "ng/mL"
+when = { sex = "female", menopause = "pre", age_min = 35, age_max = 39, specimen = "serum", method = "RIA" }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark)"
+evidence = "reference-interval"
+note = "Central 95% range for PINP on the UniQ PINP RIA. Assay-specific."
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", locator = "Abstract, Results", quote = "19.5-75.2ng/mL for PINP" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", locator = "Abstract, Methods", quote = "healthy, premenopausal, European Caucasian women aged 35 to 39years" },
+]
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 19.3
+high = 76.3
+unit = "ng/mL"
+when = { sex = "female", menopause = "pre", age_min = 30, age_max = 54, specimen = "serum", method = "immunoassay" }
+population = "Healthy premenopausal women aged 30-54 from the Study of Health in Pomerania (SHIP) follow-up"
+evidence = "reference-interval"
+note = "Central 95% range on the IDS-iSYS automated system."
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", locator = "Abstract, Results", quote = "The reference intervals for 30-54year-old premenopausal women were: PINP 19.3-76.3ng/mL, BAP 6.0-22.7ng/mL, and CTX 0.05-0.67ng/mL." },
+]
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 18.2
+high = 102.3
+unit = "ng/mL"
+when = { sex = "female", menopause = "post", age_min = 50, age_max = 79, specimen = "serum", method = "immunoassay" }
+population = "Healthy postmenopausal women aged 50-79 from the Study of Health in Pomerania (SHIP) follow-up"
+evidence = "reference-interval"
+note = "Central 95% range on the IDS-iSYS automated system."
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", locator = "Abstract, Results", quote = "The reference intervals for 50-79year-old postmenopausal women were: PINP 18.2-102.3ng/mL, BAP 8.1-31.6ng/mL, and CTX 0.09-1.05ng/mL." },
+]
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 31.1
+high = 95.9
+unit = "ng/mL"
+when = { sex = "male", age_min = 25, age_max = 29, specimen = "serum", method = "immunoassay" }
+population = "Healthy men aged 25-29 from the Study of Health in Pomerania (SHIP) follow-up"
+evidence = "reference-interval"
+note = "Central 95% range on the IDS-iSYS automated system. Male PINP decreases with age."
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", locator = "Abstract, Results", quote = "25-29year-old men: PINP 31.1-95.9ng/mL, CTX 0.12-0.83ng/mL" },
+]
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 15.7
+high = 68.1
+unit = "ng/mL"
+when = { sex = "male", age_min = 75, age_max = 79, specimen = "serum", method = "immunoassay" }
+population = "Healthy men aged 75-79 from the Study of Health in Pomerania (SHIP) follow-up"
+evidence = "reference-interval"
+note = "Central 95% range on the IDS-iSYS automated system."
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", locator = "Abstract, Results", quote = "75-79year-old men: PINP 15.7-68.1ng/mL, CTX 0.05-0.58ng/mL" },
+]
+
+[[range]]
+set = "malaysia-2023"
+kind = "reference"
+low = 23.7
+high = 83.9
+unit = "µg/L"
+when = { sex = "male", age_min = 45, age_max = 90, fasting = true, time_of_day = "morning", specimen = "serum", method = "immunoassay", ethnicity = "Malay, Chinese, Indian" }
+population = "Healthy multi-ethnic Malaysian men aged 45-90 years from Selangor"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for serum P1NP (Roche e411); samples collected 8-9 a.m. after fasting. Excluded people with bone disease or renal impairment."
+citations = [
+  { pmid = "38155380", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", locator = "Abstract, Results", quote = "The serum P1NP reference intervals in men were 23.7 (19.1-26.4) - 83.9 (74.0-105.0) µg/L" },
+  { pmid = "38155380", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", locator = "Abstract, Methods", quote = "Ethnic Malay, Chinese or Indian subjects aged 45-90 years old were recruited" },
+]
+
+[[range]]
+set = "malaysia-2023"
+kind = "reference"
+low = 25.9
+high = 142.1
+unit = "µg/L"
+when = { sex = "female", menopause = "post", age_min = 45, age_max = 90, fasting = true, time_of_day = "morning", specimen = "serum", method = "immunoassay", ethnicity = "Malay, Chinese, Indian" }
+population = "Healthy multi-ethnic Malaysian postmenopausal women aged 45-90 years from Selangor"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for serum P1NP (Roche e411); samples collected 8-9 a.m. after fasting."
+citations = [
+  { pmid = "38155380", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", locator = "Abstract, Results", quote = "and in post-menopausal women, 25.9 (19.5-29.3) - 142.1 (104.7-229.7) µg/L" },
+  { pmid = "38155380", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", locator = "Abstract, Methods", quote = "Ethnic Malay, Chinese or Indian subjects aged 45-90 years old were recruited" },
+]
+
+[[range]]
+set = "southeast-asia-2024"
+kind = "reference"
+low = 22.8
+high = 96.5
+unit = "µg/L"
+when = { sex = "female", menopause = "pre", age_min = 20, age_max = 44, specimen = "serum", method = "immunoassay" }
+population = "Healthy premenopausal women aged 20-44 from Malaysia, the Philippines, Singapore, Thailand and Vietnam"
+evidence = "reference-interval"
+note = "Central 95% range on the cobas modular (Roche) immunoassay. Values fall with age and are lower after the 20s (see the 30-44 range)."
+citations = [
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Results", quote = "for P1NP, the range was 22.8 to 96.5 μg/L" },
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Methods", quote = "We established a healthy reference population of 746 healthy premenopausal women aged 20 to 44 years old." },
+]
+
+[[range]]
+set = "southeast-asia-2024"
+kind = "reference"
+low = 21.6
+high = 85.8
+unit = "μg/L"
+when = { sex = "female", menopause = "pre", age_min = 30, age_max = 44, specimen = "serum", method = "immunoassay" }
+population = "Healthy premenopausal women aged 30-44 from five Southeast Asian countries (women in their 20s excluded)"
+evidence = "reference-interval"
+note = "Central 95% range on the cobas modular (Roche) immunoassay, after excluding participants in their 20s."
+citations = [
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Results", quote = "When excluding participants in their 20s, the reference intervals estimated were CTX: 117-678 ng/L, P1NP: 21.6-85.8 μg/L and OC: 3.5-27.0 μg/L respectively." },
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Methods", quote = "We established a healthy reference population of 746 healthy premenopausal women aged 20 to 44 years old." },
+]

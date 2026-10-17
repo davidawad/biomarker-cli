@@ -1,0 +1,97 @@
+slug = "cortisol-salivary-late-night"
+name = "Cortisol, Late-Night Salivary"
+category = "adrenal"
+unit = "ng/dL"
+description = "Cortisol measured in saliva collected at bedtime or late evening. Loss of the normal circadian fall of cortisol makes it a sensitive screening test for Cushing's syndrome. Cut-offs differ widely by assay (immunoassay vs LC-MS/MS), so use the cut-off for your own method."
+
+[[range]]
+set = "lnsc-ecl-immunoassay-2023"
+kind = "diagnostic"
+low = 6.73
+unit = "nmol/L"
+when = { time_of_day = "late-night", specimen = "saliva", method = "electrochemiluminescence immunoassay", age_min = 18, age_max = 60, ethnicity = "south-asian" }
+population = "155 healthy controls aged 18-60 years and 92 adults with endogenous Cushing syndrome (South-Asian population)"
+evidence = "outcome"
+note = "Cut-off for second-generation Elecsys cortisol II immunoassay (sensitivity 97.8%, specificity 94.8%). Samples collected at home."
+citations = [
+  { pmid = "37052382", doi = "10.1111/cen.14920", title = "Late-night salivary cortisol cut-offs for diagnosis of Cushing syndrome using second-generation electrochemiluminescence immunoassay kits.", url = "https://pubmed.ncbi.nlm.nih.gov/37052382/", locator = "Abstract, Conclusions", quote = "Based on this study, we propose a LNSC cutoff ≥6.73 nmol/L to diagnose CS." },
+]
+
+[[range]]
+set = "lnsc-chemiluminescence-2021"
+kind = "diagnostic"
+low = 10.1
+unit = "nmol/L"
+when = { time_of_day = "late-night", specimen = "saliva", method = "chemiluminescence immunoassay" }
+population = "217 patients prospectively evaluated for suspected hypercortisolism (36 with hypercortisolism, 149 negative controls, 32 in remission)"
+evidence = "outcome"
+note = "ROC-derived cut-off for hypercortisolism with an automated chemiluminescence immunoassay (sensitivity 94%, specificity 84%). The source reports slightly lower thresholds for obesity (9.1), hypertension or adrenal tumours (9.8), and pituitary adenomas (9.5)."
+citations = [
+  { pmid = "34607366", doi = "10.1055/a-1608-1720", title = "Distinct Late-Night Salivary Cortisol Cut-Off Values for the Diagnosis of Hypercortisolism.", url = "https://pubmed.ncbi.nlm.nih.gov/34607366/", locator = "Abstract, Results", quote = "The calculated cut-off value for the diagnosis of hypercortisolism was 10.1 nmol/l (sensitivity 94%; specificity 84%)." },
+]
+
+[[range]]
+set = "neoplastic-lnsc-2025"
+kind = "diagnostic"
+low = 2.25
+unit = "nmol/L"
+when = { time_of_day = "late-night", specimen = "saliva", method = "lc-ms/ms", conditions = ["neoplastic-hypercortisolism"] }
+population = "25 subjects with neoplastic hypercortisolism and 430 subjects without (Amsterdam UMC, 2015-2022)"
+evidence = "outcome"
+note = "Cut-off for neoplastic hypercortisolism (sensitivity 92%, specificity 89%). The source recommends salivary cortisone (cut-off 15.5 nmol/L) as the preferred measurement."
+citations = [
+  { pmid = "40250820", doi = "10.1016/j.cca.2025.120310", title = "Neoplastic hypercortisolism: Cut-off values for late-night salivary cortisol & cortisone.", url = "https://pubmed.ncbi.nlm.nih.gov/40250820/", locator = "Abstract, Results", quote = "Optimal diagnostic accuracy was established at 2.25 nmol/L for CortisolLNSa" },
+]
+
+[[range]]
+set = "bedtime-saliva-children-2021"
+kind = "diagnostic"
+low = 2.4
+unit = "nmol/L"
+when = { time_of_day = "late-night", specimen = "saliva", method = "lc-ms/ms", age_min = 4, age_max = 16 }
+population = "320 healthy children aged 4-16 years (cut-off from the 97.5th percentile), validated in 54 children from an obesity clinic and 3 with pituitary Cushing syndrome"
+evidence = "reference-interval"
+note = "Bedtime sample. Derived as 97.5th percentile in healthy children; age and sex-specific cut-offs were not needed in this study. Paediatric screening, single-centre."
+citations = [
+  { pmid = "33928203", doi = "10.1210/jendso/bvab033", title = "Bedtime Salivary Cortisol as a Screening Test for Cushing Syndrome in Children.", url = "https://pubmed.ncbi.nlm.nih.gov/33928203/", locator = "Abstract, Results", quote = "Bedtime cutoff levels for cortisol and cortisone were 2.4 and 12.0 nmol/L, respectively." },
+]
+
+[[range]]
+set = "salivary-lcms-2020"
+kind = "reference"
+low = 0.17
+high = 0.97
+unit = "µg/L"
+when = { time_of_day = "late-night", specimen = "saliva", method = "lc-ms/ms" }
+population = "100 healthy volunteers"
+evidence = "reference-interval"
+note = "Reference interval for late-night salivary cortisol by LC-MS/MS in healthy volunteers. Converted values are not provided; the source unit is µg/L."
+citations = [
+  { pmid = "32772255", title = "Reference ranges of late-night salivary cortisol and cortisone measured by LC-MS/MS and accuracy for the diagnosis of Cushing's syndrome.", url = "https://pubmed.ncbi.nlm.nih.gov/32772255/", locator = "Abstract, Results", quote = "Reference intervals of salivary cortisol (0.17-0.97 µg/L), cortisone (0.84-4.85 µg/L) and ratio (0.08-0.30) were obtained." },
+]
+
+[[range]]
+set = "salivary-lcms-2020"
+kind = "diagnostic"
+low = 1.15
+unit = "µg/L"
+when = { time_of_day = "late-night", specimen = "saliva", method = "lc-ms/ms", conditions = ["suspected-hypercortisolism"] }
+population = "50 consecutive patients with suspected hypercortisolism"
+evidence = "outcome"
+note = "Most accurate cut-off for hypercortisolism in patients with suspected hypercortisolism (AUC 1). Small study."
+citations = [
+  { pmid = "32772255", title = "Reference ranges of late-night salivary cortisol and cortisone measured by LC-MS/MS and accuracy for the diagnosis of Cushing's syndrome.", url = "https://pubmed.ncbi.nlm.nih.gov/32772255/", locator = "Abstract, Results", quote = "The most accurate thresholds of salivary cortisol for the diagnosis of hypercortisolism were 1.15 µg/L in the population with suspected hypercortisolism (AUC 1) and 1.30 µg/L in the population including also healthy individuals (AUC 1)." },
+]
+
+[[range]]
+set = "salivary-lcms-2020"
+kind = "diagnostic"
+low = 1.30
+unit = "µg/L"
+when = { time_of_day = "late-night", specimen = "saliva", method = "lc-ms/ms" }
+population = "100 healthy volunteers and 50 consecutive patients with suspected hypercortisolism (combined population)"
+evidence = "outcome"
+note = "Most accurate cut-off when healthy individuals are included (AUC 1). Small study."
+citations = [
+  { pmid = "32772255", title = "Reference ranges of late-night salivary cortisol and cortisone measured by LC-MS/MS and accuracy for the diagnosis of Cushing's syndrome.", url = "https://pubmed.ncbi.nlm.nih.gov/32772255/", locator = "Abstract, Results", quote = "The most accurate thresholds of salivary cortisol for the diagnosis of hypercortisolism were 1.15 µg/L in the population with suspected hypercortisolism (AUC 1) and 1.30 µg/L in the population including also healthy individuals (AUC 1)." },
+]

@@ -1,0 +1,101 @@
+slug = "thyroglobulin"
+name = "Thyroglobulin"
+category = "thyroid"
+unit = "ng/mL"
+description = "Protein made only by thyroid follicular cells; a tumour marker after thyroid cancer treatment. Healthy values depend on the assay, and post-thyroidectomy thresholds depend on whether radioiodine ablation was given and whether TSH was suppressed or stimulated."
+
+[[range]]
+set = "liaison-tg-healthy-cohort-2021"
+kind = "reference"
+high = 37.93
+when = { sex = "female" }
+population = "Healthy adults without thyroid abnormalities (cohort A, 99 women, nuclear medicine practice, Germany)"
+evidence = "reference-interval"
+note = "Upper reference limit (CLSI C28-A3c) for the LIAISON Tg II Gen immunoassay; assay dependent, not transferable to other platforms."
+citations = [
+  { pmid = "34386567", doi = "10.1016/j.plabm.2021.e00250", title = "Evaluation of a new automated assay for high-sensitivity thyroglobulin measurement and comparison with two established high-sensitivity thyroglobulin assays.", url = "https://pubmed.ncbi.nlm.nih.gov/34386567/", locator = "Results", quote = "Reference intervals of healthy subjects (cohort A) were calculated up to 37.93 ng/ml (90% confidence interval (CI) for the upper value: 36.44–39.67 ng/ml) for women and up to 24.59 ng/ml (23.07–26.10 ng/ml) for men with the LIAISON® Tg II Gen assay." },
+]
+
+[[range]]
+set = "liaison-tg-healthy-cohort-2021"
+kind = "reference"
+high = 24.59
+when = { sex = "male" }
+population = "Healthy adults without thyroid abnormalities (cohort A, 67 men, nuclear medicine practice, Germany)"
+evidence = "reference-interval"
+note = "Upper reference limit (CLSI C28-A3c) for the LIAISON Tg II Gen immunoassay; assay dependent."
+citations = [
+  { pmid = "34386567", doi = "10.1016/j.plabm.2021.e00250", title = "Evaluation of a new automated assay for high-sensitivity thyroglobulin measurement and comparison with two established high-sensitivity thyroglobulin assays.", url = "https://pubmed.ncbi.nlm.nih.gov/34386567/", locator = "Results", quote = "Reference intervals of healthy subjects (cohort A) were calculated up to 37.93 ng/ml (90% confidence interval (CI) for the upper value: 36.44–39.67 ng/ml) for women and up to 24.59 ng/ml (23.07–26.10 ng/ml) for men with the LIAISON® Tg II Gen assay." },
+]
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "diagnostic"
+high = 0.2
+when = { test = "TSH-unstimulated serum Tg", conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy"
+evidence = "guideline"
+note = "Excellent response threshold (unstimulated, on TSH suppression) as stated by the Korean Thyroid Association 2026 guideline; requires negative TgAb and no structural disease."
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", locator = "Table II.1 / Recommendations", quote = "In patients who underwent total thyroidectomy and RAI therapy, excellent response is defined as the absence of structural or functional evidence of disease, together with a TSH-unstimulated serum Tg <0.2 ng/mL or TSH-stimulated serum Tg <1.0 ng/mL, and negative serum TgAb" },
+]
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "diagnostic"
+high = 1.0
+when = { test = "TSH-stimulated serum Tg", conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy"
+evidence = "guideline"
+note = "Excellent response threshold for TSH-stimulated Tg as stated by the Korean Thyroid Association 2026 guideline."
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", locator = "Table II.1 / Recommendations", quote = "In patients who underwent total thyroidectomy and RAI therapy, excellent response is defined as the absence of structural or functional evidence of disease, together with a TSH-unstimulated serum Tg <0.2 ng/mL or TSH-stimulated serum Tg <1.0 ng/mL, and negative serum TgAb" },
+]
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "diagnostic"
+high = 0.2
+when = { test = "TSH-unstimulated serum Tg", conditions = ["total-thyroidectomy-without-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy without RAI therapy"
+evidence = "guideline"
+note = "Excellent response threshold after total thyroidectomy without RAI as stated by the Korean Thyroid Association 2026 guideline; the 2025 ATA guideline uses 2.5 ng/mL in this setting."
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", locator = "Recommendations", quote = "In this guideline, excellent response after total thyroidectomy without RAI therapy is defined as unstimulated serum Tg <0.2 ng/mL and negative serum TgAb" },
+]
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "diagnostic"
+low = 5.0
+when = { test = "TSH-unstimulated serum Tg", conditions = ["total-thyroidectomy-without-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy without RAI therapy"
+evidence = "guideline"
+note = "Biochemical incomplete response threshold in this setting as stated by the Korean Thyroid Association 2026 guideline (consistent with the 2024 KTA guideline per the text)."
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", locator = "Recommendations", quote = "Given the limited clinical evidence, this guideline maintains the TSH-unstimulated serum Tg criterion of ≥5.0 ng/mL for biochemical incomplete response in patients who did not receive RAI therapy after total thyroidectomy, consistent with the 2024 KTA guideline" },
+]
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "diagnostic"
+low = 1.0
+when = { test = "TSH-unstimulated serum Tg", conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy"
+evidence = "guideline"
+note = "Biochemical incomplete response threshold (unstimulated) as stated by the Korean Thyroid Association 2026 guideline, citing an ATA-derived criterion."
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", locator = "Recommendations", quote = "Biochemical incomplete response is defined as a TSH-unstimulated serum Tg ≥1.0 ng/mL or a TSH-stimulated serum Tg ≥10.0 ng/mL [1]." },
+]
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "diagnostic"
+low = 10.0
+when = { test = "TSH-stimulated serum Tg", conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy"
+evidence = "guideline"
+note = "Biochemical incomplete response threshold (TSH-stimulated) as stated by the Korean Thyroid Association 2026 guideline."
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", locator = "Recommendations", quote = "Biochemical incomplete response is defined as a TSH-unstimulated serum Tg ≥1.0 ng/mL or a TSH-stimulated serum Tg ≥10.0 ng/mL [1]." },
+]

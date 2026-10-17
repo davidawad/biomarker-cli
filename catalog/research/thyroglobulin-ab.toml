@@ -1,0 +1,41 @@
+slug = "thyroglobulin-ab"
+name = "Thyroglobulin Antibodies"
+category = "thyroid"
+unit = "IU/mL"
+description = "Autoantibodies against thyroglobulin. In differentiated thyroid cancer follow-up they can interfere with serum thyroglobulin immunoassays, so they are measured alongside Tg."
+
+[[range]]
+set = "tgab-cutoffs-dtc-review-2026"
+kind = "diagnostic"
+low = 4.11
+when = { }
+population = "Patients with differentiated thyroid cancer (review of TgAb measurement and interpretation)"
+evidence = "review"
+note = "Manufacturer cut-off (MCO) for TgAb positivity as quoted in the review; assay dependent."
+citations = [
+  { pmid = "42047636", doi = "10.1530/JME-25-0217", title = "Thyroglobulin and thyroglobulin antibodies in differentiated thyroid cancer: interpretation, challenges, and future perspectives.", url = "https://pubmed.ncbi.nlm.nih.gov/42047636/", locator = "Results", quote = "Using the MCO (≥4.11 IU/mL) or an institutional cut-off (ICO, ≥10 IU/mL) identified 24 and 15% of patients as TgAb-positive, respectively." },
+]
+
+[[range]]
+set = "tgab-cutoffs-dtc-review-2026"
+kind = "diagnostic"
+low = 10
+when = { }
+population = "Patients with differentiated thyroid cancer (review of TgAb measurement and interpretation)"
+evidence = "review"
+note = "Institutional cut-off (ICO) for TgAb positivity, based on NACB guidance as cited; higher-titre TgAb interferes with immunoassay Tg. Assay dependent."
+citations = [
+  { pmid = "42047636", doi = "10.1530/JME-25-0217", title = "Thyroglobulin and thyroglobulin antibodies in differentiated thyroid cancer: interpretation, challenges, and future perspectives.", url = "https://pubmed.ncbi.nlm.nih.gov/42047636/", locator = "Results", quote = "Using the MCO (≥4.11 IU/mL) or an institutional cut-off (ICO, ≥10 IU/mL) identified 24 and 15% of patients as TgAb-positive, respectively." },
+]
+
+[[range]]
+set = "ptc-lymph-node-cohort-2026"
+kind = "diagnostic"
+high = 115
+when = { conditions = ["papillary-thyroid-carcinoma"] }
+population = "Patients with persistent or recurrent papillary thyroid carcinoma in cervical lymph nodes (retrospective cohort)"
+evidence = "outcome"
+note = "Study-defined TgAb-negative range (<=115 IU/mL); used to stratify false-negative serum Tg, not a general reference limit."
+citations = [
+  { pmid = "42388622", doi = "10.3389/fonc.2026.1869134", title = "Predictors of false-negative serum thyroglobulin in persistent/recurrent Papillary Thyroid Carcinoma cervical lymph nodes.", url = "https://pubmed.ncbi.nlm.nih.gov/42388622/", locator = "Results", quote = "In Tg-Ab negative patients (≤115 IU/mL, n=158), higher Tg-Ab remained associated with false-negative Tg (p < 0.001)." },
+]

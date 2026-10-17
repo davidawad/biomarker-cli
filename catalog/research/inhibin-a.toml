@@ -1,0 +1,18 @@
+slug = "inhibin-a"
+name = "Inhibin A, Maternal Serum"
+category = "pregnancy"
+unit = "MoM"
+description = "Placental and ovarian peptide measured in maternal serum in the second trimester, expressed as a multiple of the median (MoM). It is part of the quadruple Down syndrome screen. Raised values are associated with pre-eclampsia and with small-for-gestational-age infants."
+
+[[range]]
+set = "inhibin-a-second-trimester-preeclampsia-1999"
+kind = "diagnostic"
+low = 2.0
+when = { pregnancy = true, trimester = 2 }
+population = "Second-trimester maternal serum inhibin A in a pregnancy cohort, with pre-eclampsia and small-for-gestational-age infants as outcomes"
+evidence = "outcome"
+note = "Women above 2.0 MoM were significantly more likely to develop pre-eclampsia and to deliver a small-for-gestational-age infant. The 1999 study is older; the 2020 cut-off below uses the same threshold."
+citations = [
+  { pmid = "10411808", doi = "10.1016/s0002-9378(99)70448-5", title = "Second-trimester maternal serum inhibin A concentration as an early marker for preeclampsia.", url = "https://pubmed.ncbi.nlm.nih.gov/10411808/", locator = "Abstract, Results", quote = "Women with inhibin A concentration >2.0 multiples of the median were significantly more likely to acquire preeclampsia" },
+  { pmid = "33059628", doi = "10.1186/s12884-020-03298-9", title = "Quad test for fetal aneuploidy screening as a predictor of small-for-gestational-age fetuses: a population-based study.", url = "https://pubmed.ncbi.nlm.nih.gov/33059628/", locator = "Methods", quote = "Abnormal levels of the biomarkers were defined as the levels of greater than 2 MoM for AFP, b-hCG and IHA and less than 0.5 MoM for uE3" },
+]

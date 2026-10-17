@@ -1,0 +1,42 @@
+slug = "plgf"
+name = "Placental Growth Factor"
+category = "pregnancy"
+unit = "pg/mL"
+description = "Angiogenic protein produced by the placenta. Low circulating PlGF in suspected pre-eclampsia reflects placental dysfunction and is used to rule pre-eclampsia in or out, in addition to blood pressure and proteinuria."
+
+[[range]]
+set = "mapple-2018"
+kind = "critical"
+high = 12
+when = { pregnancy = true, conditions = ["suspected-preeclampsia"] }
+population = "Women with suspected pre-eclampsia or fetal growth restriction (MAPPLE cohort)"
+evidence = "outcome"
+note = "Very low PlGF category (below 12 pg/mL). Assay-dependent; values are not directly comparable across PlGF platforms."
+citations = [
+  { pmid = "29627351", doi = "10.1016/j.preghy.2018.03.013", title = "Placental Growth Factor informed management of suspected pre-eclampsia or fetal growth restriction: The MAPPLE cohort study.", url = "https://pubmed.ncbi.nlm.nih.gov/29627351/", locator = "Results", quote = "i) very low (<12 pg/ml), ii) low (12-100 pg/ml), iii) normal (>100 pg/ml)" },
+]
+
+[[range]]
+set = "mapple-2018"
+kind = "warn"
+low = 12
+high = 100
+when = { pregnancy = true, conditions = ["suspected-preeclampsia"] }
+population = "Women with suspected pre-eclampsia or fetal growth restriction (MAPPLE cohort)"
+evidence = "outcome"
+note = "Low PlGF category (12 to 100 pg/mL), a borderline zone between the very low and normal categories. Assay-dependent."
+citations = [
+  { pmid = "29627351", doi = "10.1016/j.preghy.2018.03.013", title = "Placental Growth Factor informed management of suspected pre-eclampsia or fetal growth restriction: The MAPPLE cohort study.", url = "https://pubmed.ncbi.nlm.nih.gov/29627351/", locator = "Results", quote = "i) very low (<12 pg/ml), ii) low (12-100 pg/ml), iii) normal (>100 pg/ml)" },
+]
+
+[[range]]
+set = "pelican-stepped-wedge-2019"
+kind = "diagnostic"
+high = 100
+when = { pregnancy = true, gestational_week_min = 20, gestational_week_max = 34, conditions = ["suspected-preeclampsia"] }
+population = "Women presenting with suspected pre-eclampsia before 35 weeks of gestation, concealed-PlGF arm of a stepped-wedge cluster RCT"
+evidence = "outcome"
+note = "Low PlGF (below 100 pg/mL) predicts pre-eclampsia requiring delivery within 14 days: high sensitivity and negative predictive value, lower specificity. Decision cut-off, assay-dependent."
+citations = [
+  { pmid = "30948284", doi = "10.1016/S0140-6736(18)33212-4", title = "Placental growth factor testing to assess women with suspected pre-eclampsia: a multicentre, pragmatic, stepped-wedge cluster-randomised controlled trial.", url = "https://pubmed.ncbi.nlm.nih.gov/30948284/", locator = "Findings", quote = "In the concealed testing group, low PlGF (<100 pg/mL) concentrations had a high accuracy in determining pre-eclampsia that required delivery within 14 days; this test had high sensitivity (94·9%) and negative predictive values (98·3%) in women presenting before 35 weeks of gestation" },
+]

@@ -1,0 +1,44 @@
+slug = "sweat-chloride"
+name = "Sweat Chloride"
+category = "pediatric"
+unit = "mmol/L"
+description = "Chloride concentration measured in sweat collected by pilocarpine iontophoresis; the reference test for CFTR dysfunction and the main laboratory step in diagnosing cystic fibrosis. Values are interpreted against consensus decision limits, not a population reference interval."
+
+[[range]]
+set = "chinese-cf-consensus-2023"
+kind = "reference"
+high = 30
+when = { specimen = "sweat" }
+population = "Patients with suspected cystic fibrosis in China, all ages"
+evidence = "consensus"
+note = "Below 30 mmol/L is considered normal and does not support a CF diagnosis on its own. The 2023 Chinese consensus uses the same 30 and 60 mmol/L limits as the Australasian 2025 guideline."
+citations = [
+  { pmid = "36990700", doi = "10.3760/cma.j.cn112147-20221214-00971", title = "[Chinese experts consensus statement: diagnosis and treatment of cystic fibrosis (2023)].", url = "https://pubmed.ncbi.nlm.nih.gov/36990700/", locator = "Question 2, 1.2 Sweat chloride testing", quote = "concentrations less than 30 mmol/L are considered normal" },
+]
+
+[[range]]
+set = "australasian-sweat-chloride-2025"
+kind = "warn"
+low = 30
+high = 59
+when = { specimen = "sweat" }
+population = "People with suspected cystic fibrosis, all age groups"
+evidence = "guideline"
+note = "Intermediate zone: a result of 30-59 mmol/L requires review by a CF physician and genetic testing to confirm or exclude CF. The guideline states the same limits apply to all ages."
+citations = [
+  { pmid = "40476459", doi = "10.1515/cclm-2025-0433", title = "Australasian guideline for the performance of sweat chloride testing 3rd edition: to support cystic fibrosis screening, diagnosis and monitoring.", url = "https://pubmed.ncbi.nlm.nih.gov/40476459/", locator = "Abstract", quote = "with values between 30 and 59 mmol/L, as the intermediate result for all ages" },
+  { pmid = "36990700", doi = "10.3760/cma.j.cn112147-20221214-00971", title = "[Chinese experts consensus statement: diagnosis and treatment of cystic fibrosis (2023)].", url = "https://pubmed.ncbi.nlm.nih.gov/36990700/", locator = "Question 2, 1.2 Sweat chloride testing", quote = "concentrations between 30-59 mmol/L are intermediate, and genetic variation must be considered to confirm the diagnosis" },
+]
+
+[[range]]
+set = "chinese-cf-consensus-2023"
+kind = "diagnostic"
+low = 60
+when = { specimen = "sweat" }
+population = "Patients with suspected cystic fibrosis, all ages"
+evidence = "consensus"
+note = "Above 60 mmol/L is diagnostic of CF when clinical features are present (Chinese consensus wording: more than 60). The Australasian 2025 guideline describes >=60 mmol/L as supportive of a CF diagnosis. Prefer the CF Foundation 2017 consensus (Farrell et al.) for the US standard, which was not retrievable through the available tools."
+citations = [
+  { pmid = "36990700", doi = "10.3760/cma.j.cn112147-20221214-00971", title = "[Chinese experts consensus statement: diagnosis and treatment of cystic fibrosis (2023)].", url = "https://pubmed.ncbi.nlm.nih.gov/36990700/", locator = "Question 2, 1.2 Sweat chloride testing", quote = "Concentrations of more than 60 mmol/L are diagnostic" },
+  { pmid = "40476459", doi = "10.1515/cclm-2025-0433", title = "Australasian guideline for the performance of sweat chloride testing 3rd edition: to support cystic fibrosis screening, diagnosis and monitoring.", url = "https://pubmed.ncbi.nlm.nih.gov/40476459/", locator = "Abstract", quote = "Sweat chloride concentrations of ≥60 mmol/L are supportive of a diagnosis of CF." },
+]

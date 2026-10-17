@@ -1,0 +1,43 @@
+slug = "renin-direct"
+name = "Direct Renin Concentration"
+category = "adrenal"
+unit = "mIU/L"
+description = "Concentration of active renin in plasma measured directly by immunoassay, without the generation step used for plasma renin activity. Used with aldosterone to calculate the aldosterone-to-renin ratio when PRA is unavailable, and to judge renin suppression in primary aldosteronism."
+
+[[range]]
+set = "han-chinese-clia-2018"
+kind = "reference"
+low = 3.3
+high = 92.7
+when = { sex = "male", ethnicity = "han-chinese", method = "chemiluminescence immunoassay" }
+population = "Healthy Han Chinese adults (328 individuals) used for reference intervals"
+evidence = "reference-interval"
+note = "Central 95% reference interval for direct renin concentration (PRC) in males on a fully automated DiaSorin CLIA. Posture and age bands are not stated in the abstract."
+citations = [
+  { pmid = "29684370", doi = "10.1016/j.clinbiochem.2018.04.016", title = "Analytical validation and investigation on reference intervals of aldosterone and renin in Chinese Han population by using fully automated chemiluminescence immunoassays.", url = "https://pubmed.ncbi.nlm.nih.gov/29684370/", locator = "Abstract, Results", quote = "The central 95% reference intervals for males: PAC: 76-722 pmol/L, PRC: 3.3-92.7 mIU/L, ARR: 2.2-46.0 pmol/mIU; for females: PAC: 85-1010 pmol/L, PRC: 3.7-99.8 mIU/L, ARR: 3.6-68.4 pmol/mIU." },
+]
+
+[[range]]
+set = "han-chinese-clia-2018"
+kind = "reference"
+low = 3.7
+high = 99.8
+when = { sex = "female", ethnicity = "han-chinese", method = "chemiluminescence immunoassay" }
+population = "Healthy Han Chinese adults (328 individuals) used for reference intervals"
+evidence = "reference-interval"
+note = "Central 95% reference interval for direct renin concentration (PRC) in females on a fully automated DiaSorin CLIA. Posture and age bands are not stated in the abstract."
+citations = [
+  { pmid = "29684370", doi = "10.1016/j.clinbiochem.2018.04.016", title = "Analytical validation and investigation on reference intervals of aldosterone and renin in Chinese Han population by using fully automated chemiluminescence immunoassays.", url = "https://pubmed.ncbi.nlm.nih.gov/29684370/", locator = "Abstract, Results", quote = "The central 95% reference intervals for males: PAC: 76-722 pmol/L, PRC: 3.3-92.7 mIU/L, ARR: 2.2-46.0 pmol/mIU; for females: PAC: 85-1010 pmol/L, PRC: 3.7-99.8 mIU/L, ARR: 3.6-68.4 pmol/mIU." },
+]
+
+[[range]]
+set = "china-multicenter-pa-2026"
+kind = "diagnostic"
+high = 15
+when = { method = "immunoassay", test = "seated saline infusion test" }
+population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension)"
+evidence = "outcome"
+note = "Upright renin concentration below 15 mU/L used as a suppression criterion alongside a post-seated-saline PAC of at least 8.5 ng/dL (CLIA). This is the study's own PA definition, not a guideline value."
+citations = [
+  { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", locator = "Abstract, Methods", quote = "PA diagnosis was defined as a CLIA-based post-SIT PAC ≥8.5 ng/dl (235.8 pmol/L) combined with an upright plasma renin concentration of <15 mU/L." },
+]
