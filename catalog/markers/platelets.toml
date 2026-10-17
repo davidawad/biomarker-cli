@@ -1,0 +1,13 @@
+slug = "platelets"
+name = "Platelets"
+category = "cbc"
+unit = "10^3/µL"
+loinc = "777-3"
+aliases = ["plt", "platelet count"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 150.0
+high = 450.0
+legacy = true

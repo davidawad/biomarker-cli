@@ -1,0 +1,18 @@
+slug = "igf-1"
+name = "Insulin-like Growth Factor 1"
+category = "hormone"
+unit = "ng/mL"
+loinc = "2484-4"
+aliases = ["igf1", "igf-i", "somatomedin c"]
+no_reference = "legacy catalog entry without a reference range; needs research"
+
+[[conversion]]
+from = "nmol/L"
+factor = 7.649
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+low = 75.0
+high = 150.0
+legacy = true

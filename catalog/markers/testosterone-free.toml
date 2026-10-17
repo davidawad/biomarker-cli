@@ -1,0 +1,26 @@
+slug = "testosterone-free"
+name = "Testosterone, Free"
+category = "hormone"
+unit = "pg/mL"
+loinc = "2991-8"
+aliases = ["free testosterone", "ft"]
+
+[[conversion]]
+from = "pmol/L"
+factor = 0.2884
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 46.0
+high = 224.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 4.2
+when = { sex = "female" }
+legacy = true

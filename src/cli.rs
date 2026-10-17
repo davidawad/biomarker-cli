@@ -7,6 +7,7 @@ use clap::{Args, Parser, Subcommand, ValueEnum};
 use crate::output::Format;
 
 pub use crate::cli_admin::{AuditCmd, ConfigCmd, DbCmd, KeyCmd};
+pub use crate::cli_catalog::CatalogCmd;
 pub use crate::cli_interventions::{InteractionCmd, InterventionCmd, RegimenCmd};
 
 #[derive(Debug, Parser)]
@@ -106,6 +107,9 @@ pub enum Command {
     /// Units and conversions
     #[command(subcommand)]
     Unit(UnitCmd),
+    /// The built-in marker catalog: lint, generated docs, file schema
+    #[command(subcommand)]
+    Catalog(CatalogCmd),
     /// Unit presets, range sets and per-person profile files
     #[command(subcommand)]
     Profile(ProfileCmd),
@@ -216,6 +220,11 @@ pub struct PersonAddArgs {
     /// Tag (repeatable or comma-separated)
     #[arg(long = "tag", value_delimiter = ',')]
     pub tags: Vec<String>,
+    /// Attribute for conditional ranges, KEY=VALUE (repeatable): pregnant=true|false,
+    /// trimester=1-3, menopause=pre|peri|post, cycle_phase=menstrual|follicular|ovulatory|luteal,
+    /// conditions=slug,slug (see `catalog conditions`)
+    #[arg(long = "attr", value_name = "KEY=VALUE")]
+    pub attrs: Vec<String>,
 }
 
 #[derive(Debug, Args)]
@@ -236,6 +245,9 @@ pub struct PersonEditArgs {
     pub add_tags: Vec<String>,
     #[arg(long = "rm-tag", value_delimiter = ',')]
     pub rm_tags: Vec<String>,
+    /// Set an attribute, KEY=VALUE (repeatable; an empty VALUE clears it). See `person add --help`
+    #[arg(long = "attr", value_name = "KEY=VALUE")]
+    pub attrs: Vec<String>,
 }
 
 #[derive(Debug, Subcommand)]
@@ -325,6 +337,8 @@ pub enum KindArg {
     /// Near-limit bounds: with the reference limits they delimit the
     /// near-low / near-high zones of a row's `status`
     Warn,
+    /// Critical bounds: beyond them a result's level is critical
+    Critical,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
@@ -348,6 +362,12 @@ pub enum RangeCmd {
         /// Only ranges for this person (their own ranges plus the catalog's)
         #[arg(short, long)]
         person: Option<String>,
+        /// Catalog ranges of this set (default: the active `range_sets`)
+        #[arg(long, conflicts_with = "all_sets")]
+        set: Option<String>,
+        /// Catalog ranges of every set
+        #[arg(long)]
+        all_sets: bool,
     },
     /// Remove a range by id
     Rm {

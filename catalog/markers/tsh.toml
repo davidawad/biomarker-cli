@@ -1,0 +1,27 @@
+slug = "tsh"
+name = "Thyroid Stimulating Hormone"
+category = "thyroid"
+unit = "mIU/L"
+loinc = "3016-3"
+aliases = ["thyrotropin"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.45
+high = 4.5
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 0.5
+high = 2.5
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+low = 1.0
+high = 2.1
+legacy = true

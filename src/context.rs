@@ -254,6 +254,7 @@ impl Ctx {
         let forced = |k: &str| matches!(self.resolved.source(k), config::Source::Env | config::Source::Flag);
         crate::profiles::LoadOpts {
             range_set: self.resolved.get("range_set").to_string(),
+            range_sets: self.resolved.get("range_sets").to_string(),
             force_units: forced("unit_system"),
             force_flavor: forced("range_flavor"),
             borderline_margin: self.resolved.get("borderline_margin").parse().unwrap_or(0.0),

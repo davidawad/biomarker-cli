@@ -1,0 +1,13 @@
+slug = "co2"
+name = "Carbon Dioxide (Bicarbonate)"
+category = "cmp"
+unit = "mmol/L"
+loinc = "2028-9"
+aliases = ["bicarbonate", "hco3", "carbon dioxide, total"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 20.0
+high = 29.0
+legacy = true

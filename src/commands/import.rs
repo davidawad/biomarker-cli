@@ -655,6 +655,7 @@ impl Resolver<'_> {
                         notes: None,
                         tags: vec![],
                         created_at: now_iso(),
+                        attributes: Default::default(),
                     },
                 )?;
                 self.people_created.push(p.slug.clone());
@@ -1141,6 +1142,7 @@ fn set_sheet_ranges(
             person_id: Some(pid),
             critical_low: None,
             critical_high: None,
+            ..Range::default()
         };
         store::upsert_person_range(db, pid, &range)?;
         summary.ranges_set.push(json!({"marker": m.slug, "person": slug, "low": low, "high": high, "unit": m.unit}));

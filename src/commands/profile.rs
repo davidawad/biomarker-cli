@@ -8,7 +8,7 @@ use crate::profiles;
 use crate::ranges::RangeKind;
 use crate::store;
 use crate::util::{age_years, date_of};
-use crate::view::pick_range;
+use crate::view::{pick_range, Subject};
 
 pub fn run(ctx: &Ctx, cmd: ProfileCmd) -> Result<()> {
     match cmd {
@@ -59,7 +59,16 @@ fn show(ctx: &Ctx, person: &str, marker: Option<&str>) -> Result<()> {
             let unit = cat.display_unit(m, ctx.unit_system(), Some(&who.slug));
             let (cat, who) = (&cat, &who);
             [RangeKind::Reference, RangeKind::Optimal, RangeKind::Warn].into_iter().filter_map(move |kind| {
-                let (r, source) = pick_range(cat, &who.slug, who.id, m, kind, who.sex.as_deref(), age, None)?;
+                let subject = Subject {
+                    person: &who.slug,
+                    person_id: who.id,
+                    sex: who.sex.as_deref(),
+                    age,
+                    lab: None,
+                    fasting: None,
+                    taken_at: None,
+                };
+                let (r, source) = pick_range(cat, &subject, m, kind)?;
                 let shown = |v: Option<f64>| v.map(|x| cat.conversions.convert(m.id, x, &m.unit, &unit).unwrap_or(x));
                 Some(to_record(&json!({
                     "marker": m.slug,
@@ -68,6 +77,8 @@ fn show(ctx: &Ctx, person: &str, marker: Option<&str>) -> Result<()> {
                     "low": shown(r.low),
                     "high": shown(r.high),
                     "source": source,
+                    "set": r.set,
+                    "conditions": r.cond,
                 })))
             })
         })
@@ -77,6 +88,7 @@ fn show(ctx: &Ctx, person: &str, marker: Option<&str>) -> Result<()> {
             .table_columns(&["marker", "unit", "kind", "low", "high", "source"])
             .meta("person", json!(who.slug))
             .meta("unit_preset", json!(cat.profiles.preset_name(Some(&who.slug), ctx.unit_system())))
-            .meta("range_set", json!(cat.profiles.range_set_for(&who.slug))),
+            .meta("range_set", json!(cat.profiles.range_set_for(&who.slug)))
+            .meta("range_sets", json!(cat.profiles.sets_for(Some(&who.slug), 0))),
     )
 }

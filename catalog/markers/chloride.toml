@@ -1,0 +1,13 @@
+slug = "chloride"
+name = "Chloride"
+category = "cmp"
+unit = "mmol/L"
+loinc = "2075-0"
+aliases = ["cl"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 96.0
+high = 106.0
+legacy = true

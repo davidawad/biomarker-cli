@@ -1,0 +1,14 @@
+slug = "fsh"
+name = "Follicle Stimulating Hormone"
+category = "hormone"
+unit = "mIU/mL"
+loinc = "15067-2"
+aliases = []
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.5
+high = 12.4
+when = { sex = "male" }
+legacy = true

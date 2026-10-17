@@ -1,0 +1,14 @@
+slug = "psa"
+name = "Prostate Specific Antigen"
+category = "hormone"
+unit = "ng/mL"
+loinc = "2857-1"
+aliases = ["psa, total"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 4.0
+when = { sex = "male" }
+legacy = true

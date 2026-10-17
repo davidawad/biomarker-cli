@@ -1,0 +1,13 @@
+slug = "neutrophils-abs"
+name = "Neutrophils (Absolute)"
+category = "cbc"
+unit = "10^3/µL"
+loinc = "751-8"
+aliases = ["neutrophils", "anc"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.4
+high = 7.0
+legacy = true

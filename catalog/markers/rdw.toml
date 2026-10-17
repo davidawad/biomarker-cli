@@ -1,0 +1,13 @@
+slug = "rdw"
+name = "Red Cell Distribution Width"
+category = "cbc"
+unit = "%"
+loinc = "788-0"
+aliases = ["rdw-cv"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.6
+high = 15.4
+legacy = true

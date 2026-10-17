@@ -1,5 +1,6 @@
 use serde_json::json;
 
+use crate::catalog::PersonAttrs;
 use crate::cli::{PersonAddArgs, PersonCmd, PersonEditArgs};
 use crate::context::Ctx;
 use crate::db::{int, RowExt};
@@ -26,6 +27,22 @@ fn norm_dob(ctx: &Ctx, dob: Option<String>) -> Result<Option<String>> {
     dob.map(|d| parse_date(&d, &ctx.tz).map(|d| d.to_string())).transpose()
 }
 
+/// Apply `--attr KEY=VALUE` arguments; condition slugs must be in the catalog.
+fn apply_attrs(mut attrs: PersonAttrs, args: &[String]) -> Result<PersonAttrs> {
+    for a in args {
+        let (k, v) = a.split_once('=').ok_or_else(|| AppError::usage(format!("--attr '{a}': expected KEY=VALUE")))?;
+        attrs.set(k, v)?;
+    }
+    let known = &crate::catalog::builtin()?.conditions;
+    if let Some(c) = attrs.conditions.iter().find(|c| !known.iter().any(|k| &k.slug == *c)) {
+        return Err(AppError::usage(format!(
+            "unknown condition '{c}' (known: {})",
+            known.iter().map(|k| k.slug.as_str()).collect::<Vec<_>>().join(", ")
+        )));
+    }
+    Ok(attrs)
+}
+
 fn add(ctx: &Ctx, a: PersonAddArgs) -> Result<()> {
     let db = ctx.db()?;
     let p = Person {
@@ -37,6 +54,7 @@ fn add(ctx: &Ctx, a: PersonAddArgs) -> Result<()> {
         notes: a.notes,
         tags: merge_tags(&[], &a.tags, &[]),
         created_at: now_iso(),
+        attributes: apply_attrs(PersonAttrs::default(), &a.attrs)?,
     };
     let saved = store::insert_person(&db, &p)?;
     ctx.info(&format!("added person {}", saved.slug));
@@ -76,6 +94,7 @@ fn edit(ctx: &Ctx, a: PersonEditArgs) -> Result<()> {
         dob: norm_dob(ctx, a.dob)?.or(p.dob.clone()),
         notes: a.notes.or(p.notes.clone()),
         tags: merge_tags(&p.tags, &a.add_tags, &a.rm_tags),
+        attributes: apply_attrs(p.attributes.clone(), &a.attrs)?,
         ..p
     };
     let saved = store::update_person(&db, &updated)?;

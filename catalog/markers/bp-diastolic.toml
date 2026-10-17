@@ -1,0 +1,12 @@
+slug = "bp-diastolic"
+name = "Blood Pressure, Diastolic"
+category = "vitals"
+unit = "mmHg"
+loinc = "8462-4"
+aliases = ["diastolic", "diastolic bp", "dbp", "blood pressure diastolic"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 80.0
+legacy = true

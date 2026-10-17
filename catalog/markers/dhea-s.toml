@@ -1,0 +1,17 @@
+slug = "dhea-s"
+name = "DHEA-Sulfate"
+category = "hormone"
+unit = "µg/dL"
+loinc = "2191-5"
+aliases = ["dheas", "dhea sulfate"]
+
+[[conversion]]
+from = "µmol/L"
+factor = 36.81
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 35.0
+high = 430.0
+legacy = true

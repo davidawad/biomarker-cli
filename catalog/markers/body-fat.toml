@@ -1,0 +1,13 @@
+slug = "body-fat"
+name = "Body Fat"
+category = "body"
+unit = "%"
+loinc = "41982-0"
+aliases = ["body fat", "body fat %", "body fat percentage", "bf%"]
+no_reference = "legacy catalog entry without a reference range; needs research"
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+high = 10.0
+legacy = true

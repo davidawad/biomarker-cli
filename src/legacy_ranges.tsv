@@ -1,0 +1,121 @@
+# Range rows v0.7.2 seeded into the `ranges` table (migrations 2, 4 and 5), frozen:
+# migration 7 marks rows still holding these values as built-in, so the catalog
+# files take over from them. Tab separated: slug kind sex low high note.
+albumin	reference	any	3.5	5.5	
+albumin	optimal	any	4.2	5.0	
+alp	reference	any	44.0	121.0	
+alt	reference	any	0.0	44.0	
+alt	optimal	any		25.0	
+apob	reference	any		90.0	
+apob	optimal	any		80.0	
+ast	reference	any	0.0	40.0	
+ast	optimal	any		25.0	
+bilirubin-total	reference	any	0.1	1.2	
+bmi	reference	any	18.5	25.0	
+bp-diastolic	reference	any		80.0	
+bp-systolic	reference	any		120.0	
+bp-systolic	warn	any		129.0	120-129 mmHg: elevated
+bun	reference	any	6.0	24.0	
+calcium	reference	any	8.6	10.2	
+chloride	reference	any	96.0	106.0	
+co2	reference	any	20.0	29.0	
+cortisol	reference	any	6.2	19.4	
+creatinine	reference	male	0.76	1.27	
+creatinine	reference	female	0.57	1.0	
+creatinine	reference	any	0.57	1.27	
+dhea-s	reference	any	35.0	430.0	
+egfr	reference	any	60.0		
+egfr	warn	any	90.0		60-89: mildly decreased
+egfr	optimal	any	90.0		
+estradiol	reference	male	7.6	42.6	
+ferritin	reference	male	30.0	400.0	
+ferritin	reference	female	15.0	150.0	
+ferritin	reference	any	15.0	400.0	
+ferritin	optimal	any	50.0	150.0	
+folate	reference	any	3.0		
+free-t3	reference	any	2.0	4.4	
+free-t4	reference	any	0.82	1.77	
+fsh	reference	male	1.5	12.4	
+ggt	reference	male	0.0	65.0	
+ggt	reference	female	0.0	45.0	
+ggt	reference	any	0.0	65.0	
+ggt	optimal	any		25.0	
+glucose	reference	any	70.0	99.0	
+glucose	warn	any		125.0	fasting 100-125 mg/dL: prediabetes
+glucose	optimal	any	72.0	90.0	
+hba1c	reference	any	4.0	5.6	
+hba1c	warn	any		6.4	5.7-6.4 %: prediabetes
+hba1c	optimal	any		5.3	
+hdl-c	reference	male	40.0		
+hdl-c	reference	female	50.0		
+hdl-c	reference	any	40.0		
+hdl-c	optimal	any	60.0		
+hematocrit	reference	male	37.5	51.0	
+hematocrit	reference	female	34.0	46.6	
+hematocrit	reference	any	34.0	51.0	
+hemoglobin	reference	male	13.0	17.7	
+hemoglobin	reference	female	11.1	15.9	
+hemoglobin	reference	any	11.1	17.7	
+homocysteine	reference	any	0.0	15.0	
+homocysteine	optimal	any		10.0	
+hscrp	reference	any		3.0	
+hscrp	optimal	any		1.0	
+insulin	reference	any	2.6	24.9	
+insulin	optimal	any	2.0	6.0	
+iron	reference	male	38.0	169.0	
+iron	reference	female	27.0	159.0	
+iron	reference	any	27.0	169.0	
+ldl-c	reference	any		100.0	
+ldl-c	warn	any		159.0	100-159 mg/dL: near optimal to borderline high
+ldl-c	optimal	any		70.0	
+lh	reference	male	1.7	8.6	
+lpa	reference	any		75.0	
+lpa	optimal	any		30.0	
+lymphocytes-abs	reference	any	0.7	3.1	
+magnesium	reference	any	1.6	2.3	
+mch	reference	any	26.6	33.0	
+mchc	reference	any	31.5	35.7	
+mcv	reference	any	79.0	97.0	
+neutrophils-abs	reference	any	1.4	7.0	
+non-hdl-c	reference	any		130.0	
+non-hdl-c	optimal	any		100.0	
+platelets	reference	any	150.0	450.0	
+potassium	reference	any	3.5	5.2	
+prolactin	reference	male	4.0	15.2	
+prolactin	reference	female	4.8	23.3	
+psa	reference	male	0.0	4.0	
+rbc	reference	male	4.14	5.8	
+rbc	reference	female	3.77	5.28	
+rbc	reference	any	3.77	5.8	
+rdw	reference	any	11.6	15.4	
+resting-hr	reference	any	60.0	100.0	
+shbg	reference	male	16.5	55.9	
+shbg	reference	female	24.6	122.0	
+sodium	reference	any	135.0	145.0	
+testosterone-free	reference	male	46.0	224.0	
+testosterone-free	reference	female	0.0	4.2	
+testosterone-total	reference	male	264.0	916.0	
+testosterone-total	reference	female	8.0	48.0	
+tibc	reference	any	250.0	450.0	
+total-cholesterol	reference	any		200.0	
+total-cholesterol	warn	any		239.0	200-239 mg/dL: borderline high
+total-cholesterol	optimal	any		180.0	
+total-protein	reference	any	6.0	8.5	
+tpo-ab	reference	any		34.0	
+transferrin-saturation	reference	any	15.0	55.0	
+transferrin-saturation	optimal	any	25.0	45.0	
+triglycerides	reference	any		150.0	
+triglycerides	warn	any		199.0	150-199 mg/dL: borderline high
+triglycerides	optimal	any		100.0	
+tsh	reference	any	0.45	4.5	
+tsh	optimal	any	0.5	2.5	
+uric-acid	reference	male	3.7	8.0	
+uric-acid	reference	female	2.5	7.1	
+uric-acid	reference	any	2.5	8.0	
+uric-acid	optimal	any		6.0	
+vitamin-b12	reference	any	232.0	1245.0	
+vitamin-b12	optimal	any	500.0		
+vitamin-d	reference	any	30.0	100.0	
+vitamin-d	optimal	any	40.0	60.0	
+wbc	reference	any	3.4	10.8	
+wbc	optimal	any	4.0	7.5	

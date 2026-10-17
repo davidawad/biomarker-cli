@@ -1,0 +1,36 @@
+slug = "triglycerides"
+name = "Triglycerides"
+category = "lipid"
+unit = "mg/dL"
+loinc = "2571-8"
+aliases = ["tg", "trig", "triglyceride"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 88.57
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 150.0
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 199.0
+note = "150-199 mg/dL: borderline high"
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 100.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+low = 27.0
+high = 89.0
+legacy = true

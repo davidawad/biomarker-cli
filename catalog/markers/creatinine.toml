@@ -1,0 +1,33 @@
+slug = "creatinine"
+name = "Creatinine"
+category = "cmp"
+unit = "mg/dL"
+loinc = "2160-0"
+aliases = ["creat", "creatinine, serum"]
+
+[[conversion]]
+from = "µmol/L"
+factor = 0.01131
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.76
+high = 1.27
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.57
+high = 1.0
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.57
+high = 1.27
+legacy = true

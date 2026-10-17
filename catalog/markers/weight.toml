@@ -1,0 +1,11 @@
+slug = "weight"
+name = "Body Weight"
+category = "body"
+unit = "kg"
+loinc = "29463-7"
+aliases = ["body weight", "wt"]
+no_reference = "legacy catalog entry without a reference range; needs research"
+
+[[conversion]]
+from = "lb"
+factor = 0.45359237

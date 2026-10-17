@@ -75,7 +75,8 @@ fn show(ctx: &Ctx, name: &str) -> Result<()> {
     let cat = Catalog::load(&db)?;
     let m = cat.get(name)?;
     let mut rec = marker_record(m);
-    let ranges: Vec<_> = cat.ranges_for(m.id).map(to_record).collect();
+    let ranges: Vec<_> =
+        cat.ranges_for(m.id).chain(cat.catalog_ranges.iter().filter(|r| r.marker_id == m.id)).map(to_record).collect();
     let conversions: Vec<_> = cat
         .conversions
         .conversions

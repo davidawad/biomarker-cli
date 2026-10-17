@@ -1,0 +1,39 @@
+slug = "uric-acid"
+name = "Uric Acid"
+category = "metabolic"
+unit = "mg/dL"
+loinc = "3084-1"
+aliases = ["urate"]
+
+[[conversion]]
+from = "µmol/L"
+factor = 0.01681
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.7
+high = 8.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.5
+high = 7.1
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.5
+high = 8.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 6.0
+legacy = true

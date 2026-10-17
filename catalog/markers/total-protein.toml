@@ -1,0 +1,13 @@
+slug = "total-protein"
+name = "Total Protein"
+category = "cmp"
+unit = "g/dL"
+loinc = "2885-2"
+aliases = ["protein, total"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.0
+high = 8.5
+legacy = true

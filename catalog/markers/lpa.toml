@@ -1,0 +1,22 @@
+slug = "lpa"
+name = "Lipoprotein(a)"
+category = "lipid"
+unit = "nmol/L"
+loinc = "43583-4"
+aliases = ["lp(a)", "lipoprotein a", "lipoprotein(a)", "lpa"]
+
+[[conversion]]
+from = "mg/dL"
+factor = 2.15
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 75.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 30.0
+legacy = true

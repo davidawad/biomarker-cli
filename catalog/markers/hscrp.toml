@@ -1,0 +1,24 @@
+slug = "hscrp"
+name = "hs-CRP"
+category = "inflammation"
+unit = "mg/L"
+loinc = "30522-7"
+aliases = ["crp", "c-reactive protein", "hs crp", "high sensitivity crp", "c-reactive protein, cardiac"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 3.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 1.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+high = 0.55
+legacy = true

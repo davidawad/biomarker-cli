@@ -1,0 +1,7 @@
+slug = "hrv"
+name = "Heart Rate Variability"
+category = "vitals"
+unit = "ms"
+loinc = "80404-7"
+aliases = ["heart rate variability"]
+no_reference = "legacy catalog entry without a reference range; needs research"

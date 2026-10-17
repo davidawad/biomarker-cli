@@ -1,0 +1,29 @@
+slug = "rbc"
+name = "Red Blood Cells"
+category = "cbc"
+unit = "10^6/µL"
+loinc = "789-8"
+aliases = ["red blood cell count", "erythrocytes"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.14
+high = 5.8
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.77
+high = 5.28
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.77
+high = 5.8
+legacy = true

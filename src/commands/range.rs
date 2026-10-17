@@ -10,7 +10,9 @@ use crate::store::{self, Catalog};
 pub fn run(ctx: &Ctx, cmd: RangeCmd) -> Result<()> {
     match cmd {
         RangeCmd::Set(a) => set(ctx, a),
-        RangeCmd::List { marker, kind, person } => list(ctx, marker.as_deref(), kind, person.as_deref()),
+        RangeCmd::List { marker, kind, person, set, all_sets } => {
+            list(ctx, marker.as_deref(), kind, person.as_deref(), set.as_deref(), all_sets)
+        }
         RangeCmd::Rm { id, personal } => rm(ctx, id, personal),
     }
 }
@@ -20,6 +22,7 @@ fn kind_of(k: KindArg) -> RangeKind {
         KindArg::Reference => RangeKind::Reference,
         KindArg::Optimal => RangeKind::Optimal,
         KindArg::Warn => RangeKind::Warn,
+        KindArg::Critical => RangeKind::Critical,
     }
 }
 
@@ -37,6 +40,11 @@ fn range_record(cat: &Catalog, r: &Range, person: Option<&str>) -> Record {
         "high": r.high,
         "unit": m.map(|m| m.unit.as_str()),
         "note": r.note,
+        "set": r.set,
+        "conditions": r.cond,
+        "evidence": r.evidence,
+        "citations": r.citations,
+        "legacy": r.legacy,
     }))
 }
 
@@ -73,6 +81,7 @@ fn set(ctx: &Ctx, a: RangeSetArgs) -> Result<()> {
             person_id: Some(person.id),
             critical_low: None,
             critical_high: None,
+            ..Range::default()
         };
         store::upsert_person_range(&db, person.id, &r)?;
         let cat = Catalog::load(&db)?;
@@ -102,6 +111,7 @@ fn set(ctx: &Ctx, a: RangeSetArgs) -> Result<()> {
         person_id: None,
         critical_low: None,
         critical_high: None,
+        ..Range::default()
     };
     store::upsert_range(&db, &r)?;
     let cat = Catalog::load(&db)?;
@@ -120,23 +130,60 @@ fn set(ctx: &Ctx, a: RangeSetArgs) -> Result<()> {
     ctx.emit_mutation(&Report::object("range", range_record(&cat, saved, None)))
 }
 
-fn list(ctx: &Ctx, marker: Option<&str>, kind: Option<KindArg>, person: Option<&str>) -> Result<()> {
+/// Person ranges (with `--person`), the database's own ranges, then the
+/// built-in catalog ranges of the active `range_sets` (or `--set` / `--all-sets`)
+/// that no database range replaces.
+fn list(
+    ctx: &Ctx,
+    marker: Option<&str>,
+    kind: Option<KindArg>,
+    person: Option<&str>,
+    set: Option<&str>,
+    all_sets: bool,
+) -> Result<()> {
     let db = ctx.db()?;
-    let cat = Catalog::load(&db)?;
+    let cat = ctx.catalog(&db)?;
     let marker_id = marker.map(|m| cat.get(m).map(|m| m.id)).transpose()?;
     let person = person.map(|p| store::get_person(&db, p)).transpose()?;
     let people = store::list_people(&db)?;
     let slug = |id: Option<i64>| id.and_then(|id| people.iter().find(|p| p.id == id)).map(|p| p.slug.as_str());
+    let in_sets = |r: &Range| {
+        let s = r.set.as_deref().unwrap_or_default();
+        match set {
+            Some(want) => s == want.to_lowercase(),
+            None => {
+                all_sets
+                    || cat
+                        .profiles
+                        .sets_for(person.as_ref().map(|p| p.slug.as_str()), r.marker_id)
+                        .iter()
+                        .any(|x| x == s)
+            }
+        }
+    };
+    let shadowed = |c: &Range| {
+        c.cond.is_empty()
+            && cat.ranges.iter().any(|l| {
+                l.marker_id == c.marker_id
+                    && l.kind == c.kind
+                    && l.sex == c.sex
+                    && l.age_min == c.age_min
+                    && l.age_max == c.age_max
+            })
+    };
     let rows = cat
         .person_ranges
         .iter()
         .filter(|r| person.as_ref().is_none_or(|p| r.person_id == Some(p.id)))
         .chain(cat.ranges.iter())
+        .chain(cat.catalog_ranges.iter().filter(|r| in_sets(r) && (set.is_some() || all_sets || !shadowed(r))))
         .filter(|r| marker_id.is_none_or(|id| r.marker_id == id))
         .filter(|r| kind.is_none_or(|k| r.kind == kind_of(k)))
         .map(|r| range_record(&cat, r, slug(r.person_id)))
         .collect();
-    ctx.emit(&Report::list("ranges", rows))
+    ctx.emit(&Report::list("ranges", rows).table_columns(&[
+        "id", "person", "marker", "set", "kind", "sex", "age_min", "age_max", "low", "high", "unit", "note",
+    ]))
 }
 
 fn rm(ctx: &Ctx, id: i64, personal: bool) -> Result<()> {

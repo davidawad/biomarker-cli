@@ -1,0 +1,33 @@
+slug = "iron"
+name = "Iron, Serum"
+category = "iron"
+unit = "µg/dL"
+loinc = "2498-4"
+aliases = ["serum iron", "fe"]
+
+[[conversion]]
+from = "µmol/L"
+factor = 5.585
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 38.0
+high = 169.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 27.0
+high = 159.0
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 27.0
+high = 169.0
+legacy = true

@@ -1,0 +1,24 @@
+slug = "vitamin-d"
+name = "Vitamin D, 25-Hydroxy"
+category = "vitamin"
+unit = "ng/mL"
+loinc = "1989-3"
+aliases = ["25-oh vitamin d", "vit d", "25(oh)d", "vitamin d, 25-hydroxy", "25-hydroxyvitamin d"]
+
+[[conversion]]
+from = "nmol/L"
+factor = 0.4006
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 30.0
+high = 100.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 40.0
+high = 60.0
+legacy = true

@@ -1,11 +1,11 @@
-//! Built-in marker catalog, units, conversions and default ranges.
-//!
-//! Ranges are typical adult values drawn from common lab references and are
-//! informational only. Labs differ; override them with `biomarker range set`.
-//! "Optimal" ranges are commonly cited preventive-medicine targets, kept
-//! separate from the lab reference ranges.
+//! Seeding the database from the built-in catalog ([`crate::catalog`]):
+//! units, generic conversions, and each catalog marker with its aliases and
+//! conversions. Catalog ranges are not stored: they are read from the
+//! embedded catalog at run time. Ranges are informational only; labs differ.
+//! Override them with `biomarker range set`, a range set or a profile.
 
-use crate::db::{int, opt_real, opt_text, real, text, Db};
+use crate::catalog::MarkerDef;
+use crate::db::{int, opt_real, opt_text, real, text, Db, RowExt};
 use crate::error::Result;
 
 /// (symbol, system, description)
@@ -60,109 +60,6 @@ pub const GENERIC_CONVERSIONS: &[(&str, &str, f64)] = &[
     ("L/L", "%", 100.0),
 ];
 
-pub struct SeedMarker {
-    pub slug: &'static str,
-    pub name: &'static str,
-    pub category: &'static str,
-    pub unit: &'static str,
-    pub loinc: Option<&'static str>,
-    pub aliases: &'static [&'static str],
-    /// Marker-specific conversions into the canonical unit: (from_unit, factor, offset).
-    pub conversions: &'static [(&'static str, f64, f64)],
-    /// Reference ranges: (sex, low, high).
-    pub reference: &'static [(&'static str, Option<f64>, Option<f64>)],
-    /// Optimal range: (low, high).
-    pub optimal: Option<(Option<f64>, Option<f64>)>,
-}
-
-const N: Option<f64> = None;
-const fn s(v: f64) -> Option<f64> {
-    Some(v)
-}
-
-macro_rules! m {
-    ($slug:expr, $name:expr, $cat:expr, $unit:expr, $loinc:expr, [$($a:expr),*], [$($c:expr),*], [$($r:expr),*], $opt:expr) => {
-        SeedMarker {
-            slug: $slug, name: $name, category: $cat, unit: $unit, loinc: $loinc,
-            aliases: &[$($a),*], conversions: &[$($c),*], reference: &[$($r),*], optimal: $opt,
-        }
-    };
-}
-
-#[rustfmt::skip]
-pub const MARKERS: &[SeedMarker] = &[
-    // Lipid panel
-    m!("total-cholesterol", "Total Cholesterol", "lipid", "mg/dL", Some("2093-3"), ["tc", "cholesterol", "chol", "cholesterol, total"], [("mmol/L", 38.67, 0.0)], [("any", N, s(200.0))], Some((N, s(180.0)))),
-    m!("ldl-c", "LDL Cholesterol", "lipid", "mg/dL", Some("13457-7"), ["ldl", "ldl cholesterol", "ldl-cholesterol", "ldl chol calc (nih)"], [("mmol/L", 38.67, 0.0)], [("any", N, s(100.0))], Some((N, s(70.0)))),
-    m!("hdl-c", "HDL Cholesterol", "lipid", "mg/dL", Some("2085-9"), ["hdl", "hdl cholesterol", "hdl-cholesterol"], [("mmol/L", 38.67, 0.0)], [("male", s(40.0), N), ("female", s(50.0), N), ("any", s(40.0), N)], Some((s(60.0), N))),
-    m!("triglycerides", "Triglycerides", "lipid", "mg/dL", Some("2571-8"), ["tg", "trig", "triglyceride"], [("mmol/L", 88.57, 0.0)], [("any", N, s(150.0))], Some((N, s(100.0)))),
-    m!("non-hdl-c", "Non-HDL Cholesterol", "lipid", "mg/dL", Some("43396-1"), ["non-hdl", "non hdl cholesterol"], [("mmol/L", 38.67, 0.0)], [("any", N, s(130.0))], Some((N, s(100.0)))),
-    m!("apob", "Apolipoprotein B", "lipid", "mg/dL", Some("1884-6"), ["apo b", "apolipoprotein b", "apo-b"], [], [("any", N, s(90.0))], Some((N, s(80.0)))),
-    m!("lpa", "Lipoprotein(a)", "lipid", "nmol/L", Some("43583-4"), ["lp(a)", "lipoprotein a", "lipoprotein(a)", "lpa"], [("mg/dL", 2.15, 0.0)], [("any", N, s(75.0))], Some((N, s(30.0)))),
-    // Metabolic
-    m!("glucose", "Glucose", "metabolic", "mg/dL", Some("2345-7"), ["glu", "fasting glucose", "blood glucose", "glucose, serum"], [("mmol/L", 18.016, 0.0)], [("any", s(70.0), s(99.0))], Some((s(72.0), s(90.0)))),
-    m!("hba1c", "Hemoglobin A1c", "metabolic", "%", Some("4548-4"), ["a1c", "hemoglobin a1c", "glycated hemoglobin", "hb a1c"], [("mmol/mol", 0.09148, 2.152)], [("any", s(4.0), s(5.6))], Some((N, s(5.3)))),
-    m!("insulin", "Insulin (fasting)", "metabolic", "µIU/mL", Some("20448-7"), ["fasting insulin"], [("pmol/L", 0.144, 0.0)], [("any", s(2.6), s(24.9))], Some((s(2.0), s(6.0)))),
-    m!("uric-acid", "Uric Acid", "metabolic", "mg/dL", Some("3084-1"), ["urate"], [("µmol/L", 0.016_81, 0.0)], [("male", s(3.7), s(8.0)), ("female", s(2.5), s(7.1)), ("any", s(2.5), s(8.0))], Some((N, s(6.0)))),
-    // CMP
-    m!("sodium", "Sodium", "cmp", "mmol/L", Some("2951-2"), ["na"], [], [("any", s(135.0), s(145.0))], None),
-    m!("potassium", "Potassium", "cmp", "mmol/L", Some("2823-3"), ["k"], [], [("any", s(3.5), s(5.2))], None),
-    m!("chloride", "Chloride", "cmp", "mmol/L", Some("2075-0"), ["cl"], [], [("any", s(96.0), s(106.0))], None),
-    m!("co2", "Carbon Dioxide (Bicarbonate)", "cmp", "mmol/L", Some("2028-9"), ["bicarbonate", "hco3", "carbon dioxide, total"], [], [("any", s(20.0), s(29.0))], None),
-    m!("bun", "Blood Urea Nitrogen", "cmp", "mg/dL", Some("3094-0"), ["urea nitrogen", "urea"], [("mmol/L", 2.801, 0.0)], [("any", s(6.0), s(24.0))], None),
-    m!("creatinine", "Creatinine", "cmp", "mg/dL", Some("2160-0"), ["creat", "creatinine, serum"], [("µmol/L", 0.011_31, 0.0)], [("male", s(0.76), s(1.27)), ("female", s(0.57), s(1.0)), ("any", s(0.57), s(1.27))], None),
-    m!("egfr", "eGFR", "cmp", "mL/min/1.73m²", Some("98979-8"), ["gfr", "estimated gfr"], [], [("any", s(60.0), N)], Some((s(90.0), N))),
-    m!("calcium", "Calcium", "cmp", "mg/dL", Some("17861-6"), ["ca"], [("mmol/L", 4.008, 0.0)], [("any", s(8.6), s(10.2))], None),
-    m!("total-protein", "Total Protein", "cmp", "g/dL", Some("2885-2"), ["protein, total"], [], [("any", s(6.0), s(8.5))], None),
-    m!("albumin", "Albumin", "cmp", "g/dL", Some("1751-7"), ["alb"], [], [("any", s(3.5), s(5.5))], Some((s(4.2), s(5.0)))),
-    m!("bilirubin-total", "Bilirubin, Total", "cmp", "mg/dL", Some("1975-2"), ["bilirubin", "tbil", "total bilirubin"], [("µmol/L", 0.058_48, 0.0)], [("any", s(0.1), s(1.2))], None),
-    m!("alp", "Alkaline Phosphatase", "cmp", "U/L", Some("6768-6"), ["alkaline phosphatase"], [], [("any", s(44.0), s(121.0))], None),
-    m!("ast", "AST (SGOT)", "cmp", "U/L", Some("1920-8"), ["sgot", "aspartate aminotransferase"], [], [("any", s(0.0), s(40.0))], Some((N, s(25.0)))),
-    m!("alt", "ALT (SGPT)", "cmp", "U/L", Some("1742-6"), ["sgpt", "alanine aminotransferase"], [], [("any", s(0.0), s(44.0))], Some((N, s(25.0)))),
-    m!("ggt", "Gamma-Glutamyl Transferase", "liver", "U/L", Some("2324-2"), ["gamma gt", "ggtp"], [], [("male", s(0.0), s(65.0)), ("female", s(0.0), s(45.0)), ("any", s(0.0), s(65.0))], Some((N, s(25.0)))),
-    m!("magnesium", "Magnesium", "electrolyte", "mg/dL", Some("19123-9"), ["mg"], [("mmol/L", 2.431, 0.0)], [("any", s(1.6), s(2.3))], None),
-    // CBC
-    m!("wbc", "White Blood Cells", "cbc", "10^3/µL", Some("6690-2"), ["white blood cell count", "leukocytes"], [], [("any", s(3.4), s(10.8))], Some((s(4.0), s(7.5)))),
-    m!("rbc", "Red Blood Cells", "cbc", "10^6/µL", Some("789-8"), ["red blood cell count", "erythrocytes"], [], [("male", s(4.14), s(5.8)), ("female", s(3.77), s(5.28)), ("any", s(3.77), s(5.8))], None),
-    m!("hemoglobin", "Hemoglobin", "cbc", "g/dL", Some("718-7"), ["hgb", "hb", "haemoglobin"], [("mmol/L", 1.611, 0.0)], [("male", s(13.0), s(17.7)), ("female", s(11.1), s(15.9)), ("any", s(11.1), s(17.7))], None),
-    m!("hematocrit", "Hematocrit", "cbc", "%", Some("4544-3"), ["hct", "haematocrit"], [], [("male", s(37.5), s(51.0)), ("female", s(34.0), s(46.6)), ("any", s(34.0), s(51.0))], None),
-    m!("mcv", "Mean Corpuscular Volume", "cbc", "fL", Some("787-2"), [], [], [("any", s(79.0), s(97.0))], None),
-    m!("mch", "Mean Corpuscular Hemoglobin", "cbc", "pg", Some("785-6"), [], [], [("any", s(26.6), s(33.0))], None),
-    m!("mchc", "Mean Corpuscular Hemoglobin Concentration", "cbc", "g/dL", Some("786-4"), [], [], [("any", s(31.5), s(35.7))], None),
-    m!("rdw", "Red Cell Distribution Width", "cbc", "%", Some("788-0"), ["rdw-cv"], [], [("any", s(11.6), s(15.4))], None),
-    m!("platelets", "Platelets", "cbc", "10^3/µL", Some("777-3"), ["plt", "platelet count"], [], [("any", s(150.0), s(450.0))], None),
-    m!("neutrophils-abs", "Neutrophils (Absolute)", "cbc", "10^3/µL", Some("751-8"), ["neutrophils", "anc"], [], [("any", s(1.4), s(7.0))], None),
-    m!("lymphocytes-abs", "Lymphocytes (Absolute)", "cbc", "10^3/µL", Some("731-0"), ["lymphocytes", "lymphs (absolute)"], [], [("any", s(0.7), s(3.1))], None),
-    // Thyroid
-    m!("tsh", "Thyroid Stimulating Hormone", "thyroid", "mIU/L", Some("3016-3"), ["thyrotropin"], [], [("any", s(0.45), s(4.5))], Some((s(0.5), s(2.5)))),
-    m!("free-t4", "Free T4", "thyroid", "ng/dL", Some("3024-7"), ["ft4", "t4, free", "free thyroxine"], [("pmol/L", 0.0777, 0.0)], [("any", s(0.82), s(1.77))], None),
-    m!("free-t3", "Free T3", "thyroid", "pg/mL", Some("3051-0"), ["ft3", "t3, free", "free triiodothyronine"], [("pmol/L", 0.651, 0.0)], [("any", s(2.0), s(4.4))], None),
-    m!("tpo-ab", "Thyroid Peroxidase Antibodies", "thyroid", "IU/mL", Some("8099-4"), ["tpo", "anti-tpo"], [], [("any", N, s(34.0))], None),
-    // Hormones
-    m!("testosterone-total", "Testosterone, Total", "hormone", "ng/dL", Some("2986-8"), ["testosterone", "total testosterone", "tt"], [("nmol/L", 28.84, 0.0)], [("male", s(264.0), s(916.0)), ("female", s(8.0), s(48.0))], None),
-    m!("testosterone-free", "Testosterone, Free", "hormone", "pg/mL", Some("2991-8"), ["free testosterone", "ft"], [("pmol/L", 0.2884, 0.0)], [("male", s(46.0), s(224.0)), ("female", s(0.0), s(4.2))], None),
-    m!("estradiol", "Estradiol", "hormone", "pg/mL", Some("2243-4"), ["e2", "oestradiol"], [("pmol/L", 0.2724, 0.0)], [("male", s(7.6), s(42.6))], None),
-    m!("igf-1", "Insulin-like Growth Factor 1", "hormone", "ng/mL", Some("2484-4"), ["igf1", "igf-i", "somatomedin c"], [("nmol/L", 7.649, 0.0)], [], None),
-    m!("shbg", "Sex Hormone Binding Globulin", "hormone", "nmol/L", Some("13967-5"), ["sex hormone binding globulin"], [], [("male", s(16.5), s(55.9)), ("female", s(24.6), s(122.0))], None),
-    m!("dhea-s", "DHEA-Sulfate", "hormone", "µg/dL", Some("2191-5"), ["dheas", "dhea sulfate"], [("µmol/L", 36.81, 0.0)], [("any", s(35.0), s(430.0))], None),
-    m!("cortisol", "Cortisol (AM)", "hormone", "µg/dL", Some("2143-6"), ["am cortisol"], [("nmol/L", 0.036_25, 0.0)], [("any", s(6.2), s(19.4))], None),
-    m!("lh", "Luteinizing Hormone", "hormone", "mIU/mL", Some("10501-5"), [], [], [("male", s(1.7), s(8.6))], None),
-    m!("fsh", "Follicle Stimulating Hormone", "hormone", "mIU/mL", Some("15067-2"), [], [], [("male", s(1.5), s(12.4))], None),
-    m!("prolactin", "Prolactin", "hormone", "ng/mL", Some("2842-3"), ["prl"], [], [("male", s(4.0), s(15.2)), ("female", s(4.8), s(23.3))], None),
-    m!("psa", "Prostate Specific Antigen", "hormone", "ng/mL", Some("2857-1"), ["psa, total"], [], [("male", s(0.0), s(4.0))], None),
-    // Inflammation
-    m!("hscrp", "hs-CRP", "inflammation", "mg/L", Some("30522-7"), ["crp", "c-reactive protein", "hs crp", "high sensitivity crp", "c-reactive protein, cardiac"], [], [("any", N, s(3.0))], Some((N, s(1.0)))),
-    m!("homocysteine", "Homocysteine", "inflammation", "µmol/L", Some("13965-9"), ["hcy"], [], [("any", s(0.0), s(15.0))], Some((N, s(10.0)))),
-    // Vitamins / iron
-    m!("vitamin-d", "Vitamin D, 25-Hydroxy", "vitamin", "ng/mL", Some("1989-3"), ["25-oh vitamin d", "vit d", "25(oh)d", "vitamin d, 25-hydroxy", "25-hydroxyvitamin d"], [("nmol/L", 0.4006, 0.0)], [("any", s(30.0), s(100.0))], Some((s(40.0), s(60.0)))),
-    m!("vitamin-b12", "Vitamin B12", "vitamin", "pg/mL", Some("2132-9"), ["b12", "cobalamin"], [("pmol/L", 1.355, 0.0)], [("any", s(232.0), s(1245.0))], Some((s(500.0), N))),
-    m!("folate", "Folate", "vitamin", "ng/mL", Some("2284-8"), ["folic acid"], [("nmol/L", 0.4413, 0.0)], [("any", s(3.0), N)], None),
-    m!("ferritin", "Ferritin", "iron", "ng/mL", Some("2276-4"), ["ferr"], [], [("male", s(30.0), s(400.0)), ("female", s(15.0), s(150.0)), ("any", s(15.0), s(400.0))], Some((s(50.0), s(150.0)))),
-    m!("iron", "Iron, Serum", "iron", "µg/dL", Some("2498-4"), ["serum iron", "fe"], [("µmol/L", 5.585, 0.0)], [("male", s(38.0), s(169.0)), ("female", s(27.0), s(159.0)), ("any", s(27.0), s(169.0))], None),
-    m!("tibc", "Total Iron Binding Capacity", "iron", "µg/dL", Some("2500-7"), [], [("µmol/L", 5.585, 0.0)], [("any", s(250.0), s(450.0))], None),
-    m!("transferrin-saturation", "Transferrin Saturation", "iron", "%", Some("2502-3"), ["tsat", "iron saturation"], [], [("any", s(15.0), s(55.0))], Some((s(25.0), s(45.0)))),
-];
-
 /// Units added with the body / vitals markers (schema v4).
 pub const VITALS_UNITS: &[(&str, &str, &str)] = &[
     ("kg", "si", "kilograms"),
@@ -175,49 +72,31 @@ pub const VITALS_UNITS: &[(&str, &str, &str)] = &[
     ("mmHg", "both", "millimetres of mercury"),
 ];
 
-#[rustfmt::skip]
-pub const VITALS_MARKERS: &[SeedMarker] = &[
-    m!("weight", "Body Weight", "body", "kg", Some("29463-7"), ["body weight", "wt"], [("lb", 0.453_592_37, 0.0)], [], None),
-    m!("bmi", "Body Mass Index", "body", "kg/m²", Some("39156-5"), ["body mass index"], [], [("any", s(18.5), s(25.0))], None),
-    m!("body-fat", "Body Fat", "body", "%", Some("41982-0"), ["body fat", "body fat %", "body fat percentage", "bf%"], [], [], None),
-    m!("biological-age", "Biological Age", "body", "years", None, ["bio age", "phenotypic age", "phenoage"], [], [], None),
-    m!("resting-hr", "Resting Heart Rate", "vitals", "bpm", Some("40443-4"), ["resting heart rate", "rhr", "resting hr"], [], [("any", s(60.0), s(100.0))], None),
-    m!("hrv", "Heart Rate Variability", "vitals", "ms", Some("80404-7"), ["heart rate variability"], [], [], None),
-    m!("vo2max", "VO2 Max", "vitals", "mL/kg/min", Some("94122-9"), ["vo2 max", "vo2-max"], [], [], None),
-    m!("bp-systolic", "Blood Pressure, Systolic", "vitals", "mmHg", Some("8480-6"), ["systolic", "systolic bp", "sbp", "blood pressure systolic"], [], [("any", N, s(120.0))], None),
-    m!("bp-diastolic", "Blood Pressure, Diastolic", "vitals", "mmHg", Some("8462-4"), ["diastolic", "diastolic bp", "dbp", "blood pressure diastolic"], [], [("any", N, s(80.0))], None),
-];
-
-/// Schema v4: body composition and vital-sign markers.
-pub fn seed_vitals(db: &Db) -> Result<()> {
-    insert_units(db, VITALS_UNITS)?;
-    VITALS_MARKERS.iter().try_for_each(|m| seed_marker(db, m))
+/// Every built-in unit symbol.
+pub fn unit_symbols() -> Vec<&'static str> {
+    UNITS.iter().chain(VITALS_UNITS).map(|u| u.0).collect()
 }
 
-/// (marker slug, sex, low, high, note)
-type WarnZone = (&'static str, &'static str, Option<f64>, Option<f64>, &'static str);
+/// Schema v4: body composition and vital-sign units (the markers come from the catalog).
+pub fn seed_vitals(db: &Db) -> Result<()> {
+    insert_units(db, VITALS_UNITS)?;
+    seed_markers(db, &crate::catalog::builtin()?.markers)
+}
 
-/// Near-limit (warn) bounds for markers with a clinically meaningful
-/// "approaching" zone: (slug, sex, low, high, note). With the reference
-/// limits they delimit a row's near-low / near-high `status`.
-#[rustfmt::skip]
-pub const WARN_ZONES: &[WarnZone] = &[
-    ("glucose", "any", N, s(125.0), "fasting 100-125 mg/dL: prediabetes"),
-    ("hba1c", "any", N, s(6.4), "5.7-6.4 %: prediabetes"),
-    ("total-cholesterol", "any", N, s(239.0), "200-239 mg/dL: borderline high"),
-    ("ldl-c", "any", N, s(159.0), "100-159 mg/dL: near optimal to borderline high"),
-    ("triglycerides", "any", N, s(199.0), "150-199 mg/dL: borderline high"),
-    ("egfr", "any", s(90.0), N, "60-89: mildly decreased"),
-    ("bp-systolic", "any", N, s(129.0), "120-129 mmHg: elevated"),
-];
-
-/// Schema v5: near-limit zones.
+/// Schema v5: the near-limit (warn) rows v0.7.2 seeded (hidden by v7: the
+/// catalog's warn ranges apply instead).
 pub fn seed_warn_zones(db: &Db) -> Result<()> {
-    WARN_ZONES.iter().try_for_each(|(slug, sex, lo, hi, note)| {
+    insert_legacy_rows(db, |kind| kind == "warn")
+}
+
+/// Insert the frozen v0.7.2 range rows of the kinds `want` accepts, for the
+/// markers present, exactly as the old migrations did.
+fn insert_legacy_rows(db: &Db, want: impl Fn(&str) -> bool) -> Result<()> {
+    legacy_rows().filter(|r| want(r.1)).try_for_each(|(slug, kind, sex, low, high, note)| {
         db.execute(
             "INSERT OR IGNORE INTO ranges (marker_id, kind, sex, low, high, note)
-             SELECT id, 'warn', ?2, ?3, ?4, ?5 FROM markers WHERE slug = ?1",
-            &[text(slug), text(sex), opt_real(*lo), opt_real(*hi), text(note)],
+             SELECT id, ?2, ?3, ?4, ?5, ?6 FROM markers WHERE slug = ?1",
+            &[text(slug), text(kind), text(sex), opt_real(low), opt_real(high), opt_text(note)],
         )
         .map(|_| ())
     })
@@ -233,6 +112,8 @@ fn insert_units(db: &Db, units: &[(&str, &str, &str)]) -> Result<()> {
     })
 }
 
+/// Schema v2: units, generic conversions, the catalog markers and the
+/// reference / optimal rows v0.7.2 seeded (hidden by v7).
 pub fn seed(db: &Db) -> Result<()> {
     insert_units(db, UNITS)?;
     GENERIC_CONVERSIONS.iter().try_for_each(|(from, to, f)| {
@@ -243,15 +124,23 @@ pub fn seed(db: &Db) -> Result<()> {
         )
         .map(|_| ())
     })?;
-    MARKERS.iter().try_for_each(|m| seed_marker(db, m))
+    seed_markers(db, &crate::catalog::builtin()?.markers)?;
+    insert_legacy_rows(db, |kind| kind != "warn")
 }
 
-fn seed_marker(db: &Db, m: &SeedMarker) -> Result<()> {
+fn seed_markers(db: &Db, markers: &[MarkerDef]) -> Result<()> {
+    markers.iter().try_for_each(|m| seed_marker(db, m).map(|_| ()))
+}
+
+/// Insert a catalog marker (if its slug is free) with aliases and
+/// conversions; returns its id.
+fn seed_marker(db: &Db, m: &MarkerDef) -> Result<i64> {
     db.execute(
-        "INSERT OR IGNORE INTO markers (slug, name, category, unit, loinc, builtin) VALUES (?1, ?2, ?3, ?4, ?5, 1)",
-        &[text(m.slug), text(m.name), text(m.category), text(m.unit), opt_text(m.loinc)],
+        "INSERT OR IGNORE INTO markers (slug, name, category, unit, loinc, description, builtin) VALUES (?1, ?2, ?3, ?4, ?5, ?6, 1)",
+        &[text(&m.slug), text(&m.name), text(&m.category), text(&m.unit), opt_text(m.loinc.as_ref()), opt_text(m.description.as_ref())],
     )?;
-    let id = db.query_scalar_i64("SELECT id FROM markers WHERE slug = ?1", &[text(m.slug)])?;
+    db.execute("INSERT OR IGNORE INTO units (symbol, system) VALUES (?1, 'both')", &[text(&m.unit)])?;
+    let id = db.query_scalar_i64("SELECT id FROM markers WHERE slug = ?1", &[text(&m.slug)])?;
     m.aliases.iter().try_for_each(|a| {
         db.execute(
             "INSERT OR IGNORE INTO marker_aliases (alias, marker_id) VALUES (?1, ?2)",
@@ -259,21 +148,94 @@ fn seed_marker(db: &Db, m: &SeedMarker) -> Result<()> {
         )
         .map(|_| ())
     })?;
-    m.conversions.iter().try_for_each(|(from, factor, offset)| {
+    m.conversions.iter().try_for_each(|c| {
+        db.execute("INSERT OR IGNORE INTO units (symbol, system) VALUES (?1, 'both')", &[text(&c.from)])?;
         db.execute(
             "INSERT OR IGNORE INTO unit_conversions (marker_id, from_unit, to_unit, factor, offset, builtin)
              VALUES (?1, ?2, ?3, ?4, ?5, 1)",
-            &[int(id), text(from), text(m.unit), real(*factor), real(*offset)],
+            &[int(id), text(&c.from), text(&m.unit), real(c.factor), real(c.offset)],
         )
         .map(|_| ())
     })?;
-    let refs = m.reference.iter().map(|(sex, lo, hi)| ("reference", *sex, *lo, *hi));
-    let opt = m.optimal.iter().map(|(lo, hi)| ("optimal", "any", *lo, *hi));
-    refs.chain(opt).try_for_each(|(kind, sex, lo, hi)| {
+    Ok(id)
+}
+
+/// The range rows v0.7.2 seeded: (slug, kind, sex, low, high, note).
+type LegacyRow<'a> = (&'a str, &'a str, &'a str, Option<f64>, Option<f64>, Option<&'a str>);
+
+fn legacy_rows() -> impl Iterator<Item = LegacyRow<'static>> {
+    include_str!("legacy_ranges.tsv").lines().filter(|l| !l.starts_with('#') && !l.is_empty()).filter_map(|l| {
+        let f: Vec<&str> = l.split('\t').collect();
+        let num = |s: &str| s.parse::<f64>().ok();
+        (f.len() == 6).then(|| (f[0], f[1], f[2], num(f[3]), num(f[4]), Some(f[5]).filter(|n| !n.is_empty())))
+    })
+}
+
+/// Schema v7: the catalog as data. Adds person attributes, marks the
+/// `ranges` rows that still hold v0.7.2's seeded values as built-in (the
+/// catalog files replace them; rows you added or changed keep overriding),
+/// and records which database marker each catalog slug was seeded as.
+pub fn catalog_as_data(db: &Db) -> Result<()> {
+    db.execute_batch(
+        "ALTER TABLE people ADD COLUMN attributes TEXT NOT NULL DEFAULT '{}';
+         ALTER TABLE ranges ADD COLUMN builtin INTEGER NOT NULL DEFAULT 0;
+         CREATE TABLE IF NOT EXISTS catalog_seeded (
+             slug       TEXT PRIMARY KEY,
+             marker_id  INTEGER NOT NULL
+         );",
+    )?;
+    legacy_rows().try_for_each(|(slug, kind, sex, low, high, note)| {
         db.execute(
-            "INSERT OR IGNORE INTO ranges (marker_id, kind, sex, low, high) VALUES (?1, ?2, ?3, ?4, ?5)",
-            &[int(id), text(kind), text(sex), opt_real(lo), opt_real(hi)],
+            "UPDATE ranges SET builtin = 1
+             WHERE marker_id = (SELECT id FROM markers WHERE slug = ?1) AND kind = ?2 AND sex = ?3
+               AND age_min = 0 AND age_max = 200 AND low IS ?4 AND high IS ?5 AND note IS ?6",
+            &[text(slug), text(kind), text(sex), opt_real(low), opt_real(high), opt_text(note)],
         )
         .map(|_| ())
+    })?;
+    for m in &crate::catalog::builtin()?.markers {
+        let by_slug = db.query_opt("SELECT id FROM markers WHERE slug = ?1 AND builtin = 1", &[text(&m.slug)])?;
+        // a renamed built-in marker is found by one of its catalog aliases
+        let found = match by_slug {
+            Some(r) => r.i(0),
+            None => m.aliases.iter().find_map(|a| {
+                db.query_opt(
+                    "SELECT m.id FROM marker_aliases a JOIN markers m ON m.id = a.marker_id WHERE a.alias = ?1 AND m.builtin = 1",
+                    &[text(a.to_lowercase())],
+                )
+                .ok()
+                .flatten()
+                .and_then(|r| r.i(0))
+            }),
+        };
+        if let Some(id) = found {
+            db.execute(
+                "INSERT OR IGNORE INTO catalog_seeded (slug, marker_id) VALUES (?1, ?2)",
+                &[text(&m.slug), int(id)],
+            )?;
+        }
+    }
+    Ok(())
+}
+
+/// Seed catalog markers this database has never seen (a newer binary's
+/// additions). Writes nothing when there are none. A marker you removed
+/// stays removed.
+pub fn sync_catalog(db: &Db) -> Result<()> {
+    let seen: std::collections::BTreeSet<String> =
+        db.query("SELECT slug FROM catalog_seeded", &[])?.iter().filter_map(|r| r.s(0)).collect();
+    let new: Vec<&MarkerDef> = crate::catalog::builtin()?.markers.iter().filter(|m| !seen.contains(&m.slug)).collect();
+    if new.is_empty() {
+        return Ok(());
+    }
+    db.transaction(|db| {
+        new.iter().try_for_each(|m| {
+            let id = seed_marker(db, m)?;
+            db.execute(
+                "INSERT OR IGNORE INTO catalog_seeded (slug, marker_id) VALUES (?1, ?2)",
+                &[text(&m.slug), int(id)],
+            )
+            .map(|_| ())
+        })
     })
 }

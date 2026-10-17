@@ -1,0 +1,41 @@
+slug = "ggt"
+name = "Gamma-Glutamyl Transferase"
+category = "liver"
+unit = "U/L"
+loinc = "2324-2"
+aliases = ["gamma gt", "ggtp"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 65.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 45.0
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 65.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 25.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+high = 14.0
+legacy = true

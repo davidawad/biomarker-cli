@@ -2,15 +2,21 @@
 
 use serde::Serialize;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+use crate::catalog::{Citation, Conditions, Facts};
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default, Serialize)]
 #[serde(rename_all = "lowercase")]
 pub enum RangeKind {
+    #[default]
     Reference,
     Optimal,
     /// Near-limit ("approaching") thresholds: `low`/`high` are the warn
     /// bounds that, together with the reference limits, delimit the near-low
     /// and near-high zones (see [`status`]).
     Warn,
+    /// Beyond `low` / `high` a result is critical: supplies the
+    /// `critical_low` / `critical_high` of the reference range.
+    Critical,
 }
 
 impl RangeKind {
@@ -19,6 +25,7 @@ impl RangeKind {
             Self::Reference => "reference",
             Self::Optimal => "optimal",
             Self::Warn => "warn",
+            Self::Critical => "critical",
         }
     }
     pub fn parse(s: &str) -> Option<Self> {
@@ -26,12 +33,13 @@ impl RangeKind {
             "reference" | "ref" => Some(Self::Reference),
             "optimal" | "opt" => Some(Self::Optimal),
             "warn" | "near" => Some(Self::Warn),
+            "critical" | "crit" => Some(Self::Critical),
             _ => None,
         }
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, Default, PartialEq, Serialize)]
 pub struct Range {
     pub id: i64,
     pub marker_id: i64,
@@ -48,6 +56,15 @@ pub struct Range {
     /// Beyond these the result is critical (profile files only; the database has none).
     pub critical_low: Option<f64>,
     pub critical_high: Option<f64>,
+    /// The catalog range set (`clinical`, `optimal`, `blueprint`, ...) for a
+    /// range from the built-in catalog; `None` for database and file ranges.
+    pub set: Option<String>,
+    /// Conditions beyond sex and age (`when` in the catalog).
+    pub cond: Conditions,
+    pub evidence: Option<String>,
+    pub citations: Vec<Citation>,
+    /// Carried over from the old hard-coded catalog without a citation.
+    pub legacy: bool,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
@@ -240,23 +257,47 @@ pub fn select_by<'a>(
     age: Option<f64>,
     age_first: bool,
 ) -> Option<&'a Range> {
-    let sex = sex.map(str::to_ascii_lowercase);
+    select_for(ranges, marker_id, kind, &Facts::basic(sex, age), age_first)
+}
+
+/// Does `r` apply to a person with these facts?
+pub fn applies(r: &Range, f: &Facts) -> bool {
+    let sex = f.sex.map(str::to_ascii_lowercase);
+    (r.sex == "any" || sex.as_deref() == Some(r.sex.as_str()))
+        && f.age.is_none_or(|a| a >= r.age_min && a < r.age_max)
+        && r.cond.matches(f)
+}
+
+/// The most specific applicable range: the one with the most conditions
+/// beyond sex and age, then by sex and age band as in [`select_by`]. Of
+/// equally specific ranges the first wins.
+pub fn select_for<'a>(
+    ranges: &'a [Range],
+    marker_id: i64,
+    kind: RangeKind,
+    facts: &Facts,
+    age_first: bool,
+) -> Option<&'a Range> {
+    let age_known = facts.age.is_some();
     ranges
         .iter()
         .filter(|r| r.marker_id == marker_id && r.kind == kind)
-        .filter(|r| r.sex == "any" || sex.as_deref() == Some(r.sex.as_str()))
-        .filter(|r| age.is_none_or(|a| a >= r.age_min && a < r.age_max))
-        .min_by(|a, b| {
-            let width = |r: &Range| if age.is_some() { r.age_max - r.age_min } else { r.age_min - r.age_max };
-            let spec = |r: &Range| (i32::from(r.sex == "any"), width(r));
-            let (sa, wa) = spec(a);
-            let (sb, wb) = spec(b);
-            if age_first {
-                wa.total_cmp(&wb).then(sa.cmp(&sb))
-            } else {
-                sa.cmp(&sb).then(wa.total_cmp(&wb))
-            }
-        })
+        .filter(|r| applies(r, facts))
+        .min_by(|a, b| b.cond.count().cmp(&a.cond.count()).then_with(|| sex_age_order(a, b, age_known, age_first)))
+}
+
+/// Sex-specific before `any`, narrow age bands before wide ones (wide first
+/// when the age is unknown); `age_first` swaps the two criteria.
+pub fn sex_age_order(a: &Range, b: &Range, age_known: bool, age_first: bool) -> std::cmp::Ordering {
+    let width = |r: &Range| if age_known { r.age_max - r.age_min } else { r.age_min - r.age_max };
+    let spec = |r: &Range| (i32::from(r.sex == "any"), width(r));
+    let (sa, wa) = spec(a);
+    let (sb, wb) = spec(b);
+    if age_first {
+        wa.total_cmp(&wb).then(sa.cmp(&sb))
+    } else {
+        sa.cmp(&sb).then(wa.total_cmp(&wb))
+    }
 }
 
 /// Classify a value against a range. Censored values (`<x`, `>x`) are judged
@@ -294,10 +335,7 @@ mod tests {
             age_max: ages.1,
             low: lo,
             high: hi,
-            note: None,
-            person_id: None,
-            critical_low: None,
-            critical_high: None,
+            ..Range::default()
         }
     }
 

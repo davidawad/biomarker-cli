@@ -1,0 +1,18 @@
+slug = "apob"
+name = "Apolipoprotein B"
+category = "lipid"
+unit = "mg/dL"
+loinc = "1884-6"
+aliases = ["apo b", "apolipoprotein b", "apo-b"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 90.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 80.0
+legacy = true

@@ -1,0 +1,13 @@
+slug = "potassium"
+name = "Potassium"
+category = "cmp"
+unit = "mmol/L"
+loinc = "2823-3"
+aliases = ["k"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.5
+high = 5.2
+legacy = true

@@ -1,0 +1,22 @@
+slug = "shbg"
+name = "Sex Hormone Binding Globulin"
+category = "hormone"
+unit = "nmol/L"
+loinc = "13967-5"
+aliases = ["sex hormone binding globulin"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 16.5
+high = 55.9
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 24.6
+high = 122.0
+when = { sex = "female" }
+legacy = true

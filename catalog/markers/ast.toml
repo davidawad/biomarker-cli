@@ -1,0 +1,19 @@
+slug = "ast"
+name = "AST (SGOT)"
+category = "cmp"
+unit = "U/L"
+loinc = "1920-8"
+aliases = ["sgot", "aspartate aminotransferase"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 40.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 25.0
+legacy = true

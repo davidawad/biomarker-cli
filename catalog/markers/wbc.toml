@@ -1,0 +1,27 @@
+slug = "wbc"
+name = "White Blood Cells"
+category = "cbc"
+unit = "10^3/µL"
+loinc = "6690-2"
+aliases = ["white blood cell count", "leukocytes"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.4
+high = 10.8
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 4.0
+high = 7.5
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+low = 3.5
+high = 6.0
+legacy = true

@@ -78,15 +78,21 @@ fn big_stack<T: Send + 'static>(f: impl FnOnce() -> T + Send + 'static) -> T {
     std::thread::Builder::new().stack_size(256 * 1024 * 1024).spawn(f).unwrap().join().unwrap()
 }
 
-/// Every row of the pre-existing tables, rendered for comparison.
+/// Every row of the pre-existing tables (their schema-5 columns; migration 7
+/// adds columns), rendered for comparison.
 fn snapshot(path: &Path) -> Vec<(String, Vec<String>)> {
     let p = path.to_path_buf();
     big_stack(move || {
         let db = biomarker_cli::db::Db::open_plain(&p).unwrap();
+        let cols = |t: &str| match t {
+            "people" => "id, slug, name, sex, dob, notes, tags, created_at",
+            "ranges" => "id, marker_id, kind, sex, age_min, age_max, low, high, note",
+            _ => "*",
+        };
         ["people", "markers", "marker_aliases", "ranges", "person_ranges", "measurements", "observations"]
             .iter()
             .map(|t| {
-                let rows = db.query(&format!("SELECT * FROM {t} ORDER BY 1"), &[]).unwrap();
+                let rows = db.query(&format!("SELECT {} FROM {t} ORDER BY 1", cols(t)), &[]).unwrap();
                 ((*t).to_string(), rows.iter().map(|r| format!("{r:?}")).collect())
             })
             .collect()
@@ -141,11 +147,13 @@ fn row1_schema_5_with_warn_zones_migrates_to_6_losslessly() {
     assert_eq!(status["current_version"], 5);
     plain(&["db", "migrate"]);
     let info = plain(&["db", "info"]);
-    assert_eq!(info["data"]["schema_version"], 6);
+    assert_eq!(info["data"]["schema_version"], migrations::latest_version());
     assert_eq!((info["data"]["interventions"].as_i64(), info["data"]["regimens"].as_i64()), (Some(0), Some(0)));
-    assert_eq!(snapshot(&path), before, "migration 6 changed pre-existing rows");
+    assert_eq!(snapshot(&path), before, "migrations 6 and 7 changed pre-existing rows");
     let p = path.clone();
-    assert_eq!(big_stack(move || Db::open_plain(&p).unwrap().query_scalar_i64("PRAGMA user_version", &[]).unwrap()), 6);
+    let user_version =
+        big_stack(move || Db::open_plain(&p).unwrap().query_scalar_i64("PRAGMA user_version", &[]).unwrap());
+    assert_eq!(user_version, migrations::latest_version());
 
     // The warn zones still drive the status: glucose 110 is near-high (99 < 110 <= 125
     // from migration 5), hba1c 6.2 is past alex's personal warn bound of 6.0

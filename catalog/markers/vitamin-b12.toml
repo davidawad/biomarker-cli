@@ -1,0 +1,23 @@
+slug = "vitamin-b12"
+name = "Vitamin B12"
+category = "vitamin"
+unit = "pg/mL"
+loinc = "2132-9"
+aliases = ["b12", "cobalamin"]
+
+[[conversion]]
+from = "pmol/L"
+factor = 1.355
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 232.0
+high = 1245.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 500.0
+legacy = true

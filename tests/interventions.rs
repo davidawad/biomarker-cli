@@ -498,6 +498,9 @@ fn migrates_a_version_4_database() {
     plain(&["intervention", "add", "zinc"]);
     plain(&["regimen", "add", "zinc", "-p", "alex", "--start", "2025-01-01"]);
     let info = plain(&["db", "info"]);
-    assert_eq!((info["data"]["schema_version"].as_i64(), info["data"]["people"].as_i64()), (Some(6), Some(1)));
+    assert_eq!(
+        (info["data"]["schema_version"].as_i64(), info["data"]["people"].as_i64()),
+        (Some(migrations::latest_version()), Some(1))
+    );
     assert_eq!(info["data"]["regimens"], 1);
 }

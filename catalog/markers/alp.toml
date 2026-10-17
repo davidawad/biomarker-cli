@@ -1,0 +1,13 @@
+slug = "alp"
+name = "Alkaline Phosphatase"
+category = "cmp"
+unit = "U/L"
+loinc = "6768-6"
+aliases = ["alkaline phosphatase"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 44.0
+high = 121.0
+legacy = true

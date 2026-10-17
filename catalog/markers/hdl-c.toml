@@ -1,0 +1,43 @@
+slug = "hdl-c"
+name = "HDL Cholesterol"
+category = "lipid"
+unit = "mg/dL"
+loinc = "2085-9"
+aliases = ["hdl", "hdl cholesterol", "hdl-cholesterol"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 38.67
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 40.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 50.0
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 40.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 60.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+low = 50.0
+high = 60.0
+legacy = true

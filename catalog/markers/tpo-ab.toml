@@ -1,0 +1,12 @@
+slug = "tpo-ab"
+name = "Thyroid Peroxidase Antibodies"
+category = "thyroid"
+unit = "IU/mL"
+loinc = "8099-4"
+aliases = ["tpo", "anti-tpo"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 34.0
+legacy = true

@@ -1,0 +1,19 @@
+slug = "bmi"
+name = "Body Mass Index"
+category = "body"
+unit = "kg/m²"
+loinc = "39156-5"
+aliases = ["body mass index"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 18.5
+high = 25.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+high = 22.5
+legacy = true

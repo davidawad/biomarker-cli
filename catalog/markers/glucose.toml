@@ -1,0 +1,38 @@
+slug = "glucose"
+name = "Glucose"
+category = "metabolic"
+unit = "mg/dL"
+loinc = "2345-7"
+aliases = ["glu", "fasting glucose", "blood glucose", "glucose, serum"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 18.016
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 70.0
+high = 99.0
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 125.0
+note = "fasting 100-125 mg/dL: prediabetes"
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 72.0
+high = 90.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+high = 95.0
+note = "fasting plasma glucose"
+legacy = true

@@ -49,6 +49,8 @@ pub enum Kind {
     /// A percentage, 0..=100 (fractions allowed).
     Percent,
     Char,
+    /// Comma-separated names (a TOML array of strings in the config file).
+    List,
 }
 
 pub const SETTINGS: &[Setting] = &[
@@ -97,9 +99,16 @@ pub const SETTINGS: &[Setting] = &[
     Setting {
         key: "range_set",
         env: &["BIOMARKER_RANGE_SET"],
-        help: "named range set (<config dir>/ranges/<name>.toml) used before the catalog ranges",
+        help: "named range set (catalog set or <config dir>/ranges/<name>.toml) used before everything but personal ranges",
         choices: &[],
         kind: Kind::Str,
+    },
+    Setting {
+        key: "range_sets",
+        env: &["BIOMARKER_RANGE_SETS"],
+        help: "catalog range sets in priority order, comma separated (clinical, optimal, blueprint or a ranges/<name>.toml)",
+        choices: &[],
+        kind: Kind::List,
     },
     Setting {
         key: "color",
@@ -240,6 +249,7 @@ fn default_value(key: &str) -> String {
         "precision" => "2".into(),
         "borderline_margin" => "0".into(),
         "range_specificity" => "sex".into(),
+        "range_sets" => crate::catalog::DEFAULT_SETS.join(","),
         "trend_windows" => "3m,6m,1y".into(),
         "trend_min_points" => "1".into(),
         "csv_delimiter" => ",".into(),
@@ -279,6 +289,15 @@ pub fn normalize(key: &str, raw: &str) -> Result<String> {
             c if c.chars().count() == 1 && c.is_ascii() => Ok(c.into()),
             _ => Err(bad("expected a single ASCII character or 'tab'")),
         },
+        Kind::List => {
+            let names: Vec<String> =
+                v.split(',').map(|x| x.trim().to_ascii_lowercase()).filter(|x| !x.is_empty()).collect();
+            if names.is_empty() {
+                Err(bad("expected at least one name"))
+            } else {
+                Ok(names.join(","))
+            }
+        }
         Kind::Str if !s.choices.is_empty() => {
             let l = v.to_ascii_lowercase();
             if s.choices.contains(&l.as_str()) {
@@ -362,6 +381,9 @@ fn toml_scalar(v: &toml::Value) -> Option<String> {
         toml::Value::Integer(i) => Some(i.to_string()),
         toml::Value::Float(f) => Some(f.to_string()),
         toml::Value::Boolean(b) => Some(b.to_string()),
+        toml::Value::Array(a) => {
+            a.iter().map(|x| x.as_str().map(str::to_string)).collect::<Option<Vec<_>>>().map(|v| v.join(","))
+        }
         _ => None,
     }
 }
@@ -370,13 +392,18 @@ fn toml_scalar(v: &toml::Value) -> Option<String> {
 /// `csv_delimiter = ";"`).
 /// The `[encryption]` section is biomarker's record of database keys
 /// ([`crate::enc_config`]). The `[units]`, `[marker_precision]` and `[unit_aliases]`
-/// tables hold per-marker overrides ([`crate::profiles`], [`crate::units`]),
-/// not settings.
+/// tables, `[marker_range_sets]` and `[[range]]` hold per-marker overrides
+/// ([`crate::profiles`], [`crate::units`]), not settings.
 pub fn parse_toml_layer(text: &str) -> Result<Layer> {
     let table: toml::Table = text.parse().map_err(|e| AppError::config(format!("TOML: {e}")))?;
     table
         .iter()
-        .filter(|(k, _)| !matches!(k.as_str(), "encryption" | "units" | "marker_precision" | "unit_aliases"))
+        .filter(|(k, _)| {
+            !matches!(
+                k.as_str(),
+                "encryption" | "units" | "marker_precision" | "unit_aliases" | "marker_range_sets" | "range"
+            )
+        })
         .flat_map(|(k, v)| match v {
             toml::Value::Table(t) => t.iter().map(|(k2, v2)| (format!("{k}_{k2}"), v2.clone())).collect::<Vec<_>>(),
             other => vec![(k.clone(), other.clone())],
@@ -425,6 +452,7 @@ pub fn write_setting(path: &Path, key: &str, value: Option<&str>) -> Result<()> 
                 Kind::Bool => toml::Value::Boolean(v == "true"),
                 Kind::Uint | Kind::Count => toml::Value::Integer(v.parse().unwrap_or(2)),
                 Kind::Percent => toml::Value::Float(v.parse().unwrap_or(0.0)),
+                Kind::List => toml::Value::Array(v.split(',').map(|x| toml::Value::String(x.into())).collect()),
                 _ => toml::Value::String(v),
             };
             table.insert(s.key.to_string(), tv);
@@ -481,5 +509,9 @@ mod tests {
         assert!(l.contains(&("csv_delimiter".into(), ";".into())));
         assert!(l.contains(&("csv_header".into(), "false".into())));
         assert!(l.contains(&("precision".into(), "3".into())));
+        let l = parse_toml_layer("range_sets = [\"blueprint\", \"clinical\"]\n[[range]]\nmarker = \"x\"\n").unwrap();
+        assert_eq!(l, vec![("range_sets".to_string(), "blueprint,clinical".to_string())]);
+        assert_eq!(normalize("range_sets", " Clinical, ,optimal").unwrap(), "clinical,optimal");
+        assert!(normalize("range_sets", " , ").is_err());
     }
 }

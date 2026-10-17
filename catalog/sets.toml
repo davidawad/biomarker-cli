@@ -1,0 +1,14 @@
+# Range sets. A range's `set` must be one of these. Which sets apply is
+# configured with `range_sets` (default: clinical, optimal) and `range_set`.
+
+[[set]]
+name = "clinical"
+description = "Lab reference intervals and guideline cut-offs (the default set for a range)"
+
+[[set]]
+name = "optimal"
+description = "Commonly cited preventive-medicine targets, kept apart from the lab reference intervals"
+
+[[set]]
+name = "blueprint"
+description = "Bryan Johnson Blueprint optimal targets (https://protocol.bryanjohnson.com)"

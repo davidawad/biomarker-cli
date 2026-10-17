@@ -1,0 +1,29 @@
+slug = "hematocrit"
+name = "Hematocrit"
+category = "cbc"
+unit = "%"
+loinc = "4544-3"
+aliases = ["hct", "haematocrit"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 37.5
+high = 51.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 34.0
+high = 46.6
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 34.0
+high = 51.0
+legacy = true

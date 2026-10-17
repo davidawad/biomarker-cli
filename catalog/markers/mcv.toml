@@ -1,0 +1,13 @@
+slug = "mcv"
+name = "Mean Corpuscular Volume"
+category = "cbc"
+unit = "fL"
+loinc = "787-2"
+aliases = []
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 79.0
+high = 97.0
+legacy = true

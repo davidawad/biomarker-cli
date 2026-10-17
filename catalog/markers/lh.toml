@@ -1,0 +1,14 @@
+slug = "lh"
+name = "Luteinizing Hormone"
+category = "hormone"
+unit = "mIU/mL"
+loinc = "10501-5"
+aliases = []
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.7
+high = 8.6
+when = { sex = "male" }
+legacy = true

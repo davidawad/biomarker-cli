@@ -181,6 +181,11 @@ pub const MIGRATIONS: &[Migration] = &[
     Migration { version: 4, name: "seed body and vitals markers", apply: crate::seed::seed_vitals },
     Migration { version: 5, name: "seed near-limit (warn) zones", apply: crate::seed::seed_warn_zones },
     Migration { version: 6, name: "interventions, regimens and interactions", apply: |db| db.execute_batch(SCHEMA_V6) },
+    Migration {
+        version: 7,
+        name: "catalog as data: person attributes, built-in range rows",
+        apply: crate::seed::catalog_as_data,
+    },
 ];
 
 pub fn latest_version() -> i64 {
@@ -216,7 +221,8 @@ pub fn current_version(db: &Db) -> Result<i64> {
     Ok(applied(db)?.iter().map(|a| a.0).max().unwrap_or(0))
 }
 
-/// Apply all pending migrations; returns the versions that were applied.
+/// Apply all pending migrations, then seed catalog markers the database has
+/// not seen yet; returns the versions that were applied.
 pub fn migrate(db: &Db) -> Result<Vec<i64>> {
     let current = current_version(db)?;
     if current > latest_version() {
@@ -243,6 +249,7 @@ pub fn migrate(db: &Db) -> Result<Vec<i64>> {
             if !v.is_empty() {
                 db.execute(&format!("PRAGMA user_version = {}", latest_version()), &[])?;
             }
+            crate::seed::sync_catalog(db)?;
             Ok(v)
         })
 }

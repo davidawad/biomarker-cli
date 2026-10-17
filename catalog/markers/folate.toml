@@ -1,0 +1,16 @@
+slug = "folate"
+name = "Folate"
+category = "vitamin"
+unit = "ng/mL"
+loinc = "2284-8"
+aliases = ["folic acid"]
+
+[[conversion]]
+from = "nmol/L"
+factor = 0.4413
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.0
+legacy = true

@@ -1,0 +1,7 @@
+slug = "vo2max"
+name = "VO2 Max"
+category = "vitals"
+unit = "mL/kg/min"
+loinc = "94122-9"
+aliases = ["vo2 max", "vo2-max"]
+no_reference = "legacy catalog entry without a reference range; needs research"

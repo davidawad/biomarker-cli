@@ -1,0 +1,22 @@
+slug = "non-hdl-c"
+name = "Non-HDL Cholesterol"
+category = "lipid"
+unit = "mg/dL"
+loinc = "43396-1"
+aliases = ["non-hdl", "non hdl cholesterol"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 38.67
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 130.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 100.0
+legacy = true

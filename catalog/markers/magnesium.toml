@@ -1,0 +1,17 @@
+slug = "magnesium"
+name = "Magnesium"
+category = "electrolyte"
+unit = "mg/dL"
+loinc = "19123-9"
+aliases = ["mg"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 2.431
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.6
+high = 2.3
+legacy = true

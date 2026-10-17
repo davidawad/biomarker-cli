@@ -1,0 +1,13 @@
+slug = "sodium"
+name = "Sodium"
+category = "cmp"
+unit = "mmol/L"
+loinc = "2951-2"
+aliases = ["na"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 135.0
+high = 145.0
+legacy = true

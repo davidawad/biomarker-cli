@@ -66,6 +66,7 @@ suits streaming and `jq -c`.
 | `marker alias`                         | `aliases`      | `{marker, aliases}` |
 | `marker categories`                    | `categories`   | `{category, markers}` |
 | `range list` / `set`                   | `ranges` / `range` | Range |
+| `catalog lint` / `docs` / `sets` / `conditions` | `catalog_lint` / `catalog_docs` / `range_sets` / `conditions` | see [Catalog](#catalog-catalog-lint-catalog-docs-catalog-sets-catalog-conditions) |
 | `unit list`                            | `conversions`  | `{id, marker, from, to, factor, offset}` |
 | `unit list --symbols`                  | `units`        | `{unit, system}` |
 | `unit convert`                         | `conversion_result` | `{marker, value, from, result, to}` |
@@ -113,10 +114,12 @@ suits streaming and `jq -c`.
   "sex": "male",
   "age": 39.76,
   "range_set": {
-    "reference": {"id": 2, "source": "catalog", "sex": "any", "age_min": 0.0, "age_max": 200.0, "note": null},
-    "optimal": {"id": 3, "source": "catalog", "sex": "any", "age_min": 0.0, "age_max": 200.0, "note": null},
-    "warn": {"id": 90, "source": "catalog", "sex": "any", "age_min": 0.0, "age_max": 200.0,
-             "note": "100-159 mg/dL: near optimal to borderline high"}
+    "reference": {"id": null, "source": "catalog", "set": "clinical", "sex": "any", "age_min": 0.0,
+                  "age_max": 200.0, "note": null, "conditions": {}},
+    "optimal": {"id": null, "source": "catalog", "set": "optimal", "sex": "any", "age_min": 0.0,
+                "age_max": 200.0, "note": null, "conditions": {}},
+    "warn": {"id": null, "source": "catalog", "set": "clinical", "sex": "any", "age_min": 0.0, "age_max": 200.0,
+             "note": "100-159 mg/dL: near optimal to borderline high", "conditions": {}}
   },
   "lab": "Synthetic Labs",
   "fasting": true,
@@ -133,19 +136,29 @@ suits streaming and `jq -c`.
   normalized value in `unit_canonical`.
 * `ref_*`/`opt_*` are the applicable reference/optimal range bounds, in the
   display unit. The range is chosen by the person's sex and age at
-  measurement time; the most specific match wins.
+  measurement time, the row's `fasting` flag, the person's attributes
+  (pregnancy, menopause, cycle phase, conditions) and their other markers'
+  values; the most specific match wins (see [Marker file](#marker-file-catalogmarkersslugtoml)).
 * `sex` is the person's sex and `age` their age in years at `taken_at`
   (from the birth date, truncated to two decimals). Both are `null` when the
   person has none. Each row's ranges are resolved per draw, so a series that
   crosses an age band (`range set --age-min 50`) switches ranges at that draw.
 * `range_set` tells which range applied for each kind (`reference`,
-  `optimal`, `warn`): `{id, source, sex, age_min, age_max, note}` or `null`.
-  `source` follows the range precedence (as in `profile show`): `"person"`
-  for a person's own range (person profile file, then `range set --person`;
-  it beats everything else at any age), `"set:<name>"` for an entry of the
-  range set in effect, or `"catalog"` for the most specific catalog row.
-  `id` is the `range list` id (`range list --person` for a person's database
-  range) and `null` for entries from profile or range-set files.
+  `optimal`, `warn`): `{id, source, set, sex, age_min, age_max, note,
+  conditions}` or `null`. `source` follows the range precedence (as in
+  `profile show`): `"person"` for a person's own range (person profile file,
+  then `range set --person`; it beats everything else at any age),
+  `"config"` for a `[[range]]` entry of config.toml, `"set:<name>"` for an
+  entry of the `range_set` in effect (or a range-set file listed in
+  `range_sets`), or `"catalog"` for the most specific range of the first
+  `range_sets` set that has one, merged with the database's own ranges
+  (`range set`). `set` names the built-in catalog set (`clinical`,
+  `optimal`, `blueprint`, ...) and is `null` for database and file ranges.
+  `conditions` holds the range's conditions beyond sex and age (`pregnant`,
+  `trimester`, `fasting`, `menopause`, `cycle_phase`, `markers`,
+  `conditions`; `{}` when none). `id` is the `range list` id (`range list
+  --person` for a person's database range) and `null` for built-in catalog
+  ranges and entries from profile or range-set files.
 * `warn_low`/`warn_high` are the near-limit bounds (range kind `warn`, display
   unit) for markers with a clinically meaningful "approaching" zone. The
   catalog ships them for glucose (fasting 100-125 mg/dL), HbA1c (5.7-6.4 %),
@@ -273,16 +286,111 @@ report fields, which are mostly filled by spreadsheet imports:
 
 ### Person / Marker / Range
 
-* Person: `{id, slug, name, sex, dob, notes, tags, created_at}`.
+* Person: `{id, slug, name, sex, dob, notes, tags, created_at, attributes}`.
+  `attributes` is `{pregnant?, trimester?, menopause?, cycle_phase?,
+  conditions?}` (absent keys are unknown; `person add/edit --attr`).
   `person show` adds `measurements, markers, first_date, last_date`.
 * Marker: `{id, slug, name, category, unit, loinc, description, builtin,
   aliases}`. `marker show` adds `measurements, convertible_units, conversions,
   ranges`.
 * Range: `{id, person, marker, kind, sex, age_min, age_max, low, high, unit,
-  note}`. `kind` ∈ `reference, optimal, warn`. `person` is set for person-specific ranges (`range set --person`)
-  and `null` for catalog ranges.
+  note, set, conditions, evidence, citations, legacy}`. `kind` ∈ `reference,
+  optimal, warn, critical`. `person` is set for person-specific ranges (`range set --person`)
+  and `null` for catalog ranges. `set` is the catalog set of a built-in
+  range (`id` is then `null`) and `null` for database ranges; `range list`
+  shows the active `range_sets` (`--set NAME`, `--all-sets`).
   Bounds are in the marker's canonical unit. `sex` ∈ `any, male, female`.
-  The age band is `[age_min, age_max)` in years.
+  The age band is `[age_min, age_max)` in years. `citations` is an array of
+  [Citation](#marker-file-catalogmarkersslugtoml) objects; `legacy` marks
+  values carried over uncited from the old hard-coded catalog.
+
+### Catalog (`catalog lint`, `catalog docs`, `catalog sets`, `catalog conditions`)
+
+* `catalog lint` (`kind: catalog_lint`, `--json` or `--format json`):
+  `{markers, ranges, errors, warnings, findings, coverage, universe}`.
+  `findings` are `{severity: "error"|"warning", code, marker, message}`;
+  codes include `schema`, `file-name`, `alias`, `loinc`, `unit`,
+  `conversion`, `related`, `no-reference`, `coverage`, `set`, `kind`,
+  `bounds`, `when`, `when-marker`, `when-condition`, `evidence`, `uncited`,
+  `citation`, `ambiguous`, `duplicate-range`, `description`, `universe`,
+  `universe-missing`, `universe-loinc`, `not-in-universe`. `coverage` is one
+  row per marker: `{marker, category, sets: {set: {kind: count}},
+  dimensions, ranges, cited, legacy, no_reference}`. `universe` (with
+  `--universe`, else `null`) is `{entries, covered, by_priority: {priority:
+  [covered, total]}, missing: [{slug, name, category, priority}],
+  not_in_universe}`. Exit 4 when there are errors (`--strict`: any finding).
+* `catalog docs` (`kind: catalog_docs`): `{out, written, removed}`, or with
+  `--check` `{out, stale}` (exit 4 when stale).
+* `catalog sets` (`range_sets`): `{name, description}`; `catalog
+  conditions` (`conditions`): `{slug, name}`. `catalog schema` prints the
+  marker-file JSON Schema itself.
+
+## Marker file (`catalog/markers/<slug>.toml`)
+
+The built-in catalog is one TOML file per marker, embedded in the binary.
+Its JSON Schema (draft 2020-12) is [marker-file.schema.json](marker-file.schema.json)
+(also `biomarker catalog schema`); validate a file by converting it to JSON
+first. `biomarker catalog lint --dir <catalog dir>` checks a working copy
+without rebuilding, including the rules a schema cannot express (unique
+slugs and aliases, known units, sets, conditions and marker references,
+ambiguity, citations).
+
+```toml
+slug = "glucose"                   # file name is <slug>.toml
+name = "Glucose"
+category = "metabolic"
+unit = "mg/dL"                     # canonical unit: every bound is in it
+loinc = "2345-7"
+specimen = "plasma"
+description = "Blood sugar. Fasting glucose screens for diabetes and prediabetes."
+aliases = ["glu", "fasting glucose"]
+related = ["hba1c", "insulin"]
+# no_reference = "reason"          # instead of a clinical reference range
+
+[[conversion]]                     # canonical = from * factor + offset
+from = "mmol/L"
+factor = 18.016
+
+[[range]]
+set = "clinical"                   # default; or optimal, blueprint (catalog/sets.toml)
+kind = "reference"                 # reference | optimal | warn | critical
+low = 70.0
+high = 99.0
+when = { fasting = true }          # sex, age = [min, max), pregnant, trimester, fasting,
+                                   # menopause, cycle_phase, markers, conditions
+population = "US adults"
+evidence = "guideline"             # guideline | reference-interval-study | cohort | rct
+                                   # | consensus | lab-convention
+citations = [{ pmid = "12345678", doi = "10.xxxx/yyyy", url = "https://...", locator = "Table 2" }]
+note = "..."
+# legacy = true                    # carried over uncited (a warning instead of an error)
+```
+
+* `when.markers = [{ marker = "hba1c", op = ">", value = 6.4 }]`: the
+  person's latest value of that marker (canonical unit) on or before the
+  draw must satisfy `op` (`<`, `<=`, `>`, `>=`, `=`).
+  `when.conditions = ["type-2-diabetes"]` names entries of
+  catalog/conditions.toml; people have them via `person edit --attr
+  conditions=...`. `fasting` is the measurement's own flag. A condition on
+  an unknown fact never matches.
+* Selection: among the matching ranges of a set and kind, the one with the
+  most conditions beyond sex and age wins, then sex-specific over `any`,
+  then the narrowest age band (`range_specificity = "age"` swaps those
+  two). Two ranges a person could match at once with equal specificity and
+  different bounds are a lint error (`ambiguous`).
+* Every range needs at least one citation with a `pmid`, `doi` or `url`,
+  unless `legacy = true`. Every marker needs a `clinical` reference range
+  or `no_reference`.
+* `catalog/universe.toml` lists every biomarker the catalog should cover:
+
+  ```toml
+  [[marker]]
+  slug = "glucose"
+  name = "Glucose"
+  loinc = "2345-7"        # optional
+  category = "metabolic"
+  priority = "core"       # core | common | specialist
+  ```
 
 ### Interventions, regimens, interactions
 

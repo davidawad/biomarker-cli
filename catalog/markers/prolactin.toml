@@ -1,0 +1,22 @@
+slug = "prolactin"
+name = "Prolactin"
+category = "hormone"
+unit = "ng/mL"
+loinc = "2842-3"
+aliases = ["prl"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.0
+high = 15.2
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.8
+high = 23.3
+when = { sex = "female" }
+legacy = true

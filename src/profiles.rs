@@ -8,17 +8,25 @@
 //!   marker slug (or alias, or `@category`) to a unit; `[[conversion]]`
 //!   adds conversions the preset needs (e.g. mg/dL -> mg/mL).
 //! * `ranges/<name>.toml` - a named *range set* (`[[range]]` entries, with
-//!   optional sex / age band / lab), selectable per person or globally.
+//!   optional sex / age band / lab), selectable per person or globally. The
+//!   catalog's own sets (`clinical`, `optimal`, `blueprint`, see
+//!   catalog/sets.toml) are selectable the same way; a file with a catalog
+//!   set's name replaces it, and `extends` may name a catalog set.
 //! * `people/<slug>.toml` - one person's *profile*: `unit_preset`,
 //!   `range_set`, per-marker `[units]` and personal `[[range]]` entries.
 //!
 //! `config.toml` may also carry a `[units]` table of per-marker overrides
-//! on top of the global `unit_system`.
+//! on top of the global `unit_system`, `[[range]]` entries (per-marker
+//! ranges for everyone) and a `[marker_range_sets]` table (marker -> list of
+//! sets, replacing `range_sets` for that marker).
 //!
 //! Range precedence per measurement: the person's own ranges (this file,
-//! then `range set --person` from the database) > the person's (or the
-//! global) range set > the catalog ranges. When any range entry names the
-//! measurement's `lab`, only those lab-specific entries are considered.
+//! then `range set --person` from the database) > config.toml `[[range]]` >
+//! the person's (or the global) `range_set` > the first of the `range_sets`
+//! (person's, else per-marker, else global; default `clinical, optimal`)
+//! with a matching range, merged with the database's own ranges (`range
+//! set`). When any range entry names the measurement's `lab`, only those
+//! lab-specific entries are considered.
 
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
@@ -37,7 +45,6 @@ const BUILTIN_PRESETS: &[(&str, &str)] = &[
     ("si", include_str!("../presets/units/si.toml")),
     ("uk", include_str!("../presets/units/uk.toml")),
 ];
-const BUILTIN_RANGE_SETS: &[(&str, &str)] = &[("blueprint", include_str!("../presets/ranges/blueprint.toml"))];
 const BUILTIN_CONVERSIONS: &str = include_str!("../presets/conversions.toml");
 
 #[derive(Debug, Clone, Default, Deserialize)]
@@ -111,6 +118,8 @@ pub struct PersonProfile {
     pub description: String,
     pub unit_preset: Option<String>,
     pub range_set: Option<String>,
+    /// This person's `range_sets` (priority order), replacing the global one.
+    pub range_sets: Option<Vec<String>>,
     #[serde(default)]
     pub units: BTreeMap<String, String>,
     #[serde(default, rename = "range")]
@@ -189,6 +198,8 @@ pub fn range_from_spec(cat: &Catalog, spec: &RangeSpec) -> Result<Range> {
 #[derive(Debug, Clone, Default)]
 pub struct LoadOpts {
     pub range_set: String,
+    /// The `range_sets` setting (comma separated).
+    pub range_sets: String,
     /// `unit_system` came from a flag or the environment.
     pub force_units: bool,
     /// `range_flavor` came from a flag or the environment.
@@ -217,6 +228,16 @@ pub struct Profiles {
     overrides: BTreeMap<String, String>,
     /// Global `range_set` setting.
     default_range_set: Option<String>,
+    /// Global `range_sets` setting (priority order).
+    active_sets: Vec<String>,
+    /// `[marker_range_sets]` of config.toml (marker name -> sets).
+    marker_sets: BTreeMap<String, Vec<String>>,
+    marker_sets_by_id: BTreeMap<i64, Vec<String>>,
+    /// `[[range]]` entries of config.toml.
+    config_ranges: Vec<RangeSpec>,
+    compiled_config: Vec<Compiled>,
+    /// The built-in catalog's sets: (name, description).
+    catalog_sets: Vec<(String, String)>,
     /// `--units` / `BIOMARKER_UNITS` was given: it beats per-person unit settings.
     force_units: bool,
     /// Same for `range_flavor`.
@@ -296,6 +317,12 @@ impl Profiles {
         let dir = config_path.parent().map(Path::to_path_buf).unwrap_or_default();
         let mut p = Self {
             default_range_set: Some(opts.range_set.trim().to_lowercase()).filter(|s| !s.is_empty()),
+            active_sets: split_names(&opts.range_sets),
+            catalog_sets: crate::catalog::builtin()?
+                .sets
+                .iter()
+                .map(|s| (s.name.clone(), s.description.clone()))
+                .collect(),
             force_units: opts.force_units,
             force_flavor: opts.force_flavor,
             borderline_margin: opts.borderline_margin,
@@ -304,9 +331,6 @@ impl Profiles {
         };
         for (name, text) in BUILTIN_PRESETS {
             p.presets.insert((*name).to_string(), parse(text, &format!("built-in preset {name}"))?);
-        }
-        for (name, text) in BUILTIN_RANGE_SETS {
-            p.range_sets.insert((*name).to_string(), parse(text, &format!("built-in range set {name}"))?);
         }
         #[derive(Deserialize)]
         struct Extra {
@@ -329,6 +353,8 @@ impl Profiles {
             p.people.insert(name, v);
         }
         p.overrides = overrides_from_config(config_path)?;
+        p.marker_sets = marker_sets_from_config(config_path)?;
+        p.config_ranges = ranges_from_config(config_path)?;
         Ok(p)
     }
 
@@ -340,13 +366,22 @@ impl Profiles {
             description: v.description.clone(),
             origin: v.origin.clone(),
         });
-        let sets = self.range_sets.iter().map(|(n, v)| Entry {
+        let catalog = self.catalog_sets.iter().filter(|(n, _)| !self.range_sets.contains_key(n)).map(|(n, d)| Entry {
+            kind: "range-set",
+            name: n.clone(),
+            extends: None,
+            description: d.clone(),
+            origin: None,
+        });
+        let files = self.range_sets.iter().map(|(n, v)| Entry {
             kind: "range-set",
             name: n.clone(),
             extends: v.extends.clone(),
             description: v.description.clone(),
             origin: v.origin.clone(),
         });
+        let mut sets: Vec<Entry> = catalog.chain(files).collect();
+        sets.sort_by(|a, b| a.name.cmp(&b.name));
         let people = self.people.iter().map(|(n, v)| Entry {
             kind: "person",
             name: n.clone(),
@@ -422,6 +457,77 @@ impl Profiles {
         self.compiled_sets.get(set).map_or_else(Vec::new, |c| select_compiled(c, marker_id, kind, lab))
     }
 
+    /// `[[range]]` entries of config.toml for this marker and kind.
+    pub fn config_ranges(&self, marker_id: i64, kind: RangeKind, lab: Option<&str>) -> Vec<Range> {
+        select_compiled(&self.compiled_config, marker_id, kind, lab)
+    }
+
+    /// A range set from a file (`ranges/<name>.toml`), as opposed to a catalog set.
+    pub fn is_file_set(&self, name: &str) -> bool {
+        self.range_sets.contains_key(name)
+    }
+
+    /// The range sets in priority order for `person` and a marker: the
+    /// person's `range_sets`, else `[marker_range_sets]`, else `range_sets`.
+    pub fn sets_for(&self, person: Option<&str>, marker_id: i64) -> Vec<String> {
+        person
+            .and_then(|p| self.people.get(p))
+            .and_then(|p| p.range_sets.clone())
+            .or_else(|| self.marker_sets_by_id.get(&marker_id).cloned())
+            .unwrap_or_else(|| {
+                if self.active_sets.is_empty() {
+                    crate::catalog::DEFAULT_SETS.iter().map(|s| (*s).to_string()).collect()
+                } else {
+                    self.active_sets.clone()
+                }
+            })
+    }
+
+    /// Every known set name (catalog and files).
+    pub fn set_names(&self) -> Vec<String> {
+        let mut names: Vec<String> =
+            self.catalog_sets.iter().map(|(n, _)| n.clone()).chain(self.range_sets.keys().cloned()).collect();
+        names.sort();
+        names.dedup();
+        names
+    }
+
+    fn check_set(&self, name: &str) -> Result<()> {
+        if self.range_sets.contains_key(name) {
+            return self.set_chain(name).map(|_| ());
+        }
+        if self.catalog_sets.iter().any(|(n, _)| n == name) {
+            return Ok(());
+        }
+        Err(AppError::config(format!("unknown range set '{name}' (known: {})", self.set_names().join(", "))))
+    }
+
+    /// A file set and what it extends (child first); the chain may end in a
+    /// catalog set, returned separately.
+    fn set_chain(&self, name: &str) -> Result<(Vec<&RangeSet>, Option<String>)> {
+        let mut files = Vec::new();
+        let mut seen: Vec<String> = Vec::new();
+        let mut cur = Some(name.to_lowercase());
+        while let Some(n) = cur {
+            if seen.contains(&n) {
+                return Err(AppError::config(format!("range set '{n}' extends itself")));
+            }
+            let Some(set) = self.range_sets.get(&n) else {
+                if self.catalog_sets.iter().any(|(c, _)| *c == n) && !seen.is_empty() {
+                    return Ok((files, Some(n)));
+                }
+                return Err(AppError::config(format!(
+                    "unknown range set '{n}' (known: {})",
+                    self.set_names().join(", ")
+                )));
+            };
+            cur = set.extends.as_deref().map(str::to_lowercase);
+            seen.push(n);
+            files.push(set);
+        }
+        Ok((files, None))
+    }
+
     // -- compile -----------------------------------------------------------
 
     /// Validate everything against the catalog, add the preset conversions
@@ -440,6 +546,12 @@ impl Profiles {
             .keys()
             .map(|n| Ok((n.clone(), self.compile_set(&cat, n)?)))
             .collect::<Result<BTreeMap<_, _>>>()?;
+        self.compiled_config = compile(&cat, &self.config_ranges, None, "config.toml [[range]]")?;
+        self.marker_sets_by_id = self
+            .marker_sets
+            .iter()
+            .map(|(k, v)| Ok((cat.get(k).map_err(|e| e.context("config.toml [marker_range_sets]"))?.id, v.clone())))
+            .collect::<Result<_>>()?;
         self.compiled_people = people;
         self.compiled_sets = sets;
         cat.profiles = self;
@@ -456,9 +568,7 @@ impl Profiles {
         self.presets
             .keys()
             .try_for_each(|n| chain(&self.presets, n, |p| p.extends.as_deref(), "unit preset").map(|_| ()))?;
-        self.range_sets
-            .keys()
-            .try_for_each(|n| chain(&self.range_sets, n, |s| s.extends.as_deref(), "range set").map(|_| ()))?;
+        self.range_sets.keys().try_for_each(|n| self.set_chain(n).map(|_| ()))?;
         let ctx = |p: &PersonProfile| p.origin.as_ref().map_or_else(String::new, |o| o.display().to_string());
         self.people.values().try_for_each(|p| {
             p.unit_preset
@@ -467,18 +577,21 @@ impl Profiles {
                 .transpose()
                 .map_err(|e| e.context(ctx(p)))?;
             p.range_set
-                .as_deref()
-                .map(|s| chain(&self.range_sets, s, |s| s.extends.as_deref(), "range set").map(|_| ()))
-                .transpose()
+                .iter()
+                .chain(p.range_sets.iter().flatten())
+                .try_for_each(|s| self.check_set(&s.to_lowercase()))
                 .map_err(|e| e.context(ctx(p)))
-                .map(|_| ())
         })?;
         self.default_range_set
-            .as_deref()
-            .map(|s| chain(&self.range_sets, s, |s| s.extends.as_deref(), "range set").map(|_| ()))
-            .transpose()
-            .map_err(|e| e.context("range_set setting"))
-            .map(|_| ())
+            .iter()
+            .try_for_each(|s| self.check_set(s))
+            .map_err(|e| e.context("range_set setting"))?;
+        self.active_sets.iter().try_for_each(|s| self.check_set(s)).map_err(|e| e.context("range_sets setting"))?;
+        self.marker_sets
+            .values()
+            .flatten()
+            .try_for_each(|s| self.check_set(s))
+            .map_err(|e| e.context("config.toml [marker_range_sets]"))
     }
 
     fn add_conversions(&self, cat: &mut Catalog) -> Result<()> {
@@ -536,13 +649,21 @@ impl Profiles {
     }
 
     fn compile_set(&self, cat: &Catalog, name: &str) -> Result<Vec<Compiled>> {
-        chain(&self.range_sets, name, |s| s.extends.as_deref(), "range set")?.into_iter().try_fold(
-            Vec::new(),
-            |mut acc, s| {
-                acc.extend(compile(cat, &s.ranges, s.origin.as_deref(), name)?);
-                Ok(acc)
-            },
-        )
+        let (files, tail) = self.set_chain(name)?;
+        let mut acc = files.into_iter().try_fold(Vec::new(), |mut acc, s| {
+            acc.extend(compile(cat, &s.ranges, s.origin.as_deref(), name)?);
+            Ok::<_, AppError>(acc)
+        })?;
+        if let Some(tail) = tail {
+            acc.extend(
+                cat.catalog_ranges.iter().filter(|r| r.set.as_deref() == Some(tail.as_str())).map(|r| Compiled {
+                    marker_id: r.marker_id,
+                    lab: None,
+                    range: r.clone(),
+                }),
+            );
+        }
+        Ok(acc)
     }
 }
 
@@ -599,6 +720,7 @@ fn compile_one(cat: &Catalog, s: &RangeSpec) -> Result<Compiled> {
             person_id: None,
             critical_low,
             critical_high,
+            ..Range::default()
         },
     })
 }
@@ -633,6 +755,40 @@ fn string_table(path: &Path, name: &str) -> Result<BTreeMap<String, String>> {
             _ => Err(AppError::config(format!("{}: [{name}] {k} must be a string", path.display()))),
         })
         .collect()
+}
+
+fn split_names(s: &str) -> Vec<String> {
+    s.split(',').map(|x| x.trim().to_lowercase()).filter(|x| !x.is_empty()).collect()
+}
+
+/// `[marker_range_sets]` of config.toml: marker -> sets (array or comma list).
+fn marker_sets_from_config(path: &Path) -> Result<BTreeMap<String, Vec<String>>> {
+    config_table(path, "marker_range_sets")?
+        .into_iter()
+        .map(|(k, v)| {
+            let names = match &v {
+                toml::Value::String(s) => Some(split_names(s)),
+                toml::Value::Array(a) => {
+                    a.iter().map(|x| x.as_str().map(|s| s.trim().to_lowercase())).collect::<Option<Vec<_>>>()
+                }
+                _ => None,
+            };
+            names.filter(|n| !n.is_empty()).map(|n| (k.clone(), n)).ok_or_else(|| {
+                AppError::config(format!("{}: [marker_range_sets] {k} must be a list of set names", path.display()))
+            })
+        })
+        .collect()
+}
+
+/// `[[range]]` entries of config.toml.
+fn ranges_from_config(path: &Path) -> Result<Vec<RangeSpec>> {
+    let Ok(text) = std::fs::read_to_string(path) else { return Ok(Vec::new()) };
+    let (head, _) = crate::enc_config::split(&text);
+    let table: toml::Table = head.parse().map_err(|e| AppError::config(format!("{}: {e}", path.display())))?;
+    match table.get("range") {
+        None => Ok(Vec::new()),
+        Some(v) => v.clone().try_into().map_err(|e| AppError::config(format!("{}: [[range]]: {e}", path.display()))),
+    }
 }
 
 /// `[units]` table of config.toml (marker -> unit).
@@ -812,6 +968,7 @@ mod tests {
                 person_id: None,
                 critical_low: None,
                 critical_high: None,
+                ..Range::default()
             },
         }
     }

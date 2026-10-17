@@ -37,20 +37,24 @@
       "age": 39.75,
       "range_set": {
         "reference": {
-          "id": 13,
+          "id": null,
           "source": "catalog",
+          "set": "clinical",
           "sex": "any",
           "age_min": 0.0,
           "age_max": 200.0,
-          "note": null
+          "note": null,
+          "conditions": {}
         },
         "optimal": {
-          "id": 14,
+          "id": null,
           "source": "catalog",
+          "set": "optimal",
           "sex": "any",
           "age_min": 0.0,
           "age_max": 200.0,
-          "note": null
+          "note": null,
+          "conditions": {}
         },
         "warn": null
       },
@@ -91,20 +95,24 @@
       "age": 39.75,
       "range_set": {
         "reference": {
-          "id": 5,
+          "id": null,
           "source": "catalog",
+          "set": "clinical",
           "sex": "male",
           "age_min": 0.0,
           "age_max": 200.0,
-          "note": null
+          "note": null,
+          "conditions": {}
         },
         "optimal": {
-          "id": 8,
+          "id": null,
           "source": "catalog",
+          "set": "optimal",
           "sex": "any",
           "age_min": 0.0,
           "age_max": 200.0,
-          "note": null
+          "note": null,
+          "conditions": {}
         },
         "warn": null
       },
@@ -145,28 +153,34 @@
       "age": 39.75,
       "range_set": {
         "reference": {
-          "id": 3,
+          "id": null,
           "source": "catalog",
+          "set": "clinical",
           "sex": "any",
           "age_min": 0.0,
           "age_max": 200.0,
-          "note": null
+          "note": null,
+          "conditions": {}
         },
         "optimal": {
-          "id": 4,
+          "id": null,
           "source": "catalog",
+          "set": "optimal",
           "sex": "any",
           "age_min": 0.0,
           "age_max": 200.0,
-          "note": null
+          "note": null,
+          "conditions": {}
         },
         "warn": {
-          "id": 115,
+          "id": null,
           "source": "catalog",
+          "set": "clinical",
           "sex": "any",
           "age_min": 0.0,
           "age_max": 200.0,
-          "note": "100-159 mg/dL: near optimal to borderline high"
+          "note": "100-159 mg/dL: near optimal to borderline high",
+          "conditions": {}
         }
       },
       "lab": null,

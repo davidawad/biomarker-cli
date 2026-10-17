@@ -1,0 +1,18 @@
+slug = "estradiol"
+name = "Estradiol"
+category = "hormone"
+unit = "pg/mL"
+loinc = "2243-4"
+aliases = ["e2", "oestradiol"]
+
+[[conversion]]
+from = "pmol/L"
+factor = 0.2724
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 7.6
+high = 42.6
+when = { sex = "male" }
+legacy = true

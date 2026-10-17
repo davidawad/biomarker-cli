@@ -1,0 +1,17 @@
+slug = "calcium"
+name = "Calcium"
+category = "cmp"
+unit = "mg/dL"
+loinc = "17861-6"
+aliases = ["ca"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 4.008
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 8.6
+high = 10.2
+legacy = true

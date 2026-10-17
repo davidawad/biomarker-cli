@@ -1,0 +1,13 @@
+slug = "mch"
+name = "Mean Corpuscular Hemoglobin"
+category = "cbc"
+unit = "pg"
+loinc = "785-6"
+aliases = []
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 26.6
+high = 33.0
+legacy = true

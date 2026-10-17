@@ -1,0 +1,38 @@
+slug = "hba1c"
+name = "Hemoglobin A1c"
+category = "metabolic"
+unit = "%"
+loinc = "4548-4"
+aliases = ["a1c", "hemoglobin a1c", "glycated hemoglobin", "hb a1c"]
+
+[[conversion]]
+from = "mmol/mol"
+factor = 0.09148
+offset = 2.152
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.0
+high = 5.6
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 6.4
+note = "5.7-6.4 %: prediabetes"
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 5.3
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+low = 4.5
+high = 5.6
+legacy = true

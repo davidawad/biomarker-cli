@@ -1,0 +1,17 @@
+slug = "free-t3"
+name = "Free T3"
+category = "thyroid"
+unit = "pg/mL"
+loinc = "3051-0"
+aliases = ["ft3", "t3, free", "free triiodothyronine"]
+
+[[conversion]]
+from = "pmol/L"
+factor = 0.651
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.0
+high = 4.4
+legacy = true

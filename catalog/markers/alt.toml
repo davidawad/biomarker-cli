@@ -1,0 +1,25 @@
+slug = "alt"
+name = "ALT (SGPT)"
+category = "cmp"
+unit = "U/L"
+loinc = "1742-6"
+aliases = ["sgpt", "alanine aminotransferase"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 44.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 25.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+high = 15.0
+legacy = true

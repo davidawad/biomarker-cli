@@ -1,0 +1,17 @@
+slug = "free-t4"
+name = "Free T4"
+category = "thyroid"
+unit = "ng/dL"
+loinc = "3024-7"
+aliases = ["ft4", "t4, free", "free thyroxine"]
+
+[[conversion]]
+from = "pmol/L"
+factor = 0.0777
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.82
+high = 1.77
+legacy = true

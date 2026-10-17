@@ -1,0 +1,17 @@
+slug = "tibc"
+name = "Total Iron Binding Capacity"
+category = "iron"
+unit = "µg/dL"
+loinc = "2500-7"
+aliases = []
+
+[[conversion]]
+from = "µmol/L"
+factor = 5.585
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 250.0
+high = 450.0
+legacy = true

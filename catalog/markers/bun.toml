@@ -1,0 +1,17 @@
+slug = "bun"
+name = "Blood Urea Nitrogen"
+category = "cmp"
+unit = "mg/dL"
+loinc = "3094-0"
+aliases = ["urea nitrogen", "urea"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 2.801
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.0
+high = 24.0
+legacy = true

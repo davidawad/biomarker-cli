@@ -1,0 +1,13 @@
+slug = "resting-hr"
+name = "Resting Heart Rate"
+category = "vitals"
+unit = "bpm"
+loinc = "40443-4"
+aliases = ["resting heart rate", "rhr", "resting hr"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 60.0
+high = 100.0
+legacy = true

@@ -8,6 +8,7 @@
 | notes |  |
 | tags |  |
 | created_at | 2026-01-01T00:00:00Z |
+| attributes | {} |
 | measurements | 3 |
 | markers | 3 |
 | first_date | 2024-03-05 |

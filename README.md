@@ -139,7 +139,8 @@ $ biomarker trend -m apob --format json | head -n 32
 
 > **Not medical advice.** The built-in ranges are typical adult values for
 > orientation only. Labs differ, so set your lab's ranges with
-> `biomarker range set`.
+> `biomarker range set`. Every marker and range of the built-in catalog,
+> with its sources, is listed in [docs/markers](docs/markers/index.md).
 
 ## Install
 
@@ -289,9 +290,10 @@ key somewhere else: lose them all and the data cannot be recovered.
 
 | command | purpose |
 |---------|---------|
-| `person add/list/show/edit/rm` | manage people (`--sex`, `--dob`, `--notes`, `--tag`) |
+| `person add/list/show/edit/rm` | manage people (`--sex`, `--dob`, `--notes`, `--tag`, `--attr pregnant=true` and other [attributes](#the-built-in-catalog)) |
 | `marker add/list/show/edit/rm/alias/categories` | manage the catalog. `edit --unit` rescales stored values and ranges |
-| `range set/list/rm` | reference/optimal/warn (near-limit) ranges by `--sex` and `--age-min/--age-max`, or for one `--person`. `--unit` converts the bounds |
+| `range set/list/rm` | reference/optimal/warn (near-limit)/critical ranges by `--sex` and `--age-min/--age-max`, or for one `--person`. `--unit` converts the bounds. `list` adds the catalog ranges of the active sets (`--set`, `--all-sets`) |
+| `catalog lint/docs/schema/sets/conditions` | the [built-in catalog](#the-built-in-catalog): check it, generate docs/markers, print the marker-file JSON Schema |
 | `unit list [--symbols]`, `unit add-conversion`, `unit convert` | conversion table (`to = from * factor + offset`) |
 | `add MARKER VALUE [UNIT]` | record one measurement (`--person --date --lab --fasting --note --tag --dedupe`) |
 | `rm ID...` | delete measurements |
@@ -546,7 +548,8 @@ Settings resolve in this order, lowest to highest precedence:
 | `date_format` | `BIOMARKER_DATE_FORMAT` | `%Y-%m-%d` | strftime. Used for text-format display, and accepted on input |
 | `timezone` | `BIOMARKER_TZ` | `local` | `local`, `UTC`, IANA name, `+HH:MM` |
 | `unit_system` | `BIOMARKER_UNITS` | `canonical` | a unit preset: `canonical us si uk` or your own (see Profiles) |
-| `range_set` | `BIOMARKER_RANGE_SET` | — | a named range set (see Profiles) |
+| `range_set` | `BIOMARKER_RANGE_SET` | — | a named range set used before `range_sets` (see Profiles) |
+| `range_sets` | `BIOMARKER_RANGE_SETS` | `clinical,optimal` | catalog range sets in priority order (TOML array or comma list): `clinical optimal blueprint` or a `ranges/<name>.toml` |
 | `color` | `BIOMARKER_COLOR` | `auto` | `auto always never` |
 | `precision` | `BIOMARKER_PRECISION` | `2` | decimals in text formats |
 | `borderline_margin` | `BIOMARKER_BORDERLINE_MARGIN` | `0` | percent (0-100) of the range width inside a bound that counts as borderline; 0 = off |
@@ -637,8 +640,25 @@ high = 1.8
 unit = "mmol/L"
 ```
 
+**Range sets in config.toml.** `range_sets = ["blueprint", "clinical",
+"optimal"]` picks the catalog sets and their priority (default `clinical`,
+`optimal`); a person profile may carry its own `range_sets`. Per marker:
+
+```toml
+[marker_range_sets]
+ldl-c = ["optimal"]               # this marker uses only these sets
+[[range]]                         # a range for everyone, beating every set
+marker = "glucose"
+kind = "optimal"
+high = 5.0
+unit = "mmol/L"
+```
+
 Range precedence per measurement: the person's own ranges (profile file, then
-`range set --person`), then their (or the global) range set, then the catalog.
+`range set --person`), then `[[range]]` in config.toml, then their (or the
+global) `range_set`, then the first of the `range_sets` with a matching range
+(together with your `range set` ranges, which replace catalog ranges of the
+same sex and age band). Within each, the most specific range wins.
 
 **Critical and borderline levels.** `[[range]]` entries (in range sets and
 person profiles) accept `critical_low` / `critical_high`. With
@@ -653,8 +673,8 @@ profiles or `range set --kind warn`) give the bounds of a near-low / near-high
 zone; they are picked by sex, age and person like the other kinds. JSON
 records carry `warn_low`, `warn_high` and a `status` (`low`, `near-low`,
 `in-range`, `near-high`, `high`, `unknown`) judged against the reference
-range. The catalog ships default warn zones, taken from common clinical
-cut-offs:
+range. The catalog's `clinical` set ships default warn zones, taken from common
+clinical cut-offs:
 
 | Marker | Near-limit zone | Meaning |
 |---|---|---|
@@ -670,6 +690,59 @@ These are defaults, not medical advice: check them against your own
 guidelines and lab, and override them like any other range, with
 `range set --kind warn` (by sex, age or `--person`) or `kind = "warn"`
 entries in a range set or person profile.
+
+## The built-in catalog
+
+The marker catalog is data: one TOML file per marker in
+[`catalog/markers/`](catalog/markers), embedded in the binary. Markers,
+aliases and conversions are seeded into the database (markers a newer
+version adds are seeded on the next run); ranges are read from the catalog
+at run time, so upgrading brings the new ranges. The generated
+[docs/markers](docs/markers/index.md) show every marker and range with its
+conditions, evidence and citations, and a [coverage matrix](docs/markers/coverage.md).
+
+Each `[[range]]` names a set (`clinical`, the default; `optimal`;
+`blueprint`, see `biomarker catalog sets`), a kind (`reference`, `optimal`,
+`warn`, `critical`), its bounds, citations and conditions:
+
+```toml
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 70.0
+high = 99.0
+when = { sex = "female", age = [18, 50], fasting = true,
+         markers = [{ marker = "hba1c", op = ">", value = 6.4 }] }
+evidence = "guideline"
+citations = [{ pmid = "12345678", locator = "Table 2" }]
+```
+
+`when` may also require `pregnant`, `trimester`, `menopause`
+(`pre peri post`), `cycle_phase` (`menstrual follicular ovulatory luteal`)
+and `conditions` (see `biomarker catalog conditions`). Pregnancy,
+menopause, cycle phase and conditions come from the person's attributes:
+
+```sh
+biomarker person edit kim --attr trimester=2 --attr conditions=type-2-diabetes
+biomarker person edit kim --attr pregnant=     # an empty value clears it
+```
+
+`fasting` is the measurement's own `--fasting` flag; `markers` compares the
+person's latest value of another marker on or before the draw. A condition
+on an unknown fact never matches. Of the matching ranges the one with the
+most conditions wins (then sex-specific, then the narrowest age band).
+Ranges carried over from the old hard-coded catalog are marked
+`legacy = true`: they have no citation yet.
+
+`biomarker catalog lint [--json] [--strict] [--universe] [--dir DIR]` checks
+the catalog (schema, citations, units, sets, conditions, marker references,
+ambiguous ranges), prints the coverage matrix and, with `--universe`, the
+coverage of [`catalog/universe.toml`](catalog/universe.toml), the list of
+biomarkers the catalog should eventually cover. It exits 4 on errors;
+`--strict` makes warnings (uncited legacy ranges, coverage gaps) errors.
+`biomarker catalog docs [--out docs/markers] [--check]` regenerates the
+docs (a test fails when the committed ones are stale). The file format and
+its JSON Schema are in [docs/json-schema.md](docs/json-schema.md#marker-file-catalogmarkersslugtoml).
 
 **Per-person flavor.** `range_flavor = "optimal"` in a person profile; an
 explicit flag or environment variable still wins.
@@ -718,7 +791,8 @@ high = 400
 
 Not configurable on purpose: the duplicate key of a measurement (person,
 marker, date) and the length of a year used for slopes and ages (365.2425
-days). Critical bounds live in range sets and profiles, not the catalog.
+days). Critical bounds live in range sets, profiles and the built-in
+catalog (`kind = "critical"`), not in `marker sync` files.
 Which range wins when several match is the `range_specificity` setting.
 
 ## Machine interface

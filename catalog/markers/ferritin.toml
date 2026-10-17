@@ -1,0 +1,36 @@
+slug = "ferritin"
+name = "Ferritin"
+category = "iron"
+unit = "ng/mL"
+loinc = "2276-4"
+aliases = ["ferr"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 30.0
+high = 400.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15.0
+high = 150.0
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15.0
+high = 400.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 50.0
+high = 150.0
+legacy = true

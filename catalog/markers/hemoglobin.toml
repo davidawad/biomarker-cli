@@ -1,0 +1,33 @@
+slug = "hemoglobin"
+name = "Hemoglobin"
+category = "cbc"
+unit = "g/dL"
+loinc = "718-7"
+aliases = ["hgb", "hb", "haemoglobin"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 1.611
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 13.0
+high = 17.7
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.1
+high = 15.9
+when = { sex = "female" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.1
+high = 17.7
+legacy = true

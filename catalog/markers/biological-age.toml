@@ -1,0 +1,6 @@
+slug = "biological-age"
+name = "Biological Age"
+category = "body"
+unit = "years"
+aliases = ["bio age", "phenotypic age", "phenoage"]
+no_reference = "legacy catalog entry without a reference range; needs research"

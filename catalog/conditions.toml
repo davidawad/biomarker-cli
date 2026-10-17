@@ -1,0 +1,42 @@
+# Named conditions a range's `when.conditions` may require. A person has them
+# when `person add/edit --attr conditions=...` lists them.
+
+[[condition]]
+slug = "type-1-diabetes"
+name = "Type 1 diabetes"
+
+[[condition]]
+slug = "type-2-diabetes"
+name = "Type 2 diabetes"
+
+[[condition]]
+slug = "prediabetes"
+name = "Prediabetes"
+
+[[condition]]
+slug = "chronic-kidney-disease"
+name = "Chronic kidney disease"
+
+[[condition]]
+slug = "cardiovascular-disease"
+name = "Established atherosclerotic cardiovascular disease"
+
+[[condition]]
+slug = "hypothyroidism"
+name = "Hypothyroidism"
+
+[[condition]]
+slug = "hyperthyroidism"
+name = "Hyperthyroidism"
+
+[[condition]]
+slug = "pcos"
+name = "Polycystic ovary syndrome"
+
+[[condition]]
+slug = "liver-disease"
+name = "Chronic liver disease"
+
+[[condition]]
+slug = "hypertension"
+name = "Hypertension"

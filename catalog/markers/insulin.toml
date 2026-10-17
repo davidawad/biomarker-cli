@@ -1,0 +1,24 @@
+slug = "insulin"
+name = "Insulin (fasting)"
+category = "metabolic"
+unit = "µIU/mL"
+loinc = "20448-7"
+aliases = ["fasting insulin"]
+
+[[conversion]]
+from = "pmol/L"
+factor = 0.144
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.6
+high = 24.9
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 2.0
+high = 6.0
+legacy = true

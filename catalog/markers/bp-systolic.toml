@@ -1,0 +1,19 @@
+slug = "bp-systolic"
+name = "Blood Pressure, Systolic"
+category = "vitals"
+unit = "mmHg"
+loinc = "8480-6"
+aliases = ["systolic", "systolic bp", "sbp", "blood pressure systolic"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 120.0
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 129.0
+note = "120-129 mmHg: elevated"
+legacy = true

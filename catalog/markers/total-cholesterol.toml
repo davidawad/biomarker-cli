@@ -1,0 +1,29 @@
+slug = "total-cholesterol"
+name = "Total Cholesterol"
+category = "lipid"
+unit = "mg/dL"
+loinc = "2093-3"
+aliases = ["tc", "cholesterol", "chol", "cholesterol, total"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 38.67
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 200.0
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 239.0
+note = "200-239 mg/dL: borderline high"
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 180.0
+legacy = true

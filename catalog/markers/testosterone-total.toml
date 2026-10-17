@@ -1,0 +1,26 @@
+slug = "testosterone-total"
+name = "Testosterone, Total"
+category = "hormone"
+unit = "ng/dL"
+loinc = "2986-8"
+aliases = ["testosterone", "total testosterone", "tt"]
+
+[[conversion]]
+from = "nmol/L"
+factor = 28.84
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 264.0
+high = 916.0
+when = { sex = "male" }
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 8.0
+high = 48.0
+when = { sex = "female" }
+legacy = true

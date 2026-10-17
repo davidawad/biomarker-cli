@@ -1,0 +1,35 @@
+slug = "ldl-c"
+name = "LDL Cholesterol"
+category = "lipid"
+unit = "mg/dL"
+loinc = "13457-7"
+aliases = ["ldl", "ldl cholesterol", "ldl-cholesterol", "ldl chol calc (nih)"]
+
+[[conversion]]
+from = "mmol/L"
+factor = 38.67
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 100.0
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 159.0
+note = "100-159 mg/dL: near optimal to borderline high"
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 70.0
+legacy = true
+
+[[range]]
+set = "blueprint"
+kind = "optimal"
+high = 100.0
+legacy = true

@@ -2,6 +2,7 @@
 
 use serde::Serialize;
 
+use crate::catalog::PersonAttrs;
 use crate::db::{int, opt_bool, opt_real, opt_text, real, text, Db, Row, RowExt, Value};
 use crate::error::{AppError, Result};
 use crate::ranges::{Range, RangeKind};
@@ -22,9 +23,11 @@ pub struct Person {
     pub notes: Option<String>,
     pub tags: Vec<String>,
     pub created_at: String,
+    /// Pregnancy, menopause, cycle phase and conditions, for conditional ranges.
+    pub attributes: PersonAttrs,
 }
 
-const PERSON_COLS: &str = "id, slug, name, sex, dob, notes, tags, created_at";
+const PERSON_COLS: &str = "id, slug, name, sex, dob, notes, tags, created_at, attributes";
 
 fn person_from(r: &Row) -> Person {
     Person {
@@ -36,6 +39,7 @@ fn person_from(r: &Row) -> Person {
         notes: r.s(5),
         tags: tags_from_db(r.s(6)),
         created_at: r.s(7).unwrap_or_default(),
+        attributes: PersonAttrs::from_json(r.s(8).as_deref()),
     }
 }
 
@@ -56,7 +60,7 @@ pub fn get_person(db: &Db, slug: &str) -> Result<Person> {
 
 pub fn insert_person(db: &Db, p: &Person) -> Result<Person> {
     db.execute(
-        "INSERT INTO people (slug, name, sex, dob, notes, tags, created_at) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)",
+        "INSERT INTO people (slug, name, sex, dob, notes, tags, created_at, attributes) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)",
         &[
             text(&p.slug),
             opt_text(p.name.as_ref()),
@@ -65,6 +69,7 @@ pub fn insert_person(db: &Db, p: &Person) -> Result<Person> {
             opt_text(p.notes.as_ref()),
             text(tags_to_json(&p.tags)),
             text(&p.created_at),
+            text(p.attributes.to_json()),
         ],
     )
     .map_err(|e| {
@@ -79,7 +84,7 @@ pub fn insert_person(db: &Db, p: &Person) -> Result<Person> {
 
 pub fn update_person(db: &Db, p: &Person) -> Result<Person> {
     db.execute(
-        "UPDATE people SET slug = ?1, name = ?2, sex = ?3, dob = ?4, notes = ?5, tags = ?6 WHERE id = ?7",
+        "UPDATE people SET slug = ?1, name = ?2, sex = ?3, dob = ?4, notes = ?5, tags = ?6, attributes = ?7 WHERE id = ?8",
         &[
             text(&p.slug),
             opt_text(p.name.as_ref()),
@@ -87,6 +92,7 @@ pub fn update_person(db: &Db, p: &Person) -> Result<Person> {
             opt_text(p.dob.as_ref()),
             opt_text(p.notes.as_ref()),
             text(tags_to_json(&p.tags)),
+            text(p.attributes.to_json()),
             int(p.id),
         ],
     )
@@ -128,11 +134,23 @@ pub struct Marker {
     pub aliases: Vec<String>,
 }
 
+/// (person id, marker slug) -> [(taken_at, canonical value)] in date order.
+pub type ConditionValues = std::collections::BTreeMap<(i64, String), Vec<(String, f64)>>;
+
 /// Everything needed to interpret measurements, loaded once per command.
 #[derive(Debug, Clone, Default)]
 pub struct Catalog {
     pub markers: Vec<Marker>,
+    /// Ranges stored in the database (`range set` without `--person`); they
+    /// override the built-in catalog ranges they share a sex / age band with.
     pub ranges: Vec<Range>,
+    /// Ranges of the built-in catalog, every set (`set` is `Some`), attached
+    /// to the database markers they were seeded as.
+    pub catalog_ranges: Vec<Range>,
+    /// Person attributes by person id (for conditional ranges).
+    pub person_attrs: std::collections::BTreeMap<i64, PersonAttrs>,
+    /// Values of markers that catalog `when.markers` conditions refer to.
+    pub condition_values: ConditionValues,
     /// Person-specific ranges (`person_id` is set); they win over `ranges`.
     pub person_ranges: Vec<Range>,
     pub conversions: ConversionSet,
@@ -145,7 +163,7 @@ pub struct Catalog {
 impl Catalog {
     pub fn load(db: &Db) -> Result<Self> {
         let aliases = db.query("SELECT alias, marker_id FROM marker_aliases ORDER BY alias", &[])?;
-        let markers = db
+        let markers: Vec<Marker> = db
             .query(
                 "SELECT id, slug, name, category, unit, loinc, description, builtin FROM markers ORDER BY category, slug",
                 &[],
@@ -170,7 +188,16 @@ impl Catalog {
                 }
             })
             .collect();
+        let catalog_ranges = attach_catalog_ranges(db, &markers)?;
+        let condition_values = load_condition_values(db, &markers, &catalog_ranges)?;
         Ok(Self {
+            catalog_ranges,
+            condition_values,
+            person_attrs: db
+                .query("SELECT id, attributes FROM people", &[])?
+                .iter()
+                .map(|r| (r.i(0).unwrap_or_default(), PersonAttrs::from_json(r.s(1).as_deref())))
+                .collect(),
             markers,
             ranges: load_ranges(db)?,
             person_ranges: load_person_ranges(db)?,
@@ -250,9 +277,64 @@ impl Catalog {
             .map_or_else(|| m.unit.clone(), |k| self.spell_unit(&k))
     }
 
+    /// The latest value of marker `slug` for a person on or before the day
+    /// of `taken_at` (`None`: the latest overall), canonical unit.
+    pub fn condition_value(&self, person_id: i64, slug: &str, taken_at: Option<&str>) -> Option<f64> {
+        let day = |d: &str| d.get(..10).unwrap_or(d).to_string();
+        let limit = taken_at.map(day);
+        self.condition_values
+            .get(&(person_id, slug.to_string()))?
+            .iter()
+            .rev()
+            .find(|(t, _)| limit.as_ref().is_none_or(|l| day(t) <= *l))
+            .map(|(_, v)| *v)
+    }
+
     pub fn ranges_for(&self, marker_id: i64) -> impl Iterator<Item = &Range> {
         self.ranges.iter().filter(move |r| r.marker_id == marker_id)
     }
+}
+
+/// The built-in catalog's ranges for the markers they were seeded as
+/// (`catalog_seeded`, else by slug), with bounds converted when the
+/// marker's unit was changed since.
+fn attach_catalog_ranges(db: &Db, markers: &[Marker]) -> Result<Vec<Range>> {
+    let seeded: std::collections::BTreeMap<String, i64> = db
+        .query("SELECT slug, marker_id FROM catalog_seeded", &[])
+        .map(|rows| rows.iter().filter_map(|r| Some((r.s(0)?, r.i(1)?))).collect())
+        .unwrap_or_default();
+    let conversions = ConversionSet::new(load_conversions(db)?);
+    let mut out = Vec::new();
+    for def in &crate::catalog::builtin()?.markers {
+        let id = seeded.get(&def.slug).copied();
+        let Some(m) = markers.iter().find(|m| id.map_or(m.slug == def.slug, |id| m.id == id)) else { continue };
+        let same = same_unit(&m.unit, &def.unit);
+        if !same && conversions.convert(m.id, 1.0, &def.unit, &m.unit).is_err() {
+            continue;
+        }
+        let scale = |v: f64| if same { v } else { conversions.convert(m.id, v, &def.unit, &m.unit).unwrap_or(v) };
+        out.extend(def.ranges.iter().map(|r| r.to_range(m.id, &scale)));
+    }
+    Ok(out)
+}
+
+/// Measurements of the markers named in catalog `when.markers` conditions.
+fn load_condition_values(db: &Db, markers: &[Marker], ranges: &[Range]) -> Result<ConditionValues> {
+    let mut slugs: Vec<&str> = ranges.iter().flat_map(|r| r.cond.markers.iter().map(|c| c.marker.as_str())).collect();
+    slugs.sort_unstable();
+    slugs.dedup();
+    let mut out = ConditionValues::new();
+    for slug in slugs {
+        let Some(m) = markers.iter().find(|m| m.slug == slug) else { continue };
+        for r in db.query(
+            "SELECT person_id, taken_at, value FROM measurements WHERE marker_id = ?1 ORDER BY taken_at",
+            &[int(m.id)],
+        )? {
+            let key = (r.i(0).unwrap_or_default(), slug.to_string());
+            out.entry(key).or_default().push((r.s(1).unwrap_or_default(), r.f(2).unwrap_or_default()));
+        }
+    }
+    Ok(out)
 }
 
 pub fn insert_marker(db: &Db, m: &Marker) -> Result<i64> {
@@ -327,7 +409,7 @@ pub fn count_measurements_for_marker(db: &Db, id: i64) -> Result<i64> {
 pub fn load_ranges(db: &Db) -> Result<Vec<Range>> {
     Ok(db
         .query(
-            "SELECT id, marker_id, kind, sex, age_min, age_max, low, high, note FROM ranges ORDER BY marker_id, kind, sex, age_min",
+            "SELECT id, marker_id, kind, sex, age_min, age_max, low, high, note FROM ranges WHERE builtin = 0 ORDER BY marker_id, kind, sex, age_min",
             &[],
         )?
         .iter()
@@ -344,6 +426,7 @@ pub fn load_ranges(db: &Db) -> Result<Vec<Range>> {
             person_id: None,
             critical_low: None,
             critical_high: None,
+            ..Range::default()
         })
         .collect())
 }
@@ -365,6 +448,7 @@ pub fn load_person_ranges(db: &Db) -> Result<Vec<Range>> {
             low: r.f(4),
             high: r.f(5),
             note: r.s(6),
+            ..Range::default()
         })
         .collect())
 }
@@ -387,7 +471,7 @@ pub fn delete_person_range(db: &Db, id: i64) -> Result<usize> {
 pub fn upsert_range(db: &Db, r: &Range) -> Result<()> {
     db.execute(
         "INSERT INTO ranges (marker_id, kind, sex, age_min, age_max, low, high, note) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)
-         ON CONFLICT (marker_id, kind, sex, age_min, age_max) DO UPDATE SET low = excluded.low, high = excluded.high, note = excluded.note",
+         ON CONFLICT (marker_id, kind, sex, age_min, age_max) DO UPDATE SET low = excluded.low, high = excluded.high, note = excluded.note, builtin = 0",
         &[
             int(r.marker_id),
             text(r.kind.as_str()),

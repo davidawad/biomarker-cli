@@ -1,5 +1,6 @@
 //! Command implementations.
 
+pub mod catalog;
 pub mod config_cmd;
 pub mod db_cmd;
 pub mod import;
@@ -35,6 +36,7 @@ pub fn dispatch(ctx: &Ctx, cmd: Command) -> Result<Status> {
         Command::Marker(c) => marker::run(ctx, c).map(|()| 0),
         Command::Range(c) => range::run(ctx, c).map(|()| 0),
         Command::Unit(c) => unit::run(ctx, c).map(|()| 0),
+        Command::Catalog(c) => catalog::run(ctx, c),
         Command::Profile(c) => profile::run(ctx, c).map(|()| 0),
         Command::Add(a) => measure::add(ctx, a).map(|()| 0),
         Command::Rm(a) => measure::rm(ctx, a).map(|()| 0),

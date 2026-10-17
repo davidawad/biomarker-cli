@@ -1,0 +1,19 @@
+slug = "homocysteine"
+name = "Homocysteine"
+category = "inflammation"
+unit = "µmol/L"
+loinc = "13965-9"
+aliases = ["hcy"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 15.0
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 10.0
+legacy = true

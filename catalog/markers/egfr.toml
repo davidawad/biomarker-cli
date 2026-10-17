@@ -1,0 +1,25 @@
+slug = "egfr"
+name = "eGFR"
+category = "cmp"
+unit = "mL/min/1.73m²"
+loinc = "98979-8"
+aliases = ["gfr", "estimated gfr"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 60.0
+legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 90.0
+note = "60-89: mildly decreased"
+legacy = true
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 90.0
+legacy = true

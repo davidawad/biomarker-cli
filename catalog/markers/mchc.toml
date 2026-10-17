@@ -1,0 +1,13 @@
+slug = "mchc"
+name = "Mean Corpuscular Hemoglobin Concentration"
+category = "cbc"
+unit = "g/dL"
+loinc = "786-4"
+aliases = []
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 31.5
+high = 35.7
+legacy = true

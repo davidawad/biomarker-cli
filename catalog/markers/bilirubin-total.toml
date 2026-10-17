@@ -1,0 +1,17 @@
+slug = "bilirubin-total"
+name = "Bilirubin, Total"
+category = "cmp"
+unit = "mg/dL"
+loinc = "1975-2"
+aliases = ["bilirubin", "tbil", "total bilirubin"]
+
+[[conversion]]
+from = "µmol/L"
+factor = 0.05848
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.1
+high = 1.2
+legacy = true

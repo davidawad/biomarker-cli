@@ -1,0 +1,17 @@
+slug = "cortisol"
+name = "Cortisol (AM)"
+category = "hormone"
+unit = "µg/dL"
+loinc = "2143-6"
+aliases = ["am cortisol"]
+
+[[conversion]]
+from = "nmol/L"
+factor = 0.03625
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.2
+high = 19.4
+legacy = true

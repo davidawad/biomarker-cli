@@ -1,0 +1,499 @@
+# Master list of biomarkers the catalog should eventually cover.
+# One [[marker]] per biomarker: slug, name, loinc (optional), category, priority = core | common | specialist.
+# `biomarker catalog lint --universe` reports entries without a catalog/markers/<slug>.toml.
+
+[[marker]]
+slug = "total-cholesterol"
+name = "Total Cholesterol"
+loinc = "2093-3"
+category = "lipid"
+priority = "core"
+
+[[marker]]
+slug = "ldl-c"
+name = "LDL Cholesterol"
+loinc = "13457-7"
+category = "lipid"
+priority = "core"
+
+[[marker]]
+slug = "hdl-c"
+name = "HDL Cholesterol"
+loinc = "2085-9"
+category = "lipid"
+priority = "core"
+
+[[marker]]
+slug = "triglycerides"
+name = "Triglycerides"
+loinc = "2571-8"
+category = "lipid"
+priority = "core"
+
+[[marker]]
+slug = "non-hdl-c"
+name = "Non-HDL Cholesterol"
+loinc = "43396-1"
+category = "lipid"
+priority = "core"
+
+[[marker]]
+slug = "apob"
+name = "Apolipoprotein B"
+loinc = "1884-6"
+category = "lipid"
+priority = "core"
+
+[[marker]]
+slug = "lpa"
+name = "Lipoprotein(a)"
+loinc = "43583-4"
+category = "lipid"
+priority = "specialist"
+
+[[marker]]
+slug = "glucose"
+name = "Glucose"
+loinc = "2345-7"
+category = "metabolic"
+priority = "core"
+
+[[marker]]
+slug = "hba1c"
+name = "Hemoglobin A1c"
+loinc = "4548-4"
+category = "metabolic"
+priority = "core"
+
+[[marker]]
+slug = "insulin"
+name = "Insulin (fasting)"
+loinc = "20448-7"
+category = "metabolic"
+priority = "common"
+
+[[marker]]
+slug = "uric-acid"
+name = "Uric Acid"
+loinc = "3084-1"
+category = "metabolic"
+priority = "common"
+
+[[marker]]
+slug = "sodium"
+name = "Sodium"
+loinc = "2951-2"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "potassium"
+name = "Potassium"
+loinc = "2823-3"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "chloride"
+name = "Chloride"
+loinc = "2075-0"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "co2"
+name = "Carbon Dioxide (Bicarbonate)"
+loinc = "2028-9"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "bun"
+name = "Blood Urea Nitrogen"
+loinc = "3094-0"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "creatinine"
+name = "Creatinine"
+loinc = "2160-0"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "egfr"
+name = "eGFR"
+loinc = "98979-8"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "calcium"
+name = "Calcium"
+loinc = "17861-6"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "total-protein"
+name = "Total Protein"
+loinc = "2885-2"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "albumin"
+name = "Albumin"
+loinc = "1751-7"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "bilirubin-total"
+name = "Bilirubin, Total"
+loinc = "1975-2"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "alp"
+name = "Alkaline Phosphatase"
+loinc = "6768-6"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "ast"
+name = "AST (SGOT)"
+loinc = "1920-8"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "alt"
+name = "ALT (SGPT)"
+loinc = "1742-6"
+category = "cmp"
+priority = "core"
+
+[[marker]]
+slug = "ggt"
+name = "Gamma-Glutamyl Transferase"
+loinc = "2324-2"
+category = "liver"
+priority = "common"
+
+[[marker]]
+slug = "magnesium"
+name = "Magnesium"
+loinc = "19123-9"
+category = "electrolyte"
+priority = "common"
+
+[[marker]]
+slug = "wbc"
+name = "White Blood Cells"
+loinc = "6690-2"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "rbc"
+name = "Red Blood Cells"
+loinc = "789-8"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "hemoglobin"
+name = "Hemoglobin"
+loinc = "718-7"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "hematocrit"
+name = "Hematocrit"
+loinc = "4544-3"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "mcv"
+name = "Mean Corpuscular Volume"
+loinc = "787-2"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "mch"
+name = "Mean Corpuscular Hemoglobin"
+loinc = "785-6"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "mchc"
+name = "Mean Corpuscular Hemoglobin Concentration"
+loinc = "786-4"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "rdw"
+name = "Red Cell Distribution Width"
+loinc = "788-0"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "platelets"
+name = "Platelets"
+loinc = "777-3"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "neutrophils-abs"
+name = "Neutrophils (Absolute)"
+loinc = "751-8"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "lymphocytes-abs"
+name = "Lymphocytes (Absolute)"
+loinc = "731-0"
+category = "cbc"
+priority = "core"
+
+[[marker]]
+slug = "tsh"
+name = "Thyroid Stimulating Hormone"
+loinc = "3016-3"
+category = "thyroid"
+priority = "core"
+
+[[marker]]
+slug = "free-t4"
+name = "Free T4"
+loinc = "3024-7"
+category = "thyroid"
+priority = "common"
+
+[[marker]]
+slug = "free-t3"
+name = "Free T3"
+loinc = "3051-0"
+category = "thyroid"
+priority = "common"
+
+[[marker]]
+slug = "tpo-ab"
+name = "Thyroid Peroxidase Antibodies"
+loinc = "8099-4"
+category = "thyroid"
+priority = "specialist"
+
+[[marker]]
+slug = "testosterone-total"
+name = "Testosterone, Total"
+loinc = "2986-8"
+category = "hormone"
+priority = "common"
+
+[[marker]]
+slug = "testosterone-free"
+name = "Testosterone, Free"
+loinc = "2991-8"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "estradiol"
+name = "Estradiol"
+loinc = "2243-4"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "igf-1"
+name = "Insulin-like Growth Factor 1"
+loinc = "2484-4"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "shbg"
+name = "Sex Hormone Binding Globulin"
+loinc = "13967-5"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "dhea-s"
+name = "DHEA-Sulfate"
+loinc = "2191-5"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "cortisol"
+name = "Cortisol (AM)"
+loinc = "2143-6"
+category = "hormone"
+priority = "common"
+
+[[marker]]
+slug = "lh"
+name = "Luteinizing Hormone"
+loinc = "10501-5"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "fsh"
+name = "Follicle Stimulating Hormone"
+loinc = "15067-2"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "prolactin"
+name = "Prolactin"
+loinc = "2842-3"
+category = "hormone"
+priority = "specialist"
+
+[[marker]]
+slug = "psa"
+name = "Prostate Specific Antigen"
+loinc = "2857-1"
+category = "hormone"
+priority = "common"
+
+[[marker]]
+slug = "hscrp"
+name = "hs-CRP"
+loinc = "30522-7"
+category = "inflammation"
+priority = "common"
+
+[[marker]]
+slug = "homocysteine"
+name = "Homocysteine"
+loinc = "13965-9"
+category = "inflammation"
+priority = "specialist"
+
+[[marker]]
+slug = "vitamin-d"
+name = "Vitamin D, 25-Hydroxy"
+loinc = "1989-3"
+category = "vitamin"
+priority = "common"
+
+[[marker]]
+slug = "vitamin-b12"
+name = "Vitamin B12"
+loinc = "2132-9"
+category = "vitamin"
+priority = "common"
+
+[[marker]]
+slug = "folate"
+name = "Folate"
+loinc = "2284-8"
+category = "vitamin"
+priority = "common"
+
+[[marker]]
+slug = "ferritin"
+name = "Ferritin"
+loinc = "2276-4"
+category = "iron"
+priority = "common"
+
+[[marker]]
+slug = "iron"
+name = "Iron, Serum"
+loinc = "2498-4"
+category = "iron"
+priority = "common"
+
+[[marker]]
+slug = "tibc"
+name = "Total Iron Binding Capacity"
+loinc = "2500-7"
+category = "iron"
+priority = "common"
+
+[[marker]]
+slug = "transferrin-saturation"
+name = "Transferrin Saturation"
+loinc = "2502-3"
+category = "iron"
+priority = "common"
+
+[[marker]]
+slug = "weight"
+name = "Body Weight"
+loinc = "29463-7"
+category = "body"
+priority = "core"
+
+[[marker]]
+slug = "bmi"
+name = "Body Mass Index"
+loinc = "39156-5"
+category = "body"
+priority = "core"
+
+[[marker]]
+slug = "body-fat"
+name = "Body Fat"
+loinc = "41982-0"
+category = "body"
+priority = "common"
+
+[[marker]]
+slug = "biological-age"
+name = "Biological Age"
+category = "body"
+priority = "specialist"
+
+[[marker]]
+slug = "resting-hr"
+name = "Resting Heart Rate"
+loinc = "40443-4"
+category = "vitals"
+priority = "core"
+
+[[marker]]
+slug = "hrv"
+name = "Heart Rate Variability"
+loinc = "80404-7"
+category = "vitals"
+priority = "specialist"
+
+[[marker]]
+slug = "vo2max"
+name = "VO2 Max"
+loinc = "94122-9"
+category = "vitals"
+priority = "specialist"
+
+[[marker]]
+slug = "bp-systolic"
+name = "Blood Pressure, Systolic"
+loinc = "8480-6"
+category = "vitals"
+priority = "core"
+
+[[marker]]
+slug = "bp-diastolic"
+name = "Blood Pressure, Diastolic"
+loinc = "8462-4"
+category = "vitals"
+priority = "core"

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gitlab.com/davidawad/biomarker-cli/-/raw/main/docs/marker-file.schema.json",
+  "title": "biomarker catalog marker file (catalog/markers/<slug>.toml)",
+  "description": "One biomarker of the built-in catalog. TOML; validate it as JSON after a TOML-to-JSON conversion. `biomarker catalog lint` checks everything here plus cross-file rules (units, sets, conditions, marker references, ambiguity).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slug", "name", "category", "unit"],
+  "properties": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Identifier; the file is named <slug>.toml" },
+    "name": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "e.g. lipid, metabolic, cbc, hormone" },
+    "unit": { "type": "string", "minLength": 1, "description": "Canonical unit; every range bound is in this unit" },
+    "loinc": { "type": "string", "pattern": "^[0-9]{1,7}-[0-9]$", "description": "LOINC code (verified)" },
+    "specimen": { "type": "string", "description": "e.g. serum, plasma, whole blood, urine" },
+    "description": { "type": "string", "description": "1-3 sentences: what it measures and why people track it" },
+    "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "related": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "description": "Slugs of related catalog markers" },
+    "no_reference": { "type": "string", "minLength": 1, "description": "Why the marker has no clinical reference range" },
+    "conversion": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "factor"],
+        "properties": {
+          "from": { "type": "string", "description": "Unit converted from; canonical = from * factor + offset" },
+          "factor": { "type": "number", "not": { "const": 0 } },
+          "offset": { "type": "number", "default": 0 }
+        }
+      }
+    },
+    "range": { "type": "array", "items": { "$ref": "#/$defs/range" } }
+  },
+  "$defs": {
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "anyOf": [{ "required": ["low"] }, { "required": ["high"] }],
+      "properties": {
+        "set": { "type": "string", "default": "clinical", "description": "Range set: clinical, optimal or a named preset in catalog/sets.toml" },
+        "kind": { "enum": ["reference", "optimal", "warn", "critical"], "default": "reference" },
+        "low": { "type": "number", "description": "Canonical unit" },
+        "high": { "type": "number", "description": "Canonical unit" },
+        "when": { "$ref": "#/$defs/when" },
+        "population": { "type": "string", "description": "Who the range was derived from, e.g. US adults, NHANES 2011-2016" },
+        "evidence": { "enum": ["guideline", "reference-interval-study", "cohort", "rct", "consensus", "lab-convention"] },
+        "citations": { "type": "array", "items": { "$ref": "#/$defs/citation" }, "description": "Required (at least one) unless legacy = true" },
+        "note": { "type": "string" },
+        "legacy": { "type": "boolean", "default": false, "description": "Carried over uncited from the old hard-coded catalog" }
+      }
+    },
+    "when": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sex": { "enum": ["male", "female"] },
+        "age": { "type": "array", "items": { "type": "number", "minimum": 0 }, "minItems": 2, "maxItems": 2, "description": "[min, max) in years" },
+        "pregnant": { "type": "boolean" },
+        "trimester": { "enum": [1, 2, 3] },
+        "fasting": { "type": "boolean" },
+        "menopause": { "enum": ["pre", "peri", "post"] },
+        "cycle_phase": { "enum": ["menstrual", "follicular", "ovulatory", "luteal"] },
+        "markers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["marker", "op", "value"],
+            "properties": {
+              "marker": { "type": "string", "description": "Slug of another catalog marker" },
+              "op": { "enum": ["<", "<=", ">", ">=", "="] },
+              "value": { "type": "number", "description": "In that marker's canonical unit" }
+            }
+          }
+        },
+        "conditions": { "type": "array", "items": { "type": "string" }, "description": "Slugs from catalog/conditions.toml" }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "anyOf": [{ "required": ["pmid"] }, { "required": ["doi"] }, { "required": ["url"] }],
+      "properties": {
+        "pmid": { "type": "string", "pattern": "^[0-9]+$" },
+        "doi": { "type": "string", "pattern": "^10\\.[0-9]{4,9}/\\S+$" },
+        "url": { "type": "string", "pattern": "^https?://" },
+        "title": { "type": "string" },
+        "locator": { "type": "string", "description": "Where in the source, e.g. Table 2" }
+      }
+    }
+  }
+}

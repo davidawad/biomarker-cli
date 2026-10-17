@@ -1,0 +1,13 @@
+slug = "lymphocytes-abs"
+name = "Lymphocytes (Absolute)"
+category = "cbc"
+unit = "10^3/µL"
+loinc = "731-0"
+aliases = ["lymphocytes", "lymphs (absolute)"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.7
+high = 3.1
+legacy = true

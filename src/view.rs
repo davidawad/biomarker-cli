@@ -3,6 +3,7 @@
 
 use serde_json::json;
 
+use crate::catalog::Facts;
 use crate::output::Record;
 use crate::ranges::{self, Flag, Level, Range, RangeKind, Status};
 use crate::store::{Catalog, Marker, MeasurementRow};
@@ -38,37 +39,104 @@ fn age_at(row: &MeasurementRow) -> Option<f64> {
     date_of(&row.taken_at).ok().map(|on| age_years(dob, on))
 }
 
+/// Who a range is picked for, and the draw it is picked for.
+#[derive(Debug, Clone, Copy)]
+pub struct Subject<'a> {
+    pub person: &'a str,
+    pub person_id: i64,
+    pub sex: Option<&'a str>,
+    pub age: Option<f64>,
+    pub lab: Option<&'a str>,
+    pub fasting: Option<bool>,
+    /// Date of the draw, for `when.markers` conditions (`None`: latest values).
+    pub taken_at: Option<&'a str>,
+}
+
+/// The ranges of one set for a marker and kind: a range-set file's entries
+/// (lab-specific ones first) or the catalog's.
+fn set_pool(cat: &Catalog, set: &str, marker_id: i64, kind: RangeKind, lab: Option<&str>) -> Vec<Range> {
+    if cat.profiles.is_file_set(set) {
+        return cat.profiles.set_ranges(set, marker_id, kind, lab);
+    }
+    cat.catalog_ranges
+        .iter()
+        .filter(|r| r.marker_id == marker_id && r.kind == kind && r.set.as_deref() == Some(set))
+        .cloned()
+        .collect()
+}
+
 /// The range that applies, and where it came from: the person's own ranges
-/// (profile file, then `range set --person`), their range set, the catalog.
-#[allow(clippy::too_many_arguments)]
-pub fn pick_range(
-    cat: &Catalog,
-    person: &str,
-    person_id: i64,
-    marker: &Marker,
-    kind: RangeKind,
-    sex: Option<&str>,
-    age: Option<f64>,
-    lab: Option<&str>,
-) -> Option<(Range, String)> {
-    let mut own = cat.profiles.personal_ranges(person, marker.id, kind, lab);
+/// (profile file, then `range set --person`) as `person`; config.toml
+/// `[[range]]` as `config`; their (or the global) `range_set` as
+/// `set:<name>`; then the first of the `range_sets` with an applicable range
+/// as `catalog` (merged with the database's own ranges, which replace
+/// catalog ranges of the same sex and age band; a range-set file in that
+/// list reports `set:<name>`). In each tier the most specific range wins
+/// (see [`ranges::select_for`]).
+pub fn pick_range(cat: &Catalog, s: &Subject, marker: &Marker, kind: RangeKind) -> Option<(Range, String)> {
+    let value_of = |slug: &str| cat.condition_value(s.person_id, slug, s.taken_at);
+    let facts = Facts {
+        sex: s.sex,
+        age: s.age,
+        fasting: s.fasting,
+        attrs: cat.person_attrs.get(&s.person_id),
+        value_of: &value_of,
+    };
+    let af = cat.profiles.age_first;
+    let sel = |pool: &[Range]| ranges::select_for(pool, marker.id, kind, &facts, af).cloned();
+    let mut own = cat.profiles.personal_ranges(s.person, marker.id, kind, s.lab);
     own.extend(
         cat.person_ranges
             .iter()
-            .filter(|r| r.person_id == Some(person_id) && r.marker_id == marker.id && r.kind == kind)
+            .filter(|r| r.person_id == Some(s.person_id) && r.marker_id == marker.id && r.kind == kind)
             .cloned(),
     );
-    let af = cat.profiles.age_first;
-    ranges::select_by(&own, marker.id, kind, sex, age, af)
-        .map(|r| (r.clone(), "person".to_string()))
-        .or_else(|| {
-            let set = cat.profiles.range_set_for(person)?;
-            let in_set = cat.profiles.set_ranges(set, marker.id, kind, lab);
-            ranges::select_by(&in_set, marker.id, kind, sex, age, af).map(|r| (r.clone(), format!("set:{set}")))
-        })
-        .or_else(|| {
-            ranges::select_by(&cat.ranges, marker.id, kind, sex, age, af).map(|r| (r.clone(), "catalog".to_string()))
-        })
+    if let Some(r) = sel(&own) {
+        return Some((r, "person".into()));
+    }
+    if let Some(r) = sel(&cat.profiles.config_ranges(marker.id, kind, s.lab)) {
+        return Some((r, "config".into()));
+    }
+    if let Some(set) = cat.profiles.range_set_for(s.person) {
+        if let Some(r) = sel(&set_pool(cat, set, marker.id, kind, s.lab)) {
+            return Some((r, format!("set:{set}")));
+        }
+    }
+    let local: Vec<Range> = cat.ranges.iter().filter(|r| r.marker_id == marker.id && r.kind == kind).cloned().collect();
+    for set in cat.profiles.sets_for(Some(s.person), marker.id) {
+        let pool = set_pool(cat, &set, marker.id, kind, s.lab);
+        if sel(&pool).is_none() {
+            continue;
+        }
+        if cat.profiles.is_file_set(&set) {
+            return sel(&pool).map(|r| (r, format!("set:{set}")));
+        }
+        let shadowed = |c: &Range| {
+            c.cond.is_empty()
+                && local.iter().any(|l| l.sex == c.sex && l.age_min == c.age_min && l.age_max == c.age_max)
+        };
+        let merged: Vec<Range> = local.iter().cloned().chain(pool.into_iter().filter(|c| !shadowed(c))).collect();
+        return sel(&merged).map(|r| (r, "catalog".into()));
+    }
+    sel(&local).map(|r| (r, "catalog".into()))
+}
+
+/// The reference range with its critical bounds filled in from a `critical`
+/// range when it has none of its own.
+fn with_critical(
+    cat: &Catalog,
+    s: &Subject,
+    marker: &Marker,
+    picked: Option<(Range, String)>,
+) -> Option<(Range, String)> {
+    let (mut r, src) = picked?;
+    if r.critical_low.is_none() && r.critical_high.is_none() {
+        if let Some((c, _)) = pick_range(cat, s, marker, RangeKind::Critical) {
+            r.critical_low = c.low;
+            r.critical_high = c.high;
+        }
+    }
+    Some((r, src))
 }
 
 pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Option<Evaluated> {
@@ -79,10 +147,18 @@ pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Optio
         .convert(marker.id, row.value, &marker.unit, &wanted)
         .map_or_else(|_| (row.value, marker.unit.clone()), |v| (v, wanted));
     let age = age_at(row);
-    let pick = |kind| {
-        pick_range(cat, &row.person, row.person_id, &marker, kind, row.sex.as_deref(), age, row.lab.as_deref()).unzip()
+    let subject = Subject {
+        person: &row.person,
+        person_id: row.person_id,
+        sex: row.sex.as_deref(),
+        age,
+        lab: row.lab.as_deref(),
+        fasting: row.fasting,
+        taken_at: Some(&row.taken_at),
     };
-    let (reference, ref_src) = pick(RangeKind::Reference);
+    let pick = |kind| pick_range(cat, &subject, &marker, kind).unzip();
+    let (reference, ref_src) =
+        with_critical(cat, &subject, &marker, pick_range(cat, &subject, &marker, RangeKind::Reference)).unzip();
     let (optimal, opt_src) = pick(RangeKind::Optimal);
     let (warn, warn_src) = pick(RangeKind::Warn);
     let q = row.qualifier.as_deref();
@@ -106,18 +182,21 @@ pub fn evaluate(row: &MeasurementRow, cat: &Catalog, unit_system: &str) -> Optio
     })
 }
 
-/// Which range applied: its source (person, range set or catalog), sex and
-/// age band. `id` is the database id (`range list`, with `--person` for a
-/// person's range); ranges from profile or range-set files have none.
+/// Which range applied: its source (person, config, range set or catalog),
+/// catalog set, sex and age band and other conditions. `id` is the database
+/// id (`range list`, with `--person` for a person's range); ranges from the
+/// built-in catalog, profile or range-set files have none.
 fn range_set(r: Option<&Range>, source: Option<&str>) -> serde_json::Value {
     r.map_or(serde_json::Value::Null, |r| {
         json!({
             "id": (r.id != 0).then_some(r.id),
             "source": source,
+            "set": r.set,
             "sex": r.sex,
             "age_min": r.age_min,
             "age_max": r.age_max,
             "note": r.note,
+            "conditions": r.cond,
         })
     })
 }
@@ -222,4 +301,118 @@ pub fn latest_only(rows: Vec<Evaluated>) -> Vec<Evaluated> {
         rows.into_iter().rev().filter(|e| seen.insert((e.row.person_id, e.row.marker_id))).collect();
     out.reverse();
     out
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::catalog::{Conditions, MarkerCond, PersonAttrs};
+    use crate::profiles::{LoadOpts, Profiles};
+
+    fn marker(id: i64, slug: &str) -> Marker {
+        Marker {
+            id,
+            slug: slug.into(),
+            name: slug.into(),
+            category: "metabolic".into(),
+            unit: "mg/dL".into(),
+            loinc: None,
+            description: None,
+            builtin: true,
+            aliases: vec![],
+        }
+    }
+
+    fn r(set: &str, kind: RangeKind, sex: &str, lo: f64, hi: f64, cond: Conditions) -> Range {
+        Range {
+            marker_id: 1,
+            kind,
+            sex: sex.into(),
+            age_min: 0.0,
+            age_max: 200.0,
+            low: Some(lo),
+            high: Some(hi),
+            set: Some(set.into()),
+            cond,
+            ..Range::default()
+        }
+    }
+
+    fn catalog(sets: &str) -> Catalog {
+        let pregnant = Conditions { pregnant: Some(true), ..Default::default() };
+        let diabetic_fasting = Conditions {
+            fasting: Some(true),
+            markers: vec![MarkerCond { marker: "hba1c".into(), op: ">".into(), value: 6.0 }],
+            ..Default::default()
+        };
+        let mut cat = Catalog {
+            markers: vec![marker(1, "glucose"), marker(2, "hba1c")],
+            catalog_ranges: vec![
+                r("clinical", RangeKind::Reference, "any", 70.0, 99.0, Conditions::default()),
+                r("clinical", RangeKind::Reference, "female", 60.0, 95.0, pregnant),
+                r("clinical", RangeKind::Reference, "any", 80.0, 130.0, diabetic_fasting),
+                r("clinical", RangeKind::Critical, "any", 40.0, 400.0, Conditions::default()),
+                r("optimal", RangeKind::Optimal, "any", 72.0, 90.0, Conditions::default()),
+                r("blueprint", RangeKind::Optimal, "any", 0.0, 95.0, Conditions::default()),
+            ],
+            ..Catalog::default()
+        };
+        cat.person_attrs.insert(1, PersonAttrs { pregnant: Some(true), ..Default::default() });
+        cat.condition_values.insert((1, "hba1c".into()), vec![("2024-01-01".into(), 6.5)]);
+        let opts = LoadOpts { range_sets: sets.into(), ..LoadOpts::default() };
+        Profiles::load(std::path::Path::new("/nonexistent/config.toml"), &opts).unwrap().apply(cat).unwrap()
+    }
+
+    fn subject<'a>(id: i64, sex: &'a str, fasting: bool, on: &'a str) -> Subject<'a> {
+        Subject {
+            person: "p",
+            person_id: id,
+            sex: Some(sex),
+            age: Some(40.0),
+            lab: None,
+            fasting: Some(fasting),
+            taken_at: Some(on),
+        }
+    }
+
+    fn bounds(cat: &Catalog, s: &Subject, kind: RangeKind) -> Option<(f64, f64, String)> {
+        let m = cat.markers[0].clone();
+        pick_range(cat, s, &m, kind)
+            .map(|(r, src)| (r.low.unwrap(), r.high.unwrap(), format!("{src}:{}", r.set.unwrap_or_default())))
+    }
+
+    #[test]
+    fn the_most_specific_matching_catalog_range_wins() {
+        let cat = catalog("");
+        let b = |s: &Subject| bounds(&cat, s, RangeKind::Reference).map(|(l, h, _)| (l, h));
+        assert_eq!(b(&subject(2, "male", true, "2024-02-01")), Some((70.0, 99.0)));
+        assert_eq!(b(&subject(1, "female", false, "2024-02-01")), Some((60.0, 95.0)), "pregnant");
+        // fasting with HbA1c > 6 carries two conditions: beats pregnancy (one)
+        assert_eq!(b(&subject(1, "female", true, "2024-02-01")), Some((80.0, 130.0)));
+        // no HbA1c on or before the draw yet
+        assert_eq!(b(&subject(1, "female", true, "2023-12-31")), Some((60.0, 95.0)));
+        let m = cat.markers[0].clone();
+        let s = subject(2, "male", true, "2024-02-01");
+        let picked = with_critical(&cat, &s, &m, pick_range(&cat, &s, &m, RangeKind::Reference)).unwrap().0;
+        assert_eq!((picked.critical_low, picked.critical_high), (Some(40.0), Some(400.0)));
+    }
+
+    #[test]
+    fn range_sets_choose_the_set_and_database_rows_override() {
+        let s = subject(2, "male", false, "2024-02-01");
+        let cat = catalog("");
+        assert_eq!(bounds(&cat, &s, RangeKind::Optimal), Some((72.0, 90.0, "catalog:optimal".into())));
+        let cat = catalog("blueprint,clinical,optimal");
+        assert_eq!(bounds(&cat, &s, RangeKind::Optimal), Some((0.0, 95.0, "catalog:blueprint".into())));
+        // a database row of the same sex / age band replaces the catalog's; conditional ones stay
+        let mut cat = catalog("");
+        cat.ranges.push(Range {
+            id: 9,
+            set: None,
+            ..r("", RangeKind::Reference, "any", 65.0, 100.0, Conditions::default())
+        });
+        assert_eq!(bounds(&cat, &s, RangeKind::Reference), Some((65.0, 100.0, "catalog:".into())));
+        let pregnant = subject(1, "female", false, "2024-02-01");
+        assert_eq!(bounds(&cat, &pregnant, RangeKind::Reference).map(|b| (b.0, b.1)), Some((60.0, 95.0)));
+    }
 }

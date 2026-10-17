@@ -4,8 +4,10 @@
 #![recursion_limit = "512"]
 
 pub mod audit;
+pub mod catalog;
 pub mod cli;
 pub mod cli_admin;
+pub mod cli_catalog;
 pub mod cli_interventions;
 pub mod commands;
 pub mod config;
