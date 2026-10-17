@@ -69,3 +69,115 @@ note = "Restates the ESHRE 2024 premature ovarian insufficiency guideline, cited
 citations = [
   { pmid = "39660328", doi = "10.1093/hropen/hoae065", title = "Evidence-based guideline: premature ovarian insufficiency.", url = "https://pubmed.ncbi.nlm.nih.gov/39660328/", locator = "Recommendations (diagnosis)", quote = "an elevated FSH concentration > 25 IU/l" },
 ]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.50
+high = 12.02
+unit = "mIU/mL"
+when = { sex = "male", age_min = 1, age_max = 30, age_unit = "days", method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; male columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for boys aged 1 day to 1 month, mIU/mL. Median 3.43 is not a bound. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (male, FSH column)", quote = "1 d–1 m | 3.43 [0.50, 12.02]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.39
+high = 9.53
+unit = "mIU/mL"
+when = { sex = "male", age_min = 1, age_max = 12, age_unit = "months", method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for boys aged 1-12 months, mIU/mL. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (male, FSH column)", quote = ">1–12 m | 2.12 [0.39, 9.53]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.42
+high = 4.98
+unit = "mIU/mL"
+when = { sex = "male", age_min = 1, age_max = 9, method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for boys aged 1-9 years (prepubertal), mIU/mL. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (male, FSH column)", quote = ">1–9 y | 1.27 [0.42, 4.98]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.50
+high = 5.73
+unit = "mIU/mL"
+when = { sex = "male", age_min = 9, age_max = 12, method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for boys aged 9-12 years, mIU/mL. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (male, FSH column)", quote = ">9–12 y | 2.45 [0.50, 5.73]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 1.68
+high = 9.53
+unit = "mIU/mL"
+when = { sex = "male", age_min = 12, age_max = 19, method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for boys aged 12-19 years, mIU/mL. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (male, FSH column)", quote = ">12–19 y | 4.09 [1.68, 9.53]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.04
+high = 22.73
+unit = "mIU/mL"
+when = { sex = "female", age_min = 1, age_max = 365, age_unit = "days", method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for girls aged 1 day to 1 year, mIU/mL. Median 5.02 is not a bound. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (female, FSH column)", quote = "1 d–1 y | 5.02 [0.04, 22.73]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.62
+high = 9.00
+unit = "mIU/mL"
+when = { sex = "female", age_min = 1, age_max = 12, age_unit = "years", method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for girls aged 1-12 years, mIU/mL. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (female, FSH column)", quote = ">1–12 y | 2.69 [0.62, 9.00]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 1.00
+high = 10.38
+unit = "mIU/mL"
+when = { sex = "female", age_min = 12, age_max = 19, method = "immunoassay" }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for girls aged 12-19 years (pubertal), mIU/mL. Immunoassay-specific."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (female, FSH column)", quote = ">12–19 y | 6.01 [1.00, 10.38]" },
+]

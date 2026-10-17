@@ -63,3 +63,92 @@ citations = [
   { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "In girls, the P50 of IGFBP-3 increased from 1.99 μg/ml to 4.23 μg/ml, and the corresponding reference interval changed from 0.96-3.01 μg/ml to 2.47-5.99 μg/ml." },
   { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", locator = "Abstract, Results", quote = "GAMLSS fitting showed that the P50 of IGF-1 in boys increased from 49.52 ng/ml in the >0-<0.5 years age group to 139.68 ng/ml in the ≥6-<7 years age group" },
 ]
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1781.0
+high = 8695.5
+unit = "ng/mL"
+when = { sex = "male", age_min = 20, age_max = 22, ethnicity = "indian", method = "electrochemiluminescence immunoassay (Roche Elecsys)" }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271), aged 20 to 65.9 years; age band 20 to under 22 years"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), printed in ng/mL and converted only by unit label (1781.0 ng/mL = 1.781 mg/L). Assay-specific (Roche Elecsys)."
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2, row 20-21.9", quote = "20-21.9 | 92 | 1781.0 | 2115.6 | 3370.8 | 4455.7 | 5726.3 | 7898.8 | 8695.5" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2 caption", quote = "Normative data of serum IGFBP-3 (in ng/ml) for adults (aged 20–65.9) in percentiles." },
+]
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1639.2
+high = 7224.0
+unit = "ng/mL"
+when = { sex = "male", age_min = 30, age_max = 32, ethnicity = "indian", method = "electrochemiluminescence immunoassay (Roche Elecsys)" }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 30 to under 32 years"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys)."
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2, row 30-31.9", quote = "30-31.9 | 64 | 1639.2 | 1919.6 | 2955.2 | 3837.1 | 4860.0 | 6592.5 | 7224.0" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2 caption", quote = "Normative data of serum IGFBP-3 (in ng/ml) for adults (aged 20–65.9) in percentiles." },
+]
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1476.2
+high = 6655.1
+unit = "ng/mL"
+when = { sex = "male", age_min = 40, age_max = 42, ethnicity = "indian", method = "electrochemiluminescence immunoassay (Roche Elecsys)" }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 40 to under 42 years"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys)."
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2, row 40-41.9", quote = "40-41.9 | 53 | 1476.2 | 1734.1 | 2689.9 | 3506.5 | 4455.8 | 6067.0 | 6655.1" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2 caption", quote = "Normative data of serum IGFBP-3 (in ng/ml) for adults (aged 20–65.9) in percentiles." },
+]
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1194.9
+high = 6482.7
+unit = "ng/mL"
+when = { sex = "male", age_min = 50, age_max = 52, ethnicity = "indian", method = "electrochemiluminescence immunoassay (Roche Elecsys)" }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 50 to under 52 years"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys)."
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2, row 50-51.9", quote = "50-51.9 | 51 | 1194.9 | 1441.2 | 2380.2 | 3204.5 | 4179.3 | 5861.9 | 6482.7" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2 caption", quote = "Normative data of serum IGFBP-3 (in ng/ml) for adults (aged 20–65.9) in percentiles." },
+]
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 740.2
+high = 5493.8
+unit = "ng/mL"
+when = { sex = "male", age_min = 60, age_max = 62, ethnicity = "indian", method = "electrochemiluminescence immunoassay (Roche Elecsys)" }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 60 to under 62 years"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys)."
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2, row 60-61.9", quote = "60-61.9 | 52 | 740.2 | 937.3 | 1728.0 | 2454.6 | 3338.6 | 4905.9 | 5493.8" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", locator = "Table 2 caption", quote = "Normative data of serum IGFBP-3 (in ng/ml) for adults (aged 20–65.9) in percentiles." },
+]
+
+[[range]]
+set = "kuwait-males-2005"
+kind = "reference"
+low = 88
+high = 2090
+unit = "ng/mL"
+when = { sex = "male", age_min = 15, age_max = 80, ethnicity = "kuwaiti", fasting = true, time_of_day = "morning", specimen = "serum" }
+population = "Healthy fasting Kuwaiti men aged 15-80 years (n=398), blood drawn 08:00-12:00"
+evidence = "reference-interval"
+note = "Single adult male interval as printed in the abstract (not split by age band in the abstract), Mean +/- 2 SD by the authors' method, because the abstract reports IGFBP-3 as normally distributed in this study. Method not stated. The abstract concludes lower IGFBP-3 reference values are needed for Kuwaitis than the kit or ministry ranges (900-4,000 ng/ml)."
+citations = [
+  { pmid = "16103701", doi = "10.1159/000086933", title = "Reference intervals for important serum sex steroid hormones, prostate-specific antigen, insulin-like growth factor-1 and IGF binding protein-3 concentration in a normal Kuwaiti adult male population.", url = "https://pubmed.ncbi.nlm.nih.gov/16103701/", locator = "Abstract, Results", quote = "IGFBP-3 88- 2,090, 900-4,000, 900-4,000 ng/ml" },
+]

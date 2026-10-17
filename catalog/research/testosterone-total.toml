@@ -81,3 +81,101 @@ note = "Threshold for diagnosing symptomatic male hypogonadism: total testostero
 citations = [
   { pmid = "42177105", doi = "10.1016/j.euf.2026.04.015", title = "EAU Guidelines on Sexual and Reproductive Health: A Summary of the 2026 Recommendations for Measurement and Biochemical Confirmation of Hypogonadism.", url = "https://pubmed.ncbi.nlm.nih.gov/42177105/", locator = "Abstract, Key findings", quote = "A T level of ≤12 nmol/l continues to be the recommended threshold for diagnosing symptomatic male hypogonadism in clinical practice." },
 ]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.08
+high = 7.11
+unit = "ng/mL"
+when = { sex = "male", age_min = 12, age_max = 15, method = "immunoassay" }
+population = "Healthy Chinese boys and girls aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; male columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (P2.5 to P97.5) for boys aged 12-15 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay, so not interchangeable with LC-MS/MS ranges. Median 1.55 ng/mL is not a bound."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (male, TESTO column)", quote = ">12–15 y | 1.55 [0.08, 7.11]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.87
+high = 9.47
+unit = "ng/mL"
+when = { sex = "male", age_min = 15, age_max = 19, method = "immunoassay" }
+population = "Healthy Chinese boys and girls aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; male columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for boys aged 15-19 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay. Median 5.53 ng/mL is not a bound."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (male, TESTO column)", quote = ">15–19 y | 5.53 [0.87, 9.47]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.04
+high = 0.85
+unit = "ng/mL"
+when = { sex = "female", age_min = 12, age_max = 18, method = "immunoassay" }
+population = "Healthy Chinese boys and girls aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; female columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for girls aged 12-18 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay. Median 0.26 ng/mL is not a bound. Table row pairs male and female columns; this row's female cells are the second pair."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (female, TESTO column)", quote = ">12–18 y | 0.26 [0.04, 0.85]" },
+]
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.12
+high = 0.76
+unit = "ng/mL"
+when = { sex = "female", age_min = 18, age_max = 19, method = "immunoassay" }
+population = "Healthy Chinese young women aged 18-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for females aged 18-19 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay, lower-end sensitivity should be checked against the lab's own assay."
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", locator = "Table 4 (female, TESTO column)", quote = ">18–19 y | 0.36 [0.12, 0.76]" },
+]
+
+[[range]]
+set = "female-age-continuous-2026"
+kind = "reference"
+low = 0.485
+high = 2.745
+unit = "nmol/L"
+when = { sex = "female", age_min = 20, age_max = 20 }
+population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentile (Q 0.025 and Q 0.975) for a 20-year-old woman, source unit nmol/L (about 14.0-79.2 ng/dL). Assay not named in the abstract; age-continuous model from the same study."
+citations = [
+  { pmid = "42340622", doi = "10.1007/s40618-026-02929-w", title = "Redefining testosterone reference ranges for adult females.", url = "https://pubmed.ncbi.nlm.nih.gov/42340622/", locator = "Table 4 (age 20 row)", quote = "20 | 0.485 | 0.645 | 0.751 | 0.954 | 1.715 | 2.056 | 2.284 | 2.745" },
+]
+
+[[range]]
+set = "female-age-continuous-2026"
+kind = "reference"
+low = 0.244
+high = 2.281
+unit = "nmol/L"
+when = { sex = "female", age_min = 40, age_max = 40 }
+population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentile for a 40-year-old woman, source unit nmol/L. Total testosterone falls with age in this cohort, so use the age-matched estimate."
+citations = [
+  { pmid = "42340622", doi = "10.1007/s40618-026-02929-w", title = "Redefining testosterone reference ranges for adult females.", url = "https://pubmed.ncbi.nlm.nih.gov/42340622/", locator = "Table 4 (age 40 row)", quote = "40 | 0.244 | 0.353 | 0.430 | 0.585 | 1.245 | 1.572 | 1.801 | 2.281" },
+]
+
+[[range]]
+set = "female-age-continuous-2026"
+kind = "reference"
+low = 0.174
+high = 2.080
+unit = "nmol/L"
+when = { sex = "female", age_min = 50, age_max = 50 }
+population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
+evidence = "reference-interval"
+note = "2.5th and 97.5th percentile for a 50-year-old woman, source unit nmol/L. Reflects the age-related decline; the premenopausal estimate for age 30 is in the first range of this file."
+citations = [
+  { pmid = "42340622", doi = "10.1007/s40618-026-02929-w", title = "Redefining testosterone reference ranges for adult females.", url = "https://pubmed.ncbi.nlm.nih.gov/42340622/", locator = "Table 4 (age 50 row)", quote = "50 | 0.174 | 0.261 | 0.325 | 0.458 | 1.061 | 1.374 | 1.599 | 2.080" },
+]
