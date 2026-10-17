@@ -191,3 +191,27 @@ note = "Plasma magnesium 2.5th to 97.5th percentile in mmol/L as stated in Table
 citations = [
   { pmid = "36839246", doi = "10.3390/nu15040886", title = "The Magnesium Status and Suggested Reference Ranges of Plasma Magnesium, Calcium, and Calcium/Magnesium Ratio in Chinese Adults over 45 Years Old.", locator = "Table 2", quote = "| 60- | 123 | 0.91 | 0.88 | 0.74 | 1.13" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.8
+high = 1.07
+unit = "mmol/L"
+when = { age_min = 0.077, age_max = 0.333 }
+population = "Healthy Chinese children aged 28 days to under 4 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| Mg | mmol/L | 28 days-<4 months | 132 | 0.93 | 0.90 | 0.80 | 1.07" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.8
+high = 1.1
+unit = "mmol/L"
+when = { age_min = 0.333, age_max = 2 }
+population = "Healthy Chinese children aged 4 months to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| Mg | mmol/L |...| 4 months-<2 years | 306 | 0.96 | 1.00 | 0.80 | 1.10" } ]

@@ -112,3 +112,25 @@ population = "Healthy Chinese children aged 15 to under 18 years (Shenzhen, chec
 evidence = "reference-interval-study"
 note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; small band (n = 14), interpret with caution."
 citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| 15-<18 years | 14 | 98.77 | 96.32 | 37.71 | 238.28 | 28.97-55.42 | 168.55-332.30" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 135.47
+high = 517.64
+when = { age_min = 0.077, age_max = 0.5 }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| ALP | U/L | 28 days-<6 months | 122 | 308.79 | 312.50 | 135.47 | 517.64" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 118.61
+high = 361.88
+when = { age_min = 0.5, age_max = 1 }
+population = "Healthy Chinese children aged 6 months to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| ALP | U/L |...| 6 months-<1 year | 167 | 213.21 | 210.90 | 118.61 | 361.88" } ]

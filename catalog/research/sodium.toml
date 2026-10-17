@@ -138,3 +138,25 @@ note = "Sodium reference interval derived non-parametrically on a blood gas anal
 citations = [
   { pmid = "21619466", doi = "10.1515/CCLM.2011.603", title = "Reference intervals and age and gender dependency for arterial blood gases and electrolytes in adults.", locator = "Abstract", quote = "sodium (136-141 mmol/L)" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 136.35
+high = 147.96
+when = { age_min = 0.077, age_max = 0.5 }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| Na | mmol/L | 28 days-<6 months | 160 | 140.92 | 140.57 | 136.35 | 147.96" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 136.81
+high = 146.93
+when = { age_min = 0.5, age_max = 1 }
+population = "Healthy Chinese children aged 6 months to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| Na | mmol/L |...| 6 months-<1 year | 147 | 141.35 | 141.13 | 136.81 | 146.93" } ]

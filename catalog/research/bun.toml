@@ -256,3 +256,27 @@ note = "Serum urea, not urea nitrogen: numbers kept as printed in mmol/L. Infant
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Urea | mmol/L | 28 days-<6 months | 133 | 2.64 | 2.44 | 0.99 | 5.32 | 0.91-1.12 | 4.91-5.66 ... | 1-<18 years | Male 235 Female 249 | Male 4.80 Female 4.36 | Male 4.73 Female 4.31 | Male 2.85 Female 2.37 | Male 7.03 Female 6.36" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.99
+high = 5.32
+unit = "mmol/L"
+when = { age_min = 0.077, age_max = 0.5 }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Urea (not BUN) sub-year pediatric 95% interval, reported in mmol/L in the source Table 1 (2026 Chinese reference-interval study)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| Urea | mmol/L | 28 days-<6 months | 133 | 2.64 | 2.44 | 0.99 | 5.32" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.13
+high = 5.92
+unit = "mmol/L"
+when = { age_min = 0.5, age_max = 1 }
+population = "Healthy Chinese children aged 6 months to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Urea (not BUN) sub-year pediatric 95% interval, reported in mmol/L in the source Table 1 (2026 Chinese reference-interval study)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| Urea | mmol/L |...| 6 months-<1 year | 174 | 3.08 | 3.00 | 1.13 | 5.92" } ]

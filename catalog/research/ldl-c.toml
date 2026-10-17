@@ -296,3 +296,27 @@ note = "95% reference interval, pediatric. Numbers are in mmol/L as the source s
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| LDL-C | mmol/L ... | 11 -<18 years | 149 | 2.16 | 2.18 | 1.28 | 3.27 | 0.83-1.36 | 3.13-3.40" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.91
+high = 3.0
+unit = "mmol/L"
+when = { age_min = 0.077, age_max = 0.417 }
+population = "Healthy Chinese children aged 28 days to under 5 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| LDL-C | mmol/L | 28 days-<5 months | 183 | 1.89 | 1.83 | 0.91 | 3.00" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.22
+high = 3.48
+unit = "mmol/L"
+when = { age_min = 0.417, age_max = 2 }
+population = "Healthy Chinese children aged 5 months to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| LDL-C | mmol/L |...| 5 months-<2 years | 325 | 2.37 | 2.36 | 1.22 | 3.48" } ]

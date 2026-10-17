@@ -131,3 +131,25 @@ population = "Healthy Chinese children aged 2 to under 18 years (Shenzhen, check
 evidence = "reference-interval-study"
 note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28); the source band starts at 2 years, sex not split."
 citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| CK | U/L ... | 2-<18 years | 705 | 113.68 | 106.50 | 17.86 | 227.84 | 35.70-46.40 | 216.90-237.80" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 26.2
+high = 235.39
+when = { age_min = 0.077, age_max = 0.333 }
+population = "Healthy Chinese children aged 28 days to under 4 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| CK | U/L | 28 days-<4 months | 138 | 113.39 | 104.28 | 26.20 | 235.39" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 41.13
+high = 248.37
+when = { age_min = 0.333, age_max = 2 }
+population = "Healthy Chinese children aged 4 months to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| CK | U/L |...| 4 months-<2 years | 328 | 127.12 | 125.90 | 41.13 | 248.37" } ]

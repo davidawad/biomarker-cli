@@ -163,3 +163,42 @@ note = "Plasma potassium textbook interval quoted by the cited simulation study,
 citations = [
   { pmid = "37391118", doi = "10.1016/j.clinbiochem.2023.110606", title = "Characterizing ability of serum potassium (K) and the serum K reference interval to flag hypokalemia or hyperkalemia as observed in plasma: A simulation study.", locator = "Abstract", quote = "textbook K reference intervals for plasma (PRI = 3.4-4.5 mmol/L) and serum (SRI = 3.5-5.1 mmol/L)" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.90
+high = 5.90
+when = { age_min = 0.0767, age_max = 1, specimen = "serum" }
+population = "Healthy check-up children aged 28 days to under 1 year, Shenzhen, China (serum; CLSI EP28 method); both sexes pooled"
+evidence = "reference-interval-study"
+note = "Paediatric serum potassium reference interval (age 28 days, about 0.0767 years, to under 1 year). Values as printed in the source's Table 1. Indirect or direct partition: CLSI EP28 per the source's Methods."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| K | mmol/L | 28 days-<1 year | 172 | 5.06 | 4.99 | 3.90 | 5.90 | 3.62-4.29 | 5.83-6.04" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.80
+high = 5.20
+when = { age_min = 1, age_max = 7, specimen = "serum" }
+population = "Healthy check-up children aged 1 to under 7 years, Shenzhen, China (serum; CLSI EP28 method); both sexes pooled"
+evidence = "reference-interval-study"
+note = "Paediatric serum potassium reference interval, values as printed in the source's Table 1 (age band 1 to under 7 years)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| 1-<7 years | 535 | 4.47 | 4.47 | 3.80 | 5.20 | 3.68-3.90 | 5.12-5.27" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.70
+high = 5.00
+when = { age_min = 7, age_max = 18, specimen = "serum" }
+population = "Healthy check-up children aged 7 to under 18 years, Shenzhen, China (serum; CLSI EP28 method); both sexes pooled"
+evidence = "reference-interval-study"
+note = "Paediatric serum potassium reference interval, values as printed in the source's Table 1 (age band 7 to under 18 years)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| 7-<18 years | 158 | 4.38 | 4.38 | 3.70 | 5.00 | 3.47-3.88 | 4.90-5.36" },
+]

@@ -66,3 +66,25 @@ note = "Central 95 % reference interval, conventional columns of the source (ide
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| Cl | mmol/L | (-) | MF | 18~65 | 538 | 93.6 | 95.0 | 94 | 104 | 111 | 110.3 | 111.9 | mmol/L | 94 | 104 | 111" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 103.0
+high = 114.0
+when = { age_min = 0.077, age_max = 0.5 }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| CL | mmol/L | 28 days-<6 months | 308 | 107.69 | 107.68 | 103.00 | 114.00" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 102.0
+high = 111.0
+when = { age_min = 0.5, age_max = 18 }
+population = "Healthy Chinese children aged 6 months to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| CL | mmol/L |...| 6 months-<18 years | 788 | 106.28 | 106.30 | 102.00 | 111.00" } ]

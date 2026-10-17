@@ -233,3 +233,27 @@ note = "Metabolic syndrome component (ALAD criteria as tabulated): HDL-C strictl
 citations = [
   { pmid = "42646634", doi = "10.3390/medsci14040500", title = "Comparative Classification Performance of Anthropometric, Body Composition, and Cardiometabolic Indices for Identifying ALAD-Defined Metabolic Syndrome in Panamanian Adults.", locator = "Metabolic syndrome classification table", quote = "| HDL-C | <40 mg/dL (men); <50 mg/dL (women)" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.4
+high = 2.3
+unit = "mmol/L"
+when = { age_min = 0.077, age_max = 0.583 }
+population = "Healthy Chinese children aged 28 days to under 7 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| HDL-C | mmol/L | 28 days-<7 months | 274 | 1.25 | 1.20 | 0.40 | 2.30" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.62
+high = 1.8
+unit = "mmol/L"
+when = { age_min = 0.583, age_max = 2 }
+population = "Healthy Chinese children aged 7 months to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| HDL-C | mmol/L |...| 7 months-<2 years | 322 | 1.18 | 1.17 | 0.62 | 1.80" } ]

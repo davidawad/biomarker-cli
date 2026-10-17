@@ -212,3 +212,17 @@ note = "Sex-partitioned reference interval, females 12 to under 18 years. Sample
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| Crea | umol/L | 28 days-<2 years | 471 | 23.51 | 23.01 | 16.88 | 34.54 ... | 12-<18 years | Male 30 Female 33 | Male 58.52 Female 56.29 | Male 57.88 Female 57.64 | Male 39.77 Female 35.24 | Male 93.51 Female 77.70" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.4
+high = 0.8
+unit = "mg/dL"
+when = { pregnant = true }
+population = "Pregnant women, all trimesters (not partitioned by trimester in the source)"
+evidence = "consensus"
+note = "Pregnancy serum creatinine interval as tabulated in a review. The source gives no trimester split, so no trimester-specific limits are recorded."
+citations = [
+  { pmid = "42731065", doi = "10.1152/function.044.2026", title = "Maternal kidney adaptation and function in pregnancy: review and perspectives.", locator = "Table 1", quote = "Serum creatinine, mg/dL | 0.5-1.1 (71) | 0.4-0.8 (68)" },
+]

@@ -78,3 +78,16 @@ note = "Spot PCR cut-off of 0.3 mg/mg (equivalent to 300 mg/g or 30 mg/mmol) use
 citations = [
   { pmid = "41517598", doi = "10.3390/jcm15010345", title = "The Prognostic Significance of Proteinuria Severity in Pregnancy: A Retrospective Cohort Study of Maternal and Neonatal Outcomes", locator = "Introduction", quote = "with a cut-off value of >=0.3 to indicate significant proteinuria" },
 ]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 30
+unit = "mg/mmol"
+when = { specimen = "spot-urine", pregnant = true }
+population = "Pregnant women with normal pregnancy (values as tabulated in a review)"
+evidence = "consensus"
+note = "Normal spot protein:creatinine ratio in pregnancy, strictly below 30 mg/mmol (source units kept). The nonpregnant value in the same table is below 20 mg/mmol."
+citations = [
+  { pmid = "42731065", doi = "10.1152/function.044.2026", title = "Maternal kidney adaptation and function in pregnancy: review and perspectives.", locator = "Table 1", quote = "Nonpregnant Normal Value | Pregnant Normal Value ... Protein:creatinine, mg/mmol | <20 (76) | <30 (76)" },
+]

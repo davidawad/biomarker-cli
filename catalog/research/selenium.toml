@@ -26,3 +26,4 @@ note = "Blood selenium at or above 120 ug/L was associated with increased risk o
 citations = [
   { pmid = "37880477", doi = "10.1007/s12011-023-03900-z", title = "Selenium Species in Diabetes Mellitus Type 2.", locator = "Discussion (dose-response paragraph)", quote = "the increased risk of diabetes mellitus occurs when blood selenium concentration is equal to or greater than 120 ug/L" },
 ]
+

@@ -29,3 +29,4 @@ note = "Impending dehydration band: osmolality at or above 295 mOsm/kg up to the
 citations = [
   { pmid = "26490100", doi = "10.1136/bmjopen-2015-008846", title = "Diagnostic accuracy of calculated serum osmolarity to predict dehydration in older people: adding value to pathology laboratory reports.", locator = "Abstract", quote = "current dehydration (serum osmolality>300 mOsm/kg), impending/current dehydration (>=295 mOsm/kg)" },
 ]
+

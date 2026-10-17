@@ -155,3 +155,27 @@ population = "Healthy Chinese children aged 12 to under 18 years (Shenzhen, chec
 evidence = "reference-interval-study"
 note = "Pediatric 95% interval; the source states this in umol/L."
 citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| TBIL | umol/L ... | 12 -<18 years | 131 | 9.10 | 8.35 | 3.82 | 17.20" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.04
+high = 30.4
+unit = "µmol/L"
+when = { age_min = 0.077, age_max = 0.25 }
+population = "Healthy Chinese children aged 28 days to under 3 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| TBIL | umol/L | 28 days-<3 months | 87 | 11.79 | 12.94 | 2.04 | 30.40" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.38
+high = 9.96
+unit = "µmol/L"
+when = { age_min = 0.25, age_max = 1 }
+population = "Healthy Chinese children aged 3 months to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| TBIL | umol/L |...| 3 months-<1 year | 380 | 4.65 | 4.40 | 1.38 | 9.96" } ]

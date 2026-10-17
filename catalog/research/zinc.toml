@@ -66,3 +66,4 @@ note = "Low serum zinc in fasting samples: strictly below 74 ug/dL in males (the
 citations = [
   { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)", quote = "and for the fasting samples (70 ug/dl for females and 74 ug/dl for males)" },
 ]
+

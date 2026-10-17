@@ -42,3 +42,16 @@ note = "Single-country, small sample (n = 240). Lower than the commonly quoted a
 citations = [
   { pmid = "33642323", doi = "10.4103/npmj.npmj_274_20", title = "Ionised serum calcium reference interval among rural women of reproductive age in Abuja, Nigeria.", locator = "Abstract", quote = "The obtained normal reference interval of ionised serum calcium (iCa) was 0.88-1.4 mmol/L." },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.12
+high = 1.30
+when = { specimen = "venous-blood-gas" }
+population = "Healthy adults aged about 18-75 years (n = 182, both sexes), Pakistan; venous blood gas analyser, 2.5-97.5 percentile"
+evidence = "reference-interval-study"
+note = "Venous blood gas (VBG) ionized calcium, not arterial or a serum-based method. The source's 90 % confidence limits for the lower and upper reference limits are 1.07-1.16 and 1.26-1.3 mmol/L. Single-centre, one-year prospective study. No hypocalcaemia threshold is stated in the source."
+citations = [
+  { pmid = "39712818", doi = "10.7759/cureus.74223", title = "Reference Intervals for Venous Blood Gas in Healthy Adults: A One-Year Prospective Study", locator = "Table 2", quote = "Reference Interval (2.5-97.5 percentile)... | Ionized calcium (mmol/L) | 1.12-1.30 | 1.07-1.16 | 1.26-1.3" },
+]

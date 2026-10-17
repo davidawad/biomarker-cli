@@ -91,3 +91,51 @@ note = "Stricter serum urate target below 5 mg/dL (300 umol/L) in severe gout (2
 citations = [
   { pmid = "27457514", doi = "10.1136/annrheumdis-2016-209707", title = "2016 updated EULAR evidence-based recommendations for the management of gout.", locator = "Abstract (Results)", quote = "serum uric acid (SUA) levels should be maintained at<6 mg/dL (360 umol/L) and <5 mg/dL (300 umol/L) in those with severe gout" },
 ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 99.91
+high = 386.35
+unit = "µmol/L"
+when = { age_min = 0.077, age_max = 1 }
+population = "Healthy Chinese children aged 28 days to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| UA | umol/L | 28 days-<1 year | 580 | 209.18 | 203.26 | 99.91 | 386.35" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 159.96
+high = 368.38
+unit = "µmol/L"
+when = { age_min = 1, age_max = 11 }
+population = "Healthy Chinese children aged 1 to under 11 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| UA | umol/L |...| 1-<11 years | 777 | 267.12 | 265.81 | 159.96 | 368.38" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 194.76
+high = 480.95
+unit = "µmol/L"
+when = { sex = "male", age_min = 11, age_max = 18 }
+population = "Healthy Chinese male children aged 11 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sex-specific pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| UA | umol/L |...| 11-<18 years | Male 101 Female 77 | Male 366.97 Female 284.72 | Male 367.90 Female 291.46 | Male 194.76 Female 123.90 | Male 480.95 Female 395.65" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 123.9
+high = 395.65
+unit = "µmol/L"
+when = { sex = "female", age_min = 11, age_max = 18 }
+population = "Healthy Chinese female children aged 11 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Sex-specific pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+citations = [ { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Table 1", quote = "| UA | umol/L |...| 11-<18 years | Male 101 Female 77 | Male 366.97 Female 284.72 | Male 367.90 Female 291.46 | Male 194.76 Female 123.90 | Male 480.95 Female 395.65" } ]

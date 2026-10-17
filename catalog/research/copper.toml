@@ -16,3 +16,4 @@ citations = [
   { pmid = "34273186", doi = "10.1002/jcla.23897", title = "Age- and sex-specific reference intervals for superoxide dismutase enzyme and several minerals in a healthy adult cohort.", locator = "Results (reference interval table, total population)", quote = "Copper (ug/dl) | 3,293 | 30.00 | 181.65" },
   { pmid = "34273186", doi = "10.1002/jcla.23897", title = "Age- and sex-specific reference intervals for superoxide dismutase enzyme and several minerals in a healthy adult cohort.", locator = "Abstract (Results)", quote = "sex partitioning was not required for all parameters, apart from serum magnesium" },
 ]
+

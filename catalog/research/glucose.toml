@@ -224,3 +224,28 @@ note = "Fasting or pre-prandial glucose goal for complex/intermediate older adul
 citations = [
   { pmid = "37841649", doi = "10.2147/cia.s423122", title = "Management of Glucose-Lowering Therapy in Older Adults with Type 2 Diabetes: Challenges and Opportunities.", locator = "Table (Glycemic targets in older adults, ADA 2023 row)", quote = "chronic illnesses* or >=2 instrumental ADL€ impairments or mild-to-moderate cognitive impairment) | <8.0% (64 mmol/mol) | 90-150 mg/dL (5.0-8.3 mmol/L)" },
 ]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5.6
+unit = "mmol/L"
+when = { fasting = true }
+population = "Adults, fasting plasma glucose (ADA criteria as tabulated in a 2026 review)"
+evidence = "guideline"
+note = "Normal fasting plasma glucose category, strictly below 5.6 mmol/L. Source units kept (no conversion)."
+citations = [
+  { pmid = "42321865", doi = "10.1186/s13098-026-02213-0", title = "Diagnostic utility of fasting versus non-fasting blood glucose: contextualising testing strategies-a narrative review.", locator = "Table 3", quote = "Normal | < 5.6 | < 7.8 | < 5.7" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 200
+when = { fasting = false }
+population = "Adults with classic symptoms of hyperglycaemia (random, non-fasting sample)"
+evidence = "guideline"
+note = "Diabetes by random plasma glucose (ADA), only in the presence of classic symptoms of hyperglycaemia; confirm per ADA criteria. Does not require fasting."
+citations = [
+  { pmid = "42321865", doi = "10.1186/s13098-026-02213-0", title = "Diagnostic utility of fasting versus non-fasting blood glucose: contextualising testing strategies-a narrative review.", locator = "Introduction (ADA diagnostic criteria paragraph)", quote = "random plasma glucose (RPG) >= 11.1 mmol/L (200 mg/dL) in the presence of classic symptoms" },
+]
