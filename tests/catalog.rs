@@ -137,6 +137,29 @@ fn upgrades_a_v0_7_2_database_and_keeps_its_flags() {
 }
 
 #[test]
+fn a_marker_removed_before_the_upgrade_stays_removed() {
+    let e = Env::v072();
+    let p = e.db.clone();
+    std::thread::Builder::new()
+        .stack_size(256 * 1024 * 1024)
+        .spawn(move || {
+            let db = biomarker_cli::db::Db::open_plain(&p).unwrap();
+            db.execute_batch(
+                "DELETE FROM marker_aliases WHERE marker_id = (SELECT id FROM markers WHERE slug = 'vo2max');
+                 DELETE FROM markers WHERE slug = 'vo2max';",
+            )
+            .unwrap();
+        })
+        .unwrap()
+        .join()
+        .unwrap();
+    e.run(&["db", "migrate"]);
+    let markers = e.data(&["marker", "list"]);
+    assert!(markers.iter().all(|m| m["slug"] != "vo2max"), "vo2max was seeded again");
+    assert!(markers.iter().any(|m| m["slug"] == "hrv"));
+}
+
+#[test]
 fn range_sets_marker_overrides_and_config_ranges() {
     let e = Env::new();
     e.run(&["person", "add", "pat", "--sex", "male", "--dob", "1970-03-15"]);

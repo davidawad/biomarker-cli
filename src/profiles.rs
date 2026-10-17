@@ -81,7 +81,7 @@ pub struct RangeSpec {
     /// Required, except inside a `[[marker]]` table of markers.toml.
     #[serde(default)]
     pub marker: String,
-    /// `reference` (default), `optimal` or `warn` (near-limit bounds).
+    /// `reference` (default), `optimal`, `warn` (near-limit bounds) or `critical`.
     pub kind: Option<String>,
     /// `any` (default), `male` or `female`.
     pub sex: Option<String>,
@@ -675,7 +675,7 @@ fn compile(cat: &Catalog, specs: &[RangeSpec], origin: Option<&Path>, owner: &st
 fn compile_one(cat: &Catalog, s: &RangeSpec) -> Result<Compiled> {
     let m = cat.get(&s.marker)?;
     let kind = RangeKind::parse(s.kind.as_deref().unwrap_or("reference"))
-        .ok_or_else(|| AppError::config(format!("{}: kind must be reference, optimal or warn", m.slug)))?;
+        .ok_or_else(|| AppError::config(format!("{}: kind must be reference, optimal, warn or critical", m.slug)))?;
     let sex = s.sex.as_deref().unwrap_or("any").to_ascii_lowercase();
     if !matches!(sex.as_str(), "any" | "male" | "female") {
         return Err(AppError::config(format!("{}: sex must be any, male or female", m.slug)));

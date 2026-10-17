@@ -306,7 +306,8 @@ fn attach_catalog_ranges(db: &Db, markers: &[Marker]) -> Result<Vec<Range>> {
     let conversions = ConversionSet::new(load_conversions(db)?);
     let mut out = Vec::new();
     for def in &crate::catalog::builtin()?.markers {
-        let id = seeded.get(&def.slug).copied();
+        // 0 (removed before the upgrade) falls back to the slug, as does an unseeded marker
+        let id = seeded.get(&def.slug).copied().filter(|id| *id != 0);
         let Some(m) = markers.iter().find(|m| id.map_or(m.slug == def.slug, |id| m.id == id)) else { continue };
         let same = same_unit(&m.unit, &def.unit);
         if !same && conversions.convert(m.id, 1.0, &def.unit, &m.unit).is_err() {

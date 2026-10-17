@@ -160,6 +160,82 @@ fn seed_marker(db: &Db, m: &MarkerDef) -> Result<i64> {
     Ok(id)
 }
 
+/// The markers v0.7.2 shipped. Migration 7 records them as seen even when
+/// you removed one, so it is not seeded again.
+const LEGACY_SLUGS: &[&str] = &[
+    "albumin",
+    "alp",
+    "alt",
+    "apob",
+    "ast",
+    "bilirubin-total",
+    "biological-age",
+    "bmi",
+    "body-fat",
+    "bp-diastolic",
+    "bp-systolic",
+    "bun",
+    "calcium",
+    "chloride",
+    "co2",
+    "cortisol",
+    "creatinine",
+    "dhea-s",
+    "egfr",
+    "estradiol",
+    "ferritin",
+    "folate",
+    "free-t3",
+    "free-t4",
+    "fsh",
+    "ggt",
+    "glucose",
+    "hba1c",
+    "hdl-c",
+    "hematocrit",
+    "hemoglobin",
+    "homocysteine",
+    "hrv",
+    "hscrp",
+    "igf-1",
+    "insulin",
+    "iron",
+    "ldl-c",
+    "lh",
+    "lpa",
+    "lymphocytes-abs",
+    "magnesium",
+    "mch",
+    "mchc",
+    "mcv",
+    "neutrophils-abs",
+    "non-hdl-c",
+    "platelets",
+    "potassium",
+    "prolactin",
+    "psa",
+    "rbc",
+    "rdw",
+    "resting-hr",
+    "shbg",
+    "sodium",
+    "testosterone-free",
+    "testosterone-total",
+    "tibc",
+    "total-cholesterol",
+    "total-protein",
+    "tpo-ab",
+    "transferrin-saturation",
+    "triglycerides",
+    "tsh",
+    "uric-acid",
+    "vitamin-b12",
+    "vitamin-d",
+    "vo2max",
+    "wbc",
+    "weight",
+];
+
 /// The range rows v0.7.2 seeded: (slug, kind, sex, low, high, note).
 type LegacyRow<'a> = (&'a str, &'a str, &'a str, Option<f64>, Option<f64>, Option<&'a str>);
 
@@ -208,7 +284,8 @@ pub fn catalog_as_data(db: &Db) -> Result<()> {
                 .and_then(|r| r.i(0))
             }),
         };
-        if let Some(id) = found {
+        // 0: a v0.7.2 marker that was removed; anything else unseen is seeded by sync_catalog
+        if let Some(id) = found.or_else(|| LEGACY_SLUGS.contains(&m.slug.as_str()).then_some(0)) {
             db.execute(
                 "INSERT OR IGNORE INTO catalog_seeded (slug, marker_id) VALUES (?1, ?2)",
                 &[text(&m.slug), int(id)],

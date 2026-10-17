@@ -8,6 +8,7 @@ unit_system = "us"        # canonical | us | si
 color = "auto"            # auto | always | never
 precision = 2
 range_flavor = "both"     # reference | optimal | both
+# range_sets = ["clinical", "optimal"]   # catalog range sets in priority order (try "blueprint")
 dedupe = "skip"           # skip | replace | error
 null = ""
 
