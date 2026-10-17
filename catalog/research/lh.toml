@@ -1,0 +1,162 @@
+slug = "lh"
+name = "Luteinizing Hormone"
+loinc = "10501-5"
+category = "hormone"
+unit = "mIU/mL"
+description = "Pituitary gonadotropin that triggers ovulation and stimulates testosterone production in men. Reference values depend on sex, menstrual cycle phase and menopause; in children, basal LH is used to screen for central precocious puberty."
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.83
+high = 7.65
+when = { sex = "male", method = "immunoassay" }
+population = "healthy men (n = 220, aged 20-68 years) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1, Advia Centaur; source unit mU/mL, equivalent to mIU/mL). Median 3.81."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "3.81 3.59-4.00 1.83 1.70-1.96 7.65 7.13-8.22" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 2.18
+high = 10.6
+when = { sex = "female", cycle_phase = "follicular", method = "immunoassay" }
+population = "women in the follicular phase (n = 139; days 3-5 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 5.00."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "5.00 4.50-5.52 2.18 1.97-2.41 10.6 9.59-11.7" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.15
+high = 20.9
+when = { sex = "female", cycle_phase = "luteal", method = "immunoassay" }
+population = "women in the luteal phase (n = 87; days 21-23 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 4.94."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "4.94 4.10-6.02 1.15 0.93-1.44 20.9 16.7-25.7" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 18.0
+high = 64.2
+when = { sex = "female", menopause = "post", method = "immunoassay" }
+population = "postmenopausal women (n = 103; amenorrhea for at least 12 months) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 32.6."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "32.6 29.6-35.3 18.0 16.4-19.8 64.2 58.7-70.7" },
+]
+
+[[range]]
+set = "gnrh-test-basal-lh-2026"
+kind = "diagnostic"
+low = 0.5
+unit = "U/L"
+when = { age_max = 9, specimen = "serum", test = "early-morning fasting basal LH before GnRH stimulation test" }
+population = "258 children evaluated for suspected central precocious puberty with a first GnRH stimulation test, Edinburgh 2011-2025"
+evidence = "outcome"
+note = "Optimal basal LH threshold for a pubertal GnRH response (sensitivity 0.61, specificity 0.97). Assay dependent (Abbott LOD 0.5 U/L; Roche LOD 0.3 U/L). Source unit U/L (equivalent to IU/L). Eligibility: girls under 8 and boys under 9 years."
+citations = [
+  { pmid = "42440719", doi = "10.1210/jendso/bvag131", title = "Diagnostic utility of basal luteinizing hormone in evaluating central precocious puberty.", url = "https://pubmed.ncbi.nlm.nih.gov/42440719/", locator = "Abstract, Results", quote = "The optimal threshold was 0.5 U/L (sensitivity 0.61, specificity 0.97)" },
+]
+
+[[range]]
+set = "gnrh-test-basal-lh-2026"
+kind = "diagnostic"
+low = 1.0
+unit = "U/L"
+when = { age_max = 9, specimen = "serum", test = "early-morning fasting basal LH before GnRH stimulation test" }
+population = "258 children evaluated for suspected central precocious puberty with a first GnRH stimulation test, Edinburgh 2011-2025"
+evidence = "outcome"
+note = "Basal LH at or above this value gave 100% specificity and positive predictive value for a pubertal GnRH response in the source. Assay dependent. Source unit U/L (equivalent to IU/L)."
+citations = [
+  { pmid = "42440719", doi = "10.1210/jendso/bvag131", title = "Diagnostic utility of basal luteinizing hormone in evaluating central precocious puberty.", url = "https://pubmed.ncbi.nlm.nih.gov/42440719/", locator = "Abstract, Results", quote = "a bLH ≥ 1.0 U/L achieved 100% specificity and positive predictive value" },
+]
+
+[[range]]
+set = "basal-lh-weight-stratified-2026"
+kind = "diagnostic"
+low = 0.165
+unit = "IU/L"
+when = { sex = "female", conditions = ["normal-weight"], test = "GnRH stimulation test, premenarcheal girls with breast development" }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group"
+evidence = "outcome"
+note = "Youden-optimal basal LH cut-off for CPP in normal-weight girls (AUC 0.770). Assay dependent. Source unit IU/L."
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", locator = "Abstract, Results", quote = "The optimal basal LH cutoffs derived from the maximum Youden index were 0.165 IU/L (normal weight), 0.145 IU/L (overweight), 0.135 IU/L (obesity) and 0.135 IU/L (underweight)" },
+]
+
+[[range]]
+set = "basal-lh-weight-stratified-2026"
+kind = "diagnostic"
+low = 0.145
+unit = "IU/L"
+when = { sex = "female", conditions = ["overweight"], test = "GnRH stimulation test, premenarcheal girls with breast development" }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group"
+evidence = "outcome"
+note = "Youden-optimal basal LH cut-off for CPP in overweight girls (AUC 0.822). Assay dependent. Source unit IU/L."
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", locator = "Abstract, Results", quote = "The optimal basal LH cutoffs derived from the maximum Youden index were 0.165 IU/L (normal weight), 0.145 IU/L (overweight), 0.135 IU/L (obesity) and 0.135 IU/L (underweight)" },
+]
+
+[[range]]
+set = "basal-lh-weight-stratified-2026"
+kind = "diagnostic"
+low = 0.135
+unit = "IU/L"
+when = { sex = "female", conditions = ["obesity"], test = "GnRH stimulation test, premenarcheal girls with breast development" }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group"
+evidence = "outcome"
+note = "Youden-optimal basal LH cut-off for CPP in girls with obesity (AUC 0.749). Assay dependent. Source unit IU/L."
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", locator = "Abstract, Results", quote = "The optimal basal LH cutoffs derived from the maximum Youden index were 0.165 IU/L (normal weight), 0.145 IU/L (overweight), 0.135 IU/L (obesity) and 0.135 IU/L (underweight)" },
+]
+
+[[range]]
+set = "basal-lh-weight-stratified-2026"
+kind = "diagnostic"
+low = 0.135
+unit = "IU/L"
+when = { sex = "female", conditions = ["underweight"], test = "GnRH stimulation test, premenarcheal girls with breast development" }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group"
+evidence = "outcome"
+note = "Youden-optimal basal LH cut-off for CPP in underweight girls (AUC 0.767). Assay dependent. Source unit IU/L."
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", locator = "Abstract, Results", quote = "The optimal basal LH cutoffs derived from the maximum Youden index were 0.165 IU/L (normal weight), 0.145 IU/L (overweight), 0.135 IU/L (obesity) and 0.135 IU/L (underweight)" },
+]
+
+[[range]]
+set = "gnrha-peak-lh-2024"
+kind = "diagnostic"
+low = 5
+unit = "IU/L"
+when = { sex = "female", tanner_min = 2, tanner_max = 3, test = "subcutaneous triptorelin 100 ug GnRHa stimulation test, peak serum LH" }
+population = "971 girls with premature breast development who had a subcutaneous GnRHa (100 ug triptorelin) test, Tanner stages II-III; normal-weight group of 634 girls"
+evidence = "outcome"
+note = "Peak LH cut-off of 5 IU/L (the commonly used value) in normal-weight girls: sensitivity 75%, specificity 90%. A peak at or above the cut-off supports central precocious puberty. Source unit IU/L (equivalent to mIU/mL). Assay dependent."
+citations = [
+  { pmid = "38300440", doi = "10.1111/cen.15026", title = "Peak serum luteinising hormone cut-off during gonadotropin-releasing hormone analogue test for diagnosing central precocious puberty was lower in girls with obesity as compared with girls with normal weight.", url = "https://pubmed.ncbi.nlm.nih.gov/38300440/", locator = "Abstract, Results", quote = "Peak serum LH cut-off of 5 IU/L (the current widely used cut-off) had a sensitivity and a specificity of 75% and 90%, respectively in NW group." },
+]
+
+[[range]]
+set = "gnrha-peak-lh-2024"
+kind = "diagnostic"
+low = 4
+unit = "IU/L"
+when = { sex = "female", tanner_min = 2, tanner_max = 3, conditions = ["overweight-or-obesity"], test = "subcutaneous triptorelin 100 ug GnRHa stimulation test, peak serum LH" }
+population = "971 girls with premature breast development who had a subcutaneous GnRHa (100 ug triptorelin) test; overweight or obesity group of 337 girls"
+evidence = "outcome"
+note = "Lower peak LH cut-off of 4 IU/L for girls with overweight or obesity: sensitivity 86%, specificity 93%. The authors suggest this lower value to avoid underdiagnosis. Source unit IU/L (equivalent to mIU/mL)."
+citations = [
+  { pmid = "38300440", doi = "10.1111/cen.15026", title = "Peak serum luteinising hormone cut-off during gonadotropin-releasing hormone analogue test for diagnosing central precocious puberty was lower in girls with obesity as compared with girls with normal weight.", url = "https://pubmed.ncbi.nlm.nih.gov/38300440/", locator = "Abstract, Results", quote = "Peak serum LH cut-off for CPP diagnosis was lower at 4 IU/L in the OW/OB group with greater sensitivity and specificity of 86% and 93%, respectively." },
+]

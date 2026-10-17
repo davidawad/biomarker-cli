@@ -1,0 +1,83 @@
+slug = "testosterone-total"
+name = "Testosterone, Total"
+loinc = "2986-8"
+category = "hormone"
+unit = "ng/dL"
+description = "Total testosterone in serum, the first-line test for male androgen deficiency and for androgen status in women. Interpret against sex- and age-specific ranges, and measure in the morning with an accurate (LC-MS/MS) assay."
+
+[[range]]
+set = "premenopausal-women-2011"
+kind = "reference"
+low = 15
+high = 46
+when = { sex = "female", age_min = 30, age_max = 30 }
+population = "Normally cycling healthy premenopausal women aged 18-49 (n=161); percentiles estimated for a typical 30-year-old woman, pooled across menstrual cycle phases"
+evidence = "reference-interval"
+note = "5th to 95th percentile for a 30-year-old woman; the source reports the age-related decline, so use the age-matched estimate."
+citations = [
+  { pmid = "21771278", doi = "10.1111/j.1743-6109.2011.02380.x", title = "Testosterone reference ranges in normally cycling healthy premenopausal women.", url = "https://pubmed.ncbi.nlm.nih.gov/21771278/", locator = "Abstract, Results", quote = "The estimated 5th and 95th percentiles for a 30-year-old woman were: testosterone, 15-46 ng/dL (520-1595 pmol/L); free testosterone, 1.2-6.4 pg/mL (4.16-22.2 pmol/L); calculated free testosterone, 1.3-5.6 pg/mL (4.5-19.4 pmol/L); bioavailable testosterone, 1.12-7.62 ng/dL (38.8-264.21 pmol/L); and SHBG 18-86 nmol/L." },
+]
+
+[[range]]
+set = "pediatric-sex-hormone-review-2026"
+kind = "reference"
+high = 10
+unit = "nmol/L"
+when = { sex = "male", age_min = 1, age_max = 6, age_unit = "months" }
+population = "Literature review of published age- and Tanner-stage-specific reference intervals for children aged 0-18 (LC-MS/MS or GC-MS/MS methods)"
+evidence = "review"
+note = "Upper limit of the reference interval only, in boys during mini-puberty; the source gives the value in nmol/L (canonical unit here is ng/dL). Source states the value is approximate."
+citations = [
+  { pmid = "42554720", doi = "10.1530/JME-26-0037", title = "A literature overview of age- and Tanner stage-specific reference intervals for sex hormones for children aged 0-18 years.", url = "https://pubmed.ncbi.nlm.nih.gov/42554720/", locator = "Results (Fig. 1A)", quote = "For testosterone, the upper limit of the RI (ULN) in boys during mini-puberty (age 1–6 months) was approximately 10 nmol/L" },
+]
+
+[[range]]
+set = "pcos-lcms-2021"
+kind = "diagnostic"
+high = 0.337
+unit = "ng/mL"
+when = { sex = "female", conditions = ["pcos"], method = "lc-ms/ms", test = "ROC analysis for hyperandrogenemia" }
+population = "Women with PCOS (n=102) and healthy volunteers (n=41), Chinese cohort, LC-MS/MS"
+evidence = "outcome"
+note = "Optimal ROC cut-off for hyperandrogenemia in PCOS (sensitivity 72.0%, specificity 82.93%). Values above the cut-off indicate hyperandrogenemia in this study. Single-centre diagnostic accuracy, not a reference interval; source unit is ng/mL (about 33.7 ng/dL)."
+citations = [
+  { pmid = "33583431", doi = "10.1186/s13048-021-00781-5", title = "Comparison of the efficacy of different androgens measured by LC-MS/MS in representing hyperandrogenemia and an evaluation of adrenal-origin androgens with a dexamethasone suppression test in patients with PCOS.", url = "https://pubmed.ncbi.nlm.nih.gov/33583431/", locator = "Abstract, Results", quote = "The optimal cutoff value of TT was 0.337 ng/ml, with a sensitivity of 72.0% and specificity of 82.93%." },
+]
+
+[[range]]
+set = "harmonized-men-2017"
+kind = "reference"
+low = 264
+high = 916
+when = { sex = "male", age_min = 19, age_max = 39 }
+population = "Healthy nonobese men aged 19-39 from four US and European cohorts (Framingham, EMAS, MrOS, MSSO; n=9054 community men), values harmonized to a CDC reference method"
+evidence = "reference-interval"
+note = "Harmonized normal range (the abstract gives the 2.5th and 97.5th percentiles as 264 and 916 ng/dL). Applies to assays calibrated to the reference method; intercohort differences were largely assay-related. Nonobese men only; not an age-banded range beyond 19-39."
+citations = [
+  { pmid = "28324103", doi = "10.1210/jc.2016-2935", title = "Harmonized Reference Ranges for Circulating Testosterone Levels in Men of Four Cohort Studies in the United States and Europe.", url = "https://pubmed.ncbi.nlm.nih.gov/28324103/", locator = "Abstract, Conclusion", quote = "Harmonized normal range in a healthy nonobese population of European and American men, 19 to 39 years, is 264 to 916 ng/dL." },
+]
+
+[[range]]
+set = "endocrine-society-2018"
+kind = "diagnostic"
+high = 264
+when = { sex = "male" }
+population = "Men with suspected male hypogonadism; cut-off restated in a 2026 joint position statement (Brazil)"
+evidence = "review"
+note = "Lower total testosterone limit for low-testosterone diagnosis (values below 264 ng/dL support hypogonadism) as the Endocrine Society 2018 guideline recommends, restated verbatim in an open-access position statement. Assay-dependent: CDC-certified LC-MS/MS or immunoassays recommended. Not verified against the paywalled guideline itself."
+citations = [
+  { pmid = "41678706", doi = "10.1590/S1677-5538.IBJU.2025.0610", title = "Care of Patients with Male Hypogonadism: A Joint Position Statement from the Brazilian Society of Endocrinology and Metabolism (SBEM), the Brazilian Society of Urology (SBU), and the Brazilian Association for Sexual Medicine and Health (ABEMSS).", url = "https://pubmed.ncbi.nlm.nih.gov/41678706/", locator = "Discussion (threshold paragraph)", quote = "The Endocrine Society recommends 264 ng/dL as the cutoff for low TT, whereas the American Urological Association adopts 300 ng/dL" },
+]
+
+[[range]]
+set = "eau-srh-2026"
+kind = "diagnostic"
+high = 12
+unit = "nmol/L"
+when = { sex = "male" }
+population = "Men with symptomatic suspected male hypogonadism; EAU Guidelines on Sexual and Reproductive Health (2026 summary)"
+evidence = "review"
+note = "Threshold for diagnosing symptomatic male hypogonadism: total testosterone of 12 nmol/L or less (the zone is values at or below 12 nmol/L). Summary of EAU guidelines in an open-access abstract, not the full guideline text. Source unit nmol/L (about 346 ng/dL)."
+citations = [
+  { pmid = "42177105", doi = "10.1016/j.euf.2026.04.015", title = "EAU Guidelines on Sexual and Reproductive Health: A Summary of the 2026 Recommendations for Measurement and Biochemical Confirmation of Hypogonadism.", url = "https://pubmed.ncbi.nlm.nih.gov/42177105/", locator = "Abstract, Key findings", quote = "A T level of ≤12 nmol/l continues to be the recommended threshold for diagnosing symptomatic male hypogonadism in clinical practice." },
+]

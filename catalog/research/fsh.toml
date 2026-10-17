@@ -1,0 +1,71 @@
+slug = "fsh"
+name = "Follicle Stimulating Hormone"
+loinc = "15067-2"
+category = "hormone"
+unit = "mIU/mL"
+description = "Pituitary gonadotropin that drives ovarian follicle growth in women and spermatogenesis in men. Rises as ovarian reserve falls and after menopause, so reference values depend strongly on sex, cycle phase and menopausal status."
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.32
+high = 9.18
+when = { sex = "male", method = "immunoassay" }
+population = "healthy men (n = 220, aged 20-68 years) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1, Advia Centaur; source unit mU/mL, equivalent to mIU/mL). Median 3.30."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "3.30 3.11-3.62 1.32 1.20-1.46 9.18 8.33-10.1" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 4.07
+high = 12.9
+when = { sex = "female", cycle_phase = "follicular", method = "immunoassay" }
+population = "women in the follicular phase (n = 139; days 3-5 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 7.58."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "7.58 7.05-7.80 4.07 3.77-4.31 12.9 12.1-14.0" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.70
+high = 9.46
+when = { sex = "female", cycle_phase = "luteal", method = "immunoassay" }
+population = "women in the luteal phase (n = 87; days 21-23 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 4.11."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "4.11 3.40-4.61 1.70 1.50-1.92 9.46 8.17-10.9" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 44.6
+high = 167
+when = { sex = "female", menopause = "post", method = "immunoassay" }
+population = "postmenopausal women (n = 103; amenorrhea for at least 12 months) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 87.1. A postmenopausal reference interval only; it does not establish the STRAW+10 or premature ovarian insufficiency cut-offs."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "87.1 79.6-91.1 44.6 40.3-49.8 167 150-185" },
+]
+
+[[range]]
+set = "eshre-poi-2024"
+kind = "diagnostic"
+low = 25
+unit = "IU/L"
+when = { sex = "female", conditions = ["suspected-poi"] }
+population = "Women with disordered menstrual cycles (spontaneous amenorrhoea or irregular cycles for at least 4 months); ESHRE evidence-based guideline 2024"
+evidence = "review"
+note = "Restates the ESHRE 2024 premature ovarian insufficiency guideline, cited via its open-access abstract. Values strictly above 25 IU/L (low = 25 is the lower bound of the zone) support POI with the clinical picture. The 2024 guideline needs only one elevated FSH; the 2015/2016 ESHRE guidance required two occasions. Repeat FSH after 4-6 weeks if uncertain. Source unit IU/L (equivalent to mIU/mL)."
+citations = [
+  { pmid = "39660328", doi = "10.1093/hropen/hoae065", title = "Evidence-based guideline: premature ovarian insufficiency.", url = "https://pubmed.ncbi.nlm.nih.gov/39660328/", locator = "Recommendations (diagnosis)", quote = "an elevated FSH concentration > 25 IU/l" },
+]

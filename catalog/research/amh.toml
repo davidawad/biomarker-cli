@@ -1,0 +1,198 @@
+slug = "amh"
+name = "Anti-Müllerian Hormone"
+category = "hormone"
+unit = "ng/mL"
+description = "Glycoprotein secreted by granulosa cells of small antral follicles in women and by Sertoli cells in men. Used as a marker of ovarian reserve and in the assessment of PCOS and infertility."
+
+[[range]]
+set = "gynecol-endocrinol-2025-china"
+kind = "reference"
+low = 0.87
+high = 9.89
+when = { sex = "female", age_min = 20, age_max = 24 }
+population = "Healthy Chinese women of reproductive age, multicentre prospective cross-sectional study (n=1113)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for the 20-24 year band; AMH falls steeply with age. Assay-dependent."
+citations = [
+  { pmid = "39819231", doi = "10.1080/09513590.2024.2431230", title = "Age-specific reference ranges and variation of anti-mülerian hormone in healthy Chinese women of reproductive and perimenopausal age: a nationwide population-based prospective multicenter cross-sectional study.", url = "https://pubmed.ncbi.nlm.nih.gov/39819231/", locator = "Abstract, Results", quote = "The AMH (ng/ml) reference ranges for Chinese women of reproductive age were 0.87-9.89 (20-24 years), 0.42-8.24 (25-29 years), 0.34-7.46 (30-34 years), and 0.28-5.66 (35-39 years)." },
+]
+
+[[range]]
+set = "gynecol-endocrinol-2025-china"
+kind = "reference"
+low = 0.42
+high = 8.24
+when = { sex = "female", age_min = 25, age_max = 29 }
+population = "Healthy Chinese women of reproductive age, multicentre prospective cross-sectional study (n=1113)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for the 25-29 year band. Assay-dependent."
+citations = [
+  { pmid = "39819231", doi = "10.1080/09513590.2024.2431230", title = "Age-specific reference ranges and variation of anti-mülerian hormone in healthy Chinese women of reproductive and perimenopausal age: a nationwide population-based prospective multicenter cross-sectional study.", url = "https://pubmed.ncbi.nlm.nih.gov/39819231/", locator = "Abstract, Results", quote = "The AMH (ng/ml) reference ranges for Chinese women of reproductive age were 0.87-9.89 (20-24 years), 0.42-8.24 (25-29 years), 0.34-7.46 (30-34 years), and 0.28-5.66 (35-39 years)." },
+]
+
+[[range]]
+set = "gynecol-endocrinol-2025-china"
+kind = "reference"
+low = 0.34
+high = 7.46
+when = { sex = "female", age_min = 30, age_max = 34 }
+population = "Healthy Chinese women of reproductive age, multicentre prospective cross-sectional study (n=1113)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for the 30-34 year band. Assay-dependent."
+citations = [
+  { pmid = "39819231", doi = "10.1080/09513590.2024.2431230", title = "Age-specific reference ranges and variation of anti-mülerian hormone in healthy Chinese women of reproductive and perimenopausal age: a nationwide population-based prospective multicenter cross-sectional study.", url = "https://pubmed.ncbi.nlm.nih.gov/39819231/", locator = "Abstract, Results", quote = "The AMH (ng/ml) reference ranges for Chinese women of reproductive age were 0.87-9.89 (20-24 years), 0.42-8.24 (25-29 years), 0.34-7.46 (30-34 years), and 0.28-5.66 (35-39 years)." },
+]
+
+[[range]]
+set = "gynecol-endocrinol-2025-china"
+kind = "reference"
+low = 0.28
+high = 5.66
+when = { sex = "female", age_min = 35, age_max = 39 }
+population = "Healthy Chinese women of reproductive age, multicentre prospective cross-sectional study (n=1113)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for the 35-39 year band. Assay-dependent."
+citations = [
+  { pmid = "39819231", doi = "10.1080/09513590.2024.2431230", title = "Age-specific reference ranges and variation of anti-mülerian hormone in healthy Chinese women of reproductive and perimenopausal age: a nationwide population-based prospective multicenter cross-sectional study.", url = "https://pubmed.ncbi.nlm.nih.gov/39819231/", locator = "Abstract, Results", quote = "The AMH (ng/ml) reference ranges for Chinese women of reproductive age were 0.87-9.89 (20-24 years), 0.42-8.24 (25-29 years), 0.34-7.46 (30-34 years), and 0.28-5.66 (35-39 years)." },
+]
+
+[[range]]
+set = "gynecol-endocrinol-2025-china"
+kind = "reference"
+low = 0.12
+high = 4.63
+when = { sex = "female", age_min = 40, age_max = 41 }
+population = "Healthy Chinese perimenopausal women, multicentre prospective cross-sectional study"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for ages 40-41. Lower percentiles approach the assay limit of detection from age 42."
+citations = [
+  { pmid = "39819231", doi = "10.1080/09513590.2024.2431230", title = "Age-specific reference ranges and variation of anti-mülerian hormone in healthy Chinese women of reproductive and perimenopausal age: a nationwide population-based prospective multicenter cross-sectional study.", url = "https://pubmed.ncbi.nlm.nih.gov/39819231/", locator = "Abstract, Results", quote = "For perimenopausal women, their reference ranges were 0.12-4.63 (40-41 years), 0.01-4.12 (42-43 years), 0.01-2.65 (44-45 years), 0.01-1.90 (46-47 years), and 0.01-1.08 (48-49 years)." },
+]
+
+[[range]]
+set = "gynecol-endocrinol-2025-china"
+kind = "reference"
+low = 0.01
+high = 4.12
+when = { sex = "female", age_min = 42, age_max = 43 }
+population = "Healthy Chinese perimenopausal women, multicentre prospective cross-sectional study"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for ages 42-43. Lower bound is at the assay floor."
+citations = [
+  { pmid = "39819231", doi = "10.1080/09513590.2024.2431230", title = "Age-specific reference ranges and variation of anti-mülerian hormone in healthy Chinese women of reproductive and perimenopausal age: a nationwide population-based prospective multicenter cross-sectional study.", url = "https://pubmed.ncbi.nlm.nih.gov/39819231/", locator = "Abstract, Results", quote = "For perimenopausal women, their reference ranges were 0.12-4.63 (40-41 years), 0.01-4.12 (42-43 years), 0.01-2.65 (44-45 years), 0.01-1.90 (46-47 years), and 0.01-1.08 (48-49 years)." },
+]
+
+[[range]]
+set = "gynecol-endocrinol-2025-china"
+kind = "reference"
+low = 0.01
+high = 2.65
+when = { sex = "female", age_min = 44, age_max = 45 }
+population = "Healthy Chinese perimenopausal women, multicentre prospective cross-sectional study"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile for ages 44-45. Lower bound is at the assay floor."
+citations = [
+  { pmid = "39819231", doi = "10.1080/09513590.2024.2431230", title = "Age-specific reference ranges and variation of anti-mülerian hormone in healthy Chinese women of reproductive and perimenopausal age: a nationwide population-based prospective multicenter cross-sectional study.", url = "https://pubmed.ncbi.nlm.nih.gov/39819231/", locator = "Abstract, Results", quote = "For perimenopausal women, their reference ranges were 0.12-4.63 (40-41 years), 0.01-4.12 (42-43 years), 0.01-2.65 (44-45 years), 0.01-1.90 (46-47 years), and 0.01-1.08 (48-49 years)." },
+]
+
+[[range]]
+set = "pcos-threshold-dewailly-2011"
+kind = "diagnostic"
+low = 5
+when = { sex = "female", conditions = ["pcos"] }
+population = "Women referred for hyperandrogenism, menstrual disorders or infertility (n=240), single centre, France"
+evidence = "outcome"
+note = "Threshold for polycystic ovarian morphology/PCOS classification: AMH above 5 ng/mL (35 pmol/L) is the cut-off. The value is printed as a low bound because it is a 'greater than' decision threshold. The 2023 international PCOS guideline recognises AMH as an alternative to ultrasound for PCOM in adults but gives no numeric AMH cut-off, and says laboratories should use assay-specific cut-offs."
+citations = [
+  { pmid = "21926054", doi = "10.1093/humrep/der297", title = "Diagnosis of polycystic ovary syndrome (PCOS): revisiting the threshold values of follicle count on ultrasound and of the serum AMH level for the definition of polycystic ovaries.", url = "https://pubmed.ncbi.nlm.nih.gov/21926054/", locator = "Abstract, Conclusions", quote = "A serum AMH >35 pmol/l (or >5 ng/ml) appears to be more sensitive and specific than a FN >19 and should be therefore included in the current diagnostic classifications for PCOS." },
+]
+
+[[range]]
+set = "diminished-ovarian-reserve-definition-2025"
+kind = "diagnostic"
+high = 1.2
+when = { sex = "female", age_min = 18, age_max = 45 }
+population = "Women aged 18-45 with AMH results in a tertiary university hospital database, 2015-2024 (n=22,920 results)"
+evidence = "outcome"
+note = "Study definition of diminished ovarian reserve (AMH below 1.2 ng/mL). Retrospective; not a guideline cut-off. Prevalence rose from 15.9% at age 18 to 96% at age 45."
+citations = [
+  { pmid = "40620793", doi = "10.3389/fendo.2025.1612194", title = "Age-stratified anti-Müllerian hormone (AMH) nomogram: a comprehensive cohort study including 22.920 women.", url = "https://pubmed.ncbi.nlm.nih.gov/40620793/", locator = "Abstract, Methods", quote = "The prevalence of diminished ovarian reserve (DOR), defined as AMH <1.2 ng/mL, was determined." },
+]
+
+[[range]]
+set = "menopause-ultrasensitive-amh-chinese-cohort-2026"
+kind = "diagnostic"
+high = 0.0055
+when = { sex = "female", menopause = "post", method = "ultrasensitive assay" }
+population = "Nationally representative cohort of Chinese women aged 34-56 years (n=10,543), ultrasensitive assay with limit of detection 0.003 ng/mL"
+evidence = "outcome"
+note = "ROC cut-off for menopause status using an ultrasensitive assay. AUC was only 0.72, so this is a weak discriminator and should not be used alone. Assay-specific."
+citations = [
+  { pmid = "42608648", doi = "10.1097/CM9.0000000000004161", title = "Age-specific anti-Müllerian hormone reference values using an ultrasensitive assay: Associations with ovarian aging and menopausal transition symptoms.", url = "https://pubmed.ncbi.nlm.nih.gov/42608648/", locator = "Abstract, Results", quote = "Area under the curve for menopause diagnosis was 0.72 (cutoff = 0.0055 ng/mL)." },
+]
+
+[[range]]
+set = "neonatal-infant-amh-argentina-2025"
+kind = "reference"
+low = 27.5
+high = 118.3
+when = { sex = "male", age_max = 15, age_unit = "days", method = "electrochemiluminescence" }
+population = "Healthy neonates and infants aged 2-291 days, Argentina (n=599 serum samples, 303 male)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile, boys aged 15 days or younger. AMH is high at birth in males (Sertoli cell activity)."
+citations = [
+  { pmid = "40591717", doi = "10.5546/aap.2025-10653.eng", title = "Reference values for anti-Müllerian hormone measured by electrochemiluminescence in a pediatric population in Argentina.", url = "https://pubmed.ncbi.nlm.nih.gov/40591717/", locator = "Abstract, Results", quote = "AMH values (ng/mL) in neonates and infants were: M: (≤15 days: P2.5: 27.5; P97.5: 118.3; >15 days: P2.5: 13.9; P97.5: 186.0. F: ≤15 days: P2.5: 0.03; P97.5: 4.00; >15 days: P2.5: 0.03; P97.5: 11.5." },
+]
+
+[[range]]
+set = "neonatal-infant-amh-argentina-2025"
+kind = "reference"
+low = 13.9
+high = 186.0
+when = { sex = "male", age_min = 16, age_max = 291, age_unit = "days", method = "electrochemiluminescence" }
+population = "Healthy neonates and infants aged 2-291 days, Argentina (n=599 serum samples, 303 male)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile, boys aged 16-291 days."
+citations = [
+  { pmid = "40591717", doi = "10.5546/aap.2025-10653.eng", title = "Reference values for anti-Müllerian hormone measured by electrochemiluminescence in a pediatric population in Argentina.", url = "https://pubmed.ncbi.nlm.nih.gov/40591717/", locator = "Abstract, Results", quote = "AMH values (ng/mL) in neonates and infants were: M: (≤15 days: P2.5: 27.5; P97.5: 118.3; >15 days: P2.5: 13.9; P97.5: 186.0. F: ≤15 days: P2.5: 0.03; P97.5: 4.00; >15 days: P2.5: 0.03; P97.5: 11.5." },
+]
+
+[[range]]
+set = "neonatal-infant-amh-argentina-2025"
+kind = "reference"
+low = 0.03
+high = 4.00
+when = { sex = "female", age_max = 15, age_unit = "days", method = "electrochemiluminescence" }
+population = "Healthy neonates and infants aged 2-291 days, Argentina (n=599 serum samples, 296 female)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile, girls aged 15 days or younger."
+citations = [
+  { pmid = "40591717", doi = "10.5546/aap.2025-10653.eng", title = "Reference values for anti-Müllerian hormone measured by electrochemiluminescence in a pediatric population in Argentina.", url = "https://pubmed.ncbi.nlm.nih.gov/40591717/", locator = "Abstract, Results", quote = "AMH values (ng/mL) in neonates and infants were: M: (≤15 days: P2.5: 27.5; P97.5: 118.3; >15 days: P2.5: 13.9; P97.5: 186.0. F: ≤15 days: P2.5: 0.03; P97.5: 4.00; >15 days: P2.5: 0.03; P97.5: 11.5." },
+]
+
+[[range]]
+set = "neonatal-infant-amh-argentina-2025"
+kind = "reference"
+low = 0.03
+high = 11.5
+when = { sex = "female", age_min = 16, age_max = 291, age_unit = "days", method = "electrochemiluminescence" }
+population = "Healthy neonates and infants aged 2-291 days, Argentina (n=599 serum samples, 296 female)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile, girls aged 16-291 days."
+citations = [
+  { pmid = "40591717", doi = "10.5546/aap.2025-10653.eng", title = "Reference values for anti-Müllerian hormone measured by electrochemiluminescence in a pediatric population in Argentina.", url = "https://pubmed.ncbi.nlm.nih.gov/40591717/", locator = "Abstract, Results", quote = "AMH values (ng/mL) in neonates and infants were: M: (≤15 days: P2.5: 27.5; P97.5: 118.3; >15 days: P2.5: 13.9; P97.5: 186.0. F: ≤15 days: P2.5: 0.03; P97.5: 4.00; >15 days: P2.5: 0.03; P97.5: 11.5." },
+]
+
+[[range]]
+set = "defining-reference-ranges-men-2022"
+kind = "reference"
+low = 16.4
+high = 90.3
+unit = "pmol/L"
+when = { sex = "male", specimen = "serum" }
+population = "Normozoospermic adult men, single centre retrospective study (n=578)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile of serum AMH in normozoospermic men, reported in pmol/L in the source. Not converted."
+citations = [
+  { pmid = "35396994", doi = "10.1210/clinem/dgac218", title = "Defining Reference Ranges for Serum Anti-Müllerian Hormone on a Large Cohort of Normozoospermic Adult Men Highlights New Potential Physiological Functions of AMH on FSH Secretion and Sperm Motility.", url = "https://pubmed.ncbi.nlm.nih.gov/35396994/", locator = "Abstract, Results", quote = "The 2.5th and 97.5th percentile values for serum AMH and AMH/tT were 16.4 and 90.3 pmol/L and 0.45 and 3.43, respectively." },
+]

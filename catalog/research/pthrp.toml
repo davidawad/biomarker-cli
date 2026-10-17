@@ -1,0 +1,18 @@
+slug = "pthrp"
+name = "Parathyroid Hormone-Related Protein"
+category = "bone"
+unit = "pmol/L"
+description = "Peptide that mimics PTH action and drives humoral hypercalcaemia of malignancy. Measured mainly to investigate hypercalcaemia with suppressed PTH. Assay methods disagree widely, so the cut-off depends on the method used."
+
+[[range]]
+set = "pthrp-review-2026"
+kind = "reference"
+high = 2.0
+unit = "pmol/L"
+when = { method = "immunoassay" }
+population = "Immunoassay-based PTHrP reference ranges as reported across the literature, summarised in a 2026 scoping review of PTHrP-associated hypercalcaemia in gynaecological malignancy"
+evidence = "review"
+note = "Approximate upper limit of immunoassay-based reference ranges, as cited in the review (not a guideline value). The review states that LC-MS/MS-based studies report higher assay-specific ranges, and that no uniform hypercalcaemia-of-malignancy cut-off exists. Do not apply this value to LC-MS/MS results."
+citations = [
+  { pmid = "42307672", doi = "10.1007/s00404-026-08488-y", title = "PTHrP-associated hypercalcemia in gynecologic malignancies: a scoping review.", url = "https://pubmed.ncbi.nlm.nih.gov/42307672/", locator = "Methods, Results (heterogeneity of PTHrP assays)", quote = "When reference ranges were reported, these were typically based on immunoassay-derived upper limits (e.g., approximately < 2.0 pmol/L [22]), whereas more recent mass spectrometry-based studies reported higher assay-specific reference ranges." },
+]

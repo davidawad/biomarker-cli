@@ -1,0 +1,143 @@
+slug = "estradiol"
+name = "Estradiol"
+loinc = "2243-4"
+category = "hormone"
+unit = "pg/mL"
+description = "Most potent estrogen; reflects ovarian follicular and luteal activity in women and testicular and adrenal sources in men. Interpretation depends strongly on cycle phase, menopausal status, age and assay method (LC-MS/MS preferred at low concentrations)."
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 31
+high = 771
+unit = "pmol/L"
+when = { sex = "female", cycle_phase = "follicular", method = "lc-ms/ms" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method)"
+evidence = "reference-interval"
+note = "Early follicular phase (days -15 to -6 relative to LH peak). Source unit pmol/L."
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", locator = "Abstract, Results", quote = "Estradiol reference interval during the early follicular phase (days -15 to -6) was 31-771 pmol/L" },
+]
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 104
+high = 1742
+unit = "pmol/L"
+when = { sex = "female", cycle_phase = "follicular", method = "lc-ms/ms" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method)"
+evidence = "reference-interval"
+note = "Late follicular phase (days -5 to -1 relative to LH peak). Source unit pmol/L."
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", locator = "Abstract, Results", quote = "during the late follicular phase (days -5 to -1) 104-1742 pmol/L" },
+]
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 275
+high = 2864
+unit = "pmol/L"
+when = { sex = "female", cycle_phase = "midcycle", method = "lc-ms/ms" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method)"
+evidence = "reference-interval"
+note = "Day of LH peak (day 0). Source unit pmol/L. Peak-day values are the highest of the cycle."
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", locator = "Abstract, Results", quote = "during the LH peak (day 0) 275-2864 pmol/L" },
+]
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 151
+high = 1941
+unit = "pmol/L"
+when = { sex = "female", cycle_phase = "luteal", method = "lc-ms/ms" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method)"
+evidence = "reference-interval"
+note = "Mid luteal phase (days +5 to +9 relative to LH peak). Source unit pmol/L. Early luteal (days +1 to +4: 95-1188 pmol/L) and late luteal (days +10 to +14: 39-1769 pmol/L) intervals were also reported and are omitted here for brevity."
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", locator = "Abstract, Results", quote = "during mid luteal phase (days +5 to +9) 151-1941 pmol/L" },
+]
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 12
+high = 136
+unit = "pmol/L"
+when = { sex = "male", method = "lc-ms/ms" }
+population = "64 healthy men, LC-MS/MS (traceable method)"
+evidence = "reference-interval"
+note = "Adult men. Source unit pmol/L."
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", locator = "Abstract, Results", quote = "The reference interval for men was 12-136 pmol/L" },
+]
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+high = 26
+unit = "pmol/L"
+when = { sex = "female", menopause = "post", method = "lc-ms/ms" }
+population = "33 healthy postmenopausal women, LC-MS/MS (traceable method)"
+evidence = "reference-interval"
+note = "One-sided upper bound reported as <26 pmol/L. Source unit pmol/L."
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", locator = "Abstract, Results", quote = "for postmenopausal women <26 pmol/L" },
+]
+
+[[range]]
+set = "estradiol-lcms-childhood-2020"
+kind = "reference"
+high = 20
+when = { sex = "female", tanner_max = 1, method = "lc-ms/ms" }
+population = "healthy children aged 3 months to 61 years (n = 1838), LC-MS/MS, prepubertal girls"
+evidence = "reference-interval"
+note = "Approximate upper value stated in the abstract for girls during childhood (before puberty). Mini-puberty values are higher (up to 100 pmol/L). Source unit pmol/L."
+citations = [
+  { pmid = "31720688", doi = "10.1210/clinem/dgz196", title = "Sex-specific Estrogen Levels and Reference Intervals from Infancy to Late Adulthood Determined by LC-MS/MS.", url = "https://pubmed.ncbi.nlm.nih.gov/31720688/", locator = "Abstract, Results", quote = "In girls, E2 levels ranged from <LOD to 100 pmol/L during mini-puberty, whereas it was ≤20 pmol/L during childhood." },
+]
+
+[[range]]
+set = "estradiol-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 114
+high = 332
+unit = "pmol/L"
+when = { sex = "female", cycle_phase = "follicular", method = "immunoassay" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Estradiol III immunoassay"
+evidence = "reference-interval"
+note = "5th-95th percentile for the follicular phase (median 198 pmol/L). Method-specific immunoassay value; source unit pmol/L. Phase order in the source: follicular, ovulation, luteal."
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", locator = "Abstract, Results", quote = "E2: 198 ​pmol/L (114-332), 757 ​pmol/L (222-1959) and 412 ​pmol/L (222-854)" },
+]
+
+[[range]]
+set = "estradiol-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 222
+high = 1959
+unit = "pmol/L"
+when = { sex = "female", cycle_phase = "midcycle", method = "immunoassay" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Estradiol III immunoassay"
+evidence = "reference-interval"
+note = "5th-95th percentile in the ovulation phase (median 757 pmol/L). Method-specific immunoassay value; source unit pmol/L."
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", locator = "Abstract, Results", quote = "E2: 198 ​pmol/L (114-332), 757 ​pmol/L (222-1959) and 412 ​pmol/L (222-854)" },
+]
+
+[[range]]
+set = "estradiol-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 222
+high = 854
+unit = "pmol/L"
+when = { sex = "female", cycle_phase = "luteal", method = "immunoassay" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Estradiol III immunoassay"
+evidence = "reference-interval"
+note = "5th-95th percentile for the luteal phase (median 412 pmol/L). Method-specific immunoassay value; source unit pmol/L."
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", locator = "Abstract, Results", quote = "E2: 198 ​pmol/L (114-332), 757 ​pmol/L (222-1959) and 412 ​pmol/L (222-854)" },
+]

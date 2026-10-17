@@ -1,0 +1,99 @@
+slug = "dhea"
+name = "DHEA (Dehydroepiandrosterone, unconjugated)"
+category = "adrenal"
+unit = "ng/dL"
+description = "Unconjugated adrenal androgen precursor, measured by LC-MS/MS. Levels fall steeply with age, and the sulfated form DHEA-S is a separate marker. Interpret against age- and sex-matched intervals."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 1.9
+high = 40.5
+unit = "nmol/L"
+when = { specimen = "plasma", method = "lc-ms/ms" }
+population = "Volunteers aged 18-81 years (median 42), 525 people with (n=227) and without (n=298) hypertension, both sexes pooled"
+evidence = "reference-interval"
+note = "Median with 2.5th-97.5th percentile for both sexes together (Table 3). Source unit is nmol/L; numbers are not converted. Pooled across ages, so use the sex- and age-specific ranges where they apply."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Table 3", quote = "DHEA | 10.3 | [1.9–40.5] | 11.1 | [2.5–46.7]§ | 10.1 | [1.7–38.3]" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 2.5
+high = 46.7
+unit = "nmol/L"
+when = { sex = "male", specimen = "plasma", method = "lc-ms/ms" }
+population = "Volunteers aged 18-81 years (median 42), 232 men, with and without hypertension"
+evidence = "reference-interval"
+note = "Male 2.5th-97.5th percentile (Table 3), all ages pooled. Source unit nmol/L."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Table 3", quote = "DHEA | 10.3 | [1.9–40.5] | 11.1 | [2.5–46.7]§ | 10.1 | [1.7–38.3]" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 1.7
+high = 38.3
+unit = "nmol/L"
+when = { sex = "female", specimen = "plasma", method = "lc-ms/ms" }
+population = "Volunteers aged 18-81 years (median 42), 293 women, with and without hypertension"
+evidence = "reference-interval"
+note = "Female 2.5th-97.5th percentile (Table 3), all ages pooled, including pre- and post-menopausal women. Source unit nmol/L."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Table 3", quote = "DHEA | 10.3 | [1.9–40.5] | 11.1 | [2.5–46.7]§ | 10.1 | [1.7–38.3]" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 54.1
+unit = "nmol/L"
+when = { sex = "male", age_min = 22, age_max = 22, specimen = "plasma", method = "lc-ms/ms" }
+population = "Volunteers aged 18-81 years, men, with and without hypertension"
+evidence = "reference-interval"
+note = "Upper cut-off (age-specific curve fit to the upper percentile) at age 22 in men. Falls about 70% by age 70 (see the age-70 range). Source unit nmol/L."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Results, Fig. 2 (age-specific upper cut-offs)", quote = "Upper cut-offs for plasma DHEA fell in both men and women by 69.9% from 54.1 and 48.8 nmol/L in 22-year olds to 16.3 and 14.7 nmol/L in 70-year old men and women respectively" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 48.8
+unit = "nmol/L"
+when = { sex = "female", age_min = 22, age_max = 22, specimen = "plasma", method = "lc-ms/ms" }
+population = "Volunteers aged 18-81 years, women, with and without hypertension"
+evidence = "reference-interval"
+note = "Upper cut-off (age-specific curve fit) at age 22 in women. Source unit nmol/L."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Results, Fig. 2 (age-specific upper cut-offs)", quote = "Upper cut-offs for plasma DHEA fell in both men and women by 69.9% from 54.1 and 48.8 nmol/L in 22-year olds to 16.3 and 14.7 nmol/L in 70-year old men and women respectively" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 16.3
+unit = "nmol/L"
+when = { sex = "male", age_min = 70, age_max = 70, specimen = "plasma", method = "lc-ms/ms" }
+population = "Volunteers aged 18-81 years, men, with and without hypertension"
+evidence = "reference-interval"
+note = "Upper cut-off (age-specific curve fit) at age 70 in men. Source unit nmol/L."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Results, Fig. 2 (age-specific upper cut-offs)", quote = "Upper cut-offs for plasma DHEA fell in both men and women by 69.9% from 54.1 and 48.8 nmol/L in 22-year olds to 16.3 and 14.7 nmol/L in 70-year old men and women respectively" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 14.7
+unit = "nmol/L"
+when = { sex = "female", age_min = 70, age_max = 70, specimen = "plasma", method = "lc-ms/ms" }
+population = "Volunteers aged 18-81 years, women, with and without hypertension"
+evidence = "reference-interval"
+note = "Upper cut-off (age-specific curve fit) at age 70 in women. Source unit nmol/L."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Results, Fig. 2 (age-specific upper cut-offs)", quote = "Upper cut-offs for plasma DHEA fell in both men and women by 69.9% from 54.1 and 48.8 nmol/L in 22-year olds to 16.3 and 14.7 nmol/L in 70-year old men and women respectively" },
+]
