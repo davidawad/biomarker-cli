@@ -1,0 +1,44 @@
+slug = "selenium"
+name = "Selenium"
+category = "trace-element"
+unit = "µg/L"
+description = "Selenium concentration in plasma or serum (mostly selenoprotein P and albumin-bound selenium), used as a marker of selenium status. Low values indicate risk of deficiency; very high whole-blood values indicate toxicity."
+
+[[range]]
+set = "combs-2015"
+kind = "optimal"
+low = 50
+high = 70
+source_unit = "ng/mL"
+source_factor = 1
+when = { specimen = "plasma" }
+population = "Adults in general; a review of selenium biomarkers based on plasma and selenoprotein data"
+evidence = "review"
+note = "Plasma selenium at which GPX3 and SEPP1 selenoprotein expression reaches its maximum (plateau). The same review also quotes a point value of about 80 ng/mL and gives no deficiency cut-off. Not a clinical reference interval."
+citations = [
+  { pmid = "25835046", doi = "10.3390/nu7042209", title = "Biomarkers of selenium status.", locator = "Section on plasma selenium and selenoproteins", quote = "Those selenoproteins show maximal expression at plasma Se concentrations of 50–70 ng/mL" },
+]
+
+[[range]]
+set = "us-epa-2002"
+kind = "toxic"
+low = 1000
+when = { specimen = "whole-blood" }
+population = "Adults with selenium exposure; threshold taken from the US EPA (2002) value quoted in a 2020 review"
+evidence = "guideline"
+note = "Whole-blood selenium considered toxic. Value cited secondhand from a review (Rayman 2020); the primary EPA document was not retrieved."
+citations = [
+  { pmid = "31388899", doi = "10.1007/s42000-019-00125-5", title = "Selenium intake, status, and health: a complex relationship.", locator = "Section on mercury exposure in the Brazilian Amazon", quote = "concentrations considered toxic [blood Se: 1000 μg/L (US EPA 2002)]" },
+]
+
+[[range]]
+set = "epic-reference-2020"
+kind = "deficient"
+high = 45.7
+when = { specimen = "serum" }
+population = "Adults with COVID-19 compared with the EPIC reference population (n=1915) for total serum selenium"
+evidence = "outcome"
+note = "Authors' low-status cut-off: below the 2.5th percentile of the EPIC reference population. It is a reference-derived lower limit, not a clinical deficiency cut-off. The same paper gives only mean and SD for the reference group."
+citations = [
+  { pmid = "32708526", doi = "10.3390/nu12072098", title = "Selenium Deficiency Is Associated with Mortality Risk from COVID-19.", locator = "Results, paragraph 1", quote = "A Se status below the 2.5th percentile of the reference population, i.e., [Se] < 45.7 µg/L" },
+]

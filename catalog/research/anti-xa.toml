@@ -1,0 +1,32 @@
+slug = "anti-xa"
+name = "Anti-Xa activity (heparin)"
+loinc = "3274-8"
+category = "coagulation"
+unit = "IU/mL"
+description = "Chromogenic anti-factor Xa activity measured on heparin or low-molecular-weight heparin, used to monitor anticoagulant dosing. Levels below the target range suggest under-anticoagulation; levels above it suggest bleeding risk."
+
+[[range]]
+set = "heparin-therapeutic-range-korea-2016"
+kind = "therapeutic"
+low = 0.3
+high = 0.7
+when = { condition = ["on-ufh"] }
+population = "Adults with venous thromboembolism receiving continuous intravenous unfractionated heparin (71 patients, 134 ex vivo samples, single centre in Korea)"
+evidence = "outcome"
+note = "Range derived by correlating aPTT with anti-Xa in one laboratory; the source describes 0.3-0.7 IU/mL as the therapeutic range. Not checked against a CHEST or ASH guideline text (not retrievable)."
+citations = [
+  { pmid = "27722127", doi = "10.5045/br.2016.51.3.171", title = "Establishing the heparin therapeutic range using aPTT and anti-Xa measurements for monitoring unfractionated heparin therapy.", locator = "Abstract, Results", quote = "An aPTT range of 87.1 sec to 128.7 sec corresponded to anti-Xa levels of 0.3 IU/mL to 0.7 IU/mL for HTR under our laboratory conditions." },
+]
+
+[[range]]
+set = "acc-aha-valve-guideline-as-cited"
+kind = "therapeutic"
+low = 0.7
+high = 1.2
+when = { pregnant = true, condition = ["on-lmwh-bid", "mechanical-prosthetic-valve"] }
+population = "Pregnant women with mechanical prosthetic heart valves on adjusted-dose twice-daily subcutaneous LMWH (30 patients, 187 paired measurements)"
+evidence = "guideline"
+note = "Target peak anti-Xa level as stated in the cited paper (quoting ACC/AHA guidance; the guideline text itself was not checked). The paper reports that peak-level targeting often left trough levels subtherapeutic. Units given as U/mL in the source, equivalent to IU/mL."
+citations = [
+  { pmid = "24607762", doi = "10.1177/1074248414524302", title = "Monitoring of anti-Xa in pregnant patients with mechanical prosthetic valves receiving low-molecular-weight heparin: peak or trough levels?", locator = "Background", quote = "adjustment of the dose to achieve peak levels of 0.7 to 1.2 U/mL" },
+]

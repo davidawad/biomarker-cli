@@ -1,0 +1,84 @@
+slug = "antithrombin"
+name = "Antithrombin activity"
+loinc = "27811-8"
+category = "coagulation"
+unit = "%"
+description = "Activity of antithrombin, the main inhibitor of thrombin and factor Xa. Low levels increase venous thrombosis risk (inherited or acquired deficiency); levels also fall in pregnancy and with liver disease."
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 83.0
+high = 117.5
+when = { sex = "female", age_min = 20, age_max = 46, pregnant = false }
+population = "Non-pregnant women aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval"
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are percent of normal activity or antigen (% of normal)."
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, non-pregnancy row", quote = "AT (%) | Non-pregnancy | 209[0] | 101.0 | 83.00(80.00–87.30) | 117.50(114.00–120.00)" },
+]
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 78.9
+high = 116.0
+when = { sex = "female", age_min = 20, age_max = 46, pregnant = true, trimester = 1, gestation_week_min = 4, gestation_week_max = 13 }
+population = "Pregnant, 4-12 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval"
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are percent of normal activity or antigen (% of normal)."
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 4-12 weeks row", quote = "4–12 W | 237[0] | 94.0 | 78.90(76.00–80.00) | 116.00(111.25–120.00)" },
+]
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 73.93
+high = 105.08
+when = { sex = "female", age_min = 20, age_max = 46, pregnant = true, gestation_week_min = 13, gestation_week_max = 21 }
+population = "Pregnant, 13-20 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval"
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are percent of normal activity or antigen (% of normal). Gestational window straddles the first/second trimester boundary, so no trimester key is set."
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 13-20 weeks row", quote = "13–20 W | 156[0] | 89.0 | 73.93(71.63–76.00) | 105.08(102.23–106.23)" },
+]
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 67.23
+high = 109.78
+when = { sex = "female", age_min = 20, age_max = 46, pregnant = true, trimester = 2, gestation_week_min = 21, gestation_week_max = 28 }
+population = "Pregnant, 21-27 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval"
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are percent of normal activity or antigen (% of normal)."
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 21-27 weeks row", quote = "21–27 W | 168[0] | 89.0 | 67.23(62.00–71.23) | 109.78(108.00–116.97)" },
+]
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 69.38
+high = 117.63
+when = { sex = "female", age_min = 20, age_max = 46, pregnant = true, trimester = 3, gestation_week_min = 28, gestation_week_max = 34 }
+population = "Pregnant, 28-33 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval"
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are percent of normal activity or antigen (% of normal)."
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 28-33 weeks row", quote = "28–33 W | 175[1] | 90.0 | 69.38(67.00–72.75) | 117.63(107.88–121.25)" },
+]
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 60.8
+high = 109.4
+when = { sex = "female", age_min = 20, age_max = 46, pregnant = true, trimester = 3, gestation_week_min = 34, gestation_week_max = 43 }
+population = "Pregnant, 34-42 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval"
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are percent of normal activity or antigen (% of normal)."
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 34-42 weeks row", quote = "34–42 W | 143[0] | 86.0 | 60.80(49.20–66.00) | 109.40(107.00–114.80)" },
+]

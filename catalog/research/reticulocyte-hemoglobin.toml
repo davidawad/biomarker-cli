@@ -1,0 +1,195 @@
+slug = "reticulocyte-hemoglobin"
+name = "Reticulocyte hemoglobin (Ret-He / CHr)"
+category = "iron"
+unit = "pg"
+description = "Haemoglobin content of the reticulocyte population, measured on automated analysers (Ret-He on Sysmex, CHr on Siemens/Bayer). Low values indicate reduced iron supply to erythropoiesis (functional or absolute iron deficiency), and it is used to guide iron therapy, especially in CKD."
+
+[[range]]
+set = "ret-he-dialysis-2006"
+kind = "deficient"
+high = 27.2
+population = "1500 blood samples from patients on chronic haemodialysis, compared with serum iron, transferrin saturation, ferritin and haemoglobin criteria (Sysmex XE-2100)"
+evidence = "outcome"
+note = "ROC-derived cut-off: sensitivity 93.3%, specificity 83.2% for iron deficiency in dialysis patients. Reference standard was the traditional iron indices."
+citations = [
+  { pmid = "16999719", doi = "10.1111/j.1365-2257.2006.00812.x", title = "Reticulocyte hemoglobin equivalent (Ret He) and assessment of iron-deficient states.", locator = "Abstract", quote = "With a Ret He cutoff level of 27.2 pg, iron deficiency could be diagnosed with a sensitivity of 93.3%, and a specificity of 83.2%." },
+]
+
+[[range]]
+set = "ret-he-ida-2020"
+kind = "deficient"
+high = 30
+population = "953 retrospective clinical records: healthy controls, iron-deficiency anaemia and non-iron-deficiency anaemia; iron deficiency defined by serum ferritin; patients on iron therapy excluded"
+evidence = "outcome"
+note = "ROC optimal cut-off: a value <=30 pg identified iron-deficiency anaemia with 96% sensitivity, 97.4% specificity; >30 pg was taken to exclude IDA. Single-centre retrospective study."
+citations = [
+  { pmid = "32043622", doi = "10.1002/jcla.23225", title = "Diagnostic performance of reticulocyte hemoglobin equivalent in assessing the iron status.", locator = "Abstract", quote = "Applying cutoff ≤30 pg, IDA can be diagnosed with 96% sensitivity, 97.4% specificity, 80% PPV, and 99.6% NPV." },
+]
+
+[[range]]
+set = "ckd-iron-review-2021"
+kind = "therapeutic"
+low = 29
+when = { condition = ["ckd"] }
+population = "adults with chronic kidney disease (including dialysis) with iron deficiency, as tabulated for iron-therapy targets"
+evidence = "review"
+note = "Therapy target (RET-He > 29 pg) listed alongside hypochromic cells < 6%, ferritin > 100 ug/L and TSAT > 20%; a target for tracking response to IV iron, not a diagnostic cut-off. The review does not give a primary source for the 29 pg figure in this table."
+citations = [
+  { pmid = "34575361", doi = "10.3390/jcm10184250", title = "Reticulocyte and Erythrocyte Hemoglobin Parameters for Iron Deficiency and Anemia Diagnostics in Patient Blood Management. A Narrative Review.", locator = "Table 2", quote = "Reticulocyte Hb (RET-He) > 29 pg Ferritin > 100 µg/L TSAT > 20%" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 31.49
+high = 36.04
+when = { sex = "female", age_min = 20, age_max = 30 }
+population = "China National Health Survey adults (females aged 20-29, n=168), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "RET-HE | 20–29 | 168 | 31.49 | 32.79 | 33.72 | 34.66 | 36.04 | 33.79 | 1.54 | 147 | 32.10 | 33.36 | 34.26 | 35.17 | 36.50 | 34.36 | 1.30" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 32.1
+high = 36.5
+when = { sex = "male", age_min = 20, age_max = 30 }
+population = "China National Health Survey adults (males aged 20-29, n=147), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "RET-HE | 20–29 | 168 | 31.49 | 32.79 | 33.72 | 34.66 | 36.04 | 33.79 | 1.54 | 147 | 32.10 | 33.36 | 34.26 | 35.17 | 36.50 | 34.36 | 1.30" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 31.41
+high = 35.95
+when = { sex = "female", age_min = 30, age_max = 40 }
+population = "China National Health Survey adults (females aged 30-39, n=436), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "30–39 | 436 | 31.41 | 32.71 | 33.63 | 34.57 | 35.95 | 33.59 | 1.51 | 322 | 32.38 | 33.65 | 34.56 | 35.48 | 36.82 | 34.58 | 1.29" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 32.38
+high = 36.82
+when = { sex = "male", age_min = 30, age_max = 40 }
+population = "China National Health Survey adults (males aged 30-39, n=322), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "30–39 | 436 | 31.41 | 32.71 | 33.63 | 34.57 | 35.95 | 33.59 | 1.51 | 322 | 32.38 | 33.65 | 34.56 | 35.48 | 36.82 | 34.58 | 1.29" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 31.55
+high = 36.1
+when = { sex = "female", age_min = 40, age_max = 50 }
+population = "China National Health Survey adults (females aged 40-49, n=533), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "40–49 | 533 | 31.55 | 32.85 | 33.77 | 34.72 | 36.10 | 33.83 | 1.48 | 377 | 32.68 | 33.96 | 34.87 | 35.80 | 37.16 | 34.81 | 1.39" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 32.68
+high = 37.16
+when = { sex = "male", age_min = 40, age_max = 50 }
+population = "China National Health Survey adults (males aged 40-49, n=377), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "40–49 | 533 | 31.55 | 32.85 | 33.77 | 34.72 | 36.10 | 33.83 | 1.48 | 377 | 32.68 | 33.96 | 34.87 | 35.80 | 37.16 | 34.81 | 1.39" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 31.76
+high = 36.35
+when = { sex = "female", age_min = 50, age_max = 60 }
+population = "China National Health Survey adults (females aged 50-59, n=953), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "50–59 | 953 | 31.76 | 33.07 | 34.00 | 34.95 | 36.35 | 34.05 | 1.33 | 517 | 32.97 | 34.26 | 35.18 | 36.11 | 37.49 | 35.25 | 1.35" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 32.97
+high = 37.49
+when = { sex = "male", age_min = 50, age_max = 60 }
+population = "China National Health Survey adults (males aged 50-59, n=517), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "50–59 | 953 | 31.76 | 33.07 | 34.00 | 34.95 | 36.35 | 34.05 | 1.33 | 517 | 32.97 | 34.26 | 35.18 | 36.11 | 37.49 | 35.25 | 1.35" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 31.87
+high = 36.47
+when = { sex = "female", age_min = 60, age_max = 70 }
+population = "China National Health Survey adults (females aged 60-69, n=862), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "60–69 | 862 | 31.87 | 33.18 | 34.12 | 35.07 | 36.47 | 34.09 | 1.29 | 520 | 32.98 | 34.28 | 35.20 | 36.13 | 37.51 | 35.18 | 1.36" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 32.98
+high = 37.51
+when = { sex = "male", age_min = 60, age_max = 70 }
+population = "China National Health Survey adults (males aged 60-69, n=520), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "60–69 | 862 | 31.87 | 33.18 | 34.12 | 35.07 | 36.47 | 34.09 | 1.29 | 520 | 32.98 | 34.28 | 35.20 | 36.13 | 37.51 | 35.18 | 1.36" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 31.97
+high = 36.59
+when = { sex = "female", age_min = 70, age_max = 81 }
+population = "China National Health Survey adults (females aged 70-80, n=324), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "70–80 | 324 | 31.97 | 33.29 | 34.23 | 35.18 | 36.59 | 34.25 | 1.41 | 208 | 33.00 | 34.30 | 35.22 | 36.15 | 37.53 | 35.24 | 1.52" },
+]
+
+[[range]]
+set = "china-nhs-2026"
+kind = "reference"
+low = 33.0
+high = 37.53
+when = { sex = "male", age_min = 70, age_max = 81 }
+population = "China National Health Survey adults (males aged 70-80, n=208), Sysmex XN-B3 analyser"
+evidence = "reference-interval"
+note = "LMS-smoothed 5th-95th centiles; analyser-specific."
+citations = [
+  { pmid = "42374229", doi = "10.1186/s12872-026-06185-x", title = "Age- and sex-specific normative values for reticulocyte indices and their relation to early-stage CKM syndrome.", locator = "Table 1, RET-HE rows", quote = "70–80 | 324 | 31.97 | 33.29 | 34.23 | 35.18 | 36.59 | 34.25 | 1.41 | 208 | 33.00 | 34.30 | 35.22 | 36.15 | 37.53 | 35.24 | 1.52" },
+]

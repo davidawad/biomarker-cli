@@ -1,0 +1,108 @@
+slug = "d-dimer"
+name = "D-dimer"
+loinc = "48065-7"
+category = "coagulation"
+unit = "µg/mL FEU"
+description = "Fragment released when cross-linked fibrin is broken down by plasmin. A normal result helps exclude venous thromboembolism and pulmonary embolism in patients with low clinical probability; raised values are non-specific and increase with age, pregnancy and inflammation."
+
+[[range]]
+set = "adjust-pe"
+kind = "reference"
+high = 0.5
+source_unit = "µg/L"
+source_factor = 0.001
+when = { age_max = 50 }
+population = "outpatients with suspected pulmonary embolism and non-high clinical probability in 19 centres (Belgium, France, the Netherlands, Switzerland)"
+evidence = "outcome"
+note = "Conventional fixed cutoff of 500 µg/L (0.5 µg/mL). The abstract does not state FEU; the FEU basis of the canonical unit is assumed. For patients 50 years or older an age-adjusted cutoff applies (age x 10 µg/L); it is a formula, not a fixed range, so it is not encoded as a range."
+citations = [
+  { pmid = "24643601", doi = "10.1001/jama.2014.2135", title = "Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism: the ADJUST-PE study.", locator = "Abstract, Interventions", quote = "Patients with a D-dimer value between the conventional cutoff of 500 µg/L and their age-adjusted cutoff did not undergo CTPA" },
+  { pmid = "24643601", doi = "10.1001/jama.2014.2135", title = "Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism: the ADJUST-PE study.", locator = "Abstract, Objective", quote = "defined as age × 10 in patients 50 years or older" },
+]
+
+[[range]]
+set = "pregnancy-vte-cutoff"
+kind = "reference"
+high = 0.286
+source_unit = "ng/mL"
+source_factor = 0.001
+when = { pregnant = true, trimester = 1 }
+population = "healthy pregnant women (89) for reference values, plus 12 women with clinically suspected VTE, first trimester"
+evidence = "outcome"
+note = "Trimester-specific threshold proposed for pregnancy-related VTE from a small study. Small single study; not validated in a larger management study."
+citations = [
+  { pmid = "19804940", doi = "10.1016/j.ejogrb.2009.09.005", title = "The use of D-dimer with new cutoff can be useful in diagnosis of venous thromboembolism in pregnancy.", locator = "Abstract, Conclusion", quote = "the first of 286, the second of 457 and the third trimester of 644 ng/mL" },
+]
+
+[[range]]
+set = "pregnancy-vte-cutoff"
+kind = "reference"
+high = 0.457
+source_unit = "ng/mL"
+source_factor = 0.001
+when = { pregnant = true, trimester = 2 }
+population = "healthy pregnant women (89) for reference values, plus 12 women with clinically suspected VTE, second trimester"
+evidence = "outcome"
+note = "Trimester-specific threshold proposed for pregnancy-related VTE from a small study. Small single study; not validated in a larger management study."
+citations = [
+  { pmid = "19804940", doi = "10.1016/j.ejogrb.2009.09.005", title = "The use of D-dimer with new cutoff can be useful in diagnosis of venous thromboembolism in pregnancy.", locator = "Abstract, Conclusion", quote = "the first of 286, the second of 457 and the third trimester of 644 ng/mL" },
+]
+
+[[range]]
+set = "pregnancy-vte-cutoff"
+kind = "reference"
+high = 0.644
+source_unit = "ng/mL"
+source_factor = 0.001
+when = { pregnant = true, trimester = 3 }
+population = "healthy pregnant women (89) for reference values, plus 12 women with clinically suspected VTE, third trimester"
+evidence = "outcome"
+note = "Trimester-specific threshold proposed for pregnancy-related VTE from a small study. Small single study; not validated in a larger management study."
+citations = [
+  { pmid = "19804940", doi = "10.1016/j.ejogrb.2009.09.005", title = "The use of D-dimer with new cutoff can be useful in diagnosis of venous thromboembolism in pregnancy.", locator = "Abstract, Conclusion", quote = "the first of 286, the second of 457 and the third trimester of 644 ng/mL" },
+]
+
+[[range]]
+set = "scand-2018-trimester"
+kind = "reference"
+low = 0.169
+high = 1.202
+source_unit = "µg/L"
+source_factor = 0.001
+when = { pregnant = true, trimester = 1 }
+population = "102 healthy pregnant women followed longitudinally through pregnancy (first trimester)"
+evidence = "reference-interval"
+note = "CLSI-based 2.5th-97.5th percentiles, latex immunoturbidimetric assay on ACL 300 TOP. Quoted in ug/L and converted to ug/mL. FEU basis not stated in the abstract; the canonical unit is assumed to be FEU as for the other ranges."
+citations = [
+  { pmid = "29975107", doi = "10.1080/00365513.2018.1488177", title = "D-dimer during pregnancy: establishing trimester-specific reference intervals.", locator = "Abstract, Results", quote = "first trimester: 169-1202 µg/L, second trimester: 393-3258 µg/L and third trimester: 551-3333 µg/L" },
+]
+
+[[range]]
+set = "scand-2018-trimester"
+kind = "reference"
+low = 0.393
+high = 3.258
+source_unit = "µg/L"
+source_factor = 0.001
+when = { pregnant = true, trimester = 2 }
+population = "102 healthy pregnant women followed longitudinally through pregnancy (second trimester)"
+evidence = "reference-interval"
+note = "CLSI-based 2.5th-97.5th percentiles, latex immunoturbidimetric assay on ACL 300 TOP. Quoted in ug/L and converted to ug/mL. FEU basis not stated in the abstract."
+citations = [
+  { pmid = "29975107", doi = "10.1080/00365513.2018.1488177", title = "D-dimer during pregnancy: establishing trimester-specific reference intervals.", locator = "Abstract, Results", quote = "first trimester: 169-1202 µg/L, second trimester: 393-3258 µg/L and third trimester: 551-3333 µg/L" },
+]
+
+[[range]]
+set = "scand-2018-trimester"
+kind = "reference"
+low = 0.551
+high = 3.333
+source_unit = "µg/L"
+source_factor = 0.001
+when = { pregnant = true, trimester = 3 }
+population = "102 healthy pregnant women followed longitudinally through pregnancy (third trimester)"
+evidence = "reference-interval"
+note = "CLSI-based 2.5th-97.5th percentiles, latex immunoturbidimetric assay on ACL 300 TOP. Quoted in ug/L and converted to ug/mL. FEU basis not stated in the abstract."
+citations = [
+  { pmid = "29975107", doi = "10.1080/00365513.2018.1488177", title = "D-dimer during pregnancy: establishing trimester-specific reference intervals.", locator = "Abstract, Results", quote = "first trimester: 169-1202 µg/L, second trimester: 393-3258 µg/L and third trimester: 551-3333 µg/L" },
+]

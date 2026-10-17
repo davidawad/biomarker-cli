@@ -1,0 +1,64 @@
+slug = "hematocrit"
+name = "Hematocrit"
+loinc = "4544-3"
+category = "cbc"
+unit = "%"
+description = "Percentage of whole blood volume occupied by red blood cells (packed cell volume). Low values indicate anemia; high values indicate erythrocytosis (for example polycythemia vera) or dehydration."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 39.5
+high = 50.0
+source_unit = "L/L"
+source_factor = 100
+when = { sex = "male", age_min = 18, age_max = 90 }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles; NORIP reports EVF as a fraction."
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract", quote = "B-EVF (females 0.348-0.459, males 0.395-0.500)" },
+]
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 34.8
+high = 45.9
+source_unit = "L/L"
+source_factor = 100
+when = { sex = "female", age_min = 18, age_max = 90 }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles; NORIP reports EVF as a fraction."
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract", quote = "B-EVF (females 0.348-0.459, males 0.395-0.500)" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+low = 49
+source_unit = "L/L"
+source_factor = 100
+when = { sex = "male", age_min = 18 }
+population = "adult men, WHO 2016 criteria for polycythaemia vera (as quoted in a 2021 Annals of Hematology paper)"
+evidence = "guideline"
+note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.5 g/dL in men). Not a general reference limit."
+citations = [
+  { pmid = "34013406", doi = "10.1007/s00277-021-04546-4", title = "Diagnosis and management of non-clonal erythrocytosis remains challenging: a single centre clinical experience.", locator = "Introduction", quote = "haematocrit (Hct) (> 0.49 in men and > 0.48 in women) according to the 2016 WHO criteria for the diagnosis of polycythaemia vera" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+low = 48
+source_unit = "L/L"
+source_factor = 100
+when = { sex = "female", age_min = 18 }
+population = "adult women, WHO 2016 criteria for polycythaemia vera (as quoted in a 2021 Annals of Hematology paper)"
+evidence = "guideline"
+note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.0 g/dL in women). Not a general reference limit."
+citations = [
+  { pmid = "34013406", doi = "10.1007/s00277-021-04546-4", title = "Diagnosis and management of non-clonal erythrocytosis remains challenging: a single centre clinical experience.", locator = "Introduction", quote = "haematocrit (Hct) (> 0.49 in men and > 0.48 in women) according to the 2016 WHO criteria for the diagnosis of polycythaemia vera" },
+]

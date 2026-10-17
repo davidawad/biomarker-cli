@@ -1,0 +1,19 @@
+slug = "neutrophils-pct"
+name = "Neutrophils (%)"
+loinc = "770-8"
+category = "cbc"
+unit = "%"
+description = "Share of neutrophils among all white blood cells on a differential count. High values suggest bacterial infection, inflammation or stress; low values can follow viral infection or marrow suppression."
+
+[[range]]
+set = "korea-cbc-2018"
+kind = "reference"
+low = 37.2
+high = 70.0
+when = { age_min = 15, age_max = 100 }
+population = "804,623 Korean health examinees (781,857 analysed after outlier exclusion); age-partitioned 2.5th-97.5th percentiles per CLSI C28-A3; the 15-99 year partition is reported and the percentage range is identical for males and females"
+evidence = "reference-interval"
+note = "Sex-independent for the percentage in this partition; absolute neutrophil count is sex-specific in other studies. Analyser method not stated in the table."
+citations = [
+  { pmid = "30027692", doi = "10.3343/alm.2018.38.6.503", title = "Complete Blood Count Reference Intervals and Patterns of Changes Across Pediatric, Adult, and Geriatric Ages in Korea.", locator = "Table 2", quote = "15–99 | 37.2 | 70.0" },
+]

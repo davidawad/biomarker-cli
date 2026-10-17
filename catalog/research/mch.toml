@@ -1,0 +1,19 @@
+slug = "mch"
+name = "Mean corpuscular hemoglobin"
+loinc = "785-6"
+category = "cbc"
+unit = "pg"
+description = "Average mass of hemoglobin per red blood cell. Low values accompany microcytic anemia such as iron deficiency or thalassaemia; high values accompany macrocytic anemia."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 27.1
+high = 33.3
+when = { age_min = 18, age_max = 90 }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types; no sex-specific interval reported"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles. The NORIP abstract reports one interval for both sexes."
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract", quote = "Erc-MCH (27.1-33.3 pg)" },
+]

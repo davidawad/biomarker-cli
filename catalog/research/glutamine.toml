@@ -1,0 +1,17 @@
+slug = "glutamine"
+name = "Glutamine"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Plasma concentration of glutamine, which carries nitrogen and rises when ammonia is not cleared by the urea cycle. Persistently high values in a urea cycle disorder indicate rising hyperammonaemia risk."
+
+[[range]]
+set = "ucd-guideline-2012"
+kind = "therapeutic"
+high = 1000
+when = { condition = ["ucd"] }
+population = "Patients with urea cycle disorders on long-term management (suggested guidelines for UCD, 2012)"
+evidence = "guideline"
+note = "Stated as an arbitrary tolerable ceiling for plasma glutamine in long-term management, not a reference interval."
+citations = [
+  { pmid = "22642880", doi = "10.1186/1750-1172-7-32", title = "Suggested guidelines for the diagnosis and management of urea cycle disorders.", locator = "Full text, Statement #38", quote = "Venous ammonia and amino acid levels should be monitored, aiming at levels of ammonia <80 μmol/L, glutamine <1000 μmol/L" },
+]

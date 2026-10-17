@@ -1,0 +1,21 @@
+slug = "mchc"
+name = "Mean corpuscular hemoglobin concentration"
+loinc = "786-4"
+category = "cbc"
+unit = "g/dL"
+description = "Average concentration of hemoglobin within a red blood cell. Low values suggest hypochromia (for example iron deficiency); high values are seen in spherocytosis and other conditions with abnormal cell hemoglobin content."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 31.7
+high = 35.7
+source_unit = "g/L"
+source_factor = 0.1
+when = { age_min = 18, age_max = 90 }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types; no sex-specific interval reported"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles. The NORIP abstract reports one interval for both sexes."
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract", quote = "Erc-MCHC (317-357 g/L)" },
+]

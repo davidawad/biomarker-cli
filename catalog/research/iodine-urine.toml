@@ -1,0 +1,80 @@
+slug = "iodine-urine"
+name = "Urinary iodine concentration"
+category = "trace-element"
+unit = "µg/L"
+description = "Iodine concentration in a spot urine sample, the main indicator of recent iodine intake. Values are interpreted as population medians rather than for an individual; low medians indicate deficiency and high medians indicate excess intake."
+
+[[range]]
+set = "who-2007"
+kind = "insufficient"
+high = 100
+when = { age_min = 6, age_max = 12 }
+population = "Population median urinary iodine in school-age children (WHO/UNICEF/ICCIDD criteria, as reproduced in a 2021 review)"
+evidence = "guideline"
+note = "Population-median criterion, not an individual cut-off. The table lists sub-bands 50-99 (mild), 20-49 (moderate), <20 (severe) deficiency, all insufficient."
+citations = [
+  { pmid = "33989173", doi = "10.1530/eje-21-0171", title = "GLOBAL ENDOCRINOLOGY: Global perspectives in endocrinology: coverage of iodized salt programs and iodine status in 2020.", locator = "Table (WHO iodine intake categories)", quote = "50–99 | Insufficient | Mild iodine deficiency | 100–299a | Adequate | Optimum" },
+]
+
+[[range]]
+set = "who-2013"
+kind = "optimal"
+low = 100
+high = 299
+when = { age_min = 6, age_max = 12 }
+population = "National or subnational population median urinary iodine in school-aged children (global review of 2013 status)"
+evidence = "review"
+note = "Population-median criterion. Adequate intake defined at median 100-299 µg/L in school-aged children."
+citations = [
+  { pmid = "23472655", title = "Global iodine nutrition: Where do we stand in 2013?", locator = "Summary", quote = "as defined by a national or subnational median urinary iodine concentration of 100-299 μg/L in school-aged children" },
+]
+
+[[range]]
+set = "who-2007"
+kind = "excess"
+low = 300
+when = { age_min = 6, age_max = 12 }
+population = "Population median urinary iodine in school-age children"
+evidence = "guideline"
+note = "Population-median criterion. The table writes '>300' for excessive; encoded as 300 (boundary exactly 300 is not separately stated)."
+citations = [
+  { pmid = "33989173", doi = "10.1530/eje-21-0171", title = "GLOBAL ENDOCRINOLOGY: Global perspectives in endocrinology: coverage of iodized salt programs and iodine status in 2020.", locator = "Table (WHO iodine intake categories)", quote = "100–299a | Adequate | Optimum | >300 | Excessive" },
+]
+
+[[range]]
+set = "who-2007"
+kind = "insufficient"
+high = 150
+when = { pregnant = true }
+population = "Population median urinary iodine in pregnant women (WHO table)"
+evidence = "guideline"
+note = "Population-median criterion for pregnancy. Pregnancy categories differ from school-age children."
+citations = [
+  { pmid = "33989173", doi = "10.1530/eje-21-0171", title = "GLOBAL ENDOCRINOLOGY: Global perspectives in endocrinology: coverage of iodized salt programs and iodine status in 2020.", locator = "Table (WHO iodine intake categories)", quote = "<150 | Insufficient | 150–249 | Adequate | 250–499 | More than adequate" },
+]
+
+[[range]]
+set = "who-2007"
+kind = "optimal"
+low = 150
+high = 249
+when = { pregnant = true }
+population = "Population median urinary iodine in pregnant women"
+evidence = "guideline"
+note = "Population-median criterion for pregnancy (the median, not individual values, is classified)."
+citations = [
+  { pmid = "36079737", doi = "10.3390/nu14173474", title = "Iodine and Iodine Deficiency: A Comprehensive Review of a Re-Emerging Issue.", locator = "Introduction", quote = "a median UIC of 150–249 µg/L is adequate for pregnant women" },
+]
+
+[[range]]
+set = "who-2007"
+kind = "optimal"
+low = 100
+high = 199
+when = { pregnant = false, lactating = false, age_min = 6 }
+population = "Population median urinary iodine in non-pregnant, non-lactating adults and children aged 6 years or older"
+evidence = "guideline"
+note = "Population-median criterion. Other sources use 100-299 for school-age children; the adult/child range here is 100-199 as stated in the review."
+citations = [
+  { pmid = "36079737", doi = "10.3390/nu14173474", title = "Iodine and Iodine Deficiency: A Comprehensive Review of a Re-Emerging Issue.", locator = "Introduction", quote = "A median UIC of 100–199 µg/L is considered adequate iodine status for non-pregnant, non-lactating adults and children ≥ 6 years of age" },
+]

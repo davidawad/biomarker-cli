@@ -1,0 +1,48 @@
+slug = "haptoglobin"
+name = "Haptoglobin"
+loinc = "4542-7"
+category = "cbc"
+unit = "g/L"
+description = "Plasma glycoprotein that binds free haemoglobin released from red-cell destruction and clears it via CD163 macrophages. Low values indicate ongoing intravascular or extravascular haemolysis (or reduced hepatic synthesis); it is an acute-phase protein, so it can rise with inflammation."
+
+[[range]]
+set = "haptoglobin-review-2021"
+kind = "reference"
+low = 0.45
+high = 1.65
+source_unit = "mg/L"
+source_factor = 0.001
+when = {}
+population = "general adult plasma reference, as summarised in a review of haptoglobin as a biomarker"
+evidence = "review"
+note = "Review statement of the normal range; the review does not name the population or assay. Values are plasma/serum haptoglobin mass concentration."
+citations = [
+  { pmid = "34422226", doi = "10.1134/S1990750821030069", title = "Haptoglobin as a Biomarker.", locator = "Text, haptoglobin concentration paragraph", quote = "its level is normally in the range of 450 mg/L to 1650 mg/L" },
+]
+
+[[range]]
+set = "haptoglobin-review-2021"
+kind = "warn"
+high = 0.45
+source_unit = "mg/L"
+source_factor = 0.001
+when = {}
+population = "general adults; review statement on haemolysis"
+evidence = "review"
+note = "Hemolysis signal (not a validated diagnostic cut-off): a level below this may indicate increased red-cell destruction. Equals the lower limit of the review's normal range."
+citations = [
+  { pmid = "34422226", doi = "10.1134/S1990750821030069", title = "Haptoglobin as a Biomarker.", locator = "Text, haptoglobin concentration paragraph", quote = "A level below 450 mg/L may indicate an increased rate of red blood cell death" },
+]
+
+[[range]]
+set = "haptoglobin-review-2015"
+kind = "reference"
+low = 0.3
+high = 2.0
+when = {}
+population = "general adult reference values quoted in a case description of severe sepsis/haemophagocytic syndrome"
+evidence = "review"
+note = "Reference values quoted in a review's case description, not a primary reference-interval study. Assay and population not stated."
+citations = [
+  { pmid = "26175690", doi = "10.3389/fphys.2015.00187", title = "Hemopexin and haptoglobin: allies against heme toxicity from hemoglobin not contenders.", locator = "Case description (text)", quote = "Hp levels were 3.37 g/L (reference values 0.3–2.0 g/L)" },
+]

@@ -1,0 +1,31 @@
+slug = "nlr"
+name = "Neutrophil-to-lymphocyte ratio (NLR)"
+category = "cbc"
+unit = "ratio"
+description = "Absolute neutrophil count divided by absolute lymphocyte count, a simple calculated index of systemic inflammation. Higher values are associated with infection, inflammation, stress and worse outcomes in cardiovascular disease, infection and cancer; it is not diagnostic on its own."
+
+[[range]]
+set = "forget-2017"
+kind = "reference"
+low = 0.78
+high = 3.53
+when = {}
+population = "413 healthy adult workers (median age 38, range 21-66 years) in a health-care prevention programme, with a second independent sample of 29 healthy volunteers; non-geriatric adults in good health"
+evidence = "reference-interval"
+note = "Mean 1.65; limits are mean +/- 1.96 SD (about 2.5th-97.5th). Analyser-independent in the validation sample."
+citations = [
+  { pmid = "28057051", doi = "10.1186/s13104-016-2335-5", title = "What is the normal value of the neutrophil-to-lymphocyte ratio?", locator = "Abstract, Conclusions", quote = "the normal NLR values in an adult, non-geriatric, population in good health are between 0.78 and 3.53" },
+]
+
+[[range]]
+set = "western-china-2019"
+kind = "reference"
+low = 0.88
+high = 4.0
+when = { ethnicity = "han", age_min = 18, age_max = 80 }
+population = "5,969 healthy ethnic Han adults aged 18-79 from a routine health-examination database in four centres in western China, CLSI-based reference intervals"
+evidence = "reference-interval"
+note = "Gender did not significantly influence NLR (p > 0.05) and NLR was stable across age in this study; the same paper reports separate intervals for PLR, LMR and SII."
+citations = [
+  { pmid = "30868857", doi = "10.7754/Clin.Lab.2018.180715", title = "Normal Reference Intervals of Neutrophil-To-Lymphocyte Ratio, Platelet-To-Lymphocyte Ratio, Lymphocyte-To-Monocyte Ratio, and Systemic Immune Inflammation Index in Healthy Adults: a Large Multi-Center Study from Western China.", locator = "Abstract, Results", quote = "The RIs of NLR, PLR (adults), PLR (old adults), LMR and SII were 0.88 - 4.0" },
+]

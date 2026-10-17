@@ -1,0 +1,19 @@
+slug = "eosinophils-pct"
+name = "Eosinophils (%)"
+loinc = "713-8"
+category = "cbc"
+unit = "%"
+description = "Share of eosinophils among all white blood cells on a differential count. High values suggest allergy, parasitic infection, drug reaction or adrenal insufficiency; low values are usually of little significance alone."
+
+[[range]]
+set = "korea-cbc-2018"
+kind = "reference"
+low = 0.4
+high = 7.5
+when = { age_min = 15, age_max = 100 }
+population = "804,623 Korean health examinees (781,857 analysed after outlier exclusion); age-partitioned 2.5th-97.5th percentiles per CLSI C28-A3; the single 3-99 year partition is reported and applied here to adults 15 and over; the percentage range is identical for males and females"
+evidence = "reference-interval"
+note = "Table reports one partition for ages 3-99. The text states eosinophil counts are highest in childhood and higher in males than females, but the percentage columns are identical by sex."
+citations = [
+  { pmid = "30027692", doi = "10.3343/alm.2018.38.6.503", title = "Complete Blood Count Reference Intervals and Patterns of Changes Across Pediatric, Adult, and Geriatric Ages in Korea.", locator = "Table 2", quote = "Eosinophils (%) | 3–99 | 0.4 | 7.5" },
+]

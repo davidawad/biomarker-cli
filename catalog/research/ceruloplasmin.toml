@@ -1,0 +1,46 @@
+slug = "ceruloplasmin"
+name = "Ceruloplasmin"
+category = "trace-element"
+unit = "mg/dL"
+description = "Copper-carrying plasma protein (ferroxidase) measured by immunoassay. Low values support Wilson disease, but also occur with liver failure, malnutrition and some other conditions; high values are an acute-phase response."
+
+[[range]]
+set = "wilson-diagnostic-criterion"
+kind = "diagnostic"
+high = 20
+source_unit = "g/L"
+source_factor = 100
+when = {}
+population = "Suspected Wilson disease; conventional diagnostic criterion as stated by the authors of a genotype-verified ROC study"
+evidence = "consensus"
+note = "Conventional criterion. The guideline (EASL/AASLD) figure could not be retrieved in open text, so this is cited from the 2008 ROC study that describes it as conventional."
+citations = [
+  { pmid = "18556333", doi = "10.1373/clinchem.2008.103432", title = "Diagnostic accuracy of serum ceruloplasmin in Wilson disease: determination of sensitivity and specificity by ROC curve analysis among ATP7B-genotyped subjects.", locator = "Abstract, Background", quote = "A serum ceruloplasmin concentration below 0.20 g/L is conventionally considered as one of the major diagnostic criteria for Wilson disease." },
+]
+
+[[range]]
+set = "wilson-roc-2008"
+kind = "diagnostic"
+high = 14
+source_unit = "g/L"
+source_factor = 100
+when = {}
+population = "ATP7B-genotyped Wilson disease patients, carriers and wild-type relatives, a validation group, and 690 normal individuals (single nephelometric method)"
+evidence = "outcome"
+note = "Local decision threshold from ROC analysis: at 0.14 g/L PPV was 100% and NPV 97.1% in this series. The authors advise each laboratory to set its own threshold."
+citations = [
+  { pmid = "18556333", doi = "10.1373/clinchem.2008.103432", title = "Diagnostic accuracy of serum ceruloplasmin in Wilson disease: determination of sensitivity and specificity by ROC curve analysis among ATP7B-genotyped subjects.", locator = "Abstract, Conclusions", quote = "using a serum ceruloplasmin concentration of 0.14 g/L as the local decision threshold was better than that using a threshold of 0.20 g/L" },
+]
+
+[[range]]
+set = "diagnostics-2023-table"
+kind = "reference"
+low = 25
+high = 45
+when = {}
+population = "Not stated in the source table; tabulated nephelometric ceruloplasmin interval in a review of Wilson disease monitoring"
+evidence = "review"
+note = "Interval for the nephelometric assay as tabulated; no age or sex split. Source notes low values also occur in pregnancy and with oral contraceptive use, and high values with inflammation; the table does not give a number for those groups."
+citations = [
+  { pmid = "37296680", doi = "10.3390/diagnostics13111830", title = "Monitoring of Copper in Wilson Disease.", locator = "Table (ceruloplasmin row)", quote = "Ceruloplasmin nephelometric assay | Concentration of apo- and holo-ceruloplasmin in serum. Test based on monoclonal antibodies | 25–45 mg/dL" },
+]

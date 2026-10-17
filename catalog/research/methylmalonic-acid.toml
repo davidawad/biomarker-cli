@@ -1,0 +1,48 @@
+slug = "methylmalonic-acid"
+name = "Methylmalonic acid (MMA)"
+loinc = "13964-2"
+category = "organic-acid"
+unit = "nmol/L"
+description = "Serum methylmalonic acid (MMA) rises when vitamin B12 is functionally short, because B12 is a cofactor for methylmalonyl-CoA mutase. It is a more specific functional marker of B12 status than total B12, but it also rises with reduced kidney function and with age, so results need renal and age context."
+
+[[range]]
+set = "clarke-2003"
+kind = "warn"
+low = 350
+source_unit = "micromol/L"
+source_factor = 1000
+when = { age_min = 65 }
+population = "Older persons aged 65 and over in Oxford (population study, n=1562); used to flag high risk of B12 deficiency among borderline B12 results"
+evidence = "outcome"
+note = "Elevated-MMA cut-off used in the study's high-risk classification, not a stand-alone diagnostic threshold. Published MMA cut-offs range from about 210 to 480 nmol/L across studies (NHANES roundtable). Frequency of abnormal MMA falls as the cut-off rises (Hordaland data, 71-74 y: 17.7% above 260 nmol/L, 5.2% above 370 nmol/L). Renal impairment can raise MMA independently of B12."
+citations = [
+  { pmid = "12716678", doi = "10.1093/ajcn/77.5.1241", title = "Screening for vitamin B-12 and folate deficiency in older persons.", locator = "Design, para 1 (Abstract)", quote = "accompanied by elevated MMA (> 0.35 micromol/L) or tHcy (> 15.0 micromol/L)" },
+]
+
+[[range]]
+set = "plasma-reference-1996"
+kind = "reference"
+low = 80
+high = 280
+source_unit = "micromol/L"
+source_factor = 1000
+when = { specimen = "plasma", age_min = 20, age_max = 86 }
+population = "126 women (ages 20-85, median 49) and 109 men (ages 20-84, median 50) with plasma MMA measured; central 95% interval"
+evidence = "reference-interval"
+note = "Small early-period sample, before folic acid or cyanocobalamin supplementation. Age and sex bands were not separated for MMA in the quoted abstract. Assay not named in the abstract, so check against the lab's method."
+citations = [
+  { pmid = "8605683", title = "Age- and gender-specific reference intervals for total homocysteine and methylmalonic acid in plasma before and after vitamin supplementation.", locator = "Abstract, Results", quote = "The central 0.95 interval for methylmalonic acid was 0.08-0.28 micromol/L." },
+]
+
+[[range]]
+set = "nhanes-1999-2004"
+kind = "reference"
+low = 69.6
+high = 297.0
+when = { specimen = "serum" }
+population = "US population sample in NHANES 1999-2004 (all subjects in Table 2, n=18,569; not restricted to healthy people)"
+evidence = "reference-interval"
+note = "Table 2 shows 5th and 95th percentiles for all subjects. Geometric mean 121.0 nmol/L at age 21-30 vs 196.9 nmol/L over 70 (abstract). Serum MMA starts to rise at about 18-20 years (abstract). Higher MMA with impaired kidney function and lower B12, and higher values in non-Hispanic white than black adults. Fasting time also affects MMA (2019 NHANES 2011-2014 analysis)."
+citations = [
+  { pmid = "29329201", doi = "10.3390/nu10010074", title = "Population Reference Values for Serum Methylmalonic Acid Concentrations and Its Relationship with Age, Sex, Race-Ethnicity, Supplement Use, Kidney Function and Serum Vitamin B12 in the Post-Folic Acid Fortification Period.", locator = "Table 2, All subjects row (full text)", quote = "All subjects | 18,569 | 155.0 ± 2.1 | 69.6 | 99.4 | 129.3 | 169.4 | 297.0" },
+]

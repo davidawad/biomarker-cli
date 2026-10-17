@@ -1,0 +1,37 @@
+slug = "basophils-abs"
+name = "Absolute basophil count"
+loinc = "704-7"
+category = "cbc"
+unit = "10^3/µL"
+description = "Absolute count of circulating basophils, the least common white cell, involved in allergic and inflammatory responses. Values are usually very small; high values (basophilia) occur with myeloproliferative neoplasms, chronic myeloid leukaemia and some hypersensitivity states."
+
+[[range]]
+set = "barcelona-sysmex-xn"
+kind = "reference"
+low = 0.01
+high = 0.09
+source_unit = "10^9/L"
+source_factor = 1
+when = {}
+population = "190 apparently healthy adults from the southern metropolitan area of Barcelona, Sysmex XN"
+evidence = "reference-interval"
+note = "Analyser-specific interval (Sysmex XN)."
+citations = [
+  { pmid = "29765286", title = "Reference intervals for a complete blood count on an automated haematology analyser Sysmex XN in healthy adults from the southern metropolitan area of Barcelona.", locator = "Results, CBC reference intervals table", quote = "Basophils | 109/L | 190 | [0.01-0.09]" },
+]
+
+[[range]]
+set = "kenya-urban-adults"
+kind = "reference"
+low = 0.01
+high = 0.07
+source_unit = "10^9/L"
+source_factor = 1
+when = {}
+region = "Kenya"
+population = "healthy adult urban population in Kenya (Nairobi), Beckman Coulter ACT 5 DIFF CP"
+evidence = "reference-interval"
+note = "All-participant interval (n = 461) from the reference-interval table."
+citations = [
+  { pmid = "29879171", doi = "10.1371/journal.pone.0198444", title = "Complete blood count reference intervals from a healthy adult urban population in Kenya.", locator = "Table, reference intervals", quote = "Bas (x10^9/L) | 461 | 0.01–0.07" },
+]

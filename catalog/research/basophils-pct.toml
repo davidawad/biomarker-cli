@@ -1,0 +1,19 @@
+slug = "basophils-pct"
+name = "Basophils (%)"
+loinc = "706-2"
+category = "cbc"
+unit = "%"
+description = "Share of basophils among all white blood cells on a differential count. Basophils are usually a very small fraction; raised values are associated with some myeloproliferative disorders and allergic states."
+
+[[range]]
+set = "korea-cbc-2018"
+kind = "reference"
+low = 0.1
+high = 1.2
+when = { age_min = 12, age_max = 100 }
+population = "804,623 Korean health examinees (781,857 analysed after outlier exclusion); age-partitioned 2.5th-97.5th percentiles per CLSI C28-A3; the 12-99 year partition is reported and the percentage range is identical for males and females"
+evidence = "reference-interval"
+note = "Children aged 3-11 years have a narrower upper limit (1.0%) in the same table."
+citations = [
+  { pmid = "30027692", doi = "10.3343/alm.2018.38.6.503", title = "Complete Blood Count Reference Intervals and Patterns of Changes Across Pediatric, Adult, and Geriatric Ages in Korea.", locator = "Table 2", quote = "12–99 | 0.1 | 1.2 | 73,367" },
+]

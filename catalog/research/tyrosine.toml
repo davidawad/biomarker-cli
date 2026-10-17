@@ -1,0 +1,17 @@
+slug = "tyrosine"
+name = "Tyrosine"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Plasma concentration of the amino acid tyrosine, made from phenylalanine. Raised values appear in tyrosinaemia and related disorders, and in some hyperphenylalaninaemias; low values are seen in untreated PKU."
+
+[[range]]
+set = "hepatorenal-tyrosinaemia-consensus-2017"
+kind = "warn"
+low = 150
+when = {}
+population = "Newborns in tyrosinaemia type I newborn screening programmes (US and Canadian consensus)"
+evidence = "consensus"
+note = "A second-tier trigger quoted as an example of a tyrosine cutoff; the consensus states that this tyrosine-first approach is not recommended, since some infants with HT-1 have normal tyrosine. Not a treatment target or reference interval."
+citations = [
+  { pmid = "28771246", doi = "10.1038/gim.2017.101", title = "Diagnosis and treatment of tyrosinemia type I: a US and Canadian consensus group review and recommendations.", locator = "Newborn screening section", quote = "SA is measured only when the levels of tyrosine are above a certain cutoff value (for example, tyrosine >150 μmol/L)." },
+]

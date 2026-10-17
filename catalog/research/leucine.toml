@@ -1,0 +1,41 @@
+slug = "leucine"
+name = "Leucine"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Plasma concentration of the branched-chain amino acid leucine. In maple syrup urine disease (MSUD) it accumulates and is the main treatment target; high values can cause encephalopathy and risk metabolic crisis."
+
+[[range]]
+set = "iranian-msud-2025"
+kind = "therapeutic"
+low = 75
+high = 200
+when = { condition = ["msud"], age_max = 6 }
+population = "Children with classic MSUD aged 5 years or younger (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, long-term management section", quote = "Plasma Leucine level: children ≤ 5 years of age: 75–200 µmol/L and children > 5 years of age: 75–300 µmol/L." },
+]
+
+[[range]]
+set = "iranian-msud-2025"
+kind = "therapeutic"
+low = 75
+high = 300
+when = { condition = ["msud"], age_min = 6 }
+population = "Children with classic MSUD older than 5 years (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, long-term management section", quote = "Plasma Leucine level: children ≤ 5 years of age: 75–200 µmol/L and children > 5 years of age: 75–300 µmol/L." },
+]
+
+[[range]]
+set = "iranian-msud-2025"
+kind = "critical"
+low = 1100
+when = { condition = ["msud"] }
+population = "Patients with MSUD in metabolic crisis (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+note = "Dialysis threshold rather than a steady-state target: the guideline says dialysis should be considered above this level and/or with rapid onset of neurological symptoms."
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, acute metabolic crisis section", quote = "Dialysis should be considered in the case of leucine of more than 1100 µmole/L" },
+]

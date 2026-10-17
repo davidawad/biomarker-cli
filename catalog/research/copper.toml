@@ -1,0 +1,89 @@
+slug = "copper"
+name = "Copper"
+category = "trace-element"
+unit = "µg/dL"
+description = "Total copper in serum, most of it bound to ceruloplasmin. Low values suggest copper deficiency or low ceruloplasmin (including Wilson disease); values vary with age and are a poor stand-alone marker of Wilson disease."
+
+[[range]]
+set = "pediatric-ri-us"
+kind = "reference"
+low = 75
+high = 153
+source_unit = "µg/dL"
+when = { age_min = 0.5, age_max = 10.3 }
+population = "Clinically healthy US children aged 0.5-18 y (n=2115), serum, ICP-MS; this band is children younger than 10.3 y"
+evidence = "reference-interval"
+note = "Central 95% interval. Age-dependent, no sex difference reported in this study."
+citations = [
+  { pmid = "22192859", title = "Pediatric reference intervals for serum copper and zinc.", locator = "Abstract, Results", quote = "The age-dependent reference intervals for serum copper were 75-153 μg/dl for those <10.3 y, 64-132 μg/dl for those 10.3-12.5 y and 57-129 μg/dl for those >12.5 y." },
+]
+
+[[range]]
+set = "pediatric-ri-us"
+kind = "reference"
+low = 64
+high = 132
+when = { age_min = 10.3, age_max = 12.5 }
+population = "Clinically healthy US children aged 10.3-12.5 y (n=2115 children, 0.5-18 y)"
+evidence = "reference-interval"
+note = "Central 95% interval, ICP-MS."
+citations = [
+  { pmid = "22192859", title = "Pediatric reference intervals for serum copper and zinc.", locator = "Abstract, Results", quote = "64-132 μg/dl for those 10.3-12.5 y" },
+]
+
+[[range]]
+set = "pediatric-ri-us"
+kind = "reference"
+low = 57
+high = 129
+when = { age_min = 12.5, age_max = 18 }
+population = "Clinically healthy US adolescents older than 12.5 y (n=2115 children, 0.5-18 y)"
+evidence = "reference-interval"
+note = "Central 95% interval, ICP-MS. Only pediatric data in this study; no adult serum copper interval was retrieved."
+citations = [
+  { pmid = "22192859", title = "Pediatric reference intervals for serum copper and zinc.", locator = "Abstract, Results", quote = "57-129 μg/dl for those >12.5 y" },
+]
+
+[[range]]
+set = "wilson-diagnostic-2025"
+kind = "diagnostic"
+high = 59.1
+source_unit = "µmol/L"
+source_factor = 6.355
+when = {}
+population = "Patients with suspected Wilson disease in Spanish and Danish cohorts, newly diagnosed WD versus non-Wilsonian hepatic disease and acute liver failure"
+evidence = "outcome"
+note = "ROC cut-off for total serum copper (AUC 0.966, sensitivity 86.5%, specificity 95.6% in the combined cohort). Not a general reference interval; the paper reports the same cut-off as 59.1 µg/dL. Discrimination was lower in acute liver failure cases."
+citations = [
+  { pmid = "40198317", doi = "10.1111/liv.70089", title = "Relative Exchangeable Copper, Exchangeable Copper and Total Copper in the Diagnosis of Wilson Disease.", locator = "Discussion", quote = "the ROC analysis provided a surprisingly high AUC of 0.966 for Total Cu at a ≤ 9.3 μmol/L" },
+]
+
+[[range]]
+set = "diagnostics-2023-table"
+kind = "reference"
+low = 70
+high = 155
+source_unit = "μg/dL"
+source_factor = 1
+when = {}
+population = "Adults in general, as tabulated for serum total copper by atomic absorption spectroscopy in a review of Wilson disease copper monitoring; age and sex are not split in the table"
+evidence = "review"
+note = "Tabulated laboratory interval for serum total copper (AAS). No sex or pregnancy split is given in the source."
+citations = [
+  { pmid = "37296680", doi = "10.3390/diagnostics13111830", title = "Monitoring of Copper in Wilson Disease.", locator = "Table (serum total copper row)", quote = "Serum total copper | Serum copper concentration by atomic absorption spectroscopy | 70–155 μg/dL" },
+]
+
+[[range]]
+set = "epic-serum-copper-2021"
+kind = "reference"
+low = 89.78
+high = 190.6
+source_unit = "µg/L"
+source_factor = 0.1
+when = {}
+population = "Healthy subjects from the cross-sectional EPIC study (European cohort), 2.5th-97.5th percentiles of total serum copper; sex and age are not split in the quote"
+evidence = "reference-interval"
+note = "Reported in µg/L in the source (897.8-1906.0 µg/L), converted to µg/dL. Its upper limit is higher than the 70-155 µg/dL tabulated interval in the other range; the two sources differ."
+citations = [
+  { pmid = "34072977", doi = "10.3390/nu13061898", title = "Relation of Serum Copper Status to Survival in COVID-19.", locator = "Section 3.2 (Cu status of COVID-19 patients)", quote = "the reference range for total serum Cu concentration was 897.8–1906.0 µg/L" },
+]

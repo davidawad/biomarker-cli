@@ -1,0 +1,19 @@
+slug = "lymphocytes-pct"
+name = "Lymphocytes (%)"
+loinc = "736-9"
+category = "cbc"
+unit = "%"
+description = "Share of lymphocytes among all white blood cells on a differential count. Low values are seen in acute stress, steroid effect and some viral infections; high values in viral infection and lymphoproliferative disorders."
+
+[[range]]
+set = "korea-cbc-2018"
+kind = "reference"
+low = 21.9
+high = 52.6
+when = { age_min = 15, age_max = 100 }
+population = "804,623 Korean health examinees (781,857 analysed after outlier exclusion); age-partitioned 2.5th-97.5th percentiles per CLSI C28-A3; the 15-99 year partition is reported and the percentage range is identical for males and females"
+evidence = "reference-interval"
+note = "Sex-independent for the percentage in this partition. Lymphocyte percentage is lower in childhood partitions (3-14 years) in this study."
+citations = [
+  { pmid = "30027692", doi = "10.3343/alm.2018.38.6.503", title = "Complete Blood Count Reference Intervals and Patterns of Changes Across Pediatric, Adult, and Geriatric Ages in Korea.", locator = "Table 2", quote = "15–99 | 21.9 | 52.6" },
+]
