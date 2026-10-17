@@ -9,7 +9,7 @@ set = "reference"
 kind = "reference"
 low = 1.14
 high = 1.46
-when = { age_min = 0, age_max = 1 }
+when = { age_min = 0, age_max = 0.003 }
 population = "Danish children on day 0 of life (median with 2.5th and 97.5th fractiles, non-pH-corrected data set)"
 evidence = "reference-interval-study"
 note = "Neonatal range on day 0. Values rise to a peak on day 8 (1.29-1.59 mmol/L in the source)."
@@ -22,7 +22,7 @@ set = "reference"
 kind = "reference"
 low = 1.16
 high = 1.36
-when = { age_min = 1, age_max = 2 }
+when = { age_min = 1.5, age_max = 2 }
 population = "Danish children at 18-24 months of age (non-pH-corrected data set)"
 evidence = "reference-interval-study"
 note = "Value at 18-24 months, after the post-neonatal decline in the source."

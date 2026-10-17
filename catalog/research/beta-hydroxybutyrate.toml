@@ -46,7 +46,7 @@ citations = [
 set = "clinical"
 kind = "target"
 low = 0.5
-when = { }
+when = { conditions = ["ketogenic-diet"] }
 population = "Adults following a ketogenic diet (14-day daily beta-hydroxybutyrate monitoring, 217 people)"
 evidence = "outcome-study"
 note = "Nutritional ketosis threshold associated with weight loss in one cohort. Not a diagnostic or clinical safety range; the source gives no upper limit."

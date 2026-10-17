@@ -65,7 +65,7 @@ set = "reference"
 kind = "reference"
 low = 0.66
 high = 8.04
-when = { age_max = 1 }
+when = { age_max = 0.417 }
 population = "Healthy Iranian infants aged 0 to <5 months"
 evidence = "reference-interval-study"
 note = "Age-specific CLSI EP28-A3 interval; wider confidence intervals at the upper limit in early life."
@@ -78,7 +78,7 @@ set = "reference"
 kind = "reference"
 low = 0.42
 high = 4.13
-when = { age_max = 1 }
+when = { age_min = 0.417, age_max = 0.833 }
 population = "Healthy Iranian infants aged 5 to <10 months"
 evidence = "reference-interval-study"
 citations = [
@@ -90,7 +90,7 @@ set = "reference"
 kind = "reference"
 low = 0.36
 high = 1.77
-when = { age_max = 3 }
+when = { age_min = 0.833, age_max = 2.5 }
 population = "Healthy Iranian children aged 10 to <30 months"
 evidence = "reference-interval-study"
 note = "Upper age limit is approximate (30 months is 2.5 years)."
@@ -115,7 +115,7 @@ set = "reference"
 kind = "reference"
 low = 0.15
 high = 1.20
-when = { sex = "male", age_min = 18, age_max = 65 }
+when = { sex = "male", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
 evidence = "reference-interval-study"
 note = "Adult male 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
@@ -126,7 +126,7 @@ set = "reference"
 kind = "reference"
 low = 0.13
 high = 0.72
-when = { sex = "female", age_min = 18, age_max = 65 }
+when = { sex = "female", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
 evidence = "reference-interval-study"
 note = "Adult female 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."

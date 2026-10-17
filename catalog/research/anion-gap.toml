@@ -22,7 +22,7 @@ set = "reference"
 kind = "reference"
 low = 10
 high = 16
-when = { method = "with potassium included", specimen = "arterial" }
+when = { method = "with-potassium", specimen = "arterial" }
 population = "Healthy medical students (aged 20-32) and health professionals (aged 21-76), arterial blood gas analyser samples (Radiometer ABL)"
 evidence = "reference-interval-study"
 note = "Anion gap with potassium included in the calculation (formula not stated in the abstract). Arterial blood gas samples; not a serum interval."
@@ -35,7 +35,7 @@ set = "reference"
 kind = "reference"
 low = 6
 high = 12
-when = { method = "without potassium", specimen = "arterial" }
+when = { method = "without-potassium", specimen = "arterial" }
 population = "Healthy medical students (aged 20-32) and health professionals (aged 21-76), arterial blood gas analyser samples (Radiometer ABL)"
 evidence = "reference-interval-study"
 note = "Anion gap calculated without potassium (formula not stated in the abstract). Arterial blood gas samples; not a serum interval."

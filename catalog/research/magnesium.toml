@@ -100,7 +100,7 @@ set = "reference"
 kind = "reference"
 low = 1.6
 high = 2.6
-when = { age_min = 18, age_max = 65 }
+when = { age_min = 18, age_max = 66 }
 population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
 evidence = "reference-interval-study"
 note = "Serum magnesium, central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source."

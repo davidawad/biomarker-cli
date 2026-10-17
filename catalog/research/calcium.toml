@@ -10,7 +10,7 @@ set = "reference"
 kind = "reference"
 low = 9.90
 high = 11.84
-when = { age_min = 0, age_max = 3 }
+when = { age_min = 0, age_max = 2.5 }
 population = "Healthy Iranian neonates, infants and children aged 0 to under 30 months (total serum calcium, CLSI EP28-A3 indirect method)"
 evidence = "reference-interval-study"
 note = "Total calcium in infancy; age partitioning was not required for calcium in this study. Upper limit is above the adult range."
@@ -71,7 +71,7 @@ set = "reference"
 kind = "reference"
 low = 8.7
 high = 10.7
-when = { age_min = 18, age_max = 65 }
+when = { age_min = 18, age_max = 66 }
 population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled; sex-specific total calcium intervals were not reported"
 evidence = "reference-interval-study"
 note = "Total serum calcium, central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source."
@@ -84,7 +84,7 @@ set = "reference"
 kind = "reference"
 low = 8.3
 high = 10.2
-when = { age_min = 18, age_max = 65, method = "albumin-adjusted" }
+when = { age_min = 18, age_max = 66, method = "albumin-adjusted" }
 population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
 evidence = "reference-interval-study"
 note = "Albumin-adjusted calcium (aCa), not total calcium. Central 95 % reference interval in mg/dL (conventional-unit columns of the source)."

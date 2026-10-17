@@ -130,7 +130,7 @@ set = "reference"
 kind = "reference"
 low = 3.4
 high = 5.3
-when = { age_min = 18, age_max = 65, specimen = "serum" }
+when = { age_min = 18, age_max = 66, specimen = "serum" }
 population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
 evidence = "reference-interval-study"
 note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source."

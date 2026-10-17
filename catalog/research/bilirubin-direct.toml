@@ -35,7 +35,7 @@ set = "reference"
 kind = "reference"
 low = 0.07
 high = 0.76
-when = { age_max = 1 }
+when = { age_max = 0.333 }
 population = "Healthy Iranian infants aged 0 to <4 months"
 evidence = "reference-interval-study"
 citations = [
@@ -47,7 +47,7 @@ set = "reference"
 kind = "reference"
 low = 0.10
 high = 0.27
-when = { age_max = 3 }
+when = { age_min = 0.333, age_max = 2.5 }
 population = "Healthy Iranian children aged 4 to <30 months"
 evidence = "reference-interval-study"
 note = "Upper age limit is approximate (30 months is 2.5 years)."
@@ -85,7 +85,7 @@ set = "reference"
 kind = "reference"
 low = 0.04
 high = 0.37
-when = { sex = "male", age_min = 18, age_max = 65 }
+when = { sex = "male", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
 evidence = "reference-interval-study"
 note = "Adult male 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
@@ -96,7 +96,7 @@ set = "reference"
 kind = "reference"
 low = 0.03
 high = 0.21
-when = { sex = "female", age_min = 18, age_max = 65 }
+when = { sex = "female", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
 evidence = "reference-interval-study"
 note = "Adult female 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."

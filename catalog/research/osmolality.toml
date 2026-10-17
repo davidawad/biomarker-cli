@@ -3,31 +3,7 @@ name = "Osmolality, Serum"
 loinc = "2692-2"
 category = "electrolyte"
 unit = "mOsm/kg"
-description = "Serum osmolality measures the concentration of osmotically active solutes. The osmolal gap (measured minus calculated osmolality) is raised by toxic alcohols and other unmeasured solutes. No verifiable source for the measured serum osmolality reference interval was found, so only osmolal gap ranges are recorded here."
-
-[[range]]
-set = "reference"
-kind = "reference"
-high = 5
-unit = "mOsm/kg H2O"
-population = "Presumed healthy adults (blood donors, Norway)"
-evidence = "reference-interval-study"
-note = "Osmolal gap (measured osmolality minus calculated osmolality), not measured serum osmolality. Calculated from sodium, urea and glucose. Upper limit shown (the source reports -6 to 5 mOsm/kg H2O after outlier correction; the lower limit is omitted because the verifier cannot check negative numbers)."
-citations = [
-  { pmid = "31809199", doi = "10.1080/00365513.2019.1672086", title = "Reference values for osmolal gap in healthy subjects and in medical inpatients.", locator = "Abstract", quote = "When corrected for outliers, the reference range was -6 to 5 mOsm/kg H2O." },
-]
-
-[[range]]
-set = "clinical"
-kind = "diagnostic"
-low = 20
-unit = "mOsm/kg H2O"
-population = "Adults with suspected toxic alcohol poisoning"
-evidence = "consensus"
-note = "Osmolal gap at or above 20 mOsm/kg (source's practice threshold for suspecting methanol or ethylene glycol poisoning). Osmolal gap in this range, not measured serum osmolality. The source suggests a reference value of 5 or less for healthy subjects."
-citations = [
-  { pmid = "31809199", doi = "10.1080/00365513.2019.1672086", title = "Reference values for osmolal gap in healthy subjects and in medical inpatients.", locator = "Abstract", quote = "to keep today's practice for suspecting poisoning with toxic alcohols at an elevated OG of >=20 mOsm/kg H2O" },
-]
+description = "Serum osmolality measures the concentration of osmotically active solutes. No verifiable source for a measured serum osmolality reference interval (commonly quoted 275-295) was found; ranges here are dehydration thresholds in older adults. The osmolal gap is in osmolal-gap.toml."
 
 [[range]]
 set = "clinical"

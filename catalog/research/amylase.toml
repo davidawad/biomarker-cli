@@ -9,7 +9,7 @@ set = "reference"
 kind = "reference"
 low = 28
 high = 142
-when = { sex = "male", age_min = 18, age_max = 65 }
+when = { sex = "male", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
 evidence = "reference-interval-study"
 note = "Direct reference interval (IFCC C-RIDL protocol, parametric method), values in U/L as stated in the source."
@@ -22,7 +22,7 @@ set = "reference"
 kind = "reference"
 low = 26
 high = 113
-when = { sex = "female", age_min = 18, age_max = 65 }
+when = { sex = "female", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
 evidence = "reference-interval-study"
 note = "Direct reference interval (IFCC C-RIDL protocol, parametric method), values in U/L as stated in the source."

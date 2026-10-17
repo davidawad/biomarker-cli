@@ -35,7 +35,7 @@ set = "reference"
 kind = "reference"
 low = 2.4
 high = 4.7
-when = { age_min = 18, age_max = 65 }
+when = { age_min = 18, age_max = 66 }
 population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled; sex-specific intervals were not reported for phosphate"
 evidence = "reference-interval-study"
 note = "Inorganic phosphate (IP), central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source."

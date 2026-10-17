@@ -9,7 +9,7 @@ set = "reference"
 kind = "reference"
 low = 91
 high = 282
-when = { age_min = 18, age_max = 65 }
+when = { age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); sexes combined"
 evidence = "reference-interval-study"
 note = "Sex-combined reference interval in the source (IFCC C-RIDL protocol) (no sex partition). Values in U/L."

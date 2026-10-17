@@ -30,7 +30,7 @@ set = "reference"
 kind = "reference"
 low = 12
 high = 38
-when = { sex = "male", age_min = 18, age_max = 65 }
+when = { sex = "male", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
 evidence = "reference-interval-study"
 note = "Adult male 95% reference interval (LAVE-corrected in the source)."
@@ -41,7 +41,7 @@ set = "reference"
 kind = "reference"
 low = 10
 high = 32
-when = { sex = "female", age_min = 18, age_max = 65 }
+when = { sex = "female", age_min = 18, age_max = 66 }
 population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
 evidence = "reference-interval-study"
 note = "Adult female 95% reference interval (LAVE-corrected in the source)."

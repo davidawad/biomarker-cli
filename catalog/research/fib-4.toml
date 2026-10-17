@@ -40,12 +40,12 @@ citations = [
 
 [[range]]
 set = "clinical"
-kind = "diagnostic"
-low = 2.0
+kind = "reference"
+high = 2.0
 when = { age_min = 65 }
 population = "Adults aged 65 years and older with non-alcoholic fatty liver disease"
 evidence = "outcome-study"
-note = "Age-specific rule-in cut-off for advanced fibrosis (sensitivity 77%, specificity 70% in the derivation cohort); the source derived it because FIB-4 specificity was low at age 65 and above."
+note = "Age-adjusted lower (rule-out) cut-off for people aged 65 and over: FIB-4 below 2.0 indicates low risk of advanced fibrosis, replacing 1.3, which had unacceptably low specificity (35%) at this age; 2.0 raised specificity to 70% with 77% sensitivity."
 citations = [
   { pmid = "27725647", doi = "10.1038/ajg.2016.453", title = "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.", locator = "Abstract (Results)", quote = "New cutoffs were derived (and validated) for those aged >=65 years, which improved specificity to 70% without adversely affecting sensitivity (FIB-4 2.0, sensitivity 77%; NFS 0.12, sensitivity 80%)." },
 ]
