@@ -1,0 +1,39 @@
+slug = "cgm-coefficient-of-variation"
+name = "Glucose Coefficient of Variation (CGM)"
+category = "wearable"
+unit = "%"
+description = "The coefficient of variation (CV) of glucose readings from a continuous glucose monitor, calculated as the standard deviation divided by the mean glucose. It measures glycaemic variability, with lower values indicating more stable glucose levels."
+aliases = ["glucose CV", "%CV", "glycemic variability CV", "glycaemic variability"]
+
+[[range]]
+set = "battelino-2019-tir-cv"
+kind = "optimal"
+high = 36
+population = "Adults and children with diabetes using continuous glucose monitoring (international consensus on time in range)"
+evidence = "consensus"
+note = "Glycaemic variability target: CV at or below 36 percent (boundary <= 36). Consensus target for people with diabetes; not validated as a target for people without diabetes."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Full text, clinical targets table, Glycemic variability row", quote = "Glycemic variability (%CV) target ≤36%" },
+]
+
+[[range]]
+set = "battelino-2019-tir-cv"
+kind = "optimal"
+high = 33
+population = "People with diabetes receiving insulin or sulfonylurea therapy (hypoglycaemia risk)"
+evidence = "consensus"
+note = "Lower CV target of below 33 percent (boundary < 33). The consensus footnote says some studies suggest this gives additional protection against hypoglycaemia for people on insulin or sulfonylureas. Presented as a suggestion from studies, not a firm target."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Full text, clinical targets table, footnote", quote = "lower %CV targets (<33%) provide additional protection against hypoglycemia for those receiving insulin or sulfonylureas" },
+]
+
+[[range]]
+set = "hgv-cvw-2021"
+kind = "warn"
+low = 36
+population = "Adults with type 1 diabetes; within-day CV (%CVw) computed from 14 days of CGM data"
+evidence = "cohort-study"
+note = "High glycaemic variability is defined as CV above 36 percent (boundary > 36). The source found that CGM devices report only total CV, which can exceed 36 percent while within-day CV stays at or below 36 percent, so a total CV above 36 percent is not always high within-day variability."
+citations = [
+  { pmid = "34099517", doi = "10.2337/dc20-1847", title = "Is the Consensual Threshold for Defining High Glucose Variability Implementable in Clinical Practice?", url = "https://pubmed.ncbi.nlm.nih.gov/34099517/", locator = "Abstract, Objective", quote = "High GV (hGV) is defined as %CVw > 36%" },
+]

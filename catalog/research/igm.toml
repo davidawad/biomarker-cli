@@ -1,0 +1,119 @@
+slug = "igm"
+name = "Immunoglobulin M"
+loinc = "2472-9"
+category = "immune"
+unit = "g/L"
+description = "The first antibody made in an immune response, found mainly in the blood. Reference levels vary with age and sex in children, and persistently low IgM can indicate an immunodeficiency."
+aliases = ["IgM", "Immunoglobulin M, serum"]
+
+[[range]]
+set = "iran-adults-2003"
+kind = "reference"
+low = 39
+high = 283
+unit = "mg/dL"
+when = { age_min = 18, age_max = 56 }
+population = "Iranian healthy adult blood donor volunteers aged 18-55 years (n=914), measured by nephelometry"
+evidence = "reference-interval-study"
+note = "Central reference interval as reported (mg/dL). Single-country blood-donor cohort."
+citations = [
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", locator = "Abstract, Methods", quote = "In this study, serum levels of IgA, IgG, and IgM in 914 Iranian healthy adult blood donor volunteers, aged 18-55 years, were measured by nephelometry." },
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", locator = "Abstract, Results", quote = "Our data showed that serum reference intervals of IgA, IgG, and IgM in subjects were 72-375, 636-1518, and 39-283 mg/dL, respectively." },
+]
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 45
+high = 196
+unit = "mg/dL"
+when = { sex = "male", age_min = 1, age_max = 3 }
+population = "Healthy Brazilian boys aged 1-2 years (population-based)"
+evidence = "reference-interval-study"
+note = "Sex- and age-specific rank-method interval (mg/dL)."
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", locator = "Abstract, Results", quote = "IgM RI were different for gender and age groups, being 45-196 mg/dL and 34-190 mg/dL for boys aged 1-2 years and 3-10 years, respectively." },
+]
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 34
+high = 190
+unit = "mg/dL"
+when = { sex = "male", age_min = 3, age_max = 11 }
+population = "Healthy Brazilian boys aged 3-10 years (population-based)"
+evidence = "reference-interval-study"
+note = "Sex- and age-specific rank-method interval (mg/dL)."
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", locator = "Abstract, Results", quote = "IgM RI were different for gender and age groups, being 45-196 mg/dL and 34-190 mg/dL for boys aged 1-2 years and 3-10 years, respectively." },
+]
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 50
+high = 212
+unit = "mg/dL"
+when = { sex = "female", age_min = 1, age_max = 5 }
+population = "Healthy Brazilian girls aged 1-4 years (population-based)"
+evidence = "reference-interval-study"
+note = "Sex- and age-specific rank-method interval (mg/dL)."
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", locator = "Abstract, Results", quote = "For girls, the IgM RI were 50-212 mg/dL and 39-212 mg/dL, for ages 1-4 and 5-10 years, respectively." },
+]
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 39
+high = 212
+unit = "mg/dL"
+when = { sex = "female", age_min = 5, age_max = 11 }
+population = "Healthy Brazilian girls aged 5-10 years (population-based)"
+evidence = "reference-interval-study"
+note = "Sex- and age-specific rank-method interval (mg/dL)."
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", locator = "Abstract, Results", quote = "For girls, the IgM RI were 50-212 mg/dL and 39-212 mg/dL, for ages 1-4 and 5-10 years, respectively." },
+]
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.48
+high = 3.38
+unit = "g/L"
+when = { sex = "female" }
+population = "Adult women from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+note = "Multicentre adult reference interval for women. Assay-specific; check against the local assay's own interval."
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", locator = "Abstract, Results and conclusions", quote = "immunoglobulin M, 0.48-3.38 g/L for women and 0.41-2.46 g/L for men" },
+]
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.41
+high = 2.46
+unit = "g/L"
+when = { sex = "male" }
+population = "Adult men from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+note = "Multicentre adult reference interval for men. Assay-specific; check against the local assay's own interval."
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", locator = "Abstract, Results and conclusions", quote = "immunoglobulin M, 0.48-3.38 g/L for women and 0.41-2.46 g/L for men" },
+]
+
+[[range]]
+set = "hemochromatosis-probands-2026"
+kind = "reference"
+low = 0.40
+high = 2.30
+unit = "g/L"
+population = "Adults in a hemochromatosis proband study; the limits are the 1996 consensus reference limits it adopted, not hemochromatosis-specific data"
+evidence = "consensus"
+note = "Serum IgM reference limits (40-230 mg/dL) as adopted from 1996 consensus guidelines. Sexes and ages not partitioned in the quoted limits."
+citations = [
+  { pmid = "42340960", doi = "10.1371/journal.pone.0352148", title = "Serum IgA and IgM levels in hemochromatosis probands with HFE p.C282Y homozygosity.", url = "https://pubmed.ncbi.nlm.nih.gov/42340960/", locator = "Full text, Methods", quote = "The following reference limits were based on 1996 consensus guidelines [34]: IgA 0.91–4.14 g/L (91–414 mg/dL) and IgM 0.40–2.30 g/L (40–230 mg/dL)." },
+]

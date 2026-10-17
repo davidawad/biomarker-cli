@@ -1,0 +1,153 @@
+slug = "psa"
+name = "Prostate Specific Antigen"
+loinc = "2857-1"
+category = "tumour"
+unit = "ng/mL"
+description = "Total prostate-specific antigen, a protein made by the prostate and measured in serum. Levels rise with age, benign prostate enlargement and prostate cancer, so it is used for prostate cancer screening and monitoring with age-specific interpretation."
+aliases = ["PSA", "total PSA", "tPSA"]
+
+[[range]]
+set = "oesterling-1993"
+kind = "reference"
+high = 2.5
+when = { sex = "male", age_min = 40, age_max = 50 }
+population = "Community-based population of healthy men (Oesterling 1993 age-specific reference ranges)"
+evidence = "reference-interval-study"
+note = "Age-specific 95th percentile of total PSA for men aged 40-49 years. Values above this range are abnormal for the age band; the lower limit is 0 and is omitted."
+citations = [
+  { pmid = "7688054", title = "Serum prostate-specific antigen in a community-based population of healthy men. Establishment of age-specific reference ranges.", url = "https://pubmed.ncbi.nlm.nih.gov/7688054/", locator = "Abstract, Results", quote = "The recommended reference range for serum PSA (95th percentile) for men aged 40 to 49 years is 0.0 to 2.5 ng/mL; for 50 to 59 years, 0.0 to 3.5 ng/mL; 60 to 69 years, 0.0 to 4.5 ng/mL; and 70 to 79 years, 0.0 to 6.5 ng/mL." },
+]
+
+[[range]]
+set = "oesterling-1993"
+kind = "reference"
+high = 3.5
+when = { sex = "male", age_min = 50, age_max = 60 }
+population = "Community-based population of healthy men (Oesterling 1993 age-specific reference ranges)"
+evidence = "reference-interval-study"
+note = "Age-specific 95th percentile of total PSA for men aged 50-59 years. The lower limit is 0 and is omitted."
+citations = [
+  { pmid = "7688054", title = "Serum prostate-specific antigen in a community-based population of healthy men. Establishment of age-specific reference ranges.", url = "https://pubmed.ncbi.nlm.nih.gov/7688054/", locator = "Abstract, Results", quote = "The recommended reference range for serum PSA (95th percentile) for men aged 40 to 49 years is 0.0 to 2.5 ng/mL; for 50 to 59 years, 0.0 to 3.5 ng/mL; 60 to 69 years, 0.0 to 4.5 ng/mL; and 70 to 79 years, 0.0 to 6.5 ng/mL." },
+]
+
+[[range]]
+set = "oesterling-1993"
+kind = "reference"
+high = 4.5
+when = { sex = "male", age_min = 60, age_max = 70 }
+population = "Community-based population of healthy men (Oesterling 1993 age-specific reference ranges)"
+evidence = "reference-interval-study"
+note = "Age-specific 95th percentile of total PSA for men aged 60-69 years. The lower limit is 0 and is omitted."
+citations = [
+  { pmid = "7688054", title = "Serum prostate-specific antigen in a community-based population of healthy men. Establishment of age-specific reference ranges.", url = "https://pubmed.ncbi.nlm.nih.gov/7688054/", locator = "Abstract, Results", quote = "The recommended reference range for serum PSA (95th percentile) for men aged 40 to 49 years is 0.0 to 2.5 ng/mL; for 50 to 59 years, 0.0 to 3.5 ng/mL; 60 to 69 years, 0.0 to 4.5 ng/mL; and 70 to 79 years, 0.0 to 6.5 ng/mL." },
+]
+
+[[range]]
+set = "oesterling-1993"
+kind = "reference"
+high = 6.5
+when = { sex = "male", age_min = 70, age_max = 80 }
+population = "Community-based population of healthy men (Oesterling 1993 age-specific reference ranges)"
+evidence = "reference-interval-study"
+note = "Age-specific 95th percentile of total PSA for men aged 70-79 years. The lower limit is 0 and is omitted."
+citations = [
+  { pmid = "7688054", title = "Serum prostate-specific antigen in a community-based population of healthy men. Establishment of age-specific reference ranges.", url = "https://pubmed.ncbi.nlm.nih.gov/7688054/", locator = "Abstract, Results", quote = "The recommended reference range for serum PSA (95th percentile) for men aged 40 to 49 years is 0.0 to 2.5 ng/mL; for 50 to 59 years, 0.0 to 3.5 ng/mL; 60 to 69 years, 0.0 to 4.5 ng/mL; and 70 to 79 years, 0.0 to 6.5 ng/mL." },
+]
+
+[[range]]
+set = "psa-biopsy-thresholds-2009"
+kind = "warn"
+low = 2.0
+high = 3.0
+when = { sex = "male" }
+population = "Men undergoing PSA-based prostate cancer detection (review of European screening data)"
+evidence = "consensus"
+note = "Borderline band: PSA 2.0-3.0 ng/mL warrants more frequent re-testing rather than immediate biopsy. Boundaries as quoted; not a guideline threshold."
+citations = [
+  { pmid = "19357513", doi = "10.1097/MOU.0b013e328329a2d0", title = "Defining the optimal prostate-specific antigen threshold for the diagnosis of prostate cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/19357513/", locator = "Abstract, Summary", quote = "Men presenting with PSA values of 2.0-3.0 ng/ml should be reexamined more frequently." },
+]
+
+[[range]]
+set = "psa-biopsy-thresholds-2009"
+kind = "decision"
+low = 4.0
+when = { sex = "male" }
+population = "Men undergoing PSA-based prostate cancer detection (review of European screening data)"
+evidence = "consensus"
+note = "Biopsy-decision cut-off: PSA at or above 4.0 ng/mL is one of the commonly used thresholds (>2.5, 3.0 or 4.0 ng/mL were all considered reasonable). Age-specific thresholds may be preferable in older men; 5-alpha-reductase inhibitor users need PSA interpreted with caution."
+citations = [
+  { pmid = "19357513", doi = "10.1097/MOU.0b013e328329a2d0", title = "Defining the optimal prostate-specific antigen threshold for the diagnosis of prostate cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/19357513/", locator = "Abstract, Summary", quote = "At this time, PSA cutoff values (>2.5, 3.0 or 4.0 ng/ml) provide a reasonable balance between excessive detection rates and the risk of missing relevant prostate cancer." },
+]
+
+[[range]]
+set = "nice-ng12-2021"
+kind = "decision"
+low = 2.5
+when = { sex = "male", age_min = 40, age_max = 50, setting = "possible-prostate-cancer-symptoms" }
+population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 40-49, in primary care"
+evidence = "guideline"
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 2.5 ng/mL (micrograms/litre). Boundary is > (strictly more than). Trans women and non-binary people with male reproductive organs are covered by the same recommendation."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds", quote = "40 to 49 More than 2.5 50 to 59 More than 3.5 60 to 69 More than 4.5 70 to 79 More than 6.5" },
+]
+
+[[range]]
+set = "nice-ng12-2021"
+kind = "decision"
+low = 3.5
+when = { sex = "male", age_min = 50, age_max = 60, setting = "possible-prostate-cancer-symptoms" }
+population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 50-59, in primary care"
+evidence = "guideline"
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 3.5 ng/mL. Boundary is >."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds", quote = "40 to 49 More than 2.5 50 to 59 More than 3.5 60 to 69 More than 4.5 70 to 79 More than 6.5" },
+]
+
+[[range]]
+set = "nice-ng12-2021"
+kind = "decision"
+low = 4.5
+when = { sex = "male", age_min = 60, age_max = 70, setting = "possible-prostate-cancer-symptoms" }
+population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 60-69, in primary care"
+evidence = "guideline"
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 4.5 ng/mL. Boundary is >."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds", quote = "40 to 49 More than 2.5 50 to 59 More than 3.5 60 to 69 More than 4.5 70 to 79 More than 6.5" },
+]
+
+[[range]]
+set = "nice-ng12-2021"
+kind = "decision"
+low = 6.5
+when = { sex = "male", age_min = 70, age_max = 80, setting = "possible-prostate-cancer-symptoms" }
+population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 70-79, in primary care"
+evidence = "guideline"
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 6.5 ng/mL. Boundary is >. Under 40 and over 79 NICE advises clinical judgement, so no range is given for those ages."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds", quote = "40 to 49 More than 2.5 50 to 59 More than 3.5 60 to 69 More than 4.5 70 to 79 More than 6.5" },
+]
+
+[[range]]
+set = "pcrmp-as-cited-2024"
+kind = "decision"
+low = 3.0
+when = { sex = "male", age_min = 50, age_max = 70, setting = "asymptomatic-screening" }
+population = "Asymptomatic men aged 50-69 undergoing opportunistic PSA testing in UK primary care (PCRMP threshold, as described in a 2024 UK clinical consensus)"
+evidence = "consensus"
+note = "PCRMP referral threshold of 3.0 ng/mL for asymptomatic men aged 50-69 (boundary >= 3.0 as stated). Cited here from a 2024 UK consensus that questions its rationale; the PCRMP document itself was not retrieved. A 2023 review notes the PCRMP threshold is 3 ng/mL regardless of age, which is not separately quoted as a range."
+citations = [
+  { pmid = "39038964", doi = "10.3399/BJGP.2023.0586", title = "Optimising the use of the prostate-specific antigen blood test in asymptomatic men for early prostate cancer detection in primary care: report from a UK clinical consensus.", url = "https://pubmed.ncbi.nlm.nih.gov/39038964/", locator = "Full text, Results", quote = "the current threshold of ≥3.0 ng/mL for asymptomatic patients aged 50–69 years" },
+]
+
+[[range]]
+set = "psa-density-2026"
+kind = "decision"
+low = 0.15
+unit = "ng/mL/cm3"
+when = { sex = "male" }
+population = "Men with suspected prostate cancer who had MRI-derived prostate volume (single-centre retrospective cohort)"
+evidence = "cohort-study"
+note = "PSA density (PSA divided by prostate volume) threshold of 0.15 ng/mL/cm3 used in current practice for clinically significant cancer. The study evaluated its performance across volumes and ages; boundary not stated in the quoted sentence. Not a PSA mass-concentration threshold; the unit is ng/mL per cm3."
+citations = [
+  { pmid = "42599322", doi = "10.1007/s00345-026-06613-9", title = "PSA density for clinically significant prostate cancer detection: a retrospective cohort study on the influence of age and prostate volume.", url = "https://pubmed.ncbi.nlm.nih.gov/42599322/", locator = "Abstract, Purpose", quote = "Current practice applies a uniform PSAD threshold of 0.15 ng/ml/cm³" },
+]

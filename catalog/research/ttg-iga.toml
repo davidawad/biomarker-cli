@@ -1,0 +1,31 @@
+slug = "ttg-iga"
+name = "Tissue Transglutaminase IgA"
+loinc = "31017-7"
+category = "autoimmune"
+unit = "U/mL"
+description = "IgA antibodies against tissue transglutaminase 2, the first-line serological test for coeliac disease. A high titre, with total IgA normal, can allow diagnosis without duodenal biopsy in children."
+aliases = ["tTG-IgA", "TGA-IgA", "anti-tTG IgA"]
+
+[[range]]
+set = "espghan-2020-coeliac"
+kind = "decision"
+low = 10
+unit = "x ULN"
+population = "Children and adolescents with symptoms suspicious of coeliac disease"
+evidence = "guideline"
+note = "Biopsy-free diagnosis may be applied if TGA-IgA is >=10x ULN, endomysial antibodies (EMA-IgA) are positive in a second blood sample and the family agrees. Total serum IgA should be measured with TGA-IgA; an IgG-based test is needed only if total IgA is low or undetectable. No numeric total-IgA cut-off was retrieved."
+citations = [
+  { pmid = "31568151", doi = "10.1097/MPG.0000000000002497", title = "European Society Paediatric Gastroenterology, Hepatology and Nutrition Guidelines for Diagnosing Coeliac Disease 2020.", url = "https://pubmed.ncbi.nlm.nih.gov/31568151/", locator = "Abstract, Recommendations", quote = "If TGA-IgA is ≥10 times the upper limit of normal (10× ULN) and the family agrees, the no-biopsy diagnosis may be applied" },
+]
+
+[[range]]
+set = "espghan-2020-coeliac"
+kind = "decision"
+high = 10
+unit = "x ULN"
+population = "Children and adolescents with symptoms suspicious of coeliac disease"
+evidence = "guideline"
+note = "Below 10x ULN the no-biopsy route does not apply: at least 4 biopsies from the distal duodenum and at least 1 from the bulb are required. Upper boundary is exclusive (<10x ULN)."
+citations = [
+  { pmid = "31568151", doi = "10.1097/MPG.0000000000002497", title = "European Society Paediatric Gastroenterology, Hepatology and Nutrition Guidelines for Diagnosing Coeliac Disease 2020.", url = "https://pubmed.ncbi.nlm.nih.gov/31568151/", locator = "Abstract, Recommendations", quote = "In children with positive TGA-IgA <10× ULN at least 4 biopsies from the distal duodenum and at least 1 from the bulb should be taken." },
+]

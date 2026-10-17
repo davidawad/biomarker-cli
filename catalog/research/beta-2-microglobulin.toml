@@ -1,0 +1,56 @@
+slug = "beta-2-microglobulin"
+name = "Beta-2 Microglobulin"
+loinc = "1952-1"
+category = "tumour"
+unit = "mg/L"
+description = "Beta-2 microglobulin, a small protein on the surface of most cells that is released into blood. It is cleared by the kidneys, so it rises with reduced kidney function, and in multiple myeloma and some lymphomas it is used for prognostic staging."
+aliases = ["B2M", "beta2-microglobulin", "β2-microglobulin", "beta-2 microglobulin"]
+
+[[range]]
+set = "b2m-healthy-adults-2009"
+kind = "reference"
+low = 1.02
+high = 2.46
+when = { age_min = 29, age_max = 50 }
+population = "Healthy blood donors aged 29-49 years (immunonephelometry)"
+evidence = "reference-interval-study"
+note = "Non-parametric reference interval for younger adults, measured by immunonephelometry in 183 healthy blood donors aged 29-75 years. Method-specific; the upper limit rises with age (see the 50-75 year band)."
+citations = [
+  { pmid = "19397485", doi = "10.1515/CCLM.2009.137", title = "Serum beta2-microglobulin measured by immunonephelometry: expression patterns and reference intervals in healthy adults.", url = "https://pubmed.ncbi.nlm.nih.gov/19397485/", locator = "Abstract, Results", quote = "Reference intervals obtained by non-parametric estimation after partitioning by age were 1.02-2.46 mg/L vs. 1.29-2.70 mg/L in younger (29-49 years) vs. older (50-75 years) individuals." },
+]
+
+[[range]]
+set = "b2m-healthy-adults-2009"
+kind = "reference"
+low = 1.29
+high = 2.70
+when = { age_min = 50, age_max = 76 }
+population = "Healthy blood donors aged 50-75 years (immunonephelometry)"
+evidence = "reference-interval-study"
+note = "Non-parametric reference interval for older adults, measured by immunonephelometry in healthy blood donors. Method-specific."
+citations = [
+  { pmid = "19397485", doi = "10.1515/CCLM.2009.137", title = "Serum beta2-microglobulin measured by immunonephelometry: expression patterns and reference intervals in healthy adults.", url = "https://pubmed.ncbi.nlm.nih.gov/19397485/", locator = "Abstract, Results", quote = "Reference intervals obtained by non-parametric estimation after partitioning by age were 1.02-2.46 mg/L vs. 1.29-2.70 mg/L in younger (29-49 years) vs. older (50-75 years) individuals." },
+]
+
+[[range]]
+set = "iss-2005"
+kind = "decision"
+high = 3.5
+when = { markers = { albumin = ">=3.5" } }
+population = "Newly diagnosed multiple myeloma patients (International Staging System derivation and validation)"
+evidence = "cohort-study"
+note = "ISS stage I (lowest risk) requires beta-2 microglobulin below 3.5 mg/L together with serum albumin >= 3.5 g/dL. Boundary is < 3.5 mg/L (strictly less than). Stage I median survival 62 months in the original cohort."
+citations = [
+  { pmid = "15809451", doi = "10.1200/JCO.2005.04.242", title = "International staging system for multiple myeloma.", url = "https://pubmed.ncbi.nlm.nih.gov/15809451/", locator = "Abstract, Results", quote = "stage I, Sbeta2M less than 3.5 mg/L plus serum albumin > or = 3.5 g/dL (median survival, 62 months); stage II, neither stage I nor III (median survival, 44 months); and stage III, Sbeta2M > or = 5.5 mg/L (median survival, 29 months)." },
+]
+
+[[range]]
+set = "iss-2005"
+kind = "decision"
+low = 5.5
+population = "Newly diagnosed multiple myeloma patients (International Staging System derivation and validation)"
+evidence = "cohort-study"
+note = "ISS stage III (highest risk) is beta-2 microglobulin >= 5.5 mg/L regardless of albumin. Boundary is >= 5.5 mg/L. Median survival 29 months in the original cohort."
+citations = [
+  { pmid = "15809451", doi = "10.1200/JCO.2005.04.242", title = "International staging system for multiple myeloma.", url = "https://pubmed.ncbi.nlm.nih.gov/15809451/", locator = "Abstract, Results", quote = "stage I, Sbeta2M less than 3.5 mg/L plus serum albumin > or = 3.5 g/dL (median survival, 62 months); stage II, neither stage I nor III (median survival, 44 months); and stage III, Sbeta2M > or = 5.5 mg/L (median survival, 29 months)." },
+]

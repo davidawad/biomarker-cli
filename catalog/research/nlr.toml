@@ -1,0 +1,18 @@
+slug = "nlr"
+name = "Neutrophil-to-Lymphocyte Ratio"
+category = "derived"
+unit = "ratio"
+description = "Absolute neutrophil count divided by absolute lymphocyte count from a routine differential. It is a simple systemic inflammation marker that rises with stress, infection and inflammation."
+aliases = ["NLR", "neutrophil/lymphocyte ratio"]
+
+[[range]]
+set = "nlr-reference-2017"
+kind = "reference"
+low = 0.78
+high = 3.53
+population = "Adults in good health, non-geriatric population"
+evidence = "reference-interval-study"
+note = "Normal range from a healthy, non-geriatric adult sample (mean 1.65, plus or minus 1.96 SD). Mean NLR is lower in non-Hispanic Black (1.76) and Hispanic (2.08) than in non-Hispanic White adults (2.24) in NHANES (Azab 2014, PMID 25375150), so ethnicity-specific ranges may apply."
+citations = [
+  { pmid = "28057051", doi = "10.1186/s13104-016-2335-5", title = "What is the normal value of the neutrophil-to-lymphocyte ratio?", url = "https://pubmed.ncbi.nlm.nih.gov/28057051/", locator = "Abstract, Conclusions", quote = "the normal NLR values in an adult, non-geriatric, population in good health are between 0.78 and 3.53" },
+]

@@ -1,0 +1,150 @@
+slug = "ca-125"
+name = "Cancer Antigen 125"
+loinc = "10334-1"
+category = "tumour"
+unit = "U/mL"
+description = "Cancer antigen 125, a glycoprotein marker used mainly in the evaluation of ovarian cancer. It is also raised by many benign conditions (including menstruation, endometriosis, pregnancy and other pelvic or peritoneal disease), so it is interpreted with clinical context."
+aliases = ["CA125", "CA-125"]
+
+[[range]]
+set = "ca125-validation-2015"
+kind = "decision"
+low = 35
+population = "Women with benign gynaecological disease, ovarian cancer and healthy controls (Turkish cohort, 2015)"
+evidence = "validation-study"
+note = "Diagnostic cut-off of 35 U/mL used in this study to separate ovarian cancer from benign disease. Boundary as quoted (>= 35 taken as elevated). Pre- versus post-menopausal cut-offs differ in other sources and were not verified here, so no menopause condition is set."
+citations = [
+  { pmid = "26390703", title = "Diagnostic performances of CA125, HE4, and ROMA index in ovarian cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/26390703/", locator = "Abstract, Results", quote = "CA125 and HE4 cut-offs were 35 U/ml and 70 pmol/L, respectively." },
+]
+
+[[range]]
+set = "nice-ng12-2026"
+kind = "decision"
+low = 35
+when = { age_min = 40, age_max = 50, setting = "symptomatic-ovarian-cancer-pathway" }
+population = "Women, and trans men and non-binary people with female reproductive organs, aged 40-49 with persistent symptoms suggestive of ovarian cancer, in primary care"
+evidence = "guideline"
+note = "Age-band threshold for an urgent direct-access ultrasound (NICE NG12 recommendation 1.5.9, Table 1, 2026 update). Boundary is 35 IU/ml or greater. A referral trigger for ultrasound, not a diagnosis. NICE advises that CA125 should not be used in isolation for women aged 39 and under."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.5.9, Table 1 Age and serum CA125 thresholds", quote = "40 to 49 35 IU/ml or greater 50 to 59 31 IU/ml or greater 60 to 69 24 IU/ml or greater 70 to 79 25 IU/ml or greater 80+ 31 IU/ml or greater" },
+]
+
+[[range]]
+set = "nice-ng12-2026"
+kind = "decision"
+low = 31
+when = { age_min = 50, age_max = 60, setting = "symptomatic-ovarian-cancer-pathway" }
+population = "Women, and trans men and non-binary people with female reproductive organs, aged 50-59 with persistent symptoms suggestive of ovarian cancer, in primary care"
+evidence = "guideline"
+note = "Age-band threshold for an urgent direct-access ultrasound (NICE NG12, recommendation 1.5.9, Table 1). Boundary is 31 IU/ml or greater. Referral trigger, not a diagnosis."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.5.9, Table 1 Age and serum CA125 thresholds", quote = "40 to 49 35 IU/ml or greater 50 to 59 31 IU/ml or greater 60 to 69 24 IU/ml or greater 70 to 79 25 IU/ml or greater 80+ 31 IU/ml or greater" },
+]
+
+[[range]]
+set = "nice-ng12-2026"
+kind = "decision"
+low = 24
+when = { age_min = 60, age_max = 70, setting = "symptomatic-ovarian-cancer-pathway" }
+population = "Women, and trans men and non-binary people with female reproductive organs, aged 60-69 with persistent symptoms suggestive of ovarian cancer, in primary care"
+evidence = "guideline"
+note = "Age-band threshold for an urgent direct-access ultrasound (NICE NG12, recommendation 1.5.9, Table 1). Boundary is 24 IU/ml or greater. Referral trigger, not a diagnosis."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.5.9, Table 1 Age and serum CA125 thresholds", quote = "40 to 49 35 IU/ml or greater 50 to 59 31 IU/ml or greater 60 to 69 24 IU/ml or greater 70 to 79 25 IU/ml or greater 80+ 31 IU/ml or greater" },
+]
+
+[[range]]
+set = "nice-ng12-2026"
+kind = "decision"
+low = 25
+when = { age_min = 70, age_max = 80, setting = "symptomatic-ovarian-cancer-pathway" }
+population = "Women, and trans men and non-binary people with female reproductive organs, aged 70-79 with persistent symptoms suggestive of ovarian cancer, in primary care"
+evidence = "guideline"
+note = "Age-band threshold for an urgent direct-access ultrasound (NICE NG12, recommendation 1.5.9, Table 1). Boundary is 25 IU/ml or greater. Referral trigger, not a diagnosis."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.5.9, Table 1 Age and serum CA125 thresholds", quote = "40 to 49 35 IU/ml or greater 50 to 59 31 IU/ml or greater 60 to 69 24 IU/ml or greater 70 to 79 25 IU/ml or greater 80+ 31 IU/ml or greater" },
+]
+
+[[range]]
+set = "nice-ng12-2026"
+kind = "decision"
+low = 31
+when = { age_min = 80, setting = "symptomatic-ovarian-cancer-pathway" }
+population = "Women, and trans men and non-binary people with female reproductive organs, aged 80 and over with persistent symptoms suggestive of ovarian cancer, in primary care"
+evidence = "guideline"
+note = "Age-band threshold for an urgent direct-access ultrasound (NICE NG12, recommendation 1.5.9, Table 1). Boundary is 31 IU/ml or greater. Referral trigger, not a diagnosis."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.5.9, Table 1 Age and serum CA125 thresholds", quote = "40 to 49 35 IU/ml or greater 50 to 59 31 IU/ml or greater 60 to 69 24 IU/ml or greater 70 to 79 25 IU/ml or greater 80+ 31 IU/ml or greater" },
+]
+
+[[range]]
+set = "rocket-2026"
+kind = "decision"
+low = 87
+when = { menopause = "pre" }
+population = "Premenopausal women presenting to secondary care with non-specific symptoms and raised CA125 or abnormal imaging (ROCkeTS multicentre cohort)"
+evidence = "cohort-study"
+note = "Premenopausal diagnostic cut-off of 87 IU/mL in this cohort: sensitivity 55.1% and specificity 89.0% for primary invasive ovarian cancer. Boundary as quoted (>= 87 taken as positive; the study does not state the operator). Derived in one cohort; not a guideline threshold."
+citations = [
+  { pmid = "41605528", doi = "10.1136/bmj-2024-083912", title = "Diagnostic tests for ovarian cancer in premenopausal women with non-specific symptoms (ROCkeTS): prospective, multicentre, cohort study.", url = "https://pubmed.ncbi.nlm.nih.gov/41605528/", locator = "Abstract, Results", quote = "CA 125 at 87 IU/mL threshold: 55.1%, 40.2 to 69.3, P=0.06" },
+]
+
+[[range]]
+set = "acog-referral-2006"
+kind = "decision"
+low = 200
+when = { menopause = "pre" }
+population = "Premenopausal women with an adnexal mass (referral guidance review)"
+evidence = "consensus"
+note = "Referral threshold for a gynaecologic oncology referral: CA125 elevated above 200 U/mL in premenopausal women, together with other features. Boundary is > 200 U/mL as quoted."
+citations = [
+  { pmid = "16885652", doi = "10.1097/00003081-200609000-00005", title = "Guidelines for referral of the patient with an adnexal mass.", url = "https://pubmed.ncbi.nlm.nih.gov/16885652/", locator = "Abstract, Results", quote = "Premenopausal women should be referred if the CA 125 is elevated above 200 U/mL" },
+]
+
+[[range]]
+set = "acog-referral-2006"
+kind = "decision"
+low = 35
+when = { menopause = "post" }
+population = "Postmenopausal women with an adnexal mass (referral guidance review)"
+evidence = "consensus"
+note = "Referral threshold for gynaecologic oncology referral in postmenopausal women with an adnexal mass: CA125 of 35 U/mL or more, as described for ACOG guidance in a 2024 review. Boundary taken as 35 U/mL or greater."
+citations = [
+  { pmid = "38176019", doi = "10.1097/AOG.0000000000005496", title = "Early Ovarian Cancer Detection in the Age of Fallopian Tube Precursors: A Systematic Review.", url = "https://pubmed.ncbi.nlm.nih.gov/38176019/", locator = "Full text, Introduction", quote = "a CA125 of 35 U/ml in postmenopausal patients and 200 U/ml in premenopausal patients" },
+]
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 34.13
+when = { sex = "female", age_max = 50 }
+population = "Apparently healthy Korean women aged under 50 from health checkups (indirect method, CLSI EP28-A3C); menopausal status was not evaluated"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) for CA125 in women under 50 as tabulated. Age is only a proxy for menopausal status in this study."
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", locator = "Full text, Table 2", quote = "CA125 (IU/mL) <50 F 14,474 29 (28.52–29.53) 34.13 (33.30–35.08)" },
+]
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 24.39
+when = { sex = "female", age_min = 50, age_max = 60 }
+population = "Apparently healthy Korean women aged 50-59 from health checkups (indirect method, CLSI EP28-A3C); menopausal status was not evaluated"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) for CA125 in women aged 50-59 as tabulated. Age is only a proxy for menopausal status."
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", locator = "Full text, Table 2", quote = "50−59 F 15,273 19.99 (19.60–20.40) 24.39 (23.71–25.20)" },
+]
+
+[[range]]
+set = "elderly-tumour-ri-2024"
+kind = "reference"
+high = 20.96
+when = { age_min = 69, age_max = 95 }
+population = "Apparently healthy elderly individuals in southwestern China, observed age range 69-94 years (indirect method)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (95th percentile) for CA125 in this elderly population as tabulated (the table gives the observed age range 69-94). Lower limit not identified."
+citations = [
+  { pmid = "38811867", doi = "10.1186/s12885-024-12408-1", title = "A preliminary study on the reference intervals of serum tumor marker in apparently healthy elderly population in southwestern China using real-world data.", url = "https://pubmed.ncbi.nlm.nih.gov/38811867/", locator = "Full text, Table 3 (reference intervals of tumor markers for elderly population)", quote = "CA125 (U/ml) † Total 69–94 9863 - 20.96 (20.60–21.30)" },
+]

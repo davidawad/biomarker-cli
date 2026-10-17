@@ -1,0 +1,55 @@
+slug = "measles-igg"
+name = "Measles IgG"
+category = "infectious"
+unit = "mIU/mL"
+description = "Measles-specific IgG antibody concentration, measured by ELISA and expressed against the WHO 3rd International Standard. Used to judge immunity after vaccination or infection; the protective level depends on the assay method and cut-off used."
+aliases = ["measles antibody", "anti-measles IgG", "measles IgG antibody"]
+
+[[range]]
+set = "measles-prnt-120-2025"
+kind = "decision"
+low = 120
+population = "Vaccinated children in Kerala and Tamil Nadu, India (cross-sectional study of 684 children)"
+evidence = "cohort-study"
+when = { method = "plaque-reduction-neutralisation" }
+note = "Protective neutralising antibody threshold of 120 mIU/mL or higher, measured by the plaque reduction neutralisation test (PRNT, converted to mIU/mL against the WHO 3rd International Standard). This is the widely used correlate of protection; it is a neutralisation threshold, not an ELISA cut-off, and it should not be applied directly to commercial immunoassays."
+citations = [
+  { pmid = "40864465", doi = "10.1001/jamanetworkopen.2025.29409", title = "Low Measles Seropositivity in Vaccinated Children.", url = "https://pubmed.ncbi.nlm.nih.gov/40864465/", locator = "Methods, neutralizing antibody assay", quote = "A neutralizing antibody titer of 120 mIU/mL or higher was considered protective." },
+  { pmid = "42201515", doi = "10.1007/s15010-026-02832-9", title = "Sustaining herd immunity against measles: Insights from a serological cohort study in an outbreak-free population.", url = "https://pubmed.ncbi.nlm.nih.gov/42201515/", locator = "Discussion, paragraph on correlate of protection", quote = "An antibody concentration of 120 mIU/ml measured with the plaque reduction neutralizing test (PRNT) is widely considered a correlate of protection against measles" },
+]
+
+[[range]]
+set = "measles-elisa-200-2025"
+kind = "decision"
+low = 200
+population = "Residents of Ho Chi Minh City, Vietnam, in a 2024 serosurvey before a measles outbreak"
+evidence = "cohort-study"
+when = { method = "elisa-manufacturer" }
+note = "Seropositivity cut-off for a commercial ELISA: IgG above 200 mIU/mL (boundary strictly greater than 200; sensitivity 99.0%, specificity 95.0% in this study). The cut-off is assay-specific and the source notes limited data on the protective threshold."
+citations = [
+  { pmid = "41017062", doi = "10.3201/eid3110.250234", title = "Detection of Immunity Gap before Measles Outbreak, Ho Chi Minh City, Vietnam, 2024.", url = "https://pubmed.ncbi.nlm.nih.gov/41017062/", locator = "Methods, serologic testing", quote = "We defined seropositivity as antibody titer >200 mIU/mL (sensitivity 99.0%; specificity 95.0%)." },
+]
+
+[[range]]
+set = "measles-elisa-equivocal-2025"
+kind = "warn"
+low = 150
+high = 200
+population = "Children on biologic DMARD therapy in a preliminary case-control study"
+evidence = "cohort-study"
+note = "Equivocal band for measles IgG by ELISA: 150 to 200 mIU/mL. Below 150 was classed seronegative and above 200 seropositive in this study (boundary for seropositivity strictly greater than 200). Band labels are the source's; the assay was not named in the retrieved text."
+citations = [
+  { pmid = "41300643", doi = "10.3390/children12111526", title = "Preliminary Case-Control Study of Antibody Response to Vaccines in Children on bDMARDs.", url = "https://pubmed.ncbi.nlm.nih.gov/41300643/", locator = "Methods, serologic thresholds", quote = "values between 150 and 200 mIU/mL were considered equivocal" },
+]
+
+[[range]]
+set = "siemens-enzygnost-measles-2026"
+kind = "decision"
+low = 300
+population = "Taiwan national measles elimination strategy; serology classification as described in the source"
+evidence = "consensus"
+when = { method = "siemens-enzygnost" }
+note = "Siemens Enzygnost Anti-Measles Virus/IgG assay: positive above 300 mIU/mL (boundary strictly greater than 300); 150 to 300 mIU/mL is classed equivocal by the same assay. Method-specific; do not transfer to other ELISA kits."
+citations = [
+  { pmid = "42042837", doi = "10.3390/vaccines14040361", title = "Taiwan's Strategy Toward Measles Elimination.", url = "https://pubmed.ncbi.nlm.nih.gov/42042837/", locator = "Methods, serology classification", quote = "For the Siemens Enzygnost ® assay, results were classified as positive (>300 mIU/mL) or equivocal (150–300 mIU/mL)." },
+]

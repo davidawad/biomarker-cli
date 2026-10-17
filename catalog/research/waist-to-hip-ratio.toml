@@ -1,0 +1,32 @@
+slug = "waist-to-hip-ratio"
+name = "Waist-to-Hip Ratio"
+category = "body"
+unit = "ratio"
+description = "Waist circumference divided by hip circumference. A measure of abdominal fat distribution, used with waist circumference and BMI to flag increased metabolic risk. Cut-offs differ by sex."
+aliases = ["WHR", "waist-hip ratio", "waist/hip ratio"]
+
+[[range]]
+set = "who-2008-whr-as-cited-2026"
+kind = "decision"
+low = 0.90
+when = { sex = "male" }
+population = "Adults (cut-off as stated in 2026 studies citing the WHO expert consultation; WHO primary document not retrieved)"
+evidence = "consensus"
+note = "Substantially increased risk for men: WHR 0.90 or more (boundary >= 0.90)."
+citations = [
+  { pmid = "42796052", doi = "10.3390/jcm15187280", title = "Relationship Between Cognitive Performance and Anthropometric Status, Dietary Diversity, and Diet Quality in Older Turkish Adults: A Cross-Sectional Study.", url = "https://pubmed.ncbi.nlm.nih.gov/42796052/", locator = "Full text, anthropometric measures", quote = "with substantially increased risk defined as ≥0.90 for men and ≥0.85 for women" },
+  { pmid = "42282502", doi = "10.1155/ije/1407398", title = "Misclassification Bias in the Waist-To-Hip Ratio: Implications for Obesity-Related Risk of Incident Type 2 Diabetes.", url = "https://pubmed.ncbi.nlm.nih.gov/42282502/", locator = "Full text, Methods (classification criteria)", quote = "cut-off value of WHR: women: 0.85, men: 0.90" },
+]
+
+[[range]]
+set = "who-2008-whr-as-cited-2026"
+kind = "decision"
+low = 0.85
+when = { sex = "female" }
+population = "Adults (cut-off as stated in 2026 studies citing the WHO expert consultation; WHO primary document not retrieved)"
+evidence = "consensus"
+note = "Substantially increased risk for women: WHR 0.85 or more (boundary >= 0.85)."
+citations = [
+  { pmid = "42796052", doi = "10.3390/jcm15187280", title = "Relationship Between Cognitive Performance and Anthropometric Status, Dietary Diversity, and Diet Quality in Older Turkish Adults: A Cross-Sectional Study.", url = "https://pubmed.ncbi.nlm.nih.gov/42796052/", locator = "Full text, anthropometric measures", quote = "with substantially increased risk defined as ≥0.90 for men and ≥0.85 for women" },
+  { pmid = "42282502", doi = "10.1155/ije/1407398", title = "Misclassification Bias in the Waist-To-Hip Ratio: Implications for Obesity-Related Risk of Incident Type 2 Diabetes.", url = "https://pubmed.ncbi.nlm.nih.gov/42282502/", locator = "Full text, Methods (classification criteria)", quote = "cut-off value of WHR: women: 0.85, men: 0.90" },
+]

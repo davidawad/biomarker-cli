@@ -1,0 +1,31 @@
+slug = "body-fat"
+name = "Body Fat Percentage"
+loinc = "41982-0"
+category = "body"
+unit = "%"
+description = "Body fat as a percentage of total body mass, estimated by methods such as DXA, bioelectrical impedance (BIA) or skinfolds. Used alongside BMI to assess adiposity, which BMI alone may misclassify."
+aliases = ["%BF", "percent body fat", "body fat %", "body fat percentage"]
+
+[[range]]
+set = "jes-2026-percent-bf-obesity"
+kind = "decision"
+low = 25
+when = { sex = "male", method = "dxa" }
+population = "Adults (obesity threshold for percent body fat as cited in a 2026 Journal of the Endocrine Society brief report on DXA body composition)"
+evidence = "cohort-study"
+note = "Obesity by percent body fat in men: 25 percent or more (boundary >= 25). The report cites its own reference 5 for this threshold, which was not retrieved; the report describes %BF as reported on DXA."
+citations = [
+  { pmid = "42453567", doi = "10.1210/jendso/bvag139", title = "Percent body fat misclassifies patients with sarcopenia as obese: support for fat mass index in obesity assessment.", url = "https://pubmed.ncbi.nlm.nih.gov/42453567/", locator = "Full text, Introduction (obesity definitions)", quote = "%BF ≥25 for men and ≥35 for women" },
+]
+
+[[range]]
+set = "jes-2026-percent-bf-obesity"
+kind = "decision"
+low = 35
+when = { sex = "female", method = "dxa" }
+population = "Adults (obesity threshold for percent body fat as cited in a 2026 Journal of the Endocrine Society brief report on DXA body composition)"
+evidence = "cohort-study"
+note = "Obesity by percent body fat in women: 35 percent or more (boundary >= 35). The report cites its own reference 5 for this threshold, which was not retrieved; the report describes %BF as reported on DXA."
+citations = [
+  { pmid = "42453567", doi = "10.1210/jendso/bvag139", title = "Percent body fat misclassifies patients with sarcopenia as obese: support for fat mass index in obesity assessment.", url = "https://pubmed.ncbi.nlm.nih.gov/42453567/", locator = "Full text, Introduction (obesity definitions)", quote = "%BF ≥25 for men and ≥35 for women" },
+]

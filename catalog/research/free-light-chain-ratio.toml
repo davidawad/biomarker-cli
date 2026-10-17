@@ -1,0 +1,56 @@
+slug = "free-light-chain-ratio"
+name = "Serum Free Light Chain Kappa/Lambda Ratio"
+loinc = "48378-4"
+category = "immune"
+unit = "ratio"
+description = "The ratio of kappa to lambda free light chains in serum. A ratio far from the normal range suggests a monoclonal plasma-cell disorder such as myeloma, but kidney function changes the normal range."
+aliases = ["sFLC ratio", "kappa/lambda ratio", "Kappa:lambda free light chain ratio"]
+
+[[range]]
+set = "katzmann-2002"
+kind = "reference"
+low = 0.26
+high = 1.65
+population = "Reference serum samples (n=282, USA) as cited in a 2020 renal free light chain study"
+evidence = "reference-interval-study"
+note = "Polyclonal reference range for the kappa/lambda ratio. Taken from a 2020 paper that cites Katzmann et al. 2002; the primary Katzmann paper was not retrieved."
+citations = [
+  { pmid = "32234026", doi = "10.1186/s12882-020-01771-3", title = "The renal range of the κ/λ sFLC ratio: best strategy to evaluate multiple myeloma in patients with chronic kidney disease.", url = "https://pubmed.ncbi.nlm.nih.gov/32234026/", locator = "Full text, Introduction", quote = "In 2002, Katzmann et al. established a reference “polyclonal” range of 0.26–1.65 for the κ/λ ratio using 282 reference serum samples" },
+]
+
+[[range]]
+set = "hutchison-renal-cited-2020"
+kind = "reference"
+low = 0.37
+high = 3.1
+when = { conditions = ["ckd"] }
+population = "Patients with chronic kidney disease (polyclonal range for CKD)"
+evidence = "reference-interval-study"
+note = "Renal-adjusted polyclonal range, as cited in a 2020 paper. That paper states the range has not been validated in a large representative sample; the original Hutchison et al. paper was not retrieved."
+citations = [
+  { pmid = "32234026", doi = "10.1186/s12882-020-01771-3", title = "The renal range of the κ/λ sFLC ratio: best strategy to evaluate multiple myeloma in patients with chronic kidney disease.", url = "https://pubmed.ncbi.nlm.nih.gov/32234026/", locator = "Full text, Introduction", quote = "a modified “polyclonal” range (0.37–3.1) was suggested for patients with CKD" },
+]
+
+[[range]]
+set = "afr-descent-2025"
+kind = "reference"
+low = 0.686
+high = 2.10
+when = { ethnicity = "black" }
+population = "Individuals of African descent with normal renal function (Blood 2025 multi-population study)"
+evidence = "reference-interval-study"
+note = "Proposed ratio range for people of African descent with normal kidney function, to reduce overdiagnosis of light-chain gammopathy. A proposal from one study rather than a guideline."
+citations = [
+  { pmid = "39571144", doi = "10.1182/blood.2024026078", title = "Serum free light chains in a racially diverse population including African Americans and populations from South Africa.", url = "https://pubmed.ncbi.nlm.nih.gov/39571144/", locator = "Abstract, Results", quote = "we propose a new κ/λ ratio reference range (0.686 to 2.10) for populations of AFR descent with normal renal function" },
+]
+
+[[range]]
+set = "imwg-2016"
+kind = "decision"
+low = 100
+population = "Patients with suspected multiple myeloma (IMWG myeloma-defining event criteria)"
+evidence = "consensus"
+note = "Myeloma-defining biomarker: involved/uninvolved FLC ratio at or above 100, provided the involved free light chain is at least 100 mg/L. The mg/L condition is not captured by this ratio range; check it separately. The cited text is a 2016 review of the IMWG criteria."
+citations = [
+  { pmid = "27249749", doi = "10.1200/EDBK_159009", title = "Updated Diagnostic Criteria and Staging System for Multiple Myeloma.", url = "https://pubmed.ncbi.nlm.nih.gov/27249749/", locator = "Abstract", quote = "serum free light chain (FLC) ratio greater than or equal to 100 provided involved FLC level is 100 mg/L or higher" },
+]

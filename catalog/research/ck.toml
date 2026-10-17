@@ -1,0 +1,148 @@
+slug = "ck"
+name = "Creatine Kinase"
+loinc = "2157-6"
+category = "cardiac"
+unit = "U/L"
+description = "Creatine kinase, an enzyme found mainly in skeletal muscle and the heart. Raised levels indicate muscle damage, for example after strenuous exercise, injury or rhabdomyolysis, and reference limits vary with sex and ethnicity."
+aliases = ["CK", "CPK", "creatine phosphokinase"]
+
+[[range]]
+set = "ck-ethnicity-2026"
+kind = "reference"
+high = 389
+unit = "IU/L"
+when = { sex = "female", age_min = 13, ethnicity = "black" }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, Black females aged 13 years and older"
+evidence = "reference-interval-study"
+note = "Upper reference limit (URL) for CK in Black females aged 13 and over, from a multi-ethnic UK dataset. Above this limit the result is flagged high. Limit is higher than the White female limit."
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", locator = "Abstract, Results", quote = "Female URLs for ≥13 years were 389 IU/L (Black), 188 IU/L (Asian) and 170 IU/L (White); male URLs were 757 IU/L, 357 IU/L and 314 IU/L, respectively." },
+]
+
+[[range]]
+set = "ck-ethnicity-2026"
+kind = "reference"
+high = 170
+unit = "IU/L"
+when = { sex = "female", age_min = 13, ethnicity = "european" }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, White females aged 13 years and older"
+evidence = "reference-interval-study"
+note = "Upper reference limit for CK in White females aged 13 and over. The study labels this group 'White'; mapped to the european ethnicity key."
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", locator = "Abstract, Results", quote = "Female URLs for ≥13 years were 389 IU/L (Black), 188 IU/L (Asian) and 170 IU/L (White); male URLs were 757 IU/L, 357 IU/L and 314 IU/L, respectively." },
+]
+
+[[range]]
+set = "ck-ethnicity-2026"
+kind = "reference"
+high = 757
+unit = "IU/L"
+when = { sex = "male", age_min = 13, ethnicity = "black" }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, Black males aged 13 years and older"
+evidence = "reference-interval-study"
+note = "Upper reference limit for CK in Black males aged 13 and over. Highest limit in the study; CK is highest in Black individuals overall."
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", locator = "Abstract, Results", quote = "Female URLs for ≥13 years were 389 IU/L (Black), 188 IU/L (Asian) and 170 IU/L (White); male URLs were 757 IU/L, 357 IU/L and 314 IU/L, respectively." },
+]
+
+[[range]]
+set = "ck-ethnicity-2026"
+kind = "reference"
+high = 314
+unit = "IU/L"
+when = { sex = "male", age_min = 13, ethnicity = "european" }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, White males aged 13 years and older"
+evidence = "reference-interval-study"
+note = "Upper reference limit for CK in White males aged 13 and over. The study labels this group 'White'; mapped to the european ethnicity key."
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", locator = "Abstract, Results", quote = "Female URLs for ≥13 years were 389 IU/L (Black), 188 IU/L (Asian) and 170 IU/L (White); male URLs were 757 IU/L, 357 IU/L and 314 IU/L, respectively." },
+]
+
+[[range]]
+set = "rhabdo-review-2016"
+kind = "critical"
+low = 1000
+unit = "U/L"
+population = "Adults with suspected rhabdomyolysis (clinical review)"
+evidence = "consensus"
+note = "Rhabdomyolysis threshold: CK above 1000 U/L (strict >1000). Taken from a systematic review of rhabdomyolysis for clinical practice, not a numbered guideline."
+citations = [
+  { pmid = "27301374", doi = "10.1186/s13054-016-1314-5", title = "Beyond muscle destruction: a systematic review of rhabdomyolysis for clinical practice.", url = "https://pubmed.ncbi.nlm.nih.gov/27301374/", locator = "Full text, diagnostic criteria", quote = "CK level >1000 IU/L" },
+]
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "reference"
+high = 210
+unit = "U/L"
+when = { sex = "female", age_min = 18 }
+population = "Adults with persistent hyperCKemia assessment, women aged 18 years and older, as cited in the EAN 2024 guideline (97.5th centile)"
+evidence = "guideline"
+note = "Upper limit of normal (97.5th centile) for CK in women aged 18 and over, as stated in the EAN 2024 guideline on oligo/asymptomatic hyperCKemia. The guideline's sources for these centiles are not reproduced in the quoted text."
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", locator = "Full text, PICO 1 (upper limit of normal)", quote = "for women aged ≥ 18 years, 210 U/L; men aged 18–50 years, 400 U/L; and men ≥ 50 years, 280 U/L." },
+]
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "reference"
+high = 400
+unit = "U/L"
+when = { sex = "male", age_min = 18, age_max = 50 }
+population = "Adults with persistent hyperCKemia assessment, men aged 18 to 49 years, as cited in the EAN 2024 guideline (97.5th centile)"
+evidence = "guideline"
+note = "Upper limit of normal (97.5th centile) for CK in men aged 18 to 49 years, as stated in the EAN 2024 guideline. The guideline's bands are written as 18-50 and 50 and up, so age 50 falls in both; this range uses 18 to 49 (exclusive upper bound 50) to avoid double counting. Age 50 is covered by the 280 U/L range."
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", locator = "Full text, PICO 1 (upper limit of normal)", quote = "for women aged ≥ 18 years, 210 U/L; men aged 18–50 years, 400 U/L; and men ≥ 50 years, 280 U/L." },
+]
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "reference"
+high = 280
+unit = "U/L"
+when = { sex = "male", age_min = 50 }
+population = "Adults with persistent hyperCKemia assessment, men aged 50 years and older, as cited in the EAN 2024 guideline (97.5th centile)"
+evidence = "guideline"
+note = "Upper limit of normal (97.5th centile) for CK in men aged 50 and over, as stated in the EAN 2024 guideline. Lower than the male 18 to 49 limit of 400 U/L in the same guideline."
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", locator = "Full text, PICO 1 (upper limit of normal)", quote = "for women aged ≥ 18 years, 210 U/L; men aged 18–50 years, 400 U/L; and men ≥ 50 years, 280 U/L." },
+]
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "warn"
+low = 4
+high = 10
+unit = "x ULN"
+population = "Adults with asymptomatic or oligosymptomatic hyperCKemia, as grouped in large-scale statin risk studies cited by the EAN 2024 guideline"
+evidence = "guideline"
+note = "Statin-risk grouping of hyperCKemia by multiples of the upper limit of normal: up to 3x ULN, between 4x and 10x ULN, and higher values. The 4x to 10x band is the middle group. Multiples are relative to each laboratory's ULN, not absolute U/L values."
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", locator = "Full text, statin risk discussion", quote = "between 4× and 10× the ULN, and higher values" },
+]
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "decision"
+high = 10
+unit = "x ULN"
+when = { conditions = ["statin-therapy"] }
+population = "Adults with asymptomatic or oligosymptomatic hyperCKemia who are indicated for statin therapy"
+evidence = "guideline"
+note = "Guideline recommendation: statins should not be avoided when indicated in people with CK up to 10x ULN, with close follow-up. Boundary inclusive at 10x, following the wording 'up to 10x'."
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", locator = "Full text, statin risk discussion", quote = "the prescription of statins in subjects with CK values of up to 10× the ULN should not be avoided when indicated" },
+]
+
+[[range]]
+set = "chest-2026-rhabdo-review"
+kind = "critical"
+low = 5
+unit = "x ULN"
+population = "Adults with suspected rhabdomyolysis (clinically oriented narrative review)"
+evidence = "consensus"
+note = "Commonly used rhabdomyolysis CK cut-off: above 5x the upper limit of normal, or above 1,000 U/L (the review states that no formal consensus definition exists). Boundary is strict (>5x ULN)."
+citations = [
+  { pmid = "41619932", doi = "10.1016/j.chest.2025.12.048", title = "Updates on Rhabdomyolysis: A Clinically Oriented Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/41619932/", locator = "Definition and diagnosis", quote = "a CK cutoff (most commonly, either > 5 times the upper limit of normal or > 1,000 U/L)" },
+]

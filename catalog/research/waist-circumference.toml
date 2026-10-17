@@ -1,0 +1,102 @@
+slug = "waist-circumference"
+name = "Waist Circumference"
+category = "body"
+unit = "cm"
+description = "Waist circumference measured at the level of the umbilicus or the midpoint between the lowest rib and the iliac crest. It is a measure of central (abdominal) adiposity and is used in metabolic syndrome criteria. Cut-offs differ by sex and ethnicity."
+aliases = ["waist", "abdominal circumference", "WC"]
+
+[[range]]
+set = "idf-2005-asian-as-cited-2020"
+kind = "decision"
+low = 90
+when = { sex = "male", ethnicity = "asian" }
+population = "Asian men (ethnicity-specific central obesity cut-point for metabolic syndrome, as cited in a 2020 multi-ethnic Indonesian study)"
+evidence = "consensus"
+note = "Ethnic-specific central obesity cut-point for men used in the metabolic syndrome definition. The number is taken from the 2020 study's description of the IDF definition, not from the IDF document itself. Boundary semantics are not stated in the quote."
+citations = [
+  { pmid = "32513949", doi = "10.1038/s41387-020-0123-8", title = "Diagnosing metabolic syndrome in a multi-ethnic country: is an ethnic-specific cut-off point of waist circumference needed?", url = "https://pubmed.ncbi.nlm.nih.gov/32513949/", locator = "Introduction", quote = "The new definition of MS 1 has proposed ethnic-specific cut-off values for WC, namely 90 and 80 cm for Asian men and women, respectively" },
+]
+
+[[range]]
+set = "idf-2005-asian-as-cited-2020"
+kind = "decision"
+low = 80
+when = { sex = "female", ethnicity = "asian" }
+population = "Asian women (ethnicity-specific central obesity cut-point for metabolic syndrome, as cited in a 2020 multi-ethnic Indonesian study)"
+evidence = "consensus"
+note = "Ethnic-specific central obesity cut-point for women used in the metabolic syndrome definition. The number is taken from the 2020 study's description of the IDF definition, not from the IDF document itself. Boundary semantics are not stated in the quote."
+citations = [
+  { pmid = "32513949", doi = "10.1038/s41387-020-0123-8", title = "Diagnosing metabolic syndrome in a multi-ethnic country: is an ethnic-specific cut-off point of waist circumference needed?", url = "https://pubmed.ncbi.nlm.nih.gov/32513949/", locator = "Introduction", quote = "The new definition of MS 1 has proposed ethnic-specific cut-off values for WC, namely 90 and 80 cm for Asian men and women, respectively" },
+]
+
+[[range]]
+set = "waist-cutoffs-review-2026"
+kind = "decision"
+low = 94
+when = { sex = "male" }
+population = "Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote)"
+evidence = "consensus"
+note = "Increased-risk waist circumference for men: 94 cm or more (boundary >= 94). The review attributes these values to a cited reference (ref 59) that was not retrieved. Ethnicity-specific values for Asians are in the separate Asian ranges above."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, waist circumference paragraph", quote = "A WC ≥ 94 cm in men and ≥80 cm in women indicates increased risk" },
+]
+
+[[range]]
+set = "waist-cutoffs-review-2026"
+kind = "decision"
+low = 80
+when = { sex = "female" }
+population = "Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote)"
+evidence = "consensus"
+note = "Increased-risk waist circumference for women: 80 cm or more (boundary >= 80). The review attributes these values to a cited reference (ref 59) that was not retrieved."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, waist circumference paragraph", quote = "A WC ≥ 94 cm in men and ≥80 cm in women indicates increased risk" },
+]
+
+[[range]]
+set = "waist-cutoffs-review-2026"
+kind = "decision"
+low = 102
+when = { sex = "male" }
+population = "Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote)"
+evidence = "consensus"
+note = "Substantially higher risk waist circumference for men: 102 cm or more (boundary >= 102). Attributed by the review to a cited reference (ref 59) that was not retrieved."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, waist circumference paragraph", quote = "WC ≥ 102 cm in men and WC ≥ 88 cm in women indicate substantially higher risk" },
+]
+
+[[range]]
+set = "waist-cutoffs-review-2026"
+kind = "decision"
+low = 88
+when = { sex = "female" }
+population = "Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote)"
+evidence = "consensus"
+note = "Substantially higher risk waist circumference for women: 88 cm or more (boundary >= 88). Attributed by the review to a cited reference (ref 59) that was not retrieved."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, waist circumference paragraph", quote = "WC ≥ 102 cm in men and WC ≥ 88 cm in women indicate substantially higher risk" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "decision"
+low = 102
+when = { sex = "male" }
+population = "Adults (NHLBI 1998 high-risk waist circumference cut-point)"
+evidence = "guideline"
+note = "High-risk waist circumference for men: greater than 102 cm (boundary >). The NHLBI cut-point is sex-specific and was set for the guideline's risk classification."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Risk classification by waist circumference (high-risk column)", quote = "Men > 102 cm ( > 40 in)" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "decision"
+low = 88
+when = { sex = "female" }
+population = "Adults (NHLBI 1998 high-risk waist circumference cut-point)"
+evidence = "guideline"
+note = "High-risk waist circumference for women: greater than 88 cm (boundary >). The NHLBI cut-point is sex-specific and was set for the guideline's risk classification."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Risk classification by waist circumference (high-risk column)", quote = "Women > 88 cm ( > 35 in)" },
+]

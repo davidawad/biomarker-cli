@@ -1,0 +1,18 @@
+slug = "tyg-index"
+name = "Triglyceride-Glucose Index"
+category = "derived"
+unit = "index"
+description = "Surrogate insulin-resistance index calculated as ln(fasting triglycerides [mg/dL] x fasting glucose [mg/dL] / 2). It was validated against the euglycaemic-hyperinsulinaemic clamp."
+aliases = ["TyG index", "TyG", "ln(TG x glucose / 2)"]
+
+[[range]]
+set = "guerrero-romero-2010"
+kind = "decision"
+low = 4.68
+population = "Adults in a validation study against the euglycemic-hyperinsulinemic clamp"
+evidence = "validation-study"
+note = "Best ROC value for insulin resistance (sensitivity 96.5%, specificity 85.0%). Formula in the source: Ln(fasting triglycerides mg/dl) x fasting glucose mg/dl / 2. Applies to fasting values only."
+when = { fasting = true }
+citations = [
+  { pmid = "20484475", doi = "10.1210/jc.2010-0288", title = "The product of triglycerides and glucose, a simple measure of insulin sensitivity. Comparison with the euglycemic-hyperinsulinemic clamp.", url = "https://pubmed.ncbi.nlm.nih.gov/20484475/", locator = "Abstract, Results", quote = "The best value of the TyG index for diagnosis of insulin resistance was 4.68" },
+]

@@ -1,0 +1,53 @@
+slug = "fit-hemoglobin"
+name = "Faecal Immunochemical Test (Haemoglobin)"
+loinc = "29771-3"
+category = "stool"
+unit = "µg Hb/g"
+description = "Faecal immunochemical test (FIT) detects human haemoglobin in stool. Quantitative results in µg haemoglobin per gram of faeces are compared with programme or laboratory cut-offs to decide on referral or colonoscopy for possible colorectal neoplasia. The threshold is method- and programme-specific."
+aliases = ["FIT", "faecal haemoglobin", "f-Hb", "FHb", "quantitative FIT", "qFIT", "fecal immunochemical test"]
+
+[[range]]
+set = "florence-fit-screening-2026"
+kind = "decision"
+low = 20
+population = "Participants in the Florence colorectal cancer screening programme with a negative FIT"
+evidence = "cohort-study"
+note = "Programme positivity cut-off. Results at or above 20 µg Hb/g are positive and referred for colonoscopy, per the study's description of the programme."
+citations = [
+  { pmid = "42742245", doi = "10.4415/ANN_26_03_10", title = "Three-year risk of colorectal cancer by faecal haemoglobin concentration in subjects with a negative FIT.", url = "https://pubmed.ncbi.nlm.nih.gov/42742245/", locator = "Abstract, Methods", quote = "positivity cut-off: 20 µg faecal haemoglobin, f-Hb/g" },
+]
+
+[[range]]
+set = "florence-fit-screening-2026"
+kind = "warn"
+low = 15
+high = 20
+population = "Participants in the Florence colorectal cancer screening programme with a negative FIT"
+evidence = "cohort-study"
+note = "Borderline band just below the 20 µg Hb/g positivity cut-off. The study found an increased 3-year colorectal cancer risk in this band even though these results were FIT-negative. Lower bound inclusive, upper bound exclusive."
+citations = [
+  { pmid = "42742245", doi = "10.4415/ANN_26_03_10", title = "Three-year risk of colorectal cancer by faecal haemoglobin concentration in subjects with a negative FIT.", url = "https://pubmed.ncbi.nlm.nih.gov/42742245/", locator = "Abstract, Results", quote = "The 3-year CRC risk was 15.9‰ in individuals with 15-20 µg/g on a single test" },
+]
+
+[[range]]
+set = "dutch-crc-screening-fit-2026"
+kind = "decision"
+low = 47
+population = "Participants in the Dutch national colorectal cancer screening programme"
+evidence = "cohort-study"
+note = "Programme cut-off: results at or above 47 µg Hb/g are positive and referred for colonoscopy. The cut-off is programme-specific."
+citations = [
+  { pmid = "42772943", doi = "10.1136/bmjgast-2026-002286", title = "Evaluating the predictive value of multiple rounds of faecal haemoglobin measurement for the prediction of advanced neoplasia and colorectal cancer: an analysis of data from the Dutch national colorectal cancer screening programme.", url = "https://pubmed.ncbi.nlm.nih.gov/42772943/", locator = "Methods, Screening", quote = "Screening was considered negative if the test result was below a selected cut-off of 47 µg f-Hb per gram of faeces (µg Hb/g)." },
+]
+
+[[range]]
+set = "multicutoff-fit-2026"
+kind = "decision"
+low = 17
+when = { method = "manufacturer-recommended quantitative FIT" }
+population = "Adults in a colorectal cancer screening cohort at younger screening ages"
+evidence = "validation-study"
+note = "Manufacturer-recommended cut-off for this quantitative FIT, evaluated for advanced neoplasia detection. Sensitivity was low at this cut-off (about 27 percent), so it is not a general-purpose threshold."
+citations = [
+  { pmid = "42509105", doi = "10.1016/j.clcc.2026.07.001", title = "Colorectal Cancer Screening at Younger Ages: A Multicutoff Analysis of FIT Performance.", url = "https://pubmed.ncbi.nlm.nih.gov/42509105/", locator = "Abstract, Results", quote = "At the manufacturer-recommended cut off of 17 µg Hb/g stool, positivity rate was 7.7%, yielding a sensitivity of 26.6%" },
+]

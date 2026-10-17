@@ -1,0 +1,54 @@
+slug = "nafld-fibrosis-score"
+name = "NAFLD Fibrosis Score"
+category = "derived"
+unit = "score"
+description = "Composite score from age, BMI, impaired glucose status, platelet count, albumin and AST/ALT ratio that estimates advanced fibrosis in NAFLD. Scores below the low cut-off exclude advanced fibrosis and scores above the high cut-off suggest it."
+aliases = ["NFS", "NAFLD-FS"]
+
+[[range]]
+set = "angulo-2007"
+kind = "decision"
+high = -1.455
+population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
+evidence = "validation-study"
+note = "Low cut-off: scores below -1.455 exclude advanced fibrosis with high accuracy (NPV 93% and 88%). Not validated for under 35 and for 65 and over, where age-adjusted cut-offs apply."
+citations = [
+  { pmid = "17393509", doi = "10.1002/hep.21496", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", locator = "Abstract, Results", quote = "By applying the low cutoff score (-1.455), advanced fibrosis could be excluded with high accuracy" },
+]
+
+[[range]]
+set = "angulo-2007"
+kind = "warn"
+low = -1.455
+high = 0.676
+population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
+evidence = "validation-study"
+note = "Indeterminate band between the low cut-off -1.455 and the high cut-off 0.676."
+citations = [
+  { pmid = "17393509", doi = "10.1002/hep.21496", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", locator = "Abstract, Results", quote = "By applying the low cutoff score (-1.455), advanced fibrosis could be excluded with high accuracy" },
+  { pmid = "17393509", doi = "10.1002/hep.21496", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", locator = "Abstract, Results", quote = "By applying the high cutoff score (0.676), the presence of advanced fibrosis could be diagnosed with high accuracy" },
+]
+
+[[range]]
+set = "angulo-2007"
+kind = "decision"
+low = 0.676
+population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
+evidence = "validation-study"
+note = "High cut-off: scores above 0.676 indicate advanced fibrosis (PPV 90% and 82%). The upper cut-off is unchanged for age 65 and over."
+citations = [
+  { pmid = "17393509", doi = "10.1002/hep.21496", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", locator = "Abstract, Results", quote = "By applying the high cutoff score (0.676), the presence of advanced fibrosis could be diagnosed with high accuracy" },
+]
+
+[[range]]
+set = "mcpherson-2017"
+kind = "decision"
+high = 0.12
+population = "Adults aged 65 and over with biopsy-proven NAFLD"
+evidence = "cohort-study"
+note = "Age-adjusted lower cut-off for 65 and over: NFS below 0.12 is used to exclude advanced fibrosis, per the paper's proposed thresholds (sensitivity 80%, specificity 70%). Upper cut-off unchanged."
+when = { age_min = 65 }
+citations = [
+  { pmid = "27725647", doi = "10.1038/ajg.2016.453", title = "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.", url = "https://pubmed.ncbi.nlm.nih.gov/27725647/", locator = "Results, Discussion", quote = "The new lower thresholds derived and validated in the current paper are recommended for those aged ≥65 years" },
+  { pmid = "27725647", doi = "10.1038/ajg.2016.453", title = "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.", url = "https://pubmed.ncbi.nlm.nih.gov/27725647/", locator = "Results, Discussion", quote = "the new age-adjusted NFS threshold (NFS>0.12) yielded 80% sensitivity and 70% specificity" },
+]

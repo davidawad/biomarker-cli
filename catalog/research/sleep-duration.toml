@@ -1,0 +1,30 @@
+slug = "sleep-duration"
+name = "Sleep Duration"
+loinc = "93832-4"
+category = "wearable"
+unit = "h"
+description = "Total time asleep per night, usually from a wearable or sleep study. Recommended nightly durations differ by age, and both short and long sleep are associated with worse health outcomes."
+
+[[range]]
+set = "nsf-2015-sleep-duration"
+kind = "optimal"
+low = 7
+high = 9
+population = "Young adults and adults (age band as defined by the National Sleep Foundation panel; exact ages are not in the retrieved text)"
+evidence = "consensus"
+note = "Recommended sleep duration band for young adults and adults, from a RAND/UCLA Appropriateness Method expert panel. Durations outside the band may still be appropriate for some individuals."
+citations = [
+  { pmid = "29073412", doi = "10.1016/j.sleh.2014.12.010", title = "National Sleep Foundation's sleep time duration recommendations: methodology and results summary.", url = "https://pubmed.ncbi.nlm.nih.gov/29073412/", locator = "Abstract, Results", quote = "7 to 9 hours for young adults and adults" },
+]
+
+[[range]]
+set = "nsf-2015-sleep-duration"
+kind = "optimal"
+low = 7
+high = 8
+population = "Older adults (age band as defined by the National Sleep Foundation panel; exact ages are not in the retrieved text)"
+evidence = "consensus"
+note = "Recommended sleep duration band for older adults, from the same NSF panel."
+citations = [
+  { pmid = "29073412", doi = "10.1016/j.sleh.2014.12.010", title = "National Sleep Foundation's sleep time duration recommendations: methodology and results summary.", url = "https://pubmed.ncbi.nlm.nih.gov/29073412/", locator = "Abstract, Results", quote = "7 to 8 hours of sleep for older adults" },
+]

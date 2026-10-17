@@ -1,0 +1,141 @@
+slug = "nt-probnp"
+name = "NT-proBNP"
+loinc = "33762-6"
+category = "cardiac"
+unit = "pg/mL"
+description = "N-terminal pro-B-type natriuretic peptide, released by the heart in response to wall stress. It is used to help diagnose or rule out heart failure, with cut-offs that depend on age, setting and kidney function."
+aliases = ["NT-pro-BNP", "N-terminal pro-BNP", "NTproBNP"]
+
+[[range]]
+set = "hf-guideline-review-2026"
+kind = "decision"
+low = 125
+unit = "pg/mL"
+when = { setting = "ambulatory" }
+population = "Adults assessed for suspected heart failure in the community (non-acute setting)"
+evidence = "guideline"
+note = "Community (non-acute) heart failure diagnostic criterion: NT-proBNP at or above 125 pg/mL (boundary inclusive). Values below this are used to argue against heart failure in the non-acute setting. Criteria are as tabulated in a systematic review of HF guideline recommendations."
+citations = [
+  { pmid = "41778370", doi = "10.1093/ehjqcco/qcag029", title = "Heart failure with reduced ejection fraction: a systematic review of clinical practice guidelines and recommendations.", url = "https://pubmed.ncbi.nlm.nih.gov/41778370/", locator = "Full text, guideline diagnostic criteria table", quote = "NT-proBNP ≥ 125 pg/mL or BNP ≥ 35 pg/mL (community setting)" },
+]
+
+[[range]]
+set = "hf-guideline-review-2026"
+kind = "decision"
+low = 300
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea" }
+population = "Adults presenting to the emergency department with acute dyspnoea"
+evidence = "guideline"
+note = "Emergency-setting heart failure diagnostic criterion: NT-proBNP at or above 300 pg/mL (boundary inclusive). Below 300 pg/mL, acute heart failure is unlikely in the emergency setting (see the rule-out range)."
+citations = [
+  { pmid = "41778370", doi = "10.1093/ehjqcco/qcag029", title = "Heart failure with reduced ejection fraction: a systematic review of clinical practice guidelines and recommendations.", url = "https://pubmed.ncbi.nlm.nih.gov/41778370/", locator = "Full text, guideline diagnostic criteria table", quote = "NT-proBNP ≥ 300 pg/mL or BNP ≥ 100 pg/mL (emergency setting)" },
+]
+
+[[range]]
+set = "pride-2005"
+kind = "decision"
+high = 300
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea" }
+population = "Patients presenting to the emergency department with acute dyspnoea (PRIDE study)"
+evidence = "validation-study"
+note = "Rule-out threshold for acute heart failure in the emergency department: NT-proBNP below 300 pg/mL (strict <300). The study reports a negative predictive value of 99% at this cut-off."
+citations = [
+  { pmid = "15820160", doi = "10.1016/j.amjcard.2004.12.032", title = "The N-terminal Pro-BNP investigation of dyspnea in the emergency department (PRIDE) study.", url = "https://pubmed.ncbi.nlm.nih.gov/15820160/", locator = "Abstract, Results", quote = "An NT-proBNP level <300 pg/ml was optimal for ruling out acute CHF" },
+]
+
+[[range]]
+set = "pride-2005"
+kind = "decision"
+low = 450
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea", age_max = 50 }
+population = "Patients presenting to the emergency department with acute dyspnoea, aged under 50 years (PRIDE study)"
+evidence = "validation-study"
+note = "Age-stratified rule-in cut-off for acute heart failure, age under 50 years. The PRIDE abstract phrases this as '>450 pg/ml' (strict); the review phrasing is '≥450'. Boundary treated as inclusive here."
+citations = [
+  { pmid = "15820160", doi = "10.1016/j.amjcard.2004.12.032", title = "The N-terminal Pro-BNP investigation of dyspnea in the emergency department (PRIDE) study.", url = "https://pubmed.ncbi.nlm.nih.gov/15820160/", locator = "Abstract, Results", quote = "NT-proBNP at cutpoints of >450 pg/ml for patients <50 years of age and >900 pg/ml for patients >or=50 years of age were highly sensitive and specific for the diagnosis of acute CHF" },
+  { pmid = "39135432", doi = "10.1002/ehf2.15017", title = "Refining the diagnosis of acute heart failure in the elderly.", url = "https://pubmed.ncbi.nlm.nih.gov/39135432/", locator = "Discussion, rule-in strategies", quote = "≥450 pg/mL for patients under 50 years" },
+]
+
+[[range]]
+set = "ehf-2024-elderly-ahf"
+kind = "decision"
+low = 900
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea", age_min = 50, age_max = 75 }
+population = "Adults aged 50 to 74 years presenting with acute dyspnoea"
+evidence = "cohort-study"
+note = "Age-stratified rule-in cut-off for acute heart failure, ages 50 to 74 years (boundary inclusive, >=900). The 1800 pg/mL cut-off applies from age 75."
+citations = [
+  { pmid = "39135432", doi = "10.1002/ehf2.15017", title = "Refining the diagnosis of acute heart failure in the elderly.", url = "https://pubmed.ncbi.nlm.nih.gov/39135432/", locator = "Discussion, rule-in strategies", quote = "≥900 pg/mL for patients aged 50–74 years" },
+  { pmid = "15820160", doi = "10.1016/j.amjcard.2004.12.032", title = "The N-terminal Pro-BNP investigation of dyspnea in the emergency department (PRIDE) study.", url = "https://pubmed.ncbi.nlm.nih.gov/15820160/", locator = "Abstract, Results", quote = "NT-proBNP at cutpoints of >450 pg/ml for patients <50 years of age and >900 pg/ml for patients >or=50 years of age were highly sensitive and specific for the diagnosis of acute CHF" },
+]
+
+[[range]]
+set = "ehf-2024-elderly-ahf"
+kind = "decision"
+low = 1800
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea", age_min = 75 }
+population = "Adults aged 75 years or older presenting with acute dyspnoea"
+evidence = "cohort-study"
+note = "Age-stratified rule-in cut-off for acute heart failure, age 75 years or older (boundary inclusive, >=1800). A 2024 APHP cohort in patients aged 75 or older reports a PPV-based threshold of 1748 pg/mL, and a higher 2235 pg/mL threshold over age 85; co-morbidities (CKD, obesity, atrial fibrillation) shift results."
+citations = [
+  { pmid = "39135432", doi = "10.1002/ehf2.15017", title = "Refining the diagnosis of acute heart failure in the elderly.", url = "https://pubmed.ncbi.nlm.nih.gov/39135432/", locator = "Discussion, rule-in strategies", quote = "≥1800 pg/mL for patients ≥75 years" },
+]
+
+[[range]]
+set = "ehf-2024-over75-threshold"
+kind = "decision"
+low = 3474
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea", age_min = 75, markers = { egfr = "<30" } }
+population = "Hospitalised patients aged 75 years or older with acute dyspnoea and eGFR below 30 mL/min (APHP multicentre cohort)"
+evidence = "cohort-study"
+note = "Subgroup rule-in threshold for acute heart failure in older patients with severely reduced kidney function (eGFR below 30 mL/min). Threshold reported with a 90% PPV; derived in a single multicentre cohort and not a general guideline value."
+citations = [
+  { pmid = "38923835", doi = "10.1002/ehf2.14894", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", locator = "Abstract, Results", quote = "in patients with an estimated glomerular filtration rate (eGFR) < 30 mL/min, a threshold of 3474 pg/mL for NT-proBNP yielded a 90% PPV for AHF diagnosis" },
+  { pmid = "38923835", doi = "10.1002/ehf2.14894", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", locator = "Abstract, Methods", quote = "data were gathered from 12 071 hospitalized patients aged 75 years or older" },
+]
+
+[[range]]
+set = "ehf-2024-over75-threshold"
+kind = "decision"
+low = 1375
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea", age_min = 75, conditions = ["obesity"] }
+population = "Hospitalised patients aged 75 years or older with acute dyspnoea and obesity (APHP multicentre cohort)"
+evidence = "cohort-study"
+note = "Subgroup rule-in threshold for acute heart failure in older patients with obesity, reported with an 85% PPV. Derived in a single multicentre cohort; obesity lowers natriuretic peptide levels, so this threshold is lower than the general over-75 value."
+citations = [
+  { pmid = "38923835", doi = "10.1002/ehf2.14894", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", locator = "Abstract, Results", quote = "in patients with obesity, a threshold of 1375 pg/mL demonstrated an 85% PPV for AHF diagnosis" },
+  { pmid = "38923835", doi = "10.1002/ehf2.14894", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", locator = "Abstract, Methods", quote = "data were gathered from 12 071 hospitalized patients aged 75 years or older" },
+]
+
+[[range]]
+set = "jalm-2023-nt-probnp-ri"
+kind = "reference"
+high = 225
+unit = "ng/L"
+when = { sex = "male", age_min = 50, age_max = 60 }
+population = "Healthy US children, adolescents and adults, men aged 50 to 59 years (robust partitioned reference intervals)"
+evidence = "reference-interval-study"
+note = "Age- and sex-specific 97.5th percentile upper reference limit for NT-proBNP in healthy US men aged 50 to 59. Values are reported in ng/L, numerically equal to pg/mL for this marker."
+citations = [
+  { pmid = "37279581", doi = "10.1093/jalm/jfad024", title = "NT-proBNP Reference Intervals in Healthy U.S. Children, Adolescents, and Adults.", url = "https://pubmed.ncbi.nlm.nih.gov/37279581/", locator = "Abstract, Results", quote = "The upper reference limit, or 97.5th percentile, for 50 to 59 year-old men was 225 ng/L" },
+]
+
+[[range]]
+set = "jalm-2023-nt-probnp-ri"
+kind = "reference"
+high = 292
+unit = "ng/L"
+when = { sex = "female", age_min = 50, age_max = 60 }
+population = "Healthy US children, adolescents and adults, women aged 50 to 59 years (robust partitioned reference intervals)"
+evidence = "reference-interval-study"
+note = "Age- and sex-specific 97.5th percentile upper reference limit for NT-proBNP in healthy US women aged 50 to 59. Values are reported in ng/L, numerically equal to pg/mL for this marker."
+citations = [
+  { pmid = "37279581", doi = "10.1093/jalm/jfad024", title = "NT-proBNP Reference Intervals in Healthy U.S. Children, Adolescents, and Adults.", url = "https://pubmed.ncbi.nlm.nih.gov/37279581/", locator = "Abstract, Results", quote = "and for 50 to 59 year-old women, 292 ng/L" },
+]

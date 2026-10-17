@@ -1,0 +1,78 @@
+slug = "il-6"
+name = "Interleukin-6"
+loinc = "26881-3"
+category = "inflammation"
+unit = "pg/mL"
+description = "Pro-inflammatory cytokine released by immune and other cells in response to infection, injury and tissue stress. Circulating levels rise quickly in acute inflammation and sepsis; it is mainly used in research and specialist settings."
+aliases = ["IL-6", "interleukin 6"]
+
+[[range]]
+set = "lianyungang-2026-il6"
+kind = "reference"
+high = 2.23
+population = "Healthy adults from Lianyungang, Jiangsu, China (single centre); plasma measured by flow cytometry"
+evidence = "reference-interval-study"
+note = "Upper reference limit for plasma IL-6 by flow cytometry (90% CI 2.18-2.27 pg/mL). Distributions were non-normal; the limit is assay-specific and not transferable to other methods without verification."
+citations = [
+  { pmid = "42210961", doi = "10.3389/fmed.2026.1789886", title = "Establishment of reference intervals for plasma IL-6, IL-8, IL-10, and IL-1β in healthy adults from Lianyungang, Jiangsu, China: a single-center flow cytometry analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/42210961/", locator = "Abstract, Results", quote = "IL-6 ≤ 2.23 pg/mL (90% CI: 2.18-2.27 pg/mL)" },
+]
+
+[[range]]
+set = "chinese-pregnancy-il6-2020"
+kind = "reference"
+high = 3.52
+when = { pregnancy = true, trimester = 1 }
+population = "Healthy Chinese pregnant women (120 per trimester) and non-pregnant controls, CLSI C28-A3 method"
+evidence = "reference-interval-study"
+note = "Upper reference limit (<3.52 pg/mL) for first-trimester pregnancy. Electrochemiluminescence immunoassay; limit is method-specific."
+citations = [
+  { pmid = "31866334", doi = "10.1016/j.cca.2019.12.013", title = "Changes of serum interleukin-6 in healthy pregnant women and establishment of relevant reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/31866334/", locator = "Abstract, Results", quote = "the RIs for serum IL-6 levels in healthy pregnant women who are in the first trimester is <3.52 pg/ml" },
+]
+
+[[range]]
+set = "chinese-pregnancy-il6-2020"
+kind = "reference"
+high = 4.40
+when = { pregnancy = true, trimester = 2 }
+population = "Healthy Chinese pregnant women (120 per trimester) and non-pregnant controls, CLSI C28-A3 method"
+evidence = "reference-interval-study"
+note = "Upper reference limit (<4.40 pg/mL) for second-trimester pregnancy. Electrochemiluminescence immunoassay; limit is method-specific."
+citations = [
+  { pmid = "31866334", doi = "10.1016/j.cca.2019.12.013", title = "Changes of serum interleukin-6 in healthy pregnant women and establishment of relevant reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/31866334/", locator = "Abstract, Results", quote = "the RIs for serum IL-6 levels in healthy pregnant women who are in the second and third trimester is <4.40 pg/ml" },
+]
+
+[[range]]
+set = "chinese-pregnancy-il6-2020"
+kind = "reference"
+high = 4.40
+when = { pregnancy = true, trimester = 3 }
+population = "Healthy Chinese pregnant women (120 per trimester) and non-pregnant controls, CLSI C28-A3 method"
+evidence = "reference-interval-study"
+note = "Upper reference limit (<4.40 pg/mL) for third-trimester pregnancy. Electrochemiluminescence immunoassay; limit is method-specific."
+citations = [
+  { pmid = "31866334", doi = "10.1016/j.cca.2019.12.013", title = "Changes of serum interleukin-6 in healthy pregnant women and establishment of relevant reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/31866334/", locator = "Abstract, Results", quote = "the RIs for serum IL-6 levels in healthy pregnant women who are in the second and third trimester is <4.40 pg/ml" },
+]
+
+[[range]]
+set = "sepsis-il6-cohort-2019"
+kind = "warn"
+low = 348.92
+when = { setting = "sepsis" }
+population = "Adults with sepsis and septic shock (Sepsis-3), prospective controlled study"
+evidence = "cohort-study"
+note = "Single-study Youden cut-off for 28-day mortality: IL-6 at or above 348.92 pg/mL (boundary >=). Not externally validated; cut-offs in other sepsis cohorts differ (see the 135.14 pg/mL range)."
+citations = [
+  { pmid = "31718563", doi = "10.1186/s12879-019-4618-7", title = "Diagnostic and prognostic value of interleukin-6, pentraxin 3, and procalcitonin levels among sepsis and septic shock patients: a prospective controlled study according to the Sepsis-3 definitions.", url = "https://pubmed.ncbi.nlm.nih.gov/31718563/", locator = "Abstract, Results", quote = "Twenty-eight-day mortality was significantly higher in the group with high IL-6 (≥ 348.92 pg/mL)" },
+]
+
+[[range]]
+set = "sepsis-il6-prognosis-2026"
+kind = "warn"
+low = 135.14
+when = { setting = "sepsis" }
+population = "Adults with sepsis in a prospective cohort (baseline IL-6 for mortality risk stratification)"
+evidence = "cohort-study"
+note = "Youden-derived cut-off (sensitivity 87.65%, specificity 92.86%) for mortality risk stratification in one cohort (boundary >135.14 pg/mL). Not externally validated; differs from the 348.92 pg/mL cut-off in another sepsis cohort."
+citations = [
+  { pmid = "42193317", doi = "10.3390/biomedicines14050990", title = "Baseline Interleukin-6 in Sepsis: Mortality Risk Stratification and Survival Analysis in a Prospective Cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/42193317/", locator = "Abstract, Results", quote = "The optimal cut-off value (>135.14 pg/mL) yielded a sensitivity of 87.65% and specificity of 92.86% (Youden index = 0.805)." },
+]

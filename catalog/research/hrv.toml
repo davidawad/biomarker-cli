@@ -1,0 +1,69 @@
+slug = "hrv"
+name = "Heart Rate Variability (RMSSD)"
+loinc = "80404-7"
+category = "vitals"
+unit = "ms"
+description = "Beat-to-beat variation in heart rate reflecting cardiac autonomic (vagal) activity. Lower short-term and 24-hour SDNN values are associated with higher mortality after myocardial infarction."
+
+[[range]]
+set = "kleiger-1987-sdnn-post-mi"
+kind = "decision"
+high = 50
+when = { method = "sdnn-24h", setting = "post-acute-mi" }
+population = "Survivors of acute myocardial infarction (808 patients), 24-hour Holter recordings made 11 +/- 3 days after AMI"
+evidence = "cohort-study"
+note = "24-hour SDNN below 50 ms is a high-mortality-risk band (risk cut-off from the cohort, not a guideline). Boundary as published: 'less than 50 ms'."
+citations = [
+  { pmid = "3812275", doi = "10.1016/0002-9149(87)90795-8", title = "Decreased heart rate variability and its association with increased mortality after acute myocardial infarction.", url = "https://pubmed.ncbi.nlm.nih.gov/3812275/", locator = "Abstract, Results", quote = "The relative risk of mortality was 5.3 times higher in the group with HR variability of less than 50 ms than the group with HR variability of more than 100 ms" },
+]
+
+[[range]]
+set = "kleiger-1987-sdnn-post-mi"
+kind = "decision"
+low = 100
+when = { method = "sdnn-24h", setting = "post-acute-mi" }
+population = "Survivors of acute myocardial infarction (808 patients), 24-hour Holter recordings made 11 +/- 3 days after AMI"
+evidence = "cohort-study"
+note = "24-hour SDNN above 100 ms was the low-risk comparator group in this cohort (the reference against which the 5.3-fold mortality risk was computed). It is an observed comparator, not a validated health target."
+citations = [
+  { pmid = "3812275", doi = "10.1016/0002-9149(87)90795-8", title = "Decreased heart rate variability and its association with increased mortality after acute myocardial infarction.", url = "https://pubmed.ncbi.nlm.nih.gov/3812275/", locator = "Abstract, Results", quote = "The relative risk of mortality was 5.3 times higher in the group with HR variability of less than 50 ms than the group with HR variability of more than 100 ms" },
+]
+
+[[range]]
+set = "nunan-2010-short-term-norms"
+kind = "reference"
+low = 19
+high = 75
+when = { method = "rmssd-short-term" }
+population = "Healthy adults in 15 short-term (about 5 min) HRV studies pooled by Nunan et al. (reviewed in Shaffer 2017, Table 6); mostly adult samples, not age- or sex-specific"
+evidence = "meta-analysis"
+note = "Indicative spread only: 19-75 ms is the range of study-level mean RMSSD across the pooled studies (pooled mean 42 ms, SD 15), not an individual reference interval or a diagnostic cut-off. Ultra-short recordings and free vs paced breathing change values."
+citations = [
+  { pmid = "29034226", doi = "10.3389/fpubh.2017.00258", title = "An Overview of Heart Rate Variability Metrics and Norms.", url = "https://pubmed.ncbi.nlm.nih.gov/29034226/", locator = "Table 6 (Nunan et al. short-term norms)", quote = "RMSSD (ms) 42 (15) 19–75 15" },
+]
+
+[[range]]
+set = "nunan-2010-short-term-norms"
+kind = "reference"
+low = 32
+high = 93
+when = { method = "sdnn-short-term" }
+population = "Healthy adults in 27 short-term (about 5 min) HRV studies pooled by Nunan et al. (reviewed in Shaffer 2017, Table 6); mostly adult samples, not age- or sex-specific"
+evidence = "meta-analysis"
+note = "Indicative spread only: 32-93 ms is the range of study-level mean SDNN across the pooled studies (pooled mean 50 ms, SD 16), not an individual reference interval or a diagnostic cut-off."
+citations = [
+  { pmid = "29034226", doi = "10.3389/fpubh.2017.00258", title = "An Overview of Heart Rate Variability Metrics and Norms.", url = "https://pubmed.ncbi.nlm.nih.gov/29034226/", locator = "Table 6 (Nunan et al. short-term norms)", quote = "SDNN (ms) 50 (16) 32–93 27" },
+]
+
+[[range]]
+set = "shaffer-2017-sdnn-24h"
+kind = "warn"
+low = 50
+high = 100
+when = { method = "sdnn-24h" }
+population = "Adults with 24-hour ambulatory ECG monitoring, as classified in the review by Shaffer 2017 (the review attributes these thresholds to the post-MI cohort work it cites)"
+evidence = "meta-analysis"
+note = "Compromised-health band: 24-hour SDNN from 50 to 100 ms (boundaries as stated in the review, below 50 ms unhealthy and above 100 ms healthy). The sub-50 ms boundary is also covered by the cohort cut-off above."
+citations = [
+  { pmid = "29034226", doi = "10.3389/fpubh.2017.00258", title = "An Overview of Heart Rate Variability Metrics and Norms.", url = "https://pubmed.ncbi.nlm.nih.gov/29034226/", locator = "Section 'Twenty-Four Hour Measurement Norms' / SDNN description", quote = "Based on 24 h monitoring, patients with SDNN values below 50 ms are classified as unhealthy, 50–100 ms have compromised health, and above 100 ms are healthy" },
+]

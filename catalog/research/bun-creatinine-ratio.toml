@@ -1,0 +1,17 @@
+slug = "bun-creatinine-ratio"
+name = "BUN to Creatinine Ratio"
+category = "derived"
+unit = "ratio"
+description = "The blood urea nitrogen (BUN) divided by serum creatinine. A high ratio is used to suggest pre-renal azotaemia (reduced kidney perfusion, such as dehydration or low blood pressure) rather than intrinsic kidney disease."
+aliases = ["BUN:Cr ratio", "BUN/creatinine ratio", "BCR", "urea to creatinine ratio", "UCR"]
+
+[[range]]
+set = "bcr-prerenal-threshold"
+kind = "decision"
+low = 20
+population = "Adults with acute kidney injury (hospitalised patients, as discussed in a critical-care nephrology commentary)"
+evidence = "consensus"
+note = "Traditional pre-renal azotaemia threshold: BUN:creatinine ratio above 20 (boundary > 20). The source describes it as the traditional threshold and notes that about half of AKI patients in its cohort exceeded it, so a high ratio does not reliably separate pre-renal from tubular causes. A 10 to 20 reference interval was not retrievable and is not included."
+citations = [
+  { pmid = "29497527", doi = "10.1093/ckj/sfs013", title = "The meaning of the blood urea nitrogen/creatinine ratio in acute kidney injury.", url = "https://pubmed.ncbi.nlm.nih.gov/29497527/", locator = "Full text, Introduction", quote = "A blood urea nitrogen (BUN)/creatinine ratio (BCR) >20 (0.081 in international unit) is used to distinguish pre-renal azotemia (PRA)" },
+]

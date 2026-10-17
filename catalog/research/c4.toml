@@ -1,0 +1,62 @@
+slug = "c4"
+name = "Complement C4"
+loinc = "4498-2"
+category = "immune"
+unit = "g/L"
+description = "A complement component that is consumed in the classical pathway. Low levels support immune-complex disease such as lupus, and are used to screen for hereditary angioedema."
+aliases = ["Complement component 4"]
+
+[[range]]
+set = "chinese-han-males-2013"
+kind = "reference"
+low = 0.181
+high = 0.561
+when = { sex = "male", age_min = 20, age_max = 70 }
+population = "Healthy Chinese Han males aged 20-69 years from a community survey (n=1,234)"
+evidence = "reference-interval-study"
+note = "Central 95% interval (mean plus or minus 2 SD, parametric), immunoturbidimetry. Males only; C4 also rises with BMI and with age in this study, and BMI-specific intervals are reported."
+citations = [
+  { pmid = "24839820", doi = "10.7754/clin.lab.2013.130514", title = "Determination of reference intervals for serum complement C3 and C4 levels in Chinese Han ethnic males.", url = "https://pubmed.ncbi.nlm.nih.gov/24839820/", locator = "Abstract, Methods", quote = "A total of 1,234 healthy male subjects, aged 20 - 69 years, were collected from the Fangchenggang Area Male Health and Examination Survey (FAMHES)." },
+  { pmid = "24839820", doi = "10.7754/clin.lab.2013.130514", title = "Determination of reference intervals for serum complement C3 and C4 levels in Chinese Han ethnic males.", url = "https://pubmed.ncbi.nlm.nih.gov/24839820/", locator = "Abstract, Results", quote = "The two-sided 95% RIs (mean +/- 2 SD) for serum C3 and C4 were 0.656 - 1.52 g/L and 0.181 - 0.561 g/L, respectively." },
+]
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.14
+high = 0.72
+unit = "g/L"
+population = "Adults (women and men) from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+note = "Multicentre adult reference interval for complement C4 (sexes combined). Assay-specific; check against the local assay's own interval."
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", locator = "Abstract, Results and conclusions", quote = "complement C4, 0.14-0.72 g/L for women and men" },
+]
+
+[[range]]
+set = "zimbabwe-adults-2003-c3c4"
+kind = "reference"
+low = 12
+high = 49
+unit = "mg/dL"
+when = { age_min = 18, age_max = 41 }
+population = "Apparently healthy adult blood donors aged 18-60 years in Zimbabwe (n=95, 50 males and 45 females)"
+evidence = "reference-interval-study"
+note = "Local adult C4 interval for ages 18-40 (12-49 mg/dL), not partitioned by sex. Small single-country sample."
+citations = [
+  { pmid = "14562600", title = "Determination of normal ranges for serum C3 and C4 levels in an adult Zimbabwean population.", url = "https://pubmed.ncbi.nlm.nih.gov/14562600/", locator = "Abstract, Results", quote = "C4 levels were lower (12 to 49 mg/dl) in the younger adults (18 to 40 years) than in those aged 41 to 60 years (24 to 53 mg/dl)." },
+]
+
+[[range]]
+set = "zimbabwe-adults-2003-c3c4"
+kind = "reference"
+low = 24
+high = 53
+unit = "mg/dL"
+when = { age_min = 41, age_max = 61 }
+population = "Apparently healthy adult blood donors aged 18-60 years in Zimbabwe (n=95, 50 males and 45 females)"
+evidence = "reference-interval-study"
+note = "Local adult C4 interval for ages 41-60 (24-53 mg/dL), not partitioned by sex. Small single-country sample."
+citations = [
+  { pmid = "14562600", title = "Determination of normal ranges for serum C3 and C4 levels in an adult Zimbabwean population.", url = "https://pubmed.ncbi.nlm.nih.gov/14562600/", locator = "Abstract, Results", quote = "C4 levels were lower (12 to 49 mg/dl) in the younger adults (18 to 40 years) than in those aged 41 to 60 years (24 to 53 mg/dl)." },
+]

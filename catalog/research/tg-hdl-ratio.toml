@@ -1,0 +1,40 @@
+slug = "tg-hdl-ratio"
+name = "Triglyceride to HDL-C Ratio"
+category = "derived"
+unit = "ratio"
+description = "Fasting triglycerides divided by HDL cholesterol, both in mg/dL, used as a simple surrogate marker of insulin resistance. Cut-offs vary between studies and ethnic groups, and this ratio is not valid when the units are mixed."
+aliases = ["TG/HDL ratio", "TG:HDL", "triglyceride/HDL-C"]
+
+[[range]]
+set = "tg-hdl-review-2024"
+kind = "decision"
+low = 3.5
+population = "Overweight and obese adults, as cited in a 2024 review of the TG/HDL ratio"
+evidence = "cohort-study"
+note = "Insulin resistance cut-off of 3.5 (mg/dL units) as reported in the cited 2024 review. The review's sentence does not name the study year explicitly, so check the original McLaughlin paper before relying on the attribution."
+citations = [
+  { pmid = "39062066", doi = "10.3390/biomedicines12071493", title = "The Triglyceride/HDL Ratio as a Surrogate Biomarker for Insulin Resistance.", url = "https://pubmed.ncbi.nlm.nih.gov/39062066/", locator = "Introduction", quote = "the cutoff utilized this time was 3.5, which has been described as indicative of IR" },
+]
+
+[[range]]
+set = "tg-hdl-review-2024"
+kind = "decision"
+low = 2.0
+population = "Non-Hispanic Black adults (ethnicity-specific cut-off)"
+evidence = "cohort-study"
+note = "Ethnicity-specific cut-off for non-Hispanic Black adults (2.0). Non-Hispanic White and Mexican American adults used 3.0 in the same comparison, as reported in the cited review."
+when = { ethnicity = "black" }
+citations = [
+  { pmid = "39062066", doi = "10.3390/biomedicines12071493", title = "The Triglyceride/HDL Ratio as a Surrogate Biomarker for Insulin Resistance.", url = "https://pubmed.ncbi.nlm.nih.gov/39062066/", locator = "Introduction", quote = "race/ethnicity-specific cutoff points of 3.0 for non-Hispanic whites and Mexican Americans and 2.0 for non-Hispanic blacks" },
+]
+
+[[range]]
+set = "iraqi-adults-2023"
+kind = "decision"
+low = 3.1
+population = "Healthy Iraqi adults (single study, ROC best cut-off against insulin resistance)"
+evidence = "cohort-study"
+note = "Study-derived best cut-off (Youden index) in one sample, not a guideline threshold. Sensitivity 83% and specificity 81%."
+citations = [
+  { pmid = "37520476", doi = "10.25122/jml-2022-0239", title = "Triglyceride/high-density lipoprotein ratio as a predictor for insulin resistance in a sample of healthy Iraqi adults.", url = "https://pubmed.ncbi.nlm.nih.gov/37520476/", locator = "Abstract, Results", quote = "The sensitivity and specificity of the test were 83% and 81%, respectively, at a best cut-off value of 3.1 (TG/HDL ratio)." },
+]

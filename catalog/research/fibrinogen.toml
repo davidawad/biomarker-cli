@@ -1,0 +1,74 @@
+slug = "fibrinogen"
+name = "Fibrinogen"
+loinc = "3255-7"
+category = "inflammation"
+unit = "mg/dL"
+description = "Clotting protein made by the liver that is also an acute-phase reactant. Higher levels are associated with inflammation and with cardiovascular and thrombotic risk."
+aliases = ["FIB", "Factor I", "Clauss fibrinogen"]
+
+[[range]]
+set = "chinese-pregnancy-coag-2026"
+kind = "reference"
+low = 2.58
+high = 5.04
+unit = "g/L"
+when = { pregnancy = true, trimester = 1 }
+population = "Healthy pregnant women, first trimester (non-parametric P2.5-P97.5, CLSI C28-A3)"
+evidence = "reference-interval-study"
+note = "Trimester-specific reference interval (2.58-5.04 g/L = 258-504 mg/dL). Fibrinogen rises through pregnancy. Assay not named in the abstract."
+citations = [
+  { pmid = "42316067", doi = "10.1186/s12884-026-09504-4", title = "Establishment of biological reference intervals for coagulation indicators in pregnancy using a non-parametric approach.", url = "https://pubmed.ncbi.nlm.nih.gov/42316067/", locator = "Abstract, Results", quote = "The established reference intervals for the first trimester were: APTT 25.20-36.48 s, PT 11.10-13.00 s, TT 15.00-17.70 s, FIB 2.58-5.04 g/L" },
+]
+
+[[range]]
+set = "chinese-pregnancy-coag-2026"
+kind = "reference"
+low = 2.95
+high = 5.27
+unit = "g/L"
+when = { pregnancy = true, trimester = 2 }
+population = "Healthy pregnant women, second trimester (non-parametric P2.5-P97.5, CLSI C28-A3)"
+evidence = "reference-interval-study"
+note = "Trimester-specific reference interval (2.95-5.27 g/L = 295-527 mg/dL). Assay not named in the abstract."
+citations = [
+  { pmid = "42316067", doi = "10.1186/s12884-026-09504-4", title = "Establishment of biological reference intervals for coagulation indicators in pregnancy using a non-parametric approach.", url = "https://pubmed.ncbi.nlm.nih.gov/42316067/", locator = "Abstract, Results", quote = "For the second trimester: APTT 24.40-34.56 s, PT 10.90-12.60 s, TT 14.70-17.20 s, FIB 2.95-5.27 g/L" },
+]
+
+[[range]]
+set = "chinese-pregnancy-coag-2026"
+kind = "reference"
+low = 3.39
+high = 5.90
+unit = "g/L"
+when = { pregnancy = true, trimester = 3 }
+population = "Healthy pregnant women, third trimester (non-parametric P2.5-P97.5, CLSI C28-A3)"
+evidence = "reference-interval-study"
+note = "Trimester-specific reference interval (3.39-5.90 g/L = 339-590 mg/dL). Assay not named in the abstract."
+citations = [
+  { pmid = "42316067", doi = "10.1186/s12884-026-09504-4", title = "Establishment of biological reference intervals for coagulation indicators in pregnancy using a non-parametric approach.", url = "https://pubmed.ncbi.nlm.nih.gov/42316067/", locator = "Abstract, Results", quote = "For the third trimester: APTT 24.70-33.40 s, PT 10.60-12.40 s, TT 14.60-16.80 s, FIB 3.39-5.90 g/L" },
+]
+
+[[range]]
+set = "tibet-high-altitude-2026"
+kind = "reference"
+low = 2.05
+high = 4.68
+unit = "g/L"
+population = "Adults in a Tibetan high-altitude population (People's Hospital of Tibet Autonomous Region, 3650 m), 2019-2023 electronic health records; total interval, Hoffmann method, sexes combined"
+evidence = "reference-interval-study"
+note = "Total fibrinogen reference interval (2.05-4.68 g/L = 205-468 mg/dL) by the Hoffmann method; the refineR method gave 2.02-4.40 g/L. Females had higher fibrinogen than males in this cohort. Reflects high-altitude residence; not validated for sea-level populations."
+citations = [
+  { pmid = "42329361", doi = "10.1002/jcla.70287", title = "Reference Interval Establishment for Four Coagulation Parameters Using Indirect Methods in a High-Altitude Chinese Population: A Retrospective Real-World Analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/42329361/", locator = "Abstract, Results", quote = "FIB 2.05-4.68 and 2.02-4.40 g/L, respectively." },
+]
+
+[[range]]
+set = "fibrinogen-bleeding-review-2026"
+kind = "warn"
+high = 200
+unit = "mg/dL"
+population = "Patients with coagulopathic bleeding (cardiac surgery and haemorrhage), as summarised in a 2026 review; not a screening population"
+evidence = "textbook"
+note = "Fibrinogen below 200 mg/dL is described as putting patients at risk of more severe coagulopathic bleeding (boundary < 200 mg/dL). The review says this may vary by patient population; it is not a guideline cut-off."
+citations = [
+  { pmid = "42652560", doi = "10.3390/jcm15166156", title = "Fibrinogen Concentrate in Acute Hemorrhage: Mechanistic Insight, Thresholds, and Targeted Replacement.", url = "https://pubmed.ncbi.nlm.nih.gov/42652560/", locator = "Full text, Introduction (thresholds)", quote = "Patients are generally considered at risk for increased severity of coagulopathic bleeding when fibrinogen levels are below 200 mg/dL" },
+]
