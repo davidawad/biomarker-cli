@@ -1,0 +1,5176 @@
+# Biomarker universe: the master list of biomarkers the catalog should eventually cover.
+# One [[marker]] per biomarker. See catalog/UNIVERSE.md for sources, method and counts.
+#
+# slug       lowercase-kebab, stable (existing src/seed.rs slugs are kept unchanged)
+# loinc      verified against the NLM Clinical Tables LOINC API; "" with loinc_note when none fits
+# category   grouping used by lint coverage reports
+# priority   core (routinely ordered / high value) | common | specialist
+# derived    true when computed from other measurements (ratios, formulas, scores)
+
+# ---- metabolic ----
+
+[[marker]]
+slug = "uric-acid"
+name = "Uric Acid"
+loinc = "3084-1"
+category = "metabolic"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "lactate"
+name = "Lactate"
+loinc = "2524-7"
+category = "metabolic"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "metabolic-syndrome-score"
+name = "Metabolic Syndrome Score"
+loinc = ""
+loinc_note = "no LOINC code for a continuous metabolic syndrome score; 49898-0 is only a presence flag"
+category = "metabolic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "osmolality"
+name = "Osmolality, Serum"
+loinc = "2692-2"
+category = "metabolic"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "adiponectin"
+name = "Adiponectin"
+loinc = "47828-9"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ammonia"
+name = "Ammonia"
+loinc = "16362-6"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "base-excess"
+name = "Base Excess, Arterial Blood"
+loinc = "1925-7"
+category = "metabolic"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "beta-hydroxybutyrate"
+name = "Beta-Hydroxybutyrate"
+loinc = "6873-4"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "leptin"
+name = "Leptin"
+loinc = "21365-2"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "pco2"
+name = "Partial Pressure of CO2, Arterial Blood"
+loinc = "2019-8"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "peth"
+name = "Phosphatidylethanol (PEth)"
+loinc = "74661-0"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ph"
+name = "pH, Arterial Blood"
+loinc = "2744-1"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "po2"
+name = "Partial Pressure of O2, Arterial Blood"
+loinc = "2703-7"
+category = "metabolic"
+priority = "specialist"
+derived = false
+
+# ---- glycemic ----
+
+[[marker]]
+slug = "glucose"
+name = "Glucose"
+loinc = "2345-7"
+category = "glycemic"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "hba1c"
+name = "Hemoglobin A1c"
+loinc = "4548-4"
+category = "glycemic"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "cgm-glucose-cv"
+name = "CGM Glucose Variability (Coefficient of Variation)"
+loinc = "104638-2"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-mean-glucose"
+name = "CGM Mean Glucose"
+loinc = "105273-7"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-time-in-range"
+name = "CGM Time in Range (70-180 mg/dL)"
+loinc = "97510-2"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "estimated-average-glucose"
+name = "Estimated Average Glucose (eAG)"
+loinc = "27353-2"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "gmi"
+name = "Glucose Management Indicator (GMI)"
+loinc = "97506-0"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "homa-ir"
+name = "HOMA-IR"
+loinc = "47214-2"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "insulin"
+name = "Insulin (fasting)"
+loinc = "20448-7"
+category = "glycemic"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "tyg-index"
+name = "Triglyceride-Glucose (TyG) Index"
+loinc = ""
+loinc_note = "no LOINC code for derived TyG index"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "1-5-anhydroglucitol"
+name = "1,5-Anhydroglucitol"
+loinc = "53835-5"
+category = "glycemic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "c-peptide"
+name = "C-Peptide"
+loinc = "1986-9"
+category = "glycemic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "fructosamine"
+name = "Fructosamine"
+loinc = "15069-8"
+category = "glycemic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "glycated-albumin"
+name = "Glycated Albumin"
+loinc = "13873-5"
+category = "glycemic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "homa-b"
+name = "HOMA-B"
+loinc = ""
+loinc_note = "no LOINC code for derived HOMA-B index"
+category = "glycemic"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "matsuda-index"
+name = "Matsuda Insulin Sensitivity Index"
+loinc = ""
+loinc_note = "no LOINC code for the Matsuda formula; generic 'Insulin sensitivity index' 93792-0 does not specify the formula so not used"
+category = "glycemic"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "mets-ir"
+name = "METS-IR (Metabolic Score for Insulin Resistance)"
+loinc = ""
+loinc_note = "no LOINC code; computed from BMI, fasting glucose, triglycerides and HDL-C"
+category = "glycemic"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "ogtt-2h-glucose"
+name = "Glucose, 2 Hour Post Oral Glucose Load (OGTT)"
+loinc = "20436-2"
+category = "glycemic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "proinsulin"
+name = "Proinsulin"
+loinc = "27882-0"
+category = "glycemic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "quicki"
+name = "QUICKI"
+loinc = ""
+loinc_note = "no LOINC code for derived QUICKI index"
+category = "glycemic"
+priority = "specialist"
+derived = true
+
+# ---- lipid ----
+
+[[marker]]
+slug = "apob"
+name = "Apolipoprotein B"
+loinc = "1884-6"
+category = "lipid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "hdl-c"
+name = "HDL Cholesterol"
+loinc = "2085-9"
+category = "lipid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "ldl-c"
+name = "LDL Cholesterol (calculated)"
+loinc = "13457-7"
+category = "lipid"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "lpa"
+name = "Lipoprotein(a)"
+loinc = "43583-4"
+category = "lipid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "non-hdl-c"
+name = "Non-HDL Cholesterol"
+loinc = "43396-1"
+category = "lipid"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "total-cholesterol"
+name = "Total Cholesterol"
+loinc = "2093-3"
+category = "lipid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "triglycerides"
+name = "Triglycerides"
+loinc = "2571-8"
+category = "lipid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "apoa1"
+name = "Apolipoprotein A-I"
+loinc = "1869-7"
+category = "lipid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "apob-apoa1-ratio"
+name = "ApoB/ApoA1 Ratio"
+loinc = "1874-7"
+category = "lipid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "ldl-c-direct"
+name = "LDL Cholesterol (direct)"
+loinc = "18262-6"
+category = "lipid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ldl-c-martin-hopkins"
+name = "LDL Cholesterol, Martin-Hopkins Calculated"
+loinc = "96259-7"
+category = "lipid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "ldl-c-sampson"
+name = "LDL Cholesterol, Sampson/NIH Equation Calculated"
+loinc = ""
+loinc_note = "no method-specific LOINC for the Sampson/NIH equation; generic calculated LDL 13457-7 is already owned by ldl-c"
+category = "lipid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "remnant-cholesterol"
+name = "Remnant Cholesterol"
+loinc = ""
+loinc_note = "No LOINC code for derived remnant cholesterol (non-HDL-C minus LDL-C)"
+category = "lipid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "tc-hdl-ratio"
+name = "Total Cholesterol/HDL Ratio"
+loinc = ""
+loinc_note = "No LOINC code for this derived ratio"
+category = "lipid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "tg-hdl-ratio"
+name = "Triglycerides/HDL Ratio"
+loinc = ""
+loinc_note = "No LOINC code for this derived ratio"
+category = "lipid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "vldl-c"
+name = "VLDL Cholesterol"
+loinc = "2091-7"
+category = "lipid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "apoc3"
+name = "Apolipoprotein C-III"
+loinc = "1877-0"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "atherogenic-index-plasma"
+name = "Atherogenic Index of Plasma"
+loinc = ""
+loinc_note = "No LOINC code for derived index (log10 of TG/HDL-C)"
+category = "lipid"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "hdl-large-p"
+name = "Large HDL Particle Number"
+loinc = "43729-3"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hdl-p"
+name = "HDL Particle Number"
+loinc = "49748-7"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ldl-hdl-ratio"
+name = "LDL/HDL Ratio"
+loinc = ""
+loinc_note = "No LOINC code for this derived ratio"
+category = "lipid"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "ldl-p"
+name = "LDL Particle Number"
+loinc = "14815-5"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ldl-size"
+name = "LDL Particle Size"
+loinc = ""
+loinc_note = "No LOINC code for LDL mean particle diameter"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ldl-small-p"
+name = "Small LDL Particle Number"
+loinc = "43727-7"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lp-pla2"
+name = "Lp-PLA2 Activity"
+loinc = "86951-1"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lpa-mass"
+name = "Lipoprotein(a) Mass"
+loinc = "10835-7"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "oxldl"
+name = "Oxidized LDL"
+loinc = "54238-1"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "sdldl-c"
+name = "Small Dense LDL Cholesterol"
+loinc = "90364-1"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "vldl-size"
+name = "VLDL Particle Size"
+loinc = ""
+loinc_note = "No LOINC code for VLDL mean particle diameter"
+category = "lipid"
+priority = "specialist"
+derived = false
+
+# ---- liver ----
+
+[[marker]]
+slug = "alp"
+name = "Alkaline Phosphatase"
+loinc = "6768-6"
+category = "liver"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "alt"
+name = "ALT (SGPT)"
+loinc = "1742-6"
+category = "liver"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "ast"
+name = "AST (SGOT)"
+loinc = "1920-8"
+category = "liver"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "bilirubin-total"
+name = "Bilirubin, Total"
+loinc = "1975-2"
+category = "liver"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "ggt"
+name = "Gamma-Glutamyl Transferase"
+loinc = "2324-2"
+category = "liver"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "apri"
+name = "APRI (AST to Platelet Ratio Index)"
+loinc = ""
+loinc_note = "no LOINC code for APRI score (calculated from AST, platelets and ULN)"
+category = "liver"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "ast-alt-ratio"
+name = "AST/ALT Ratio (De Ritis)"
+loinc = "1916-6"
+category = "liver"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "bilirubin-direct"
+name = "Bilirubin, Direct"
+loinc = "1968-7"
+category = "liver"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "bilirubin-indirect"
+name = "Bilirubin, Indirect"
+loinc = "1971-1"
+category = "liver"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "fatty-liver-index"
+name = "Fatty Liver Index"
+loinc = ""
+loinc_note = "no LOINC code for fatty liver index (calculated from BMI, waist, triglycerides, GGT)"
+category = "liver"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "fib4"
+name = "FIB-4 Index"
+loinc = "98491-4"
+category = "liver"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "fibroscan-cap"
+name = "Controlled Attenuation Parameter (FibroScan CAP)"
+loinc = "81894-8"
+category = "liver"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "fibroscan-liver-stiffness"
+name = "Liver Stiffness (FibroScan Transient Elastography)"
+loinc = "77615-3"
+category = "liver"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "5-nucleotidase"
+name = "5'-Nucleotidase"
+loinc = "1690-7"
+category = "liver"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "alpha-1-antitrypsin"
+name = "Alpha-1 Antitrypsin"
+loinc = "1825-9"
+category = "liver"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "bile-acids"
+name = "Bile Acids, Total (Serum)"
+loinc = "1967-9"
+category = "liver"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ceruloplasmin"
+name = "Ceruloplasmin"
+loinc = "2064-4"
+category = "liver"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "meld"
+name = "MELD Score (Model for End-Stage Liver Disease)"
+loinc = "44760-7"
+category = "liver"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "meld-na"
+name = "MELD-Na Score"
+loinc = "100348-2"
+category = "liver"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "nafld-fibrosis-score"
+name = "NAFLD Fibrosis Score"
+loinc = ""
+loinc_note = "no LOINC code for NAFLD fibrosis score (calculated from age, BMI, glucose, platelets, albumin, AST/ALT)"
+category = "liver"
+priority = "specialist"
+derived = true
+
+# ---- pancreas ----
+
+[[marker]]
+slug = "amylase"
+name = "Amylase"
+loinc = "1798-8"
+category = "pancreas"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "fecal-elastase"
+name = "Fecal Elastase-1 (Pancreatic)"
+loinc = "25907-7"
+category = "pancreas"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lipase"
+name = "Lipase"
+loinc = "3040-3"
+category = "pancreas"
+priority = "specialist"
+derived = false
+
+# ---- kidney ----
+
+[[marker]]
+slug = "bun"
+name = "Blood Urea Nitrogen"
+loinc = "3094-0"
+category = "kidney"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "creatinine"
+name = "Creatinine"
+loinc = "2160-0"
+category = "kidney"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "egfr"
+name = "eGFR (Creatinine, CKD-EPI 2021)"
+loinc = "98979-8"
+category = "kidney"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "uacr"
+name = "Urine Albumin/Creatinine Ratio"
+loinc = "9318-7"
+category = "kidney"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "bun-creatinine-ratio"
+name = "BUN/Creatinine Ratio"
+loinc = "3097-3"
+category = "kidney"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cystatin-c"
+name = "Cystatin C"
+loinc = "33863-2"
+category = "kidney"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "egfr-creatinine-cystatin"
+name = "eGFR (Creatinine + Cystatin C, CKD-EPI 2021)"
+loinc = "98980-6"
+category = "kidney"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "upcr"
+name = "Urine Protein/Creatinine Ratio"
+loinc = "2890-2"
+category = "kidney"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "urine-albumin"
+name = "Urine Albumin"
+loinc = "1754-1"
+category = "kidney"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "beta-2-microglobulin"
+name = "Beta-2 Microglobulin, Serum"
+loinc = "1952-1"
+category = "kidney"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "creatinine-clearance"
+name = "Creatinine Clearance"
+loinc = "2164-2"
+category = "kidney"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "egfr-cystatin-c"
+name = "eGFR (Cystatin C)"
+loinc = "50210-4"
+category = "kidney"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "kfre"
+name = "Kidney Failure Risk Equation (KFRE)"
+loinc = "85626-0"
+category = "kidney"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "urine-creatinine"
+name = "Urine Creatinine"
+loinc = "2161-8"
+category = "kidney"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-protein-24h"
+name = "Urine Protein, 24 Hour"
+loinc = "2889-4"
+category = "kidney"
+priority = "specialist"
+derived = false
+
+# ---- electrolyte ----
+
+[[marker]]
+slug = "anion-gap"
+name = "Anion Gap"
+loinc = "33037-3"
+category = "electrolyte"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "chloride"
+name = "Chloride"
+loinc = "2075-0"
+category = "electrolyte"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "co2"
+name = "Carbon Dioxide (Bicarbonate)"
+loinc = "2028-9"
+category = "electrolyte"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "corrected-calcium"
+name = "Albumin-Corrected Calcium"
+loinc = "46099-8"
+category = "electrolyte"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "potassium"
+name = "Potassium"
+loinc = "2823-3"
+category = "electrolyte"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "sodium"
+name = "Sodium"
+loinc = "2951-2"
+category = "electrolyte"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "calculated-osmolality"
+name = "Calculated Serum Osmolality"
+loinc = "18182-6"
+category = "electrolyte"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "osmolal-gap"
+name = "Osmolal Gap"
+loinc = "33264-3"
+category = "electrolyte"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "urine-potassium"
+name = "Urine Potassium"
+loinc = "2828-2"
+category = "electrolyte"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-sodium"
+name = "Urine Sodium"
+loinc = "2955-3"
+category = "electrolyte"
+priority = "specialist"
+derived = false
+
+# ---- mineral ----
+
+[[marker]]
+slug = "calcium"
+name = "Calcium, Total"
+loinc = "17861-6"
+category = "mineral"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "magnesium"
+name = "Magnesium"
+loinc = "19123-9"
+category = "mineral"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "phosphorus"
+name = "Phosphorus (Phosphate)"
+loinc = "2777-1"
+category = "mineral"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ionized-calcium"
+name = "Calcium, Ionized"
+loinc = "17863-2"
+category = "mineral"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "magnesium-rbc"
+name = "Magnesium, Red Blood Cells"
+loinc = "2597-3"
+category = "mineral"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-calcium"
+name = "Urine Calcium"
+loinc = "2004-0"
+category = "mineral"
+priority = "specialist"
+derived = false
+
+# ---- protein ----
+
+[[marker]]
+slug = "albumin"
+name = "Albumin"
+loinc = "1751-7"
+category = "protein"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "total-protein"
+name = "Total Protein"
+loinc = "2885-2"
+category = "protein"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "albumin-globulin-ratio"
+name = "Albumin/Globulin Ratio"
+loinc = "1759-0"
+category = "protein"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "globulin"
+name = "Globulin (calculated)"
+loinc = "10834-0"
+category = "protein"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "alpha-1-globulin"
+name = "Alpha-1 Globulin (SPEP)"
+loinc = "13978-2"
+category = "protein"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "alpha-2-globulin"
+name = "Alpha-2 Globulin (SPEP)"
+loinc = "13981-6"
+category = "protein"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "beta-globulin"
+name = "Beta Globulin (SPEP)"
+loinc = "13982-4"
+category = "protein"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "free-kappa"
+name = "Free Kappa Light Chains"
+loinc = "104544-2"
+category = "protein"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "free-lambda"
+name = "Free Lambda Light Chains"
+loinc = "33944-0"
+category = "protein"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "gamma-globulin"
+name = "Gamma Globulin (SPEP)"
+loinc = "13983-2"
+category = "protein"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "kappa-lambda-ratio"
+name = "Free Kappa/Lambda Light Chain Ratio"
+loinc = "104546-7"
+category = "protein"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "m-protein"
+name = "M-Protein (Serum Protein Electrophoresis)"
+loinc = "33358-3"
+category = "protein"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "prealbumin"
+name = "Prealbumin (Transthyretin)"
+loinc = "14338-8"
+category = "protein"
+priority = "specialist"
+derived = false
+
+# ---- hematology ----
+
+[[marker]]
+slug = "hematocrit"
+name = "Hematocrit"
+loinc = "4544-3"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "hemoglobin"
+name = "Hemoglobin"
+loinc = "718-7"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "lymphocytes-abs"
+name = "Lymphocytes (Absolute)"
+loinc = "731-0"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "mch"
+name = "Mean Corpuscular Hemoglobin"
+loinc = "785-6"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "mchc"
+name = "Mean Corpuscular Hemoglobin Concentration"
+loinc = "786-4"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "mcv"
+name = "Mean Corpuscular Volume"
+loinc = "787-2"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "neutrophils-abs"
+name = "Neutrophils (Absolute)"
+loinc = "751-8"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "platelets"
+name = "Platelets"
+loinc = "777-3"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "rbc"
+name = "Red Blood Cells"
+loinc = "789-8"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "rdw"
+name = "Red Cell Distribution Width (RDW-CV)"
+loinc = "788-0"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "wbc"
+name = "White Blood Cells"
+loinc = "6690-2"
+category = "hematology"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "basophils-abs"
+name = "Basophils (Absolute)"
+loinc = "704-7"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "basophils-pct"
+name = "Basophils (Percent)"
+loinc = "706-2"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "eosinophils-abs"
+name = "Eosinophils (Absolute)"
+loinc = "711-2"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "eosinophils-pct"
+name = "Eosinophils (Percent)"
+loinc = "713-8"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "lymphocytes-pct"
+name = "Lymphocytes (Percent)"
+loinc = "736-9"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "monocytes-abs"
+name = "Monocytes (Absolute)"
+loinc = "742-7"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "monocytes-pct"
+name = "Monocytes (Percent)"
+loinc = "5905-5"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "mpv"
+name = "Mean Platelet Volume"
+loinc = "32623-1"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "neutrophils-pct"
+name = "Neutrophils (Percent)"
+loinc = "770-8"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "nlr"
+name = "Neutrophil-to-Lymphocyte Ratio"
+loinc = ""
+loinc_note = "derived ratio; no LOINC code"
+category = "hematology"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "pdw"
+name = "Platelet Distribution Width"
+loinc = "32207-3"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "plateletcrit"
+name = "Plateletcrit"
+loinc = "51637-7"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "plr"
+name = "Platelet-to-Lymphocyte Ratio"
+loinc = ""
+loinc_note = "derived ratio; no LOINC code"
+category = "hematology"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "rdw-sd"
+name = "Red Cell Distribution Width, Standard Deviation (RDW-SD)"
+loinc = ""
+loinc_note = "LOINC 21000-5 is deprecated and no current replacement code was found"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "reticulocytes-abs"
+name = "Reticulocyte Count (Absolute)"
+loinc = "60474-4"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "reticulocytes-pct"
+name = "Reticulocyte Count (Percent)"
+loinc = "17849-1"
+category = "hematology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "sii"
+name = "Systemic Immune-Inflammation Index"
+loinc = ""
+loinc_note = "derived index; no LOINC code"
+category = "hematology"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "carboxyhemoglobin"
+name = "Carboxyhemoglobin"
+loinc = "20563-3"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "erythropoietin"
+name = "Erythropoietin"
+loinc = "15061-5"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "g6pd"
+name = "Glucose-6-Phosphate Dehydrogenase"
+loinc = "110934-7"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "haptoglobin"
+name = "Haptoglobin"
+loinc = "4542-7"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hba2"
+name = "Hemoglobin A2"
+loinc = "4551-8"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hbf"
+name = "Hemoglobin F"
+loinc = "4576-5"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hbs"
+name = "Hemoglobin S"
+loinc = "4625-0"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "immature-granulocytes-abs"
+name = "Immature Granulocytes (Absolute)"
+loinc = "51584-1"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "immature-granulocytes-pct"
+name = "Immature Granulocytes (Percent)"
+loinc = "71695-1"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "immature-platelet-fraction"
+name = "Immature Platelet Fraction"
+loinc = "71693-6"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "methemoglobin"
+name = "Methemoglobin"
+loinc = "2614-6"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "nucleated-rbc"
+name = "Nucleated Red Blood Cells"
+loinc = "58413-6"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "reticulocyte-hemoglobin"
+name = "Reticulocyte Hemoglobin (CHr / Ret-He)"
+loinc = "71694-4"
+category = "hematology"
+priority = "specialist"
+derived = false
+
+# ---- coagulation ----
+
+[[marker]]
+slug = "aptt"
+name = "Activated Partial Thromboplastin Time"
+loinc = "3173-2"
+category = "coagulation"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "d-dimer"
+name = "D-Dimer"
+loinc = "48065-7"
+category = "coagulation"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "inr"
+name = "International Normalized Ratio"
+loinc = "6301-6"
+category = "coagulation"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "pt"
+name = "Prothrombin Time"
+loinc = "5902-2"
+category = "coagulation"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "anti-xa"
+name = "Anti-Xa (Heparin Activity)"
+loinc = "42679-1"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "antithrombin"
+name = "Antithrombin"
+loinc = "3174-0"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "factor-viii"
+name = "Factor VIII Activity"
+loinc = "3209-4"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "fibrinogen"
+name = "Fibrinogen"
+loinc = "3255-7"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lupus-anticoagulant"
+name = "Lupus Anticoagulant"
+loinc = "3281-3"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "protein-c"
+name = "Protein C Activity"
+loinc = "27818-4"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "protein-s"
+name = "Protein S"
+loinc = "5893-3"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "thrombin-time"
+name = "Thrombin Time"
+loinc = "3243-3"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "von-willebrand-antigen"
+name = "von Willebrand Factor Antigen"
+loinc = "6012-9"
+category = "coagulation"
+priority = "specialist"
+derived = false
+
+# ---- iron ----
+
+[[marker]]
+slug = "ferritin"
+name = "Ferritin"
+loinc = "2276-4"
+category = "iron"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "iron"
+name = "Iron, Serum"
+loinc = "2498-4"
+category = "iron"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "tibc"
+name = "Total Iron Binding Capacity"
+loinc = "2500-7"
+category = "iron"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "transferrin-saturation"
+name = "Transferrin Saturation"
+loinc = "2502-3"
+category = "iron"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "transferrin"
+name = "Transferrin"
+loinc = "3034-6"
+category = "iron"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "uibc"
+name = "Unsaturated Iron Binding Capacity"
+loinc = "2501-5"
+category = "iron"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hepcidin"
+name = "Hepcidin-25"
+loinc = "71386-7"
+category = "iron"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "stfr"
+name = "Soluble Transferrin Receptor"
+loinc = "30248-9"
+category = "iron"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "stfr-logferritin-index"
+name = "sTfR/log Ferritin Index"
+loinc = "74807-9"
+category = "iron"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "zinc-protoporphyrin"
+name = "Zinc Protoporphyrin"
+loinc = "33007-6"
+category = "iron"
+priority = "specialist"
+derived = false
+
+# ---- vitamin ----
+
+[[marker]]
+slug = "folate"
+name = "Folate, Serum"
+loinc = "2284-8"
+category = "vitamin"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "vitamin-b12"
+name = "Vitamin B12"
+loinc = "2132-9"
+category = "vitamin"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "vitamin-d"
+name = "Vitamin D, 25-Hydroxy"
+loinc = "62292-8"
+category = "vitamin"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "beta-carotene"
+name = "Beta-Carotene"
+loinc = "2053-7"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "folate-rbc"
+name = "Folate, Red Blood Cell"
+loinc = "2283-0"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "holotranscobalamin"
+name = "Holotranscobalamin (Active B12)"
+loinc = "72160-5"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "methylmalonic-acid"
+name = "Methylmalonic Acid"
+loinc = "2629-4"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "pyridoxal-phosphate"
+name = "Vitamin B6 (Pyridoxal 5'-Phosphate)"
+loinc = "30552-4"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "retinol"
+name = "Vitamin A (Retinol)"
+loinc = "2923-1"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "vitamin-c"
+name = "Vitamin C (Ascorbate)"
+loinc = "1903-4"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "vitamin-e"
+name = "Vitamin E (Alpha-Tocopherol)"
+loinc = "1823-4"
+category = "vitamin"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "biotin"
+name = "Vitamin B7 (Biotin)"
+loinc = "1980-2"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "calcitriol"
+name = "1,25-Dihydroxy Vitamin D (Calcitriol)"
+loinc = "1649-3"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "coq10"
+name = "Coenzyme Q10"
+loinc = "110286-2"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "niacin"
+name = "Vitamin B3 (Niacin)"
+loinc = "34342-6"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "pantothenic-acid"
+name = "Vitamin B5 (Pantothenic Acid)"
+loinc = "2722-7"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "riboflavin"
+name = "Vitamin B2 (Riboflavin)"
+loinc = "2924-9"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "thiamine"
+name = "Vitamin B1 (Thiamine)"
+loinc = "2998-3"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "vitamin-k1"
+name = "Vitamin K1 (Phylloquinone)"
+loinc = "9622-2"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+# ---- trace-element ----
+
+[[marker]]
+slug = "copper"
+name = "Copper"
+loinc = "5631-7"
+category = "trace-element"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "selenium"
+name = "Selenium"
+loinc = "5724-0"
+category = "trace-element"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "zinc"
+name = "Zinc"
+loinc = "5763-8"
+category = "trace-element"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "chromium"
+name = "Chromium"
+loinc = "5622-6"
+category = "trace-element"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cobalt"
+name = "Cobalt, Blood"
+loinc = "5625-9"
+category = "trace-element"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "manganese"
+name = "Manganese, Whole Blood"
+loinc = "5681-2"
+category = "trace-element"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "molybdenum"
+name = "Molybdenum, Blood"
+loinc = "5696-0"
+category = "trace-element"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-iodine"
+name = "Iodine, Urine"
+loinc = "2495-0"
+category = "trace-element"
+priority = "specialist"
+derived = false
+
+# ---- toxic-metal ----
+
+[[marker]]
+slug = "lead"
+name = "Lead, Blood"
+loinc = "5671-3"
+category = "toxic-metal"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "aluminum"
+name = "Aluminum, Serum"
+loinc = "5574-9"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "arsenic-inorganic-urine"
+name = "Arsenic, Inorganic Urine"
+loinc = "12481-8"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "arsenic-urine"
+name = "Arsenic, Total Urine"
+loinc = "5586-3"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cadmium-blood"
+name = "Cadmium, Blood"
+loinc = "5609-3"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cadmium-urine"
+name = "Cadmium, Urine"
+loinc = "5611-9"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "mercury-blood"
+name = "Mercury, Blood"
+loinc = "5685-3"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "mercury-urine"
+name = "Mercury, Urine"
+loinc = "5689-5"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "nickel"
+name = "Nickel, Serum"
+loinc = "5702-6"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "thallium-urine"
+name = "Thallium, Urine"
+loinc = "5745-5"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "uranium-urine"
+name = "Uranium, Urine"
+loinc = "5752-1"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+# ---- thyroid ----
+
+[[marker]]
+slug = "free-t4"
+name = "Free T4"
+loinc = "3024-7"
+category = "thyroid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "tpo-ab"
+name = "Thyroid Peroxidase Antibodies"
+loinc = "8099-4"
+category = "thyroid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "tsh"
+name = "Thyroid Stimulating Hormone"
+loinc = "3016-3"
+category = "thyroid"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "free-t3"
+name = "Free T3"
+loinc = "3051-0"
+category = "thyroid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "t3-total"
+name = "Triiodothyronine (T3), Total"
+loinc = "3053-6"
+category = "thyroid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "t4-total"
+name = "Thyroxine (T4), Total"
+loinc = "3026-2"
+category = "thyroid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "calcitonin"
+name = "Calcitonin"
+loinc = "1992-7"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "free-thyroxine-index"
+name = "Free Thyroxine Index (FTI)"
+loinc = ""
+loinc_note = "derived from total T4 and T3 resin uptake; no LOINC code for calculated index"
+category = "thyroid"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "ft3-rt3-ratio"
+name = "Free T3 / Reverse T3 Ratio"
+loinc = ""
+loinc_note = "derived ratio of free T3 and reverse T3; no LOINC code for a calculated ratio"
+category = "thyroid"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "reverse-t3"
+name = "Reverse T3"
+loinc = "3052-8"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "t3-uptake"
+name = "T3 Resin Uptake (T3RU)"
+loinc = "3050-2"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "thyroglobulin"
+name = "Thyroglobulin"
+loinc = "3013-0"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "thyroglobulin-ab"
+name = "Thyroglobulin Antibodies"
+loinc = "8098-6"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "trab"
+name = "TSH Receptor Antibodies (TRAb)"
+loinc = "5385-0"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "tsi"
+name = "Thyroid Stimulating Immunoglobulin (TSI)"
+loinc = "30567-2"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+# ---- adrenal ----
+
+[[marker]]
+slug = "cortisol"
+name = "Cortisol (AM)"
+loinc = "2143-6"
+category = "adrenal"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "dhea-s"
+name = "DHEA-Sulfate"
+loinc = "2191-5"
+category = "adrenal"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "11-deoxycortisol"
+name = "11-Deoxycortisol"
+loinc = "1657-6"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "17-ohp"
+name = "17-Hydroxyprogesterone"
+loinc = "14569-8"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "acth"
+name = "Adrenocorticotropic Hormone (ACTH)"
+loinc = "2141-0"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "aldosterone"
+name = "Aldosterone"
+loinc = "1763-2"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "aldosterone-renin-ratio"
+name = "Aldosterone/Renin Ratio"
+loinc = ""
+loinc_note = "derived ratio of aldosterone and renin; no LOINC code for a calculated ratio"
+category = "adrenal"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "androstenedione"
+name = "Androstenedione"
+loinc = "14603-5"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cortisol-pm"
+name = "Cortisol (PM)"
+loinc = "48099-6"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "dhea"
+name = "DHEA"
+loinc = "2193-1"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "direct-renin"
+name = "Direct Renin"
+loinc = "35570-1"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "dopamine"
+name = "Dopamine (Plasma)"
+loinc = "2216-0"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "epinephrine"
+name = "Epinephrine (Plasma)"
+loinc = "2230-1"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "metanephrine-free"
+name = "Metanephrine, Free (Plasma)"
+loinc = "38494-1"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "norepinephrine"
+name = "Norepinephrine (Plasma)"
+loinc = "2666-6"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "normetanephrine"
+name = "Normetanephrine (Plasma)"
+loinc = "2669-0"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "plasma-renin-activity"
+name = "Plasma Renin Activity"
+loinc = "2915-7"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "pregnenolone"
+name = "Pregnenolone"
+loinc = "2837-3"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "salivary-cortisol"
+name = "Salivary Cortisol (morning or late-night)"
+loinc = "2142-8"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-free-cortisol"
+name = "Urinary Free Cortisol (24-hour)"
+loinc = "2147-7"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-metanephrines"
+name = "Metanephrines, Urine"
+loinc = "2608-8"
+category = "adrenal"
+priority = "specialist"
+derived = false
+
+# ---- sex-hormone ----
+
+[[marker]]
+slug = "estradiol"
+name = "Estradiol"
+loinc = "2243-4"
+category = "sex-hormone"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "testosterone-total"
+name = "Testosterone, Total"
+loinc = "2986-8"
+category = "sex-hormone"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "amh"
+name = "Anti-Mullerian Hormone"
+loinc = "38476-8"
+category = "sex-hormone"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "progesterone"
+name = "Progesterone"
+loinc = "2839-9"
+category = "sex-hormone"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "shbg"
+name = "Sex Hormone Binding Globulin"
+loinc = "13967-5"
+category = "sex-hormone"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "testosterone-free"
+name = "Testosterone, Free"
+loinc = "2991-8"
+category = "sex-hormone"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "dihydrotestosterone"
+name = "Dihydrotestosterone (DHT)"
+loinc = "1848-1"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "estriol"
+name = "Estriol"
+loinc = "2251-7"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "estrone"
+name = "Estrone"
+loinc = "2258-2"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "free-androgen-index"
+name = "Free Androgen Index"
+loinc = "24125-7"
+category = "sex-hormone"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "inhibin-b"
+name = "Inhibin B"
+loinc = "34319-4"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lh-fsh-ratio"
+name = "LH/FSH Ratio"
+loinc = "34434-1"
+category = "sex-hormone"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "semen-morphology"
+name = "Sperm Morphology"
+loinc = "9704-8"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "semen-progressive-motility"
+name = "Sperm Progressive Motility"
+loinc = "14194-5"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "semen-sperm-concentration"
+name = "Sperm Concentration"
+loinc = "9780-8"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "semen-total-motility"
+name = "Sperm Total Motility"
+loinc = "6800-7"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "semen-volume"
+name = "Semen Volume"
+loinc = "3160-9"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "testosterone-bioavailable"
+name = "Testosterone, Bioavailable"
+loinc = "2990-0"
+category = "sex-hormone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "testosterone-free-calculated"
+name = "Testosterone, Free (Calculated)"
+loinc = "103227-5"
+category = "sex-hormone"
+priority = "specialist"
+derived = true
+
+# ---- pituitary ----
+
+[[marker]]
+slug = "prolactin"
+name = "Prolactin"
+loinc = "2842-3"
+category = "pituitary"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "copeptin"
+name = "Copeptin (Vasopressin C-terminal, ADH surrogate)"
+loinc = "78987-5"
+category = "pituitary"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "fsh"
+name = "Follicle Stimulating Hormone"
+loinc = "15067-2"
+category = "pituitary"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lh"
+name = "Luteinizing Hormone"
+loinc = "10501-5"
+category = "pituitary"
+priority = "specialist"
+derived = false
+
+# ---- growth ----
+
+[[marker]]
+slug = "igf-1"
+name = "Insulin-like Growth Factor 1"
+loinc = "2484-4"
+category = "growth"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "gh"
+name = "Growth Hormone (Somatotropin)"
+loinc = "2963-7"
+category = "growth"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "igfbp-3"
+name = "IGF-Binding Protein 3"
+loinc = "2483-6"
+category = "growth"
+priority = "specialist"
+derived = false
+
+# ---- bone ----
+
+[[marker]]
+slug = "bmd-femoral-neck"
+name = "Bone Mineral Density, Femoral Neck (DXA)"
+loinc = "24701-5"
+category = "bone"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "bmd-lumbar-spine"
+name = "Bone Mineral Density, Lumbar Spine (DXA)"
+loinc = "24966-4"
+category = "bone"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "dxa-t-score"
+name = "DXA T-Score (Lumbar Spine)"
+loinc = "38267-1"
+category = "bone"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "frax-10y"
+name = "FRAX 10-Year Fracture Risk"
+loinc = ""
+loinc_note = "derived fracture-risk score; no LOINC code for calculated FRAX probability"
+category = "bone"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "pth-intact"
+name = "Parathyroid Hormone, Intact"
+loinc = "2731-8"
+category = "bone"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "bsap"
+name = "Bone-Specific Alkaline Phosphatase"
+loinc = "17838-4"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ctx"
+name = "C-Telopeptide of Type I Collagen (CTX, beta-CrossLaps)"
+loinc = "41171-0"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "dxa-z-score"
+name = "DXA Z-Score (Lumbar Spine)"
+loinc = "85394-5"
+category = "bone"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "fgf23"
+name = "Fibroblast Growth Factor 23 (Intact)"
+loinc = "54390-0"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ntx-urine"
+name = "N-Telopeptide of Type I Collagen, Urine (NTX)"
+loinc = "34271-7"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "osteocalcin"
+name = "Osteocalcin"
+loinc = "2697-1"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "p1np"
+name = "Procollagen Type I N-Propeptide (P1NP)"
+loinc = "47255-5"
+category = "bone"
+priority = "specialist"
+derived = false
+
+# ---- inflammation ----
+
+[[marker]]
+slug = "crp"
+name = "C-Reactive Protein (standard)"
+loinc = "1988-5"
+category = "inflammation"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "esr"
+name = "Erythrocyte Sedimentation Rate"
+loinc = "30341-2"
+category = "inflammation"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "hscrp"
+name = "hs-CRP"
+loinc = "30522-7"
+category = "inflammation"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "glyca"
+name = "GlycA"
+loinc = "82730-3"
+category = "inflammation"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "il-6"
+name = "Interleukin-6"
+loinc = "26881-3"
+category = "inflammation"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "il-1-beta"
+name = "Interleukin-1 beta"
+loinc = "13629-1"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "il-10"
+name = "Interleukin-10"
+loinc = "26848-2"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "il-8"
+name = "Interleukin-8"
+loinc = "33211-4"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "myeloperoxidase"
+name = "Myeloperoxidase (MPO, inflammatory marker)"
+loinc = "99407-9"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "procalcitonin"
+name = "Procalcitonin"
+loinc = "33959-8"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "serum-amyloid-a"
+name = "Serum Amyloid A"
+loinc = "48498-0"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "tnf-alpha"
+name = "Tumor Necrosis Factor-alpha"
+loinc = "3074-2"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+# ---- immune ----
+
+[[marker]]
+slug = "c3"
+name = "Complement C3"
+loinc = "4485-9"
+category = "immune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "c4"
+name = "Complement C4"
+loinc = "4498-2"
+category = "immune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "iga"
+name = "Immunoglobulin A"
+loinc = "2458-8"
+category = "immune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-total"
+name = "Immunoglobulin E, Total"
+loinc = "2462-0"
+category = "immune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "igg"
+name = "Immunoglobulin G"
+loinc = "2465-3"
+category = "immune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "igm"
+name = "Immunoglobulin M"
+loinc = "2472-9"
+category = "immune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "cd19-b-cells"
+name = "CD19 B Cells (Absolute)"
+loinc = "8116-6"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cd4-absolute"
+name = "CD4 T Cells (Absolute)"
+loinc = "24467-3"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cd4-cd8-ratio"
+name = "CD4/CD8 Ratio"
+loinc = "54218-3"
+category = "immune"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "cd8-absolute"
+name = "CD8 T Cells (Absolute)"
+loinc = "14135-8"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ch50"
+name = "Complement Total Hemolytic (CH50)"
+loinc = "4532-8"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "igg-subclass-1"
+name = "IgG Subclass 1"
+loinc = "2466-1"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "igg-subclass-2"
+name = "IgG Subclass 2"
+loinc = "2467-9"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "igg-subclass-3"
+name = "IgG Subclass 3"
+loinc = "2468-7"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "igg-subclass-4"
+name = "IgG Subclass 4"
+loinc = "2469-5"
+category = "immune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "nk-cells-cd16-56"
+name = "NK Cells (CD16+CD56+, Absolute)"
+loinc = "20402-4"
+category = "immune"
+priority = "specialist"
+derived = false
+
+# ---- autoimmune ----
+
+[[marker]]
+slug = "ana-screen"
+name = "Antinuclear Antibody (ANA) Screen"
+loinc = "8061-4"
+category = "autoimmune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "anti-ccp"
+name = "Anti-Cyclic Citrullinated Peptide Antibody"
+loinc = "53027-9"
+category = "autoimmune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "rheumatoid-factor"
+name = "Rheumatoid Factor"
+loinc = "11572-5"
+category = "autoimmune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "tissue-transglutaminase-iga"
+name = "Tissue Transglutaminase IgA (tTG-IgA)"
+loinc = "31017-7"
+category = "autoimmune"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "achr-antibody"
+name = "Acetylcholine Receptor Binding Antibody"
+loinc = "11560-0"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ana-titer"
+name = "Antinuclear Antibody (ANA) Titer"
+loinc = "29953-7"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anca-mpo"
+name = "ANCA, Anti-Myeloperoxidase (MPO) Antibody"
+loinc = "6969-0"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anca-pr3"
+name = "ANCA, Anti-Proteinase 3 (PR3) Antibody"
+loinc = "6968-2"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-centromere"
+name = "Anti-Centromere Antibody"
+loinc = "53981-7"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-dsdna"
+name = "Anti-double-stranded DNA Antibody"
+loinc = "32677-7"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-gbm"
+name = "Anti-Glomerular Basement Membrane Antibody"
+loinc = "59394-7"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-histone"
+name = "Anti-Histone Antibody"
+loinc = "18230-3"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-jo-1"
+name = "Anti-Jo-1 Antibody"
+loinc = "8076-2"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-mitochondrial"
+name = "Anti-Mitochondrial Antibody (AMA, M2)"
+loinc = "49781-8"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-parietal-cell"
+name = "Anti-Parietal Cell Antibody"
+loinc = "8087-9"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-rnp"
+name = "Anti-RNP Antibody"
+loinc = "29374-6"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-scl-70"
+name = "Anti-Scl-70 Antibody"
+loinc = "8092-9"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-smith"
+name = "Anti-Smith Antibody"
+loinc = "11090-8"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-smooth-muscle"
+name = "Anti-Smooth Muscle Antibody"
+loinc = "31629-9"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-ssa-ro"
+name = "Anti-SSA/Ro Antibody"
+loinc = "8093-7"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-ssb-la"
+name = "Anti-SSB/La Antibody"
+loinc = "8094-5"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anticardiolipin-igg"
+name = "Anticardiolipin IgG Antibody"
+loinc = "3181-5"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anticardiolipin-igm"
+name = "Anticardiolipin IgM Antibody"
+loinc = "3182-3"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "b2gp1-igg"
+name = "Beta-2 Glycoprotein I IgG Antibody"
+loinc = "16135-6"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "b2gp1-igm"
+name = "Beta-2 Glycoprotein I IgM Antibody"
+loinc = "16136-4"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cryoglobulins"
+name = "Cryoglobulins"
+loinc = "108026-6"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "deamidated-gliadin-igg"
+name = "Deamidated Gliadin IgG"
+loinc = "109391-3"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "endomysial-iga"
+name = "Endomysial IgA Antibodies"
+loinc = "110847-1"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "gad65-antibodies"
+name = "GAD65 Autoantibodies"
+loinc = "13926-1"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ia-2-antibodies"
+name = "IA-2 Autoantibodies (ICA512)"
+loinc = "31209-0"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "insulin-autoantibodies"
+name = "Insulin Autoantibodies"
+loinc = "8072-1"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "intrinsic-factor-antibody"
+name = "Intrinsic Factor Blocking Antibody"
+loinc = "31443-5"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "znt8-antibodies"
+name = "ZnT8 Autoantibodies"
+loinc = "76651-9"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+# ---- allergy ----
+
+[[marker]]
+slug = "ige-birch"
+name = "Specific IgE, Birch (White Birch)"
+loinc = "41874-9"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-cat-dander"
+name = "Specific IgE, Cat Dander"
+loinc = "6833-8"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-cow-milk"
+name = "Specific IgE, Cow Milk"
+loinc = "7258-7"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-dog-dander"
+name = "Specific IgE, Dog Dander"
+loinc = "6098-8"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-dust-mite-d-pteronyssinus"
+name = "Specific IgE, Dust Mite (D. pteronyssinus)"
+loinc = "6096-2"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-egg-white"
+name = "Specific IgE, Egg White"
+loinc = "6106-9"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-peanut"
+name = "Specific IgE, Peanut"
+loinc = "6206-7"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-ragweed"
+name = "Specific IgE, Ragweed (Common)"
+loinc = "6085-5"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ige-timothy-grass"
+name = "Specific IgE, Timothy Grass"
+loinc = "6265-3"
+category = "allergy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "eosinophil-cationic-protein"
+name = "Eosinophil Cationic Protein"
+loinc = "25638-8"
+category = "allergy"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "tryptase"
+name = "Tryptase"
+loinc = "21582-2"
+category = "allergy"
+priority = "specialist"
+derived = false
+
+# ---- cardiac ----
+
+[[marker]]
+slug = "ascvd-10y-risk"
+name = "ASCVD 10-Year Risk"
+loinc = ""
+loinc_note = "No LOINC code for calculated pooled cohort risk score"
+category = "cardiac"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "bnp"
+name = "B-type Natriuretic Peptide (BNP)"
+loinc = "30934-4"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "cac-score"
+name = "Coronary Artery Calcium Score"
+loinc = ""
+loinc_note = "only CT procedure codes exist (e.g. 79087-3), no result-level Agatston score code"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ck"
+name = "Creatine Kinase (CK)"
+loinc = "2157-6"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hs-troponin-i"
+name = "High-Sensitivity Troponin I"
+loinc = "89579-7"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hs-troponin-t"
+name = "High-Sensitivity Troponin T"
+loinc = "67151-1"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ldh"
+name = "Lactate Dehydrogenase (LDH)"
+loinc = "2532-0"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "nt-probnp"
+name = "NT-proBNP"
+loinc = "33762-6"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "prevent-risk"
+name = "PREVENT Cardiovascular Risk"
+loinc = ""
+loinc_note = "No LOINC code for calculated PREVENT risk score"
+category = "cardiac"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "qtc"
+name = "QTc Interval"
+loinc = "8636-3"
+category = "cardiac"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "abi"
+name = "Ankle-Brachial Index"
+loinc = "77194-9"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "carotid-imt"
+name = "Carotid Intima-Media Thickness"
+loinc = ""
+loinc_note = "No suitable result-level LOINC code found (carotid ultrasound codes are procedures)"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ck-mb"
+name = "Creatine Kinase-MB"
+loinc = "13969-1"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "galectin-3"
+name = "Galectin-3"
+loinc = "62419-7"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "myoglobin"
+name = "Myoglobin"
+loinc = "2639-3"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "st2"
+name = "Soluble ST2"
+loinc = "90239-5"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "tmao"
+name = "Trimethylamine N-Oxide (TMAO)"
+loinc = "90360-9"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "troponin-i"
+name = "Troponin I (conventional)"
+loinc = "10839-9"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "troponin-t"
+name = "Troponin T (conventional)"
+loinc = "6598-7"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+# ---- tumor-marker ----
+
+[[marker]]
+slug = "psa"
+name = "Prostate Specific Antigen"
+loinc = "2857-1"
+category = "tumor-marker"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "4kscore"
+name = "4Kscore"
+loinc = "90740-2"
+category = "tumor-marker"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "afp"
+name = "Alpha-Fetoprotein (AFP)"
+loinc = "1834-1"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ca-125"
+name = "CA-125 (Cancer Antigen 125)"
+loinc = "10334-1"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ca-15-3"
+name = "CA 15-3 (Cancer Antigen 15-3)"
+loinc = "6875-9"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ca-19-9"
+name = "CA 19-9 (Cancer Antigen 19-9)"
+loinc = "24108-3"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ca-27-29"
+name = "CA 27.29 (Cancer Antigen 27.29)"
+loinc = "17842-6"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cea"
+name = "Carcinoembryonic Antigen (CEA)"
+loinc = "2039-6"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "chromogranin-a"
+name = "Chromogranin A"
+loinc = "9811-1"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cyfra-21-1"
+name = "CYFRA 21-1 (Cytokeratin 19 Fragment)"
+loinc = "25390-6"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "he4"
+name = "HE4 (Human Epididymis Protein 4)"
+loinc = "96044-3"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "nse"
+name = "Neuron-Specific Enolase (NSE)"
+loinc = "15060-7"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "phi"
+name = "Prostate Health Index (PHI)"
+loinc = "97150-7"
+category = "tumor-marker"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "psa-free"
+name = "Free PSA"
+loinc = "10886-0"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "psa-free-percent"
+name = "Percent Free PSA"
+loinc = "12841-3"
+category = "tumor-marker"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "roma"
+name = "ROMA (Risk of Ovarian Malignancy Algorithm)"
+loinc = "104551-7"
+category = "tumor-marker"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "scc-antigen"
+name = "Squamous Cell Carcinoma Antigen (SCC Ag)"
+loinc = "9679-2"
+category = "tumor-marker"
+priority = "specialist"
+derived = false
+
+# ---- infectious ----
+
+[[marker]]
+slug = "chlamydia-naat"
+name = "Chlamydia trachomatis NAAT"
+loinc = "21613-5"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "gonorrhea-naat"
+name = "Neisseria gonorrhoeae NAAT"
+loinc = "24111-7"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "h-pylori-breath"
+name = "Helicobacter pylori Urea Breath Test"
+loinc = "29891-9"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hbcab"
+name = "Hepatitis B Core Antibody, Total"
+loinc = "16933-4"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hbsab"
+name = "Hepatitis B Surface Antibody (Immunity)"
+loinc = "16935-9"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hbsag"
+name = "Hepatitis B Surface Antigen"
+loinc = "5195-3"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hcv-ab"
+name = "Hepatitis C Antibody"
+loinc = "16128-1"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hiv-1-2-ag-ab"
+name = "HIV-1/2 Antigen/Antibody Combination"
+loinc = "105080-6"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hpv-high-risk"
+name = "HPV High-Risk Genotypes DNA (Cervical)"
+loinc = "95532-8"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "influenza-a-b-pcr"
+name = "Influenza A and B RNA (PCR)"
+loinc = "92882-0"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "sars-cov-2-pcr"
+name = "SARS-CoV-2 RNA (PCR)"
+loinc = "94531-1"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "strep-a-rapid"
+name = "Group A Streptococcus Antigen (Rapid)"
+loinc = "18481-2"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "syphilis-rpr"
+name = "Syphilis RPR (Reagin)"
+loinc = "20507-0"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "syphilis-treponemal"
+name = "Syphilis Treponemal Antibody (IgG+IgM)"
+loinc = "47236-5"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "tb-igra"
+name = "TB Interferon-gamma Release Assay (QuantiFERON)"
+loinc = "96754-7"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "urine-culture"
+name = "Urine Culture"
+loinc = "630-4"
+category = "infectious"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "c-difficile-toxin"
+name = "C. difficile Toxin"
+loinc = "10895-1"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "cmv-igg"
+name = "Cytomegalovirus IgG"
+loinc = "5124-3"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ebv-ebna"
+name = "Epstein-Barr Virus Nuclear Antigen (EBNA) IgG"
+loinc = "7883-2"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ebv-vca-igg"
+name = "Epstein-Barr Virus VCA IgG"
+loinc = "20490-9"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "h-pylori-stool-antigen"
+name = "H. pylori Stool Antigen"
+loinc = "31843-6"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hav-igg"
+name = "Hepatitis A Antibody IgG"
+loinc = "32018-4"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hav-igm"
+name = "Hepatitis A Antibody IgM"
+loinc = "22314-9"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hbeag"
+name = "Hepatitis B e Antigen"
+loinc = "13954-3"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hbv-dna"
+name = "Hepatitis B Virus DNA (Viral Load)"
+loinc = "42595-9"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hcv-rna"
+name = "Hepatitis C Virus RNA (Viral Load)"
+loinc = "20416-4"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hiv-viral-load"
+name = "HIV-1 RNA (Viral Load)"
+loinc = "25836-8"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hsv1-igg"
+name = "Herpes Simplex Virus 1 IgG"
+loinc = "17850-9"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hsv2-igg"
+name = "Herpes Simplex Virus 2 IgG"
+loinc = "17851-7"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lyme-ab"
+name = "Lyme Disease Antibody (Borrelia burgdorferi)"
+loinc = "20449-5"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "measles-igg"
+name = "Measles IgG"
+loinc = "7962-4"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "mumps-igg"
+name = "Mumps IgG"
+loinc = "22415-4"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "rubella-igg"
+name = "Rubella IgG"
+loinc = "8014-3"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "sars-cov-2-spike-igg"
+name = "SARS-CoV-2 Spike IgG Antibody"
+loinc = "99597-7"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "stool-ova-parasites"
+name = "Stool Ova and Parasites"
+loinc = "10701-1"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "tetanus-antitoxin-igg"
+name = "Tetanus Antitoxin IgG"
+loinc = "109157-8"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "toxoplasma-igg"
+name = "Toxoplasma IgG"
+loinc = "22580-5"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "trichomonas-naat"
+name = "Trichomonas vaginalis NAAT"
+loinc = "69937-1"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "varicella-igg"
+name = "Varicella Zoster IgG"
+loinc = "19162-7"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+# ---- urinalysis ----
+
+[[marker]]
+slug = "urine-blood"
+name = "Urine Blood / Hemoglobin (dipstick)"
+loinc = "5794-3"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-clarity"
+name = "Urine Appearance / Clarity"
+loinc = "5767-9"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-color"
+name = "Urine Color"
+loinc = "5778-6"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-glucose"
+name = "Urine Glucose (dipstick)"
+loinc = "25428-4"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-leukocyte-esterase"
+name = "Urine Leukocyte Esterase (dipstick)"
+loinc = "5799-2"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-nitrite"
+name = "Urine Nitrite (dipstick)"
+loinc = "5802-4"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-ph"
+name = "Urine pH"
+loinc = "2756-5"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-protein"
+name = "Urine Protein (dipstick)"
+loinc = "20454-5"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-rbc"
+name = "Urine Red Blood Cells (per HPF)"
+loinc = "13945-1"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-specific-gravity"
+name = "Urine Specific Gravity"
+loinc = "5811-5"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-wbc"
+name = "Urine White Blood Cells (per HPF)"
+loinc = "5821-4"
+category = "urinalysis"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "urine-bilirubin"
+name = "Urine Bilirubin (dipstick)"
+loinc = "5770-3"
+category = "urinalysis"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "urine-cotinine"
+name = "Urine Cotinine"
+loinc = "10366-3"
+category = "urinalysis"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "urine-ketones"
+name = "Urine Ketones (dipstick)"
+loinc = "2514-8"
+category = "urinalysis"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "fena"
+name = "Fractional Excretion of Sodium (FENa)"
+loinc = "49135-7"
+category = "urinalysis"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "urine-bacteria"
+name = "Urine Bacteria (microscopy)"
+loinc = "105051-7"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-chloride"
+name = "Urine Chloride"
+loinc = "2078-4"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-crystals"
+name = "Urine Crystals (microscopy)"
+loinc = "105893-2"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-granular-casts"
+name = "Urine Granular Casts"
+loinc = "88974-1"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-hyaline-casts"
+name = "Urine Hyaline Casts"
+loinc = "88966-7"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-magnesium"
+name = "Urine Magnesium"
+loinc = "19124-7"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-mucus"
+name = "Urine Mucus (microscopy)"
+loinc = "105106-9"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-osmolality"
+name = "Urine Osmolality"
+loinc = "2695-5"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-phosphorus"
+name = "Urine Phosphorus (as phosphate)"
+loinc = "2778-9"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-squamous-epithelial-cells"
+name = "Urine Squamous Epithelial Cells"
+loinc = "11277-1"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-urea-nitrogen"
+name = "Urine Urea Nitrogen"
+loinc = "3095-7"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-uric-acid"
+name = "Urine Uric Acid"
+loinc = "3086-6"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-urobilinogen"
+name = "Urine Urobilinogen (dipstick)"
+loinc = "5818-0"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-volume-24h"
+name = "24-Hour Urine Volume"
+loinc = "3167-4"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-yeast"
+name = "Urine Yeast (microscopy)"
+loinc = "105098-8"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+# ---- stool ----
+
+[[marker]]
+slug = "cologuard"
+name = "Multitarget Stool DNA (Cologuard)"
+loinc = "77354-9"
+category = "stool"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "fecal-calprotectin"
+name = "Fecal Calprotectin"
+loinc = "38445-3"
+category = "stool"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "fecal-lactoferrin"
+name = "Fecal Lactoferrin"
+loinc = "42924-1"
+category = "stool"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "fit"
+name = "Fecal Immunochemical Test (FIT, Fecal Occult Blood)"
+loinc = "2335-8"
+category = "stool"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "fecal-fat"
+name = "Fecal Fat"
+loinc = "16853-4"
+category = "stool"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "secretory-iga-stool"
+name = "Secretory IgA, Stool"
+loinc = ""
+loinc_note = "no LOINC code found for stool secretory IgA in the LOINC lookup"
+category = "stool"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "stool-ph"
+name = "Stool pH"
+loinc = "2755-7"
+category = "stool"
+priority = "specialist"
+derived = false
+
+# ---- fatty-acid ----
+
+[[marker]]
+slug = "dha"
+name = "Docosahexaenoic Acid (DHA)"
+loinc = "35174-2"
+category = "fatty-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "epa"
+name = "Eicosapentaenoic Acid (EPA)"
+loinc = "35173-4"
+category = "fatty-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "linoleic-acid"
+name = "Linoleic Acid"
+loinc = "35165-0"
+category = "fatty-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "omega-3-index"
+name = "Omega-3 Index"
+loinc = "88998-0"
+category = "fatty-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "omega6-omega3-ratio"
+name = "Omega-6/Omega-3 Ratio"
+loinc = ""
+loinc_note = "No LOINC code for this derived ratio"
+category = "fatty-acid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "aa-epa-ratio"
+name = "Arachidonic Acid/EPA Ratio"
+loinc = "90909-3"
+category = "fatty-acid"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "arachidonic-acid"
+name = "Arachidonic Acid"
+loinc = "35168-4"
+category = "fatty-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "dpa"
+name = "Docosapentaenoic Acid (DPA, omega-3)"
+loinc = "35180-9"
+category = "fatty-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "trans-fatty-acid-index"
+name = "Trans Fatty Acid Index"
+loinc = ""
+loinc_note = "No specific LOINC code for a blood trans fatty acid index (trans fat codes found are dietary intake)"
+category = "fatty-acid"
+priority = "specialist"
+derived = true
+
+# ---- amino-acid ----
+
+[[marker]]
+slug = "alanine"
+name = "Alanine"
+loinc = "1737-6"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "arginine"
+name = "Arginine"
+loinc = "1893-7"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "bcaa-total"
+name = "Branched-Chain Amino Acids, Total"
+loinc = ""
+loinc_note = "derived sum of leucine, isoleucine and valine; no single LOINC code"
+category = "amino-acid"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "citrulline"
+name = "Citrulline"
+loinc = "2130-3"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "cysteine"
+name = "Cysteine"
+loinc = "20641-7"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "glutamine"
+name = "Glutamine"
+loinc = "2372-1"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "glycine"
+name = "Glycine"
+loinc = "2391-1"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "isoleucine"
+name = "Isoleucine"
+loinc = "2508-0"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "leucine"
+name = "Leucine"
+loinc = "2560-1"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "lysine"
+name = "Lysine"
+loinc = "2585-8"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "methionine"
+name = "Methionine"
+loinc = "2622-9"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "taurine"
+name = "Taurine"
+loinc = "2981-9"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "tryptophan"
+name = "Tryptophan"
+loinc = "3070-0"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "tyrosine"
+name = "Tyrosine"
+loinc = "3079-1"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "valine"
+name = "Valine"
+loinc = "3118-7"
+category = "amino-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "asparagine"
+name = "Asparagine"
+loinc = "1908-3"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "aspartate"
+name = "Aspartate"
+loinc = "1913-3"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "glutamate"
+name = "Glutamate"
+loinc = "2364-8"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "histidine"
+name = "Histidine"
+loinc = "2420-8"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ornithine"
+name = "Ornithine"
+loinc = "2679-9"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "phe-tyr-ratio"
+name = "Phenylalanine/Tyrosine Ratio"
+loinc = ""
+loinc_note = "derived ratio of phenylalanine to tyrosine; no LOINC code"
+category = "amino-acid"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "phenylalanine"
+name = "Phenylalanine"
+loinc = "2765-6"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "proline"
+name = "Proline"
+loinc = "2845-6"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "serine"
+name = "Serine"
+loinc = "2936-3"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "threonine"
+name = "Threonine"
+loinc = "3008-0"
+category = "amino-acid"
+priority = "specialist"
+derived = false
+
+# ---- organic-acid ----
+
+[[marker]]
+slug = "urine-8-ohdg"
+name = "8-Hydroxy-2'-Deoxyguanosine (8-OHdG), Urine"
+loinc = "59265-9"
+category = "organic-acid"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "urine-5-hiaa"
+name = "5-Hydroxyindoleacetic Acid (5-HIAA), Urine"
+loinc = "1694-9"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-citrate"
+name = "Citrate, Urine"
+loinc = "2128-7"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-f2-isoprostanes"
+name = "F2-Isoprostanes, Urine"
+loinc = "90782-4"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-hva"
+name = "Homovanillic Acid (HVA), Urine"
+loinc = "11144-3"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-orotic-acid"
+name = "Orotic Acid, Urine"
+loinc = "2686-4"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-oxalate"
+name = "Oxalate, Urine"
+loinc = "2700-3"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-pyruvate"
+name = "Pyruvate, Urine"
+loinc = "2908-2"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-succinate"
+name = "Succinate, Urine"
+loinc = "2972-8"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-vma"
+name = "Vanillylmandelic Acid (VMA), Urine"
+loinc = "9624-8"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+# ---- methylation ----
+
+[[marker]]
+slug = "homocysteine"
+name = "Homocysteine"
+loinc = "13965-9"
+category = "methylation"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "betaine"
+name = "Betaine"
+loinc = ""
+loinc_note = "no LOINC code found for serum or plasma betaine"
+category = "methylation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "choline"
+name = "Choline"
+loinc = ""
+loinc_note = "no LOINC code found for serum or plasma choline"
+category = "methylation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "s-adenosylhomocysteine"
+name = "S-Adenosylhomocysteine (SAH)"
+loinc = "80175-3"
+category = "methylation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "s-adenosylmethionine"
+name = "S-Adenosylmethionine (SAMe)"
+loinc = "78966-9"
+category = "methylation"
+priority = "specialist"
+derived = false
+
+# ---- pregnancy ----
+
+[[marker]]
+slug = "antibody-screen"
+name = "Red Cell Antibody Screen"
+loinc = "890-4"
+category = "pregnancy"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "gbs-culture"
+name = "Group B Streptococcus Culture (Vaginal/Rectal)"
+loinc = "72607-5"
+category = "pregnancy"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "glucose-challenge-1h"
+name = "Glucose Challenge Test, 1 Hour (50 g)"
+loinc = "1504-0"
+category = "pregnancy"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "ogtt-2h-75g-pregnancy"
+name = "Oral Glucose Tolerance Test, 2 Hour (75 g), Pregnancy"
+loinc = "1518-0"
+category = "pregnancy"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "rh-type"
+name = "ABO and Rh Blood Group"
+loinc = "882-1"
+category = "pregnancy"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "hcg-urine"
+name = "hCG, Urine Pregnancy Test"
+loinc = "2106-3"
+category = "pregnancy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "afp-maternal-serum"
+name = "Alpha-Fetoprotein, Maternal Serum (MoM)"
+loinc = "20450-3"
+category = "pregnancy"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "fetal-fibronectin"
+name = "Fetal Fibronectin"
+loinc = "20404-0"
+category = "pregnancy"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hcg-quantitative"
+name = "hCG, Beta Subunit Quantitative (Serum)"
+loinc = "21198-7"
+category = "pregnancy"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "inhibin-a"
+name = "Inhibin A"
+loinc = "23883-2"
+category = "pregnancy"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "papp-a"
+name = "Pregnancy-Associated Plasma Protein A"
+loinc = "48407-1"
+category = "pregnancy"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "plgf"
+name = "Placental Growth Factor (PlGF)"
+loinc = "74755-0"
+category = "pregnancy"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "sflt-1"
+name = "Soluble fms-like Tyrosine Kinase-1 (sFlt-1)"
+loinc = "74756-8"
+category = "pregnancy"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "sflt1-plgf-ratio"
+name = "sFlt-1/PlGF Ratio"
+loinc = "74757-6"
+category = "pregnancy"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "unconjugated-estriol"
+name = "Unconjugated Estriol"
+loinc = "2250-9"
+category = "pregnancy"
+priority = "specialist"
+derived = false
+
+# ---- pediatric ----
+
+[[marker]]
+slug = "bmi-percentile"
+name = "BMI Percentile for Age and Sex"
+loinc = "59576-9"
+category = "pediatric"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "head-circumference"
+name = "Head Circumference"
+loinc = "9843-4"
+category = "pediatric"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "newborn-tsh"
+name = "Newborn Screen TSH (Dried Blood Spot)"
+loinc = "29575-8"
+category = "pediatric"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "weight-percentile"
+name = "Body Weight Percentile for Age"
+loinc = "8336-0"
+category = "pediatric"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "height-for-age-z-score"
+name = "Height-for-Age Z-Score"
+loinc = ""
+loinc_note = "no LOINC code found for a height-for-age z-score; searched 'body height z score' with no match"
+category = "pediatric"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "bilirubin-transcutaneous"
+name = "Bilirubin, Transcutaneous (Newborn)"
+loinc = "58941-6"
+category = "pediatric"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "bone-age"
+name = "Bone Age (Radiograph)"
+loinc = ""
+loinc_note = "only the radiograph procedure code exists (85151-9), no result-level code"
+category = "pediatric"
+priority = "specialist"
+derived = false
+
+# ---- body-composition ----
+
+[[marker]]
+slug = "bmi"
+name = "Body Mass Index"
+loinc = "39156-5"
+category = "body-composition"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "height"
+name = "Height / Length"
+loinc = "8302-2"
+category = "body-composition"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "waist-circumference"
+name = "Waist Circumference"
+loinc = "8280-0"
+category = "body-composition"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "waist-to-hip-ratio"
+name = "Waist-to-Hip Ratio"
+loinc = ""
+loinc_note = "derived from waist and hip circumference; no LOINC code found"
+category = "body-composition"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "weight"
+name = "Body Weight"
+loinc = "29463-7"
+category = "body-composition"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "basal-metabolic-rate"
+name = "Basal Metabolic Rate"
+loinc = ""
+loinc_note = "estimated from weight, height, age and sex by equation; no direct LOINC code (measured RMR codes are not the same measure)"
+category = "body-composition"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "body-fat"
+name = "Body Fat"
+loinc = "41982-0"
+category = "body-composition"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "body-water-percent"
+name = "Body Water Percent"
+loinc = "101684-9"
+category = "body-composition"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "grip-strength"
+name = "Grip Strength"
+loinc = "52508-9"
+category = "body-composition"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hip-circumference"
+name = "Hip Circumference"
+loinc = ""
+loinc_note = "only a PhenX protocol code (62409-8) exists, no result-level LOINC code found"
+category = "body-composition"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "lean-body-mass"
+name = "Lean Body Mass"
+loinc = "91557-9"
+category = "body-composition"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "skeletal-muscle-mass"
+name = "Skeletal Muscle Mass"
+loinc = "73964-9"
+category = "body-composition"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "waist-to-height-ratio"
+name = "Waist-to-Height Ratio"
+loinc = ""
+loinc_note = "derived from waist circumference and height; no LOINC code found"
+category = "body-composition"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "appendicular-lean-mass-index"
+name = "Appendicular Lean Mass Index"
+loinc = ""
+loinc_note = "derived from limb lean mass and height squared; no LOINC code found"
+category = "body-composition"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "lipid-accumulation-product"
+name = "Lipid Accumulation Product"
+loinc = ""
+loinc_note = "no LOINC code; computed from waist circumference and triglycerides"
+category = "body-composition"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "phase-angle"
+name = "Phase Angle (BIA)"
+loinc = "107160-4"
+category = "body-composition"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "visceral-adipose-tissue"
+name = "Visceral Adipose Tissue"
+loinc = "73707-2"
+category = "body-composition"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "visceral-adiposity-index"
+name = "Visceral Adiposity Index"
+loinc = ""
+loinc_note = "no LOINC code; computed from BMI, waist circumference, triglycerides and HDL-C"
+category = "body-composition"
+priority = "specialist"
+derived = true
+
+# ---- vitals ----
+
+[[marker]]
+slug = "bp-diastolic"
+name = "Blood Pressure, Diastolic"
+loinc = "8462-4"
+category = "vitals"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "bp-systolic"
+name = "Blood Pressure, Systolic"
+loinc = "8480-6"
+category = "vitals"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "resting-hr"
+name = "Resting Heart Rate"
+loinc = "40443-4"
+category = "vitals"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "spo2"
+name = "Oxygen Saturation (SpO2, Pulse Oximetry)"
+loinc = "59408-5"
+category = "vitals"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "body-temperature"
+name = "Body Temperature"
+loinc = "8310-5"
+category = "vitals"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "heart-rate"
+name = "Heart Rate"
+loinc = "8867-4"
+category = "vitals"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "mean-arterial-pressure"
+name = "Mean Arterial Pressure"
+loinc = ""
+loinc_note = "derived from systolic and diastolic pressure; no LOINC code found"
+category = "vitals"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "pulse-pressure"
+name = "Pulse Pressure"
+loinc = ""
+loinc_note = "derived as systolic minus diastolic pressure; no LOINC code found"
+category = "vitals"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "respiratory-rate"
+name = "Respiratory Rate"
+loinc = "9279-1"
+category = "vitals"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "basal-body-temperature"
+name = "Basal Body Temperature"
+loinc = ""
+loinc_note = "no LOINC code found for basal (waking) body temperature used in fertility tracking"
+category = "vitals"
+priority = "specialist"
+derived = false
+
+# ---- wearable ----
+
+[[marker]]
+slug = "hrv"
+name = "Heart Rate Variability"
+loinc = "80404-7"
+category = "wearable"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "steps"
+name = "Daily Step Count"
+loinc = "41950-7"
+category = "wearable"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "active-energy-expenditure"
+name = "Active Energy Expenditure"
+loinc = ""
+loinc_note = "no LOINC code for active (as opposed to total) energy expenditure"
+category = "wearable"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "hrv-rmssd"
+name = "Heart Rate Variability (RMSSD)"
+loinc = ""
+loinc_note = "no LOINC code for RMSSD; existing hrv (80404-7) is the SDNN-based code"
+category = "wearable"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "nocturnal-respiratory-rate"
+name = "Nocturnal Respiratory Rate"
+loinc = "9286-6"
+category = "wearable"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "walking-speed"
+name = "Walking Speed"
+loinc = "41957-2"
+category = "wearable"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "afib-burden"
+name = "Atrial Fibrillation Burden (ECG)"
+loinc = ""
+loinc_note = "derived from ECG rhythm episodes over time; no LOINC code found"
+category = "wearable"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "cardio-recovery"
+name = "Heart Rate Recovery (1 min)"
+loinc = ""
+loinc_note = "no LOINC code found for one-minute heart rate recovery"
+category = "wearable"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "nocturnal-spo2"
+name = "Nocturnal SpO2"
+loinc = ""
+loinc_note = "no sleep-specific SpO2 LOINC found; daytime pulse oximetry code not used"
+category = "wearable"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "wrist-temperature-deviation"
+name = "Wrist Temperature Deviation"
+loinc = ""
+loinc_note = "vendor-derived deviation from personal baseline skin temperature; no LOINC code"
+category = "wearable"
+priority = "specialist"
+derived = true
+
+# ---- sleep ----
+
+[[marker]]
+slug = "total-sleep-time"
+name = "Total Sleep Time"
+loinc = "93832-4"
+category = "sleep"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "deep-sleep-duration"
+name = "Deep (N3) Sleep Duration"
+loinc = "93831-6"
+category = "sleep"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "light-sleep-duration"
+name = "Light Sleep Duration"
+loinc = "93830-8"
+category = "sleep"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "rem-sleep-duration"
+name = "REM Sleep Duration"
+loinc = "93829-0"
+category = "sleep"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "sleep-efficiency"
+name = "Sleep Efficiency"
+loinc = ""
+loinc_note = "derived ratio of sleep time to time in bed; no LOINC code found"
+category = "sleep"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "sleep-latency"
+name = "Sleep Latency"
+loinc = ""
+loinc_note = "no LOINC code found for time to sleep onset"
+category = "sleep"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "time-awake"
+name = "Time Awake"
+loinc = ""
+loinc_note = "no separate LOINC code found; overlaps with wake after sleep onset"
+category = "sleep"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "wake-after-sleep-onset"
+name = "Wake After Sleep Onset"
+loinc = "103215-0"
+category = "sleep"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "ahi"
+name = "Apnea-Hypopnea Index"
+loinc = "69990-0"
+category = "sleep"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "oxygen-desaturation-index"
+name = "Oxygen Desaturation Index"
+loinc = "90567-9"
+category = "sleep"
+priority = "specialist"
+derived = false
+
+# ---- fitness ----
+
+[[marker]]
+slug = "vo2max"
+name = "VO2 Max"
+loinc = "94122-9"
+category = "fitness"
+priority = "core"
+derived = false
+
+[[marker]]
+slug = "mets-max"
+name = "Peak METs"
+loinc = ""
+loinc_note = "derived from VO2max (VO2max divided by 3.5); no LOINC code found"
+category = "fitness"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "sit-to-stand"
+name = "Sit-to-Stand Test (30 seconds)"
+loinc = "66247-8"
+category = "fitness"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "six-minute-walk-distance"
+name = "Six-Minute Walk Distance"
+loinc = "64098-7"
+category = "fitness"
+priority = "specialist"
+derived = false
+
+# ---- aging ----
+
+[[marker]]
+slug = "biological-age"
+name = "Biological Age"
+loinc = ""
+loinc_note = "no LOINC code for composite biological age; computed from multiple biomarkers"
+category = "aging"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "phenoage"
+name = "PhenoAge (Levine Phenotypic Age)"
+loinc = ""
+loinc_note = "no LOINC code for PhenoAge; computed from albumin, creatinine, glucose, CRP, lymphocyte %, MCV, RDW, ALP, WBC and chronological age"
+category = "aging"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "phenoage-acceleration"
+name = "PhenoAge Acceleration"
+loinc = ""
+loinc_note = "no LOINC code; difference between PhenoAge and chronological age (or regression residual)"
+category = "aging"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "dunedinpace"
+name = "DunedinPACE (Pace of Aging)"
+loinc = ""
+loinc_note = "no LOINC code; DNA methylation-based pace of aging score (commercial test)"
+category = "aging"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "grimage"
+name = "GrimAge (DNA Methylation Clock)"
+loinc = ""
+loinc_note = "no LOINC code; DNA methylation-based mortality-predictor epigenetic age"
+category = "aging"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "horvath-epigenetic-clock"
+name = "Horvath Epigenetic Clock (Epigenetic Age)"
+loinc = ""
+loinc_note = "no LOINC code; DNA methylation-based epigenetic age (multi-tissue clock)"
+category = "aging"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "klemera-doubal-biological-age"
+name = "Klemera-Doubal Biological Age"
+loinc = ""
+loinc_note = "no LOINC code; computed biological age from multiple biomarker regressions"
+category = "aging"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "telomere-length"
+name = "Telomere Length, Leukocyte"
+loinc = ""
+loinc_note = "no quantitative leukocyte telomere length LOINC found; 35463-9 (Telomere analysis [Identifier] Nominal) is a nominal identifier, not a length, so not used"
+category = "aging"
+priority = "specialist"
+derived = false
+
+# ---- genetic ----
+
+[[marker]]
+slug = "apoe-genotype"
+name = "ApoE Genotype"
+loinc = "42315-2"
+category = "genetic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "brca1-brca2"
+name = "BRCA1/BRCA2 Mutation Analysis"
+loinc = "59041-4"
+category = "genetic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "factor-v-leiden"
+name = "Factor V Leiden"
+loinc = "21668-9"
+category = "genetic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "hla-b27"
+name = "HLA-B27"
+loinc = "4821-5"
+category = "genetic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "mthfr-a1298c"
+name = "MTHFR A1298C Genotype"
+loinc = "28060-2"
+category = "genetic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "mthfr-c677t"
+name = "MTHFR C677T Genotype"
+loinc = "28005-7"
+category = "genetic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "prothrombin-g20210a"
+name = "Prothrombin G20210A Mutation"
+loinc = "24475-6"
+category = "genetic"
+priority = "specialist"
+derived = false
