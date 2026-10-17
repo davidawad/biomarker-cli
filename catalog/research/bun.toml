@@ -1,0 +1,202 @@
+slug = "bun"
+name = "Blood Urea Nitrogen"
+loinc = "3094-0"
+category = "kidney"
+unit = "mg/dL"
+description = "Blood urea nitrogen (BUN), a marker of kidney function and hydration status that also depends on protein intake and liver urea production. Age- and sex-specific reference intervals are reported in the source as urea in mmol/L."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.68
+high = 7.07
+unit = "mmol/L"
+when = { sex = "male", age_max = 20 }
+population = "Chinese general population, healthy males under 20 years (n = 14,148 males; 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted; the 2.5th to 97.5th percentile interval is used."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| < 20 ... | Male | 1.60 (1.60-3.00) | 1.68 (1.60-3.10) | 4.75 | 7.07 (6.41-7.60) | 7.44" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.20
+high = 5.62
+unit = "mmol/L"
+when = { sex = "female", age_max = 20 }
+population = "Chinese general population, healthy females under 20 years (n = 9,858 females; 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted; the 2.5th to 97.5th percentile interval is used."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| < 20 ... | Female | 2.20 (2.20-2.80) | 2.20 (2.20-2.80) | 3.80 | 5.62 | 6.21" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.90
+high = 7.00
+unit = "mmol/L"
+when = { sex = "male", age_min = 20, age_max = 30 }
+population = "Chinese general population, healthy males aged 20-29 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 20-29 ... | Male | 2.60 (2.60-2.70) | 2.90 (2.80-2.90) | 4.40 | 7.00 (6.81-7.10) | 7.78 (7.50-8.10)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.30
+high = 6.10
+unit = "mmol/L"
+when = { sex = "female", age_min = 20, age_max = 30 }
+population = "Chinese general population, healthy females aged 20-29 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 20-29 ... | Female | 2.00 (1.90-2.10) | 2.30 (2.20-2.30) | 3.80 | 6.10 (6.00-6.30) | 6.70 (6.40-7.00)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.92
+high = 7.00
+unit = "mmol/L"
+when = { sex = "male", age_min = 30, age_max = 40 }
+population = "Chinese general population, healthy males aged 30-39 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 30-39 ... | Male | 2.61 (2.60-2.70) | 2.92 (2.80-2.92) | 4.50 | 7.00 (6.90-7.10) | 7.60 (7.40-7.70)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.40
+high = 6.30
+unit = "mmol/L"
+when = { sex = "female", age_min = 30, age_max = 40 }
+population = "Chinese general population, healthy females aged 30-39 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 30-39 ... | Female | 2.20 (2.10-2.20) | 2.40 (2.30-2.40) | 3.90 | 6.30 (6.20-6.40) | 6.70 (6.60-6.80)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.00
+high = 7.40
+unit = "mmol/L"
+when = { sex = "male", age_min = 40, age_max = 50 }
+population = "Chinese general population, healthy males aged 40-49 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 40-49 ... | Male | 2.80 (2.70-2.90) | 3.00 (3.00-3.10) | 4.80 | 7.40 (7.30-7.50) | 8.10 (7.80-8.30)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.60
+high = 6.70
+unit = "mmol/L"
+when = { sex = "female", age_min = 40, age_max = 50 }
+population = "Chinese general population, healthy females aged 40-49 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 40-49 ... | Female | 2.31 (2.21-2.50) | 2.60 (2.50-2.70) | 4.20 | 6.70 (6.50-6.87) | 7.19 (6.90-7.40)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.10
+high = 7.70
+unit = "mmol/L"
+when = { sex = "male", age_min = 50, age_max = 60 }
+population = "Chinese general population, healthy males aged 50-59 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 50-59 ... | Male | 2.80 (2.70-2.90) | 3.10 (3.10-3.20) | 5.00 | 7.70 (7.65-7.85) | 8.34 (8.04-8.50)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.80
+high = 7.34
+unit = "mmol/L"
+when = { sex = "female", age_min = 50, age_max = 60 }
+population = "Chinese general population, healthy females aged 50-59 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 50-59 ... | Female | 2.54 (2.30-2.70) | 2.80 (2.70-2.90) | 4.70 | 7.34 (7.10-7.60) | 8.10 (7.70-8.20)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.40
+high = 8.30
+unit = "mmol/L"
+when = { sex = "male", age_min = 60, age_max = 70 }
+population = "Chinese general population, healthy males aged 60-69 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 60-69 ... | Male | 3.10 (2.97-3.20) | 3.4 (3.20-3.50) | 5.40 | 8.30 (8.10-8.77) | 9.00 (8.72-9.15)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.10
+high = 7.70
+unit = "mmol/L"
+when = { sex = "female", age_min = 60, age_max = 70 }
+population = "Chinese general population, healthy females aged 60-69 years (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| 60-69 ... | Female | 2.80 (2.50-3.00) | 3.10 (2.90-3.30) | 5.00 | 7.70 (7.50-7.90) | 8.20 (7.80-8.50)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.70
+high = 8.20
+unit = "mmol/L"
+when = { sex = "male", age_min = 70 }
+population = "Chinese general population, healthy males aged 70 years and over (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Sample size for the oldest band is small; interpret with caution."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| >= 70 ... | Male | 3.34 (2.70-3.70) | 3.70 (3.60-3.83) | 5.45 | 8.20 (7.90-15.50) | 15.99 (8.20-17.20)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.07
+high = 7.34
+unit = "mmol/L"
+when = { sex = "female", age_min = 70 }
+population = "Chinese general population, healthy females aged 70 years and over (2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Sample size for the oldest band is small; interpret with caution."
+citations = [
+  { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4", quote = "| >= 70 ... | Female | 2.90 (2.90-3.20) | 3.07 (2.90-3.45) | 5.00 | 7.34 (7.10-8.00) | 7.43" },
+]

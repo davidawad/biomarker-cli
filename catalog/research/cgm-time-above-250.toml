@@ -1,0 +1,29 @@
+slug = "cgm-time-above-250"
+name = "CGM time well above range (>250 mg/dL)"
+category = "glycemic"
+unit = "%"
+description = "Percentage of CGM glucose readings (or hours per day) above 250 mg/dL (13.9 mmol/L). Maximum targets from the International Consensus on Time in Range."
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 5
+when = { conditions = ["diabetes"] }
+population = "Adults and children with type 1 or type 2 diabetes (not older/high-risk)"
+evidence = "consensus"
+note = "Time above 250 mg/dL (13.9 mmol/L), less than 5 percent (less than 1 h 12 min per day)."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 3", quote = "<5%; <1 h, 12 min | >250 mg/dL (>13.9 mmol/L)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 10
+when = { conditions = ["diabetes"], risk = "older-or-high-risk" }
+population = "Older and/or high-risk adults with type 1 or type 2 diabetes"
+evidence = "consensus"
+note = "Time above 250 mg/dL (13.9 mmol/L), less than 10 percent (less than 2 h 24 min per day)."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 3", quote = "<10%; <2 h, 24 min | >250 mg/dL (>13.9 mmol/L)" },
+]

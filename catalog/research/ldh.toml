@@ -1,0 +1,70 @@
+slug = "ldh"
+name = "Lactate Dehydrogenase"
+category = "chemistry"
+unit = "U/L"
+description = "Lactate dehydrogenase is a non-specific marker of tissue damage (haemolysis, muscle, liver, malignancy). Reference limits fall with age in childhood, so paediatric intervals are age-banded."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 91
+high = 282
+when = { age_min = 18, age_max = 65 }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); sexes combined"
+evidence = "reference-interval-study"
+note = "Sex-combined indirect reference interval in the source (no sex partition). Values in U/L."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| LDH | U/L | (-) | MF | 18~65 | 613 | 82 | 99 | 91 | 181 | 282 | 271 | 294 | U/L | 91 | 181 | 282" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 196.16
+high = 468.09
+when = { age_max = 3 }
+population = "Children from 28 days to under 3 years, healthy check-up children, Shenzhen China (CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Age-specific reference interval from paediatric study (2.5th-97.5th percentile, U/L)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| LDH | U/L | 28 days-<3 years | 797 | 287.70 | 289.72 | 196.16 | 468.09 | 182.78-208.50 | 436.83-498.89" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 193.49
+high = 335.66
+when = { age_min = 3, age_max = 8 }
+population = "Children aged 3 to under 8 years, healthy check-up children, Shenzhen China (CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Age-specific reference interval from paediatric study (2.5th-97.5th percentile, U/L)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| 3-<8 years | 247 | 257.61 | 254.31 | 193.49 | 335.66 | 184.82-197.19 | 322.24-346.25" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 144.68
+high = 294.75
+when = { age_min = 8, age_max = 12 }
+population = "Children aged 8 to under 12 years, healthy check-up children, Shenzhen China (CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Age-specific reference interval from paediatric study (2.5th-97.5th percentile, U/L)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| 8-<12 years | 216 | 219.51 | 220.01 | 144.68 | 294.75 | 142.41-155.73 | 289.58-301.69" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 131.57
+high = 241.08
+when = { age_min = 12, age_max = 18 }
+population = "Children aged 12 to under 18 years, healthy check-up children, Shenzhen China (CLSI EP28)"
+evidence = "reference-interval-study"
+note = "Age-specific reference interval from paediatric study (2.5th-97.5th percentile, U/L)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| 12-<18 years | 123 | 183.09 | 179.68 | 131.57 | 241.08 | 116.13-136.55 | 236.49-248.74" },
+]

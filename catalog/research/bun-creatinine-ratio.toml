@@ -1,0 +1,17 @@
+slug = "bun-creatinine-ratio"
+name = "BUN/Creatinine Ratio"
+category = "kidney"
+unit = "ratio"
+description = "Ratio of blood urea nitrogen to serum creatinine (both in mg/dL). Traditionally used to distinguish prerenal azotemia from intrinsic kidney injury in acute kidney injury; its diagnostic value is debated. No reference interval was retrievable from the sources reviewed."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+when = {}
+population = "Adults and children with acute kidney injury"
+evidence = "textbook"
+note = "Traditional threshold: a ratio strictly above 20 is used to suggest prerenal azotemia rather than acute tubular necrosis. The source (an expert opinion article) reports little evidence that the ratio reliably separates the two conditions."
+citations = [
+  { pmid = "29497527", doi = "10.1093/ckj/sfs013", title = "The meaning of the blood urea nitrogen/creatinine ratio in acute kidney injury.", locator = "Abstract, Background", quote = "A blood urea nitrogen (BUN)/creatinine ratio (BCR) >20 (0.081 in international unit) is used to distinguish pre-renal azotemia (PRA) and acute tubular necrosis (ATN)" },
+]

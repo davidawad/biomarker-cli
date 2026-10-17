@@ -1,0 +1,17 @@
+slug = "beta-hydroxybutyrate"
+name = "Beta-Hydroxybutyrate (Ketones, Blood)"
+category = "chemistry"
+unit = "mmol/L"
+description = "Blood beta-hydroxybutyrate is the main ketone body and the preferred measure of ketonaemia. Measured directly (capillary or venous) it is more specific for diabetic ketoacidosis (DKA) than urine or acetoacetate tests."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 3.0
+when = { conditions = ["diabetes"] }
+population = "Adults with diabetes presenting with suspected hyperglycaemic crisis"
+evidence = "consensus"
+note = "Blood beta-hydroxybutyrate of 3.0 mmol/L or higher supports a diagnosis of DKA (with hyperglycaemia and acidosis), per the 2024 ADA/EASD/JBDS/AACE/DTS consensus."
+citations = [
+  { pmid = "38907161", doi = "10.1007/s00125-024-06183-8", title = "Hyperglycaemic crises in adults with diabetes: a consensus report.", locator = "Full text, diagnosis of DKA", quote = "Blood concentrations of β-hydroxybutyrate >=3.0 mmol/l correlate well with acid-base changes, with >90% sensitivity and specificity for the diagnosis of DKA" },
+]

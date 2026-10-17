@@ -1,0 +1,41 @@
+slug = "cgm-time-in-range"
+name = "CGM time in range (70-180 mg/dL)"
+category = "glycemic"
+unit = "%"
+description = "Percentage of CGM glucose readings (or hours per day) within the target glucose range of 70-180 mg/dL (3.9-10.0 mmol/L). The International Consensus on Time in Range sets targets for people with diabetes; the pregnancy range is 63-140 mg/dL."
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 70
+when = { conditions = ["diabetes"] }
+population = "Adults and children with type 1 or type 2 diabetes (non-pregnant, not older/high-risk)"
+evidence = "consensus"
+note = "Time in range 70-180 mg/dL (3.9-10.0 mmol/L); target is more than 70 percent of readings (more than 16 h 48 min per day). Pediatric exception (age under 25 with A1C goal 7.5 percent) is about 60 percent and is not included."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 3", quote = "Type 1*/type 2 | >70%; >16 h, 48 min | 70-180 mg/dL (3.9-10.0 mmol/L)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 50
+when = { conditions = ["diabetes"], risk = "older-or-high-risk" }
+population = "Older and/or high-risk adults with type 1 or type 2 diabetes"
+evidence = "consensus"
+note = "Time in range 70-180 mg/dL (3.9-10 mmol/L); lowered target for older and/or high-risk individuals, more than 50 percent of readings (more than 12 h per day)."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 3", quote = "Older/high-risk# type 1/type 2 | >50%; >12 h | 70-180 mg/dL (3.9-10 mmol/L)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 70
+when = { conditions = ["type-1-diabetes"], pregnant = true }
+population = "Pregnant women with type 1 diabetes"
+evidence = "consensus"
+note = "Pregnancy time-in-range glucose band is 63-140 mg/dL (3.5-7.8 mmol/L), not 70-180; target is more than 70 percent of readings. Type 2 diabetes and GDM in pregnancy have no percentage targets in this consensus."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 4", quote = "Pregnancy, type 1§ | >70%; >16 h, 48 min | 63-140 mg/dL† (3.5-7.8 mmol/L†)" },
+]

@@ -1,0 +1,16 @@
+slug = "sdldl-c"
+name = "Small Dense LDL Cholesterol"
+category = "lipid"
+unit = "mg/dL"
+description = "Cholesterol carried in small, dense LDL particles, measured directly with a homogeneous assay (Denka Seiken). Its concentration can be high even when LDL-C is at goal, and it predicts coronary heart disease risk independently of LDL-C."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 27.8
+population = "Biracial US adults in the ARIC cohort (mean age about 63 years), measured with the Denka homogeneous sdLDL-C assay"
+evidence = "outcome-study"
+note = "Lowest-risk group in ARIC: sdLDL-C below the 25th percentile of the cohort (27.8 mg/dL), which had the lowest coronary heart disease incidence among those with LDL-C below 100 mg/dL. This is a cohort percentile, not a reference interval or a guideline cut-off."
+citations = [
+  { pmid = "24558110", doi = "10.1161/ATVBAHA.114.303284", title = "Small dense low-density lipoprotein-cholesterol concentrations predict risk for coronary heart disease: the Atherosclerosis Risk In Communities (ARIC) study.", locator = "Results (sdLDL-C and incident CHD, Figure 3)", quote = "or equivalently low sdLDL-C (<27.8 mg/dL; <25th percentile)" },
+]

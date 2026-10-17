@@ -1,0 +1,55 @@
+slug = "chloride"
+name = "Chloride"
+loinc = "2075-0"
+category = "electrolyte"
+unit = "mmol/L"
+description = "Serum chloride tracks sodium and acid-base status. Both low and high values are associated with mortality in hospital cohorts, with the lowest risk at intermediate values."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 98.0
+high = 108
+when = { sex = "male" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, male)"
+evidence = "reference-interval-study"
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L."
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2", quote = "| Chloride | mmol/L | 7,150 | 56 (44-65) | M | 101-109 | 98.0-108 | 97.8-98.2 | 108-108 |" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 99.0
+high = 108
+when = { sex = "female" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, female)"
+evidence = "reference-interval-study"
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L."
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2", quote = "| Chloride | mmol/L | 8,124 | 55 (44-64) | F | 101-109 | 99.0-108 | 98.9-99.2 | 108-108 |" },
+]
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 100
+high = 108
+population = "Adult hospital survivors at discharge (tertiary referral hospital cohort)"
+evidence = "outcome-study"
+note = "Discharge chloride 100-108 mmol/L was not associated with different one-year mortality; the nadir was at 103-105 mmol/L."
+citations = [
+  { pmid = "32438557", doi = "10.3390/medsci8020022", title = "Serum Chloride Levels at Hospital Discharge and One-Year Mortality among Hospitalized Patients.", locator = "Results", quote = "The mortality risk did not differ when discharge serum chloride ranged from 100 to 108 mmoL/L." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 99
+population = "Adult hospital survivors at discharge (tertiary referral hospital cohort)"
+evidence = "outcome-study"
+note = "Discharge chloride at or below 99 mmol/L (strictly, <=99) was associated with higher one-year mortality, with HR 1.45 for 97-99 and 1.94 for <=96 mmol/L versus 103-105 mmol/L (reference); HR 1.41 for >=109."
+citations = [
+  { pmid = "32438557", doi = "10.3390/medsci8020022", title = "Serum Chloride Levels at Hospital Discharge and One-Year Mortality among Hospitalized Patients.", locator = "Abstract", quote = "one-year mortality was significantly higher in both discharge serum chloride <=99 hazard ratio (HR): 1.45 and 1.94 for discharge serum chloride of 97-99 and <=96 mmoL/L" },
+]

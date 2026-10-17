@@ -1,0 +1,68 @@
+slug = "zinc"
+name = "Zinc, Serum"
+category = "mineral"
+unit = "µg/dL"
+description = "Serum or plasma zinc, the usual laboratory measure of zinc status. Low values indicate zinc deficiency at the population level, and the IZiNCG cut-offs depend on age, sex and fasting status of the blood sample. Cut-offs are population-level tools and are not diagnostic for an individual."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 65
+when = { age_max = 10, fasting = false }
+population = "Children under 10 years, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
+evidence = "consensus"
+note = "Low serum zinc: strictly below 65 ug/dL (IZiNCG cut-off, morning non-fasting sample). Applies to any sex. Population-level cut-off, not an individual diagnosis. The cited source gives no afternoon cut-off."
+citations = [
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)", quote = "at a cut-off value of 65 ug/dl for children < 10 years old (whatever their gender)" },
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)", quote = "Morning non-fasting samples were obtained." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 66
+when = { age_min = 10, sex = "female", fasting = false }
+population = "Girls aged 10 years and older, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
+evidence = "consensus"
+note = "Low serum zinc: strictly below 66 ug/dL in girls aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis."
+citations = [
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)", quote = "66 ug/dl for girls >= 10 years old" },
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)", quote = "Morning non-fasting samples were obtained." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 70
+when = { age_min = 10, sex = "male", fasting = false }
+population = "Boys aged 10 years and older, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
+evidence = "consensus"
+note = "Low serum zinc: strictly below 70 ug/dL in boys aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis."
+citations = [
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)", quote = "70 ug/dl for boys >= 10 years old" },
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)", quote = "Morning non-fasting samples were obtained." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 70
+when = { age_min = 10, sex = "female", fasting = true }
+population = "Adolescents (10 years and older), fasting serum samples (cut-off as applied in the cited study)"
+evidence = "consensus"
+note = "Low serum zinc in fasting samples: strictly below 70 ug/dL in females (the cited study applies this to fasting samples; the source quote does not state the time of day)."
+citations = [
+  { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)", quote = "and for the fasting samples (70 ug/dl for females and 74 ug/dl for males)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 74
+when = { age_min = 10, sex = "male", fasting = true }
+population = "Adolescents (10 years and older), fasting serum samples (cut-off as applied in the cited study)"
+evidence = "consensus"
+note = "Low serum zinc in fasting samples: strictly below 74 ug/dL in males (the cited study applies this to fasting samples; the source quote does not state the time of day)."
+citations = [
+  { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)", quote = "and for the fasting samples (70 ug/dl for females and 74 ug/dl for males)" },
+]

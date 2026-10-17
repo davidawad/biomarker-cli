@@ -1,0 +1,18 @@
+slug = "anion-gap"
+name = "Anion Gap"
+loinc = "33037-3"
+category = "electrolyte"
+unit = "mmol/L"
+description = "The anion gap is calculated from serum sodium, chloride and bicarbonate (and sometimes potassium) and is used to classify metabolic acidoses. Its reference interval depends on the formula and assay used, so the laboratory's own interval should be applied."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 7
+high = 18
+population = "Healthy adults (Yale-New Haven Hospital reference population; no significant sex or age differences)"
+evidence = "reference-interval-study"
+note = "Derived from 17,137 patients (healthy adults, ED and ICU). The abstract does not state the formula or method (with or without potassium), so no method condition is set. The previous laboratory interval was 6-16 mmol/L."
+citations = [
+  { pmid = "32445342", doi = "10.1373/jalm.2019.029496", title = "Interpreting Anion Gap Values in Adult and Pediatric Patients: Examining the Reference Interval.", locator = "Abstract, Results", quote = "We derived a new reference interval of 7 to 18 mmol/L with a median of 13 mmol/L in healthy adults" },
+]

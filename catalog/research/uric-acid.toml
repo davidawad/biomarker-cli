@@ -1,0 +1,93 @@
+slug = "uric-acid"
+name = "Uric Acid"
+loinc = "3084-1"
+category = "chemistry"
+unit = "mg/dL"
+description = "Serum urate. Hyperuricaemia is the main risk factor for gout; treat-to-target urate-lowering therapy aims for a serum urate below 6 mg/dL in people with gout. Reference intervals are sex-specific."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.8
+high = 7.9
+when = { sex = "male", age_min = 18, age_max = 65 }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol, parametric method); males"
+evidence = "reference-interval-study"
+note = "Values in mg/dL as stated in the source table (the source gives the matching umol/L limits as 168-479). Male RI is not age-partitioned in the source."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| UA | umol/L | (-) | M | 18~65 | 289 | 149 | 188 | 168 | 326 | 479 | 463 | 495 | mg/dL | 2.8 | 5.4 | 7.9" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.4
+high = 5.8
+when = { sex = "female", age_min = 18, age_max = 45 }
+population = "Adults aged 18 to under 45 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
+evidence = "reference-interval-study"
+note = "Female urate is partitioned at 45 years in the source; values in mg/dL as stated in the source table."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| (-) | F | ~45 | 197 | 131 | 158 | 145 | 244 | 358 | 339 | 377 | 2.4 | 4.0 | 5.8" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.6
+high = 7.2
+when = { sex = "female", age_min = 45 }
+population = "Females aged 45 years and older, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+note = "Values in mg/dL as stated in the source table."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| (-) | F | 45~ | 166 | 140 | 184 | 162 | 273 | 443 | 399 | 487 | 2.6 | 4.4 | 7.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 6.8
+when = { }
+population = "Adults with asymptomatic hyperuricaemia (no prior gout flares or subcutaneous tophi)"
+evidence = "guideline"
+note = "Asymptomatic hyperuricaemia as defined in the 2020 ACR gout guideline (serum urate of 6.8 mg/dL or higher). Sex-specific hyperuricaemia cut-offs (>7 men, >6 women) were not found in retrieved text and are not included."
+citations = [
+  { pmid = "32391934", doi = "10.1002/acr.24180", title = "2020 American College of Rheumatology Guideline for the Management of Gout.", locator = "Scope of the guideline", quote = "which is defined as an SU concentration of >=6.8 mg/dl with no prior gout flares or subcutaneous tophi" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 6
+when = { conditions = ["gout"] }
+population = "Adults with gout receiving urate-lowering therapy"
+evidence = "guideline"
+note = "Treat-to-target serum urate goal below 6 mg/dL (ACR 2020 gout guideline)."
+citations = [
+  { pmid = "32391934", doi = "10.1002/acr.24180", title = "2020 American College of Rheumatology Guideline for the Management of Gout.", locator = "Treat-to-target recommendation", quote = "Achieving and maintaining an SU target of <6 mg/dl over the use of no target is strongly recommended for all patients receiving ULT." },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 6
+when = { conditions = ["gout"] }
+population = "Adults with gout receiving urate-lowering therapy"
+evidence = "guideline"
+note = "Serum urate target below 6 mg/dL (360 umol/L) from the 2016 EULAR gout recommendations."
+citations = [
+  { pmid = "27457514", doi = "10.1136/annrheumdis-2016-209707", title = "2016 updated EULAR evidence-based recommendations for the management of gout.", locator = "Abstract (Results)", quote = "serum uric acid (SUA) levels should be maintained at<6 mg/dL (360 umol/L) and <5 mg/dL (300 umol/L) in those with severe gout" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 5
+when = { conditions = ["gout"] }
+population = "Adults with severe gout receiving urate-lowering therapy"
+evidence = "guideline"
+note = "Stricter serum urate target below 5 mg/dL (300 umol/L) in severe gout (2016 EULAR gout recommendations)."
+citations = [
+  { pmid = "27457514", doi = "10.1136/annrheumdis-2016-209707", title = "2016 updated EULAR evidence-based recommendations for the management of gout.", locator = "Abstract (Results)", quote = "serum uric acid (SUA) levels should be maintained at<6 mg/dL (360 umol/L) and <5 mg/dL (300 umol/L) in those with severe gout" },
+]

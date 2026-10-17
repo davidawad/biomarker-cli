@@ -1,0 +1,56 @@
+slug = "co2"
+name = "Carbon Dioxide (Bicarbonate)"
+loinc = "2028-9"
+category = "electrolyte"
+unit = "mmol/L"
+description = "Serum bicarbonate (total CO2) reflects the metabolic component of acid-base balance. In CKD, low bicarbonate is common and associated with worse outcomes, and KDIGO recommends considering treatment of acidosis when bicarbonate falls below 18 mmol/L."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 18
+high = 37
+population = "Healthy elderly adults (Asmara, Eritrea; CLSI C28-A3 reference interval study)"
+evidence = "reference-interval-study"
+note = "Reference interval for healthy elderly Eritrean adults (combined sexes, 2.5th-97.5th percentile). Broader than typical adult intervals; use with care."
+citations = [
+  { pmid = "29258577", doi = "10.1186/s13104-017-3087-6", title = "Biochemistry reference intervals for healthy elderly population in Asmara, Eritrea.", locator = "Table 1", quote = "| Carbon dioxide (CO2) (mmol/L) | Combined | 238 | 26.0 | 25-27 | 25.0 | 11-58.0 | 18-37.0 |" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 18
+when = { conditions = ["ckd"] }
+population = "Adults with chronic kidney disease"
+evidence = "guideline"
+note = "KDIGO 2024: in people with CKD, consider pharmacological treatment (with or without diet) to prevent acidosis when bicarbonate is below 18 mmol/L. Monitor so that bicarbonate does not exceed the upper limit of normal."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Practice Point 3.10.1", quote = "bicarbonate <18 mmol/l in adults" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 22
+when = { conditions = ["ckd"] }
+population = "Adults with non-dialysis-dependent CKD (moderate and advanced; male cohort)"
+evidence = "outcome-study"
+note = "Strictly below 22 mmol/L: highest mortality in this non-dialysis CKD cohort (multivariable HR 1.33 vs 22 or higher, per the source)."
+citations = [
+  { pmid = "19015169", doi = "10.1093/ndt/gfn633", title = "Association of serum bicarbonate levels with mortality in patients with non-dialysis-dependent CKD.", locator = "Results", quote = "the highest mortality rate observed in patients with baseline serum bicarbonate levels <22 mmol/L" },
+  { pmid = "23348878", doi = "10.1093/ndt/gfs609", title = "Serum bicarbonate and mortality in adults in NHANES III.", locator = "Results", quote = "the hazards of death in the <22 mM serum bicarbonate category were 1.75 (95% CI: 1.12-2.74), 1.56 (95% CI: 0.78-3.09) and 2.56 (95% CI: 1.49-4.38) in the entire population, non-CKD subgroup and CKD subgroup" },
+]
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 26
+high = 29
+when = { conditions = ["ckd"] }
+population = "Adults with non-dialysis-dependent CKD (moderate and advanced; male cohort)"
+evidence = "outcome-study"
+note = "Lowest observed mortality in this cohort at 26-29 mmol/L (the source reports this as the lowest-risk band; it is an observational finding, not a proven treatment target)."
+citations = [
+  { pmid = "19015169", doi = "10.1093/ndt/gfn633", title = "Association of serum bicarbonate levels with mortality in patients with non-dialysis-dependent CKD.", locator = "Results", quote = "the lowest mortality observed in patients with baseline serum bicarbonate of 26-29 mmol/L" },
+]
