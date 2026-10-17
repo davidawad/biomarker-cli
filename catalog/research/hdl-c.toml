@@ -1,0 +1,133 @@
+slug = "hdl-c"
+name = "HDL Cholesterol"
+loinc = "2085-9"
+category = "lipid"
+unit = "mg/dL"
+description = "Cholesterol in high-density lipoprotein particles. Adult ATP III categories (low below 40 mg/dL, high at 60 mg/dL or above), sex-specific metabolic-syndrome thresholds, pediatric NHLBI cut-points, non-fasting flag and pregnancy reference intervals."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 40
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Low HDL-C: strictly below 40 mg/dL (ATP III). A risk factor in either sex; sex-specific metabolic-syndrome thresholds are separate ranges."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "HDL Cholesterol <40 Low >=60 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "optimal"
+low = 60
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "High HDL-C (>= 60 mg/dL, ATP III); counted as a negative risk factor."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "HDL Cholesterol <40 Low >=60 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 40
+when = { sex = "male", age_min = 20 }
+population = "Adult men, metabolic syndrome criteria"
+evidence = "guideline"
+note = "Metabolic syndrome component: HDL-C strictly below 40 mg/dL in men (ATP III criteria; the harmonized 2009 definition was not retrievable with numbers)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Metabolic syndrome criteria table", quote = "HDL cholesterol Men <40 mg/dL Women <50 mg/dL" },
+  { pmid = "42211141", doi = "10.12997/jla.2026.15.2.216", title = "Statins, LDL-C and Beyond: A Contemporary Review of Atherosclerotic Cardiovascular Risk Assessment and Management.", locator = "Table 3", quote = "low HDL-C (<40 mg/dL in men, <50 mg/dL in women)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 50
+when = { sex = "female", age_min = 20 }
+population = "Adult women, metabolic syndrome criteria"
+evidence = "guideline"
+note = "Metabolic syndrome component: HDL-C strictly below 50 mg/dL in women (ATP III criteria)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Metabolic syndrome criteria table", quote = "HDL cholesterol Men <40 mg/dL Women <50 mg/dL" },
+  { pmid = "42211141", doi = "10.12997/jla.2026.15.2.216", title = "Statins, LDL-C and Beyond: A Contemporary Review of Atherosclerotic Cardiovascular Risk Assessment and Management.", locator = "Table 3", quote = "low HDL-C (<40 mg/dL in men, <50 mg/dL in women)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 45
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Acceptable pediatric HDL-C: strictly above 45 mg/dL."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "HDL-C > 45 40-45 < 40" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 40
+high = 45
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric borderline-low HDL-C (40-45 mg/dL)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "HDL-C > 45 40-45 < 40" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 40
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric low HDL-C: strictly below 40 mg/dL."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "HDL-C > 45 40-45 < 40" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 40
+when = { fasting = false }
+population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+note = "Laboratory flag: HDL-C at or below 40 mg/dL in non-fasting samples. Sex-specific cut-points may be used per the consensus."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract", quote = "HDL cholesterol <=1 mmol/L (40 mg/dL)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 1.06
+high = 2.18
+when = { pregnant = true, trimester = 1 }
+population = "Healthy singleton pregnant women, first trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| HDL-C | 1.06-2.18 | 1.00-2.18 | 6.00-0 | 1.23-2.56 | 1.19-2.64" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 1.23
+high = 2.56
+when = { pregnant = true, trimester = 3 }
+population = "Healthy singleton pregnant women, third trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| HDL-C | 1.06-2.18 | 1.00-2.18 | 6.00-0 | 1.23-2.56 | 1.19-2.64" },
+]

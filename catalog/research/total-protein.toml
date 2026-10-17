@@ -1,0 +1,70 @@
+slug = "total-protein"
+name = "Total Protein"
+loinc = "2885-2"
+category = "liver"
+unit = "g/dL"
+description = "Serum total protein (albumin plus globulins). Reference intervals are slightly higher in men than women and vary with age in childhood."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.9
+high = 9.2
+when = { age_min = 18, sex = "male" }
+population = "Healthy adult males (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Table 4", quote = "| g/dl | M | 136 | 7.9 ± 0.7 | 7.8 | 0 | 0.272 | 6.9 (6.8-7.1) | 9.2 (8.8-9.4) | 2.3 | 6.9-9.2" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.7
+high = 8.9
+when = { age_min = 18, sex = "female" }
+population = "Healthy adult females (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Table 4", quote = "| g/dl | F | 136 | 7.9 ± 0.8 | 7.9 | 0 | 6.7 (6.5-6.9) | 8.9 (8.7-9.0) | 2.2 | 6.7-8.9" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.8
+high = 8.9
+when = { age_min = 18 }
+population = "Healthy adults (Gandaki Province, Nepal; dry-chemistry method), sexes combined"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (combined 95% RIs)", quote = "total protein: 6.8-8.9g/dL; albumin: 3.9-5.2 g/dL; globulin: 2.7-4.2g/dL; A/G ratio: 1.0-1.8" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 59.60
+high = 75.30
+unit = "g/L"
+when = { age_min = 1, age_max = 6 }
+population = "Healthy Chinese children aged 1 to <6 years"
+evidence = "reference-interval-study"
+note = "Source states the value in g/L; not CALIPER or NORIP."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Reference interval table (TP rows)", quote = "| 1-<6 years | 528 | 67.47 | 67.46 | 59.60 | 75.30 | 58.84-60.39 | 73.99-76.57" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 61.90
+high = 80.70
+unit = "g/L"
+when = { age_min = 6, age_max = 18 }
+population = "Healthy Chinese children aged 6 to <18 years"
+evidence = "reference-interval-study"
+note = "Source states the value in g/L; not CALIPER or NORIP."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", locator = "Reference interval table (TP rows)", quote = "| 6-<18 years | 234 | 70.55 | 70.47 | 61.90 | 80.70 | 56.06-63.75 | 78.83-82.15" },
+]

@@ -1,0 +1,104 @@
+slug = "alt"
+name = "ALT (Alanine Aminotransferase)"
+loinc = "1742-6"
+category = "liver"
+unit = "U/L"
+description = "Hepatocellular enzyme; the most specific routine marker of hepatocyte injury. Upper reference limits depend on sex, age and body weight."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 57
+when = { sex = "male" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men."
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", locator = "Abstract, Results", quote = "The updated reference limits (97.5th percentile) in the healthiest subpopulation for men and women, respectively, were: ALT 57 and 35 U/L, AST 49 and 33 U/L, GGT 48 and 75 U/L, ALP 108 and 93 U/L, and total bilirubin 28 and 25 umol/L." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 35
+when = { sex = "female" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women."
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", locator = "Abstract, Results", quote = "The updated reference limits (97.5th percentile) in the healthiest subpopulation for men and women, respectively, were: ALT 57 and 35 U/L, AST 49 and 33 U/L, GGT 48 and 75 U/L, ALP 108 and 93 U/L, and total bilirubin 28 and 25 umol/L." },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 33
+unit = "IU/L"
+when = { sex = "male" }
+population = "Adults (guideline statement on true healthy normal ALT)"
+evidence = "guideline"
+note = "Upper limit of true healthy normal ALT (guideline range 29 to 33 IU/L); levels above this should be assessed. Source states IU/L."
+citations = [
+  { pmid = "27995906", doi = "10.1038/ajg.2016.517", title = "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries.", locator = "Abstract", quote = "A true healthy normal ALT level ranges from 29 to 33 IU/l for males, 19 to 25 IU/l for females and levels above this should be assessed." },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 25
+unit = "IU/L"
+when = { sex = "female" }
+population = "Adults (guideline statement on true healthy normal ALT)"
+evidence = "guideline"
+note = "Upper limit of true healthy normal ALT (guideline range 19 to 25 IU/L); levels above this should be assessed. Source states IU/L."
+citations = [
+  { pmid = "27995906", doi = "10.1038/ajg.2016.517", title = "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries.", locator = "Abstract", quote = "A true healthy normal ALT level ranges from 29 to 33 IU/l for males, 19 to 25 IU/l for females and levels above this should be assessed." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 30
+when = { sex = "male" }
+population = "Blood donors at lowest risk for liver disease (Milan, Italy), HCV-antibody negative"
+evidence = "reference-interval-study"
+note = "Updated healthy-range upper limit from a low-risk population; sensitivity for HCV viremia and liver biopsy lesions was higher than the older limit. Men."
+citations = [
+  { pmid = "12093239", doi = "10.7326/0003-4819-137-1-200207020-00006", title = "Updated definitions of healthy ranges for serum alanine aminotransferase levels.", locator = "Abstract, Results", quote = "Updated upper limits (for men, 500 nkat/L [30 U/L]; for women, 317 nkat/L [19 U/L])" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 19
+when = { sex = "female" }
+population = "Blood donors at lowest risk for liver disease (Milan, Italy), HCV-antibody negative"
+evidence = "reference-interval-study"
+note = "Updated healthy-range upper limit from a low-risk population; women."
+citations = [
+  { pmid = "12093239", doi = "10.7326/0003-4819-137-1-200207020-00006", title = "Updated definitions of healthy ranges for serum alanine aminotransferase levels.", locator = "Abstract, Results", quote = "Updated upper limits (for men, 500 nkat/L [30 U/L]; for women, 317 nkat/L [19 U/L])" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 25.8
+when = { sex = "male", age_min = 12, age_max = 18 }
+population = "US NHANES-derived healthy-weight, metabolically normal, liver disease-free children aged 12 to 17 years"
+evidence = "reference-interval-study"
+note = "95th percentile of ALT in the NHANES-derived pediatric reference sample, boys."
+citations = [
+  { pmid = "20064512", doi = "10.1053/j.gastro.2009.12.052", title = "SAFETY study: alanine aminotransferase cutoff values are set too high for reliable detection of pediatric chronic liver disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC2846968/", locator = "Results; NHANES derived normal values", quote = "Among all NHANES participants age 12 to 17 years... The 95th percentile for ALT in this reference sample was 25.8 U/L in boys and 22.1 U/L in girls." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 22.1
+when = { sex = "female", age_min = 12, age_max = 18 }
+population = "US NHANES-derived healthy-weight, metabolically normal, liver disease-free children aged 12 to 17 years"
+evidence = "reference-interval-study"
+note = "95th percentile of ALT in the NHANES-derived pediatric reference sample, girls."
+citations = [
+  { pmid = "20064512", doi = "10.1053/j.gastro.2009.12.052", title = "SAFETY study: alanine aminotransferase cutoff values are set too high for reliable detection of pediatric chronic liver disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC2846968/", locator = "Results; NHANES derived normal values", quote = "Among all NHANES participants age 12 to 17 years... The 95th percentile for ALT in this reference sample was 25.8 U/L in boys and 22.1 U/L in girls." },
+]

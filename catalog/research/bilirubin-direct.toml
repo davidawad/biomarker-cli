@@ -1,0 +1,81 @@
+slug = "bilirubin-direct"
+name = "Bilirubin, Direct (Conjugated)"
+category = "liver"
+unit = "mg/dL"
+description = "Conjugated (direct) serum bilirubin. Used with total bilirubin to separate conjugated from unconjugated hyperbilirubinaemia; elevated direct bilirubin in infancy warrants cholestasis evaluation."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.0
+high = 0.60
+population = "Healthy adults (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+note = "Combined adult 95% reference interval for conjugated bilirubin (lower limit 0.00)."
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Abstract (Results)", quote = "conjugated bilirubin: 0.00-10.26 umol/L (0.00-0.60mg/dl)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1
+high = 9
+unit = "µmol/L"
+when = { age_max = 18 }
+population = "Healthy multiethnic children up to 18 years (CALIPER)"
+evidence = "reference-interval-study"
+note = "Pediatric direct bilirubin reference interval from CALIPER; source states the value in µmol/L only."
+citations = [
+  { pmid = "25445233", doi = "10.1016/j.clinbiochem.2014.10.011", title = "Clinical decision limits for interpretation of direct bilirubin--a CALIPER study of healthy multiethnic children and case report reviews.", locator = "Abstract (Results)", quote = "The reference interval for total bilirubin was 1-12umol/L and for direct bilirubin 1-9umol/L" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.07
+high = 0.76
+when = { age_max = 1 }
+population = "Healthy Iranian infants aged 0 to <4 months"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38087776", doi = "10.1002/jcla.24995", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", locator = "Reference interval table (direct bilirubin rows)", quote = "| Direct bilirubin (mg/dL) | 0 to <4 m | 45 | 0.07 | 0.76 | 0.06-0.08 | 0.65-0.87 | 0.28 ± 0.18" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.10
+high = 0.27
+when = { age_max = 3 }
+population = "Healthy Iranian children aged 4 to <30 months"
+evidence = "reference-interval-study"
+note = "Upper age limit is approximate (30 months is 2.5 years)."
+citations = [
+  { pmid = "38087776", doi = "10.1002/jcla.24995", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", locator = "Reference interval table (direct bilirubin rows)", quote = "| 4 to <30 m | 238 | 0.10 | 0.27 | 0.10-0.10 | 0.25-0.28 | 0.13 ± 0.05" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 10
+unit = "µmol/L"
+when = { age_max = 18 }
+population = "Children up to 18 years with hyperbilirubinaemia (CALIPER case reviews)"
+evidence = "reference-interval-study"
+note = "Decision limit: direct bilirubin of 10 umol/L or more suggests conjugated hyperbilirubinaemia when total bilirubin is also above its reference interval."
+citations = [
+  { pmid = "25445233", doi = "10.1016/j.clinbiochem.2014.10.011", title = "Clinical decision limits for interpretation of direct bilirubin--a CALIPER study of healthy multiethnic children and case report reviews.", locator = "Abstract (Conclusions)", quote = "Direct bilirubin concentration of >=10umol/L should be used to consider the presence of conjugated hyperbilirubinemia provided that total bilirubin is also above the reference interval." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.0
+when = { age_max = 1 }
+population = "Infants jaundiced after 2 weeks of age"
+evidence = "guideline"
+note = "NASPGHAN/ESPGHAN joint guideline: an elevated direct bilirubin prompts timely evaluation and referral for neonatal/infant cholestasis."
+citations = [
+  { pmid = "27429428", doi = "10.1097/MPG.0000000000001334", title = "Guideline for the Evaluation of Cholestatic Jaundice in Infants: Joint Recommendations of the North American Society for Pediatric Gastroenterology, Hepatology, and Nutrition and the European Society for Pediatric Gastroenterology, Hepatology, and Nutrition.", locator = "Abstract", quote = "an elevated serum direct bilirubin level (direct bilirubin levels >1.0 mg/dL or >17 umol/L) warrants timely consideration for evaluation and referral to a pediatric gastroenterologist or hepatologist" },
+]

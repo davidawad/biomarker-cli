@@ -1,0 +1,109 @@
+slug = "c-peptide"
+name = "C-Peptide"
+category = "glycemic"
+unit = "ng/mL"
+description = "C-peptide is secreted in equimolar amounts with insulin and measures endogenous insulin secretion. Used to classify diabetes and guide treatment, interpreted differently for fasting, stimulated and urine tests."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.2
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = false }
+population = "People with insulin-treated diabetes; stimulated (non-fasting random, post-glucagon or mixed-meal) C-peptide"
+evidence = "consensus"
+note = "Absolute insulin deficiency / absolute insulin requirement (strictly below). Source unit nmol/L (1 nmol/L = 3 ng/mL); numbers not converted."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Absolute insulin deficiency/absolute insulin requirement [76] | < 0.2 | < 0.08 | < 0.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.08
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = true }
+population = "People with insulin-treated diabetes; fasting C-peptide"
+evidence = "consensus"
+note = "Absolute insulin deficiency / absolute insulin requirement (strictly below). Source unit nmol/L."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Absolute insulin deficiency/absolute insulin requirement [76] | < 0.2 | < 0.08 | < 0.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.6
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = false }
+population = "People with insulin-treated diabetes; stimulated (non-fasting random, post-glucagon or mixed-meal) C-peptide"
+evidence = "consensus"
+note = "Likely Type 1 diabetes / inability to achieve glycaemic control with non-insulin therapies (strictly below). Source unit nmol/L."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Likely Type 1 diabetes/inability to achieve glycaemic control with non-insulin therapies [39,40,95] | < 0.6 | < 0.25 | < 0.6" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.25
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = true }
+population = "People with insulin-treated diabetes; fasting C-peptide"
+evidence = "consensus"
+note = "Likely Type 1 diabetes / inability to achieve glycaemic control with non-insulin therapies (strictly below). Source unit nmol/L."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Likely Type 1 diabetes/inability to achieve glycaemic control with non-insulin therapies [39,40,95] | < 0.6 | < 0.25 | < 0.6" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 0.2
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = false }
+population = "People with insulin-treated diabetes > 3-5 years post-diagnosis; stimulated (non-fasting random, post-glucagon or mixed-meal) C-peptide"
+evidence = "consensus"
+note = "Suggests Type 2 or monogenic (MODY) diabetes in presumed Type 1 diabetes (strictly above). Source unit nmol/L."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Suggests Type 2 or monogenic (MODY) diabetes in a patient with presumed Type 1 diabetes > 3-5 years post-diagnosis [65,71] | > 0.2 | > 0.08 | > 0.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 0.08
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = true }
+population = "People with insulin-treated diabetes > 3-5 years post-diagnosis; fasting C-peptide"
+evidence = "consensus"
+note = "Suggests Type 2 or monogenic (MODY) diabetes in presumed Type 1 diabetes (strictly above). Source unit nmol/L."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Suggests Type 2 or monogenic (MODY) diabetes in a patient with presumed Type 1 diabetes > 3-5 years post-diagnosis [65,71] | > 0.2 | > 0.08 | > 0.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = false }
+population = "People with insulin-treated young-onset diabetes at diagnosis; stimulated C-peptide"
+evidence = "consensus"
+note = "Consider MODY / Type 2 diabetes (strictly above). Source unit nmol/L."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Consider MODY/Type 2 diabetes in young onset diabetes at diagnosis [67] | > 1 | > 0.4 | > 1.1" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 0.4
+unit = "nmol/L"
+when = { conditions = ["diabetes"], fasting = true }
+population = "People with insulin-treated young-onset diabetes at diagnosis; fasting C-peptide"
+evidence = "consensus"
+note = "Consider MODY / Type 2 diabetes (strictly above). Source unit nmol/L."
+citations = [
+  { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1", quote = "| Consider MODY/Type 2 diabetes in young onset diabetes at diagnosis [67] | > 1 | > 0.4 | > 1.1" },
+]

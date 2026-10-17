@@ -1,0 +1,108 @@
+slug = "glycated-albumin"
+name = "Glycated Albumin"
+category = "glycemic"
+unit = "%"
+description = "Glycated albumin reflects average glycaemia over about 2-3 weeks. Reference intervals and diabetes cut-offs come from population studies and are not standardised across assays or ethnic groups."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 10.0
+high = 13.3
+when = { sex = "female", pregnant = false }
+population = "Non-pregnant Euro-Brazilian women (adult cohort, mean age 43.5 years, n=290)"
+evidence = "reference-interval-study"
+note = "Reference interval, non-pregnant (ref. 39767558 reports it for non-pregnant women)."
+citations = [
+  { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Abstract, Results", quote = "Both non-pregnant and pregnant women exhibited GA RIs of 10.0-13.3% and 10.6-14.7%, respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 10.6
+high = 14.7
+when = { sex = "female", pregnant = true }
+population = "Pregnant Euro-Brazilian women (26.5 +/- 3.1 gestational weeks, n=406)"
+evidence = "reference-interval-study"
+note = "Reference interval in pregnancy."
+citations = [
+  { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Abstract, Results", quote = "Both non-pregnant and pregnant women exhibited GA RIs of 10.0-13.3% and 10.6-14.7%, respectively." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 14.2
+note = "ROC cut-off for type 2 diabetes versus controls (Euro-Brazilian; Table 7 gives sensitivity and specificity). Note: not a standardised guideline threshold."
+evidence = "reference-interval-study"
+population = "Euro-Brazilian adults with type 2 diabetes versus controls (n=283 cases, 290 controls)"
+citations = [
+  { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Table 7", quote = "Associated criterion, % | >14.3 | >14.8 | >14.2 | >13.1" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 14.8
+note = "ROC cut-off for type 1 diabetes in adults versus controls (Euro-Brazilian; Table 7). Not a standardised guideline threshold."
+evidence = "reference-interval-study"
+population = "Euro-Brazilian adults with type 1 diabetes versus controls (n=81 cases, 290 controls)"
+citations = [
+  { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Table 7", quote = "Associated criterion, % | >14.3 | >14.8 | >14.2 | >13.1" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 15.2
+note = "ROC-optimal cut-off for diabetes (OGTT-defined) in this population; low sensitivity and specificity, not a guideline threshold."
+evidence = "reference-interval-study"
+population = "Japanese community residents (908 nondiabetic subjects; 176 with an OGTT)"
+citations = [
+  { pmid = "25817605", doi = "10.1016/j.metabol.2015.03.003", title = "Glycated albumin as a diagnostic tool for diabetes in a general Japanese population.", locator = "Abstract, Results", quote = "optimal threshold values for the diagnosis of diabetes in this population were 15.2% for GA and 5.9% for HbA1c, respectively." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 16.5
+note = "GA 16.5% corresponds to HbA1c 6.5%, diagnostic of diabetes (Taiwanese screening study)."
+evidence = "reference-interval-study"
+population = "Community residents of Yi-lan County, Taiwan (mean age 60.1 years, n=2192)"
+citations = [
+  { pmid = "26247684", doi = "10.1016/j.atherosclerosis.2015.07.037", title = "A comparison of glycated albumin and glycosylated hemoglobin for the screening of diabetes mellitus in Taiwan.", locator = "Abstract, Results", quote = "while a GA value of 16.5% corresponds to an HbA1c level of 6.5%, diagnostic of diabetes." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 14.6
+note = "Prediabetes cut-point at the 75th percentile of the normal population (Taiwan)."
+evidence = "reference-interval-study"
+population = "Community residents of Yi-lan County, Taiwan (mean age 60.1 years, n=2192)"
+citations = [
+  { pmid = "26247684", doi = "10.1016/j.atherosclerosis.2015.07.037", title = "A comparison of glycated albumin and glycosylated hemoglobin for the screening of diabetes mellitus in Taiwan.", locator = "Abstract, Results", quote = "Our suggested GA and HbA1c cut-points for prediabetes at the 75th percentile of the normal population would be 14.6% and 5.8%, respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 16.1
+note = "95th percentile in non-diabetic controls (Taiwan); upper limit only, not a central 95% interval."
+evidence = "reference-interval-study"
+population = "Non-diabetic controls, community residents of Yi-lan County, Taiwan (mean age 60.1 years)"
+citations = [
+  { pmid = "26247684", doi = "10.1016/j.atherosclerosis.2015.07.037", title = "A comparison of glycated albumin and glycosylated hemoglobin for the screening of diabetes mellitus in Taiwan.", locator = "Abstract, Results", quote = "The 95th percentile values for GA and HbA1c in controls were 16.1% and 6.2%, respectively." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 16.5
+note = "Cited second-hand (Al-Lahham et al. citing Araki et al.): higher diabetes risk in Japanese blood donors with GA at or above this value. Not verified against the primary Japanese source."
+evidence = "reference-interval-study"
+population = "Japanese blood donors (as reported in ref. 39767558)"
+citations = [
+  { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Discussion (text)", quote = "described GA in healthy individuals < 15.6% and blood donors with GA >= 16.5 being at higher diabetes risk" },
+]

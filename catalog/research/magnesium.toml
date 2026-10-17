@@ -1,0 +1,96 @@
+slug = "magnesium"
+name = "Magnesium"
+loinc = "19123-9"
+category = "mineral"
+unit = "mg/dL"
+description = "Serum magnesium, a marker of magnesium status. The commonly used reference interval derives from NHANES I (1974), and newer population data show lower and different limits; low serum magnesium is linked to cardiovascular and renal outcomes."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.70
+high = 2.19
+when = { sex = "male", age_min = 12, age_max = 19 }
+population = "US boys aged 12-18 years, nonpregnant, NHANES 2021-2023 (total population)"
+evidence = "reference-interval-study"
+note = "Paediatric reference interval, NHANES 2021-2023; IFCC method."
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)", quote = "The reference interval was 1.70-2.19 mg/dL (0.70-0.90 mmol/L; 1.40-1.80 mEq/L) for boys" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.64
+high = 2.18
+when = { sex = "female", age_min = 12, age_max = 19 }
+population = "US girls aged 12-18 years, nonpregnant, NHANES 2021-2023 (total population)"
+evidence = "reference-interval-study"
+note = "Girls had slightly lower mean serum magnesium than boys in the source, though differences were small."
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)", quote = "1.64-2.18 mg/dL (0.68-0.90 mmol/L; 1.35-1.79 mEq/L) for girls based on data from the total population" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.72
+high = 2.26
+when = { sex = "male", age_min = 19 }
+population = "US men aged 19 years and over, nonpregnant, NHANES 2021-2023, metabolically healthy subgroup (no diabetes, hypertension or CKD)"
+evidence = "reference-interval-study"
+note = "Applies only to the metabolically healthy subgroup. Means were significantly lower in adults with diabetes, hypertension or CKD in the source."
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)", quote = "The reference interval was 1.72-2.26 mg/dL (0.71-0.93 mmol/L; 1.42-1.86 mEq/L) for males" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.70
+high = 2.21
+when = { sex = "female", age_min = 19 }
+population = "US women aged 19 years and over, nonpregnant, NHANES 2021-2023, metabolically healthy subgroup (no diabetes, hypertension or CKD)"
+evidence = "reference-interval-study"
+note = "Applies only to the metabolically healthy subgroup. Women had lower serum magnesium than men in the source (P < 0.001)."
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)", quote = "1.70-2.21 mg/dL (0.70-0.91 mmol/L; 1.40-1.82 mEq/L) for females based on data from the metabolically healthy population" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 2.06
+when = { age_min = 19 }
+population = "US adults aged 19 years and over, nonpregnant, NHANES 2021-2023"
+evidence = "reference-interval-study"
+note = "Chronic latent magnesium deficiency (CLMD) threshold used by the source to estimate prevalence (strictly below 2.06 mg/dL). An estimation threshold, not a diagnostic cut-off; the source estimated 67.8% prevalence in adults."
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Conclusions)", quote = "serum magnesium concentration <2.06 mg/dL (0.85 mmol/L; 1.70 mEq/L), was 67.8% in adults" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.75
+high = 0.95
+unit = "mmol/L"
+population = "Legacy reference interval as cited in a perspective review (derived from NHANES I, 1974)"
+evidence = "consensus"
+note = "Legacy interval, superseded by the NHANES 2021-2023 intervals above. The source argues it reflects population distribution rather than clinical outcomes and proposes an evidence-based replacement."
+citations = [
+  { pmid = "28140318", doi = "10.3945/an.116.012765", title = "Perspective: The Case for an Evidence-Based Reference Interval for Serum Magnesium: The Time Has Come.", locator = "Abstract", quote = "current serum magnesium reference interval of 0.75-0.95 mmol/L" },
+]
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 1.9
+high = 2.1
+when = { conditions = ["ckd"] }
+population = "Adults with chronic kidney disease (CRIC cohort, n = 3,867)"
+evidence = "outcome-study"
+note = "Band outside which all-cause mortality rose in a CKD cohort (nonlinear association). Observational; the source states the optimal range in CKD is not yet determined."
+citations = [
+  { pmid = "33851114", doi = "10.1016/j.xkme.2020.10.010", title = "Serum Magnesium and Cardiovascular Outcomes and Mortality in CKD: The Chronic Renal Insufficiency Cohort (CRIC).", locator = "Abstract (Conclusions)", quote = "serum magnesium level < 1.9 mg/dL and >2.1 mg/dL was associated with increased risk for all-cause mortality" },
+]

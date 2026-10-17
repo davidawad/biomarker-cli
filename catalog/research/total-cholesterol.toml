@@ -1,0 +1,120 @@
+slug = "total-cholesterol"
+name = "Total Cholesterol"
+loinc = "2093-3"
+category = "lipid"
+unit = "mg/dL"
+description = "Cholesterol carried in all apolipoprotein B and HDL particles. Interpreted with LDL-C, HDL-C and triglycerides in the lipid profile; adult ATP III cut-points, pediatric NHLBI cut-points, non-fasting flags and pregnancy reference intervals."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 200
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Desirable: strictly below 200 mg/dL (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "Total Cholesterol <200 Desirable 200-239 Borderline high >=240 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 200
+high = 239
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Borderline high total cholesterol (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "Total Cholesterol <200 Desirable 200-239 Borderline high >=240 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 240
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "High total cholesterol (>= 240 mg/dL, ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "Total Cholesterol <200 Desirable 200-239 Borderline high >=240 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 170
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Acceptable pediatric total cholesterol: strictly below 170 mg/dL."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "TC < 170 170-199 >= 200" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 170
+high = 199
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric borderline-high total cholesterol."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "TC < 170 170-199 >= 200" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 200
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric high total cholesterol (>= 200 mg/dL)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "TC < 170 170-199 >= 200" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 190
+when = { fasting = false }
+population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+note = "Laboratory flag for abnormal non-fasting total cholesterol. The consensus states the same cut-points apply to fasting samples."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract", quote = "For non-fasting samples, laboratory reports should flag abnormal concentrations as triglycerides >=2 mmol/L (175 mg/dL), total cholesterol >=5 mmol/L (190 mg/dL)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 3.11
+high = 6.11
+when = { pregnant = true, trimester = 1 }
+population = "Healthy singleton pregnant women, first trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| TC | 3.11-6.11 | 3.07-5.82 | 1.30-4.98 | 4.56-9.31 | 4.50-9.02 | 1.33-3.22 | 10.31" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 4.56
+high = 9.31
+when = { pregnant = true, trimester = 3 }
+population = "Healthy singleton pregnant women, third trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| TC | 3.11-6.11 | 3.07-5.82 | 1.30-4.98 | 4.56-9.31 | 4.50-9.02 | 1.33-3.22 | 10.31" },
+]

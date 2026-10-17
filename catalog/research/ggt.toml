@@ -1,0 +1,26 @@
+slug = "ggt"
+name = "Gamma-Glutamyl Transferase"
+loinc = "2324-2"
+category = "liver"
+unit = "U/L"
+description = "Enzyme sensitive to biliary and alcohol-related liver injury; higher values are associated with cardiovascular and all-cause mortality in prospective cohorts."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 48
+when = { sex = "male" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men. The women's limit (75) is higher than the men's as published; confirmed in full-text Table 2 (women n=252 vs men n=144; log-transformed limits 44 men / 62 women)."
+citations = [ { pmid = "41255223", doi = "10.1111/liv.70440", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", locator = "Abstract, Results", quote = "The updated reference limits (97.5th percentile) in the healthiest subpopulation for men and women, respectively, were: ALT 57 and 35 U/L, AST 49 and 33 U/L, GGT 48 and 75 U/L, ALP 108 and 93 U/L, and total bilirubin 28 and 25 umol/L." } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 75
+when = { sex = "female" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women. Higher than the men's limit as published; confirmed in full-text Table 2 (women n=252)."
+citations = [ { pmid = "41255223", doi = "10.1111/liv.70440", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", locator = "Abstract, Results", quote = "The updated reference limits (97.5th percentile) in the healthiest subpopulation for men and women, respectively, were: ALT 57 and 35 U/L, AST 49 and 33 U/L, GGT 48 and 75 U/L, ALP 108 and 93 U/L, and total bilirubin 28 and 25 umol/L." } ]

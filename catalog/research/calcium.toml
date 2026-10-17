@@ -1,0 +1,67 @@
+slug = "calcium"
+name = "Calcium"
+loinc = "17861-6"
+category = "mineral"
+unit = "mg/dL"
+description = "Total serum calcium, the main laboratory measure of calcium status. Values are higher in infancy and early childhood than in adults, and albumin strongly affects the total value. Hypercalcaemia is graded by severity in clinical reviews."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 9.90
+high = 11.84
+when = { age_min = 0, age_max = 3 }
+population = "Healthy Iranian neonates, infants and children aged 0 to under 30 months (total serum calcium, CLSI EP28-A3 indirect method)"
+evidence = "reference-interval-study"
+note = "Total calcium in infancy; age partitioning was not required for calcium in this study. Upper limit is above the adult range."
+citations = [
+  { pmid = "36524863", doi = "10.1111/jcmm.17646", title = "Age-specific reference intervals for routine biochemical parameters in healthy neonates, infants, and young children in Iran.", locator = "Table 1", quote = "| Calcium (mg/dl) | 0-<30 | 290 | 9.90 | 11.84 | 9.90-9.90 | 11.79-12.09" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 8.76
+high = 10.24
+when = { age_min = 40, age_max = 70 }
+population = "UK Biobank adults aged 40 to 69 without CKD or vitamin D deficiency (albumin-adjusted calcium, not total calcium)"
+evidence = "reference-interval-study"
+note = "99% reference interval for albumin-adjusted serum calcium, not for total calcium. Upper limits were sex and age dependent in the source (for example 2.59 mmol/L in women aged 55-69, 2.55 mmol/L in men)."
+citations = [
+  { pmid = "32892370", doi = "10.1111/cen.14326", title = "Reference interval for albumin-adjusted calcium based on a large UK population.", locator = "Results", quote = "we report a 99% reference interval of 2.19 to 2.56 mmol/L (8.76 to 10.24 mg/dL)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 10.5
+high = 12
+population = "Adults with hypercalcaemia (mild grade)"
+evidence = "consensus"
+note = "Mild hypercalcaemia (strictly above 10.5 mg/dL, up to 12 mg/dL), grading as stated in a narrative review of hypercalcaemia."
+citations = [
+  { pmid = "35217631", doi = "10.12659/MSM.935821", title = "A Review of Current Clinical Concepts in the Pathophysiology, Etiology, Diagnosis, and Management of Hypercalcemia.", locator = "Definition, Epidemiology, and Screening for Hypercalcemia", quote = "mild 10.5-12 mg/dL, moderate 12.1-14 mg/dL, and severe >14 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 12.1
+high = 14
+population = "Adults with hypercalcaemia (moderate grade)"
+evidence = "consensus"
+note = "Moderate hypercalcaemia (12.1 to 14 mg/dL), grading as stated in a narrative review of hypercalcaemia."
+citations = [
+  { pmid = "35217631", doi = "10.12659/MSM.935821", title = "A Review of Current Clinical Concepts in the Pathophysiology, Etiology, Diagnosis, and Management of Hypercalcemia.", locator = "Definition, Epidemiology, and Screening for Hypercalcemia", quote = "mild 10.5-12 mg/dL, moderate 12.1-14 mg/dL, and severe >14 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 14
+population = "Adults with hypercalcaemia (severe grade)"
+evidence = "consensus"
+note = "Severe hypercalcaemia (strictly above 14 mg/dL), grading as stated in a narrative review of hypercalcaemia."
+citations = [
+  { pmid = "35217631", doi = "10.12659/MSM.935821", title = "A Review of Current Clinical Concepts in the Pathophysiology, Etiology, Diagnosis, and Management of Hypercalcemia.", locator = "Definition, Epidemiology, and Screening for Hypercalcemia", quote = "mild 10.5-12 mg/dL, moderate 12.1-14 mg/dL, and severe >14 mg/dL" },
+]

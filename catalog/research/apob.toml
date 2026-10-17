@@ -1,0 +1,65 @@
+slug = "apob"
+name = "Apolipoprotein B"
+loinc = "1884-6"
+category = "lipid"
+unit = "mg/dL"
+description = "Apolipoprotein B, one protein per atherogenic lipoprotein particle (LDL, VLDL, IDL, Lp(a)). Used as a secondary treatment target and as a risk marker alongside LDL cholesterol."
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 65
+when = { risk = "very-high-cardiovascular-risk" }
+population = "Adults with very high cardiovascular risk"
+evidence = "guideline"
+note = "ESC/EAS 2019 secondary target: apoB strictly below 65 mg/dL (as summarised in the cited review). Lower bound not stated."
+citations = [
+  { pmid = "42876934", doi = "10.3389/fcvm.2026.1857230", title = "Apolipoprotein B in cardiovascular risk assessment: beyond traditional lipid markers.", locator = "Introduction / lipid guideline paragraph", quote = "identified ApoB as a secondary treatment target, with recommended levels of <65 mg/dL, <80 mg/dL, and <100 mg/dL for patients at very high, high, and moderate cardiovascular risk, respectively" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 80
+when = { risk = "high-cardiovascular-risk" }
+population = "Adults with high cardiovascular risk"
+evidence = "guideline"
+note = "ESC/EAS 2019 secondary target: apoB strictly below 80 mg/dL (as summarised in the cited review)."
+citations = [
+  { pmid = "42876934", doi = "10.3389/fcvm.2026.1857230", title = "Apolipoprotein B in cardiovascular risk assessment: beyond traditional lipid markers.", locator = "Introduction / lipid guideline paragraph", quote = "identified ApoB as a secondary treatment target, with recommended levels of <65 mg/dL, <80 mg/dL, and <100 mg/dL for patients at very high, high, and moderate cardiovascular risk, respectively" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 100
+when = { risk = "moderate-cardiovascular-risk" }
+population = "Adults with moderate cardiovascular risk"
+evidence = "guideline"
+note = "ESC/EAS 2019 secondary target: apoB strictly below 100 mg/dL (as summarised in the cited review)."
+citations = [
+  { pmid = "42876934", doi = "10.3389/fcvm.2026.1857230", title = "Apolipoprotein B in cardiovascular risk assessment: beyond traditional lipid markers.", locator = "Introduction / lipid guideline paragraph", quote = "identified ApoB as a secondary treatment target, with recommended levels of <65 mg/dL, <80 mg/dL, and <100 mg/dL for patients at very high, high, and moderate cardiovascular risk, respectively" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.0
+unit = "g/L"
+population = "Adults; laboratory flagging of lipid results"
+evidence = "consensus"
+note = "EAS/EFLM 2016 laboratory flag: apoB at or above 1.0 g/L (100 mg/dL). apoB is not affected by fasting status per the same consensus."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract (laboratory flagging recommendation)", quote = "apolipoprotein B >=1.0 g/L (100 mg/dL)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 130
+population = "Adults (2018 AHA/ACC risk-enhancing factor)"
+evidence = "guideline"
+note = "Risk-enhancing factor in the 2018 AHA/ACC cholesterol guideline, particularly with triglycerides >= 200 mg/dL (as summarised in the cited review). Superseded by the 2026 ACC/AHA dyslipidemia guideline, whose apoB text could not be retrieved."
+citations = [
+  { pmid = "42876934", doi = "10.3389/fcvm.2026.1857230", title = "Apolipoprotein B in cardiovascular risk assessment: beyond traditional lipid markers.", locator = "Introduction / risk-enhancing factors paragraph", quote = "identified ApoB >=130 mg/dL as a" },
+]

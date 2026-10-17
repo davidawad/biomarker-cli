@@ -1,0 +1,44 @@
+slug = "remnant-cholesterol"
+name = "Remnant Cholesterol"
+category = "lipid"
+unit = "mg/dL"
+description = "Cholesterol carried in triglyceride-rich remnant lipoproteins (IDL and VLDL remnants). Calculated as non-HDL cholesterol minus LDL cholesterol, or measured directly. Associated with ischemic heart disease and mortality."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.9
+unit = "mmol/L"
+when = { fasting = false }
+population = "Adults, non-fasting samples"
+evidence = "consensus"
+note = "EAS/EFLM 2016 laboratory flag for calculated remnant cholesterol (35 mg/dL). The same consensus gives no remnant-cholesterol flag for fasting samples."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract (laboratory flagging recommendation)", quote = "calculated remnant cholesterol >=0.9 mmol/L (35 mg/dL)" },
+]
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 0.5
+unit = "mmol/L"
+when = { fasting = false }
+population = "Adults from the Copenhagen General Population Study (non-fasting measurement)"
+evidence = "outcome-study"
+note = "Lowest-risk category in the Copenhagen cohort: non-fasting remnant cholesterol below 0.5 mmol/L (19.3 mg/dL). Used as the reference group for hazard ratios."
+citations = [
+  { pmid = "25605681", doi = "10.1373/clinchem.2014.234146", title = "Extreme nonfasting remnant cholesterol vs extreme LDL cholesterol as contributors to cardiovascular disease and all-cause mortality in 90000 individuals from the general population.", locator = "Results", quote = "Compared with participants with nonfasting remnant cholesterol <0.5 mmol/L (19.3 mg/dL), hazard ratios for IHD ranged from 1.3" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.5
+unit = "mmol/L"
+when = { fasting = false }
+population = "Adults from the Copenhagen General Population Study (non-fasting measurement)"
+evidence = "outcome-study"
+note = "Highest-risk category in the Copenhagen cohort: non-fasting remnant cholesterol of 1.5 mmol/L (58 mg/dL) or more, hazard ratio 2.4 for ischemic heart disease versus the lowest category. Not a guideline cut-off."
+citations = [
+  { pmid = "25605681", doi = "10.1373/clinchem.2014.234146", title = "Extreme nonfasting remnant cholesterol vs extreme LDL cholesterol as contributors to cardiovascular disease and all-cause mortality in 90000 individuals from the general population.", locator = "Results", quote = "to 2.4 (1.9-2.9) for remnant cholesterol of >=1.5 mmol/L (58 mg/dL)" },
+]

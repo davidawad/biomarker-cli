@@ -1,0 +1,111 @@
+slug = "bilirubin-total"
+name = "Bilirubin, Total"
+loinc = "1975-2"
+category = "liver"
+unit = "mg/dL"
+description = "Total (direct plus indirect) serum bilirubin. Reference intervals differ by age and sex; mildly elevated values in the adult range are a Gilbert-syndrome-type pattern."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.30
+high = 1.50
+when = { age_min = 18 }
+population = "Healthy adults (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+note = "Combined adult 95% reference interval; the source also reports sex-specific intervals (see the male and female ranges)."
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Abstract (Results)", quote = "total bilirubin: 5.13-25.65umol/L (0.30-1.50mg/dl)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.10
+high = 26.68
+unit = "µmol/L"
+when = { age_min = 18, sex = "male" }
+population = "Healthy adult males (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+note = "Male 95% reference interval; source states the value in µmol/L only."
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (sex-specific 95% RIs) and Table 4", quote = "total bilirubin: 4.10-26.68 umol/L and 5.13-23.94 umol/L" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.13
+high = 23.94
+unit = "µmol/L"
+when = { age_min = 18, sex = "female" }
+population = "Healthy adult females (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+note = "Female 95% reference interval; source states the value in µmol/L only."
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (sex-specific 95% RIs) and Table 4", quote = "total bilirubin: 4.10-26.68 umol/L and 5.13-23.94 umol/L" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1
+high = 12
+unit = "µmol/L"
+when = { age_max = 18 }
+population = "Healthy multiethnic children up to 18 years (CALIPER)"
+evidence = "reference-interval-study"
+note = "Pediatric total bilirubin reference interval from CALIPER; the neonatal phototherapy nomograms are not used."
+citations = [
+  { pmid = "25445233", doi = "10.1016/j.clinbiochem.2014.10.011", title = "Clinical decision limits for interpretation of direct bilirubin--a CALIPER study of healthy multiethnic children and case report reviews.", locator = "Abstract (Results)", quote = "The reference interval for total bilirubin was 1-12umol/L and for direct bilirubin 1-9umol/L" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.66
+high = 8.04
+when = { age_max = 1 }
+population = "Healthy Iranian infants aged 0 to <5 months"
+evidence = "reference-interval-study"
+note = "Age-specific CLSI EP28-A3 interval; wider confidence intervals at the upper limit in early life."
+citations = [
+  { pmid = "38087776", doi = "10.1002/jcla.24995", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", locator = "Reference interval table (total bilirubin rows)", quote = "| Total bilirubin (mg/dL) | 0 to <5 m | 60 | 0.66 | 8.04 | 0.45-0.88 | 7.05-8.97 | 3.35 ± 1.93" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.42
+high = 4.13
+when = { age_max = 1 }
+population = "Healthy Iranian infants aged 5 to <10 months"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38087776", doi = "10.1002/jcla.24995", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", locator = "Reference interval table (total bilirubin rows)", quote = "| 5 to <10 m | 45 | 0.42 | 4.13 | 0.33-0.51 | 3.57-4.71 | 1.64 ± 0.99" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.36
+high = 1.77
+when = { age_max = 3 }
+population = "Healthy Iranian children aged 10 to <30 months"
+evidence = "reference-interval-study"
+note = "Upper age limit is approximate (30 months is 2.5 years)."
+citations = [
+  { pmid = "38087776", doi = "10.1002/jcla.24995", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", locator = "Reference interval table (total bilirubin rows)", quote = "| 10 to <30 m | 179 | 0.36 | 1.77 | 0.34-0.39 | 1.67-1.86 | 0.90 ± 0.37" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.0
+when = { conditions = ["gilbert-syndrome"] }
+population = "Adults and children with unconjugated hyperbilirubinaemia (Gilbert syndrome definition)"
+evidence = "consensus"
+note = "Total bilirubin at or above 1 mg/dL (17 umol/L) used as the phenotypic definition of Gilbert syndrome in a cohort study; not a population reference limit."
+citations = [
+  { pmid = "37738404", doi = "10.1097/HC9.0000000000000245", title = "Clinical and genetic definition of serum bilirubin levels for the diagnosis of Gilbert syndrome and hypobilirubinemia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10519483/", locator = "Abstract (Background and Aims)", quote = "phenotypically defined by hyperbilirubinemia using total bilirubin (TB) cutoff >=1mg/dL (17 umol/L)" },
+]

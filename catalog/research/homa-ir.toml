@@ -1,0 +1,164 @@
+slug = "homa-ir"
+name = "HOMA-IR"
+category = "glycemic"
+unit = "ratio"
+description = "Homeostasis model assessment of insulin resistance, calculated from fasting glucose and fasting insulin. Population-specific cut-offs and reference intervals differ by assay formula (HOMA1 vs HOMA2), sex, menopausal status and age; the ranges below are population-derived, not universal diagnostic thresholds."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.63
+high = 2.68
+when = { method = "homa1", fasting = true }
+population = "Healthy non-obese Iranian adults aged 24-83 years (Tehran Lipid and Glucose Study)"
+evidence = "reference-interval-study"
+note = "HOMA1-IR central 95% reference interval."
+citations = [
+  { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results", quote = "Reference intervals for HOMA1-IR, HOMA2-IR, and QUICKI were 0.63-2.68, 0.40-1.80, and 0.33-0.42, respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.40
+high = 1.80
+when = { method = "homa2", fasting = true }
+population = "Healthy non-obese Iranian adults aged 24-83 years (Tehran Lipid and Glucose Study)"
+evidence = "reference-interval-study"
+note = "HOMA2-IR central 95% reference interval."
+citations = [
+  { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results", quote = "Reference intervals for HOMA1-IR, HOMA2-IR, and QUICKI were 0.63-2.68, 0.40-1.80, and 0.33-0.42, respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.56
+high = 3.50
+when = { method = "homa1", fasting = true, age_min = 20, age_max = 70 }
+population = "Healthy Nepalese adults aged 20-69 years with BMI 18.5-24.9 kg/m2 (Gandaki Province, n=135)"
+evidence = "reference-interval-study"
+note = "HOMA1-IR 2.5th-97.5th percentile reference interval, Nepal."
+citations = [
+  { pmid = "41857869", doi = "10.1136/bmjopen-2025-109523", title = "Reference intervals for fasting insulin and insulin-related indices in healthy adults: a cross-sectional study in Gandaki Province, Nepal.", locator = "Abstract, Results", quote = "Insulin resistance indices (HOMA1-IR: 0.56-3.50; HOMA2-IR: 0.30-1.70; METS-IR: 25.14-38.94)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 2.7
+when = { method = "homa1", fasting = true }
+population = "Nondiabetic Brazilian adults aged 18-78 years (BRAMS, multi-ethnic admixed population)"
+evidence = "reference-interval-study"
+note = "Insulin resistance cut-off (strictly above), defined as the 90th percentile of the healthy subgroup. Population-derived, not a disease diagnosis."
+citations = [
+  { pmid = "19466221", doi = "10.1590/s0004-27302009000200020", title = "HOMA1-IR and HOMA2-IR indexes in identifying insulin resistance and metabolic syndrome: Brazilian Metabolic Syndrome Study (BRAMS).", locator = "Abstract, Results", quote = "The cut-off values for IR were: HOMA1-IR > 2.7 and HOMA2-IR > 1.8" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.8
+when = { method = "homa2", fasting = true }
+population = "Nondiabetic Brazilian adults aged 18-78 years (BRAMS, multi-ethnic admixed population)"
+evidence = "reference-interval-study"
+note = "Insulin resistance cut-off (strictly above) for HOMA2-IR, 90th percentile of the healthy subgroup. Population-derived, not a disease diagnosis."
+citations = [
+  { pmid = "19466221", doi = "10.1590/s0004-27302009000200020", title = "HOMA1-IR and HOMA2-IR indexes in identifying insulin resistance and metabolic syndrome: Brazilian Metabolic Syndrome Study (BRAMS).", locator = "Abstract, Results", quote = "The cut-off values for IR were: HOMA1-IR > 2.7 and HOMA2-IR > 1.8" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 2.20
+when = { sex = "male", fasting = true, age_min = 20 }
+population = "Korean adults aged 20 years or older without diabetes (KNHANES 2007-2010)"
+evidence = "reference-interval-study"
+note = "Youden-index cut-off for HOMA-IR associated with metabolic abnormalities, men. Population-derived."
+citations = [
+  { pmid = "30008630", doi = "10.3346/jkms.2018.33.e197", title = "The Cut-off Values of Surrogate Measures for Insulin Sensitivity in a Healthy Population in Korea according to the Korean National Health and Nutrition Examination Survey (KNHANES) 2007-2010.", locator = "Abstract, Results", quote = "The cut-off values of the HOMA-IR were 2.20 in men, 2.55 in premenopausal women, and 2.03 in postmenopausal women" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 2.55
+when = { sex = "female", menopause = "pre", fasting = true, age_min = 20 }
+population = "Korean premenopausal women aged 20 years or older without diabetes (KNHANES 2007-2010)"
+evidence = "reference-interval-study"
+note = "Youden-index cut-off for HOMA-IR associated with metabolic abnormalities, premenopausal women. Population-derived."
+citations = [
+  { pmid = "30008630", doi = "10.3346/jkms.2018.33.e197", title = "The Cut-off Values of Surrogate Measures for Insulin Sensitivity in a Healthy Population in Korea according to the Korean National Health and Nutrition Examination Survey (KNHANES) 2007-2010.", locator = "Abstract, Results", quote = "The cut-off values of the HOMA-IR were 2.20 in men, 2.55 in premenopausal women, and 2.03 in postmenopausal women" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 2.03
+when = { sex = "female", menopause = "post", fasting = true, age_min = 20 }
+population = "Korean postmenopausal women aged 20 years or older without diabetes (KNHANES 2007-2010)"
+evidence = "reference-interval-study"
+note = "Youden-index cut-off for HOMA-IR associated with metabolic abnormalities, postmenopausal women. Population-derived."
+citations = [
+  { pmid = "30008630", doi = "10.3346/jkms.2018.33.e197", title = "The Cut-off Values of Surrogate Measures for Insulin Sensitivity in a Healthy Population in Korea according to the Korean National Health and Nutrition Examination Survey (KNHANES) 2007-2010.", locator = "Abstract, Results", quote = "The cut-off values of the HOMA-IR were 2.20 in men, 2.55 in premenopausal women, and 2.03 in postmenopausal women" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 2.29
+when = { fasting = true }
+population = "Nondiabetic Caucasian rural adults with a standard 75 g OGTT (n=1156)"
+evidence = "reference-interval-study"
+note = "75th percentile of HOMA-IR used as the insulin resistance cut-off (HOMA1 formula per the abstract). Population-derived."
+citations = [
+  { pmid = "16804799", doi = "10.1055/s-2006-924233", title = "Insulin sensitivity indices: a proposal of cut-off points for simple identification of insulin-resistant subjects.", locator = "Abstract", quote = "The 75th percentile value as the cut-off point to define IR corresponded with a HOMA-IR of 2.29" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 3.82
+when = { sex = "female", conditions = ["obesity"], age_min = 5, age_max = 19, fasting = true }
+population = "Obese girls aged 5-18 years in the pubertal period (OGTT-based ROC cut-off)"
+evidence = "reference-interval-study"
+note = "Pubertal status is not a when key; this range applies to the pubertal group only (see the companion prepubertal ranges). Population-derived."
+citations = [
+  { pmid = "21274322", doi = "10.4274/jcrpe.v2i3.100", title = "Insulin resistance in obese children and adolescents: HOMA-IR cut-off levels in the prepubertal and pubertal periods.", locator = "Abstract, Results", quote = "HOMA-IR cut-off values for insulin resistance in the prepubertal period were calculated to be 2.67 (sensitivity 88.2%, specificity 65.5%) in boys and 2.22 (sensitivity 100%, specificity 42.3%) in girls, and in the pubertal period, they were 5.22 (sensitivity 56%, specificity 93.3%) in boys and 3.82 (sensitivity 77.1%, specificity 71.4%) in girls." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 5.22
+when = { sex = "male", conditions = ["obesity"], age_min = 5, age_max = 19, fasting = true }
+population = "Obese boys aged 5-18 years in the pubertal period (OGTT-based ROC cut-off)"
+evidence = "reference-interval-study"
+note = "Pubertal status is not a when key; this range applies to the pubertal group only (see the companion prepubertal ranges). Population-derived."
+citations = [
+  { pmid = "21274322", doi = "10.4274/jcrpe.v2i3.100", title = "Insulin resistance in obese children and adolescents: HOMA-IR cut-off levels in the prepubertal and pubertal periods.", locator = "Abstract, Results", quote = "HOMA-IR cut-off values for insulin resistance in the prepubertal period were calculated to be 2.67 (sensitivity 88.2%, specificity 65.5%) in boys and 2.22 (sensitivity 100%, specificity 42.3%) in girls, and in the pubertal period, they were 5.22 (sensitivity 56%, specificity 93.3%) in boys and 3.82 (sensitivity 77.1%, specificity 71.4%) in girls." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 2.67
+when = { sex = "male", conditions = ["obesity"], age_min = 5, age_max = 19, fasting = true }
+population = "Obese boys aged 5-18 years in the prepubertal period (OGTT-based ROC cut-off)"
+evidence = "reference-interval-study"
+note = "Pubertal status is not a when key; this range applies to the prepubertal group only (see the companion pubertal ranges). Population-derived."
+citations = [
+  { pmid = "21274322", doi = "10.4274/jcrpe.v2i3.100", title = "Insulin resistance in obese children and adolescents: HOMA-IR cut-off levels in the prepubertal and pubertal periods.", locator = "Abstract, Results", quote = "HOMA-IR cut-off values for insulin resistance in the prepubertal period were calculated to be 2.67 (sensitivity 88.2%, specificity 65.5%) in boys and 2.22 (sensitivity 100%, specificity 42.3%) in girls, and in the pubertal period, they were 5.22 (sensitivity 56%, specificity 93.3%) in boys and 3.82 (sensitivity 77.1%, specificity 71.4%) in girls." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 2.22
+when = { sex = "female", conditions = ["obesity"], age_min = 5, age_max = 19, fasting = true }
+population = "Obese girls aged 5-18 years in the prepubertal period (OGTT-based ROC cut-off)"
+evidence = "reference-interval-study"
+note = "Pubertal status is not a when key; this range applies to the prepubertal group only (see the companion pubertal ranges). Population-derived."
+citations = [
+  { pmid = "21274322", doi = "10.4274/jcrpe.v2i3.100", title = "Insulin resistance in obese children and adolescents: HOMA-IR cut-off levels in the prepubertal and pubertal periods.", locator = "Abstract, Results", quote = "HOMA-IR cut-off values for insulin resistance in the prepubertal period were calculated to be 2.67 (sensitivity 88.2%, specificity 65.5%) in boys and 2.22 (sensitivity 100%, specificity 42.3%) in girls, and in the pubertal period, they were 5.22 (sensitivity 56%, specificity 93.3%) in boys and 3.82 (sensitivity 77.1%, specificity 71.4%) in girls." },
+]

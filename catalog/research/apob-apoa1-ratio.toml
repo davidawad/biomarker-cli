@@ -1,0 +1,28 @@
+slug = "apob-apoa1-ratio"
+name = "ApoB/ApoA-I Ratio"
+category = "lipid"
+unit = "ratio"
+description = "Ratio of apolipoprotein B to apolipoprotein A-I, a balance index of atherogenic versus antiatherogenic lipoprotein particles. Used as a cardiovascular risk marker."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.61
+high = 0.9
+population = "Adults, men and women combined (AMORIS cohort)"
+evidence = "outcome-study"
+note = "Tentative medium-risk band of the apoB/apoA-1 ratio (AMORIS, Swedish cohort). Not sex-specific; the source calls the levels tentative."
+citations = [
+  { pmid = "34851955", doi = "10.1371/journal.pmed.1003853", title = "Long-term risk of a major cardiovascular event by apoB, apoA-1, and the apoB/apoA-1 ratio-Experience from the Swedish AMORIS cohort: A cohort study.", locator = "Results, 'The apoB/apoA-1 ratio and its relations to levels of apoB and apoA-1' section", quote = "low risk, 0.2-0.6 (green); medium risk, 0.61-0.9 (yellow); and high risk, 0.91-5.0 (red)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.91
+population = "Adults, men and women combined (AMORIS cohort)"
+evidence = "outcome-study"
+note = "Tentative high-risk band of the apoB/apoA-1 ratio (AMORIS, Swedish cohort). Not sex-specific."
+citations = [
+  { pmid = "34851955", doi = "10.1371/journal.pmed.1003853", title = "Long-term risk of a major cardiovascular event by apoB, apoA-1, and the apoB/apoA-1 ratio-Experience from the Swedish AMORIS cohort: A cohort study.", locator = "Results, 'The apoB/apoA-1 ratio and its relations to levels of apoB and apoA-1' section", quote = "low risk, 0.2-0.6 (green); medium risk, 0.61-0.9 (yellow); and high risk, 0.91-5.0 (red)" },
+]

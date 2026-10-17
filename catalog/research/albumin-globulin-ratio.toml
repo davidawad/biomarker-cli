@@ -1,0 +1,64 @@
+slug = "albumin-globulin-ratio"
+name = "Albumin/Globulin Ratio"
+category = "liver"
+unit = "ratio"
+description = "Ratio of serum albumin to calculated globulin. Low values are associated with higher mortality in dialysis and critically ill patients."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.1
+high = 1.8
+when = { age_min = 18, sex = "male" }
+population = "Healthy adult males (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (sex-specific 95% RIs)", quote = "A/G ratio: 1.1-1.8 and 1.0-1.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.0
+high = 1.7
+when = { age_min = 18, sex = "female" }
+population = "Healthy adult females (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (sex-specific 95% RIs)", quote = "A/G ratio: 1.1-1.8 and 1.0-1.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.0
+high = 1.8
+when = { age_min = 18 }
+population = "Healthy adults (Gandaki Province, Nepal; dry-chemistry method), sexes combined"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (combined 95% RIs)", quote = "total protein: 6.8-8.9g/dL; albumin: 3.9-5.2 g/dL; globulin: 2.7-4.2g/dL; A/G ratio: 1.0-1.8" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 0.8
+population = "Adults admitted to a respiratory intensive care unit (critically ill)"
+evidence = "outcome-study"
+note = "AGR below 0.8 (low AGR group) was associated with higher 28-day mortality (HR 0.484 for medium and 0.332 for high AGR versus low). Single-centre cohort; association only."
+citations = [
+  { pmid = "34484470", doi = "10.1155/2021/9965124", title = "Albumin-Globulin Ratio Is an Independent Determinant of 28-Day Mortality in Patients with Critical Illness.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC8413056/", locator = "Abstract (Methods)", quote = "low AGR group with AGR < 0.8, medium AGR group with AGR ranging from 0.8 to 1.1, and high AGR group with AGR > 1.1" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 1.25
+when = { conditions = ["peritoneal-dialysis"] }
+population = "Incident patients on peritoneal dialysis (retrospective cohort, 2008-2017)"
+evidence = "outcome-study"
+note = "AGR of 1.25 or less (lower AGR group) was associated with higher all-cause (HR 1.57) and cardiovascular mortality (HR 2.01). Association only; cut-off chosen by the authors' survival comparison."
+citations = [
+  { pmid = "32059708", doi = "10.1186/s12882-020-1707-1", title = "Albumin-globulin ratio and mortality in patients on peritoneal dialysis: a retrospective study.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7023751/", locator = "Results", quote = "patients with AGR > 1.26 had better rates of survival than those with AGR <= 1.25 (p < 0.001)" },
+]

@@ -1,0 +1,31 @@
+slug = "phosphorus"
+name = "Phosphorus (Phosphate), Inorganic"
+category = "mineral"
+unit = "mg/dL"
+description = "Serum inorganic phosphate, which falls steadily through childhood and is regulated with calcium and PTH. Reference values are much higher in infants than in adults, and phosphate is a KDIGO CKD-MBD target."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.87
+high = 10.43
+when = { age_min = 0, age_max = 1 }
+population = "Healthy Iranian infants aged 0 to under 5 months (CLSI EP28-A3 indirect method)"
+evidence = "reference-interval-study"
+note = "Infant phosphate. Phosphate required age partitioning at 5, 10 and 15 months in the source; the 0-<5 month row is shown."
+citations = [
+  { pmid = "36524863", doi = "10.1111/jcmm.17646", title = "Age-specific reference intervals for routine biochemical parameters in healthy neonates, infants, and young children in Iran.", locator = "Table 1", quote = "| Phosphate (mg/dl) | 0-<5 | 60 | 4.87 | 10.43 | 4.62-5.15 | 9.72-11.12" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.26
+high = 7.87
+when = { age_min = 1, age_max = 3 }
+population = "Healthy Iranian children aged 15 to under 30 months (CLSI EP28-A3 indirect method)"
+evidence = "reference-interval-study"
+note = "Phosphate falls with age in the source; the 15-<30 month row is shown. Age bracket is approximated in whole years (age_min 1, age_max 3)."
+citations = [
+  { pmid = "36524863", doi = "10.1111/jcmm.17646", title = "Age-specific reference intervals for routine biochemical parameters in healthy neonates, infants, and young children in Iran.", locator = "Table 1", quote = "| 15-<30 | 129 | 4.26 | 7.87 | 3.86-4.31 | 7.32-8.45" },
+]
