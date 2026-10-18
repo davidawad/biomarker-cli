@@ -1,0 +1,51 @@
+slug = "osteocalcin"
+name = "Osteocalcin"
+category = "bone"
+unit = "ng/mL"
+description = "Vitamin K-dependent protein made by osteoblasts and a marker of bone formation. Serum levels rise with age and pubertal growth in children."
+
+[[range]]
+set = "southeast-asia-2024"
+kind = "reference"
+low = 9.0
+high = 33.0
+unit = "µg/L"
+when = { sex = "female", menopause = "pre", age_min = 20, age_max = 44, specimen = "serum", method = "immunoassay" }
+population = "Healthy premenopausal women aged 20-44 from Malaysia, the Philippines, Singapore, Thailand and Vietnam"
+evidence = "reference-interval"
+note = "Central 95% range on the cobas modular (Roche) immunoassay. Values in µg/L (= ng/mL). Lower after the 20s (see the 30-44 range)."
+citations = [
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Results", quote = "OC was 9.0 to 33.0 μg/L" },
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Methods", quote = "We established a healthy reference population of 746 healthy premenopausal women aged 20 to 44 years old." },
+]
+
+[[range]]
+set = "southeast-asia-2024"
+kind = "reference"
+low = 3.5
+high = 27.0
+unit = "µg/L"
+when = { sex = "female", menopause = "pre", age_min = 30, age_max = 44, specimen = "serum", method = "immunoassay" }
+population = "Healthy premenopausal women aged 30-44 from five Southeast Asian countries (women in their 20s excluded)"
+evidence = "reference-interval"
+note = "Central 95% range on the cobas modular (Roche) immunoassay, after excluding participants in their 20s. Values in µg/L (= ng/mL)."
+citations = [
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Results", quote = "When excluding participants in their 20s, the reference intervals estimated were CTX: 117-678 ng/L, P1NP: 21.6-85.8 μg/L and OC: 3.5-27.0 μg/L respectively." },
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", title = "Bone turnover markers reference database in five Southeast Asian countries.", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", locator = "Abstract, Methods", quote = "We established a healthy reference population of 746 healthy premenopausal women aged 20 to 44 years old." },
+]
+
+[[range]]
+set = "spanish-premenopausal-2016"
+kind = "reference"
+low = 8.0
+high = 23.0
+unit = "µg/L"
+when = { sex = "female", menopause = "pre", age_min = 35, age_max = 45, fasting = true, time_of_day = "morning", specimen = "serum", method = "immunoassay" }
+population = "Healthy premenopausal Spanish women aged 35-45 from 13 centres in Catalonia"
+evidence = "reference-interval"
+note = "Reference interval for osteocalcin by IRMA, from blood drawn 8-10 a.m. after an overnight fast. Values in µg/L (= ng/mL)."
+citations = [
+  { pmid = "26088062", doi = "10.1515/cclm-2015-0162", title = "Reference intervals for bone turnover markers in Spanish premenopausal women.", url = "https://pubmed.ncbi.nlm.nih.gov/26088062/", locator = "Abstract, Results", quote = "OC: 8.0-23.0 μg/L" },
+  { pmid = "26088062", doi = "10.1515/cclm-2015-0162", title = "Reference intervals for bone turnover markers in Spanish premenopausal women.", url = "https://pubmed.ncbi.nlm.nih.gov/26088062/", locator = "Abstract, Methods", quote = "A total of 184 women (35-45 years) from 13 centers in Catalonia were analyzed." },
+  { pmid = "26088062", doi = "10.1515/cclm-2015-0162", title = "Reference intervals for bone turnover markers in Spanish premenopausal women.", url = "https://pubmed.ncbi.nlm.nih.gov/26088062/", locator = "Abstract, Methods", quote = "Blood and second void urine samples were collected between 8 a.m. and 10 a.m. after an overnight fast." },
+]

@@ -1,0 +1,32 @@
+slug = "estrone"
+name = "Estrone"
+category = "hormone"
+unit = "pg/mL"
+description = "Weak estrogen, the main circulating estrogen after menopause (made mostly by aromatization of androstenedione in fat and other tissues). Measured by LC-MS/MS, since immunoassays are unreliable at low concentrations. Interpret by sex, puberty stage and menopausal status."
+
+[[range]]
+set = "copenhagen-estrogens-2020"
+kind = "reference"
+high = 20
+unit = "pmol/L"
+when = { sex = "male", age_min = 4, age_max = 8, tanner_max = 1, method = "lc-ms/ms" }
+population = "Healthy boys aged 4-8 years (prepubertal), Copenhagen and Aarhus cohorts, LC-MS/MS (n=1838 across all ages)"
+evidence = "reference-interval"
+note = "Descriptive upper bound from the results text, not a formal percentile: in the youngest prepubertal boys, both E1 and E2 were below 20 pmol/L in all individuals. Source unit pmol/L (20 pmol/L is about 5.4 pg/mL). Treat as approximate."
+citations = [
+  { pmid = "31720688", doi = "10.1210/clinem/dgz196", title = "Sex-specific Estrogen Levels and Reference Intervals from Infancy to Late Adulthood Determined by LC-MS/MS.", url = "https://pubmed.ncbi.nlm.nih.gov/31720688/", locator = "Results (Fig. 6 text)", quote = "In the youngest prepubertal boys (4–8 years), both E1 and E2 concentrations were <20 pmol/L in all individuals" },
+]
+
+[[range]]
+set = "copenhagen-estrogens-2020"
+kind = "reference"
+low = 10
+high = 100
+unit = "pmol/L"
+when = { sex = "male", age_min = 8, tanner_max = 1, method = "lc-ms/ms" }
+population = "Healthy prepubertal boys older than 8 years, Copenhagen and Aarhus cohorts, LC-MS/MS"
+evidence = "reference-interval"
+note = "Descriptive span from the results text (Fig. 6), not a formal percentile: E1 in older prepubertal boys was in the range of 10 to 100 pmol/L. Source unit pmol/L. Treat as approximate; no adult or postmenopausal estrone interval is given as numbers in the accessible text."
+citations = [
+  { pmid = "31720688", doi = "10.1210/clinem/dgz196", title = "Sex-specific Estrogen Levels and Reference Intervals from Infancy to Late Adulthood Determined by LC-MS/MS.", url = "https://pubmed.ncbi.nlm.nih.gov/31720688/", locator = "Results (Fig. 6 text)", quote = "while among the older (>8 years) prepubertal boys, especially E1 in the older (>8 years) prepubertal boys was in the range of 10 to 100 pmol/L (Fig. 6)." },
+]

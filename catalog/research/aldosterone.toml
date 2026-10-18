@@ -1,0 +1,107 @@
+slug = "aldosterone"
+name = "Aldosterone"
+category = "adrenal"
+unit = "ng/dL"
+description = "Mineralocorticoid produced by the adrenal zona glomerulosa; regulates sodium and potassium balance. Interpreted together with renin (aldosterone-to-renin ratio) to screen for primary aldosteronism, and by its suppression response to confirmatory tests."
+
+[[range]]
+set = "endocrine-society-2025"
+kind = "diagnostic"
+low = 7.5
+when = { method = "lc-ms/ms", markers = [ { slug = "renin-activity", op = "<=", value = 1, unit = "ng/mL/h" } ] }
+population = "Adults screened for primary aldosteronism; PAC and PRA by LC-MS/MS (Endocrine Society 2025 criteria as summarised in a 2026 analysis)"
+evidence = "review"
+note = "Endocrine Society 2025 screening criterion: PAC at or above 7.5 ng/dL (LC-MS/MS) together with PRA at or below 1 ng/mL/h and ARR above 15. Cited via the Hypertension 2026 analysis of these thresholds, not the guideline full text."
+citations = [
+  { pmid = "42751802", doi = "10.1161/HYPERTENSIONAHA.126.27634", title = "Evaluation of Current Screening Thresholds for the Detection of Primary Aldosteronism.", url = "https://pubmed.ncbi.nlm.nih.gov/42751802/", locator = "Abstract, Background", quote = "plasma renin activity (PRA) ≤1 ng/mL per hour, plasma aldosterone concentration (PAC) ≥7.5 ng/dL by liquid chromatography-tandem mass spectrometry, and aldosterone-to-renin ratio >15" },
+]
+
+[[range]]
+set = "endocrine-society-2025"
+kind = "diagnostic"
+low = 20
+when = { conditions = ["spontaneous-hypokalemia", "undetectable-renin"] }
+population = "Adults with hypertension; patients with spontaneous hypokalemia and suppressed renin"
+evidence = "review"
+note = "Diagnosis can be made without confirmatory testing when PAC is above 20 ng/dL with spontaneous hypokalemia and PRA or DRC below the assay detection limit. Cited via a 2026 review of the guideline."
+citations = [
+  { pmid = "41638798", doi = "10.1016/bs.vh.2025.06.001", title = "Diagnosis of primary aldosteronism: Confirmatory test.", url = "https://pubmed.ncbi.nlm.nih.gov/41638798/", locator = "Abstract", quote = "except if the patient presents spontaneous hypokalemia and Plasmatic Aldosterone Concentration (PAC) above 20 ng/dl plus Plasmatic Renin Activity (PRA) or Direct Renin Concentration (DRC) below assay detection limits." },
+]
+
+[[range]]
+set = "china-multicenter-pa-2026"
+kind = "diagnostic"
+low = 5.7
+when = { method = "lc-ms/ms", test = "captopril challenge test, 2 h post-dose" }
+population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension)"
+evidence = "outcome"
+note = "Post-captopril PAC cut-off by LC-MS/MS (sensitivity 61%, specificity 85%), measured two hours after the challenge. Study-derived threshold, not a guideline value."
+citations = [
+  { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", locator = "Abstract, Results", quote = "At a diagnostic cutoff of PAC ≥5.7 ng/dl (158.1 pmol/L) or ARR ≥9.3 (ng/dl)/(ng·ml⁻¹·h⁻¹), sensitivity was 61% and specificity was 85%." },
+]
+
+[[range]]
+set = "china-multicenter-pa-2026"
+kind = "diagnostic"
+low = 5.0
+when = { method = "lc-ms/ms", test = "seated saline infusion test" }
+population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension)"
+evidence = "outcome"
+note = "Post-seated-saline-infusion PAC cut-off by LC-MS/MS (sensitivity 68%, specificity 85%). Study-derived threshold, not a guideline value."
+citations = [
+  { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", locator = "Abstract, Results", quote = "At a PAC cutoff of ≥5.0 ng/dl (138.7 pmol/L), sensitivity was 68% and specificity was 85%, while an ARR cutoff of ≥ 19.0 (ng/dl)/(ng·ml⁻¹·h⁻¹) yielded a sensitivity of 64% and a specificity of 85%." },
+]
+
+[[range]]
+set = "china-sandwich-immunoassay-2026"
+kind = "diagnostic"
+low = 56
+unit = "ng/L"
+when = { method = "chemiluminescent sandwich immunoassay", test = "seated saline infusion test" }
+population = "676 Chinese adults suspected of primary aldosteronism at seven centres"
+evidence = "outcome"
+note = "Post-seated-saline-infusion PAC cut-off for 85% specificity on a sandwich immunoassay (Maglumi X8). Assay-specific; not interchangeable with LC-MS/MS or other immunoassay cut-offs. Source unit ng/L is not converted."
+citations = [
+  { pmid = "42343549", doi = "10.1515/cclm-2026-0579", title = "New insights in primary aldosteronism diagnosis: a prospective multicenter study.", url = "https://pubmed.ncbi.nlm.nih.gov/42343549/", locator = "Abstract, Results", quote = "Using cut-off of 56 ng/L and 59 ng/L for post-SIT and post-CCT yielded a specificity of 85 % (95 % CI: 81-88 %)." },
+]
+
+[[range]]
+set = "china-sandwich-immunoassay-2026"
+kind = "diagnostic"
+low = 59
+unit = "ng/L"
+when = { method = "chemiluminescent sandwich immunoassay", test = "captopril challenge test" }
+population = "676 Chinese adults suspected of primary aldosteronism at seven centres"
+evidence = "outcome"
+note = "Post-captopril-challenge PAC cut-off for 85% specificity on a sandwich immunoassay (Maglumi X8). Assay-specific; source unit ng/L is not converted."
+citations = [
+  { pmid = "42343549", doi = "10.1515/cclm-2026-0579", title = "New insights in primary aldosteronism diagnosis: a prospective multicenter study.", url = "https://pubmed.ncbi.nlm.nih.gov/42343549/", locator = "Abstract, Results", quote = "Using cut-off of 56 ng/L and 59 ng/L for post-SIT and post-CCT yielded a specificity of 85 % (95 % CI: 81-88 %)." },
+]
+
+[[range]]
+set = "han-chinese-clia-2018"
+kind = "reference"
+low = 76
+high = 722
+unit = "pmol/L"
+when = { sex = "male", ethnicity = "han-chinese", method = "chemiluminescence immunoassay" }
+population = "Healthy Han Chinese adults (328 individuals) used for reference intervals"
+evidence = "reference-interval"
+note = "Central 95% reference interval for plasma aldosterone in males on a fully automated DiaSorin CLIA. Posture, sodium intake and age bands are not stated in the abstract."
+citations = [
+  { pmid = "29684370", doi = "10.1016/j.clinbiochem.2018.04.016", title = "Analytical validation and investigation on reference intervals of aldosterone and renin in Chinese Han population by using fully automated chemiluminescence immunoassays.", url = "https://pubmed.ncbi.nlm.nih.gov/29684370/", locator = "Abstract, Results", quote = "The central 95% reference intervals for males: PAC: 76-722 pmol/L, PRC: 3.3-92.7 mIU/L, ARR: 2.2-46.0 pmol/mIU; for females: PAC: 85-1010 pmol/L, PRC: 3.7-99.8 mIU/L, ARR: 3.6-68.4 pmol/mIU." },
+]
+
+[[range]]
+set = "han-chinese-clia-2018"
+kind = "reference"
+low = 85
+high = 1010
+unit = "pmol/L"
+when = { sex = "female", ethnicity = "han-chinese", method = "chemiluminescence immunoassay" }
+population = "Healthy Han Chinese adults (328 individuals) used for reference intervals"
+evidence = "reference-interval"
+note = "Central 95% reference interval for plasma aldosterone in females on a fully automated DiaSorin CLIA. Posture, sodium intake and age bands are not stated in the abstract."
+citations = [
+  { pmid = "29684370", doi = "10.1016/j.clinbiochem.2018.04.016", title = "Analytical validation and investigation on reference intervals of aldosterone and renin in Chinese Han population by using fully automated chemiluminescence immunoassays.", url = "https://pubmed.ncbi.nlm.nih.gov/29684370/", locator = "Abstract, Results", quote = "The central 95% reference intervals for males: PAC: 76-722 pmol/L, PRC: 3.3-92.7 mIU/L, ARR: 2.2-46.0 pmol/mIU; for females: PAC: 85-1010 pmol/L, PRC: 3.7-99.8 mIU/L, ARR: 3.6-68.4 pmol/mIU." },
+]

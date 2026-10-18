@@ -1,0 +1,154 @@
+slug = "prolactin"
+name = "Prolactin"
+loinc = "2842-3"
+category = "hormone"
+unit = "ng/mL"
+description = "Pituitary hormone from lactotroph cells that regulates lactation and modulates gonadal function. Elevated levels (hyperprolactinaemia) have physiological causes such as pregnancy, stress and sleep, and pathological causes such as prolactinoma and drugs. Assay results vary with macroprolactin, so assay-specific ranges matter."
+
+[[range]]
+set = "pregnancy-prolactin-china-2018"
+kind = "reference"
+low = 178.89
+high = 757.52
+unit = "μIU/mL"
+when = { sex = "female", pregnancy = false }
+population = "Healthy non-pregnant Chinese women (control group, n=123)"
+evidence = "reference-interval"
+note = "Reference interval in the source unit (μIU/mL); not converted. Assay-specific, electrochemiluminescence immunoassay."
+citations = [
+  { pmid = "29194037", doi = "10.1515/cclm-2017-0644", title = "Serum prolactin levels across pregnancy and the establishment of reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/29194037/", locator = "Abstract, Results", quote = "healthy non-pregnant women, 178.89-757.52 μIU/mL" },
+]
+
+[[range]]
+set = "pregnancy-prolactin-china-2018"
+kind = "reference"
+low = 621.20
+high = 3584.00
+unit = "μIU/mL"
+when = { sex = "female", pregnancy = true, trimester = 1 }
+population = "Healthy pregnant Chinese women, first trimester (part of n=378 pregnant women)"
+evidence = "reference-interval"
+note = "Trimester-specific reference interval in the source unit (μIU/mL). Prolactin rises steeply through pregnancy."
+citations = [
+  { pmid = "29194037", doi = "10.1515/cclm-2017-0644", title = "Serum prolactin levels across pregnancy and the establishment of reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/29194037/", locator = "Abstract, Results", quote = "first trimester, 621.20-3584.00 μIU/mL" },
+]
+
+[[range]]
+set = "pregnancy-prolactin-china-2018"
+kind = "reference"
+low = 1432.00
+high = 5349.68
+unit = "μIU/mL"
+when = { sex = "female", pregnancy = true, trimester = 2 }
+population = "Healthy pregnant Chinese women, second trimester (part of n=378 pregnant women)"
+evidence = "reference-interval"
+note = "Trimester-specific reference interval in the source unit (μIU/mL)."
+citations = [
+  { pmid = "29194037", doi = "10.1515/cclm-2017-0644", title = "Serum prolactin levels across pregnancy and the establishment of reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/29194037/", locator = "Abstract, Results", quote = "second trimester, 1432.00-5349.68 μIU/mL" },
+]
+
+[[range]]
+set = "pregnancy-prolactin-china-2018"
+kind = "reference"
+low = 4087.33
+high = 9733.65
+unit = "μIU/mL"
+when = { sex = "female", pregnancy = true, trimester = 3 }
+population = "Healthy pregnant Chinese women, third trimester (part of n=378 pregnant women)"
+evidence = "reference-interval"
+note = "Trimester-specific reference interval in the source unit (μIU/mL)."
+citations = [
+  { pmid = "29194037", doi = "10.1515/cclm-2017-0644", title = "Serum prolactin levels across pregnancy and the establishment of reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/29194037/", locator = "Abstract, Results", quote = "third trimester, 4087.33-9733.65 μIU/mL" },
+]
+
+[[range]]
+set = "pregnancy-prolactin-china-2018"
+kind = "reference"
+low = 7865.36
+high = 10998.86
+unit = "μIU/mL"
+when = { sex = "female", postpartum = true }
+population = "Healthy Chinese women 24 and 48 h after vaginal delivery (n=493 postpartum, combined)"
+evidence = "reference-interval"
+note = "Postpartum reference interval (24 and 48 h after vaginal delivery, combined) in the source unit (μIU/mL). Postcesarean values were lower in the same study."
+citations = [
+  { pmid = "29194037", doi = "10.1515/cclm-2017-0644", title = "Serum prolactin levels across pregnancy and the establishment of reference intervals.", url = "https://pubmed.ncbi.nlm.nih.gov/29194037/", locator = "Abstract, Results", quote = "24 and 48 h postvaginal delivery (combined), 7865.36-10998.86 μIU/mL" },
+]
+
+[[range]]
+set = "adult-prolactin-vitros-russia-2023"
+kind = "reference"
+low = 66
+high = 436
+unit = "mIU/l"
+when = { sex = "male", age_min = 19, age_max = 85 }
+population = "Apparently healthy Russian adult men aged 19-85 years, monocentric study (879 samples across children and adults)"
+evidence = "reference-interval"
+note = "Reference values in the source unit (mIU/l) for the VITROS ECi 3600 immunoassay. The authors note a shift against the manufacturer's expected values."
+citations = [
+  { pmid = "37448243", doi = "10.14341/probl13095", title = "[Determination of prolactin reference intervals in different age groups].", url = "https://pubmed.ncbi.nlm.nih.gov/37448243/", locator = "Abstract, Results", quote = "For adult men and women reference values were 66-436 and 94-500 mIU/l respectively." },
+]
+
+[[range]]
+set = "adult-prolactin-vitros-russia-2023"
+kind = "reference"
+low = 94
+high = 500
+unit = "mIU/l"
+when = { sex = "female", age_min = 19, age_max = 85 }
+population = "Apparently healthy Russian adult women aged 19-85 years, monocentric study"
+evidence = "reference-interval"
+note = "Reference values in the source unit (mIU/l) for the VITROS ECi 3600 immunoassay."
+citations = [
+  { pmid = "37448243", doi = "10.14341/probl13095", title = "[Determination of prolactin reference intervals in different age groups].", url = "https://pubmed.ncbi.nlm.nih.gov/37448243/", locator = "Abstract, Results", quote = "For adult men and women reference values were 66-436 and 94-500 mIU/l respectively." },
+]
+
+[[range]]
+set = "adult-prolactin-china-men-2018"
+kind = "reference"
+low = 88
+high = 450
+unit = "mIU/L"
+when = { sex = "male", ethnicity = "Chinese" }
+population = "Apparently healthy Chinese adult men from five cities, multicentre study (n=1043, 2013)"
+evidence = "reference-interval"
+note = "Median 189 mIU/L with the reference interval 88-450 mIU/L, derived without partition by age. Automated immunoassay."
+citations = [
+  { pmid = "29729137", doi = "10.1515/cclm-2017-0749", title = "Establishing reference intervals for sex hormones and SHBG in apparently healthy Chinese adult men based on a multicenter study.", url = "https://pubmed.ncbi.nlm.nih.gov/29729137/", locator = "Abstract, Results", quote = "PRL, 189 (88-450) mIU/L" },
+]
+
+[[range]]
+set = "pcos-prolactinoma-threshold-2018"
+kind = "diagnostic"
+low = 85.2
+when = { sex = "female", conditions = ["pcos"] }
+population = "Women with PCOS and hyperprolactinaemia, retrospective case-control (n=528 PCOS women, 60 with elevated PRL)"
+evidence = "outcome"
+note = "ROC threshold for prolactinoma (MRI-confirmed) among hyperprolactinaemic PCOS women: 77% sensitivity, 100% specificity. Values above this favour pituitary imaging. Single-centre, small case count."
+citations = [
+  { pmid = "29845629", doi = "10.1111/eci.12961", title = "The value of prolactin in predicting prolactinοma in hyperprolactinaemic polycystic ovarian syndrome.", url = "https://pubmed.ncbi.nlm.nih.gov/29845629/", locator = "Abstract, Conclusions", quote = "PRL levels exceeding 85.2 ng/mL are highly suggestive of a prolactinoma warranting pituitary imaging." },
+]
+
+[[range]]
+set = "pcos-pituitary-adenoma-threshold-2023"
+kind = "diagnostic"
+low = 52.9
+when = { sex = "female", conditions = ["pcos"] }
+population = "Women with PCOS referred to a neurosurgical centre, retrospective study, 2009-2020 (657 PCOS patients)"
+evidence = "outcome"
+note = "ROC cut-off for detecting a pituitary adenoma in hyperprolactinaemic PCOS patients; PRL at or above this value warrants sella MRI. Differs from the 85.2 ng/mL value in a different cohort, so use with caution."
+citations = [
+  { pmid = "37057215", doi = "10.7150/ijms.80891", title = "What is the optimal prolactin cutoff for predicting the presence of a pituitary adenoma in patients with polycystic ovary syndrome?", url = "https://pubmed.ncbi.nlm.nih.gov/37057215/", locator = "Abstract, Results", quote = "PCOS patients with a PRL level of ≥ 52.9 ng/mL may need to undergo sella MRI for detecting PAs." },
+]
+
+[[range]]
+set = "endocrine-review-hyperprolactinaemia-2018"
+kind = "diagnostic"
+low = 250
+when = {}
+population = "Patients with hyperprolactinaemia; overview by the Neuroendocrinology Department of the Brazilian Society of Endocrinology and Metabolism"
+evidence = "review"
+note = "Restates the prolactinoma threshold from an open-access review rather than the primary Endocrine Society or Pituitary Society guideline text. PRL above 250 ng/mL is highly suggestive of prolactinoma. Lower values are common with stalk dysfunction, drugs or systemic disease. Macroprolactin should be excluded when values are discordant (hook effect)."
+citations = [
+  { pmid = "29768629", doi = "10.20945/2359-3997000000032", title = "Controversial issues in the management of hyperprolactinemia and prolactinomas - An overview by the Neuroendocrinology Department of the Brazilian Society of Endocrinology and Metabolism.", url = "https://pubmed.ncbi.nlm.nih.gov/29768629/", locator = "Full text", quote = "PRL levels > 250 ng/mL are highly suggestive of the presence of a prolactinoma." },
+]

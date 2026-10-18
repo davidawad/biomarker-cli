@@ -1,0 +1,194 @@
+slug = "cortisol"
+name = "Cortisol (AM)"
+loinc = "2143-6"
+category = "adrenal"
+unit = "µg/dL"
+description = "Serum cortisol, mainly measured in the morning. Used to screen for adrenal insufficiency (basal and after ACTH stimulation) and, after a dexamethasone suppression test, for Cushing's syndrome. Results depend strongly on the assay (immunoassay vs LC-MS/MS)."
+
+[[range]]
+set = "netherlands-reference-2005"
+kind = "reference"
+low = 150
+high = 802
+unit = "nmol/L"
+when = { time_of_day = "morning", specimen = "plasma", age_min = 20, age_max = 69 }
+population = "50 healthy subjects from the general population aged 20-69 years, equally distributed by sex and age"
+evidence = "reference-interval"
+note = "09:00 plasma cortisol reference interval (mean +/- 2 SD after log transformation, i.e. approximately the central 95%). Plasma, 2005 study, older assay; use local lab reference range where available."
+citations = [
+  { pmid = "16397312", title = "Establishment of reference values for endocrine tests. Part IV: Adrenal insufficiency.", url = "https://pubmed.ncbi.nlm.nih.gov/16397312/", locator = "Abstract, Results", quote = "09.00 hr plasma cortisol 150 to 802 nmol/l" },
+]
+
+[[range]]
+set = "plos-one-basal-cortisol-2019"
+kind = "diagnostic"
+high = 85
+unit = "nmol/L"
+when = { time_of_day = "morning", specimen = "serum", test = "basal (09:00-13:00) serum cortisol vs low- or high-dose ACTH stimulation test (adrenal insufficiency = peak cortisol < 500 nmol/L)" }
+population = "416 patients at a tertiary care centre who had outpatient low- or high-dose ACTH stimulation tests (93 with adrenal insufficiency)"
+evidence = "outcome"
+note = "Below 85 nmol/L: adrenal insufficiency highly likely (specificity 99.7%). Single-centre retrospective study."
+citations = [
+  { pmid = "31738804", doi = "10.1371/journal.pone.0225255", title = "Diagnostic performance of basal cortisol level at 0900-1300h in adrenal insufficiency.", url = "https://pubmed.ncbi.nlm.nih.gov/31738804/", locator = "Abstract, Results", quote = "The proposed cut-off values for the basal cortisol were <85 nmol/L (specificity 99.7%) and >350 nmol/L(sensitivity 98.9%)." },
+]
+
+[[range]]
+set = "plos-one-basal-cortisol-2019"
+kind = "diagnostic"
+low = 350
+unit = "nmol/L"
+when = { time_of_day = "morning", specimen = "serum", test = "basal (09:00-13:00) serum cortisol vs low- or high-dose ACTH stimulation test (adrenal insufficiency = peak cortisol < 500 nmol/L)" }
+population = "416 patients at a tertiary care centre who had outpatient low- or high-dose ACTH stimulation tests (93 with adrenal insufficiency)"
+evidence = "outcome"
+note = "Above 350 nmol/L: adrenal insufficiency unlikely (sensitivity 98.9%). Single-centre retrospective study."
+citations = [
+  { pmid = "31738804", doi = "10.1371/journal.pone.0225255", title = "Diagnostic performance of basal cortisol level at 0900-1300h in adrenal insufficiency.", url = "https://pubmed.ncbi.nlm.nih.gov/31738804/", locator = "Abstract, Results", quote = "The proposed cut-off values for the basal cortisol were <85 nmol/L (specificity 99.7%) and >350 nmol/L(sensitivity 98.9%)." },
+]
+
+[[range]]
+set = "endocrinologia-cst-2026"
+kind = "diagnostic"
+low = 13.1
+when = { test = "corticotropin stimulation test (CST), baseline cortisol", method = "immunoassay" }
+population = "140 adults with suspected adrenal insufficiency who had a corticotropin stimulation test (2016-2022)"
+evidence = "outcome"
+note = "Baseline cortisol above 13.1 ug/dL predicted a normal stimulated response; below 1.5 ug/dL always suggested pathology. Retrospective, immunoassay-based."
+citations = [
+  { pmid = "41679895", doi = "10.1016/j.endien.2025.501685", title = "New cortisol assay-specific thresholds for the biochemical diagnosis of adrenal insufficiency after ACTH stimulation.", url = "https://pubmed.ncbi.nlm.nih.gov/41679895/", locator = "Abstract, Results", quote = "with CB>13.1μg/dL predicted a normal response, and CB<1.5μg/dL was always suggestive of pathology." },
+]
+
+[[range]]
+set = "endocrinologia-cst-2026"
+kind = "diagnostic"
+high = 1.5
+when = { test = "corticotropin stimulation test (CST), baseline cortisol", method = "immunoassay" }
+population = "140 adults with suspected adrenal insufficiency who had a corticotropin stimulation test (2016-2022)"
+evidence = "outcome"
+note = "Baseline cortisol below 1.5 ug/dL was always suggestive of pathology in this series."
+citations = [
+  { pmid = "41679895", doi = "10.1016/j.endien.2025.501685", title = "New cortisol assay-specific thresholds for the biochemical diagnosis of adrenal insufficiency after ACTH stimulation.", url = "https://pubmed.ncbi.nlm.nih.gov/41679895/", locator = "Abstract, Results", quote = "with CB>13.1μg/dL predicted a normal response, and CB<1.5μg/dL was always suggestive of pathology." },
+]
+
+[[range]]
+set = "endocrinologia-cst-2026"
+kind = "diagnostic"
+high = 15.6
+when = { test = "corticotropin stimulation test (CST), peak cortisol at 30 or 60 min", method = "immunoassay" }
+population = "140 adults with suspected adrenal insufficiency who had a corticotropin stimulation test (2016-2022)"
+evidence = "outcome"
+note = "Revised peak cortisol threshold for newer immunoassays: a peak below 15.6 ug/dL indicates adrenal insufficiency; reduces false positives vs 18.0. Needs validation across immunoassay platforms."
+citations = [
+  { pmid = "41679895", doi = "10.1016/j.endien.2025.501685", title = "New cortisol assay-specific thresholds for the biochemical diagnosis of adrenal insufficiency after ACTH stimulation.", url = "https://pubmed.ncbi.nlm.nih.gov/41679895/", locator = "Abstract, Conclusion", quote = "The revised 15.6μg/dL cortisol threshold enhances CST diagnostic accuracy by reducing false positives" },
+]
+
+[[range]]
+set = "endocrinologia-cst-2026"
+kind = "diagnostic"
+high = 18.0
+when = { test = "corticotropin stimulation test (CST), peak cortisol", method = "immunoassay" }
+population = "Traditional threshold, as described for the corticotropin stimulation test"
+evidence = "review"
+note = "Traditional peak-cortisol threshold for adrenal insufficiency, as described in 41679895; developed on older assays and reported there as producing more false positives with newer immunoassays."
+citations = [
+  { pmid = "41679895", doi = "10.1016/j.endien.2025.501685", title = "New cortisol assay-specific thresholds for the biochemical diagnosis of adrenal insufficiency after ACTH stimulation.", url = "https://pubmed.ncbi.nlm.nih.gov/41679895/", locator = "Abstract, Purpose", quote = "traditionally diagnosed using the corticotropin stimulation test (CST) with a cortisol threshold of 18.0μg/dL" },
+]
+
+[[range]]
+set = "aace-cst60-2026"
+kind = "diagnostic"
+high = 14.6
+when = { test = "cosyntropin stimulation test, 60-minute cortisol", method = "immunoassay" }
+population = "95 adults (hospital setting; outpatient, inpatient and ICU) evaluated for adrenal insufficiency"
+evidence = "outcome"
+note = "Peak cortisol at 60 min below 14.6 ug/dL is the newer normal-response cut-off for newer-generation immunoassays (vs 18.0 traditionally). Retrospective single-centre cohort."
+citations = [
+  { pmid = "42221401", doi = "10.1016/j.aed.2026.03.001", title = "Newer Generation Immunoassays in Screening for Adrenal Insufficiency: Comparison of Baseline Morning Cortisol Levels With Cosyntropin Stimulation Testing.", url = "https://pubmed.ncbi.nlm.nih.gov/42221401/", locator = "Abstract, Objective", quote = "Binary logistic regression analyses and receiver operating curves compared AM cortisol as predictors of a normal CST-60 ≥ 14.6 μg/dL and to the previous criteria of a CST-60 ≥18.0 μg/dL." },
+]
+
+[[range]]
+set = "aace-cst60-2026"
+kind = "diagnostic"
+low = 11.1
+when = { time_of_day = "morning", test = "baseline morning cortisol used to decide whether a cosyntropin stimulation test is needed", method = "immunoassay" }
+population = "95 adults (hospital setting; outpatient, inpatient and ICU) evaluated for adrenal insufficiency"
+evidence = "outcome"
+note = "Baseline morning cortisol above 11.1 ug/dL had 93% specificity for a normal 60-min response (above 14.6), so a stimulation test can be avoided. Low risk population (16% AI)."
+citations = [
+  { pmid = "42221401", doi = "10.1016/j.aed.2026.03.001", title = "Newer Generation Immunoassays in Screening for Adrenal Insufficiency: Comparison of Baseline Morning Cortisol Levels With Cosyntropin Stimulation Testing.", url = "https://pubmed.ncbi.nlm.nih.gov/42221401/", locator = "Abstract, Results", quote = "Receiver operating curves showed that an AM cortisol of 11.1 μg/dL had a specificity of 93% for a CST-60 >14.6 g/dL." },
+]
+
+[[range]]
+set = "medicina-ldst-2025"
+kind = "diagnostic"
+high = 5.35
+when = { test = "1 µg low-dose Synacthen test (LDST), baseline cortisol" }
+population = "163 adults who underwent a low-dose Synacthen test (mean age 42.9 years, 63% female)"
+evidence = "outcome"
+note = "Baseline cortisol at or below 5.35 ug/dL had 100% specificity for LDST failure (rule-in). Cross-sectional single-centre study."
+citations = [
+  { pmid = "40731932", doi = "10.3390/medicina61071303", title = "Redefining the Diagnostic Approach to Adrenal Insufficiency: Re-Assessment of Baseline and Cortisol Increment Cut-Offs with the 1 µg Synacthen Test.", url = "https://pubmed.ncbi.nlm.nih.gov/40731932/", locator = "Abstract, Results", quote = "baseline cortisol ≤ 5.35 μg/dL had 100% specificity but 41.5% sensitivity for LDST failure." },
+]
+
+[[range]]
+set = "medicina-ldst-2025"
+kind = "diagnostic"
+low = 12.4
+when = { test = "1 µg low-dose Synacthen test (LDST), baseline cortisol" }
+population = "163 adults who underwent a low-dose Synacthen test (mean age 42.9 years, 63% female)"
+evidence = "outcome"
+note = "Baseline cortisol at or above 12.4 ug/dL had 100% sensitivity for LDST failure (rule-out). Cross-sectional single-centre study."
+citations = [
+  { pmid = "40731932", doi = "10.3390/medicina61071303", title = "Redefining the Diagnostic Approach to Adrenal Insufficiency: Re-Assessment of Baseline and Cortisol Increment Cut-Offs with the 1 µg Synacthen Test.", url = "https://pubmed.ncbi.nlm.nih.gov/40731932/", locator = "Abstract, Results", quote = "baseline cortisol ≥ 12.4 μg/dL had 100% sensitivity with 45.9% specificity." },
+]
+
+[[range]]
+set = "front-endocrinol-dst-2026"
+kind = "diagnostic"
+low = 50
+unit = "nmol/L"
+when = { test = "1 mg overnight dexamethasone suppression test, post-DST cortisol", specimen = "plasma", method = "immunoassay" }
+population = "108 patients with adrenal incidentalomas and 101 matched controls (plasma, Elecsys Cortisol II and LC-MS/MS)"
+evidence = "outcome"
+note = "Guideline-recommended post-DST cut-off (cited in the source as the Endocrine Society threshold; full guideline text could not be checked here). The source reports it may be too low (90th percentile of controls)."
+citations = [
+  { pmid = "42760967", doi = "10.3389/fendo.2026.1872524", title = "Plasma cortisol cut-off concentrations using the dexamethasone suppression test in patients with adrenal incidentalomas.", url = "https://pubmed.ncbi.nlm.nih.gov/42760967/", locator = "Results", quote = "The 50 nmol/L threshold corresponded to the 90th percentile of controls and classified 44% of patients as having hypercortisolism, compared with 26% using the control-derived threshold (66 nmol/L)." },
+]
+
+[[range]]
+set = "front-endocrinol-dst-2026"
+kind = "diagnostic"
+low = 66
+unit = "nmol/L"
+when = { test = "1 mg overnight dexamethasone suppression test, post-DST cortisol", specimen = "plasma", method = "lc-ms/ms" }
+population = "101 matched controls (LC-MS/MS-measured post-DST cortisol, 97.5th percentile) for patients with adrenal incidentalomas"
+evidence = "outcome"
+note = "Control-derived post-DST threshold (97.5th percentile of LC-MS/MS cortisol in controls). Above 66 nmol/L indicates hypercortisolism in this proposed threshold."
+citations = [
+  { pmid = "42760967", doi = "10.3389/fendo.2026.1872524", title = "Plasma cortisol cut-off concentrations using the dexamethasone suppression test in patients with adrenal incidentalomas.", url = "https://pubmed.ncbi.nlm.nih.gov/42760967/", locator = "Results", quote = "The 97.5th percentile of post-DST cortisol in controls was 66 nmol/L." },
+]
+
+[[range]]
+set = "eur-j-endocrinol-dst-2025"
+kind = "diagnostic"
+low = 41
+unit = "nmol/L"
+when = { test = "1 mg overnight dexamethasone suppression test, post-DST cortisol", specimen = "serum", method = "elecsys-gen-1-immunoassay" }
+population = "260 post-DST serum samples from patients with suspected hypercortisolism or adrenal incidentalomas, measured by Elecsys gen I and LC-MS/MS"
+evidence = "outcome"
+note = "Method-specific cut-off for Elecsys gen I (sensitivity 97.7%, specificity 80.8%). Immunoassays under-detect hypercortisolism vs LC-MS/MS; LC-MS/MS is preferred."
+citations = [
+  { pmid = "40659360", doi = "10.1093/ejendo/lvaf141", title = "Impact of old and current immunoassays on the 1 mg overnight dexamethasone suppression test: comparison with LC-MS/MS.", url = "https://pubmed.ncbi.nlm.nih.gov/40659360/", locator = "Abstract, Results", quote = "Optimal cutoff was 41 nmol/L for Elecsys gen I (sensitivity: 97.7%; specificity: 80.8%), and 33 nmol/L for Access (sensitivity: 97.5%; specificity: 78.3%)." },
+]
+
+[[range]]
+set = "eur-j-endocrinol-dst-2025"
+kind = "diagnostic"
+low = 33
+unit = "nmol/L"
+when = { test = "1 mg overnight dexamethasone suppression test, post-DST cortisol", specimen = "serum", method = "access-immunoassay" }
+population = "217 post-DST serum samples from patients with suspected hypercortisolism or adrenal incidentalomas, measured by Access and LC-MS/MS"
+evidence = "outcome"
+note = "Method-specific cut-off for Access (sensitivity 97.5%, specificity 78.3%). Immunoassays under-detect hypercortisolism vs LC-MS/MS; LC-MS/MS is preferred."
+citations = [
+  { pmid = "40659360", doi = "10.1093/ejendo/lvaf141", title = "Impact of old and current immunoassays on the 1 mg overnight dexamethasone suppression test: comparison with LC-MS/MS.", url = "https://pubmed.ncbi.nlm.nih.gov/40659360/", locator = "Abstract, Results", quote = "Optimal cutoff was 41 nmol/L for Elecsys gen I (sensitivity: 97.7%; specificity: 80.8%), and 33 nmol/L for Access (sensitivity: 97.5%; specificity: 78.3%)." },
+]

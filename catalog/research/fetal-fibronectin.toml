@@ -1,0 +1,78 @@
+slug = "fetal-fibronectin"
+name = "Fetal Fibronectin, Cervicovaginal"
+category = "pregnancy"
+unit = "ng/mL"
+description = "Glycoprotein that acts as glue between decidua and fetal membranes; detected in cervicovaginal secretions. A positive test in women with symptoms or a high-risk history signals increased short-term risk of preterm birth or impending labour."
+
+[[range]]
+set = "fibronectin-meta-2020"
+kind = "diagnostic"
+low = 50
+when = { pregnancy = true, gestational_week_min = 22, gestational_week_max = 36, specimen = "cervicovaginal" }
+population = "Pregnant women tested for impending labour or preterm birth (systematic review and meta-analysis)"
+evidence = "meta-analysis"
+note = "Qualitative positive test at 50 ng/mL or more between 22 and 36 weeks. Source window is 22 to 36 weeks, not 22 to 35."
+citations = [
+  { pmid = "29914277", doi = "10.1080/14767058.2018.1491031", title = "The fetal fibronectin test: 25 years after its development, what is the evidence regarding its clinical utility? A systematic review and meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/29914277/", locator = "Abstract", quote = "could be a good marker of impending labour when its concentration in cervicovaginal secretions between 22 and 36 weeks of gestation is ≥50 ng/mL." },
+]
+
+[[range]]
+set = "fibronectin-symptomatic-2013"
+kind = "diagnostic"
+high = 10
+when = { pregnancy = true, conditions = ["symptomatic-preterm-labour"], specimen = "cervicovaginal" }
+population = "Symptomatic women with threatened preterm labour (quantitative fFN test)"
+evidence = "outcome"
+note = "Below 10 ng/mL: very low risk of spontaneous preterm birth (negative predictive threshold)."
+citations = [
+  { pmid = "23164760", doi = "10.1016/j.ajog.2012.10.890", title = "Evaluation of a quantitative fetal fibronectin test for spontaneous preterm birth in symptomatic women.", url = "https://pubmed.ncbi.nlm.nih.gov/23164760/", locator = "Abstract, Conclusion", quote = "Quantitative fFN provides thresholds (10 and 200 ng/mL) in addition to the qualitative method (50 ng/mL) to discriminate the risk of sPTB in symptomatic women." },
+]
+
+[[range]]
+set = "fibronectin-symptomatic-2013"
+kind = "warn"
+low = 10
+high = 200
+when = { pregnancy = true, conditions = ["symptomatic-preterm-labour"], specimen = "cervicovaginal" }
+population = "Symptomatic women with threatened preterm labour (quantitative fFN test)"
+evidence = "outcome"
+note = "Intermediate band (10 to below 200 ng/mL) between the low-risk and high-risk thresholds. The qualitative positive cut-off is 50 ng/mL."
+citations = [
+  { pmid = "23164760", doi = "10.1016/j.ajog.2012.10.890", title = "Evaluation of a quantitative fetal fibronectin test for spontaneous preterm birth in symptomatic women.", url = "https://pubmed.ncbi.nlm.nih.gov/23164760/", locator = "Abstract, Conclusion", quote = "Quantitative fFN provides thresholds (10 and 200 ng/mL) in addition to the qualitative method (50 ng/mL) to discriminate the risk of sPTB in symptomatic women." },
+]
+
+[[range]]
+set = "fibronectin-symptomatic-2013"
+kind = "critical"
+low = 200
+when = { pregnancy = true, conditions = ["symptomatic-preterm-labour"], specimen = "cervicovaginal" }
+population = "Symptomatic women with threatened preterm labour (quantitative fFN test)"
+evidence = "outcome"
+note = "200 ng/mL or more: high-risk threshold for spontaneous preterm birth, with high specificity and lower sensitivity."
+citations = [
+  { pmid = "23164760", doi = "10.1016/j.ajog.2012.10.890", title = "Evaluation of a quantitative fetal fibronectin test for spontaneous preterm birth in symptomatic women.", url = "https://pubmed.ncbi.nlm.nih.gov/23164760/", locator = "Abstract, Conclusion", quote = "Quantitative fFN provides thresholds (10 and 200 ng/mL) in addition to the qualitative method (50 ng/mL) to discriminate the risk of sPTB in symptomatic women." },
+]
+
+[[range]]
+set = "fibronectin-asymptomatic-2016"
+kind = "diagnostic"
+high = 10
+when = { pregnancy = true, gestational_week_min = 18, gestational_week_max = 22, conditions = ["asymptomatic-high-risk"], specimen = "cervicovaginal" }
+population = "Asymptomatic high-risk pregnant women tested at 18 and 22 weeks (quantitative fFN)"
+evidence = "outcome"
+note = "Below 10 ng/mL: high negative predictive value for delivery before 34 weeks."
+citations = [
+  { pmid = "26942351", doi = "10.1097/AOG.0000000000001240", title = "Quantitative Fetal Fibronectin at 18 Weeks of Gestation to Predict Preterm Birth in Asymptomatic High-Risk Women.", url = "https://pubmed.ncbi.nlm.nih.gov/26942351/", locator = "Results", quote = "A concentration threshold of 10 ng/mL measured at 18 and 22 weeks of gestation had comparably high sensitivity" },
+]
+
+[[range]]
+set = "fibronectin-asymptomatic-2016"
+kind = "critical"
+low = 200
+when = { pregnancy = true, gestational_week_min = 18, gestational_week_max = 22, conditions = ["asymptomatic-high-risk"], specimen = "cervicovaginal" }
+population = "Asymptomatic high-risk pregnant women tested at 18 and 22 weeks (quantitative fFN)"
+evidence = "outcome"
+note = "200 ng/mL or more: high specificity but lower sensitivity for delivery before 34 weeks."
+citations = [
+  { pmid = "26942351", doi = "10.1097/AOG.0000000000001240", title = "Quantitative Fetal Fibronectin at 18 Weeks of Gestation to Predict Preterm Birth in Asymptomatic High-Risk Women.", url = "https://pubmed.ncbi.nlm.nih.gov/26942351/", locator = "Results", quote = "A threshold of 200 ng/mL had high specificity" },
+]

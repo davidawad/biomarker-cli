@@ -1,0 +1,59 @@
+slug = "testosterone-free"
+name = "Testosterone, Free"
+loinc = "2991-8"
+category = "hormone"
+unit = "pg/mL"
+description = "Unbound (free) testosterone in serum, measured by equilibrium dialysis or calculated from total testosterone and SHBG. Preferred when SHBG is altered or total testosterone is near the lower limit of normal."
+
+[[range]]
+set = "mft-age-strat-2026"
+kind = "reference"
+low = 184
+high = 749
+unit = "pmol/L"
+when = { sex = "male", age_min = 18, age_max = 39, method = "equilibrium-dialysis" }
+population = "Healthy, nonobese (BMI under 30) men aged 18-39 from large community cohorts (1202 men), free testosterone by equilibrium dialysis with LC-MS/MS"
+evidence = "reference-interval"
+note = "2.5th to 97.5th percentile (CLSI guidelines). Source unit is pmol/L; canonical here is pg/mL. Values are age-decline dependent (about -4.5 pmol/L per year)."
+citations = [
+  { pmid = "40929374", doi = "10.1210/clinem/dgaf507", title = "Age-Stratified Reference Ranges for Directly Measured Serum Free Testosterone in Community-Dwelling and Healthy Men.", url = "https://pubmed.ncbi.nlm.nih.gov/40929374/", locator = "Abstract, Results", quote = "The reference range for mFT in healthy, nonobese men aged 18 to 39 years was 184 to 749 pmol/L." },
+]
+
+[[range]]
+set = "ft-ed-standardized-2023"
+kind = "reference"
+low = 66
+high = 309
+when = { sex = "male", method = "equilibrium-dialysis" }
+population = "Healthy nonobese men aged 19 and older (n=145; age 19 or older per the source), free testosterone by standardized 16-h equilibrium dialysis with CDC-certified LC-MS/MS"
+evidence = "reference-interval"
+note = "Normative range in all men of the source population (percentile-based). Source gives both pg/ml and pmol/L; this entry uses the canonical pg/mL."
+citations = [
+  { pmid = "36251328", doi = "10.1111/andr.13310", title = "Reference intervals for free testosterone in adult men measured using a standardized equilibrium dialysis procedure.", url = "https://pubmed.ncbi.nlm.nih.gov/36251328/", locator = "Conclusion", quote = "normative range 66-309 pg/ml [229-1072 pmol/L] in all men" },
+]
+
+[[range]]
+set = "ft-ed-standardized-2023"
+kind = "reference"
+low = 120
+high = 368
+when = { sex = "male", age_min = 19, age_max = 39, method = "equilibrium-dialysis" }
+population = "Healthy nonobese men aged 19-39 (same cohort as the all-men range), free testosterone by standardized equilibrium dialysis with LC-MS/MS"
+evidence = "reference-interval"
+note = "Young-men reference interval. Values fall with age, BMI and SHBG in the same cohort."
+citations = [
+  { pmid = "36251328", doi = "10.1111/andr.13310", title = "Reference intervals for free testosterone in adult men measured using a standardized equilibrium dialysis procedure.", url = "https://pubmed.ncbi.nlm.nih.gov/36251328/", locator = "Conclusion", quote = "120-368 pg/ml [415-1274 pmol/L] in men, 19-39 years" },
+]
+
+[[range]]
+set = "premenopausal-women-2011"
+kind = "reference"
+low = 1.2
+high = 6.4
+when = { sex = "female", age_min = 30, age_max = 30 }
+population = "Normally cycling healthy premenopausal women aged 18-49 (n=161); percentiles estimated for a typical 30-year-old woman, pooled across menstrual cycle phases"
+evidence = "reference-interval"
+note = "5th to 95th percentile for a 30-year-old woman (measured free testosterone). Assay/method not specified in the abstract."
+citations = [
+  { pmid = "21771278", doi = "10.1111/j.1743-6109.2011.02380.x", title = "Testosterone reference ranges in normally cycling healthy premenopausal women.", url = "https://pubmed.ncbi.nlm.nih.gov/21771278/", locator = "Abstract, Results", quote = "The estimated 5th and 95th percentiles for a 30-year-old woman were: testosterone, 15-46 ng/dL (520-1595 pmol/L); free testosterone, 1.2-6.4 pg/mL (4.16-22.2 pmol/L); calculated free testosterone, 1.3-5.6 pg/mL (4.5-19.4 pmol/L); bioavailable testosterone, 1.12-7.62 ng/dL (38.8-264.21 pmol/L); and SHBG 18-86 nmol/L." },
+]

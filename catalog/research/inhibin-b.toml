@@ -1,0 +1,116 @@
+slug = "inhibin-b"
+name = "Inhibin B"
+category = "hormone"
+unit = "pg/mL"
+description = "Glycoprotein secreted by Sertoli cells in men and by granulosa cells of growing follicles in women. Suppresses pituitary FSH. In men it is a marker of spermatogenesis; in women it reflects early follicular activity and ovarian reserve."
+
+[[range]]
+set = "inhibin-b-normozoospermic-controls-2019"
+kind = "reference"
+low = 62.75
+when = { sex = "male" }
+population = "Control men with normal total sperm number (WHO 2010), Rome, retrospective study; the 5th percentile was taken as the lower limit"
+evidence = "reference-interval"
+note = "Lower limit (5th percentile) of inhibin B in normozoospermic control men. Value was derived in one centre, so treat as local rather than universal."
+citations = [
+  { pmid = "30531061", doi = "10.4103/aja.aja_93_18", title = "Inhibin B: are modified ranges needed for orchiectomised testicular cancer patients?", url = "https://pubmed.ncbi.nlm.nih.gov/30531061/", locator = "Results, Table 4", quote = "The 5th percentile of the CTR group was taken as the cutoff (62.75 pg ml−1)." },
+]
+
+[[range]]
+set = "inhibin-b-normozoospermic-controls-2019"
+kind = "reference"
+low = 80
+high = 350
+when = { sex = "male" }
+population = "Men with normal spermatogenesis, as cited by the authors for postpubertal men"
+evidence = "reference-interval"
+note = "Normal postpubertal range as stated by the authors. The source gives no percentile or sample size for this range, so it is a secondary citation."
+citations = [
+  { pmid = "30531061", doi = "10.4103/aja.aja_93_18", title = "Inhibin B: are modified ranges needed for orchiectomised testicular cancer patients?", url = "https://pubmed.ncbi.nlm.nih.gov/30531061/", locator = "Methods, Assay performance", quote = "The normal postpubertal range was 80–350 pg ml−1." },
+]
+
+[[range]]
+set = "male-infertility-inhibin-b-cutoffs-2021"
+kind = "diagnostic"
+high = 58.25
+when = { sex = "male", conditions = ["severe-oligozoospermia"] }
+population = "Subfertile Chinese men, 324 patients with different spermatogenesis status"
+evidence = "outcome"
+note = "Upper cut-off for severe oligozoospermia (ISO) in the source. Values at or below this favour impaired spermatogenesis. Single-centre, derived from the same cohort it was tested in."
+citations = [
+  { pmid = "34181290", doi = "10.1002/jcla.23882", title = "Clinical application value of Inhibin B alone or in combination with other hormone indicators in subfertile men with different spermatogenesis status: A study of 324 Chinese men.", url = "https://pubmed.ncbi.nlm.nih.gov/34181290/", locator = "Abstract, Results", quote = "The upper cutoff value of Inhibin B to diagnose ISO is 58.25 pg/ml with a predictive accuracy of 80.65%." },
+]
+
+[[range]]
+set = "male-infertility-inhibin-b-cutoffs-2021"
+kind = "diagnostic"
+high = 45.9
+when = { sex = "male", conditions = ["nonobstructive-azoospermia"] }
+population = "Subfertile Chinese men, 324 patients with different spermatogenesis status"
+evidence = "outcome"
+note = "Cut-off to diagnose non-obstructive azoospermia versus obstructive azoospermia; values below this favour NOA. Single-centre."
+citations = [
+  { pmid = "34181290", doi = "10.1002/jcla.23882", title = "Clinical application value of Inhibin B alone or in combination with other hormone indicators in subfertile men with different spermatogenesis status: A study of 324 Chinese men.", url = "https://pubmed.ncbi.nlm.nih.gov/34181290/", locator = "Abstract, Results", quote = "The cutoff level of Inhibin B to diagnose nonobstructive azoospermia is 45.9 pg/ml with a positive and negative prediction accuracy of 97.70% and 85.71%, respectively." },
+]
+
+[[range]]
+set = "tese-inhibin-b-cutoff-2016"
+kind = "diagnostic"
+low = 19.1
+when = { sex = "male", conditions = ["azoospermia"] }
+population = "Azoospermia patients undergoing testicular sperm extraction (TESE), Chinese cohort"
+evidence = "outcome"
+note = "ROC cut-off for predicting TESE result. Values at or above this favour sperm retrieval. Single-centre, small sample."
+citations = [
+  { pmid = "29282914", title = "[Level of serum inhibin B for predicting the results of testicular sperm extraction in azoospermia patients].", url = "https://pubmed.ncbi.nlm.nih.gov/29282914/", locator = "Abstract, Results", quote = "Analysis of ROC showed that the best cut-off value of serum InhB was 19.1 pg/ml." },
+]
+
+[[range]]
+set = "micro-tese-inhibin-b-cutoff-2023"
+kind = "diagnostic"
+low = 21.51
+when = { sex = "male", conditions = ["non-obstructive-azoospermia"] }
+population = "Men with idiopathic non-obstructive azoospermia undergoing micro-TESE"
+evidence = "outcome"
+note = "ROC cut-off for positive sperm retrieval with micro-TESE. Values above this favour a positive retrieval. Single-centre."
+citations = [
+  { pmid = "36675430", doi = "10.3390/jcm12020500", title = "Inhibin B-to-Anti-Mullerian Hormone Ratio as Noninvasive Predictors of Positive Sperm Retrieval in Idiopathic Non-Obstructive Azoospermia.", url = "https://pubmed.ncbi.nlm.nih.gov/36675430/", locator = "Abstract, Results", quote = "21.51 pg/mL was the cut-off value for INHB." },
+]
+
+[[range]]
+set = "bulgarian-women-inhibin-b-2004"
+kind = "reference"
+low = 33.15
+high = 190.75
+when = { sex = "female", age_min = 20, age_max = 40 }
+population = "Healthy fertile Bulgarian women aged 20-40 years (n=65), single centre"
+evidence = "reference-interval"
+note = "5th-95th percentile in a small, older single-centre study. Cycle phase is not stated in the abstract. Assay-dependent and not validated against newer assays."
+citations = [
+  { pmid = "15518284", title = "[Measurement of basal inhibin B level in Bulgarian women of the childbearing age].", url = "https://pubmed.ncbi.nlm.nih.gov/15518284/", locator = "Abstract, Results", quote = "The values of inhibin-B, which we obtained in the 5th percentile, was 33.15 pg/ml and in the 95th percentile was 190.75 pg/ml." },
+]
+
+[[range]]
+set = "puberty-inhibin-b-girls-2000"
+kind = "reference"
+high = 100
+when = { sex = "female", tanner_min = 1, tanner_max = 1 }
+population = "Healthy prepubertal schoolgirls aged 6-20 years (n=403 across puberty stages)"
+evidence = "reference-interval"
+note = "Upper 95% prediction limit for prepubertal girls (Tanner stage 1). The lower limit is below 20 pg/mL. Levels are low or undetectable before puberty."
+citations = [
+  { pmid = "10770209", doi = "10.1210/jcem.85.4.6512", title = "Serum inhibin A and inhibin B in healthy prepubertal, pubertal, and adolescent girls and adult women: relation to age, stage of puberty, menstrual cycle, follicle-stimulating hormone, luteinizing hormone, and estradiol levels.", url = "https://pubmed.ncbi.nlm.nih.gov/10770209/", locator = "Abstract, Results", quote = "Levels of inhibin B are low or undetectable in prepubertal girls (median, 26.5 pg/mL; 95% prediction interval, <20-100 pg/mL)" },
+]
+
+[[range]]
+set = "puberty-inhibin-b-girls-2000"
+kind = "reference"
+low = 28
+high = 227
+when = { sex = "female", tanner_min = 3, tanner_max = 3 }
+population = "Healthy schoolgirls aged 6-20 years at pubertal stage III (n=403 across puberty stages)"
+evidence = "reference-interval"
+note = "95% prediction interval at the peak of inhibin B in puberty (stage III). Median 84 pg/mL."
+citations = [
+  { pmid = "10770209", doi = "10.1210/jcem.85.4.6512", title = "Serum inhibin A and inhibin B in healthy prepubertal, pubertal, and adolescent girls and adult women: relation to age, stage of puberty, menstrual cycle, follicle-stimulating hormone, luteinizing hormone, and estradiol levels.", url = "https://pubmed.ncbi.nlm.nih.gov/10770209/", locator = "Abstract, Results", quote = "increase sharply through pubertal stage II to peak in stage III (median, 84 pg/mL; 95% prediction interval, 28-227 pg/mL)" },
+]

@@ -1,0 +1,90 @@
+slug = "dhea-s"
+name = "DHEA-Sulfate"
+loinc = "2191-5"
+category = "adrenal"
+unit = "µg/dL"
+description = "Sulfated adrenal androgen produced mainly by the zona reticularis; it reflects adrenal androgen output and rises at adrenarche. Used to assess adrenal androgen excess, hyperandrogenism in women, and adrenal disorders."
+
+[[range]]
+set = "roche-cobas-2023"
+kind = "reference"
+low = 3.65
+high = 12.76
+unit = "µmol/L"
+when = { sex = "female", age_min = 20, age_max = 25, method = "immunoassay" }
+population = "Healthy women aged 20-25 y, indirect (partitioned) reference interval from Roche Cobas electrochemiluminescence immunoassay data (3500 subjects aged 20-45 y)"
+evidence = "reference-interval"
+note = "95% reference interval (2.5th-97.5th percentile) in the source unit umol/L; population-specific for this immunoassay, not for LC-MS/MS. Band boundaries as printed in the source."
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", locator = "Results", quote = "Age-stratified 95% RIs for DHEAS were: 3.65-12.76 µmol/L (20-25 years); 2.97-11.50 µmol/L (25-35 years) and 2.30-9.83 µmol/L (35-45 years)." },
+]
+
+[[range]]
+set = "roche-cobas-2023"
+kind = "reference"
+low = 2.97
+high = 11.50
+unit = "µmol/L"
+when = { sex = "female", age_min = 25, age_max = 35, method = "immunoassay" }
+population = "Healthy women aged 25-35 y, indirect reference interval from Roche Cobas electrochemiluminescence immunoassay data"
+evidence = "reference-interval"
+note = "95% reference interval in the source unit umol/L; immunoassay-specific. Band boundaries as printed in the source."
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", locator = "Results", quote = "Age-stratified 95% RIs for DHEAS were: 3.65-12.76 µmol/L (20-25 years); 2.97-11.50 µmol/L (25-35 years) and 2.30-9.83 µmol/L (35-45 years)." },
+]
+
+[[range]]
+set = "roche-cobas-2023"
+kind = "reference"
+low = 2.30
+high = 9.83
+unit = "µmol/L"
+when = { sex = "female", age_min = 35, age_max = 45, method = "immunoassay" }
+population = "Healthy women aged 35-45 y, indirect reference interval from Roche Cobas electrochemiluminescence immunoassay data"
+evidence = "reference-interval"
+note = "95% reference interval in the source unit umol/L; immunoassay-specific. Band boundaries as printed in the source."
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", locator = "Results", quote = "Age-stratified 95% RIs for DHEAS were: 3.65-12.76 µmol/L (20-25 years); 2.97-11.50 µmol/L (25-35 years) and 2.30-9.83 µmol/L (35-45 years)." },
+]
+
+[[range]]
+set = "caliper"
+kind = "reference"
+low = 0.43
+high = 5.62
+unit = "μmol/L"
+when = { age_min = 9, age_max = 13 }
+population = "Healthy children and adolescents of both sexes aged 9 to under 13 years (CALIPER reference population, as reproduced in a Croatian verification study on the Beckman Coulter DxI600 immunoassay)"
+evidence = "reference-interval"
+note = "CALIPER 2.5th-97.5th percentile interval as printed in the verification study's table (values in umol/L). The upper age bound is exclusive in the source ('<13 years'). Immunoassay-specific; CALIPER values were not re-derived by the verification study."
+citations = [
+  { pmid = "32550818", doi = "10.11613/BM.2020.020710", title = "Verification of the Canadian Laboratory Initiative on Paediatric Reference Intervals (CALIPER) reference values in Croatian children and adolescents.", url = "https://pubmed.ncbi.nlm.nih.gov/32550818/", locator = "Table 1", quote = "DHEAS, μmol/L | M, F | 9 - < 13 | 0.43 – 5.62" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 917
+high = 10021
+unit = "nmol/L"
+when = { sex = "male", specimen = "plasma", method = "lc-ms/ms" }
+population = "232 men aged 18-81, with and without hypertension; morning fasting supine sampling"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile in nmol/L (917-10,021 nmol/L = 0.92-10.0 umol/L); falls with age."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Table 3 (columns: ALL | Males | Females; median then [2.5th-97.5th percentile])", quote = "DHEA-SO4 | 4163 | [914–9390] | 5333 | [917–10,021]† | 3592 | [850–7435]" },
+]
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 850
+high = 7435
+unit = "nmol/L"
+when = { sex = "female", specimen = "plasma", method = "lc-ms/ms" }
+population = "293 women aged 18-81, with and without hypertension; morning fasting supine sampling"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile in nmol/L, pooled across ages and menopausal status; postmenopausal women are lower."
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", locator = "Table 3 (columns: ALL | Males | Females; median then [2.5th-97.5th percentile])", quote = "DHEA-SO4 | 4163 | [914–9390] | 5333 | [917–10,021]† | 3592 | [850–7435]" },
+]

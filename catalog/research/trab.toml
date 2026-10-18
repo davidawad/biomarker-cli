@@ -1,0 +1,163 @@
+slug = "trab"
+name = "TSH Receptor Antibodies (TRAb/TSI)"
+category = "thyroid"
+unit = "IU/L"
+description = "Antibodies that stimulate or block the TSH receptor; the main cause of Graves disease and a predictor of fetal and neonatal thyroid dysfunction in pregnancy. Cut-offs are assay-specific and not interchangeable across platforms."
+
+[[range]]
+set = "nl-trab-trimester-cohort-2026"
+kind = "diagnostic"
+low = 27
+when = { pregnancy = true, trimester = 1, conditions = ["graves-disease-history"], method = "immunoassay (TRAK human, BRAHMS Kryptor)" }
+population = "Pregnant women with a history of Graves disease, Netherlands multicentre prospective cohort (2010-2023)"
+evidence = "outcome"
+note = "Threshold titre with 100% sensitivity for fetal/neonatal hyperthyroidism in trimester 1 (Kryptor assay, ULN 1.1 IU/L); assay-specific, not transferable to other platforms."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41846542/", locator = "Results, Thyroid receptor antibody threshold titers", quote = "In the respective trimesters, a TRAb threshold titer of 27 IU/L, 21 IU/L, and 7 IU/L, respectively, corresponded with a maximal sensitivity of 100%, with a corresponding specificity ranging from 96% to 99%." },
+]
+
+[[range]]
+set = "nl-trab-trimester-cohort-2026"
+kind = "diagnostic"
+low = 21
+when = { pregnancy = true, trimester = 2, conditions = ["graves-disease-history"], method = "immunoassay (TRAK human, BRAHMS Kryptor)" }
+population = "Pregnant women with a history of Graves disease, Netherlands multicentre prospective cohort (2010-2023)"
+evidence = "outcome"
+note = "Threshold titre with 100% sensitivity for fetal/neonatal hyperthyroidism in trimester 2 (Kryptor assay); assay-specific."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41846542/", locator = "Results, Thyroid receptor antibody threshold titers", quote = "In the respective trimesters, a TRAb threshold titer of 27 IU/L, 21 IU/L, and 7 IU/L, respectively, corresponded with a maximal sensitivity of 100%, with a corresponding specificity ranging from 96% to 99%." },
+]
+
+[[range]]
+set = "nl-trab-trimester-cohort-2026"
+kind = "diagnostic"
+low = 7
+when = { pregnancy = true, trimester = 3, conditions = ["graves-disease-history"], method = "immunoassay (TRAK human, BRAHMS Kryptor)" }
+population = "Pregnant women with a history of Graves disease, Netherlands multicentre prospective cohort (2010-2023)"
+evidence = "outcome"
+note = "Threshold titre with 100% sensitivity for fetal/neonatal hyperthyroidism in trimester 3 (Kryptor assay); assay-specific."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41846542/", locator = "Results, Thyroid receptor antibody threshold titers", quote = "In the respective trimesters, a TRAb threshold titer of 27 IU/L, 21 IU/L, and 7 IU/L, respectively, corresponded with a maximal sensitivity of 100%, with a corresponding specificity ranging from 96% to 99%." },
+]
+
+[[range]]
+set = "nl-trab-trimester-cohort-2026"
+kind = "diagnostic"
+low = 11
+when = { pregnancy = true, trimester = 1, conditions = ["graves-disease-active"], method = "immunoassay (TRAK human, BRAHMS Kryptor)" }
+population = "Pregnant women with active Graves disease, Netherlands multicentre prospective cohort (2010-2023)"
+evidence = "outcome"
+note = "Median-derived threshold for active Graves (trimester 1, Kryptor assay), 89% sensitivity; the study notes some neonatal hyperthyroidism still occurred below threshold in antithyroid-treated mothers."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41846542/", locator = "Results, Thyroid receptor antibody threshold titers", quote = "To determine appropriate TRAb threshold titers for classification, median threshold titers were derived from the active Graves group, setting a threshold titer at 11 IU/L for the first and third trimesters, and 13 IU/L for the second trimester." },
+]
+
+[[range]]
+set = "nl-trab-trimester-cohort-2026"
+kind = "diagnostic"
+low = 13
+when = { pregnancy = true, trimester = 2, conditions = ["graves-disease-active"], method = "immunoassay (TRAK human, BRAHMS Kryptor)" }
+population = "Pregnant women with active Graves disease, Netherlands multicentre prospective cohort (2010-2023)"
+evidence = "outcome"
+note = "Median-derived threshold for active Graves (trimester 2, Kryptor assay), 86% sensitivity."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41846542/", locator = "Results, Thyroid receptor antibody threshold titers", quote = "To determine appropriate TRAb threshold titers for classification, median threshold titers were derived from the active Graves group, setting a threshold titer at 11 IU/L for the first and third trimesters, and 13 IU/L for the second trimester." },
+]
+
+[[range]]
+set = "nl-trab-trimester-cohort-2026"
+kind = "diagnostic"
+low = 11
+when = { pregnancy = true, trimester = 3, conditions = ["graves-disease-active"], method = "immunoassay (TRAK human, BRAHMS Kryptor)" }
+population = "Pregnant women with active Graves disease, Netherlands multicentre prospective cohort (2010-2023)"
+evidence = "outcome"
+note = "Median-derived threshold for active Graves (trimester 3, Kryptor assay), 83% sensitivity."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41846542/", locator = "Results, Thyroid receptor antibody threshold titers", quote = "To determine appropriate TRAb threshold titers for classification, median threshold titers were derived from the active Graves group, setting a threshold titer at 11 IU/L for the first and third trimesters, and 13 IU/L for the second trimester." },
+]
+
+[[range]]
+set = "alinity-trab-china-2026"
+kind = "reference"
+high = 1.56
+when = { ethnicity = "Chinese" }
+population = "Healthy Chinese adults (n = 366) meeting liver and kidney normality criteria (CLSI EP28)"
+evidence = "reference-interval"
+note = "95th percentile upper reference limit for the Abbott Alinity TRAb immunoassay; assay-specific."
+citations = [
+  { pmid = "41637414", doi = "10.1371/journal.pone.0339494", title = "Performance evaluation and reference interval establishment of Abbott Alinity thyroid-stimulating hormone receptor antibody (TRAb) assay for diagnosing Graves' disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41637414/", locator = "Abstract, Results", quote = "The upper reference limits at 95th percentile and 97.5th percentile for healthy Chinese population using Abbott TRAb assay were 1.56 IU/L and 1.95 IU/L, respectively." },
+]
+
+[[range]]
+set = "alinity-trab-china-2026"
+kind = "reference"
+high = 1.95
+when = { ethnicity = "Chinese" }
+population = "Healthy Chinese adults (n = 366) meeting liver and kidney normality criteria (CLSI EP28)"
+evidence = "reference-interval"
+note = "97.5th percentile upper reference limit for the Abbott Alinity TRAb immunoassay; assay-specific."
+citations = [
+  { pmid = "41637414", doi = "10.1371/journal.pone.0339494", title = "Performance evaluation and reference interval establishment of Abbott Alinity thyroid-stimulating hormone receptor antibody (TRAb) assay for diagnosing Graves' disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41637414/", locator = "Abstract, Results", quote = "The upper reference limits at 95th percentile and 97.5th percentile for healthy Chinese population using Abbott TRAb assay were 1.56 IU/L and 1.95 IU/L, respectively." },
+]
+
+[[range]]
+set = "alinity-trab-china-2026"
+kind = "diagnostic"
+low = 2.89
+when = { ethnicity = "Chinese" }
+population = "Chinese patients with Graves disease and controls, Abbott Alinity TRAb assay"
+evidence = "outcome"
+note = "Optimal (Youden) diagnostic cut-off for Graves disease on the Abbott Alinity assay in this study; assay-specific."
+citations = [
+  { pmid = "41637414", doi = "10.1371/journal.pone.0339494", title = "Performance evaluation and reference interval establishment of Abbott Alinity thyroid-stimulating hormone receptor antibody (TRAb) assay for diagnosing Graves' disease.", url = "https://pubmed.ncbi.nlm.nih.gov/41637414/", locator = "Abstract, Results", quote = "Diagnostic accuracy of the Abbott TRAb assay for GD was high, yielding an area under curve (AUC) of 0.999, sensitivity of 98.4%, and specificity of 99.4% at an optimal cutoff of 2.89 IU/L." },
+]
+
+[[range]]
+set = "roche-trab-china-2022"
+kind = "diagnostic"
+low = 1.75
+when = { }
+population = "Newly diagnosed Graves disease patients (n = 227) and controls, China"
+evidence = "outcome"
+note = "Manufacturer cut-off for the third-generation Roche electrochemiluminescence TRAb assay, as quoted in the study."
+citations = [
+  { pmid = "36045442", doi = "10.1186/s12902-022-01114-3", title = "Clinical evaluation of an automated TSI bridge immunoassay in the diagnosis of Graves' disease and its relationship to the degree of hyperthyroidism.", url = "https://pubmed.ncbi.nlm.nih.gov/36045442/", locator = "Abstract, Results", quote = "According to the cut-off values proposed by the manufacturers (TSI: 0.55 IU/L, TRAb: 1.75 IU/L), the positive rates of TSI and TRAb in new-onset GD patients were 96.92% and 95.15%, respectively." },
+]
+
+[[range]]
+set = "roche-trab-china-2022"
+kind = "diagnostic"
+low = 1.38
+when = { }
+population = "Newly diagnosed Graves disease patients (n = 227) and controls, China"
+evidence = "outcome"
+note = "ROC-derived optimal TRAb cut-off in this Chinese population (third-generation Roche assay); assay-specific."
+citations = [
+  { pmid = "36045442", doi = "10.1186/s12902-022-01114-3", title = "Clinical evaluation of an automated TSI bridge immunoassay in the diagnosis of Graves' disease and its relationship to the degree of hyperthyroidism.", url = "https://pubmed.ncbi.nlm.nih.gov/36045442/", locator = "Abstract, Results", quote = "The optimal TRAb cut-off value of was 1.38 IU/L, with a sensitivity of 96.92% and a specificity of 99.08%." },
+]
+
+[[range]]
+set = "ata-2017"
+kind = "diagnostic"
+low = 5
+unit = "IU/L"
+when = { pregnancy = true, conditions = ["graves-disease"] }
+population = "Pregnant women with Graves disease or a high TRAb, as summarised in a 2022 review of fetal and neonatal thyrotoxicosis"
+evidence = "review"
+note = "Restates the ATA pregnancy advice (secondary source, not checked against the ATA text): a high TRAb is more than three times the upper normal maternal limit or more than 5 IU/L, then thioamide counselling and TRAb retesting at 30-34 weeks. The 3x ULN form is the next range."
+citations = [
+  { pmid = "36676660", doi = "10.3390/medicina59010036", title = "Diagnosis and Management of Fetal and Neonatal Thyrotoxicosis.", url = "https://pubmed.ncbi.nlm.nih.gov/36676660/", locator = "Full text", quote = "If a high TRAb serum concentration is detected (more than three times the upper normal maternal limit or more than 5 IU/L), according to ATA" },
+]
+
+[[range]]
+set = "ata-2017"
+kind = "diagnostic"
+low = 3
+unit = "x ULN"
+when = { pregnancy = true, conditions = ["graves-disease"] }
+population = "Pregnant women with Graves disease or a high TRAb, as summarised in a 2022 review of fetal and neonatal thyrotoxicosis"
+evidence = "review"
+note = "ATA pregnancy guidance as restated: TRAb more than three times the upper limit of normal for the maternal assay counts as high and calls for fetal/neonatal monitoring. Expressed as a multiple of the assay upper limit; the alternative absolute form (>5 IU/L) is a separate range."
+citations = [
+  { pmid = "36676660", doi = "10.3390/medicina59010036", title = "Diagnosis and Management of Fetal and Neonatal Thyrotoxicosis.", url = "https://pubmed.ncbi.nlm.nih.gov/36676660/", locator = "Full text", quote = "If a high TRAb serum concentration is detected (more than three times the upper normal maternal limit or more than 5 IU/L), according to ATA" },
+]

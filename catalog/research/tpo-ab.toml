@@ -1,0 +1,54 @@
+slug = "tpo-ab"
+name = "Thyroid Peroxidase Antibodies"
+loinc = "8099-4"
+category = "thyroid"
+unit = "IU/mL"
+description = "Autoantibodies against thyroid peroxidase, the main marker of autoimmune (Hashimoto) thyroid disease. Positivity cut-offs vary by assay and are associated with higher risk of pregnancy complications and miscarriage."
+
+[[range]]
+set = "cn-preconception-cohort-2026"
+kind = "diagnostic"
+low = 34
+when = { }
+population = "Chinese women in routine preconception evaluation (retrospective cohort, n = 256)"
+evidence = "outcome"
+note = "Positivity threshold prespecified by the study for the primary analysis; the same study reports an assay reference range of 0-9 IU/mL."
+citations = [
+  { pmid = "42143362", doi = "10.1186/s12902-026-02318-7", title = "Correlation analysis between serum 25-hydroxyvitamin D levels and thyroid peroxidase antibody positivity in preconception women.", url = "https://pubmed.ncbi.nlm.nih.gov/42143362/", locator = "Methods", quote = "TPOAb positivity was prespecified as ≥ 34 IU/mL" },
+]
+
+[[range]]
+set = "cn-preconception-cohort-2026"
+kind = "reference"
+high = 9
+when = { }
+population = "Chinese women in routine preconception evaluation (retrospective cohort, n = 256)"
+evidence = "reference-interval"
+note = "Assay reference range as stated by the study (not a population-derived interval); assay dependent."
+citations = [
+  { pmid = "42143362", doi = "10.1186/s12902-026-02318-7", title = "Correlation analysis between serum 25-hydroxyvitamin D levels and thyroid peroxidase antibody positivity in preconception women.", url = "https://pubmed.ncbi.nlm.nih.gov/42143362/", locator = "Methods", quote = "TPOAb reference range was 0–9 IU/mL" },
+]
+
+[[range]]
+set = "cn-maternal-tpo-cohort-2026"
+kind = "diagnostic"
+low = 34
+when = { pregnancy = true }
+population = "10,154 Chinese mother-newborn pairs, maternal serum sampled before birth (retrospective cohort)"
+evidence = "outcome"
+note = "Positivity definition used by the study for maternal TPO-Ab; assay-specific cut-off."
+citations = [
+  { pmid = "42137608", doi = "10.1177/20420188261446409", title = "Maternal TPO-Ab status modulates associations between gestational thyroid hormones and neonatal TSH in 10,154 Chinese mother-newborn pairs.", url = "https://pubmed.ncbi.nlm.nih.gov/42137608/", locator = "Methods", quote = "Mothers were classified as TPO-Ab positive (>34 IU/mL) or negative." },
+]
+
+[[range]]
+set = "cn-tpoab-gdm-cohort-2026"
+kind = "diagnostic"
+low = 12
+when = { pregnancy = true, method = "chemiluminescence immunoassay (Architect i2000SR)" }
+population = "Pregnant women in early pregnancy, single centre (Chinese cohort, gestational diabetes study)"
+evidence = "outcome"
+note = "Study defines positivity as the manufacturer's upper limit of normal for this assay; not a guideline cut-off and assay dependent."
+citations = [
+  { pmid = "42156488", doi = "10.1038/s41598-026-53582-5", title = "Lipid profiles and risk of gestational diabetes mellitus in women with isolated TPOAb positivity during early pregnancy.", url = "https://pubmed.ncbi.nlm.nih.gov/42156488/", locator = "Methods", quote = "TPOAb positivity is defined as TPOAb titer ≥ 12 IU/ml, which is the manufacturer’s recommended upper limit of normal for the chemiluminescence immunoassay (Architect i2000SR, Abbott Laboratories, Chicago, IL)" },
+]

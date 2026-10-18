@@ -1,0 +1,114 @@
+slug = "calcitonin"
+name = "Calcitonin"
+category = "thyroid"
+unit = "pg/mL"
+description = "Hormone secreted by thyroid C-cells; the tumour marker for medullary thyroid carcinoma (MTC). Basal levels are sex-dependent and assay-dependent, and values in the 10-100 pg/mL range need follow-up rather than a diagnosis of MTC."
+
+[[range]]
+set = "calcitonin-lab-ranges-2019"
+kind = "reference"
+high = 8.4
+when = { sex = "male", method = "immunoassay (Siemens Immulite 2000)" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (pre-June 2019 assay)"
+evidence = "reference-interval"
+note = "Upper normal limit reported by the cohort laboratory; assay-specific and not an independently derived reference interval."
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", locator = "Methods", quote = "Until 12 June 2019, measurements were performed using the Immulite 2000 system (Siemens, Forchheim, Germany) with Siemens calcitonin reagents, controls, and calibrators (normal range males: <8.4 pg/mL, females: <5 pg/mL)." },
+]
+
+[[range]]
+set = "calcitonin-lab-ranges-2019"
+kind = "reference"
+high = 5
+when = { sex = "female", method = "immunoassay (Siemens Immulite 2000)" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (pre-June 2019 assay)"
+evidence = "reference-interval"
+note = "Upper normal limit reported by the cohort laboratory; assay-specific."
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", locator = "Methods", quote = "Until 12 June 2019, measurements were performed using the Immulite 2000 system (Siemens, Forchheim, Germany) with Siemens calcitonin reagents, controls, and calibrators (normal range males: <8.4 pg/mL, females: <5 pg/mL)." },
+]
+
+[[range]]
+set = "calcitonin-lab-ranges-2019"
+kind = "reference"
+high = 11.8
+when = { sex = "male", method = "immunoassay (DiaSorin LIAISON Calcitonin II Gen)" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (from June 2019 assay)"
+evidence = "reference-interval"
+note = "Upper normal limit reported by the cohort laboratory after the assay change; assay-specific."
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", locator = "Methods", quote = "From 12 June 2019 onwards, measurements were performed using the Liaison XL system (Diasorin S.p.A., Saluggia, Italy) with LIAISON® Calcitonin II Gen reagents, control sets, and calibrators (normal range males: <11.8 pg/mL, females: <4.8 pg/mL." },
+]
+
+[[range]]
+set = "calcitonin-lab-ranges-2019"
+kind = "reference"
+high = 4.8
+when = { sex = "female", method = "immunoassay (DiaSorin LIAISON Calcitonin II Gen)" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (from June 2019 assay)"
+evidence = "reference-interval"
+note = "Upper normal limit reported by the cohort laboratory after the assay change; assay-specific."
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", locator = "Methods", quote = "From 12 June 2019 onwards, measurements were performed using the Liaison XL system (Diasorin S.p.A., Saluggia, Italy) with LIAISON® Calcitonin II Gen reagents, control sets, and calibrators (normal range males: <11.8 pg/mL, females: <4.8 pg/mL." },
+]
+
+[[range]]
+set = "mtc-lab-review-2026"
+kind = "reference"
+high = 10
+when = { }
+population = "Healthy individuals (narrative review of MTC laboratory diagnostics)"
+evidence = "review"
+note = "Typical basal calcitonin in healthy people, as stated in the review; assay dependent."
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", locator = "Reference ranges and cutoff levels", quote = "Basal CT levels in healthy individuals are typically below 10 pg/mL." },
+]
+
+[[range]]
+set = "mtc-lab-review-2026"
+kind = "warn"
+low = 10
+high = 100
+when = { }
+population = "Adults with elevated basal calcitonin (narrative review of MTC laboratory diagnostics)"
+evidence = "review"
+note = "Gray zone: values in this range are more often C-cell hyperplasia or non-specific than MTC; the review advises further work-up (e.g., FNA washout calcitonin)."
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", locator = "Reference ranges and cutoff levels", quote = "Basal CT levels above 100 pg/mL are indicative of MTC, but levels between 10 and 100 pg/mL are typically considered in the gray zone and are more frequently not attributed to MTC but C-cell hyperplasia (19)." },
+]
+
+[[range]]
+set = "mtc-lab-review-2026"
+kind = "diagnostic"
+low = 100
+when = { }
+population = "Adults with basal calcitonin elevation (narrative review of MTC laboratory diagnostics)"
+evidence = "review"
+note = "Level above which basal calcitonin is considered indicative of MTC; the review stresses cut-offs are only indicative and assay-dependent."
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", locator = "Reference ranges and cutoff levels", quote = "Basal CT levels above 100 pg/mL are indicative of MTC, but levels between 10 and 100 pg/mL are typically considered in the gray zone and are more frequently not attributed to MTC but C-cell hyperplasia (19)." },
+]
+
+[[range]]
+set = "german-mtc-guidance-as-cited"
+kind = "diagnostic"
+low = 30
+when = { sex = "female" }
+population = "Adults with thyroid nodules and elevated basal calcitonin (German guidance as summarised in the review)"
+evidence = "review"
+note = "Sex-specific action threshold per German recommendations as cited by the review; intended to balance unnecessary surgery against missed micro-MTC. Not verified against the primary German guideline."
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", locator = "Reference ranges and cutoff levels", quote = "adopt sex-specific action thresholds (≈30 pg/mL in women and 60 pg/mL in men)" },
+]
+
+[[range]]
+set = "german-mtc-guidance-as-cited"
+kind = "diagnostic"
+low = 60
+when = { sex = "male" }
+population = "Adults with thyroid nodules and elevated basal calcitonin (German guidance as summarised in the review)"
+evidence = "review"
+note = "Sex-specific action threshold per German recommendations as cited by the review; not verified against the primary German guideline."
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", locator = "Reference ranges and cutoff levels", quote = "adopt sex-specific action thresholds (≈30 pg/mL in women and 60 pg/mL in men)" },
+]

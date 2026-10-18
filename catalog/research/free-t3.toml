@@ -1,0 +1,145 @@
+slug = "free-t3"
+name = "Free T3"
+loinc = "3051-0"
+category = "thyroid"
+unit = "pg/mL"
+description = "Unbound triiodothyronine, the most active thyroid hormone. Measured with TSH and FT4 to evaluate hyperthyroidism and T3 toxicosis. Most sources report pmol/L, which is kept in that unit on those ranges."
+
+[[range]]
+set = "second-trimester-ethnicity-2007"
+kind = "reference"
+low = 2.48
+high = 3.87
+when = { pregnancy = true, trimester = 2 }
+population = "Pregnant women in the US (Asian, Black, Hispanic and White), antibody-negative with normal TSH, ARCHITECT immunoassay"
+evidence = "reference-interval"
+note = "Nonparametric 2.5th-97.5th percentile for all participants, pg/mL as printed. Source also gives 3.82-5.96 pmol/L."
+citations = [
+  { pmid = "17712003", doi = "10.1373/clinchem.2007.089680", title = "Second-trimester reference intervals for thyroid tests: the role of ethnicity.", url = "https://pubmed.ncbi.nlm.nih.gov/17712003/", locator = "Abstract, Results", quote = "3.82-5.96 pmol/L (2.48-3.87 pg/mL; FT3)" },
+]
+
+[[range]]
+set = "ankara-multicenter-2026"
+kind = "reference"
+low = 3.46
+high = 6.04
+unit = "pmol/L"
+when = { sex = "male", age_min = 18, method = "immunoassay" }
+population = "Adults aged 18 and over from three Ankara hospitals, routine laboratory data, Maglumi chemiluminescence immunoassay"
+evidence = "reference-interval"
+note = "Indirect refineR estimate from routine data. Reported in pmol/L."
+citations = [
+  { pmid = "42351459", doi = "10.3390/diagnostics16121800", title = "Age- and Sex-Specific Reference Intervals for TSH, FT4, and FT3 Derived from the Turkish Multi-Center Cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/42351459/", locator = "Abstract, Results", quote = "Adult FT4 reference intervals were approximately 12.9-21.5 pmol/L, and FT3 intervals were 3.46-6.04 pmol/L in males and 3.46-5.76 pmol/L in females." },
+]
+
+[[range]]
+set = "ankara-multicenter-2026"
+kind = "reference"
+low = 3.46
+high = 5.76
+unit = "pmol/L"
+when = { sex = "female", age_min = 18, method = "immunoassay" }
+population = "Adults aged 18 and over from three Ankara hospitals, routine laboratory data, Maglumi chemiluminescence immunoassay"
+evidence = "reference-interval"
+note = "Indirect refineR estimate from routine data. Reported in pmol/L."
+citations = [
+  { pmid = "42351459", doi = "10.3390/diagnostics16121800", title = "Age- and Sex-Specific Reference Intervals for TSH, FT4, and FT3 Derived from the Turkish Multi-Center Cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/42351459/", locator = "Abstract, Results", quote = "Adult FT4 reference intervals were approximately 12.9-21.5 pmol/L, and FT3 intervals were 3.46-6.04 pmol/L in males and 3.46-5.76 pmol/L in females." },
+]
+
+[[range]]
+set = "iodine-sufficient-trimester-2019"
+kind = "reference"
+low = 3.40
+high = 5.64
+unit = "pmol/L"
+when = { pregnancy = true, trimester = 1 }
+population = "TPOAb-negative pregnant women in an iodine-sufficient area, first trimester"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile. Reported in pmol/L."
+citations = [
+  { pmid = "30861562", doi = "10.1055/a-0855-7128", title = "Reference Intervals for Thyroid Hormones During the First Trimester of Gestation: A Report from an Area with a Sufficient Iodine Level.", url = "https://pubmed.ncbi.nlm.nih.gov/30861562/", locator = "Abstract, Results", quote = "The first trimester-specific reference intervals of serum TSH, FT4, and FT3 for pregnant women were 0.20-4.60 mIU/l, 9.0-18.02 pmol/l, and 3.40-5.64 pmol/l, respectively, while the corresponding figures for non-pregnant women were 0.59-5.60 mIU/l, 9.52-19.30 pmol/l, and 3.70-5.55 pmol/l, respectively." },
+]
+
+[[range]]
+set = "iodine-sufficient-trimester-2019"
+kind = "reference"
+low = 3.70
+high = 5.55
+unit = "pmol/L"
+when = { sex = "female", pregnancy = false }
+population = "TPOAb-negative non-pregnant women in an iodine-sufficient area"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile, comparison group for the first-trimester study."
+citations = [
+  { pmid = "30861562", doi = "10.1055/a-0855-7128", title = "Reference Intervals for Thyroid Hormones During the First Trimester of Gestation: A Report from an Area with a Sufficient Iodine Level.", url = "https://pubmed.ncbi.nlm.nih.gov/30861562/", locator = "Abstract, Results", quote = "while the corresponding figures for non-pregnant women were 0.59-5.60 mIU/l, 9.52-19.30 pmol/l, and 3.70-5.55 pmol/l, respectively." },
+]
+
+[[range]]
+set = "multi-ethnic-uk-2025"
+kind = "reference"
+low = 3.4
+high = 5.6
+unit = "pmol/L"
+when = { pregnancy = true, trimester = 1, method = "immunoassay" }
+population = "Multi-ethnic pregnant women in the UK (49% non-white), Abbott Alinity platform"
+evidence = "reference-interval"
+note = "Reported in pmol/L."
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", locator = "Abstract, Results", quote = "First trimester reference ranges were TSH 0.06-2.73 mIU/l, fT4 9.9-15.3 pmol/l, and fT3 3.4-5.6 pmol/l." },
+]
+
+[[range]]
+set = "multi-ethnic-uk-2025"
+kind = "reference"
+low = 3.3
+high = 5.5
+unit = "pmol/L"
+when = { pregnancy = true, trimester = 2, method = "immunoassay" }
+population = "Multi-ethnic pregnant women in the UK (49% non-white), Abbott Alinity platform"
+evidence = "reference-interval"
+note = "Reported in pmol/L."
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", locator = "Abstract, Results", quote = "Second trimester reference ranges were TSH 0.02-2.47 mIU/l, fT4 8.5-14.4 pmol/l, and fT3 3.3-5.5 pmol/l." },
+]
+
+[[range]]
+set = "multi-ethnic-uk-2025"
+kind = "reference"
+low = 3.1
+high = 5.0
+unit = "pmol/L"
+when = { pregnancy = true, trimester = 3, method = "immunoassay" }
+population = "Multi-ethnic pregnant women in the UK (49% non-white), Abbott Alinity platform"
+evidence = "reference-interval"
+note = "Reported in pmol/L."
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", locator = "Abstract, Results", quote = "In the third trimester, TSH ranges were 0.41-2.80 mIU/l, fT4 7.6-12.3 pmol/l, and fT3 3.1-5.0 pmol/l." },
+]
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 2.96
+high = 7.08
+unit = "pmol/L"
+when = { sex = "male", age_min = 0, age_max = 1, age_unit = "months" }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval"
+note = "First month of life, male infants; reported in pmol/L."
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", locator = "Abstract, Results", quote = "FT3: 2.96-7.08 vs. 2.35-7.27 pmol/L, FT4: 13.34-28.65 vs. 13.82-31.83 pmol/L;" },
+]
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 2.35
+high = 7.27
+unit = "pmol/L"
+when = { sex = "female", age_min = 0, age_max = 1, age_unit = "months" }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval"
+note = "First month of life, female infants; reported in pmol/L."
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", locator = "Abstract, Results", quote = "FT3: 2.96-7.08 vs. 2.35-7.27 pmol/L, FT4: 13.34-28.65 vs. 13.82-31.83 pmol/L;" },
+]

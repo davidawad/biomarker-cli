@@ -1,0 +1,121 @@
+slug = "hcg"
+name = "Human Chorionic Gonadotropin, Quantitative (beta-hCG)"
+category = "pregnancy"
+unit = "mIU/mL"
+description = "Quantitative beta subunit of human chorionic gonadotropin in serum. Used to confirm and date pregnancy, to judge whether an early pregnancy is viable and intrauterine, and to monitor pregnancy of unknown location. Pituitary secretion raises values modestly in perimenopausal and postmenopausal women."
+
+[[range]]
+set = "reference-interval-hcg-ct-2026"
+kind = "reference"
+high = 5
+unit = "IU/L"
+when = { pregnancy = false }
+population = "Conventional adult non-pregnant reference interval, as cited by the authors of a 2026 age-specific hCG study"
+evidence = "reference-interval"
+note = "Conventional upper reference limit for non-pregnant adults. The source authors cite it as the conventional value and show it may be inappropriate for women aged 45 and over."
+citations = [
+  { pmid = "41253215", doi = "10.1016/j.cca.2025.120729", title = "Establishing age-specific reference intervals for serum beta-human chorionic gonadotropin using Hoffmann and nonparametric methods: A big data study based on laboratory databases.", url = "https://pubmed.ncbi.nlm.nih.gov/41253215/", locator = "Abstract, Background", quote = "the conventional reference interval (RI) of <5 IU/L" },
+]
+
+[[range]]
+set = "hcg-postmenopausal-clia-2026"
+kind = "reference"
+high = 7.1
+unit = "IU/L"
+when = { menopause = "post", method = "chemiluminescence immunoassay, Beckman UniCel DxI 800 (System A)" }
+population = "Healthy postmenopausal women (n=355 analysed), 460 enrolled, four CLIA systems"
+evidence = "reference-interval"
+note = "Non-parametric 97.5th percentile upper reference limit for System A. Assay-specific; values from other platforms differ."
+citations = [
+  { pmid = "42607919", doi = "10.1016/j.cca.2026.121282", title = "Redefining \"Normal\" for hCG in postmenopausal women: 97.5th percentile reference intervals and 99th percentile thresholds across four chemiluminescence immunoassay systems.", url = "https://pubmed.ncbi.nlm.nih.gov/42607919/", locator = "Abstract, Results", quote = "The 97.5th percentile RIs were < 7.1, < 8.2, < 5.7, and < 5.9 IU/L for Systems A-D, respectively" },
+]
+
+[[range]]
+set = "hcg-postmenopausal-clia-2026"
+kind = "reference"
+high = 8.2
+unit = "IU/L"
+when = { menopause = "post", method = "chemiluminescence immunoassay, Siemens Atellica IM 1600 (System B)" }
+population = "Healthy postmenopausal women (n=355 analysed), 460 enrolled, four CLIA systems"
+evidence = "reference-interval"
+note = "Non-parametric 97.5th percentile upper reference limit for System B, which gave the highest limits of the four systems."
+citations = [
+  { pmid = "42607919", doi = "10.1016/j.cca.2026.121282", title = "Redefining \"Normal\" for hCG in postmenopausal women: 97.5th percentile reference intervals and 99th percentile thresholds across four chemiluminescence immunoassay systems.", url = "https://pubmed.ncbi.nlm.nih.gov/42607919/", locator = "Abstract, Results", quote = "The 97.5th percentile RIs were < 7.1, < 8.2, < 5.7, and < 5.9 IU/L for Systems A-D, respectively" },
+]
+
+[[range]]
+set = "hcg-postmenopausal-clia-2026"
+kind = "reference"
+high = 5.7
+unit = "IU/L"
+when = { menopause = "post", method = "chemiluminescence immunoassay, Roche Cobas e 801 (System C)" }
+population = "Healthy postmenopausal women (n=355 analysed), 460 enrolled, four CLIA systems"
+evidence = "reference-interval"
+note = "Non-parametric 97.5th percentile upper reference limit for System C, which gave the lowest limits of the four systems."
+citations = [
+  { pmid = "42607919", doi = "10.1016/j.cca.2026.121282", title = "Redefining \"Normal\" for hCG in postmenopausal women: 97.5th percentile reference intervals and 99th percentile thresholds across four chemiluminescence immunoassay systems.", url = "https://pubmed.ncbi.nlm.nih.gov/42607919/", locator = "Abstract, Results", quote = "The 97.5th percentile RIs were < 7.1, < 8.2, < 5.7, and < 5.9 IU/L for Systems A-D, respectively" },
+]
+
+[[range]]
+set = "hcg-postmenopausal-clia-2026"
+kind = "reference"
+high = 5.9
+unit = "IU/L"
+when = { menopause = "post", method = "chemiluminescence immunoassay, Abbott ARCHITECT i2000SR (System D)" }
+population = "Healthy postmenopausal women (n=355 analysed), 460 enrolled, four CLIA systems"
+evidence = "reference-interval"
+note = "Non-parametric 97.5th percentile upper reference limit for System D."
+citations = [
+  { pmid = "42607919", doi = "10.1016/j.cca.2026.121282", title = "Redefining \"Normal\" for hCG in postmenopausal women: 97.5th percentile reference intervals and 99th percentile thresholds across four chemiluminescence immunoassay systems.", url = "https://pubmed.ncbi.nlm.nih.gov/42607919/", locator = "Abstract, Results", quote = "The 97.5th percentile RIs were < 7.1, < 8.2, < 5.7, and < 5.9 IU/L for Systems A-D, respectively" },
+]
+
+[[range]]
+set = "gestational-sac-discriminatory-2013"
+kind = "diagnostic"
+low = 3510
+when = { pregnancy = true, trimester = 1 }
+population = "Women with first-trimester bleeding or pain, 651 pregnancies (366 viable) with serum beta-hCG and transvaginal ultrasound within 6 hours"
+evidence = "outcome"
+note = "Discriminatory level at which a gestational sac is predicted to be seen on transvaginal ultrasound 99% of the time. Below this level an empty uterus does not exclude a viable pregnancy. Yolk sac and fetal pole levels are substantially higher."
+citations = [
+  { pmid = "23262929", doi = "10.1097/aog.0b013e318278f421", title = "Reevaluation of discriminatory and threshold levels for serum β-hCG in early pregnancy.", url = "https://pubmed.ncbi.nlm.nih.gov/23262929/", locator = "Abstract, Results", quote = "Discriminatory β-hCG levels at which structures would be predicted to be seen 99% of the time were 3,510 milli-international units/mL" },
+]
+
+[[range]]
+set = "hcg-48h-rise-case-series-2021"
+kind = "diagnostic"
+low = 49
+unit = "%"
+when = { pregnancy = true, trimester = 1, markers = [ { slug = "hcg", op = "<", value = 1500, unit = "mIU/mL" } ] }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "review"
+note = "Lowest 48-hour percentage rise expected in a viable intrauterine pregnancy when the initial hCG is below 1,500 mIU/mL. A rise below this level warrants closer evaluation for ectopic or non-viable pregnancy. The figure is quoted by the source from earlier work, not derived by the source."
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", locator = "Discussion", quote = "These values depended on the initial hCG level; 49% for hCG <1,500 mIU/mL, 40% for hCG 1,500–3,000 mIU/mL, and 33% for hCG >3,000 mIU/mL" },
+]
+
+[[range]]
+set = "hcg-48h-rise-case-series-2021"
+kind = "diagnostic"
+low = 40
+unit = "%"
+when = { pregnancy = true, trimester = 1, markers = [ { slug = "hcg", op = ">=", value = 1500, unit = "mIU/mL" }, { slug = "hcg", op = "<=", value = 3000, unit = "mIU/mL" } ] }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "review"
+note = "Lowest expected 48-hour percentage rise in a viable intrauterine pregnancy when the initial hCG is 1,500 to 3,000 mIU/mL. Quoted by the source from earlier work."
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", locator = "Discussion", quote = "These values depended on the initial hCG level; 49% for hCG <1,500 mIU/mL, 40% for hCG 1,500–3,000 mIU/mL, and 33% for hCG >3,000 mIU/mL" },
+]
+
+[[range]]
+set = "hcg-48h-rise-case-series-2021"
+kind = "diagnostic"
+low = 33
+unit = "%"
+when = { pregnancy = true, trimester = 1, markers = [ { slug = "hcg", op = ">", value = 3000, unit = "mIU/mL" } ] }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "review"
+note = "Lowest expected 48-hour percentage rise in a viable intrauterine pregnancy when the initial hCG is above 3,000 mIU/mL. Quoted by the source from earlier work."
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", locator = "Discussion", quote = "These values depended on the initial hCG level; 49% for hCG <1,500 mIU/mL, 40% for hCG 1,500–3,000 mIU/mL, and 33% for hCG >3,000 mIU/mL" },
+]

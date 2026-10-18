@@ -1,0 +1,92 @@
+slug = "progesterone"
+name = "Progesterone"
+category = "hormone"
+unit = "ng/mL"
+description = "Steroid produced mainly by the corpus luteum after ovulation and by the placenta in pregnancy. Used to judge cycle phase and ovulation, and as a single-value marker of early pregnancy viability. Values are cycle-phase and assay dependent."
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+high = 0.86
+when = { sex = "male", method = "immunoassay" }
+population = "healthy men (n = 220, aged 20-68 years) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "Upper reference limit (Table 1, Advia Centaur). Lower limit not reported for this group."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "0.42 0.39-0.45 - <0.86 0.76-1.04" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+high = 1.03
+when = { sex = "female", cycle_phase = "follicular", method = "immunoassay" }
+population = "women in the follicular phase (n = 139; days 3-5 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "Upper reference limit in the early follicular phase (Table 1). Lower limit not reported."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "0.47 0.43-0.58 - <1.03 0.93-1.08" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.14
+high = 20.6
+when = { sex = "female", cycle_phase = "luteal", method = "immunoassay" }
+population = "women in the luteal phase (n = 87; days 21-23 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "Luteal-phase reference interval (Table 1), 2.5th-97.5th percentile as reported. Wide interval; a single value cannot confirm ovulation or cycle day without timing. Not an ovulation-confirmation threshold."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "9.26 8.86-10.7 1.14- 20.6-" },
+]
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+high = 0.60
+when = { sex = "female", menopause = "post", method = "immunoassay" }
+population = "postmenopausal women (n = 103; amenorrhea for at least 12 months) measured on Advia Centaur, CLSI EP28-A3c method"
+evidence = "reference-interval"
+note = "Upper reference limit in postmenopausal women (Table 1). Lower limit not reported."
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "0.17 0.07-0.20 - <0.60 0.42-0.80" },
+]
+
+[[range]]
+set = "viability-meta-2022"
+kind = "diagnostic"
+low = 20
+when = { pregnancy = true, trimester = 1, conditions = ["symptomatic-first-trimester"] }
+population = "symptomatic first-trimester pregnant patients (pain or bleeding); 15,878 patients in the pooled studies"
+evidence = "meta-analysis"
+note = "Single serum progesterone at or above about 20 ng/mL (about 63.6 nmol/L) makes a viable pregnancy likely (NPV 0.89-0.99 across the prevalences reported in the review). Pregnancy-viability decision value, not a reference interval."
+citations = [
+  { pmid = "35921048", doi = "10.1007/s43678-022-00332-x", title = "Performance of single serum progesterone in the evaluation of symptomatic first-trimester pregnant patients: a systematic review and meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/35921048/", locator = "Abstract, Results", quote = "more than 90% of patients with a level ≥ 20-25 ng/mL (63.6-79.5 nmol/L) will have a viable pregnancy confirmed" },
+]
+
+[[range]]
+set = "viability-meta-2022"
+kind = "diagnostic"
+high = 6.3
+when = { pregnancy = true, trimester = 1, conditions = ["symptomatic-first-trimester"] }
+population = "symptomatic first-trimester pregnant patients (pain or bleeding); 15,878 patients in the pooled studies"
+evidence = "meta-analysis"
+note = "Single serum progesterone below about 6.3 ng/mL (about 20 nmol/L) makes a non-viable pregnancy likely (specificity 99.2% in the review). Pregnancy-viability decision value, not a reference interval."
+citations = [
+  { pmid = "35921048", doi = "10.1007/s43678-022-00332-x", title = "Performance of single serum progesterone in the evaluation of symptomatic first-trimester pregnant patients: a systematic review and meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/35921048/", locator = "Abstract, Results", quote = "More than nine out of ten patients with a level < 6.3 ng/mL (< 20.034 nmol/L) will be diagnosed with a non-viable pregnancy" },
+]
+
+[[range]]
+high = 46.3
+set = "progesterone-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 13.1
+unit = "nmol/L"
+when = { sex = "female", cycle_phase = "luteal", method = "immunoassay" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Progesterone III immunoassay"
+evidence = "reference-interval"
+note = "5th percentile for the whole luteal phase, not a mid-luteal-only threshold; the 95th percentile is 46.3 nmol/L. A value at or above 13.1 nmol/L is consistent with luteal activity after ovulation, but one value does not confirm ovulation or cycle day. Source unit nmol/L, not converted. Phase order in the source: follicular, ovulation, luteal."
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", locator = "Abstract, Results", quote = "progesterone: 0.212 ​nmol/L (0.159-0.616), 1.81 ​nmol/L (0.175-13.2) and 28.8 ​nmol/L (13.1-46.3)" },
+]

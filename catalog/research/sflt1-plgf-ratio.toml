@@ -1,0 +1,67 @@
+slug = "sflt1-plgf-ratio"
+name = "sFlt-1/PlGF Ratio"
+category = "pregnancy"
+unit = "ratio"
+description = "Ratio of soluble fms-like tyrosine kinase-1 (sFlt-1) to placental growth factor (PlGF), an angiogenic marker used in suspected pre-eclampsia. A low ratio makes pre-eclampsia within about one week unlikely; a high ratio signals imminent or early-onset disease. Cut-offs are assay-specific."
+
+[[range]]
+set = "prognosis-study"
+kind = "diagnostic"
+high = 38
+when = { pregnancy = true, conditions = ["suspected-preeclampsia"], method = "immunoassay" }
+population = "Pregnant women with suspected pre-eclampsia in the PROGNOSIS study cohort (Elecsys sFlt-1/PlGF assay)"
+evidence = "outcome"
+note = "Rule-out cut-off: a ratio at or below 38 rules out pre-eclampsia onset within 1 week of testing (high negative predictive value). Platform-specific; other platforms use different equivalent cut-offs."
+citations = [
+  { pmid = "30014562", doi = "10.1002/uog.19178", title = "Soluble fms-like tyrosine kinase-1 to placental growth factor ratio: ruling out pre-eclampsia for up to 4 weeks and value of retesting.", url = "https://pubmed.ncbi.nlm.nih.gov/30014562/", locator = "Abstract", quote = "The PROGNOSIS study validated a sFlt-1/PlGF ratio cut-off of ≤ 38 to rule out the onset of pre-eclampsia within 1 week of testing in women with suspected disease." },
+]
+
+[[range]]
+set = "prognosis-asia-2021"
+kind = "diagnostic"
+low = 38
+when = { pregnancy = true, conditions = ["suspected-preeclampsia"], method = "immunoassay" }
+population = "Chinese pregnant women with suspected pre-eclampsia (PROGNOSIS Asia sub-analysis)"
+evidence = "outcome"
+note = "Rule-in cut-off: a ratio above 38 is used to rule in pre-eclampsia within 4 weeks. In this cohort the positive predictive value was modest (35.0%), so a high ratio warns rather than confirms."
+citations = [
+  { pmid = "34497833", doi = "10.3389/fcvm.2021.602560", title = "Short-Term Prediction of Preeclampsia in Chinese Women Using the Soluble fms-Like Tyrosine Kinase 1/Placental Growth Factor Ratio: A Sub-Analysis of the PROGNOSIS Asia Study.", url = "https://pubmed.ncbi.nlm.nih.gov/34497833/", locator = "Abstract, Results", quote = "With the use of an sFlt-1/PlGF ratio of >38, the positive predictive value for ruling in preeclampsia within 4 weeks was 35.0%" },
+]
+
+[[range]]
+set = "uog-2025-chinese-cohort"
+kind = "diagnostic"
+low = 74
+when = { pregnancy = true, gestational_week_min = 24, gestational_week_max = 33, conditions = ["high-blood-pressure-in-pregnancy"], method = "immunoassay" }
+population = "Chinese pregnant women with high blood pressure presenting at 24+0 to 38+6 weeks, validation cohort"
+evidence = "outcome"
+note = "Early-onset pre-eclampsia (gestational age under 34 weeks) diagnosed within 1 week of biomarker measurement. Ratio at or above 74 predicts early-onset disease; the source does not give a 85 cut-off."
+citations = [
+  { pmid = "40992360", doi = "10.1002/uog.70075", title = "sFlt-1/PlGF ratio thresholds for diagnosing pre-eclampsia in pregnant women with high blood pressure.", url = "https://pubmed.ncbi.nlm.nih.gov/40992360/", locator = "Abstract, Results", quote = "the predetermined sFlt-1/PlGF ratio cut-off of ≥ 74 showed a sensitivity of 87.7%" },
+  { pmid = "40992360", doi = "10.1002/uog.70075", title = "sFlt-1/PlGF ratio thresholds for diagnosing pre-eclampsia in pregnant women with high blood pressure.", url = "https://pubmed.ncbi.nlm.nih.gov/40992360/", locator = "Abstract, Results", quote = "≥ 74 for GA < 34 weeks and ≥ 95 for GA ≥ 34 weeks at biomarker measurement" },
+]
+
+[[range]]
+set = "uog-2025-chinese-cohort"
+kind = "diagnostic"
+low = 95
+when = { pregnancy = true, gestational_week_min = 34, gestational_week_max = 38, conditions = ["high-blood-pressure-in-pregnancy"], method = "immunoassay" }
+population = "Chinese pregnant women with high blood pressure presenting at 24+0 to 38+6 weeks, validation cohort"
+evidence = "outcome"
+note = "Late-onset pre-eclampsia (gestational age 34 weeks or more) diagnosed within 1 week of biomarker measurement. Lower sensitivity (36.5%) than the early-onset cut-off."
+citations = [
+  { pmid = "40992360", doi = "10.1002/uog.70075", title = "sFlt-1/PlGF ratio thresholds for diagnosing pre-eclampsia in pregnant women with high blood pressure.", url = "https://pubmed.ncbi.nlm.nih.gov/40992360/", locator = "Abstract, Results", quote = "a sFlt-1/PlGF ratio of ≥ 95 demonstrated a sensitivity of 36.5%" },
+  { pmid = "40992360", doi = "10.1002/uog.70075", title = "sFlt-1/PlGF ratio thresholds for diagnosing pre-eclampsia in pregnant women with high blood pressure.", url = "https://pubmed.ncbi.nlm.nih.gov/40992360/", locator = "Abstract, Results", quote = "presenting between 24 + 0 and 38 + 6 weeks' gestation" },
+]
+
+[[range]]
+set = "prognosis-2016"
+kind = "diagnostic"
+high = 38
+when = { pregnancy = true, gestational_week_min = 24, gestational_week_max = 36, conditions = ["suspected-preeclampsia"], method = "immunoassay" }
+population = "Women with singleton pregnancies at 24 weeks 0 days to 36 weeks 6 days with suspected pre-eclampsia (PROGNOSIS development and validation cohorts, 1050 women); gestational_week_max counts completed weeks (to 36+6)"
+evidence = "outcome"
+note = "Rule-out: a ratio of 38 or lower predicts no pre-eclampsia within the next week (negative predictive value 99.3%). A ratio above 38 has a positive predictive value of 36.7% for pre-eclampsia within 4 weeks."
+citations = [
+  { pmid = "26735990", doi = "10.1056/NEJMoa1414838", title = "Predictive Value of the sFlt-1:PlGF Ratio in Women with Suspected Preeclampsia.", url = "https://pubmed.ncbi.nlm.nih.gov/26735990/", locator = "Abstract, Conclusions", quote = "An sFlt-1:PlGF ratio of 38 or lower can be used to predict the short-term absence of preeclampsia in women in whom the syndrome is suspected clinically." },
+]

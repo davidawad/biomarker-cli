@@ -1,0 +1,17 @@
+slug = "free-androgen-index"
+name = "Free Androgen Index"
+category = "hormone"
+unit = "%"
+description = "Calculated index of androgen activity: total testosterone divided by SHBG, times 100. Used as a biochemical marker of hyperandrogenism, mainly in women with suspected polycystic ovary syndrome."
+
+[[range]]
+set = "pcos-lcms-2021"
+kind = "diagnostic"
+high = 2.50
+when = { sex = "female", conditions = ["pcos"], method = "lc-ms/ms", test = "ROC analysis for hyperandrogenemia" }
+population = "Women with PCOS (n=102) and healthy volunteers (n=41), Chinese cohort, androgens by LC-MS/MS"
+evidence = "outcome"
+note = "Optimal ROC cut-off for hyperandrogenemia in PCOS (sensitivity 87.0%, specificity 92.68%). Values above the cut-off indicate hyperandrogenemia in this study. Single-centre diagnostic accuracy, not a reference interval. The abstract does not state the FAI formula; check the full text before applying the cut-off to other assays."
+citations = [
+  { pmid = "33583431", doi = "10.1186/s13048-021-00781-5", title = "Comparison of the efficacy of different androgens measured by LC-MS/MS in representing hyperandrogenemia and an evaluation of adrenal-origin androgens with a dexamethasone suppression test in patients with PCOS.", url = "https://pubmed.ncbi.nlm.nih.gov/33583431/", locator = "Abstract, Results", quote = "The optimal cutoff value of the FAI was 2.50, with a sensitivity of 87.0% and specificity of 92.68%." },
+]
