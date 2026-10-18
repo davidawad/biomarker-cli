@@ -1,0 +1,80 @@
+slug = "igg"
+name = "Immunoglobulin G"
+category = "immune"
+unit = "g/L"
+loinc = "2465-3"
+description = "The most abundant immunoglobulin in blood, made by plasma cells and the main antibody against systemic infections. Low levels (hypogammaglobulinaemia) raise infection risk, while very high levels can signal a monoclonal gammopathy."
+aliases = ["immunoglobulin g, serum"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.36
+high = 15.18
+when = { age = [18.0, 56.0] }
+population = "Iranian healthy adult blood donor volunteers aged 18-55 years (n=914), measured by nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", locator = "Abstract, Methods" },
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", locator = "Abstract, Results" },
+]
+note = "Central reference interval as reported (mg/dL). Single-country blood-donor cohort; check against the local assay's own reference interval. Converted from the source's mg/dL (636-1518) to g/L using factor 0.01."
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 7.92
+high = 17.71
+when = { age = [1.0, 11.0] }
+population = "Healthy children of both sexes aged 1-10 years living in central Brazil"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", locator = "Abstract, Results" },
+]
+note = "Population-based rank-method reference interval (mg/dL). Paediatric values; no sex partition reported for IgG. Converted from the source's mg/dL (792-1771) to g/L using factor 0.01."
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 6.5
+high = 14.3
+population = "Adults (women and men) from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", locator = "Abstract, Results and conclusions" },
+]
+note = "Multicentre adult reference interval (sexes combined), derived non-parametrically from each laboratory's reference individuals. Assay-specific; check against the local assay's own interval."
+
+[[range]]
+set = "immunodeficiency-review-2026"
+kind = "warn"
+high = 4
+population = "Adults with suspected immunodeficiency, as summarised in a 2026 review (Immunodeficiencies in Adults)"
+evidence = "consensus"
+citations = [
+  { pmid = "41107625", doi = "10.1007/s12016-025-09103-9", url = "https://pubmed.ncbi.nlm.nih.gov/41107625/", title = "Immunodeficiencies in Adults: Key Considerations for Diagnosis and Management.", locator = "Full text, Diagnosis section" },
+]
+note = "A total serum IgG below 4 g/L is described as a strong indicator for further immunological evaluation (boundary < 4 g/L). The review stresses that ESID diagnostic criteria need a broader assessment; this is not itself a diagnostic cut-off. Source kind: decision."
+
+[[range]]
+set = "immunodeficiency-review-2026"
+kind = "warn"
+high = 3
+when = { conditions = ["common-variable-immunodeficiency"] }
+population = "Patients with common variable immunodeficiency (CVID), as summarised in a 2026 review"
+evidence = "consensus"
+citations = [
+  { pmid = "41107625", doi = "10.1007/s12016-025-09103-9", url = "https://pubmed.ncbi.nlm.nih.gov/41107625/", title = "Immunodeficiencies in Adults: Key Considerations for Diagnosis and Management.", locator = "Full text, Diagnosis section" },
+]
+note = "In CVID cohorts the risk of infection, particularly pneumonia, rises significantly when IgG falls below 3.0 g/L (boundary < 3.0 g/L). Cited by the review from an underlying CVID study that was not itself verified."
+
+[[range]]
+set = "study-definition-2026"
+kind = "warn"
+high = 6
+population = "Adults undergoing antibody-deficiency screening in a 2026 cohort (study reference standard)"
+evidence = "cohort"
+citations = [
+  { pmid = "41929515", doi = "10.3389/fimmu.2026.1734197", url = "https://pubmed.ncbi.nlm.nih.gov/41929515/", title = "Improving screening for antibody deficiency using calculated globulin and serum protein electrophoresis.", locator = "Full text, Results" },
+]
+note = "Hypogammaglobulinaemia as used by the study as its reference standard (IgG below 6 g/L, strict). This is a study definition, not a guideline threshold; paediatric comparisons used manufacturer ranges. Source kind: decision."

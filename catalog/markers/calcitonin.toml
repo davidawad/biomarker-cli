@@ -1,0 +1,111 @@
+slug = "calcitonin"
+name = "Calcitonin"
+category = "thyroid"
+unit = "pg/mL"
+description = "Hormone secreted by thyroid C-cells; the tumour marker for medullary thyroid carcinoma (MTC). Basal levels are sex-dependent and assay-dependent, and values in the 10-100 pg/mL range need follow-up rather than a diagnosis of MTC."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 8.4
+when = { sex = "male" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (pre-June 2019 assay) (method: immunoassay (Siemens Immulite 2000))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", locator = "Methods" },
+]
+note = "Upper normal limit reported by the cohort laboratory; assay-specific and not an independently derived reference interval."
+
+[[range]]
+set = "calcitonin-lab-ranges-2019"
+kind = "reference"
+high = 5
+when = { sex = "female" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (pre-June 2019 assay) (method: immunoassay (Siemens Immulite 2000))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", locator = "Methods" },
+]
+note = "Upper normal limit reported by the cohort laboratory; assay-specific."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 11.8
+when = { sex = "male" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (from June 2019 assay) (method: immunoassay (DiaSorin LIAISON Calcitonin II Gen))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", locator = "Methods" },
+]
+note = "Upper normal limit reported by the cohort laboratory after the assay change; assay-specific. Alternative to the default calcitonin-lab-ranges-2019 reference range for the same population."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 4.8
+when = { sex = "female" }
+population = "Basal serum calcitonin reference limits as reported for a clinical laboratory, Germany (from June 2019 assay) (method: immunoassay (DiaSorin LIAISON Calcitonin II Gen))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41976801", doi = "10.3390/jcm15072500", url = "https://pubmed.ncbi.nlm.nih.gov/41976801/", title = "The Pitfalls of Calcitonin as a Tumor Marker: Real-Life Data of Patients with Elevated Basal Calcitonin Levels but Without Evidence of Medullary Thyroid Carcinoma.", locator = "Methods" },
+]
+note = "Upper normal limit reported by the cohort laboratory after the assay change; assay-specific. Alternative to the default calcitonin-lab-ranges-2019 reference range for the same population."
+
+[[range]]
+set = "mtc-lab-review-2026"
+kind = "reference"
+high = 10
+population = "Healthy individuals (narrative review of MTC laboratory diagnostics)"
+evidence = "consensus"
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", locator = "Reference ranges and cutoff levels" },
+]
+note = "Typical basal calcitonin in healthy people, as stated in the review; assay dependent."
+
+[[range]]
+set = "mtc-lab-review-2026"
+kind = "warn"
+low = 10
+high = 100
+population = "Adults with elevated basal calcitonin (narrative review of MTC laboratory diagnostics)"
+evidence = "consensus"
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", locator = "Reference ranges and cutoff levels" },
+]
+note = "Gray zone: values in this range are more often C-cell hyperplasia or non-specific than MTC; the review advises further work-up (e.g., FNA washout calcitonin)."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 100
+population = "Adults with basal calcitonin elevation (narrative review of MTC laboratory diagnostics)"
+evidence = "consensus"
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", locator = "Reference ranges and cutoff levels" },
+]
+note = "Level above which basal calcitonin is considered indicative of MTC; the review stresses cut-offs are only indicative and assay-dependent. Source kind: diagnostic. Alternative to the default mtc-lab-review-2026 warn range for the same population."
+
+[[range]]
+set = "german-mtc-guidance-as-cited"
+kind = "warn"
+low = 30
+when = { sex = "female" }
+population = "Adults with thyroid nodules and elevated basal calcitonin (German guidance as summarised in the review)"
+evidence = "consensus"
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", locator = "Reference ranges and cutoff levels" },
+]
+note = "Sex-specific action threshold per German recommendations as cited by the review; intended to balance unnecessary surgery against missed micro-MTC. Not verified against the primary German guideline. Source kind: diagnostic."
+
+[[range]]
+set = "german-mtc-guidance-as-cited"
+kind = "warn"
+low = 60
+when = { sex = "male" }
+population = "Adults with thyroid nodules and elevated basal calcitonin (German guidance as summarised in the review)"
+evidence = "consensus"
+citations = [
+  { pmid = "41642846", doi = "10.1530/JME-25-0185", url = "https://pubmed.ncbi.nlm.nih.gov/41642846/", title = "Laboratory diagnostics and follow-up of medullary thyroid cancer.", locator = "Reference ranges and cutoff levels" },
+]
+note = "Sex-specific action threshold per German recommendations as cited by the review; not verified against the primary German guideline. Source kind: diagnostic."

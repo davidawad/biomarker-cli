@@ -1,0 +1,64 @@
+slug = "fecal-calprotectin"
+name = "Faecal Calprotectin"
+category = "stool"
+unit = "µg/g"
+loinc = "38445-3"
+description = "Calprotectin is a neutrophil-derived protein measured in stool. Raised faecal calprotectin indicates intestinal mucosal inflammation and is used to triage suspected inflammatory bowel disease and to monitor IBD activity. Values are higher in young children and vary with assay."
+aliases = ["faecal calprotectin", "fecal calprotectin", "fc", "fcp", "stool calprotectin"]
+
+[[range]]
+set = "espghan-fc-250-as-cited"
+kind = "warn"
+low = 250
+population = "Children with suspected inflammatory bowel disease (ESPGHAN cut-off as cited by a UK paediatric cohort)"
+evidence = "consensus"
+citations = [
+  { pmid = "33571226", doi = "10.1371/journal.pone.0246091", url = "https://pubmed.ncbi.nlm.nih.gov/33571226/", title = "Guidance on the interpretation of faecal calprotectin levels in children.", locator = "Methods, cut-off levels" },
+]
+note = "Cut-off above which faecal calprotectin was suggested to predict mucosal inflammation in IBD. The number is taken from ESPGHAN as cited in the 2021 paper, not from the ESPGHAN document itself. Quoted as above 250 µg/g. Source kind: decision."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 50
+population = "Adults and children over 4 years (typical reference values as reported in a systematic review)"
+evidence = "cohort"
+citations = [
+  { pmid = "41216276", doi = "10.21037/tgh-24-159", url = "https://pubmed.ncbi.nlm.nih.gov/41216276/", title = "Comparison between fecal calprotectin and magnetic resonance enterography in ileal Crohn's disease for activity disease assessment: a systematic review.", locator = "Full text, Introduction" },
+]
+note = "Typical reference value is below 50 µg/g; values at or above 50 µg/g are above the typical reference range. Children under 4 years have higher normal values, so this band should not be applied to that age group."
+
+[[range]]
+set = "fc-mre-systematic-review-2025"
+kind = "reference"
+low = 100
+high = 112
+when = { age = [65.0, 200] }
+population = "Individuals aged 65 years and older (reference range as recommended in a systematic review, which attributes it to age-related mucosal change)"
+evidence = "cohort"
+citations = [
+  { pmid = "41216276", doi = "10.21037/tgh-24-159", url = "https://pubmed.ncbi.nlm.nih.gov/41216276/", title = "Comparison between fecal calprotectin and magnetic resonance enterography in ileal Crohn's disease for activity disease assessment: a systematic review.", locator = "Full text, Introduction" },
+]
+note = "Age-adjusted reference band for older adults reported by the systematic review. The figure is quoted from the review rather than from a primary reference-interval study."
+
+[[range]]
+set = "uk-paeds-fc-cohort-2021"
+kind = "reference"
+high = 50
+population = "UK paediatric patients referred for suspected IBD, measured with a commercial calprotectin kit"
+evidence = "cohort"
+citations = [
+  { pmid = "33571226", doi = "10.1371/journal.pone.0246091", url = "https://pubmed.ncbi.nlm.nih.gov/33571226/", title = "Guidance on the interpretation of faecal calprotectin levels in children.", locator = "Abstract, Results and Conclusion" },
+]
+note = "Laboratory reference value used in this paediatric cohort. Results above 50 µg/g were common and many were not due to IBD, so the authors suggest a higher threshold for referral."
+
+[[range]]
+set = "fc-mre-systematic-review-2025"
+kind = "warn"
+low = 100
+population = "Adults with Crohn's disease or ulcerative colitis; activity cut-offs as reported across studies in a systematic review"
+evidence = "cohort"
+citations = [
+  { pmid = "41216276", doi = "10.21037/tgh-24-159", url = "https://pubmed.ncbi.nlm.nih.gov/41216276/", title = "Comparison between fecal calprotectin and magnetic resonance enterography in ileal Crohn's disease for activity disease assessment: a systematic review.", locator = "Abstract, Results" },
+]
+note = "IBD activity cut-offs reported across studies ranged from above 100 to above 430 µg/g. The lower end of that range is shown here; this is not a single guideline threshold, so treat it as indicative only. Source kind: decision."

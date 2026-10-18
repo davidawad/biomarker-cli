@@ -2,6 +2,7 @@ slug = "iron"
 name = "Iron, Serum"
 category = "iron"
 unit = "µg/dL"
+description = "Iron circulating bound to transferrin, measured as serum iron. It varies widely through the day and with recent intake, so a single value is weak evidence on its own; low values with low transferrin saturation and ferritin point to iron deficiency, while high values with high transferrin saturation point to iron overload."
 loinc = "2498-4"
 aliases = ["serum iron", "fe"]
 
@@ -31,3 +32,55 @@ kind = "reference"
 low = 27.0
 high = 169.0
 legacy = true
+
+[[range]]
+set = "russian-ifcc-2024"
+kind = "reference"
+low = 54.73
+high = 196.03
+when = { sex = "male" }
+population = "Healthy Russian adults aged 18-80 (506 participants, 46% male), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row Fe, LAVE(-), All, M" },
+]
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."
+
+[[range]]
+set = "russian-ifcc-2024"
+kind = "reference"
+low = 40.21
+high = 170.34
+when = { sex = "female" }
+population = "Healthy Russian adults aged 18-80 (506 participants, 54% female), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row Fe, LAVE(+), All, F" },
+]
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."
+
+[[range]]
+set = "uppsala-75y-2012"
+kind = "reference"
+low = 46.36
+high = 191.57
+when = { sex = "male", age = [75.0, 76.0] }
+population = "Healthy 75-year-old men without diabetes, Sweden (n = 354), including individuals with cardiovascular disease"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22300333", doi = "10.3109/03009734.2011.644873", title = "Reference values of thirty-one frequently used laboratory markers for 75-year-old males and females.", locator = "Table IV, row Iron (µmol/L), Males, all" },
+]
+note = "2.5-97.5 percentile limits (IFCC method) from a Swedish cohort examined at age 75, Ortho Vitros assay. Older-adult values; not a general adult interval. The paper also reports a subgroup without cardiovascular disease that is nearly identical (8.4-34.8 umol/L)."
+
+[[range]]
+set = "uppsala-75y-2012"
+kind = "reference"
+low = 49.15
+high = 160.85
+when = { sex = "female", age = [75.0, 76.0] }
+population = "Healthy 75-year-old women without diabetes, Sweden (n = 373), including individuals with cardiovascular disease"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22300333", doi = "10.3109/03009734.2011.644873", title = "Reference values of thirty-one frequently used laboratory markers for 75-year-old males and females.", locator = "Table IV, row Iron (µmol/L), Females, all" },
+]
+note = "2.5-97.5 percentile limits (IFCC method) from a Swedish cohort examined at age 75, Ortho Vitros assay. Older-adult values; not a general adult interval."

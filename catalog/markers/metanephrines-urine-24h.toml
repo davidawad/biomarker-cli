@@ -1,0 +1,31 @@
+slug = "metanephrines-urine-24h"
+name = "Metanephrines, Fractionated, 24-Hour Urine"
+category = "adrenal"
+unit = "µg/24 h"
+description = "Fractionated free metanephrine (and normetanephrine) excreted in a 24-hour urine collection. Elevated excretion supports a diagnosis of pheochromocytoma or paraganglioma; the test is sensitive to interfering drugs and to incomplete collection."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 30
+high = 180
+when = { sex = "female", age = [17.0, 120.0] }
+population = "Adults aged 17-120 y (women) tested for 24-h urine catecholamine metabolites at Ankara Bilkent City Hospital; local laboratory reference limits (specimen: urine-24h)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41750736", doi = "10.3390/diagnostics16040588", url = "https://pubmed.ncbi.nlm.nih.gov/41750736/", title = "Seasonal and Climatic Influences on Catecholamine Metabolite Levels in Patients With and Without Pheochromocytoma-Paraganglioma.", locator = "Results (reference limits)" },
+]
+note = "Reference limit as stated by the reporting laboratory; the source gives a single range for women across ages 17-120 y."
+
+[[range]]
+set = "ankara-bilkent-2026"
+kind = "reference"
+low = 44
+high = 261
+when = { sex = "male", age = [17.0, 120.0] }
+population = "Adults aged 17-120 y (men) tested for 24-h urine catecholamine metabolites at Ankara Bilkent City Hospital; local laboratory reference limits (specimen: urine-24h)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41750736", doi = "10.3390/diagnostics16040588", url = "https://pubmed.ncbi.nlm.nih.gov/41750736/", title = "Seasonal and Climatic Influences on Catecholamine Metabolite Levels in Patients With and Without Pheochromocytoma-Paraganglioma.", locator = "Results (reference limits)" },
+]
+note = "Reference limit as stated by the reporting laboratory; the source gives a single range for men across ages 17-120 y."

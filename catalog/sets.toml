@@ -12,3 +12,1819 @@ description = "Commonly cited preventive-medicine targets, kept apart from the l
 [[set]]
 name = "blueprint"
 description = "Bryan Johnson Blueprint optimal targets (https://protocol.bryanjohnson.com)"
+
+[[set]]
+name = "aace-2019"
+description = "Published source set: aace-2019"
+
+[[set]]
+name = "aace-cst60-2026"
+description = "Published source set: aace-cst60-2026"
+
+[[set]]
+name = "aasld-2011"
+description = "Published source set: aasld-2011"
+
+[[set]]
+name = "aasld-2018-hbv"
+description = "Published source set: aasld-2018-hbv"
+
+[[set]]
+name = "aasld-2023-nafld"
+description = "Published source set: aasld-2023-nafld"
+
+[[set]]
+name = "aasld-idsa-2019-hcv"
+description = "Published source set: aasld-idsa-2019-hcv"
+
+[[set]]
+name = "aasm-osa-severity"
+description = "Published source set: aasm-osa-severity"
+
+[[set]]
+name = "abpa-review-2026"
+description = "Published source set: abpa-review-2026"
+
+[[set]]
+name = "acc-aha-2017-bp-categories"
+description = "Published source set: acc-aha-2017-bp-categories"
+
+[[set]]
+name = "acc-aha-2018-cholesterol"
+description = "Published source set: acc-aha-2018-cholesterol"
+
+[[set]]
+name = "acc-aha-2019-primary-prevention"
+description = "Published source set: acc-aha-2019-primary-prevention"
+
+[[set]]
+name = "acc-aha-2024-pad"
+description = "Published source set: acc-aha-2024-pad"
+
+[[set]]
+name = "acc-aha-2026-dyslipidemia"
+description = "Published source set: acc-aha-2026-dyslipidemia"
+
+[[set]]
+name = "acc-aha-valve-guideline-as-cited"
+description = "Published source set: acc-aha-valve-guideline-as-cited"
+
+[[set]]
+name = "acgih-bei-as-cited"
+description = "Published source set: acgih-bei-as-cited"
+
+[[set]]
+name = "acmg-2014"
+description = "Published source set: acmg-2014"
+
+[[set]]
+name = "acog-referral-2006"
+description = "Published source set: acog-referral-2006"
+
+[[set]]
+name = "acr-eular-2023-aps"
+description = "Published source set: acr-eular-2023-aps"
+
+[[set]]
+name = "ada-kdigo-2022"
+description = "Published source set: ada-kdigo-2022"
+
+[[set]]
+name = "adh-cgm-gmi-target-2025"
+description = "Published source set: adh-cgm-gmi-target-2025"
+
+[[set]]
+name = "adjust-pe"
+description = "Published source set: adjust-pe"
+
+[[set]]
+name = "adrenal-steroids-lcms-2017"
+description = "Published source set: adrenal-steroids-lcms-2017"
+
+[[set]]
+name = "adult-prolactin-china-men-2018"
+description = "Published source set: adult-prolactin-china-men-2018"
+
+[[set]]
+name = "adult-prolactin-vitros-russia-2023"
+description = "Published source set: adult-prolactin-vitros-russia-2023"
+
+[[set]]
+name = "adv-nutr-2026-micronutrients"
+description = "Published source set: adv-nutr-2026-micronutrients"
+
+[[set]]
+name = "afp-hcc-cutoffs-2021"
+description = "Published source set: afp-hcc-cutoffs-2021"
+
+[[set]]
+name = "afp-screening-thresholds-2026"
+description = "Published source set: afp-screening-thresholds-2026"
+
+[[set]]
+name = "afp-uln-hbv-2021"
+description = "Published source set: afp-uln-hbv-2021"
+
+[[set]]
+name = "afr-descent-2025"
+description = "Published source set: afr-descent-2025"
+
+[[set]]
+name = "age-adjusted-plasma-mn-2013"
+description = "Published source set: age-adjusted-plasma-mn-2013"
+
+[[set]]
+name = "age-adjusted-plasma-nmn-2013"
+description = "Published source set: age-adjusted-plasma-nmn-2013"
+
+[[set]]
+name = "aha-life-essential-8-2022"
+description = "Published source set: aha-life-essential-8-2022"
+
+[[set]]
+name = "ajcn-2009-nhanes-2003-2004"
+description = "Published source set: ajcn-2009-nhanes-2003-2004"
+
+[[set]]
+name = "ajcn-2022-irish-nans-tuda"
+description = "Published source set: ajcn-2022-irish-nans-tuda"
+
+[[set]]
+name = "alinity-trab-china-2026"
+description = "Published source set: alinity-trab-china-2026"
+
+[[set]]
+name = "alt-1"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "alt-2"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "alt-3"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "alt-4"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "alt-5"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "alt-6"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "alt-7"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "alt-8"
+description = "Alternative cited reference or cut-off for a population another range already covers"
+
+[[set]]
+name = "aluminum-osteomalacia-1986"
+description = "Published source set: aluminum-osteomalacia-1986"
+
+[[set]]
+name = "am-fam-physician-2009"
+description = "Published source set: am-fam-physician-2009"
+
+[[set]]
+name = "angulo-2007"
+description = "Published source set: angulo-2007"
+
+[[set]]
+name = "ankara-bilkent-2026"
+description = "Published source set: ankara-bilkent-2026"
+
+[[set]]
+name = "ankara-multicenter-2026"
+description = "Published source set: ankara-multicenter-2026"
+
+[[set]]
+name = "ann-ny-acad-sci-2018"
+description = "Published source set: ann-ny-acad-sci-2018"
+
+[[set]]
+name = "anti-dna-review-manufacturer-table"
+description = "Published source set: anti-dna-review-manufacturer-table"
+
+[[set]]
+name = "arezzo-clsi-2025"
+description = "Published source set: arezzo-clsi-2025"
+
+[[set]]
+name = "ashwell-hsieh-2005"
+description = "Published source set: ashwell-hsieh-2005"
+
+[[set]]
+name = "ata-2017"
+description = "Published source set: ata-2017"
+
+[[set]]
+name = "atypical-cma-2021"
+description = "Published source set: atypical-cma-2021"
+
+[[set]]
+name = "aua-sufu-microhematuria-2020"
+description = "Published source set: aua-sufu-microhematuria-2020"
+
+[[set]]
+name = "australasian-sweat-chloride-2025"
+description = "Published source set: australasian-sweat-chloride-2025"
+
+[[set]]
+name = "awgs-2019"
+description = "Published source set: awgs-2019"
+
+[[set]]
+name = "b2m-healthy-adults-2009"
+description = "Published source set: b2m-healthy-adults-2009"
+
+[[set]]
+name = "balkan-pct-consensus-2023"
+description = "Published source set: balkan-pct-consensus-2023"
+
+[[set]]
+name = "bangladesh-adults"
+description = "Published source set: bangladesh-adults"
+
+[[set]]
+name = "barcelona-sysmex-xn"
+description = "Published source set: barcelona-sysmex-xn"
+
+[[set]]
+name = "basal-lh-weight-stratified-2026"
+description = "Published source set: basal-lh-weight-stratified-2026"
+
+[[set]]
+name = "battelino-2019-tir"
+description = "Published source set: battelino-2019-tir"
+
+[[set]]
+name = "battelino-2019-tir-cv"
+description = "Published source set: battelino-2019-tir-cv"
+
+[[set]]
+name = "bc720-china-2022-esr"
+description = "Published source set: bc720-china-2022-esr"
+
+[[set]]
+name = "bcr-prerenal-threshold"
+description = "Published source set: bcr-prerenal-threshold"
+
+[[set]]
+name = "bedtime-saliva-children-2021"
+description = "Published source set: bedtime-saliva-children-2021"
+
+[[set]]
+name = "bjog-2001"
+description = "Published source set: bjog-2001"
+
+[[set]]
+name = "bjog-2021-icp-thresholds"
+description = "Published source set: bjog-2021-icp-thresholds"
+
+[[set]]
+name = "bmc-womens-health-2022-categories"
+description = "Published source set: bmc-womens-health-2022-categories"
+
+[[set]]
+name = "bone-turnover-premenopausal-europe-2012"
+description = "Published source set: bone-turnover-premenopausal-europe-2012"
+
+[[set]]
+name = "braat-2024-fifth-centile"
+description = "Published source set: braat-2024-fifth-centile"
+
+[[set]]
+name = "brams-2009"
+description = "Published source set: brams-2009"
+
+[[set]]
+name = "brazil-children-2024"
+description = "Published source set: brazil-children-2024"
+
+[[set]]
+name = "brazil-irt-irt-2024"
+description = "Published source set: brazil-irt-irt-2024"
+
+[[set]]
+name = "breathing-not-properly-2006"
+description = "Published source set: breathing-not-properly-2006"
+
+[[set]]
+name = "bsg-2021"
+description = "Published source set: bsg-2021"
+
+[[set]]
+name = "bts-2017-oxygen"
+description = "Published source set: bts-2017-oxygen"
+
+[[set]]
+name = "bulgarian-women-inhibin-b-2004"
+description = "Published source set: bulgarian-women-inhibin-b-2004"
+
+[[set]]
+name = "burkina-faso-donor-ri"
+description = "Published source set: burkina-faso-donor-ri"
+
+[[set]]
+name = "ca125-validation-2015"
+description = "Published source set: ca125-validation-2015"
+
+[[set]]
+name = "ca153-recurrence-2024"
+description = "Published source set: ca153-recurrence-2024"
+
+[[set]]
+name = "ca19-9-ipmn-meta-2026"
+description = "Published source set: ca19-9-ipmn-meta-2026"
+
+[[set]]
+name = "ca199-fut3-cutoff-2026"
+description = "Published source set: ca199-fut3-cutoff-2026"
+
+[[set]]
+name = "cah-practice-guideline-restated"
+description = "Published source set: cah-practice-guideline-restated"
+
+[[set]]
+name = "calcitonin-lab-ranges-2019"
+description = "Published source set: calcitonin-lab-ranges-2019"
+
+[[set]]
+name = "caliper"
+description = "Published source set: caliper"
+
+[[set]]
+name = "cclm-2010"
+description = "Published source set: cclm-2010"
+
+[[set]]
+name = "cdc-1992-hiv-classification"
+description = "Published source set: cdc-1992-hiv-classification"
+
+[[set]]
+name = "cdc-aha-2003-crp-bands"
+description = "Published source set: cdc-aha-2003-crp-bands"
+
+[[set]]
+name = "cdc-blood-lead-clinical-guidance"
+description = "Published source set: cdc-blood-lead-clinical-guidance"
+
+[[set]]
+name = "cdc-pinkbook-hepb"
+description = "Published source set: cdc-pinkbook-hepb"
+
+[[set]]
+name = "cea-review-2026"
+description = "Published source set: cea-review-2026"
+
+[[set]]
+name = "chest-2012-valve"
+description = "Published source set: chest-2012-valve"
+
+[[set]]
+name = "chest-2012-vka"
+description = "Published source set: chest-2012-vka"
+
+[[set]]
+name = "china-hcy-reference-2019"
+description = "Published source set: china-hcy-reference-2019"
+
+[[set]]
+name = "china-multicenter-pa-2026"
+description = "Published source set: china-multicenter-pa-2026"
+
+[[set]]
+name = "china-nhs-2026"
+description = "Published source set: china-nhs-2026"
+
+[[set]]
+name = "china-pregnancy-hcy-2023"
+description = "Published source set: china-pregnancy-hcy-2023"
+
+[[set]]
+name = "china-sandwich-immunoassay-2026"
+description = "Published source set: china-sandwich-immunoassay-2026"
+
+[[set]]
+name = "chinese-adult-men-2018"
+description = "Published source set: chinese-adult-men-2018"
+
+[[set]]
+name = "chinese-cf-consensus-2023"
+description = "Published source set: chinese-cf-consensus-2023"
+
+[[set]]
+name = "chinese-pediatric-2021"
+description = "Published source set: chinese-pediatric-2021"
+
+[[set]]
+name = "chinese-pregnancy-coag-2026"
+description = "Published source set: chinese-pregnancy-coag-2026"
+
+[[set]]
+name = "chinese-pregnancy-il6-2020"
+description = "Published source set: chinese-pregnancy-il6-2020"
+
+[[set]]
+name = "ck-ethnicity-2026"
+description = "Published source set: ck-ethnicity-2026"
+
+[[set]]
+name = "ckd-iron-review-2021"
+description = "Published source set: ckd-iron-review-2021"
+
+[[set]]
+name = "clarke-2003"
+description = "Published source set: clarke-2003"
+
+[[set]]
+name = "clin-chem-1997-crp-elisa"
+description = "Published source set: clin-chem-1997-crp-elisa"
+
+[[set]]
+name = "clin-chem-1997-phe-tyr"
+description = "Published source set: clin-chem-1997-phe-tyr"
+
+[[set]]
+name = "clinchem-2010-hscrp-10"
+description = "Published source set: clinchem-2010-hscrp-10"
+
+[[set]]
+name = "clsi-ep28-advia-2016"
+description = "Published source set: clsi-ep28-advia-2016"
+
+[[set]]
+name = "cmaj-2016-rhr-mortality"
+description = "Published source set: cmaj-2016-rhr-mortality"
+
+[[set]]
+name = "cn-maternal-tpo-cohort-2026"
+description = "Published source set: cn-maternal-tpo-cohort-2026"
+
+[[set]]
+name = "cn-preconception-cohort-2026"
+description = "Published source set: cn-preconception-cohort-2026"
+
+[[set]]
+name = "cn-tpoab-gdm-cohort-2026"
+description = "Published source set: cn-tpoab-gdm-cohort-2026"
+
+[[set]]
+name = "combs-2015"
+description = "Published source set: combs-2015"
+
+[[set]]
+name = "contextual"
+description = "Cited ranges that apply only under a condition the engine cannot express (see each range's note)"
+
+[[set]]
+name = "contingent-screening-2023"
+description = "Published source set: contingent-screening-2023"
+
+[[set]]
+name = "copenhagen-estrogens-2020"
+description = "Published source set: copenhagen-estrogens-2020"
+
+[[set]]
+name = "cushing-acth-review-2023"
+description = "Published source set: cushing-acth-review-2023"
+
+[[set]]
+name = "cystinuria-eu-guideline-as-cited-2026"
+description = "Published source set: cystinuria-eu-guideline-as-cited-2026"
+
+[[set]]
+name = "debre-berhan-2025"
+description = "Published source set: debre-berhan-2025"
+
+[[set]]
+name = "defining-reference-ranges-men-2022"
+description = "Published source set: defining-reference-ranges-men-2022"
+
+[[set]]
+name = "diagnostic"
+description = "Diagnostic and decision cut-offs from the literature, kept apart from reference intervals"
+
+[[set]]
+name = "diagnostics-2023-table"
+description = "Published source set: diagnostics-2023-table"
+
+[[set]]
+name = "diminished-ovarian-reserve-definition-2025"
+description = "Published source set: diminished-ovarian-reserve-definition-2025"
+
+[[set]]
+name = "ding-2025-steps"
+description = "Published source set: ding-2025-steps"
+
+[[set]]
+name = "dlbcl-ldh-cohort-2026"
+description = "Published source set: dlbcl-ldh-cohort-2026"
+
+[[set]]
+name = "dobiasova-frohlich-aip-bands"
+description = "Published source set: dobiasova-frohlich-aip-bands"
+
+[[set]]
+name = "dodds-2014-grip"
+description = "Published source set: dodds-2014-grip"
+
+[[set]]
+name = "duffy-null-ri"
+description = "Published source set: duffy-null-ri"
+
+[[set]]
+name = "dutch-crc-screening-fit-2026"
+description = "Published source set: dutch-crc-screening-fit-2026"
+
+[[set]]
+name = "ean-2024-hyperckemia"
+description = "Published source set: ean-2024-hyperckemia"
+
+[[set]]
+name = "easl-2017-hbv"
+description = "Published source set: easl-2017-hbv"
+
+[[set]]
+name = "easl-2022"
+description = "Published source set: easl-2022"
+
+[[set]]
+name = "eau-srh-2026"
+description = "Published source set: eau-srh-2026"
+
+[[set]]
+name = "ehf-2024-elderly-ahf"
+description = "Published source set: ehf-2024-elderly-ahf"
+
+[[set]]
+name = "ehf-2024-over75-threshold"
+description = "Published source set: ehf-2024-over75-threshold"
+
+[[set]]
+name = "ehjacc-2026-tnt-gen6-validation"
+description = "Published source set: ehjacc-2026-tnt-gen6-validation"
+
+[[set]]
+name = "ehjopen-2022-acs-0-1h"
+description = "Published source set: ehjopen-2022-acs-0-1h"
+
+[[set]]
+name = "elderly-tumour-ri-2024"
+description = "Published source set: elderly-tumour-ri-2024"
+
+[[set]]
+name = "emej-2025-sepsis-crp"
+description = "Published source set: emej-2025-sepsis-crp"
+
+[[set]]
+name = "endo-rev-2024-consensus"
+description = "Published source set: endo-rev-2024-consensus"
+
+[[set]]
+name = "endocrine-review-hyperprolactinaemia-2018"
+description = "Published source set: endocrine-review-hyperprolactinaemia-2018"
+
+[[set]]
+name = "endocrine-society-2011"
+description = "Published source set: endocrine-society-2011"
+
+[[set]]
+name = "endocrine-society-2014"
+description = "Published source set: endocrine-society-2014"
+
+[[set]]
+name = "endocrine-society-2018"
+description = "Published source set: endocrine-society-2018"
+
+[[set]]
+name = "endocrine-society-2025"
+description = "Published source set: endocrine-society-2025"
+
+[[set]]
+name = "endocrinologia-cst-2026"
+description = "Published source set: endocrinologia-cst-2026"
+
+[[set]]
+name = "epa-aa-cad-2025"
+description = "Published source set: epa-aa-cad-2025"
+
+[[set]]
+name = "epi-review-2011"
+description = "Published source set: epi-review-2011"
+
+[[set]]
+name = "epic-reference-2020"
+description = "Published source set: epic-reference-2020"
+
+[[set]]
+name = "epic-serum-copper-2021"
+description = "Published source set: epic-serum-copper-2021"
+
+[[set]]
+name = "esc-2024-pharmacotherapy-review"
+description = "Published source set: esc-2024-pharmacotherapy-review"
+
+[[set]]
+name = "eshre-poi-2024"
+description = "Published source set: eshre-poi-2024"
+
+[[set]]
+name = "espghan-fc-250-as-cited"
+description = "Published source set: espghan-fc-250-as-cited"
+
+[[set]]
+name = "estradiol-elecsys-natural-cycle-2021"
+description = "Published source set: estradiol-elecsys-natural-cycle-2021"
+
+[[set]]
+name = "estradiol-lcms-childhood-2020"
+description = "Published source set: estradiol-lcms-childhood-2020"
+
+[[set]]
+name = "estradiol-lcms-cycle-2019"
+description = "Published source set: estradiol-lcms-cycle-2019"
+
+[[set]]
+name = "eu-pku-2017"
+description = "Published source set: eu-pku-2017"
+
+[[set]]
+name = "eular-acr-2019-sle"
+description = "Published source set: eular-acr-2019-sle"
+
+[[set]]
+name = "eur-j-endocrinol-dst-2025"
+description = "Published source set: eur-j-endocrinol-dst-2025"
+
+[[set]]
+name = "eurheartj-2023-troponin-early"
+description = "Published source set: eurheartj-2023-troponin-early"
+
+[[set]]
+name = "european-trauma-bleeding"
+description = "Published source set: european-trauma-bleeding"
+
+[[set]]
+name = "ewgsop2-2019"
+description = "Published source set: ewgsop2-2019"
+
+[[set]]
+name = "fc-mre-systematic-review-2025"
+description = "Published source set: fc-mre-systematic-review-2025"
+
+[[set]]
+name = "fda-macimorelin"
+description = "Published source set: fda-macimorelin"
+
+[[set]]
+name = "female-age-continuous-2026"
+description = "Published source set: female-age-continuous-2026"
+
+[[set]]
+name = "fibrinogen-bleeding-review-2026"
+description = "Published source set: fibrinogen-bleeding-review-2026"
+
+[[set]]
+name = "fibronectin-asymptomatic-2016"
+description = "Published source set: fibronectin-asymptomatic-2016"
+
+[[set]]
+name = "fibronectin-meta-2020"
+description = "Published source set: fibronectin-meta-2020"
+
+[[set]]
+name = "fibronectin-symptomatic-2013"
+description = "Published source set: fibronectin-symptomatic-2013"
+
+[[set]]
+name = "finrisk-fin-d2d-homa-ir-p95"
+description = "Published source set: finrisk-fin-d2d-homa-ir-p95"
+
+[[set]]
+name = "florence-fit-screening-2026"
+description = "Published source set: florence-fit-screening-2026"
+
+[[set]]
+name = "fortification-meta-2019"
+description = "Published source set: fortification-meta-2019"
+
+[[set]]
+name = "friend-2015-cpx-percentiles"
+description = "Published source set: friend-2015-cpx-percentiles"
+
+[[set]]
+name = "front-endocrinol-dst-2026"
+description = "Published source set: front-endocrinol-dst-2026"
+
+[[set]]
+name = "frontiers-2016"
+description = "Published source set: frontiers-2016"
+
+[[set]]
+name = "ft-ed-standardized-2023"
+description = "Published source set: ft-ed-standardized-2023"
+
+[[set]]
+name = "g6pd-peru-2026"
+description = "Published source set: g6pd-peru-2026"
+
+[[set]]
+name = "g6pd-thailand-2025"
+description = "Published source set: g6pd-thailand-2025"
+
+[[set]]
+name = "gen6-ref-tsix-2026"
+description = "Published source set: gen6-ref-tsix-2026"
+
+[[set]]
+name = "georgia-cf-nbs-algorithm"
+description = "Published source set: georgia-cf-nbs-algorithm"
+
+[[set]]
+name = "german-mtc-guidance-as-cited"
+description = "Published source set: german-mtc-guidance-as-cited"
+
+[[set]]
+name = "gestational-japan-2022"
+description = "Published source set: gestational-japan-2022"
+
+[[set]]
+name = "gestational-sac-discriminatory-2013"
+description = "Published source set: gestational-sac-discriminatory-2013"
+
+[[set]]
+name = "global-bmi-mortality-2016"
+description = "Published source set: global-bmi-mortality-2016"
+
+[[set]]
+name = "gnrh-test-basal-lh-2026"
+description = "Published source set: gnrh-test-basal-lh-2026"
+
+[[set]]
+name = "gnrha-peak-lh-2024"
+description = "Published source set: gnrha-peak-lh-2024"
+
+[[set]]
+name = "guerrero-romero-2010"
+description = "Published source set: guerrero-romero-2010"
+
+[[set]]
+name = "gynecol-endocrinol-2025-china"
+description = "Published source set: gynecol-endocrinol-2025-china"
+
+[[set]]
+name = "han-chinese-clia-2018"
+description = "Published source set: han-chinese-clia-2018"
+
+[[set]]
+name = "haptoglobin-review-2015"
+description = "Published source set: haptoglobin-review-2015"
+
+[[set]]
+name = "haptoglobin-review-2021"
+description = "Published source set: haptoglobin-review-2021"
+
+[[set]]
+name = "harmonized-men-2017"
+description = "Published source set: harmonized-men-2017"
+
+[[set]]
+name = "harris-2004"
+description = "Published source set: harris-2004"
+
+[[set]]
+name = "harris-2008"
+description = "Published source set: harris-2008"
+
+[[set]]
+name = "hcg-postmenopausal-clia-2026"
+description = "Published source set: hcg-postmenopausal-clia-2026"
+
+[[set]]
+name = "hemochromatosis-probands-2026"
+description = "Published source set: hemochromatosis-probands-2026"
+
+[[set]]
+name = "henan-coag-ri-2022"
+description = "Published source set: henan-coag-ri-2022"
+
+[[set]]
+name = "heparin-aptt-ratio"
+description = "Published source set: heparin-aptt-ratio"
+
+[[set]]
+name = "heparin-therapeutic-range-korea-2016"
+description = "Published source set: heparin-therapeutic-range-korea-2016"
+
+[[set]]
+name = "hepatorenal-tyrosinaemia-consensus-2017"
+description = "Published source set: hepatorenal-tyrosinaemia-consensus-2017"
+
+[[set]]
+name = "hes-definition-review"
+description = "Published source set: hes-definition-review"
+
+[[set]]
+name = "hf-guideline-review-2026"
+description = "Published source set: hf-guideline-review-2026"
+
+[[set]]
+name = "hf-trial-definition"
+description = "Published source set: hf-trial-definition"
+
+[[set]]
+name = "hgv-cvw-2021"
+description = "Published source set: hgv-cvw-2021"
+
+[[set]]
+name = "hhcy-categories-2021"
+description = "Published source set: hhcy-categories-2021"
+
+[[set]]
+name = "hhcy-grading-cureus-2024"
+description = "Published source set: hhcy-grading-cureus-2024"
+
+[[set]]
+name = "high-steacs-2017"
+description = "Published source set: high-steacs-2017"
+
+[[set]]
+name = "host-ckd-2012"
+description = "Published source set: host-ckd-2012"
+
+[[set]]
+name = "hutchison-renal-cited-2020"
+description = "Published source set: hutchison-renal-cited-2020"
+
+[[set]]
+name = "hyperferritinemia-review"
+description = "Published source set: hyperferritinemia-review"
+
+[[set]]
+name = "hypohydration-usg-runners-2021"
+description = "Published source set: hypohydration-usg-runners-2021"
+
+[[set]]
+name = "hypohydration-usg-validation-2022"
+description = "Published source set: hypohydration-usg-validation-2022"
+
+[[set]]
+name = "ias-usa-2020"
+description = "Published source set: ias-usa-2020"
+
+[[set]]
+name = "idf-2005-asian-as-cited-2020"
+description = "Published source set: idf-2005-asian-as-cited-2020"
+
+[[set]]
+name = "ids-isys"
+description = "Published source set: ids-isys"
+
+[[set]]
+name = "ids-ria"
+description = "Published source set: ids-ria"
+
+[[set]]
+name = "iga-coeliac-flowchart-2026"
+description = "Published source set: iga-coeliac-flowchart-2026"
+
+[[set]]
+name = "iga-deficiency-review-2026"
+description = "Published source set: iga-deficiency-review-2026"
+
+[[set]]
+name = "ijid-bmc-2021-crp-viral-bacterial"
+description = "Published source set: ijid-bmc-2021-crp-viral-bacterial"
+
+[[set]]
+name = "immunodeficiency-review-2026"
+description = "Published source set: immunodeficiency-review-2026"
+
+[[set]]
+name = "imwg-2016"
+description = "Published source set: imwg-2016"
+
+[[set]]
+name = "india-males-ineco-2025"
+description = "Published source set: india-males-ineco-2025"
+
+[[set]]
+name = "indian-consensus-as-cited-2026"
+description = "Published source set: indian-consensus-as-cited-2026"
+
+[[set]]
+name = "inhibin-a-second-trimester-preeclampsia-1999"
+description = "Published source set: inhibin-a-second-trimester-preeclampsia-1999"
+
+[[set]]
+name = "insomnia-research-criteria-2019"
+description = "Published source set: insomnia-research-criteria-2019"
+
+[[set]]
+name = "iodine-sufficient-trimester-2019"
+description = "Published source set: iodine-sufficient-trimester-2019"
+
+[[set]]
+name = "iom-2011"
+description = "Published source set: iom-2011"
+
+[[set]]
+name = "iran-amniocentesis-2026"
+description = "Published source set: iran-amniocentesis-2026"
+
+[[set]]
+name = "iranian-msud-2025"
+description = "Published source set: iranian-msud-2025"
+
+[[set]]
+name = "iraqi-adults-2023"
+description = "Published source set: iraqi-adults-2023"
+
+[[set]]
+name = "iscd-adult-positions"
+description = "Published source set: iscd-adult-positions"
+
+[[set]]
+name = "iscience-2024-esc-algorithm"
+description = "Published source set: iscience-2024-esc-algorithm"
+
+[[set]]
+name = "iss-2005"
+description = "Published source set: iss-2005"
+
+[[set]]
+name = "issth-2001-as-cited-in-chess-ii"
+description = "Published source set: issth-2001-as-cited-in-chess-ii"
+
+[[set]]
+name = "itt-bmi-cutoffs-2026"
+description = "Published source set: itt-bmi-cutoffs-2026"
+
+[[set]]
+name = "izincg"
+description = "Published source set: izincg"
+
+[[set]]
+name = "j-sscg-2020"
+description = "Published source set: j-sscg-2020"
+
+[[set]]
+name = "jacc-adv-2026-sleep-health-women-mi"
+description = "Published source set: jacc-adv-2026-sleep-health-women-mi"
+
+[[set]]
+name = "jalm-2023-nt-probnp-ri"
+description = "Published source set: jalm-2023-nt-probnp-ri"
+
+[[set]]
+name = "jama-1998-free-psa"
+description = "Published source set: jama-1998-free-psa"
+
+[[set]]
+name = "jama-2016-serodifferent-couples"
+description = "Published source set: jama-2016-serodifferent-couples"
+
+[[set]]
+name = "japanese-abpa-criteria-cited-2026"
+description = "Published source set: japanese-abpa-criteria-cited-2026"
+
+[[set]]
+name = "jcem-acromegaly-diagnosis-2026"
+description = "Published source set: jcem-acromegaly-diagnosis-2026"
+
+[[set]]
+name = "jcla-cea-2026"
+description = "Published source set: jcla-cea-2026"
+
+[[set]]
+name = "jes-2026-percent-bf-obesity"
+description = "Published source set: jes-2026-percent-bf-obesity"
+
+[[set]]
+name = "jiangsu-children-capillary-2026"
+description = "Published source set: jiangsu-children-capillary-2026"
+
+[[set]]
+name = "jnutr-2026-riboflavin"
+description = "Published source set: jnutr-2026-riboflavin"
+
+[[set]]
+name = "jordan-control-group-2026"
+description = "Published source set: jordan-control-group-2026"
+
+[[set]]
+name = "jupiter-2008"
+description = "Published source set: jupiter-2008"
+
+[[set]]
+name = "kdigo-2024"
+description = "Published source set: kdigo-2024"
+
+[[set]]
+name = "kenya-urban-adults"
+description = "Published source set: kenya-urban-adults"
+
+[[set]]
+name = "kleiger-1987-sdnn-post-mi"
+description = "Published source set: kleiger-1987-sdnn-post-mi"
+
+[[set]]
+name = "knhanes-2016-homa-ir-cutoff"
+description = "Published source set: knhanes-2016-homa-ir-cutoff"
+
+[[set]]
+name = "korea-adult-liaison-2020"
+description = "Published source set: korea-adult-liaison-2020"
+
+[[set]]
+name = "korea-adult-men-2025"
+description = "Published source set: korea-adult-men-2025"
+
+[[set]]
+name = "korea-cbc-2018"
+description = "Published source set: korea-cbc-2018"
+
+[[set]]
+name = "korea-nhanes-vi-2018"
+description = "Published source set: korea-nhanes-vi-2018"
+
+[[set]]
+name = "korea-sysmex-xn2000-2016"
+description = "Published source set: korea-sysmex-xn2000-2016"
+
+[[set]]
+name = "korea-tumour-ri-2023"
+description = "Published source set: korea-tumour-ri-2023"
+
+[[set]]
+name = "koster-leiden-1995"
+description = "Published source set: koster-leiden-1995"
+
+[[set]]
+name = "kta-2026-dtc-followup"
+description = "Published source set: kta-2026-dtc-followup"
+
+[[set]]
+name = "kuwait-males-2005"
+description = "Published source set: kuwait-males-2005"
+
+[[set]]
+name = "lactate-kinetics-2016"
+description = "Published source set: lactate-kinetics-2016"
+
+[[set]]
+name = "lc-ms-ms-review"
+description = "Published source set: lc-ms-ms-review"
+
+[[set]]
+name = "lcms-17ohp-ncah-2020"
+description = "Published source set: lcms-17ohp-ncah-2020"
+
+[[set]]
+name = "lcms-dht-2008"
+description = "Published source set: lcms-dht-2008"
+
+[[set]]
+name = "liaison-tg-healthy-cohort-2021"
+description = "Published source set: liaison-tg-healthy-cohort-2021"
+
+[[set]]
+name = "lnsc-chemiluminescence-2021"
+description = "Published source set: lnsc-chemiluminescence-2021"
+
+[[set]]
+name = "lnsc-ecl-immunoassay-2023"
+description = "Published source set: lnsc-ecl-immunoassay-2023"
+
+[[set]]
+name = "low-body-temp-review"
+description = "Published source set: low-body-temp-review"
+
+[[set]]
+name = "lp-pla2-review-2021"
+description = "Published source set: lp-pla2-review-2021"
+
+[[set]]
+name = "lu-grimage-2019"
+description = "Published source set: lu-grimage-2019"
+
+[[set]]
+name = "macimorelin-post-hoc"
+description = "Published source set: macimorelin-post-hoc"
+
+[[set]]
+name = "mackowiak-jama-1992"
+description = "Published source set: mackowiak-jama-1992"
+
+[[set]]
+name = "malaysia-2023"
+description = "Published source set: malaysia-2023"
+
+[[set]]
+name = "male-infertility-inhibin-b-cutoffs-2021"
+description = "Published source set: male-infertility-inhibin-b-cutoffs-2021"
+
+[[set]]
+name = "mapple-2018"
+description = "Published source set: mapple-2018"
+
+[[set]]
+name = "mco2-2026-fib4-cad-diabetes"
+description = "Published source set: mco2-2026-fib4-cad-diabetes"
+
+[[set]]
+name = "mcpherson-2017"
+description = "Published source set: mcpherson-2017"
+
+[[set]]
+name = "measles-elisa-200-2025"
+description = "Published source set: measles-elisa-200-2025"
+
+[[set]]
+name = "measles-elisa-equivocal-2025"
+description = "Published source set: measles-elisa-equivocal-2025"
+
+[[set]]
+name = "measles-prnt-120-2025"
+description = "Published source set: measles-prnt-120-2025"
+
+[[set]]
+name = "medicina-ldst-2025"
+description = "Published source set: medicina-ldst-2025"
+
+[[set]]
+name = "menopause-ultrasensitive-amh-chinese-cohort-2026"
+description = "Published source set: menopause-ultrasensitive-amh-chinese-cohort-2026"
+
+[[set]]
+name = "mft-age-strat-2026"
+description = "Published source set: mft-age-strat-2026"
+
+[[set]]
+name = "mhra-mom-cutoff"
+description = "Published source set: mhra-mom-cutoff"
+
+[[set]]
+name = "micro-tese-inhibin-b-cutoff-2023"
+description = "Published source set: micro-tese-inhibin-b-cutoff-2023"
+
+[[set]]
+name = "millan-2009-table1"
+description = "Published source set: millan-2009-table1"
+
+[[set]]
+name = "mtc-lab-review-2026"
+description = "Published source set: mtc-lab-review-2026"
+
+[[set]]
+name = "multi-ethnic-uk-2025"
+description = "Published source set: multi-ethnic-uk-2025"
+
+[[set]]
+name = "multicutoff-fit-2026"
+description = "Published source set: multicutoff-fit-2026"
+
+[[set]]
+name = "national-ghd-criteria"
+description = "Published source set: national-ghd-criteria"
+
+[[set]]
+name = "nejm-copeptin-arginine-2023"
+description = "Published source set: nejm-copeptin-arginine-2023"
+
+[[set]]
+name = "nejm-copeptin-hypertonic-2018"
+description = "Published source set: nejm-copeptin-hypertonic-2018"
+
+[[set]]
+name = "neonatal-infant-amh-argentina-2025"
+description = "Published source set: neonatal-infant-amh-argentina-2025"
+
+[[set]]
+name = "neoplastic-hypercortisolism-lcms-2026"
+description = "Published source set: neoplastic-hypercortisolism-lcms-2026"
+
+[[set]]
+name = "neoplastic-lnsc-2025"
+description = "Published source set: neoplastic-lnsc-2025"
+
+[[set]]
+name = "netherlands-reference-2005"
+description = "Published source set: netherlands-reference-2005"
+
+[[set]]
+name = "neutropenia-cutoff-merz-2023"
+description = "Published source set: neutropenia-cutoff-merz-2023"
+
+[[set]]
+name = "newborn-china-2025"
+description = "Published source set: newborn-china-2025"
+
+[[set]]
+name = "newborn-screening-2026"
+description = "Published source set: newborn-screening-2026"
+
+[[set]]
+name = "nhanes-1999-2000-cutoff"
+description = "Published source set: nhanes-1999-2000-cutoff"
+
+[[set]]
+name = "nhanes-1999-2004"
+description = "Published source set: nhanes-1999-2004"
+
+[[set]]
+name = "nhanes-iii-1999"
+description = "Published source set: nhanes-iii-1999"
+
+[[set]]
+name = "nhanes-roundtable-2011"
+description = "Published source set: nhanes-roundtable-2011"
+
+[[set]]
+name = "nhanes-surks-2007"
+description = "Published source set: nhanes-surks-2007"
+
+[[set]]
+name = "nhlbi-1998-obesity"
+description = "Published source set: nhlbi-1998-obesity"
+
+[[set]]
+name = "nice-ng12-2021"
+description = "Published source set: nice-ng12-2021"
+
+[[set]]
+name = "nice-ng12-2026"
+description = "Published source set: nice-ng12-2026"
+
+[[set]]
+name = "nice-ng203"
+description = "Published source set: nice-ng203"
+
+[[set]]
+name = "nice-ng246-2022"
+description = "Published source set: nice-ng246-2022"
+
+[[set]]
+name = "nl-trab-trimester-cohort-2026"
+description = "Published source set: nl-trab-trimester-cohort-2026"
+
+[[set]]
+name = "nlr-reference-2017"
+description = "Published source set: nlr-reference-2017"
+
+[[set]]
+name = "norip"
+description = "Published source set: norip"
+
+[[set]]
+name = "norip-ldh-2018"
+description = "Published source set: norip-ldh-2018"
+
+[[set]]
+name = "norip-ldh-verification-2018"
+description = "Published source set: norip-ldh-verification-2018"
+
+[[set]]
+name = "norway-oslo-1996-esr"
+description = "Published source set: norway-oslo-1996-esr"
+
+[[set]]
+name = "nsf-2015-sleep-duration"
+description = "Published source set: nsf-2015-sleep-duration"
+
+[[set]]
+name = "nunan-2010-short-term-norms"
+description = "Published source set: nunan-2010-short-term-norms"
+
+[[set]]
+name = "nutrients-2017-review"
+description = "Published source set: nutrients-2017-review"
+
+[[set]]
+name = "oesterling-1993"
+description = "Published source set: oesterling-1993"
+
+[[set]]
+name = "oncologist-2022-grades"
+description = "Published source set: oncologist-2022-grades"
+
+[[set]]
+name = "ontd-msafp-2-5-mom"
+description = "Published source set: ontd-msafp-2-5-mom"
+
+[[set]]
+name = "outcome-review"
+description = "Published source set: outcome-review"
+
+[[set]]
+name = "ovadia-2019-lancet"
+description = "Published source set: ovadia-2019-lancet"
+
+[[set]]
+name = "paluch-2022-steps"
+description = "Published source set: paluch-2022-steps"
+
+[[set]]
+name = "papp-a-first-trimester-malformation-2026"
+description = "Published source set: papp-a-first-trimester-malformation-2026"
+
+[[set]]
+name = "papp-a-first-trimester-outcome-2022"
+description = "Published source set: papp-a-first-trimester-outcome-2022"
+
+[[set]]
+name = "pcos-lcms-2021"
+description = "Published source set: pcos-lcms-2021"
+
+[[set]]
+name = "pcos-pituitary-adenoma-threshold-2023"
+description = "Published source set: pcos-pituitary-adenoma-threshold-2023"
+
+[[set]]
+name = "pcos-prolactinoma-threshold-2018"
+description = "Published source set: pcos-prolactinoma-threshold-2018"
+
+[[set]]
+name = "pcos-threshold-dewailly-2011"
+description = "Published source set: pcos-threshold-dewailly-2011"
+
+[[set]]
+name = "pcrmp-as-cited-2024"
+description = "Published source set: pcrmp-as-cited-2024"
+
+[[set]]
+name = "pct-algorithms-review-2018"
+description = "Published source set: pct-algorithms-review-2018"
+
+[[set]]
+name = "pct-ed-algorithm-review-2019"
+description = "Published source set: pct-ed-algorithm-review-2019"
+
+[[set]]
+name = "pct-sepsis-meta-2023"
+description = "Published source set: pct-sepsis-meta-2023"
+
+[[set]]
+name = "pediatr-2026-crp-fever-without-source"
+description = "Published source set: pediatr-2026-crp-fever-without-source"
+
+[[set]]
+name = "pediatric-bts-2024"
+description = "Published source set: pediatric-bts-2024"
+
+[[set]]
+name = "pediatric-obesity-2026-homa-ir"
+description = "Published source set: pediatric-obesity-2026-homa-ir"
+
+[[set]]
+name = "pediatric-ppsy-copeptin-2025"
+description = "Published source set: pediatric-ppsy-copeptin-2025"
+
+[[set]]
+name = "pediatric-pyuria-sg-2021"
+description = "Published source set: pediatric-pyuria-sg-2021"
+
+[[set]]
+name = "pediatric-ri-us"
+description = "Published source set: pediatric-ri-us"
+
+[[set]]
+name = "pediatric-sex-hormone-review-2026"
+description = "Published source set: pediatric-sex-hormone-review-2026"
+
+[[set]]
+name = "pediatric-water-deprivation-avp-2025"
+description = "Published source set: pediatric-water-deprivation-avp-2025"
+
+[[set]]
+name = "pelican-stepped-wedge-2019"
+description = "Published source set: pelican-stepped-wedge-2019"
+
+[[set]]
+name = "peter-2015-systematic-review"
+description = "Published source set: peter-2015-systematic-review"
+
+[[set]]
+name = "pituitary-glucagon-gst-2015"
+description = "Published source set: pituitary-glucagon-gst-2015"
+
+[[set]]
+name = "plasma-reference-1996"
+description = "Published source set: plasma-reference-1996"
+
+[[set]]
+name = "plos-one-basal-cortisol-2019"
+description = "Published source set: plos-one-basal-cortisol-2019"
+
+[[set]]
+name = "pregnancy-crp-ri-2021"
+description = "Published source set: pregnancy-crp-ri-2021"
+
+[[set]]
+name = "pregnancy-fibrinogen-ri"
+description = "Published source set: pregnancy-fibrinogen-ri"
+
+[[set]]
+name = "pregnancy-first-trimester-study"
+description = "Published source set: pregnancy-first-trimester-study"
+
+[[set]]
+name = "pregnancy-prevalence-2019"
+description = "Published source set: pregnancy-prevalence-2019"
+
+[[set]]
+name = "pregnancy-prolactin-china-2018"
+description = "Published source set: pregnancy-prolactin-china-2018"
+
+[[set]]
+name = "pregnancy-proteinuria-0-3"
+description = "Published source set: pregnancy-proteinuria-0-3"
+
+[[set]]
+name = "pregnancy-vte-cutoff"
+description = "Published source set: pregnancy-vte-cutoff"
+
+[[set]]
+name = "premenopausal-women-2011"
+description = "Published source set: premenopausal-women-2011"
+
+[[set]]
+name = "pride-2005"
+description = "Published source set: pride-2005"
+
+[[set]]
+name = "progesterone-elecsys-natural-cycle-2021"
+description = "Published source set: progesterone-elecsys-natural-cycle-2021"
+
+[[set]]
+name = "prognosis-2016"
+description = "Published source set: prognosis-2016"
+
+[[set]]
+name = "prognosis-asia-2021"
+description = "Published source set: prognosis-asia-2021"
+
+[[set]]
+name = "prognosis-study"
+description = "Published source set: prognosis-study"
+
+[[set]]
+name = "psa-biopsy-thresholds-2009"
+description = "Published source set: psa-biopsy-thresholds-2009"
+
+[[set]]
+name = "ptc-lymph-node-cohort-2026"
+description = "Published source set: ptc-lymph-node-cohort-2026"
+
+[[set]]
+name = "puberty-inhibin-b-girls-2000"
+description = "Published source set: puberty-inhibin-b-girls-2000"
+
+[[set]]
+name = "pyrexia-review-2016"
+description = "Published source set: pyrexia-review-2016"
+
+[[set]]
+name = "pyuria-cutoffs-older-women-2023"
+description = "Published source set: pyuria-cutoffs-older-women-2023"
+
+[[set]]
+name = "qatar-biobank-2025-homa-ir"
+description = "Published source set: qatar-biobank-2025-homa-ir"
+
+[[set]]
+name = "rcp-news2-2017"
+description = "Published source set: rcp-news2-2017"
+
+[[set]]
+name = "renin-status-outcomes-2025"
+description = "Published source set: renin-status-outcomes-2025"
+
+[[set]]
+name = "ret-he-dialysis-2006"
+description = "Published source set: ret-he-dialysis-2006"
+
+[[set]]
+name = "ret-he-ida-2020"
+description = "Published source set: ret-he-ida-2020"
+
+[[set]]
+name = "rhabdo-review-2016"
+description = "Published source set: rhabdo-review-2016"
+
+[[set]]
+name = "roche-cobas-2023"
+description = "Published source set: roche-cobas-2023"
+
+[[set]]
+name = "roche-tina-quant-multicentre"
+description = "Published source set: roche-tina-quant-multicentre"
+
+[[set]]
+name = "roche-trab-china-2022"
+description = "Published source set: roche-trab-china-2022"
+
+[[set]]
+name = "rocket-2026"
+description = "Published source set: rocket-2026"
+
+[[set]]
+name = "rubella-igg-cutoff-consensus"
+description = "Published source set: rubella-igg-cutoff-consensus"
+
+[[set]]
+name = "russian-ifcc-2024"
+description = "Published source set: russian-ifcc-2024"
+
+[[set]]
+name = "salivary-lcms-2020"
+description = "Published source set: salivary-lcms-2020"
+
+[[set]]
+name = "scand-2018-trimester"
+description = "Published source set: scand-2018-trimester"
+
+[[set]]
+name = "scct-cac-drs-2018"
+description = "Published source set: scct-cac-drs-2018"
+
+[[set]]
+name = "seated-lcms-urls-2016"
+description = "Published source set: seated-lcms-urls-2016"
+
+[[set]]
+name = "second-trimester-ethnicity-2007"
+description = "Published source set: second-trimester-ethnicity-2007"
+
+[[set]]
+name = "seniorlab"
+description = "Published source set: seniorlab"
+
+[[set]]
+name = "sepsis-3-2016"
+description = "Published source set: sepsis-3-2016"
+
+[[set]]
+name = "sepsis-3-2016-qsofa"
+description = "Published source set: sepsis-3-2016-qsofa"
+
+[[set]]
+name = "sepsis-il6-cohort-2019"
+description = "Published source set: sepsis-il6-cohort-2019"
+
+[[set]]
+name = "sepsis-il6-prognosis-2026"
+description = "Published source set: sepsis-il6-prognosis-2026"
+
+[[set]]
+name = "shaffer-2017-sdnn-24h"
+description = "Published source set: shaffer-2017-sdnn-24h"
+
+[[set]]
+name = "shanghai-cobas-t711-2022"
+description = "Published source set: shanghai-cobas-t711-2022"
+
+[[set]]
+name = "ship-2013"
+description = "Published source set: ship-2013"
+
+[[set]]
+name = "siemens-enzygnost-measles-2026"
+description = "Published source set: siemens-enzygnost-measles-2026"
+
+[[set]]
+name = "sleep-2011-actigraphy-poor-sleep"
+description = "Published source set: sleep-2011-actigraphy-poor-sleep"
+
+[[set]]
+name = "southeast-asia-2024"
+description = "Published source set: southeast-asia-2024"
+
+[[set]]
+name = "spain-multicentre-2007"
+description = "Published source set: spain-multicentre-2007"
+
+[[set]]
+name = "spain-municipality-2019-esr"
+description = "Published source set: spain-municipality-2019-esr"
+
+[[set]]
+name = "ssc-2012"
+description = "Published source set: ssc-2012"
+
+[[set]]
+name = "sterling-2006"
+description = "Published source set: sterling-2006"
+
+[[set]]
+name = "study-definition-2026"
+description = "Published source set: study-definition-2026"
+
+[[set]]
+name = "sydney-2006"
+description = "Published source set: sydney-2006"
+
+[[set]]
+name = "tan-1997-healthy-ana"
+description = "Published source set: tan-1997-healthy-ana"
+
+[[set]]
+name = "target"
+description = "Treatment and monitoring targets"
+
+[[set]]
+name = "tese-inhibin-b-cutoff-2016"
+description = "Published source set: tese-inhibin-b-cutoff-2016"
+
+[[set]]
+name = "tetanus-vaccine-phase-iii-2025"
+description = "Published source set: tetanus-vaccine-phase-iii-2025"
+
+[[set]]
+name = "tg-hdl-review-2024"
+description = "Published source set: tg-hdl-review-2024"
+
+[[set]]
+name = "tgab-cutoffs-dtc-review-2026"
+description = "Published source set: tgab-cutoffs-dtc-review-2026"
+
+[[set]]
+name = "thermo-fisher-acpa-cutoff"
+description = "Published source set: thermo-fisher-acpa-cutoff"
+
+[[set]]
+name = "thermo-fisher-rf-cutoff"
+description = "Published source set: thermo-fisher-rf-cutoff"
+
+[[set]]
+name = "tibet-high-altitude-2026"
+description = "Published source set: tibet-high-altitude-2026"
+
+[[set]]
+name = "tibet-hoffmann-2026"
+description = "Published source set: tibet-hoffmann-2026"
+
+[[set]]
+name = "time-race-specific-ri"
+description = "Published source set: time-race-specific-ri"
+
+[[set]]
+name = "trimester-india-2016"
+description = "Published source set: trimester-india-2016"
+
+[[set]]
+name = "ucd-guideline-2012"
+description = "Published source set: ucd-guideline-2012"
+
+[[set]]
+name = "ue3-second-trimester-outcome-2020"
+description = "Published source set: ue3-second-trimester-outcome-2020"
+
+[[set]]
+name = "uk-alinity-trimester-2025"
+description = "Published source set: uk-alinity-trimester-2025"
+
+[[set]]
+name = "uk-paeds-fc-cohort-2021"
+description = "Published source set: uk-paeds-fc-cohort-2021"
+
+[[set]]
+name = "uk-pei-consensus-2021"
+description = "Published source set: uk-pei-consensus-2021"
+
+[[set]]
+name = "uog-2025-chinese-cohort"
+description = "Published source set: uog-2025-chinese-cohort"
+
+[[set]]
+name = "upcr-0-3-preeclampsia-validation"
+description = "Published source set: upcr-0-3-preeclampsia-validation"
+
+[[set]]
+name = "upcr-reference-dalian-2021"
+description = "Published source set: upcr-reference-dalian-2021"
+
+[[set]]
+name = "uppsala-75y-2012"
+description = "Published source set: uppsala-75y-2012"
+
+[[set]]
+name = "uric-acid-stone-alkalinization-2025"
+description = "Published source set: uric-acid-stone-alkalinization-2025"
+
+[[set]]
+name = "us-epa-2002"
+description = "Published source set: us-epa-2002"
+
+[[set]]
+name = "variete-chanson-2016"
+description = "Published source set: variete-chanson-2016"
+
+[[set]]
+name = "viability-meta-2022"
+description = "Published source set: viability-meta-2022"
+
+[[set]]
+name = "vitamin-d-toxicity-review-2018"
+description = "Published source set: vitamin-d-toxicity-review-2018"
+
+[[set]]
+name = "vwd-guidelines-as-cited-jcm-2017"
+description = "Published source set: vwd-guidelines-as-cited-jcm-2017"
+
+[[set]]
+name = "waist-cutoffs-review-2026"
+description = "Published source set: waist-cutoffs-review-2026"
+
+[[set]]
+name = "west-china-2026"
+description = "Published source set: west-china-2026"
+
+[[set]]
+name = "western-china-2019"
+description = "Published source set: western-china-2019"
+
+[[set]]
+name = "who"
+description = "Published source set: who"
+
+[[set]]
+name = "who-1972-historic"
+description = "Published source set: who-1972-historic"
+
+[[set]]
+name = "who-2004-asia"
+description = "Published source set: who-2004-asia"
+
+[[set]]
+name = "who-2007"
+description = "Published source set: who-2007"
+
+[[set]]
+name = "who-2008-whr-as-cited-2026"
+description = "Published source set: who-2008-whr-as-cited-2026"
+
+[[set]]
+name = "who-2013"
+description = "Published source set: who-2013"
+
+[[set]]
+name = "who-2015"
+description = "Published source set: who-2015"
+
+[[set]]
+name = "who-2018-review"
+description = "Published source set: who-2018-review"
+
+[[set]]
+name = "who-2020"
+description = "Published source set: who-2020"
+
+[[set]]
+name = "who-2024-hbv-apri"
+description = "Published source set: who-2024-hbv-apri"
+
+[[set]]
+name = "who-obesity-fact-sheet"
+description = "Published source set: who-obesity-fact-sheet"
+
+[[set]]
+name = "wilson-diagnostic-2025"
+description = "Published source set: wilson-diagnostic-2025"
+
+[[set]]
+name = "wilson-diagnostic-criterion"
+description = "Published source set: wilson-diagnostic-criterion"
+
+[[set]]
+name = "wilson-roc-2008"
+description = "Published source set: wilson-roc-2008"
+
+[[set]]
+name = "wjgs-cea-2024"
+description = "Published source set: wjgs-cea-2024"
+
+[[set]]
+name = "wuhan-pediatric-2025"
+description = "Published source set: wuhan-pediatric-2025"
+
+[[set]]
+name = "zhejiang-2026-tetanus-waning"
+description = "Published source set: zhejiang-2026-tetanus-waning"
+
+[[set]]
+name = "zhou-2002-china-as-cited-2026"
+description = "Published source set: zhou-2002-china-as-cited-2026"
+
+[[set]]
+name = "zimbabwe-adults-2003-c3c4"
+description = "Published source set: zimbabwe-adults-2003-c3c4"

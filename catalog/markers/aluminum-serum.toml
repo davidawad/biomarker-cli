@@ -1,0 +1,29 @@
+slug = "aluminum-serum"
+name = "Aluminum (serum)"
+category = "toxic-metal"
+unit = "µg/L"
+description = "Aluminium concentration in serum, used to detect exposure in dialysis patients (from dialysate, water or aluminium-containing phosphate binders). Higher values are linked to aluminium-associated bone disease, encephalopathy and anaemia."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 20
+when = { conditions = ["ckd"] }
+population = "Maintenance hemodialysis patients (Taiwan); the authors state a threshold for aluminium toxicity risk"
+evidence = "consensus"
+citations = [
+  { pmid = "30467375", doi = "10.1038/s41598-018-35217-6", title = "Association Between Serum Aluminum Level and Uremic Pruritus in Hemodialysis Patients.", locator = "Methods, Laboratory section" },
+]
+note = "Serum aluminium of 2 µg/dL or more is the level above which the authors say toxicity is possible (they cite an earlier source for this threshold). Below it, toxicity is described as unlikely."
+
+[[range]]
+set = "aluminum-osteomalacia-1986"
+kind = "warn"
+low = 100
+when = { conditions = ["ckd"] }
+population = "Patients on maintenance hemodialysis or CAPD, 28 of whom had bone biopsy with aluminium staining"
+evidence = "cohort"
+citations = [
+  { pmid = "3776914", doi = "10.1093/ajcp/86.5.629", title = "Interpretation of serum aluminum values in dialysis patients.", locator = "Abstract" },
+]
+note = "Reliable indicator of aluminium-associated osteomalacia on bone biopsy in this 1986 series. Lower levels did not exclude low-turnover or mixed bone disease. ng/mL is numerically equal to µg/L. Source kind: toxic."

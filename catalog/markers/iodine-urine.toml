@@ -1,0 +1,81 @@
+slug = "iodine-urine"
+name = "Urinary iodine concentration"
+category = "trace-element"
+unit = "µg/L"
+description = "Iodine concentration in a spot urine sample, the main indicator of recent iodine intake. Values are interpreted as population medians rather than for an individual; low medians indicate deficiency and high medians indicate excess intake."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "who-2007"
+kind = "warn"
+high = 100
+when = { age = [6.0, 12.0] }
+population = "Population median urinary iodine in school-age children (WHO/UNICEF/ICCIDD criteria, as reproduced in a 2021 review)"
+evidence = "guideline"
+citations = [
+  { pmid = "33989173", doi = "10.1530/eje-21-0171", title = "GLOBAL ENDOCRINOLOGY: Global perspectives in endocrinology: coverage of iodized salt programs and iodine status in 2020.", locator = "Table (WHO iodine intake categories)" },
+]
+note = "Population-median criterion, not an individual cut-off. The table lists sub-bands 50-99 (mild), 20-49 (moderate), <20 (severe) deficiency, all insufficient. Source kind: insufficient."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 300
+when = { age = [6.0, 12.0] }
+population = "Population median urinary iodine in school-age children"
+evidence = "guideline"
+citations = [
+  { pmid = "33989173", doi = "10.1530/eje-21-0171", title = "GLOBAL ENDOCRINOLOGY: Global perspectives in endocrinology: coverage of iodized salt programs and iodine status in 2020.", locator = "Table (WHO iodine intake categories)" },
+]
+note = "Population-median criterion. The table writes '>300' for excessive; encoded as 300 (boundary exactly 300 is not separately stated). Source kind: excess. Alternative to the default who-2007 warn range for the same population."
+
+[[range]]
+set = "who-2007"
+kind = "warn"
+high = 150
+when = { pregnant = true }
+population = "Population median urinary iodine in pregnant women (WHO table)"
+evidence = "guideline"
+citations = [
+  { pmid = "33989173", doi = "10.1530/eje-21-0171", title = "GLOBAL ENDOCRINOLOGY: Global perspectives in endocrinology: coverage of iodized salt programs and iodine status in 2020.", locator = "Table (WHO iodine intake categories)" },
+]
+note = "Population-median criterion for pregnancy. Pregnancy categories differ from school-age children. Source kind: insufficient."
+
+[[range]]
+set = "who-2007"
+kind = "optimal"
+low = 150
+high = 249
+when = { pregnant = true }
+population = "Population median urinary iodine in pregnant women"
+evidence = "guideline"
+citations = [
+  { pmid = "36079737", doi = "10.3390/nu14173474", title = "Iodine and Iodine Deficiency: A Comprehensive Review of a Re-Emerging Issue.", locator = "Introduction" },
+]
+note = "Population-median criterion for pregnancy (the median, not individual values, is classified)."
+
+[[range]]
+set = "who-2007"
+kind = "optimal"
+low = 100
+high = 199
+when = { pregnant = false, age = [6.0, 200] }
+population = "Population median urinary iodine in non-pregnant, non-lactating adults and children aged 6 years or older"
+evidence = "guideline"
+citations = [
+  { pmid = "36079737", doi = "10.3390/nu14173474", title = "Iodine and Iodine Deficiency: A Comprehensive Review of a Re-Emerging Issue.", locator = "Introduction" },
+]
+note = "Population-median criterion. Other sources use 100-299 for school-age children; the adult/child range here is 100-199 as stated in the review. Applies only to: lactating=False."
+
+[[range]]
+set = "who-2013"
+kind = "optimal"
+low = 100
+high = 299
+when = { age = [6.0, 12.0] }
+population = "National or subnational population median urinary iodine in school-aged children (global review of 2013 status)"
+evidence = "consensus"
+citations = [
+  { pmid = "23472655", title = "Global iodine nutrition: Where do we stand in 2013?", locator = "Summary" },
+]
+note = "Population-median criterion. Adequate intake defined at median 100-299 µg/L in school-aged children."

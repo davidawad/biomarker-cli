@@ -1,0 +1,29 @@
+slug = "rbc-folate"
+name = "Red blood cell folate"
+category = "vitamin"
+unit = "ng/mL"
+description = "Red blood cell (RBC) folate reflects folate status over the roughly 120-day lifespan of the erythrocyte, so it indicates longer-term folate stores rather than recent intake. Low values indicate folate insufficiency, which matters for neural tube defect risk in women of reproductive age."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "who-2015"
+kind = "optimal"
+low = 400
+when = { sex = "female" }
+population = "Women of reproductive age (WHO guideline scope); a population-level threshold, not an individual risk predictor"
+evidence = "guideline"
+citations = [
+  { pmid = "25905896", title = "Optimal serum and red blood cell folate concentrations in women of reproductive age for prevention of neural tube defects: World Health Organization guidelines.", locator = "WHO Recommendations (full text, MMWR summary of the WHO guideline)" },
+]
+note = "WHO recommends RBC folate above 400 ng/mL (906 nmol/L) at population level to achieve the greatest reduction in neural tube defects (strong recommendation, low-quality evidence). It is not a predictor for an individual woman. No serum folate threshold is recommended for NTD prevention at population level."
+
+[[range]]
+set = "who-2018-review"
+kind = "warn"
+high = 134.6
+population = "Women of reproductive age in the folate-status literature summarised by WHO authors; deficiency defined by megaloblastic change"
+evidence = "consensus"
+citations = [
+  { pmid = "30239016", doi = "10.1111/nyas.13963", title = "Global folate status in women of reproductive age: a systematic review with emphasis on methodological issues.", locator = "Table 1 and surrounding text (full text)" },
+]
+note = "305 nmol/L is about 135 ng/mL. The review says megaloblastic changes tend to appear below this level. An older NHANES III Bio-Rad cut-off for RBC folate deficiency was below 340 nmol/L (about 150 ng/mL). Source kind: deficient."

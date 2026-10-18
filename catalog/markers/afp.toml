@@ -1,0 +1,158 @@
+slug = "afp"
+name = "Alpha-Fetoprotein"
+category = "tumour"
+unit = "ng/mL"
+loinc = "1834-1"
+description = "Alpha-fetoprotein, a fetal serum protein that is normally low in adults. Raised levels are used in hepatocellular carcinoma surveillance and diagnosis, and it can also rise in pregnancy and in germ cell tumours."
+aliases = ["alpha fetoprotein"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 7.36
+when = { sex = "male", age = [30.0, 40.0] }
+population = "Apparently healthy Korean adults from health checkups at 16 centres, age- and sex-specific (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for AFP in men aged 30-39. Boundary as tabulated (values above are above the reference limit). Study method and assay are local to the Korean centres."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 6.83
+when = { sex = "female", age = [30.0, 40.0] }
+population = "Apparently healthy Korean adults from health checkups at 16 centres, age- and sex-specific (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for AFP in women aged 30-39. Pregnancy status is not a partition in this table, so pregnant women need separate interpretation; no pregnancy band is given here."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 7.77
+when = { sex = "male", age = [40.0, 50.0] }
+population = "Apparently healthy Korean adults from health checkups at 16 centres, age- and sex-specific (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for AFP in men aged 40-49. Boundary as tabulated."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 7.75
+when = { sex = "female", age = [40.0, 50.0] }
+population = "Apparently healthy Korean adults from health checkups at 16 centres, age- and sex-specific (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for AFP in women aged 40-49. Boundary as tabulated."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 7.71
+when = { age = [50.0, 60.0] }
+population = "Apparently healthy Korean adults from health checkups at 16 centres (indirect method, CLSI EP28-A3C); this age band is not partitioned by sex in the table"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for AFP in adults aged 50-59 (sexes combined in the table). Boundary as tabulated."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 7.25
+when = { age = [60.0, 70.0] }
+population = "Apparently healthy Korean adults from health checkups at 16 centres (indirect method, CLSI EP28-A3C); this age band is not partitioned by sex in the table"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for AFP in adults aged 60-69 (sexes combined in the table). Boundary as tabulated."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 6.44
+when = { age = [70.0, 200] }
+population = "Apparently healthy Korean adults from health checkups at 16 centres (indirect method, CLSI EP28-A3C); this age band is not partitioned by sex in the table"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for AFP in adults aged 70 and over (sexes combined in the table). Boundary as tabulated."
+
+[[range]]
+set = "elderly-tumour-ri-2024"
+kind = "reference"
+high = 6.75
+when = { age = [60.0, 99.0] }
+population = "Apparently healthy elderly individuals aged 60 and above in southwestern China (indirect method); sexes combined in the table"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38811867", doi = "10.1186/s12885-024-12408-1", url = "https://pubmed.ncbi.nlm.nih.gov/38811867/", title = "A preliminary study on the reference intervals of serum tumor marker in apparently healthy elderly population in southwestern China using real-world data.", locator = "Full text, Table 3 (reference intervals of tumor markers for elderly population)" },
+]
+note = "Upper reference limit (95th percentile) for AFP in adults aged 60 and over, as tabulated; the lower limit is not identified and is omitted."
+
+[[range]]
+set = "afp-uln-hbv-2021"
+kind = "reference"
+high = 13.4
+population = "Patients on antiviral treatment for HBV-related liver disease, across several centres"
+evidence = "cohort"
+citations = [
+  { pmid = "32852885", doi = "10.1111/jvh.13388", url = "https://pubmed.ncbi.nlm.nih.gov/32852885/", title = "Reappraisal of the diagnostic value of alpha-fetoprotein for surveillance of HBV-related hepatocellular carcinoma in the era of antiviral therapy.", locator = "Full text, Results" },
+]
+note = "Upper limit of normal for AFP varied between centres (8.1 to 13.4 ng/mL); 13.4 is the most permissive quoted limit. Assay-dependent. Values above the local ULN are abnormal."
+
+[[range]]
+set = "afp-screening-thresholds-2026"
+kind = "warn"
+low = 20
+population = "Patients with liver disease under HCC screening (Veterans Health Administration cohort and UNOS cohort, 2001-2021) (setting: screening)"
+evidence = "cohort"
+citations = [
+  { pmid = "41236449", doi = "10.1053/j.gastro.2025.08.021", url = "https://pubmed.ncbi.nlm.nih.gov/41236449/", title = "Changes in Liver Disease Etiology Support a Lower Alpha-Fetoprotein Threshold for Hepatocellular Carcinoma Screening.", locator = "Abstract, Results" },
+]
+note = "Surveillance threshold: AFP >= 20 ng/mL flags HCC screening positivity (low sensitivity, high specificity in this cohort). Boundary is >= 20. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 10
+population = "Patients with MASLD, alcohol-related liver disease or cured HCV cirrhosis under HCC screening (setting: screening)"
+evidence = "cohort"
+citations = [
+  { pmid = "41236449", doi = "10.1053/j.gastro.2025.08.021", url = "https://pubmed.ncbi.nlm.nih.gov/41236449/", title = "Changes in Liver Disease Etiology Support a Lower Alpha-Fetoprotein Threshold for Hepatocellular Carcinoma Screening.", locator = "Abstract, Conclusions" },
+]
+note = "Proposed lower screening threshold: AFP >= 10 ng/mL in MASLD, ALD and cured-HCV cirrhosis raised sensitivity with little loss of specificity. A borderline/early-warning band rather than a diagnostic cut-off. Alternative to the default afp-screening-thresholds-2026 warn range for the same population."
+
+[[range]]
+set = "afp-hcc-cutoffs-2021"
+kind = "warn"
+low = 100
+population = "Patients receiving antiviral treatment for HBV-related HCC surveillance"
+evidence = "cohort"
+citations = [
+  { pmid = "32852885", doi = "10.1111/jvh.13388", url = "https://pubmed.ncbi.nlm.nih.gov/32852885/", title = "Reappraisal of the diagnostic value of alpha-fetoprotein for surveillance of HBV-related hepatocellular carcinoma in the era of antiviral therapy.", locator = "Abstract, Results" },
+]
+note = "Confirmatory threshold: AFP >= 100 ng/mL proposed as the confirmatory test, paired with 20 ng/mL for surveillance. Boundary is >= 100. Source kind: decision."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 400
+population = "Patients with HBV-related liver disease; cut-off as cited from guidelines"
+evidence = "cohort"
+citations = [
+  { pmid = "32852885", doi = "10.1111/jvh.13388", url = "https://pubmed.ncbi.nlm.nih.gov/32852885/", title = "Reappraisal of the diagnostic value of alpha-fetoprotein for surveillance of HBV-related hepatocellular carcinoma in the era of antiviral therapy.", locator = "Abstract, Results" },
+]
+note = "Diagnostic-level threshold: AFP >= 400 ng/mL is a cut-off recommended by some guidelines (the cited study showed 200 and 400 ng/mL had lower sensitivity than 20 and 100 ng/mL). Boundary is >= 400. The primary AASLD/EASL text was not retrieved; the value is taken from this cited study's description. Source kind: decision. Alternative to the default afp-hcc-cutoffs-2021 warn range for the same population."

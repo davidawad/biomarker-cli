@@ -2,6 +2,7 @@ slug = "dhea-s"
 name = "DHEA-Sulfate"
 category = "hormone"
 unit = "µg/dL"
+description = "Sulfated adrenal androgen produced mainly by the zona reticularis; it reflects adrenal androgen output and rises at adrenarche. Used to assess adrenal androgen excess, hyperandrogenism in women, and adrenal disorders."
 loinc = "2191-5"
 aliases = ["dheas", "dhea sulfate"]
 
@@ -15,3 +16,81 @@ kind = "reference"
 low = 35.0
 high = 430.0
 legacy = true
+
+[[range]]
+set = "roche-cobas-2023"
+kind = "reference"
+low = 134.5
+high = 470.2
+when = { sex = "female", age = [20.0, 25.0] }
+population = "Healthy women aged 20-25 y, indirect (partitioned) reference interval from Roche Cobas electrochemiluminescence immunoassay data (3500 subjects aged 20-45 y) (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", locator = "Results" },
+]
+note = "95% reference interval (2.5th-97.5th percentile) in the source unit umol/L; population-specific for this immunoassay, not for LC-MS/MS. Band boundaries as printed in the source. Converted from the source's µmol/L (3.65-12.76) to µg/dL using factor 36.85."
+
+[[range]]
+set = "roche-cobas-2023"
+kind = "reference"
+low = 109.4
+high = 423.8
+when = { sex = "female", age = [25.0, 35.0] }
+population = "Healthy women aged 25-35 y, indirect reference interval from Roche Cobas electrochemiluminescence immunoassay data (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", locator = "Results" },
+]
+note = "95% reference interval in the source unit umol/L; immunoassay-specific. Band boundaries as printed in the source. Converted from the source's µmol/L (2.97-11.5) to µg/dL using factor 36.85."
+
+[[range]]
+set = "roche-cobas-2023"
+kind = "reference"
+low = 84.75
+high = 362.2
+when = { sex = "female", age = [35.0, 45.0] }
+population = "Healthy women aged 35-45 y, indirect reference interval from Roche Cobas electrochemiluminescence immunoassay data (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", locator = "Results" },
+]
+note = "95% reference interval in the source unit umol/L; immunoassay-specific. Band boundaries as printed in the source. Converted from the source's µmol/L (2.3-9.83) to µg/dL using factor 36.85."
+
+[[range]]
+set = "caliper"
+kind = "reference"
+low = 15.85
+high = 207.1
+when = { age = [9.0, 13.0] }
+population = "Healthy children and adolescents of both sexes aged 9 to under 13 years (CALIPER reference population, as reproduced in a Croatian verification study on the Beckman Coulter DxI600 immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32550818", doi = "10.11613/BM.2020.020710", url = "https://pubmed.ncbi.nlm.nih.gov/32550818/", title = "Verification of the Canadian Laboratory Initiative on Paediatric Reference Intervals (CALIPER) reference values in Croatian children and adolescents.", locator = "Table 1" },
+]
+note = "CALIPER 2.5th-97.5th percentile interval as printed in the verification study's table (values in umol/L). The upper age bound is exclusive in the source ('<13 years'). Immunoassay-specific; CALIPER values were not re-derived by the verification study. Converted from the source's µmol/L (0.43-5.62) to µg/dL using factor 36.85."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 33.79
+high = 369.3
+when = { sex = "male" }
+population = "232 men aged 18-81, with and without hypertension; morning fasting supine sampling (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Table 3 (columns: ALL | Males | Females; median then [2.5th-97.5th percentile])" },
+]
+note = "2.5th-97.5th percentile in nmol/L (917-10,021 nmol/L = 0.92-10.0 umol/L); falls with age. Converted from the source's nmol/L (917-10021) to µg/dL using factor 0.03685."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 31.32
+high = 274.0
+when = { sex = "female" }
+population = "293 women aged 18-81, with and without hypertension; morning fasting supine sampling (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Table 3 (columns: ALL | Males | Females; median then [2.5th-97.5th percentile])" },
+]
+note = "2.5th-97.5th percentile in nmol/L, pooled across ages and menopausal status; postmenopausal women are lower. Converted from the source's nmol/L (850-7435) to µg/dL using factor 0.03685."

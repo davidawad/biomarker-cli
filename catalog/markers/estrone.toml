@@ -1,0 +1,30 @@
+slug = "estrone"
+name = "Estrone"
+category = "hormone"
+unit = "pg/mL"
+description = "Weak estrogen, the main circulating estrogen after menopause (made mostly by aromatization of androstenedione in fat and other tissues). Measured by LC-MS/MS, since immunoassays are unreliable at low concentrations. Interpret by sex, puberty stage and menopausal status."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5.406
+when = { sex = "male", age = [4.0, 8.0] }
+population = "Healthy boys aged 4-8 years (prepubertal), Copenhagen and Aarhus cohorts, LC-MS/MS (n=1838 across all ages) (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31720688", doi = "10.1210/clinem/dgz196", url = "https://pubmed.ncbi.nlm.nih.gov/31720688/", title = "Sex-specific Estrogen Levels and Reference Intervals from Infancy to Late Adulthood Determined by LC-MS/MS.", locator = "Results (Fig. 6 text)" },
+]
+note = "Descriptive upper bound from the results text, not a formal percentile: in the youngest prepubertal boys, both E1 and E2 were below 20 pmol/L in all individuals. Source unit pmol/L (20 pmol/L is about 5.4 pg/mL). Treat as approximate. Converted from the source's pmol/L (20) to pg/mL using factor 0.2703. Applies only to: tanner_max=1."
+
+[[range]]
+set = "copenhagen-estrogens-2020"
+kind = "reference"
+low = 2.703
+high = 27.03
+when = { sex = "male", age = [8.0, 200] }
+population = "Healthy prepubertal boys older than 8 years, Copenhagen and Aarhus cohorts, LC-MS/MS (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31720688", doi = "10.1210/clinem/dgz196", url = "https://pubmed.ncbi.nlm.nih.gov/31720688/", title = "Sex-specific Estrogen Levels and Reference Intervals from Infancy to Late Adulthood Determined by LC-MS/MS.", locator = "Results (Fig. 6 text)" },
+]
+note = "Descriptive span from the results text (Fig. 6), not a formal percentile: E1 in older prepubertal boys was in the range of 10 to 100 pmol/L. Source unit pmol/L. Treat as approximate; no adult or postmenopausal estrone interval is given as numbers in the accessible text. Converted from the source's pmol/L (10-100) to pg/mL using factor 0.2703. Applies only to: tanner_max=1."

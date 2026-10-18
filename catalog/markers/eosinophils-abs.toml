@@ -1,0 +1,65 @@
+slug = "eosinophils-abs"
+name = "Absolute eosinophil count"
+category = "cbc"
+unit = "10^3/µL"
+loinc = "711-2"
+description = "Absolute count of circulating eosinophils, involved in allergy, asthma and parasitic infection. High values (eosinophilia) suggest allergy, drug reaction (DRESS), parasitosis, or hypereosinophilic / myeloid disorders; a count of 1.5 x 10^9/L or more defines eosinophilia for hypereosinophilic syndrome work-up."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 0.7
+population = "Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Race- and time-specific adjusted interval; evening interval is 0.0-0.7 (not separately encoded). Eosinophil counts fall over the day in non-Black volunteers. Applies only to: ethnicity=black."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 0.0
+high = 0.6
+population = "Non-Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Race- and time-specific adjusted interval; evening interval is 0.0-0.5 (not separately encoded). Applies only to: ethnicity=nonblack. Alternative to the default time-race-specific-ri reference range for the same population."
+
+[[range]]
+set = "barcelona-sysmex-xn"
+kind = "reference"
+low = 0.03
+high = 0.39
+population = "181 apparently healthy adults from the southern metropolitan area of Barcelona, Sysmex XN"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29765286", title = "Reference intervals for a complete blood count on an automated haematology analyser Sysmex XN in healthy adults from the southern metropolitan area of Barcelona.", locator = "Results, CBC reference intervals table" },
+]
+note = "Analyser-specific interval (Sysmex XN)."
+
+[[range]]
+set = "kenya-urban-adults"
+kind = "reference"
+low = 0.04
+high = 0.59
+population = "healthy adult urban population in Kenya (Nairobi), Beckman Coulter ACT 5 DIFF CP (region: Kenya)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29879171", doi = "10.1371/journal.pone.0198444", title = "Complete blood count reference intervals from a healthy adult urban population in Kenya.", locator = "Table, reference intervals" },
+]
+note = "All-participant interval (n = 460) from the reference-interval table; the discussion also cites a parametrically derived upper limit of 590 cells/µL."
+
+[[range]]
+set = "hes-definition-review"
+kind = "warn"
+low = 1.5
+population = "Patients with peripheral blood eosinophilia evaluated for hypereosinophilic syndrome (HES); review of the diagnostic definition"
+evidence = "consensus"
+citations = [
+  { pmid = "25964669", doi = "10.1182/blood-2014-11-551614", title = "How I treat hypereosinophilic syndromes.", locator = "Abstract" },
+]
+note = "Diagnostic threshold for eosinophilia used in HES definition (count >= 1.5 plus end-organ involvement). The 0.5 x 10^9/L eosinophilia cutoff was not found in retrieved text and is not encoded. Source kind: diagnostic."

@@ -1,0 +1,17 @@
+slug = "arginine"
+name = "Arginine"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Plasma concentration of the amino acid L-arginine, the substrate for nitric oxide synthesis. Low values are considered in the context of impaired nitric oxide pathways and cardiovascular risk; interpretation is usually paired with asymmetric dimethylarginine (ADMA)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 41.0
+high = 114
+population = "1141 relatively healthy adults from the Framingham Offspring Cohort (sex and age split not given in the abstract) (specimen: plasma; method: lc-ms-ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22031661", doi = "10.3945/jn.111.148197", title = "Reference intervals for plasma L-arginine and the L-arginine:asymmetric dimethylarginine ratio in the Framingham Offspring Cohort.", locator = "Abstract" },
+]
+note = "2.5th and 97.5th percentiles from a stable-isotope LC-MS/MS method. The paper also gives reference limits for the arginine:ADMA ratio, which are not encoded here."

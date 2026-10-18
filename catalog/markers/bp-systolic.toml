@@ -2,6 +2,7 @@ slug = "bp-systolic"
 name = "Blood Pressure, Systolic"
 category = "vitals"
 unit = "mmHg"
+description = "The pressure in the arteries during the heart's contraction, the upper number of a blood pressure reading. Used to classify blood pressure and to set treatment targets."
 loinc = "8480-6"
 aliases = ["systolic", "systolic bp", "sbp", "blood pressure systolic"]
 
@@ -17,3 +18,61 @@ kind = "warn"
 high = 129.0
 note = "120-129 mmHg: elevated"
 legacy = true
+
+[[range]]
+set = "acc-aha-2017-bp-categories"
+kind = "warn"
+high = 120
+population = "Adults; categories as applied in a Chinese adult cohort using the 2017 ACC/AHA guideline"
+evidence = "guideline"
+citations = [
+  { pmid = "37710423", doi = "10.1111/jch.14719", url = "https://pubmed.ncbi.nlm.nih.gov/37710423/", title = "Stage 1 hypertension defined by the 2017 ACC/AHA blood pressure guideline and cardiometabolic multimorbidity in Chinese adults.", locator = "Methods, BP categories" },
+]
+note = "ACC/AHA 2017 normal blood pressure: systolic below 120 mmHg (and diastolic below 80 mmHg). The upper limit is strictly below 120. Primary guideline text was not retrievable; the category wording is as stated in the cited paper's Methods. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 120
+high = 129
+population = "Adults; categories as applied in a Chinese adult cohort using the 2017 ACC/AHA guideline"
+evidence = "guideline"
+citations = [
+  { pmid = "37710423", doi = "10.1111/jch.14719", url = "https://pubmed.ncbi.nlm.nih.gov/37710423/", title = "Stage 1 hypertension defined by the 2017 ACC/AHA blood pressure guideline and cardiometabolic multimorbidity in Chinese adults.", locator = "Methods, BP categories" },
+]
+note = "ACC/AHA 2017 elevated blood pressure: systolic 120-129 mmHg with diastolic below 80 mmHg. Source kind: decision. Alternative to the default acc-aha-2017-bp-categories warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 130
+high = 139
+population = "Adults; categories as applied in a Chinese adult cohort using the 2017 ACC/AHA guideline"
+evidence = "guideline"
+citations = [
+  { pmid = "37710423", doi = "10.1111/jch.14719", url = "https://pubmed.ncbi.nlm.nih.gov/37710423/", title = "Stage 1 hypertension defined by the 2017 ACC/AHA blood pressure guideline and cardiometabolic multimorbidity in Chinese adults.", locator = "Methods, BP categories" },
+]
+note = "ACC/AHA 2017 stage 1 hypertension: systolic 130-139 mmHg and/or diastolic 80-89 mmHg. Source kind: decision. Alternative to the default acc-aha-2017-bp-categories warn range for the same population."
+
+[[range]]
+set = "alt-3"
+kind = "warn"
+low = 140
+population = "Adults; categories as applied in a Chinese adult cohort using the 2017 ACC/AHA guideline"
+evidence = "guideline"
+citations = [
+  { pmid = "37710423", doi = "10.1111/jch.14719", url = "https://pubmed.ncbi.nlm.nih.gov/37710423/", title = "Stage 1 hypertension defined by the 2017 ACC/AHA blood pressure guideline and cardiometabolic multimorbidity in Chinese adults.", locator = "Methods, BP categories" },
+]
+note = "ACC/AHA 2017 stage 2 hypertension: systolic 140 mmHg or higher and/or diastolic 90 mmHg or higher (or on antihypertensive drugs, not captured by this numeric range). Source kind: decision. Alternative to the default acc-aha-2017-bp-categories warn range for the same population."
+
+[[range]]
+set = "esc-2024-pharmacotherapy-review"
+kind = "optimal"
+low = 120
+high = 129
+population = "Adults receiving antihypertensive pharmacotherapy (2024 ESC guideline, as summarised)"
+evidence = "guideline"
+citations = [
+  { pmid = "39439212", doi = "10.1093/ehjcvp/pvae084", url = "https://pubmed.ncbi.nlm.nih.gov/39439212/", title = "2024 ESC Guidelines for the management of elevated blood pressure and hypertension: what is new in pharmacotherapy?", locator = "Treatment target paragraph" },
+]
+note = "Treatment target for most adults on pharmacotherapy (Class I), supported by BP-lowering treatment trials. When not tolerated, the guideline advises targeting a systolic BP as low as reasonably achievable. The primary guideline text was not retrievable; the target wording is from the cited summary."

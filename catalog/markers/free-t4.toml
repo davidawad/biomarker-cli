@@ -2,6 +2,7 @@ slug = "free-t4"
 name = "Free T4"
 category = "thyroid"
 unit = "ng/dL"
+description = "Unbound thyroxine in serum, the biologically active thyroid hormone fraction. Used with TSH to classify hypo- and hyperthyroidism. Many sources report pmol/L; ranges in pmol/L are kept in that unit."
 loinc = "3024-7"
 aliases = ["ft4", "t4, free", "free thyroxine"]
 
@@ -15,3 +16,159 @@ kind = "reference"
 low = 0.82
 high = 1.77
 legacy = true
+
+[[range]]
+set = "gestational-japan-2022"
+kind = "reference"
+low = 1.1
+high = 1.87
+when = { pregnant = true, trimester = 1 }
+population = "Japanese pregnant women with negative thyroglobulin and TPO antibodies"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35811133", doi = "10.1507/endocrj.EJ22-0237", url = "https://pubmed.ncbi.nlm.nih.gov/35811133/", title = "Gestational trimester-specific reference ranges for serum thyrotropin and free thyroxine in Japanese.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, antibody-negative samples; immunoassay."
+
+[[range]]
+set = "gestational-japan-2022"
+kind = "reference"
+low = 0.76
+high = 1.56
+when = { pregnant = true, trimester = 2 }
+population = "Japanese pregnant women with negative thyroglobulin and TPO antibodies"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35811133", doi = "10.1507/endocrj.EJ22-0237", url = "https://pubmed.ncbi.nlm.nih.gov/35811133/", title = "Gestational trimester-specific reference ranges for serum thyrotropin and free thyroxine in Japanese.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, antibody-negative samples."
+
+[[range]]
+set = "gestational-japan-2022"
+kind = "reference"
+low = 0.76
+high = 1.14
+when = { pregnant = true, trimester = 3 }
+population = "Japanese pregnant women with negative thyroglobulin and TPO antibodies"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35811133", doi = "10.1507/endocrj.EJ22-0237", url = "https://pubmed.ncbi.nlm.nih.gov/35811133/", title = "Gestational trimester-specific reference ranges for serum thyrotropin and free thyroxine in Japanese.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, antibody-negative samples."
+
+[[range]]
+set = "second-trimester-ethnicity-2007"
+kind = "reference"
+low = 0.72
+high = 1.18
+when = { pregnant = true, trimester = 2 }
+population = "Pregnant women in the US (Asian, Black, Hispanic and White), antibody-negative with normal TSH, ARCHITECT immunoassay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17712003", doi = "10.1373/clinchem.2007.089680", url = "https://pubmed.ncbi.nlm.nih.gov/17712003/", title = "Second-trimester reference intervals for thyroid tests: the role of ethnicity.", locator = "Abstract, Results" },
+]
+note = "Nonparametric 2.5th-97.5th percentile for all participants. The source also gives the value in pmol/L (9.3-15.2)."
+
+[[range]]
+set = "multi-ethnic-uk-2025"
+kind = "reference"
+low = 0.7692
+high = 1.189
+when = { pregnant = true, trimester = 1 }
+population = "Multi-ethnic pregnant women in the UK (49% non-white), Abbott Alinity platform (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", locator = "Abstract, Results" },
+]
+note = "Reported in pmol/L; kept in source unit. Converted from the source's pmol/L (9.9-15.3) to ng/dL using factor 0.0777."
+
+[[range]]
+set = "multi-ethnic-uk-2025"
+kind = "reference"
+low = 0.6605
+high = 1.119
+when = { pregnant = true, trimester = 2 }
+population = "Multi-ethnic pregnant women in the UK (49% non-white), Abbott Alinity platform (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", locator = "Abstract, Results" },
+]
+note = "Reported in pmol/L; kept in source unit. Converted from the source's pmol/L (8.5-14.4) to ng/dL using factor 0.0777."
+
+[[range]]
+set = "multi-ethnic-uk-2025"
+kind = "reference"
+low = 0.5905
+high = 0.9557
+when = { pregnant = true, trimester = 3 }
+population = "Multi-ethnic pregnant women in the UK (49% non-white), Abbott Alinity platform (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", locator = "Abstract, Results" },
+]
+note = "Reported in pmol/L; kept in source unit. Converted from the source's pmol/L (7.6-12.3) to ng/dL using factor 0.0777."
+
+[[range]]
+set = "iodine-sufficient-trimester-2019"
+kind = "reference"
+low = 0.6993
+high = 1.4
+when = { pregnant = true, trimester = 1 }
+population = "TPOAb-negative pregnant women in an iodine-sufficient area, first trimester"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30861562", doi = "10.1055/a-0855-7128", url = "https://pubmed.ncbi.nlm.nih.gov/30861562/", title = "Reference Intervals for Thyroid Hormones During the First Trimester of Gestation: A Report from an Area with a Sufficient Iodine Level.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile. Reported in pmol/L. Converted from the source's pmol/L (9.0-18.02) to ng/dL using factor 0.0777."
+
+[[range]]
+set = "iodine-sufficient-trimester-2019"
+kind = "reference"
+low = 0.7397
+high = 1.5
+when = { sex = "female", pregnant = false }
+population = "TPOAb-negative non-pregnant women in an iodine-sufficient area"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30861562", doi = "10.1055/a-0855-7128", url = "https://pubmed.ncbi.nlm.nih.gov/30861562/", title = "Reference Intervals for Thyroid Hormones During the First Trimester of Gestation: A Report from an Area with a Sufficient Iodine Level.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, comparison group for the first-trimester study. Converted from the source's pmol/L (9.52-19.3) to ng/dL using factor 0.0777."
+
+[[range]]
+set = "ankara-multicenter-2026"
+kind = "reference"
+low = 1.002
+high = 1.671
+when = { age = [18.0, 200] }
+population = "Adults aged 18 and over from three Ankara hospitals, routine laboratory data, Maglumi chemiluminescence immunoassay (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42351459", doi = "10.3390/diagnostics16121800", url = "https://pubmed.ncbi.nlm.nih.gov/42351459/", title = "Age- and Sex-Specific Reference Intervals for TSH, FT4, and FT3 Derived from the Turkish Multi-Center Cohort.", locator = "Abstract, Results" },
+]
+note = "Approximate adult interval (indirect refineR estimate, sex not separated for FT4). Reported in pmol/L. Converted from the source's pmol/L (12.9-21.5) to ng/dL using factor 0.0777."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 1.037
+high = 2.226
+when = { sex = "male", age = [0.0, 0.0833] }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Abstract, Results" },
+]
+note = "First month of life, male infants; reported in pmol/L. Converted from the source's pmol/L (13.34-28.65) to ng/dL using factor 0.0777."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 1.074
+high = 2.473
+when = { sex = "female", age = [0.0, 0.0833] }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Abstract, Results" },
+]
+note = "First month of life, female infants; reported in pmol/L. Converted from the source's pmol/L (13.82-31.83) to ng/dL using factor 0.0777."

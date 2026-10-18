@@ -1,0 +1,87 @@
+slug = "cea"
+name = "Carcinoembryonic Antigen"
+category = "tumour"
+unit = "ng/mL"
+loinc = "2039-6"
+description = "Carcinoembryonic antigen, a glycoprotein marker of some gastrointestinal and other cancers. It is used mainly to monitor colorectal cancer after treatment; many non-cancer factors, including smoking, can raise it."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 3.7
+when = { sex = "male", age = [0.0, 40.0] }
+population = "Apparently healthy Chinese men under 40 (indirect reference-interval study, CLSI C28-A3 non-parametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42389829", doi = "10.1002/jcla.70301", url = "https://pubmed.ncbi.nlm.nih.gov/42389829/", title = "Changes of CEA Diagnostic Performance Under the New Reference Interval Stratified by Age and Sex.", locator = "Full text, Results" },
+]
+note = "Age- and sex-specific upper reference limit for men under 40, below the previous laboratory interval. Boundary as quoted (< 3.7 ng/mL); derived with the study's own assay."
+
+[[range]]
+set = "jcla-cea-2026"
+kind = "reference"
+high = 5
+when = { age = [40.0, 50.0] }
+population = "Apparently healthy Chinese adults aged 40 to 50 (indirect reference-interval study, CLSI C28-A3 non-parametric method); sex-specific limits not separately quoted for this band"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42389829", doi = "10.1002/jcla.70301", url = "https://pubmed.ncbi.nlm.nih.gov/42389829/", title = "Changes of CEA Diagnostic Performance Under the New Reference Interval Stratified by Age and Sex.", locator = "Full text, Results" },
+]
+note = "Upper reference limit reported for the 40-50 year group in this study. Boundary as quoted (< 5.0 ng/mL). Sex-specific values differ and are not separately quoted here."
+
+[[range]]
+set = "elderly-tumour-ri-2024"
+kind = "reference"
+high = 4.85
+when = { age = [60.0, 99.0] }
+population = "Apparently healthy elderly individuals aged 60 and above in southwestern China (indirect method); sexes combined in the table"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38811867", doi = "10.1186/s12885-024-12408-1", url = "https://pubmed.ncbi.nlm.nih.gov/38811867/", title = "A preliminary study on the reference intervals of serum tumor marker in apparently healthy elderly population in southwestern China using real-world data.", locator = "Full text, Table 3 (reference intervals of tumor markers for elderly population)" },
+]
+note = "Upper reference limit (95th percentile) for CEA in adults aged 60 and over, as tabulated. Compare with the non-smoker limit of 5 ng/mL in the ranges above."
+
+[[range]]
+set = "cea-review-2026"
+kind = "warn"
+high = 5
+population = "Adults; colorectal cancer context (narrative review)"
+evidence = "consensus"
+citations = [
+  { pmid = "42214175", doi = "10.1016/j.tranon.2026.102835", url = "https://pubmed.ncbi.nlm.nih.gov/42214175/", title = "Current opinions on CEA in the diagnosis and prognosis of colorectal cancer.", locator = "Full text, CEA levels section" },
+]
+note = "Commonly used cut-off for CEA elevation. Values are not diagnostic on their own; smoking and other benign conditions can raise CEA. Boundary as quoted (5 ng/mL is the usual upper limit; the review does not state > versus >=). Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 5
+high = 10
+population = "Adults; colorectal cancer context (narrative review)"
+evidence = "consensus"
+citations = [
+  { pmid = "42214175", doi = "10.1016/j.tranon.2026.102835", url = "https://pubmed.ncbi.nlm.nih.gov/42214175/", title = "Current opinions on CEA in the diagnosis and prognosis of colorectal cancer.", locator = "Full text, CEA levels section" },
+]
+note = "Borderline band: CEA 5-10 ng/mL can be produced by benign factors, so a value in this band needs context and repeat measurement. Alternative to the default cea-review-2026 warn range for the same population."
+
+[[range]]
+set = "wjgs-cea-2024"
+kind = "reference"
+high = 5
+population = "Adult non-smokers (narrative review of CEA in focal liver lesions)"
+evidence = "consensus"
+citations = [
+  { pmid = "38690060", doi = "10.4240/wjgs.v16.i4.999", url = "https://pubmed.ncbi.nlm.nih.gov/38690060/", title = "Carcinoembryonic antigen in the diagnosis, treatment, and follow-up of focal liver lesions.", locator = "Full text, Introduction" },
+]
+note = "Normal serum CEA in adult non-smokers taken as below 5 ng/mL (boundary < 5 as quoted). Smoking status is not a schema condition here, so the smoker band is a separate range."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 10
+population = "Adult smokers (narrative review of CEA in focal liver lesions)"
+evidence = "consensus"
+citations = [
+  { pmid = "38690060", doi = "10.4240/wjgs.v16.i4.999", url = "https://pubmed.ncbi.nlm.nih.gov/38690060/", title = "Carcinoembryonic antigen in the diagnosis, treatment, and follow-up of focal liver lesions.", locator = "Full text, Introduction" },
+]
+note = "Normal serum CEA in smokers taken as below 10 ng/mL (boundary < 10 as quoted). Smoking raises CEA, so the non-smoker limit of 5 ng/mL does not apply to smokers. Smoking status is not a schema condition, so this is described here and in population. Alternative to the default wjgs-cea-2024 reference range for the same population."

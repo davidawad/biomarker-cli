@@ -1,0 +1,31 @@
+slug	reason	low	high
+aldosterone-renin-ratio	unit ng/dL per mIU/L->ng/dL per ng/mL/h not convertible	2.4	None
+aldosterone-renin-ratio	unit ng/dL per mIU/L->ng/dL per ng/mL/h not convertible	3.7	None
+aldosterone-renin-ratio	unit ng/L/mU/L->ng/dL per ng/mL/h not convertible	11	None
+anti-ccp	unit x ULN->U/mL not convertible	3	None
+bone-alp	unit U/L->µg/L not convertible	14.8	38.8
+cd4-count	unit %->cells/µL not convertible	32.5	61.6
+ck	unit x ULN->U/L not convertible	4	10
+ck	unit x ULN->U/L not convertible	None	10
+ck	unit x ULN->U/L not convertible	5	None
+hcg	unit %->mIU/mL not convertible	49	None
+hcg	unit %->mIU/mL not convertible	40	None
+hcg	unit %->mIU/mL not convertible	33	None
+igf-1	unit x ULN->ng/mL not convertible	None	1.0
+lp-pla2	unit U/L->nmol/min/mL not convertible	107	265
+lp-pla2	unit U/L->nmol/min/mL not convertible	84	225
+lpa	unit mg/dL->nmol/L not convertible	50	None
+psa	unit ng/mL/cm3->ng/mL not convertible	0.15	None
+pth	unit multiple of the assay upper normal limit->pg/mL not convertible	2	9
+pth	unit ng/L->pg/mL not convertible	9.4	28.9
+rheumatoid-factor	unit x ULN->IU/mL not convertible	3	None
+total-t4	unit pmol/L->µg/dL not convertible	59.31	150.72
+total-t4	unit pmol/L->µg/dL not convertible	63.29	146.94
+trab	unit x ULN->IU/L not convertible	3	None
+ttg-iga	unit x ULN->U/mL not convertible	10	None
+ttg-iga	unit x ULN->U/mL not convertible	None	10
+urine-wbc	unit /µL->/HPF not convertible	10	None
+urine-wbc	unit /µL->/HPF not convertible	264	None
+vo2max	unit METs->mL/kg/min not convertible	None	7.9
+vo2max	unit METs->mL/kg/min not convertible	7.9	10.8
+vo2max	unit METs->mL/kg/min not convertible	10.9	None

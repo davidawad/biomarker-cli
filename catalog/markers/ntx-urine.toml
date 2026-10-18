@@ -1,0 +1,33 @@
+slug = "ntx-urine"
+name = "N-Telopeptide, Urine"
+category = "bone"
+unit = "nmol BCE/mmol creatinine"
+description = "Fragment of type I collagen excreted in urine during bone resorption. Reported per mmol of creatinine to correct for urine concentration. Collect a second-void or fasting sample for comparability."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 12.3
+high = 59.7
+when = { sex = "female", menopause = "pre", age = [35.0, 39.0] }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark) (specimen: urine; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Results" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range for urinary cross-linked NTX per creatinine in the first assay group (Elecsys 2010, VITROS ECI, Access). Assay-specific; the second assay group gives a higher range."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 22.6
+high = 95.7
+when = { sex = "female", menopause = "pre", age = [35.0, 39.0] }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark) (specimen: urine; method: elisa)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Results" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range for urinary cross-linked NTX per creatinine in the second assay group (led by the microtitre-plate ELISA). Assay-specific. Alternative to the default bone-turnover-premenopausal-europe-2012 reference range for the same population."

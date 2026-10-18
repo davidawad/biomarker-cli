@@ -1,0 +1,42 @@
+slug = "nlr"
+name = "Neutrophil-to-lymphocyte ratio (NLR)"
+category = "cbc"
+unit = "ratio"
+description = "Absolute neutrophil count divided by absolute lymphocyte count, a simple calculated index of systemic inflammation. Higher values are associated with infection, inflammation, stress and worse outcomes in cardiovascular disease, infection and cancer; it is not diagnostic on its own."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.78
+high = 3.53
+population = "413 healthy adult workers (median age 38, range 21-66 years) in a health-care prevention programme, with a second independent sample of 29 healthy volunteers; non-geriatric adults in good health"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28057051", doi = "10.1186/s13104-016-2335-5", title = "What is the normal value of the neutrophil-to-lymphocyte ratio?", locator = "Abstract, Conclusions" },
+]
+note = "Mean 1.65; limits are mean +/- 1.96 SD (about 2.5th-97.5th). Analyser-independent in the validation sample."
+
+[[range]]
+set = "western-china-2019"
+kind = "reference"
+low = 0.88
+high = 4.0
+when = { age = [18.0, 80.0] }
+population = "5,969 healthy ethnic Han adults aged 18-79 from a routine health-examination database in four centres in western China, CLSI-based reference intervals"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30868857", doi = "10.7754/Clin.Lab.2018.180715", title = "Normal Reference Intervals of Neutrophil-To-Lymphocyte Ratio, Platelet-To-Lymphocyte Ratio, Lymphocyte-To-Monocyte Ratio, and Systemic Immune Inflammation Index in Healthy Adults: a Large Multi-Center Study from Western China.", locator = "Abstract, Results" },
+]
+note = "Gender did not significantly influence NLR (p > 0.05) and NLR was stable across age in this study; the same paper reports separate intervals for PLR, LMR and SII. Applies only to: ethnicity=han."
+
+[[range]]
+set = "nlr-reference-2017"
+kind = "reference"
+low = 0.78
+high = 3.53
+population = "Adults in good health, non-geriatric population"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28057051", doi = "10.1186/s13104-016-2335-5", url = "https://pubmed.ncbi.nlm.nih.gov/28057051/", title = "What is the normal value of the neutrophil-to-lymphocyte ratio?", locator = "Abstract, Conclusions" },
+]
+note = "Normal range from a healthy, non-geriatric adult sample (mean 1.65, plus or minus 1.96 SD). Mean NLR is lower in non-Hispanic Black (1.76) and Hispanic (2.08) than in non-Hispanic White adults (2.24) in NHANES (Azab 2014, PMID 25375150), so ethnicity-specific ranges may apply."

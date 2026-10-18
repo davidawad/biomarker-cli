@@ -2,6 +2,7 @@ slug = "creatinine"
 name = "Creatinine"
 category = "cmp"
 unit = "mg/dL"
+description = "Serum creatinine, a filtration marker of kidney function. Reference intervals depend strongly on age and sex (muscle mass). Source intervals are reported in umol/L."
 loinc = "2160-0"
 aliases = ["creat", "creatinine, serum"]
 
@@ -31,3 +32,211 @@ kind = "reference"
 low = 0.57
 high = 1.27
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.5847
+high = 0.9941
+when = { sex = "male", age = [0.0, 19.0] }
+population = "Children and adolescents aged 18 years and under, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 6 males, sample size limited)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval. Sample size for this age band is below the CLSI EP28 minimum; interpret with caution. Converted from the source's µmol/L (51.7-87.9) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.4377
+high = 0.76
+when = { sex = "female", age = [0.0, 19.0] }
+population = "Children and adolescents aged 18 years and under, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 25 females, sample size limited)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval. Sample size for this age band is below the CLSI EP28 minimum; interpret with caution. Converted from the source's µmol/L (38.7-67.2) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.6254
+high = 1.063
+when = { sex = "male", age = [18.0, 51.0] }
+population = "Adults aged 18-50 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 3423 males)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 18-50 y). Converted from the source's µmol/L (55.3-94.0) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.4334
+high = 0.7736
+when = { sex = "female", age = [18.0, 51.0] }
+population = "Adults aged 18-50 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 8447 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 18-50 y). Lower limit as printed in the source table. Converted from the source's µmol/L (38.32-68.4) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.5203
+high = 0.9319
+when = { sex = "male", age = [51.0, 71.0] }
+population = "Adults aged 51-70 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 1772 males)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 51-70 y). Converted from the source's µmol/L (46.0-82.4) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.4289
+high = 0.7951
+when = { sex = "female", age = [51.0, 71.0] }
+population = "Adults aged 51-70 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 1795 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 51-70 y). Converted from the source's µmol/L (37.92-70.3) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.587
+high = 1.115
+when = { sex = "male", age = [71.0, 200] }
+population = "Adults aged 71 years and over, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 94 males, below CLSI EP28 minimum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 71 y and over). Sample size is below the CLSI EP28 minimum; interpret with caution. Converted from the source's µmol/L (51.9-98.6) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.4583
+high = 0.8663
+when = { sex = "female", age = [71.0, 200] }
+population = "Adults aged 71 years and over, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 95 females, below CLSI EP28 minimum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 71 y and over). Sample size is below the CLSI EP28 minimum; interpret with caution. Converted from the source's µmol/L (40.52-76.6) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.54
+high = 1.19
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Apparently healthy adults aged 18-65 years, Egypt (IFCC C-RIDL protocol; n = 287 males; conventional mg/dL block of the source table; central 95 percent, mean +/- 1.96 SD on a transformed scale)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Sex-partitioned reference interval, males. The source table has no age split for creatinine. Numbers taken from the conventional-unit columns (mg/dL)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.46
+high = 0.9
+when = { sex = "female", age = [18.0, 66.0] }
+population = "Apparently healthy adults aged 18-65 years, Egypt (IFCC C-RIDL protocol; n = 333 females; conventional mg/dL block of the source table; central 95 percent, mean +/- 1.96 SD on a transformed scale)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Sex-partitioned reference interval, females. The source table has no age split for creatinine. Numbers taken from the conventional-unit columns (mg/dL)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.1909
+high = 0.3906
+when = { age = [0.0, 2.0] }
+population = "Apparently healthy children aged 28 days to under 2 years, Shenzhen, China (n = 471; Table 1 reference limits; both sexes)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Age-partitioned reference interval, 28 days to under 2 years. Source numbers in umol/L (not converted). Table 1 limits are LL/UL as printed; the paper uses two-sided or one-sided percentile limits by analyte, and the analyte-level assignment is not restated in the retrieved text. Converted from the source's µmol/L (16.88-34.54) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.2459
+high = 0.4772
+when = { age = [2.0, 4.0] }
+population = "Apparently healthy children aged 2 to under 4 years, Shenzhen, China (n = 290; Table 1; both sexes)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Age-partitioned reference interval, 2 to under 4 years. Source numbers in umol/L (not converted). Limits as printed in Table 1. Converted from the source's µmol/L (21.74-42.19) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.3148
+high = 0.6148
+when = { age = [4.0, 12.0] }
+population = "Apparently healthy children aged 4 to under 12 years, Shenzhen, China (n = 555; Table 1; both sexes)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Age-partitioned reference interval, 4 to under 12 years. Source numbers in umol/L (not converted). Limits as printed in Table 1. Converted from the source's µmol/L (27.83-54.36) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.4498
+high = 1.058
+when = { sex = "male", age = [12.0, 18.0] }
+population = "Apparently healthy males aged 12 to under 18 years, Shenzhen, China (n = 30; Table 1)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sex-partitioned reference interval, males 12 to under 18 years. Sample size is small. Source numbers in umol/L (not converted). Converted from the source's µmol/L (39.77-93.51) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.3986
+high = 0.8788
+when = { sex = "female", age = [12.0, 18.0] }
+population = "Apparently healthy females aged 12 to under 18 years, Shenzhen, China (n = 33; Table 1)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sex-partitioned reference interval, females 12 to under 18 years. Sample size is small. Source numbers in umol/L (not converted). Converted from the source's µmol/L (35.24-77.7) to mg/dL using factor 0.01131."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.4
+high = 0.8
+when = { pregnant = true }
+population = "Pregnant women, all trimesters (not partitioned by trimester in the source)"
+evidence = "consensus"
+citations = [
+  { pmid = "42731065", doi = "10.1152/function.044.2026", title = "Maternal kidney adaptation and function in pregnancy: review and perspectives.", locator = "Table 1" },
+]
+note = "Pregnancy serum creatinine interval as tabulated in a review. The source gives no trimester split, so no trimester-specific limits are recorded."

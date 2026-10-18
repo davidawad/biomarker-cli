@@ -1,0 +1,54 @@
+slug = "1-5-anhydroglucitol"
+name = "1,5-Anhydroglucitol (GlycoMark)"
+category = "glycemic"
+unit = "µg/mL"
+description = "1,5-Anhydroglucitol reflects glucose excursions over about 1-2 weeks; it falls when blood glucose exceeds the renal threshold. Low values indicate short-term hyperglycaemia."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15.8
+high = 52.6
+when = { sex = "male" }
+population = "Adults in Jiangsu Province, China (as reported in a review; age and sample not stated in the cited text)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39544236", doi = "10.3389/fendo.2024.1471577", title = "The clinical potential of 1,5-anhydroglucitol as biomarker in diabetes mellitus.", locator = "Text, reference ranges paragraph" },
+]
+note = "Sex-specific reference interval as reported by Chen et al. (cited in ref. 39544236); source unit ug/mL."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 14.3
+high = 48.0
+when = { sex = "female" }
+population = "Adults in Jiangsu Province, China (as reported in a review; age and sample not stated in the cited text)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39544236", doi = "10.3389/fendo.2024.1471577", title = "The clinical potential of 1,5-anhydroglucitol as biomarker in diabetes mellitus.", locator = "Text, reference ranges paragraph" },
+]
+note = "Sex-specific reference interval as reported by Chen et al. (cited in ref. 39544236); source unit ug/mL."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 8.4
+high = 28.7
+population = "Healthy US population of nearly 1,800 (as reported in a review)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39544236", doi = "10.3389/fendo.2024.1471577", title = "The clinical potential of 1,5-anhydroglucitol as biomarker in diabetes mellitus.", locator = "Text, reference ranges paragraph" },
+]
+note = "Reference range as reported in ref. 39544236 (citing a US study); source unit ug/mL. Sex not stated."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 10
+population = "Nondiabetic adults followed about 20 years (Warren et al., as reported in ref. 39544236)"
+evidence = "cohort"
+citations = [
+  { pmid = "39544236", doi = "10.3389/fendo.2024.1471577", title = "The clinical potential of 1,5-anhydroglucitol as biomarker in diabetes mellitus.", locator = "Text, 1,5-AG and cardiovascular outcomes paragraph" },
+]
+note = "Risk threshold: serum 1,5-AG strictly below 10 ug/mL, associated with incident diabetes and adverse outcomes; cited in the review as a short-term hyperglycaemia / postprandial marker threshold. Source unit ug/mL."

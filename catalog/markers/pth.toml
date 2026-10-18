@@ -1,0 +1,18 @@
+slug = "pth"
+name = "Parathyroid Hormone, Intact"
+category = "bone"
+unit = "pg/mL"
+description = "Hormone from the parathyroid glands that raises blood calcium and controls phosphate handling. In chronic kidney disease, the KDIGO CKD-MBD guideline gives a target range for PTH in dialysis patients."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 17.9
+high = 58.6
+when = { conditions = ["vitamin-d-replete"] }
+population = "Apparently healthy, normocalcemic, normophosphatemic US adults (n=653), classified as vitamin D sufficient (25(OH)D >= 30 ng/mL)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31273631", doi = "10.1007/s40618-019-01075-w", url = "https://pubmed.ncbi.nlm.nih.gov/31273631/", title = "Parathyroid hormone reference ranges in healthy individuals classified by vitamin D status.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile of intact PTH in vitamin D-sufficient adults on the Elecsys PTH assay (cobas e 601); the source reports the median as 31.9 pg/mL in this group. Assay-specific."

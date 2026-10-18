@@ -1,0 +1,130 @@
+slug = "factor-viii"
+name = "Factor VIII activity"
+category = "coagulation"
+unit = "IU/dL"
+loinc = "3209-8"
+description = "Functional activity of coagulation factor VIII, measured by a one-stage clotting or chromogenic assay. Low levels define haemophilia A, with severity set by the activity level; a level below the reference range is consistent with haemophilia A or von Willebrand disease."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 78.62
+high = 227.36
+when = { sex = "female", pregnant = false, age = [20.0, 46.0] }
+population = "Non-pregnant women aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, non-pregnancy row" },
+]
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are % of normal, equivalent to IU/dL."
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 94.36
+high = 232.69
+when = { sex = "female", pregnant = true, trimester = 1, age = [20.0, 46.0] }
+population = "Pregnant, 4-12 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 4-12 weeks row" },
+]
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are % of normal, equivalent to IU/dL. Applies only to: gestation_week_min=4; gestation_week_max=13."
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 98.95
+high = 241.69
+when = { sex = "female", pregnant = true, age = [20.0, 46.0] }
+population = "Pregnant, 13-20 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 13-20 weeks row" },
+]
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are % of normal, equivalent to IU/dL. Gestational window straddles the first/second trimester boundary, so no trimester key is set. Applies only to: gestation_week_min=13; gestation_week_max=21."
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 118.33
+high = 317.28
+when = { sex = "female", pregnant = true, trimester = 2, age = [20.0, 46.0] }
+population = "Pregnant, 21-27 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 21-27 weeks row" },
+]
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are % of normal, equivalent to IU/dL. Applies only to: gestation_week_min=21; gestation_week_max=28."
+
+[[range]]
+set = "henan-coag-ri-2022"
+kind = "reference"
+low = 132.43
+high = 309.27
+when = { sex = "female", pregnant = true, trimester = 3, age = [20.0, 46.0] }
+population = "Pregnant, 28-33 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 28-33 weeks row" },
+]
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are % of normal, equivalent to IU/dL. Applies only to: gestation_week_min=28; gestation_week_max=34."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 155.37
+high = 321.8
+when = { sex = "female", pregnant = true, trimester = 3, age = [20.0, 46.0] }
+population = "Pregnant, 34-42 weeks aged 20-45 years, Henan Province, China (study of 465 non-pregnant and 1972 uncomplicated pregnant women; CLSI-based 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35087162", doi = "10.1038/s41598-022-05429-y", title = "Reference intervals for coagulation parameters in non-pregnant and pregnant women.", locator = "Table 2, 34-42 weeks row" },
+]
+note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL TOP analyser). Values are % of normal, equivalent to IU/dL. Applies only to: gestation_week_min=34; gestation_week_max=43. Alternative to the default henan-coag-ri-2022 reference range for the same population."
+
+[[range]]
+set = "issth-2001-as-cited-in-chess-ii"
+kind = "warn"
+high = 1
+population = "People with haemophilia A (severity classes as cited in the European CHESS II cohort study, attributed there to the ISTH definitions)"
+evidence = "consensus"
+citations = [
+  { pmid = "40462223", doi = "10.1186/s13023-025-03699-z", title = "The association of factor VIII activity levels with bleeding and quality of life in haemophilia a: findings from the European CHESS II study.", locator = "Background, para 1" },
+]
+note = "Severe haemophilia A: factor VIII activity below 1 IU/dL (open lower bound). The class boundaries are quoted from a 2025 cohort paper that cites the ISTH definition; the ISTH 2001 text itself was not retrievable. Source kind: diagnostic."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 1
+high = 5
+population = "People with haemophilia A (severity classes as cited in the European CHESS II cohort study, attributed there to the ISTH definitions)"
+evidence = "consensus"
+citations = [
+  { pmid = "40462223", doi = "10.1186/s13023-025-03699-z", title = "The association of factor VIII activity levels with bleeding and quality of life in haemophilia a: findings from the European CHESS II study.", locator = "Background, para 1" },
+]
+note = "Moderate haemophilia A: factor VIII activity 1 to 5 IU/dL. Source kind: diagnostic. Alternative to the default issth-2001-as-cited-in-chess-ii warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 5
+high = 40
+population = "People with haemophilia A (severity classes as cited in the European CHESS II cohort study, attributed there to the ISTH definitions)"
+evidence = "consensus"
+citations = [
+  { pmid = "40462223", doi = "10.1186/s13023-025-03699-z", title = "The association of factor VIII activity levels with bleeding and quality of life in haemophilia a: findings from the European CHESS II study.", locator = "Background, para 1" },
+]
+note = "Mild haemophilia A: factor VIII activity above 5 and up to 40 IU/dL. The source writes '> 5-40%'; the lower boundary is exclusive. Source kind: diagnostic. Alternative to the default issth-2001-as-cited-in-chess-ii warn range for the same population."
+
+[[range]]
+set = "koster-leiden-1995"
+kind = "warn"
+low = 150
+population = "Population-based patient-control study: 301 consecutive patients younger than 70 with a first objectively diagnosed deep-vein thrombosis, and 301 age- and sex-matched healthy controls"
+evidence = "cohort"
+citations = [
+  { pmid = "7823669", doi = "10.1016/s0140-6736(95)90166-3", title = "Role of clotting factor VIII in effect of von Willebrand factor on occurrence of deep-vein thrombosis.", locator = "Abstract, Results" },
+]
+note = "Odds ratio 4.8 for factor VIII above 1500 IU/L (= 150 IU/dL), adjusted for other factors in multivariate analysis. Source unit IU/L, converted with factor 0.1. Source kind: excess."

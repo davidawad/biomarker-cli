@@ -1,0 +1,43 @@
+slug = "copeptin"
+name = "Copeptin"
+category = "pituitary"
+unit = "pmol/L"
+description = "C-terminal fragment of the vasopressin precursor, released in equimolar amounts with arginine vasopressin (AVP) and far more stable to measure. Used as a surrogate for AVP in the work-up of polyuria: basal, hypertonic saline-stimulated and arginine-stimulated levels help separate AVP deficiency (central diabetes insipidus), nephrogenic diabetes insipidus and primary polydipsia."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "pediatric-ppsy-copeptin-2025"
+kind = "warn"
+low = 21.4
+when = { age = [0.0, 18.0] }
+population = "Children with polyuria-polydipsia syndrome (single-centre cohort) and children undergoing glucagon-stimulated copeptin testing (specimen: plasma; test: basal (unstimulated) copeptin in polyuria work-up)"
+evidence = "cohort"
+citations = [
+  { pmid = "40564913", doi = "10.3390/ijms26125449", url = "https://pubmed.ncbi.nlm.nih.gov/40564913/", title = "Comparative Diagnostic Performance of Copeptin After Hypertonic Saline Infusion Versus Water Deprivation Test in Pediatric Patients with Polyuria-Polydipsia Syndrome.", locator = "Abstract, Results" },
+  { pmid = "42369064", doi = "10.3389/fendo.2026.1833629", url = "https://pubmed.ncbi.nlm.nih.gov/42369064/", title = "Glucagon-stimulated copeptin response in children: a proof-of-concept study.", locator = "Abstract, Results" },
+]
+note = "Basal copeptin at or above this value suggests arginine vasopressin resistance (nephrogenic diabetes insipidus). Pediatric data; the adult threshold has not been separately validated here. Source kind: diagnostic."
+
+[[range]]
+set = "nejm-copeptin-hypertonic-2018"
+kind = "warn"
+high = 4.9
+population = "Adults with hypotonic polyuria at 11 centres (141 analysed; final diagnoses primary polydipsia, central and nephrogenic diabetes insipidus) (specimen: plasma; test: hypertonic saline infusion, copeptin measured once plasma sodium reached at least 150 mmol/L)"
+evidence = "cohort"
+citations = [
+  { pmid = "30067922", doi = "10.1056/NEJMoa1803760", url = "https://pubmed.ncbi.nlm.nih.gov/30067922/", title = "A Copeptin-Based Approach in the Diagnosis of Diabetes Insipidus.", locator = "Abstract, Results" },
+  { pmid = "37966286", doi = "10.1056/NEJMoa2306263", url = "https://pubmed.ncbi.nlm.nih.gov/37966286/", title = "Arginine or Hypertonic Saline-Stimulated Copeptin to Diagnose AVP Deficiency.", locator = "Abstract, Methods" },
+]
+note = "Copeptin above 4.9 pmol/L after hypertonic saline indicates primary polydipsia; at or below this value indicates AVP deficiency (central diabetes insipidus). Diagnostic accuracy 96.5% in the derivation study. Source kind: diagnostic."
+
+[[range]]
+set = "nejm-copeptin-arginine-2023"
+kind = "warn"
+high = 3.8
+population = "Adults with polyuria-polydipsia syndrome or known AVP deficiency (head-to-head trial, 158 patients) (specimen: plasma; test: arginine stimulation, copeptin measured at 60 minutes)"
+evidence = "cohort"
+citations = [
+  { pmid = "37966286", doi = "10.1056/NEJMoa2306263", url = "https://pubmed.ncbi.nlm.nih.gov/37966286/", title = "Arginine or Hypertonic Saline-Stimulated Copeptin to Diagnose AVP Deficiency.", locator = "Abstract, Methods" },
+  { pmid = "31303316", doi = "10.1016/S0140-6736(19)31255-3", url = "https://pubmed.ncbi.nlm.nih.gov/31303316/", title = "Arginine-stimulated copeptin measurements in the differential diagnosis of diabetes insipidus: a prospective diagnostic study.", locator = "Findings" },
+]
+note = "Copeptin at 60 min after arginine at or below this value suggests AVP deficiency. Less accurate than hypertonic saline testing in the head-to-head comparison (74.4% vs 95.6%). Winzeler 2019 (Lancet) derived the same 3.8 pmol/L cut-off in a development and validation cohort. Source kind: diagnostic."

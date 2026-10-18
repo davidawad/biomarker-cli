@@ -1,0 +1,19 @@
+slug = "psa-free-percent"
+name = "Free PSA Percentage"
+category = "tumour"
+unit = "%"
+loinc = "12841-3"
+description = "The percentage of total PSA that is unbound (free) in serum. A low free fraction raises the likelihood of prostate cancer, so it helps decide whether to biopsy men with a borderline total PSA."
+aliases = ["%free psa", "free/total psa ratio", "percent free psa"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "jama-1998-free-psa"
+kind = "warn"
+high = 25
+population = "Men with total PSA 4.0-10.0 ng/mL and a palpably benign prostate in a prospective multicenter trial"
+evidence = "cohort"
+citations = [
+  { pmid = "9605898", doi = "10.1001/jama.279.19.1542", url = "https://pubmed.ncbi.nlm.nih.gov/9605898/", title = "Use of the percentage of free prostate-specific antigen to enhance differentiation of prostate cancer from benign prostatic disease: a prospective multicenter clinical trial.", locator = "Abstract, Conclusions" },
+]
+note = "Biopsy cut-off: free PSA at or below 25% is abnormal (biopsy recommended) for total PSA 4.0-10.0 ng/mL with a benign-feeling gland. Applies only when total PSA is 4.0-10.0 ng/mL; boundary is <= 25%. Applies only to: markers={\"psa\": \">=4\"}. Source kind: decision."

@@ -1,0 +1,18 @@
+slug = "testosterone-bioavailable"
+name = "Testosterone, Bioavailable"
+category = "hormone"
+unit = "ng/dL"
+description = "Bioavailable testosterone: the fraction not tightly bound to SHBG (free plus albumin-bound), usually calculated from total testosterone and SHBG. Useful when SHBG is abnormal."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.12
+high = 7.62
+when = { sex = "female", age = [30.0, 30.0] }
+population = "Normally cycling healthy premenopausal women aged 18-49 (n=161); percentiles estimated for a typical 30-year-old woman, pooled across menstrual cycle phases"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "21771278", doi = "10.1111/j.1743-6109.2011.02380.x", url = "https://pubmed.ncbi.nlm.nih.gov/21771278/", title = "Testosterone reference ranges in normally cycling healthy premenopausal women.", locator = "Abstract, Results" },
+]
+note = "5th to 95th percentile for a 30-year-old woman. Source gives the value in ng/dL, matching the canonical unit. Calculation method not stated in the abstract."

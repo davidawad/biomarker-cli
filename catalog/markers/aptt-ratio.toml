@@ -1,0 +1,32 @@
+slug = "aptt-ratio"
+name = "aPTT Ratio"
+category = "coagulation"
+unit = "ratio"
+description = "Patient aPTT divided by the control (mean normal) aPTT, used to monitor unfractionated heparin. The therapeutic ratio depends on the reagent and analyser, so labs should calibrate it against anti-Xa levels."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "heparin-aptt-ratio"
+kind = "optimal"
+low = 1.5
+high = 2.5
+when = { conditions = ["on-unfractionated-heparin"] }
+population = "patients receiving unfractionated heparin (commonly recommended range, as quoted in a study of 126 patients)"
+evidence = "consensus"
+citations = [
+  { pmid = "11176764", doi = "10.1001/archinte.161.3.385", title = "Use of a fixed activated partial thromboplastin time ratio to establish a therapeutic range for unfractionated heparin.", locator = "Abstract, Background" },
+]
+note = "Expressed as a ratio to the control aPTT, not in seconds. The source states this range is commonly recommended but not universally applicable; reagent-specific ratios are in the next range. Source kind: therapeutic."
+
+[[range]]
+set = "alt-1"
+kind = "optimal"
+low = 2.0
+high = 3.5
+when = { conditions = ["on-unfractionated-heparin"] }
+population = "patients receiving unfractionated heparin, specific reagent and coagulometer combinations (Actin, IL Test) in a study of 126 patients"
+evidence = "consensus"
+citations = [
+  { pmid = "11176764", doi = "10.1001/archinte.161.3.385", title = "Use of a fixed activated partial thromboplastin time ratio to establish a therapeutic range for unfractionated heparin.", locator = "Abstract, Results and Conclusion" },
+]
+note = "Ratio to control aPTT that corresponded to therapeutic anti-factor Xa heparin levels for some reagent/coagulometer combinations; not a general target. Retrieved text does not give a generic range beyond this. Source kind: therapeutic. Alternative to the default heparin-aptt-ratio optimal range for the same population."

@@ -1,0 +1,19 @@
+slug = "glucose-management-indicator"
+name = "Glucose Management Indicator"
+category = "wearable"
+unit = "%"
+loinc = "97506-0"
+description = "Glucose Management Indicator (GMI) is an estimate of HbA1c calculated from mean continuous glucose monitoring (CGM) sensor glucose. It gives a CGM-based approximation of average glycaemia, used alongside time-in-range."
+aliases = ["gmi", "cgm-estimated hba1c", "estimated hba1c from cgm"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "adh-cgm-gmi-target-2025"
+kind = "optimal"
+high = 7
+population = "Adults and children using a hybrid closed-loop insulin delivery system (MiniMed 780G) with type 1 or type 2 diabetes, analysed against ADA-recommended glycaemic targets"
+evidence = "cohort"
+citations = [
+  { pmid = "41498529", doi = "10.2337/dc25-2124", url = "https://pubmed.ncbi.nlm.nih.gov/41498529/", title = "MiniMed 780G Advanced Hybrid Closed-Loop System Use During Days Without User-Initiated Boluses.", locator = "Methods, outcomes" },
+]
+note = "Glycaemic target as used by the source study: GMI below 7% (strict upper bound, <7%), one of three combined CGM targets with time-in-range above 70% and time below 70 mg/dL under 4%. The source attributes the targets to the ADA Standards of Care; the ADA text itself could not be retrieved, so the target is cited through this study."

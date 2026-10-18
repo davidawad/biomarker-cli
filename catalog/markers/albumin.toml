@@ -2,6 +2,7 @@ slug = "albumin"
 name = "Albumin"
 category = "cmp"
 unit = "g/dL"
+description = "Serum albumin. Declines with age in adults and is lower in children and older adults than in young adults; hypoalbuminaemia and low-normal values are associated with worse outcomes."
 loinc = "1751-7"
 aliases = ["alb"]
 
@@ -18,3 +19,78 @@ kind = "optimal"
 low = 4.2
 high = 5.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.0
+high = 5.3
+when = { sex = "male", age = [18.0, 200] }
+population = "Healthy adult males (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Results (sex-specific 95% RIs) and Table 4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.7
+high = 5.1
+when = { sex = "female", age = [18.0, 200] }
+population = "Healthy adult females (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Results (sex-specific 95% RIs) and Table 4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.945
+high = 4.922
+when = { age = [0.5, 18.0] }
+population = "Healthy Chinese children aged 6 months to <18 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Reference interval table (Alb rows)" },
+]
+note = "Pediatric age band from a 2026 Chinese reference-interval study (not CALIPER); source states the value in g/L. Converted from the source's g/L (39.45-49.22) to g/dL using factor 0.1."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.6
+high = 5.1
+when = { age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); sexes combined"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Sex-combined adult 95% reference interval. The source's conventional-unit block is labelled g/L, but the values are g/dL (the SI block is 36-51 g/L); used as g/dL, not converted."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.085
+high = 4.763
+when = { age = [0.077, 0.5] }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's g/L (30.85-47.63) to g/dL using factor 0.1."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 4.6
+when = { conditions = ["kidney-transplant-recipients"] }
+population = "Adults with kidney transplant, 1-year post-transplant albumin within the normal limits"
+evidence = "cohort"
+citations = [
+  { pmid = "25894393", doi = "10.1111/aor.12473", title = "Prognostic Significance of 1-Year Serum Albumin Levels Within the Normal Range After Kidney Transplantation.", locator = "Abstract (Results)" },
+]
+note = "Among values within the normal limits (3.5-5.5 g/dL), 1-year albumin of 4.6 g/dL or more was associated with better graft, patient and cardiovascular outcomes than lower normal values. Single-centre retrospective cohort; population-specific."

@@ -2,6 +2,7 @@ slug = "non-hdl-c"
 name = "Non-HDL Cholesterol"
 category = "lipid"
 unit = "mg/dL"
+description = "Total cholesterol minus HDL-C, capturing all atherogenic apolipoprotein B particles. Used as a secondary target when triglycerides are elevated (ATP III: goal set 30 mg/dL above the LDL-C goal), with the NICE secondary-prevention target, pediatric NHLBI cut-points and the EAS/EFLM non-fasting and fasting flags."
 loinc = "43396-1"
 aliases = ["non-hdl", "non hdl cholesterol"]
 
@@ -20,3 +21,148 @@ set = "optimal"
 kind = "optimal"
 high = 100.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 120
+when = { age = [0.0, 20.0] }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
+]
+note = "Acceptable pediatric non-HDL-C: strictly below 120 mg/dL."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 120
+high = 144
+when = { age = [0.0, 20.0] }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
+]
+note = "Pediatric borderline-high non-HDL-C."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 130
+population = "Adults with coronary heart disease or CHD risk equivalents"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 9" },
+]
+note = "ATP III non-HDL-C goal (<130 mg/dL), set 30 mg/dL above the LDL-C goal of <100. ATP III (2001) is superseded; the 2018 AHA/ACC text was not retrievable here. Applies only to: risk=chd-or-risk-equivalent. Source kind: target."
+
+[[range]]
+set = "alt-1"
+kind = "optimal"
+high = 160
+population = "Adults with two or more risk factors and 10-year CHD risk of 20% or less"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 9" },
+]
+note = "ATP III non-HDL-C goal (<160 mg/dL) for multiple (2+) risk factors. Applies only to: risk=two-or-more-risk-factors. Source kind: target. Alternative to the default target optimal range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "optimal"
+high = 190
+population = "Adults with zero to one risk factor"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 9" },
+]
+note = "ATP III non-HDL-C goal (<190 mg/dL) for zero to one risk factor. Applies only to: risk=zero-to-one-risk-factor. Source kind: target. Alternative to the default target optimal range for the same population."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 100.5
+when = { conditions = ["established-cvd"] }
+population = "Adults with established cardiovascular disease (secondary prevention)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng238/chapter/recommendations", locator = "Recommendation 1.7.1" },
+]
+note = "NICE NG238 secondary-prevention non-HDL-C target, stated in mmol/L; numbers kept as the source states them. Converted from the source's mmol/L (2.6) to mg/dL using factor 38.67. Source kind: target."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 145
+when = { age = [0.0, 20.0] }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
+]
+note = "Pediatric high non-HDL-C (>= 145 mg/dL). Source kind: diagnostic."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 73
+high = 220
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Apparently healthy Egyptian men aged 18-65 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 1.88-5.69 mmol/L)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 71
+high = 187
+when = { sex = "female", age = [18.0, 45.0] }
+population = "Apparently healthy Egyptian women aged 18 to under 45 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 1.83-4.84 mmol/L)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 89
+high = 226
+when = { sex = "female", age = [45.0, 200] }
+population = "Apparently healthy Egyptian women aged 45 and over (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 2.31-5.85 mmol/L)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 150
+when = { fasting = false }
+population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract" },
+]
+note = "Laboratory flag for abnormal non-fasting non-HDL-C. The consensus full text gives 3.9 mmol/L (155 mg/dL) in one place and 3.9 mmol/L (150 mg/dL) in the abstract; the abstract value is used here."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 145
+when = { fasting = true }
+population = "Fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Results / flagging section (full text)" },
+]
+note = "Laboratory flag for abnormal fasting non-HDL-C."

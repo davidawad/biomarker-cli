@@ -1,0 +1,38 @@
+slug = "metanephrine-plasma-free"
+name = "Metanephrine, Plasma Free"
+category = "adrenal"
+unit = "pg/mL"
+description = "Free metanephrine, the O-methylated metabolite of epinephrine, measured in plasma. Elevated values support a diagnosis of pheochromocytoma or paraganglioma; plasma free metanephrines are a recommended first-line test."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 90
+population = "Adults (>=18 y) tested for catecholamine metabolites at Ankara Bilkent City Hospital, Feb 2019 to May 2023; local laboratory reference limit"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41750736", doi = "10.3390/diagnostics16040588", url = "https://pubmed.ncbi.nlm.nih.gov/41750736/", title = "Seasonal and Climatic Influences on Catecholamine Metabolite Levels in Patients With and Without Pheochromocytoma-Paraganglioma.", locator = "Results (reference limits)" },
+]
+note = "Upper reference limit as stated by the reporting laboratory (LC-MS/MS). Single-centre limit, not an age-specific or external reference interval; verify against the local assay."
+
+[[range]]
+set = "age-adjusted-plasma-mn-2013"
+kind = "reference"
+high = 88.74
+population = "Supine-sampled adults and children (n=1226, age 5-84 y) and a separate validation group of 3888 patients tested for pheochromocytoma, in a 2013 study (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "23065528", doi = "10.1258/acb.2012.012066", url = "https://pubmed.ncbi.nlm.nih.gov/23065528/", title = "Reference intervals for plasma free metanephrines with an age adjustment for normetanephrine for optimized laboratory testing of phaeochromocytoma.", locator = "Abstract, Results" },
+]
+note = "Optimised upper cut-off for plasma metanephrine (nmol/L) chosen for diagnostic specificity in the source; the fixed reference limit in that study was 0.32 nmol/L. Source unit nmol/L; not converted. Converted from the source's nmol/L (0.45) to pg/mL using factor 197.2."
+
+[[range]]
+set = "seated-lcms-urls-2016"
+kind = "reference"
+high = 100.6
+population = "Subjects (n=113) sampled in the seated position in whom pheochromocytoma/paraganglioma had been excluded, as restated from the laboratory's earlier method publication (method: lc-ms/ms; specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28856203", doi = "10.1016/j.plabm.2016.05.001", url = "https://pubmed.ncbi.nlm.nih.gov/28856203/", title = "Evaluating the optimum rest period prior to blood collection for fractionated plasma free metanephrines analysis.", locator = "Introduction (full text)" },
+]
+note = "Seated-sampling upper reference limit for plasma metanephrine by LC-MS/MS as stated by the authors. Seated values differ from supine intervals; the limit is from a single laboratory. Converted from the source's pmol/L (510) to pg/mL using factor 0.1972."

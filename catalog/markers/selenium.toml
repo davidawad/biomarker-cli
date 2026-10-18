@@ -1,0 +1,62 @@
+slug = "selenium"
+name = "Selenium, Serum/Plasma"
+category = "mineral"
+unit = "µg/L"
+description = "Serum or plasma selenium, the marker of selenium status used with selenoprotein P and glutathione peroxidase activity. Low status is linked to mortality, immune and cognitive outcomes, and high status is not automatically beneficial, so the U-shaped relation with status matters."
+
+[[range]]
+set = "us-epa-2002"
+kind = "warn"
+low = 1000
+population = "Adults with selenium exposure; threshold taken from the US EPA (2002) value quoted in a 2020 review (specimen: whole-blood)"
+evidence = "guideline"
+citations = [
+  { pmid = "31388899", doi = "10.1007/s42000-019-00125-5", title = "Selenium intake, status, and health: a complex relationship.", locator = "Section on mercury exposure in the Brazilian Amazon" },
+]
+note = "Whole-blood selenium considered toxic. Value cited secondhand from a review (Rayman 2020); the primary EPA document was not retrieved. Source kind: toxic."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 90
+high = 125
+population = "Healthy people (plasma or serum selenium), as described in a critical-care review"
+evidence = "consensus"
+citations = [
+  { pmid = "33049573", doi = "10.1016/j.nut.2020.110989", title = "Pharmaconutrition revisited for critically ill patients with coronavirus disease 2019 (COVID-19): Does selenium have a place?", locator = "Discussion (selenium kinetics paragraph)" },
+]
+note = "The source describes 90-125 ug/L as the normal physiologic range associated with maximal GPX3 activity (daily intake 55-70 ug). It is a narrative citation of earlier work, not a measured reference interval. Assay and selenoprotein P status are not stated."
+
+[[range]]
+set = "combs-2015"
+kind = "optimal"
+low = 50
+high = 70
+population = "Adults in general; a review of selenium biomarkers based on plasma and selenoprotein data (specimen: plasma)"
+evidence = "consensus"
+citations = [
+  { pmid = "25835046", doi = "10.3390/nu7042209", title = "Biomarkers of selenium status.", locator = "Section on plasma selenium and selenoproteins" },
+]
+note = "Plasma selenium at which GPX3 and SEPP1 selenoprotein expression reaches its maximum (plateau). The same review also quotes a point value of about 80 ng/mL and gives no deficiency cut-off. Not a clinical reference interval."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 120
+population = "Adults (observational and dose-response data)"
+evidence = "cohort"
+citations = [
+  { pmid = "37880477", doi = "10.1007/s12011-023-03900-z", title = "Selenium Species in Diabetes Mellitus Type 2.", locator = "Discussion (dose-response paragraph)" },
+]
+note = "Blood selenium at or above 120 ug/L was associated with increased risk of type 2 diabetes in the source's pooled observational data. This is a risk signal from observational studies, not a treatment or toxicity limit."
+
+[[range]]
+set = "epic-reference-2020"
+kind = "warn"
+high = 45.7
+population = "Adults with COVID-19 compared with the EPIC reference population (n=1915) for total serum selenium (specimen: serum)"
+evidence = "cohort"
+citations = [
+  { pmid = "32708526", doi = "10.3390/nu12072098", title = "Selenium Deficiency Is Associated with Mortality Risk from COVID-19.", locator = "Results, paragraph 1" },
+]
+note = "Authors' low-status cut-off: below the 2.5th percentile of the EPIC reference population. It is a reference-derived lower limit, not a clinical deficiency cut-off. The same paper gives only mean and SD for the reference group. Source kind: deficient."

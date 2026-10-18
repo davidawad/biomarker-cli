@@ -1,0 +1,28 @@
+slug = "vitamin-e"
+name = "Alpha-tocopherol (vitamin E)"
+category = "vitamin"
+unit = "mg/L"
+description = "Serum alpha-tocopherol, the main circulating form of vitamin E, an antioxidant that protects cell membranes from lipid peroxidation. Low values indicate deficiency, which is seen mainly with fat malabsorption; because tocopherol travels in lipids, results are often read against serum lipid levels."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "peter-2015-systematic-review"
+kind = "warn"
+high = 5.17
+population = "Global populations (132 single studies, 2000-2012 literature), mostly newborns and children, as summarized in a systematic review"
+evidence = "consensus"
+citations = [
+  { pmid = "27414419", doi = "10.1024/0300-9831/a000281", title = "A Systematic Review of Global Alpha-Tocopherol Status as Assessed by Nutritional Intake Levels and Blood Serum Concentrations.", locator = "Abstract, Results" },
+]
+note = "Functional deficiency threshold of 12 µmol/L converted to mg/L with factor 0.4307. Source states 13% of data points fall below it. Serum concentration is not lipid-adjusted; see the lipid-ratio note. Lipid-adjusted: a 1986 study (PMID 3767286) gave a tocopherol:total-lipid deficiency threshold of about 1.11 µmol/mmol (equivalent to 0.8 mg/g total lipid, Horwitt); ratio units differ, so it is not stored as a range. Tocopherol:cholesterol+triglyceride ratio performed nearly as well. Source kind: deficient."
+
+[[range]]
+set = "peter-2015-systematic-review"
+kind = "optimal"
+low = 12.92
+population = "Adults and children; threshold proposed from several prospective observational studies, as summarized in a systematic review"
+evidence = "consensus"
+citations = [
+  { pmid = "27414419", doi = "10.1024/0300-9831/a000281", title = "A Systematic Review of Global Alpha-Tocopherol Status as Assessed by Nutritional Intake Levels and Blood Serum Concentrations.", locator = "Abstract, Results" },
+]
+note = "Concentration suggested by observational studies to have beneficial effects (30 µmol/L converted with factor 0.4307). Only 21% of study populations reached it. Not an established clinical cut-off from RCTs."

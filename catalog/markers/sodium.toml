@@ -2,6 +2,7 @@ slug = "sodium"
 name = "Sodium"
 category = "cmp"
 unit = "mmol/L"
+description = "Serum sodium is the main determinant of plasma osmolality. Hyponatraemia (<135 mmol/L) is the most common electrolyte disorder in clinical practice and is associated with higher mortality; hypernatraemia (>145 mmol/L) is less common."
 loinc = "2951-2"
 aliases = ["na"]
 
@@ -11,3 +12,161 @@ kind = "reference"
 low = 135.0
 high = 145.0
 legacy = true
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 135
+population = "Adults"
+evidence = "guideline"
+citations = [
+  { pmid = "24569125", doi = "10.1530/EJE-13-1020", title = "Clinical practice guideline on diagnosis and treatment of hyponatraemia.", locator = "Abstract" },
+]
+note = "Hyponatraemia (strictly below 135 mmol/L). Source kind: diagnostic."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 136
+high = 144
+when = { sex = "male" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, male)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
+]
+note = "Sex-specific indirect reference interval (reflimR) on Beckman analysers; the manufacturer interval was 136-146 mmol/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 136
+high = 144
+when = { sex = "female" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, female)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
+]
+note = "Sex-specific indirect reference interval (reflimR) on Beckman analysers; the manufacturer interval was 136-146 mmol/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 131
+high = 148
+when = { age = [18.0, 66.0] }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 136.4
+high = 143.86
+when = { age = [1.0, 18.0] }
+population = "Healthy Chinese children aged 1 to under 18 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Serum sodium in mmol/L as stated in the source (not converted). Infants under 1 year are not encoded because the source bands are split at 6 months."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 136
+high = 141
+population = "Healthy medical students (aged 20-32) and health professionals (aged 21-76) with arterial blood gas analyser samples (Radiometer ABL) (specimen: arterial)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "21619466", doi = "10.1515/CCLM.2011.603", title = "Reference intervals and age and gender dependency for arterial blood gases and electrolytes in adults.", locator = "Abstract" },
+]
+note = "Sodium reference interval derived non-parametrically on a blood gas analyser (arterial samples), stated as smaller differences from previously published intervals. Not a serum interval. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 136.35
+high = 147.96
+when = { age = [0.077, 0.5] }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 136.81
+high = 146.93
+when = { age = [0.5, 1.0] }
+population = "Healthy Chinese children aged 6 months to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 130
+high = 134
+population = "Adults admitted with hyponatraemia (cohort classified by nadir sodium)"
+evidence = "consensus"
+citations = [
+  { pmid = "40029815", doi = "10.1530/ec-24-0666", title = "Characteristics, management and outcomes of patients with hyponatraemia presenting to an Irish tertiary hospital.", locator = "Abstract" },
+]
+note = "Mild hyponatraemia (130-134 mmol/L, as stated in the source). The source attributes these categories to the 2014 European clinical practice guideline. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 125
+high = 129
+population = "Adults admitted with hyponatraemia (cohort classified by nadir sodium)"
+evidence = "consensus"
+citations = [
+  { pmid = "40029815", doi = "10.1530/ec-24-0666", title = "Characteristics, management and outcomes of patients with hyponatraemia presenting to an Irish tertiary hospital.", locator = "Abstract" },
+]
+note = "Moderate hyponatraemia (125-129 mmol/L, as stated in the source). Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "alt-3"
+kind = "warn"
+high = 125
+population = "Adults admitted with hyponatraemia (cohort classified by nadir sodium)"
+evidence = "consensus"
+citations = [
+  { pmid = "40029815", doi = "10.1530/ec-24-0666", title = "Characteristics, management and outcomes of patients with hyponatraemia presenting to an Irish tertiary hospital.", locator = "Abstract" },
+]
+note = "Severe (profound) hyponatraemia: strictly below 125 mmol/L, as stated in the source. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 139
+population = "Adults admitted to internal medicine departments (Denmark)"
+evidence = "cohort"
+citations = [
+  { pmid = "26036812", doi = "10.1530/EJE-15-0111", title = "Hyponatremia and mortality risk: a Danish cohort study of 279 508 acutely hospitalized patients.", locator = "Results" },
+]
+note = "One-sided: the source reports that mortality risk rises as sodium falls below about 139 mmol/L; no upper optimal bound is stated, so the upper limit is the reference interval limit."
+
+[[range]]
+set = "alt-4"
+kind = "warn"
+low = 145
+population = "Adults with chronic kidney disease stages 3-4"
+evidence = "cohort"
+citations = [
+  { pmid = "27220754", doi = "10.1093/ndt/gfw209", title = "Associations of dysnatremias with mortality in chronic kidney disease.", locator = "Abstract" },
+]
+note = "Hypernatraemia (strictly above 145 mmol/L); associated with all-cause mortality in this cohort. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."

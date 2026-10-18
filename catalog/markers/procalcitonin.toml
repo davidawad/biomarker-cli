@@ -1,0 +1,98 @@
+slug = "procalcitonin"
+name = "Procalcitonin"
+category = "inflammation"
+unit = "ng/mL"
+loinc = "33959-8"
+description = "Precursor of calcitonin that rises markedly in systemic bacterial infection and sepsis, and falls as infection resolves. Used mainly to support decisions about starting or stopping antibiotics."
+aliases = ["pct", "pct test"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "pct-algorithms-review-2018"
+kind = "warn"
+high = 0.25
+population = "Adults with acute respiratory infection in emergency departments and inpatient wards (setting: ed-or-ward)"
+evidence = "consensus"
+citations = [
+  { pmid = "29969320", doi = "10.1080/14787210.2018.1496331", url = "https://pubmed.ncbi.nlm.nih.gov/29969320/", title = "Procalcitonin-guided antibiotic therapy algorithms for different types of acute respiratory infections based on previous trials.", locator = "Abstract, Results" },
+]
+note = "Consensus algorithm cut-off for discontinuing antibiotics in ED and inpatients (<= 0.25 ug/L; strong recommendation <= 0.1). 1 ug/L equals 1 ng/mL. Converted from the source's µg/L (0.25) to ng/mL using factor 1. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 0.5
+population = "Critically ill adults with acute respiratory infection or sepsis in intensive care (setting: icu)"
+evidence = "consensus"
+citations = [
+  { pmid = "29969320", doi = "10.1080/14787210.2018.1496331", url = "https://pubmed.ncbi.nlm.nih.gov/29969320/", title = "Procalcitonin-guided antibiotic therapy algorithms for different types of acute respiratory infections based on previous trials.", locator = "Abstract, Results" },
+]
+note = "Consensus algorithm cut-off for discontinuing antibiotics in ICU patients (<= 0.5 ug/L; strong recommendation <= 0.25). Converted from the source's µg/L (0.5) to ng/mL using factor 1. Source kind: decision. Alternative to the default pct-algorithms-review-2018 warn range for the same population."
+
+[[range]]
+set = "balkan-pct-consensus-2023"
+kind = "warn"
+high = 0.25
+population = "Adults with mild disease and diagnostic uncertainty about bacterial infection (setting: mild-disease-diagnostic-uncertainty)"
+evidence = "consensus"
+citations = [
+  { pmid = "38304372", doi = "10.20471/acc.2023.62.01.05", url = "https://pubmed.ncbi.nlm.nih.gov/38304372/", title = "PROCALCITONIN GUIDED ANTIBIOTIC STEWARDSHIP: A BALKAN EXPERT CONSENSUS STATEMENT.", locator = "Full text, recommendations" },
+]
+note = "Expert consensus: with PCT below 0.25 ug/L the probability of bacterial infection is low and antibiotics are withheld with a repeat PCT in 6-12 h. 1 ug/L equals 1 ng/mL. Converted from the source's µg/L (0.25) to ng/mL using factor 1. Source kind: decision."
+
+[[range]]
+set = "pct-ed-algorithm-review-2019"
+kind = "warn"
+high = 0.1
+population = "Adults with suspected community-acquired pneumonia in the emergency department (algorithm from a randomised trial, as summarised in a review)"
+evidence = "cohort"
+citations = [
+  { pmid = "31803264", doi = "10.1183/20734735.0258-2019", url = "https://pubmed.ncbi.nlm.nih.gov/31803264/", title = "Procalcitonin in respiratory disease: use as a biomarker for diagnosis and guiding antibiotic therapy.", locator = "Section on antibiotic guidance, para describing trial algorithm" },
+]
+note = "Antibiotics strongly discouraged when PCT is below 0.1 ug/L (1 ug/L equals 1 ng/mL). Boundary < 0.1. Converted from the source's µg/L (0.1) to ng/mL using factor 1. Source kind: decision."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 0.25
+high = 0.5
+population = "Adults with suspected community-acquired pneumonia in the emergency department (algorithm from a randomised trial, as summarised in a review)"
+evidence = "cohort"
+citations = [
+  { pmid = "31803264", doi = "10.1183/20734735.0258-2019", url = "https://pubmed.ncbi.nlm.nih.gov/31803264/", title = "Procalcitonin in respiratory disease: use as a biomarker for diagnosis and guiding antibiotic therapy.", locator = "Section on antibiotic guidance, para describing trial algorithm" },
+]
+note = "Antibiotics encouraged above 0.25 ug/L; the band 0.25-0.5 is where the algorithm encourages antibiotics (boundary > 0.25, <= 0.5). 1 ug/L equals 1 ng/mL. Converted from the source's µg/L (0.25-0.5) to ng/mL using factor 1. Source kind: decision. Alternative to the default pct-ed-algorithm-review-2019 warn range for the same population."
+
+[[range]]
+set = "alt-3"
+kind = "warn"
+low = 0.5
+population = "Adults with suspected community-acquired pneumonia in the emergency department (algorithm from a randomised trial, as summarised in a review)"
+evidence = "cohort"
+citations = [
+  { pmid = "31803264", doi = "10.1183/20734735.0258-2019", url = "https://pubmed.ncbi.nlm.nih.gov/31803264/", title = "Procalcitonin in respiratory disease: use as a biomarker for diagnosis and guiding antibiotic therapy.", locator = "Section on antibiotic guidance, para describing trial algorithm" },
+]
+note = "Antibiotics strongly encouraged above 0.5 ug/L (boundary > 0.5). 1 ug/L equals 1 ng/mL. Converted from the source's µg/L (0.5) to ng/mL using factor 1. Source kind: decision. Alternative to the default pct-ed-algorithm-review-2019 warn range for the same population."
+
+[[range]]
+set = "pct-sepsis-meta-2023"
+kind = "warn"
+high = 0.5
+population = "Adults with sepsis in trials of procalcitonin-guided antibiotic therapy (meta-analysis) (setting: sepsis-liberal-protocol)"
+evidence = "cohort"
+citations = [
+  { pmid = "37833778", doi = "10.1186/s13054-023-04677-2", url = "https://pubmed.ncbi.nlm.nih.gov/37833778/", title = "Procalcitonin-guided antibiotic therapy may shorten length of treatment and may improve survival-a systematic review and meta-analysis.", locator = "Methods, subgroup analyses (protocol definitions)" },
+]
+note = "Liberal protocol threshold: stop antibiotics if PCT falls below 0.5 ng/mL (or drops more than 80% from peak). Boundary <. Source kind: decision."
+
+[[range]]
+set = "alt-4"
+kind = "warn"
+low = 0.1
+high = 0.25
+population = "Adults with sepsis in trials of procalcitonin-guided antibiotic therapy (meta-analysis) (setting: sepsis-conservative-protocol)"
+evidence = "cohort"
+citations = [
+  { pmid = "37833778", doi = "10.1186/s13054-023-04677-2", url = "https://pubmed.ncbi.nlm.nih.gov/37833778/", title = "Procalcitonin-guided antibiotic therapy may shorten length of treatment and may improve survival-a systematic review and meta-analysis.", locator = "Methods, subgroup analyses (protocol definitions)" },
+]
+note = "Conservative protocol threshold: stop antibiotics if PCT falls below 0.1-0.25 ng/mL (or drops more than 90% from peak). Source kind: decision. Alternative to the default pct-sepsis-meta-2023 warn range for the same population."

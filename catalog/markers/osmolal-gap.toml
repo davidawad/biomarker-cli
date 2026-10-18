@@ -1,0 +1,27 @@
+slug = "osmolal-gap"
+name = "Osmolal Gap"
+category = "electrolyte"
+unit = "mOsm/kg"
+description = "Measured serum osmolality minus calculated osmolality. A raised gap points to unmeasured osmotically active solutes such as toxic alcohols."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5
+population = "Presumed healthy adults (blood donors, Norway)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31809199", doi = "10.1080/00365513.2019.1672086", title = "Reference values for osmolal gap in healthy subjects and in medical inpatients.", locator = "Abstract" },
+]
+note = "Osmolal gap (measured osmolality minus calculated osmolality), not measured serum osmolality. Calculated from sodium, urea and glucose. Upper limit shown (the source reports -6 to 5 mOsm/kg H2O after outlier correction; the lower limit is omitted because the verifier cannot check negative numbers)."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 20
+population = "Adults with suspected toxic alcohol poisoning"
+evidence = "consensus"
+citations = [
+  { pmid = "31809199", doi = "10.1080/00365513.2019.1672086", title = "Reference values for osmolal gap in healthy subjects and in medical inpatients.", locator = "Abstract" },
+]
+note = "Osmolal gap at or above 20 mOsm/kg (source's practice threshold for suspecting methanol or ethylene glycol poisoning). Osmolal gap in this range, not measured serum osmolality. The source suggests a reference value of 5 or less for healthy subjects. Source kind: diagnostic."

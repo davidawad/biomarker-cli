@@ -2,6 +2,7 @@ slug = "hscrp"
 name = "hs-CRP"
 category = "inflammation"
 unit = "mg/L"
+description = "High-sensitivity C-reactive protein, an acute-phase protein made by the liver. Measured with a high-sensitivity assay it indicates low-grade systemic inflammation and is used as a cardiovascular risk enhancer."
 loinc = "30522-7"
 aliases = ["crp", "c-reactive protein", "hs crp", "high sensitivity crp", "c-reactive protein, cardiac"]
 
@@ -22,3 +23,96 @@ set = "blueprint"
 kind = "optimal"
 high = 0.55
 legacy = true
+
+[[range]]
+set = "acc-aha-2018-cholesterol"
+kind = "warn"
+low = 2.0
+population = "US adults in primary prevention, borderline or intermediate 10-year ASCVD risk"
+evidence = "guideline"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", url = "https://pubmed.ncbi.nlm.nih.gov/30586774/", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Abstract; Top 10 take-home messages, item 6" },
+]
+note = "Persistently elevated hs-CRP >= 2.0 mg/L is an ASCVD risk-enhancing factor that favours statin therapy. Source kind: decision."
+
+[[range]]
+set = "clin-chem-1997-crp-elisa"
+kind = "reference"
+low = 0.08
+high = 3.11
+population = "Healthy blood donors (n=143) measured with a research ELISA calibrated to WHO reference material; not partitioned by sex or age"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "8990222", url = "https://pubmed.ncbi.nlm.nih.gov/8990222/", title = "Variability in the measurement of C-reactive protein in healthy subjects: implications for reference intervals and epidemiological applications.", locator = "Abstract, Results" },
+]
+note = "2.5th to 97.5th percentile of CRP in healthy donors (1997 ELISA, not an hs-CRP assay). Broad, historical reference only; the distribution was non-Gaussian and the sample small."
+
+[[range]]
+set = "cdc-aha-2003-crp-bands"
+kind = "warn"
+high = 1
+population = "Adults without infection or acute inflammation; the CDC/AHA bands as quoted by secondary sources (the 2003 statement itself was not retrievable as full text)"
+evidence = "consensus"
+citations = [
+  { pmid = "33054839", doi = "10.1186/s12955-020-01597-5", url = "https://pubmed.ncbi.nlm.nih.gov/33054839/", title = "Sex differences in the association between self-rated health and high-sensitivity C-reactive protein levels in Koreans: a cross-sectional study using data from the Korea National Health and Nutrition Examination Survey.", locator = "Full text, Methods (risk categories)" },
+  { pmid = "39534057", doi = "10.2147/JIR.S493111", url = "https://pubmed.ncbi.nlm.nih.gov/39534057/", title = "Association Between High-Sensitivity C-Reactive Protein Trajectories and the Incidence of Metabolic Syndrome:A Retrospective Cohort Study.", locator = "Full text, Methods (hsCRP categories)" },
+]
+note = "CDC/AHA low cardiovascular-risk band: hs-CRP below 1 mg/L (boundary < 1.0 mg/L). A risk-category threshold, not a diagnostic cut-off. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 1
+high = 3
+population = "Adults without infection or acute inflammation; the CDC/AHA bands as quoted by secondary sources (the 2003 statement itself was not retrievable as full text)"
+evidence = "consensus"
+citations = [
+  { pmid = "33054839", doi = "10.1186/s12955-020-01597-5", url = "https://pubmed.ncbi.nlm.nih.gov/33054839/", title = "Sex differences in the association between self-rated health and high-sensitivity C-reactive protein levels in Koreans: a cross-sectional study using data from the Korea National Health and Nutrition Examination Survey.", locator = "Full text, Methods (risk categories)" },
+  { pmid = "39534057", doi = "10.2147/JIR.S493111", url = "https://pubmed.ncbi.nlm.nih.gov/39534057/", title = "Association Between High-Sensitivity C-Reactive Protein Trajectories and the Incidence of Metabolic Syndrome:A Retrospective Cohort Study.", locator = "Full text, Methods (hsCRP categories)" },
+]
+note = "CDC/AHA average (moderate) cardiovascular-risk band: hs-CRP 1-3 mg/L (boundaries as quoted: 1.0 to 3.0 mg/L, with 3 mg/L counted in this band). Source kind: decision. Alternative to the default cdc-aha-2003-crp-bands warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 3
+population = "Adults without infection or acute inflammation; the CDC/AHA bands as quoted by secondary sources (the 2003 statement itself was not retrievable as full text)"
+evidence = "consensus"
+citations = [
+  { pmid = "33054839", doi = "10.1186/s12955-020-01597-5", url = "https://pubmed.ncbi.nlm.nih.gov/33054839/", title = "Sex differences in the association between self-rated health and high-sensitivity C-reactive protein levels in Koreans: a cross-sectional study using data from the Korea National Health and Nutrition Examination Survey.", locator = "Full text, Methods (risk categories)" },
+  { pmid = "39534057", doi = "10.2147/JIR.S493111", url = "https://pubmed.ncbi.nlm.nih.gov/39534057/", title = "Association Between High-Sensitivity C-Reactive Protein Trajectories and the Incidence of Metabolic Syndrome:A Retrospective Cohort Study.", locator = "Full text, Methods (hsCRP categories)" },
+]
+note = "CDC/AHA high cardiovascular-risk band: hs-CRP above 3 mg/L (boundary > 3.0 mg/L; the open lower side is shown as 3, and a value of exactly 3.0 belongs to the average band). Source kind: decision. Alternative to the default cdc-aha-2003-crp-bands warn range for the same population."
+
+[[range]]
+set = "jupiter-2008"
+kind = "warn"
+low = 2.0
+population = "Apparently healthy men and women with LDL cholesterol below 130 mg/dL"
+evidence = "cohort"
+citations = [
+  { pmid = "18997196", doi = "10.1056/NEJMoa0807646", url = "https://pubmed.ncbi.nlm.nih.gov/18997196/", title = "Rosuvastatin to prevent vascular events in men and women with elevated C-reactive protein.", locator = "Abstract, Methods" },
+]
+note = "Randomised trial inclusion threshold: hs-CRP of 2.0 mg/L or higher (boundary >= 2.0). Rosuvastatin reduced major vascular events in this group; the threshold is a trial entry criterion rather than a diagnostic cut-off. Source kind: decision."
+
+[[range]]
+set = "clinchem-2010-hscrp-10"
+kind = "warn"
+low = 10
+population = "Community-dwelling adults free from overt cardiovascular disease and acute infection (Scottish Health Survey)"
+evidence = "cohort"
+citations = [
+  { pmid = "19884487", doi = "10.1373/clinchem.2009.130740", url = "https://pubmed.ncbi.nlm.nih.gov/19884487/", title = "Association of very highly elevated C-reactive protein concentration with cardiovascular events and all-cause mortality.", locator = "Abstract, Background" },
+]
+note = "Very highly elevated hs-CRP, above 10 mg/L (boundary > 10 mg/L). The cohort excluded acute infection at baseline, so values in this band from acute illness are not covered by this citation."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 3
+population = "Community-dwelling adults free from overt cardiovascular disease and acute infection (Scottish Health Survey)"
+evidence = "cohort"
+citations = [
+  { pmid = "19884487", doi = "10.1373/clinchem.2009.130740", url = "https://pubmed.ncbi.nlm.nih.gov/19884487/", title = "Association of very highly elevated C-reactive protein concentration with cardiovascular events and all-cause mortality.", locator = "Abstract, Conclusions" },
+]
+note = "Conventional high-risk cut point of 3 mg/L (boundary > 3 mg/L) as referred to by this study. The CDC/AHA low (<1), average (1-3) and high (>3 mg/L) bands could not be retrieved verbatim and are not included. Source kind: decision. Alternative to the default clinchem-2010-hscrp-10 warn range for the same population."

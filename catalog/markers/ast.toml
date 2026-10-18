@@ -2,6 +2,7 @@ slug = "ast"
 name = "AST (SGOT)"
 category = "cmp"
 unit = "U/L"
+description = "Hepatocellular and muscle enzyme; AST elevation relative to ALT is part of the hepatocellular-injury pattern. Upper reference limit differs by sex."
 loinc = "1920-8"
 aliases = ["sgot", "aspartate aminotransferase"]
 
@@ -17,3 +18,131 @@ set = "optimal"
 kind = "optimal"
 high = 25.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 49
+when = { sex = "male" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 33
+when = { sex = "female" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 12
+high = 38
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult male 95% reference interval (LAVE-corrected in the source)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 10
+high = 32
+when = { sex = "female", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult female 95% reference interval (LAVE-corrected in the source)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 22.29
+high = 75.7
+when = { age = [0.0, 1.0] }
+population = "Healthy Chinese children aged 28 days to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; the source band starts at 28 days."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 24.48
+high = 55.68
+when = { age = [1.0, 2.0] }
+population = "Healthy Chinese children aged 1 to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 21.91
+high = 44.81
+when = { age = [2.0, 7.0] }
+population = "Healthy Chinese children aged 2 to under 7 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 13.3
+high = 38.58
+when = { age = [7.0, 13.0] }
+population = "Healthy Chinese children aged 7 to under 13 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.21
+high = 33.44
+when = { sex = "male", age = [13.0, 18.0] }
+population = "Healthy Chinese male children aged 13 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Male pediatric 95% interval (n = 27 in the source band) from a 2026 Chinese reference-interval study."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 10.33
+high = 27.44
+when = { sex = "female", age = [13.0, 18.0] }
+population = "Healthy Chinese female children aged 13 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Female pediatric 95% interval (n = 32 in the source band) from a 2026 Chinese reference-interval study."

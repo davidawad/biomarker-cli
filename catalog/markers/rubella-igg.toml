@@ -1,0 +1,20 @@
+slug = "rubella-igg"
+name = "Rubella IgG"
+category = "infectious"
+unit = "IU/mL"
+loinc = "8014-3"
+description = "IgG antibody to rubella virus, used to judge immunity to rubella. Most important in pregnancy screening, where a non-immune woman is at risk of congenital rubella syndrome if infected."
+aliases = ["rubella igg antibody", "rubella antibody", "rubella immunity test"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "rubella-igg-cutoff-consensus"
+kind = "warn"
+low = 10
+population = "Women of reproductive age and pregnant women screened for rubella immunity; general adults"
+evidence = "consensus"
+citations = [
+  { pmid = "41064497", doi = "10.2147/IJGM.S536793", url = "https://pubmed.ncbi.nlm.nih.gov/41064497/", title = "Rubella Seropositivity and Associated Factors Among Young Female Adults in Bangladesh: A Cross-Sectional Study.", locator = "Methods, Rubella IgG measurement" },
+  { pmid = "41597578", doi = "10.3390/microorganisms14010058", url = "https://pubmed.ncbi.nlm.nih.gov/41597578/", title = "Evaluation of Commercial Immunoassays for Rubella Virus IgG Detection in Low-Antibody Sera Using a Recombinant Immunoblot as a Reference Method.", locator = "Introduction" },
+]
+note = "A titre of 10 IU/mL or more is a positive (immune) result; values below 10 IU/mL are negative. Equivocal results are treated as negative. Some laboratories or programmes use a 5 IU/mL cut-off; that value is not supported by the sources used here. Source kind: decision."

@@ -1,0 +1,19 @@
+slug = "total-t4"
+name = "Total T4 (Thyroxine)"
+category = "thyroid"
+unit = "µg/dL"
+loinc = "3026-2"
+description = "Total serum thyroxine, bound plus free. Levels follow binding protein concentrations, so it rises in pregnancy and with oestrogen exposure; free T4 is usually preferred for diagnosis."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.9
+high = 13.67
+when = { pregnant = true, trimester = 2 }
+population = "Pregnant women in the US (Asian, Black, Hispanic and White), antibody-negative with normal TSH, ARCHITECT immunoassay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17712003", doi = "10.1373/clinchem.2007.089680", url = "https://pubmed.ncbi.nlm.nih.gov/17712003/", title = "Second-trimester reference intervals for thyroid tests: the role of ethnicity.", locator = "Abstract, Results" },
+]
+note = "Nonparametric 2.5th-97.5th percentile for all participants, in ug/dL as printed. Source also gives 89.0-176.3 nmol/L."

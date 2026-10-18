@@ -40,3 +40,291 @@ name = "Chronic liver disease"
 [[condition]]
 slug = "hypertension"
 name = "Hypertension"
+
+[[condition]]
+slug = "asymptomatic-high-risk"
+name = "Asymptomatic high risk"
+
+[[condition]]
+slug = "azoospermia"
+name = "Azoospermia"
+
+[[condition]]
+slug = "blood-group-o"
+name = "Blood group o"
+
+[[condition]]
+slug = "bmi-below-30"
+name = "Bmi below 30"
+
+[[condition]]
+slug = "ckd"
+name = "Ckd"
+
+[[condition]]
+slug = "common-variable-immunodeficiency"
+name = "Common variable immunodeficiency"
+
+[[condition]]
+slug = "complex-intermediate-health"
+name = "Complex intermediate health"
+
+[[condition]]
+slug = "coronary-artery-disease"
+name = "Coronary artery disease"
+
+[[condition]]
+slug = "critical-illness"
+name = "Critical illness"
+
+[[condition]]
+slug = "cushing-syndrome"
+name = "Cushing syndrome"
+
+[[condition]]
+slug = "diabetes"
+name = "Diabetes"
+
+[[condition]]
+slug = "duffy-null"
+name = "Duffy null"
+
+[[condition]]
+slug = "established-cvd"
+name = "Established cvd"
+
+[[condition]]
+slug = "gilbert-syndrome"
+name = "Gilbert syndrome"
+
+[[condition]]
+slug = "gout"
+name = "Gout"
+
+[[condition]]
+slug = "graves-disease"
+name = "Graves disease"
+
+[[condition]]
+slug = "graves-disease-active"
+name = "Graves disease active"
+
+[[condition]]
+slug = "graves-disease-history"
+name = "Graves disease history"
+
+[[condition]]
+slug = "heart-failure"
+name = "Heart failure"
+
+[[condition]]
+slug = "hemochromatosis"
+name = "Hemochromatosis"
+
+[[condition]]
+slug = "hemodialysis"
+name = "Hemodialysis"
+
+[[condition]]
+slug = "hfe-c282y-homozygous"
+name = "Hfe c282y homozygous"
+
+[[condition]]
+slug = "high-blood-pressure-in-pregnancy"
+name = "High blood pressure in pregnancy"
+
+[[condition]]
+slug = "hiv"
+name = "Hiv"
+
+[[condition]]
+slug = "hypercapnic-respiratory-failure-risk"
+name = "Hypercapnic respiratory failure risk"
+
+[[condition]]
+slug = "inflammation"
+name = "Inflammation"
+
+[[condition]]
+slug = "insomnia"
+name = "Insomnia"
+
+[[condition]]
+slug = "intrahepatic-cholestasis-of-pregnancy"
+name = "Intrahepatic cholestasis of pregnancy"
+
+[[condition]]
+slug = "ketogenic-diet"
+name = "Ketogenic diet"
+
+[[condition]]
+slug = "kidney-transplant-recipients"
+name = "Kidney transplant recipients"
+
+[[condition]]
+slug = "major-bleeding"
+name = "Major bleeding"
+
+[[condition]]
+slug = "mechanical-aortic-valve"
+name = "Mechanical aortic valve"
+
+[[condition]]
+slug = "mechanical-mitral-valve"
+name = "Mechanical mitral valve"
+
+[[condition]]
+slug = "mechanical-prosthetic-valve"
+name = "Mechanical prosthetic valve"
+
+[[condition]]
+slug = "metal-on-metal-hip"
+name = "Metal on metal hip"
+
+[[condition]]
+slug = "msud"
+name = "Msud"
+
+[[condition]]
+slug = "neoplastic-hypercortisolism"
+name = "Neoplastic hypercortisolism"
+
+[[condition]]
+slug = "newborn-screening"
+name = "Newborn screening"
+
+[[condition]]
+slug = "non-obstructive-azoospermia"
+name = "Non obstructive azoospermia"
+
+[[condition]]
+slug = "nonobstructive-azoospermia"
+name = "Nonobstructive azoospermia"
+
+[[condition]]
+slug = "normal-weight"
+name = "Normal weight"
+
+[[condition]]
+slug = "obesity"
+name = "Obesity"
+
+[[condition]]
+slug = "occupational-exposure"
+name = "Occupational exposure"
+
+[[condition]]
+slug = "on-lmwh-bid"
+name = "On lmwh bid"
+
+[[condition]]
+slug = "on-ufh"
+name = "On ufh"
+
+[[condition]]
+slug = "on-unfractionated-heparin"
+name = "On unfractionated heparin"
+
+[[condition]]
+slug = "on-warfarin"
+name = "On warfarin"
+
+[[condition]]
+slug = "overweight"
+name = "Overweight"
+
+[[condition]]
+slug = "overweight-obesity"
+name = "Overweight obesity"
+
+[[condition]]
+slug = "overweight-or-obesity"
+name = "Overweight or obesity"
+
+[[condition]]
+slug = "papillary-thyroid-carcinoma"
+name = "Papillary thyroid carcinoma"
+
+[[condition]]
+slug = "peritoneal-dialysis"
+name = "Peritoneal dialysis"
+
+[[condition]]
+slug = "pku"
+name = "Pku"
+
+[[condition]]
+slug = "planning-pregnancy"
+name = "Planning pregnancy"
+
+[[condition]]
+slug = "sepsis"
+name = "Sepsis"
+
+[[condition]]
+slug = "severe-obesity"
+name = "Severe obesity"
+
+[[condition]]
+slug = "severe-oligozoospermia"
+name = "Severe oligozoospermia"
+
+[[condition]]
+slug = "spontaneous-hypokalemia"
+name = "Spontaneous hypokalemia"
+
+[[condition]]
+slug = "suspected-acromegaly"
+name = "Suspected acromegaly"
+
+[[condition]]
+slug = "suspected-hypercortisolism"
+name = "Suspected hypercortisolism"
+
+[[condition]]
+slug = "suspected-poi"
+name = "Suspected poi"
+
+[[condition]]
+slug = "suspected-preeclampsia"
+name = "Suspected preeclampsia"
+
+[[condition]]
+slug = "suspected-wilson-disease"
+name = "Suspected wilson disease"
+
+[[condition]]
+slug = "symptomatic-first-trimester"
+name = "Symptomatic first trimester"
+
+[[condition]]
+slug = "symptomatic-preterm-labour"
+name = "Symptomatic preterm labour"
+
+[[condition]]
+slug = "total-thyroidectomy-with-rai"
+name = "Total thyroidectomy with rai"
+
+[[condition]]
+slug = "total-thyroidectomy-without-rai"
+name = "Total thyroidectomy without rai"
+
+[[condition]]
+slug = "ucd"
+name = "Ucd"
+
+[[condition]]
+slug = "underweight"
+name = "Underweight"
+
+[[condition]]
+slug = "undetectable-renin"
+name = "Undetectable renin"
+
+[[condition]]
+slug = "vitamin-d-replete"
+name = "Vitamin d replete"
+
+[[condition]]
+slug = "wilson-disease"
+name = "Wilson disease"

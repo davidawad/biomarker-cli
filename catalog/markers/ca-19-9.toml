@@ -1,0 +1,65 @@
+slug = "ca-19-9"
+name = "Carbohydrate Antigen 19-9"
+category = "tumour"
+unit = "U/mL"
+loinc = "24108-3"
+description = "Carbohydrate antigen 19-9, a sialylated glycan marker used mainly to monitor pancreatic and biliary cancers. It is not produced in people who lack the Lewis antigen, so a low value does not exclude cancer in them, and it can be raised by benign biliary obstruction and inflammation."
+aliases = ["ca19-9", "ca 19-9", "ca19.9"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 28.1
+when = { age = [60.0, 99.0] }
+population = "Apparently healthy elderly individuals aged 60 and above in southwestern China (indirect method); sexes combined in the table"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38811867", doi = "10.1186/s12885-024-12408-1", url = "https://pubmed.ncbi.nlm.nih.gov/38811867/", title = "A preliminary study on the reference intervals of serum tumor marker in apparently healthy elderly population in southwestern China using real-world data.", locator = "Full text, Table 3 (reference intervals of tumor markers for elderly population)" },
+]
+note = "Upper reference limit (95th percentile) for CA19-9 in adults aged 60 and over, as tabulated. Lower limit not identified and omitted."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 23.7
+when = { sex = "male", age = [0.0, 70.0] }
+population = "Apparently healthy Korean men under 70 from health checkups (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for CA19-9 in men under 70, reported in IU/mL by the source (treated as equivalent to U/mL here). Converted from the source's IU/mL (23.7) to U/mL using factor 1."
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 28.78
+when = { sex = "male", age = [70.0, 200] }
+population = "Apparently healthy Korean men aged 70 and over from health checkups (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", locator = "Full text, Table 2" },
+]
+note = "Upper reference limit (97.5th percentile) for CA19-9 in men aged 70 and over, reported in IU/mL by the source. Converted from the source's IU/mL (28.78) to U/mL using factor 1."
+
+[[range]]
+set = "ca19-9-ipmn-meta-2026"
+kind = "warn"
+low = 37
+population = "Patients with intraductal papillary mucinous neoplasm (IPMN) who underwent resection (systematic review and meta-analysis)"
+evidence = "cohort"
+citations = [
+  { pmid = "42360746", doi = "10.1001/jamanetworkopen.2026.17587", url = "https://pubmed.ncbi.nlm.nih.gov/42360746/", title = "Serum CA19.9 for Detecting High-Grade Dysplasia and Invasive Carcinoma in Patients With Intraductal Papillary Mucinous Neoplasm: A Systematic Review and Meta-Analysis.", locator = "Abstract, Introduction" },
+]
+note = "Guideline-referenced threshold: serum CA19-9 >= 37 U/mL is considered a worrisome feature. Boundary is >= 37. Used as a diagnostic cut-off in this IPMN meta-analysis; not a general screening threshold. Source kind: decision."
+
+[[range]]
+set = "ca199-fut3-cutoff-2026"
+kind = "warn"
+high = 7
+population = "Patients with pancreatic ductal adenocarcinoma (PDAC) with FUT3-null (Lewis-negative) status, training and validation cohorts"
+evidence = "cohort"
+citations = [
+  { pmid = "42162970", doi = "10.1158/1078-0432.CCR-25-4564", url = "https://pubmed.ncbi.nlm.nih.gov/42162970/", title = "A New CA19-9 Cutoff Value Identifies Lewis Antigen Status and Refines Prognostic Stratification in PDAC.", locator = "Abstract, Results" },
+]
+note = "Lewis-negative caveat: a CA19-9 at or below 7 U/mL suggests FUT3-null (Lewis-negative) status, in which CA19-9 is not produced and a low value does not exclude cancer. Boundary is <= 7 U/mL. Derived in one PDAC cohort. Source kind: decision."

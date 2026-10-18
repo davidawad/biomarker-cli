@@ -1,0 +1,79 @@
+slug = "appendicular-lean-mass-index"
+name = "Appendicular Lean Mass Index (ALM/height2)"
+category = "body"
+unit = "kg/m2"
+description = "Appendicular lean mass (muscle mass of the arms and legs, usually from DXA or bioimpedance) divided by height squared. Used as the muscle-quantity criterion for sarcopenia; low values indicate low muscle quantity."
+aliases = ["alm/height2", "appendicular skeletal muscle index", "asm/height2", "smi"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "ewgsop2-2019"
+kind = "warn"
+high = 7.0
+when = { sex = "male" }
+population = "Older adults (European consensus); cut-offs for low muscle quantity in men"
+evidence = "consensus"
+citations = [
+  { pmid = "30312372", doi = "10.1093/ageing/afy169", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", title = "Sarcopenia: revised European consensus on definition and diagnosis.", locator = "Table 3, EWGSOP2 cut-off points for low muscle quantity" },
+]
+note = "Low muscle quantity if below 7.0 kg/m2 in men (strict less-than boundary). Confirms sarcopenia when combined with low strength. Measurement method not specified in the quoted text. Source kind: decision."
+
+[[range]]
+set = "ewgsop2-2019"
+kind = "warn"
+high = 5.5
+when = { sex = "female" }
+population = "Older adults (European consensus); cut-offs for low muscle quantity in women"
+evidence = "consensus"
+citations = [
+  { pmid = "30312372", doi = "10.1093/ageing/afy169", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", title = "Sarcopenia: revised European consensus on definition and diagnosis.", locator = "Table 3, EWGSOP2 cut-off points for low muscle quantity" },
+]
+note = "Low muscle quantity if below 5.5 kg/m2 in women (strict less-than boundary). Measurement method not specified in the quoted text. Source kind: decision."
+
+[[range]]
+set = "awgs-2019"
+kind = "warn"
+high = 7.0
+when = { sex = "male" }
+population = "Asian older adults (AWGS 2019 consensus) (method: dxa)"
+evidence = "consensus"
+citations = [
+  { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", locator = "Abstract, Results" },
+]
+note = "Low muscle mass if below 7.0 kg/m2 in men by DXA (strict less-than boundary). Source kind: decision."
+
+[[range]]
+set = "awgs-2019"
+kind = "warn"
+high = 5.4
+when = { sex = "female" }
+population = "Asian older adults (AWGS 2019 consensus) (method: dxa)"
+evidence = "consensus"
+citations = [
+  { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", locator = "Abstract, Results" },
+]
+note = "Low muscle mass if below 5.4 kg/m2 in women by DXA (strict less-than boundary). Source kind: decision."
+
+[[range]]
+set = "awgs-2019"
+kind = "warn"
+high = 7.0
+when = { sex = "male" }
+population = "Asian older adults (AWGS 2019 consensus) (method: bia)"
+evidence = "consensus"
+citations = [
+  { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", locator = "Abstract, Results" },
+]
+note = "Low muscle mass if below 7.0 kg/m2 in men by bioimpedance (strict less-than boundary). Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 5.7
+when = { sex = "female" }
+population = "Asian older adults (AWGS 2019 consensus) (method: bia)"
+evidence = "consensus"
+citations = [
+  { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", locator = "Abstract, Results" },
+]
+note = "Low muscle mass if below 5.7 kg/m2 in women by bioimpedance (strict less-than boundary). Source kind: decision. Alternative to the default awgs-2019 warn range for the same population."

@@ -1,0 +1,19 @@
+slug = "lp-pla2"
+name = "Lipoprotein-associated Phospholipase A2"
+category = "cardiac"
+unit = "nmol/min/mL"
+loinc = "79639-2"
+description = "Lipoprotein-associated phospholipase A2, an enzyme carried on LDL particles that is linked to vascular inflammation. Its activity is measured as a cardiovascular risk marker, with cut-offs that depend on the assay and are less well established than for troponin or natriuretic peptides."
+aliases = ["plac test", "lppla2"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "lp-pla2-review-2021"
+kind = "warn"
+low = 225
+population = "Adults at cardiovascular risk, assessed with the PLAC Test Activity (manufacturer cut-off) (method: plac-test)"
+evidence = "consensus"
+citations = [
+  { pmid = "34336025", doi = "10.5114/aoms.2020.98195", url = "https://pubmed.ncbi.nlm.nih.gov/34336025/", title = "On the present and future role of Lp-PLA(2) in atherosclerosis-related cardiovascular risk prediction and management.", locator = "Full text, Lp-PLA2 measurement section" },
+]
+note = "Manufacturer-declared enzyme activity cut-off of the PLAC Test that identifies high cardiovascular risk (at or above 225 nmol/min/mL, boundary inclusive). The source is a review that reports the manufacturer cut-off; it is not an independent guideline value. Activity thresholds are assay specific and may need to be sex and race specific. Source kind: decision."

@@ -1,0 +1,31 @@
+slug = "amylase"
+name = "Amylase"
+category = "chemistry"
+unit = "U/L"
+description = "Serum amylase is a pancreatic enzyme marker. Reference intervals are sex-specific in adults. Elevated amylase alone is not diagnostic of acute pancreatitis (see the lipase entry for the revised Atlanta criteria, which are relative to the upper reference limit)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 28
+high = 142
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Direct reference interval (IFCC C-RIDL protocol, parametric method), values in U/L as stated in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 26
+high = 113
+when = { sex = "female", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Direct reference interval (IFCC C-RIDL protocol, parametric method), values in U/L as stated in the source."

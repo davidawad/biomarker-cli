@@ -2,6 +2,7 @@ slug = "insulin"
 name = "Insulin (fasting)"
 category = "metabolic"
 unit = "µIU/mL"
+description = "Fasting serum insulin. Reference intervals from healthy adult populations; elevated fasting insulin is a surrogate marker of insulin resistance."
 loinc = "20448-7"
 aliases = ["fasting insulin"]
 
@@ -22,3 +23,42 @@ kind = "optimal"
 low = 2.0
 high = 6.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.61
+high = 11.37
+when = { sex = "male", fasting = true }
+population = "Healthy non-obese Iranian men aged 24-83 years (Tehran Lipid and Glucose Study, n=309 men and women)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results" },
+]
+note = "Central 95% reference interval for fasting insulin in men (source unit uU/mL, identical to uIU/mL)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.34
+high = 11.98
+when = { sex = "female", fasting = true }
+population = "Healthy non-obese Iranian women aged 24-83 years (Tehran Lipid and Glucose Study, n=309 men and women)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results" },
+]
+note = "Central 95% reference interval for fasting insulin in women (source unit uU/mL, identical to uIU/mL)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.63
+high = 14.56
+when = { fasting = true, age = [20.0, 70.0] }
+population = "Healthy Nepalese adults aged 20-69 years with BMI 18.5-24.9 kg/m2 (Gandaki Province, n=135)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41857869", doi = "10.1136/bmjopen-2025-109523", title = "Reference intervals for fasting insulin and insulin-related indices in healthy adults: a cross-sectional study in Gandaki Province, Nepal.", locator = "Abstract, Results" },
+]
+note = "Non-parametric 2.5th-97.5th percentile reference interval, Nepal; sex not reported separately."

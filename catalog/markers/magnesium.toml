@@ -2,6 +2,7 @@ slug = "magnesium"
 name = "Magnesium"
 category = "electrolyte"
 unit = "mg/dL"
+description = "Serum magnesium, a marker of magnesium status. The commonly used reference interval derives from NHANES I (1974), and newer population data show lower and different limits; low serum magnesium is linked to cardiovascular and renal outcomes."
 loinc = "19123-9"
 aliases = ["mg"]
 
@@ -15,3 +16,209 @@ kind = "reference"
 low = 1.6
 high = 2.3
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.7
+high = 2.19
+when = { sex = "male", age = [12.0, 19.0] }
+population = "US boys aged 12-18 years, nonpregnant, NHANES 2021-2023 (total population)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)" },
+]
+note = "Paediatric reference interval, NHANES 2021-2023; IFCC method."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.64
+high = 2.18
+when = { sex = "female", age = [12.0, 19.0] }
+population = "US girls aged 12-18 years, nonpregnant, NHANES 2021-2023 (total population)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)" },
+]
+note = "Girls had slightly lower mean serum magnesium than boys in the source, though differences were small."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.72
+high = 2.26
+when = { sex = "male", age = [19.0, 200] }
+population = "US men aged 19 years and over, nonpregnant, NHANES 2021-2023, metabolically healthy subgroup (no diabetes, hypertension or CKD)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)" },
+]
+note = "Applies only to the metabolically healthy subgroup. Means were significantly lower in adults with diabetes, hypertension or CKD in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.7
+high = 2.21
+when = { sex = "female", age = [19.0, 200] }
+population = "US women aged 19 years and over, nonpregnant, NHANES 2021-2023, metabolically healthy subgroup (no diabetes, hypertension or CKD)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Results)" },
+]
+note = "Applies only to the metabolically healthy subgroup. Women had lower serum magnesium than men in the source (P < 0.001)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 2.06
+when = { age = [19.0, 200] }
+population = "US adults aged 19 years and over, nonpregnant, NHANES 2021-2023"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42000046", doi = "10.1016/j.tjnut.2026.101539", title = "Serum Magnesium Concentrations in the United States-An Updated Population Reference Interval in Children and Adults.", locator = "Abstract (Conclusions)" },
+]
+note = "Chronic latent magnesium deficiency (CLMD) threshold used by the source to estimate prevalence (strictly below 2.06 mg/dL). An estimation threshold, not a diagnostic cut-off; the source estimated 67.8% prevalence in adults."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.6
+high = 2.6
+when = { age = [18.0, 66.0] }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Serum magnesium, central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.945
+high = 2.431
+when = { age = [2.0, 18.0] }
+population = "Healthy Chinese children aged 2 to under 18 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Serum magnesium in mmol/L as stated in the source (not converted). Infants are not encoded here because the source bands are split at 4 months. Converted from the source's mmol/L (0.8-1.0) to mg/dL using factor 2.431."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.823
+high = 2.771
+when = { age = [45.0, 200] }
+population = "Healthy Chinese adults aged over 45 years (China Nutrition and Health Surveillance, n = 337 selected healthy individuals; plasma by ICP-MS) (method: icp-ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36839246", doi = "10.3390/nu15040886", title = "The Magnesium Status and Suggested Reference Ranges of Plasma Magnesium, Calcium, and Calcium/Magnesium Ratio in Chinese Adults over 45 Years Old.", locator = "Abstract" },
+]
+note = "Plasma magnesium 2.5th to 97.5th percentile, as stated in the source (mmol/L, not converted). The authors describe these as suggested reference values; the source notes no significant difference by sex, age or area for Mg. Converted from the source's mmol/L (0.75-1.14) to mg/dL using factor 2.431."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.848
+high = 2.796
+when = { sex = "male", age = [45.0, 200] }
+population = "Healthy Chinese men aged over 45 years (n = 161; plasma by ICP-MS)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36839246", doi = "10.3390/nu15040886", title = "The Magnesium Status and Suggested Reference Ranges of Plasma Magnesium, Calcium, and Calcium/Magnesium Ratio in Chinese Adults over 45 Years Old.", locator = "Table 2" },
+]
+note = "Plasma magnesium 2.5th to 97.5th percentile in mmol/L as stated in Table 2 (not converted). Converted from the source's mmol/L (0.76-1.15) to mg/dL using factor 2.431."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.823
+high = 2.771
+when = { sex = "female", age = [45.0, 200] }
+population = "Healthy Chinese women aged over 45 years (n = 176; plasma by ICP-MS)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36839246", doi = "10.3390/nu15040886", title = "The Magnesium Status and Suggested Reference Ranges of Plasma Magnesium, Calcium, and Calcium/Magnesium Ratio in Chinese Adults over 45 Years Old.", locator = "Table 2" },
+]
+note = "Plasma magnesium 2.5th to 97.5th percentile in mmol/L as stated in Table 2 (not converted). Converted from the source's mmol/L (0.75-1.14) to mg/dL using factor 2.431."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.823
+high = 2.796
+when = { age = [45.0, 60.0] }
+population = "Healthy Chinese adults aged 45 to under 60 years (n = 214; plasma by ICP-MS)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36839246", doi = "10.3390/nu15040886", title = "The Magnesium Status and Suggested Reference Ranges of Plasma Magnesium, Calcium, and Calcium/Magnesium Ratio in Chinese Adults over 45 Years Old.", locator = "Table 2" },
+]
+note = "Plasma magnesium 2.5th to 97.5th percentile in mmol/L as stated in Table 2 (not converted). Converted from the source's mmol/L (0.75-1.15) to mg/dL using factor 2.431."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.799
+high = 2.747
+when = { age = [60.0, 200] }
+population = "Healthy Chinese adults aged 60 years and over (n = 123; plasma by ICP-MS)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36839246", doi = "10.3390/nu15040886", title = "The Magnesium Status and Suggested Reference Ranges of Plasma Magnesium, Calcium, and Calcium/Magnesium Ratio in Chinese Adults over 45 Years Old.", locator = "Table 2" },
+]
+note = "Plasma magnesium 2.5th to 97.5th percentile in mmol/L as stated in Table 2 (not converted). Converted from the source's mmol/L (0.74-1.13) to mg/dL using factor 2.431."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.945
+high = 2.601
+when = { age = [0.077, 0.333] }
+population = "Healthy Chinese children aged 28 days to under 4 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (0.8-1.07) to mg/dL using factor 2.431."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.945
+high = 2.674
+when = { age = [0.333, 2.0] }
+population = "Healthy Chinese children aged 4 months to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (0.8-1.1) to mg/dL using factor 2.431."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 1.823
+high = 2.309
+population = "Legacy reference interval as cited in a perspective review (derived from NHANES I, 1974)"
+evidence = "consensus"
+citations = [
+  { pmid = "28140318", doi = "10.3945/an.116.012765", title = "Perspective: The Case for an Evidence-Based Reference Interval for Serum Magnesium: The Time Has Come.", locator = "Abstract" },
+]
+note = "Legacy interval, superseded by the NHANES 2021-2023 intervals above. The source argues it reflects population distribution rather than clinical outcomes and proposes an evidence-based replacement. Converted from the source's mmol/L (0.75-0.95) to mg/dL using factor 2.431. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 1.9
+high = 2.1
+when = { conditions = ["ckd"] }
+population = "Adults with chronic kidney disease (CRIC cohort, n = 3,867)"
+evidence = "cohort"
+citations = [
+  { pmid = "33851114", doi = "10.1016/j.xkme.2020.10.010", title = "Serum Magnesium and Cardiovascular Outcomes and Mortality in CKD: The Chronic Renal Insufficiency Cohort (CRIC).", locator = "Abstract (Conclusions)" },
+]
+note = "Band outside which all-cause mortality rose in a CKD cohort (nonlinear association). Observational; the source states the optimal range in CKD is not yet determined."

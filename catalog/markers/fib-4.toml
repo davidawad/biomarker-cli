@@ -1,0 +1,119 @@
+slug = "fib-4"
+name = "FIB-4 Index"
+category = "liver"
+unit = "ratio"
+description = "FIB-4 is a blood-based score (age, AST, ALT, platelets) used to stratify risk of advanced liver fibrosis in people with MASLD or other chronic liver disease. Low-risk and high-risk cut-offs are applied to rule out or rule in advanced fibrosis before imaging."
+
+[[range]]
+set = "aasld-2023-nafld"
+kind = "warn"
+low = 2.67
+population = "Adults with NAFLD (MASLD) and hepatic steatosis or metabolic risk factors, in the general hepatology and primary-care setting"
+evidence = "guideline"
+citations = [
+  { pmid = "36727674", doi = "10.1097/HEP.0000000000000323", url = "https://pubmed.ncbi.nlm.nih.gov/36727674/", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", locator = "Full text, Section on secondary risk assessment and referral" },
+  { pmid = "36727674", doi = "10.1097/HEP.0000000000000323", url = "https://pubmed.ncbi.nlm.nih.gov/36727674/", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", locator = "Full text, Section on FIB-4 status change" },
+]
+note = "High-risk band: FIB-4 above 2.67 (boundary > 2.67) warrants direct referral to gastroenterology/hepatology for clinically significant fibrosis. Intermediate band is 1.3 to 2.67. Guidance notes FIB-4 cut-offs in T2DM may change with more data. Source kind: decision."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 1.3
+population = "Adults with chronic liver disease or metabolic dysfunction-associated steatotic liver disease (MASLD)"
+evidence = "cohort"
+citations = [
+  { pmid = "38188279", doi = "10.1016/j.lanepe.2023.100780", title = "Prognostic utility of Fibrosis-4 Index for risk of subsequent liver and cardiovascular events, and all-cause mortality in individuals with obesity and/or type 2 diabetes: a longitudinal cohort study.", locator = "Abstract (Results)" },
+]
+note = "Low risk of advanced fibrosis (FIB-4 below 1.30; 2.0 applies instead of 1.3 at age 65 and above)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.3
+high = 2.67
+population = "Adults with chronic liver disease or metabolic dysfunction-associated steatotic liver disease (MASLD)"
+evidence = "cohort"
+citations = [
+  { pmid = "38188279", doi = "10.1016/j.lanepe.2023.100780", title = "Prognostic utility of Fibrosis-4 Index for risk of subsequent liver and cardiovascular events, and all-cause mortality in individuals with obesity and/or type 2 diabetes: a longitudinal cohort study.", locator = "Abstract (Results)" },
+]
+note = "Indeterminate risk: further assessment (elastography) is advised. Cut-offs as stated in the cohort study; age 65 and above uses 2.0 as the lower bound."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 2.0
+when = { age = [65.0, 200] }
+population = "Adults aged 65 years and older with non-alcoholic fatty liver disease"
+evidence = "cohort"
+citations = [
+  { pmid = "27725647", doi = "10.1038/ajg.2016.453", title = "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.", locator = "Abstract (Results)" },
+]
+note = "Age-adjusted lower (rule-out) cut-off for people aged 65 and over: FIB-4 below 2.0 indicates low risk of advanced fibrosis, replacing 1.3, which had unacceptably low specificity (35%) at this age; 2.0 raised specificity to 70% with 77% sensitivity."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 2.67
+population = "Adults with chronic liver disease or metabolic dysfunction-associated steatotic liver disease (MASLD)"
+evidence = "cohort"
+citations = [
+  { pmid = "38188279", doi = "10.1016/j.lanepe.2023.100780", title = "Prognostic utility of Fibrosis-4 Index for risk of subsequent liver and cardiovascular events, and all-cause mortality in individuals with obesity and/or type 2 diabetes: a longitudinal cohort study.", locator = "Abstract (Results)" },
+]
+note = "High risk of advanced fibrosis (FIB-4 above 2.67) in the cited cohort; a liver-events risk category, not a diagnosis of cirrhosis. Source kind: diagnostic."
+
+[[range]]
+set = "mcpherson-2017"
+kind = "warn"
+high = 1.3
+population = "Adults with biopsy-proven NAFLD aged 35-65 (established cut-offs)"
+evidence = "cohort"
+citations = [
+  { pmid = "27725647", doi = "10.1038/ajg.2016.453", url = "https://pubmed.ncbi.nlm.nih.gov/27725647/", title = "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.", locator = "Results, established cut-offs" },
+]
+note = "Low risk: a score below 1.3 is used to exclude advanced fibrosis (F3-F4). The paper states the score is not suitable for patients aged under 35. Source kind: decision."
+
+[[range]]
+set = "sterling-2006"
+kind = "warn"
+high = 1.45
+population = "Adults with HIV/HCV coinfection (derivation and validation of the original index)"
+evidence = "cohort"
+citations = [
+  { pmid = "16729309", doi = "10.1002/hep.21178", url = "https://pubmed.ncbi.nlm.nih.gov/16729309/", title = "Development of a simple noninvasive index to predict significant fibrosis in patients with HIV/HCV coinfection.", locator = "Abstract, Results" },
+]
+note = "Original index cut-off: below 1.45 excludes advanced fibrosis (stage 4-6) with 90% NPV in the validation set. These are not the age-adjusted guideline cut-offs. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 1.45
+high = 3.25
+population = "Adults with HIV/HCV coinfection (derivation and validation of the original index)"
+evidence = "cohort"
+citations = [
+  { pmid = "16729309", doi = "10.1002/hep.21178", url = "https://pubmed.ncbi.nlm.nih.gov/16729309/", title = "Development of a simple noninvasive index to predict significant fibrosis in patients with HIV/HCV coinfection.", locator = "Abstract, Results" },
+]
+note = "Indeterminate band between the original cut-offs 1.45 and 3.25; about 71% of the validation group could avoid biopsy outside this band. Alternative to the default sterling-2006 warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 3.25
+population = "Adults with HIV/HCV coinfection (derivation and validation of the original index)"
+evidence = "cohort"
+citations = [
+  { pmid = "16729309", doi = "10.1002/hep.21178", url = "https://pubmed.ncbi.nlm.nih.gov/16729309/", title = "Development of a simple noninvasive index to predict significant fibrosis in patients with HIV/HCV coinfection.", locator = "Abstract, Results" },
+]
+note = "Original index cut-off: above 3.25 suggests advanced fibrosis (PPV 65%, specificity 97%). Source kind: decision. Alternative to the default sterling-2006 warn range for the same population."
+
+[[range]]
+set = "mco2-2026-fib4-cad-diabetes"
+kind = "warn"
+low = 3.25
+population = "Adults with coronary heart disease and diabetes or prediabetes in two prospective cohorts (categories follow the Sterling et al. cut-offs)"
+evidence = "cohort"
+citations = [
+  { pmid = "42253940", doi = "10.1002/mco2.70786", url = "https://pubmed.ncbi.nlm.nih.gov/42253940/", title = "The Association Between Fibrosis-4 Index and All-Cause and Cardiac Mortality in Patients With Coronary Heart Disease Combined With Diabetes or Prediabetes: Findings From Two Large-Scale Prospective Cohort Studies.", locator = "Full text, Methods (FIB-4 categorisation)" },
+]
+note = "High-risk FIB-4 band above 3.25 (boundary > 3.25), used as a prognostic category in a cohort study; the cut-off originates from Sterling et al. and is not a guideline threshold. Same numeric cut-off as the original index high band above. Source kind: decision."

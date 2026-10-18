@@ -1,0 +1,69 @@
+slug = "aptt"
+name = "Activated partial thromboplastin time"
+category = "coagulation"
+unit = "s"
+loinc = "3173-2"
+description = "Clotting time of citrated plasma after a contact activator and calcium are added, reflecting the intrinsic and common pathways. Prolonged values suggest heparin effect, factor VIII, IX or XI deficiency, lupus anticoagulant or other factor deficits; it is the usual monitor of unfractionated heparin."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 22.9
+high = 42.3
+when = { pregnant = true }
+population = "10,472 parturient women (women at delivery) in one laboratory, age-specific intervals pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30934105", doi = "10.1055/s-0039-1683932", title = "Age-Specific Reference Intervals for PT, aPTT, Fibrinogen and Thrombin Time for Parturient Women.", locator = "Abstract, Results" },
+]
+note = "Reference interval calculated per CLSI C28-A3 on an ACL TOP 700 analyser. Pooled across age groups."
+
+[[range]]
+set = "debre-berhan-2025"
+kind = "reference"
+low = 22.3
+high = 37.9
+when = { sex = "male", age = [18.0, 51.0] }
+population = "120 healthy male adults aged 18-50 in Debre Berhan town, Ethiopia (240 healthy adults in total)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41275213", doi = "10.1186/s12959-025-00808-7", title = "Coagulation parameters reference interval for adult population of Debre Berhan town, Northeast Ethiopia.", locator = "Table 3" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles, Sysmex CA-104 semi-automated analyser (reagent not named). Seconds. Combined sexes 21.6-37.9 s; the sex difference was not significant."
+
+[[range]]
+set = "debre-berhan-2025"
+kind = "reference"
+low = 21.0
+high = 37.2
+when = { sex = "female", age = [18.0, 51.0] }
+population = "120 healthy female adults aged 18-50 in Debre Berhan town, Ethiopia (240 healthy adults in total)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41275213", doi = "10.1186/s12959-025-00808-7", title = "Coagulation parameters reference interval for adult population of Debre Berhan town, Northeast Ethiopia.", locator = "Table 3" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles, Sysmex CA-104 semi-automated analyser (reagent not named). Seconds."
+
+[[range]]
+set = "shanghai-cobas-t711-2022"
+kind = "reference"
+low = 26.8
+high = 42.3
+population = "ostensibly healthy adult volunteers and patients at a hospital in Shanghai, China, age groups pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35242978", doi = "10.1016/j.plabm.2022.e00268", title = "Assessment and establishment of a reference interval for Roche Cobas t 711 coagulation analyzer for a hospital in China.", locator = "Abstract, Results" },
+]
+note = "Self-established interval on the Roche Cobas t 711 analyser, seconds. The authors note the APTT range is slightly wider than the manufacturer's. Sex-specific values not reported."
+
+[[range]]
+set = "tibet-hoffmann-2026"
+kind = "reference"
+low = 30.54
+high = 46.32
+population = "adults at the People's Hospital of Tibet Autonomous Region (high altitude, Tibetan Plateau), 2019-2023 retrospective laboratory data with indirect (Hoffmann) method (region: Tibet)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42329361", doi = "10.1002/jcla.70287", title = "Reference Interval Establishment for Four Coagulation Parameters Using Indirect Methods in a High-Altitude Chinese Population: A Retrospective Real-World Analysis.", locator = "Abstract, Results" },
+]
+note = "Indirect method on retrospective hospital data, Stago STA-R Evolution. Seconds. The authors report these intervals are significantly higher than plain-area and manufacturer intervals. refineR gives 30.14-44.30 s. Gender-partitioned values not retrieved."

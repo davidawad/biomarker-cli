@@ -1,0 +1,44 @@
+slug = "hiv-viral-load"
+name = "HIV-1 RNA (Viral Load)"
+category = "infectious"
+unit = "copies/mL"
+loinc = "20447-9"
+description = "Amount of HIV-1 RNA in plasma. It is the main measure of HIV treatment response; the goal of antiretroviral therapy is to keep it below the assay threshold for suppression."
+aliases = ["hiv viral load", "hiv-1 rna pcr", "hiv rna"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "ias-usa-2020"
+kind = "warn"
+low = 50
+when = { conditions = ["hiv"] }
+population = "Adults with HIV receiving antiretroviral therapy"
+evidence = "guideline"
+citations = [
+  { pmid = "33052386", doi = "10.1001/jama.2020.17025", url = "https://pubmed.ncbi.nlm.nih.gov/33052386/", title = "Antiretroviral Drugs for Treatment and Prevention of HIV Infection in Adults: 2020 Recommendations of the International Antiviral Society-USA Panel.", locator = "Section: monitoring after viral suppression" },
+]
+note = "Warning band: after previous suppression, an HIV RNA above 50 copies/mL (boundary >50) should prompt a repeat test and a review of adherence and tolerability."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 200
+when = { conditions = ["hiv"] }
+population = "Adults with HIV receiving antiretroviral therapy"
+evidence = "guideline"
+citations = [
+  { pmid = "33052386", doi = "10.1001/jama.2020.17025", url = "https://pubmed.ncbi.nlm.nih.gov/33052386/", title = "Antiretroviral Drugs for Treatment and Prevention of HIV Infection in Adults: 2020 Recommendations of the International Antiviral Society-USA Panel.", locator = "Full text, Virological failure definition" },
+]
+note = "Virological failure: a confirmed HIV RNA strictly above 200 copies/mL on 2 consecutive measurements (boundary >200). Values of 200 or below are not failure by this definition. Source kind: decision. Alternative to the default ias-usa-2020 warn range for the same population."
+
+[[range]]
+set = "jama-2016-serodifferent-couples"
+kind = "warn"
+high = 200
+when = { conditions = ["hiv"] }
+population = "People with HIV on suppressive antiretroviral therapy in serodifferent couples (Undetectable = Untransmittable, U=U)"
+evidence = "cohort"
+citations = [
+  { pmid = "27404185", doi = "10.1001/jama.2016.5148", url = "https://pubmed.ncbi.nlm.nih.gov/27404185/", title = "Sexual Activity Without Condoms and Risk of HIV Transmission in Serodifferent Couples When the HIV-Positive Partner Is Using Suppressive Antiretroviral Therapy.", locator = "Abstract, Objective" },
+]
+note = "U=U threshold: HIV-1 RNA strictly less than 200 copies/mL (boundary <200; 200 itself is not included). Source kind: decision."

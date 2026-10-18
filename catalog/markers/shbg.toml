@@ -2,6 +2,7 @@ slug = "shbg"
 name = "Sex Hormone Binding Globulin"
 category = "hormone"
 unit = "nmol/L"
+description = "Liver-made carrier protein that binds testosterone and estradiol and sets how much of each is free and active. Interpret with total testosterone and estradiol; levels vary with sex, age, puberty and oral contraceptive use."
 loinc = "13967-5"
 aliases = ["sex hormone binding globulin"]
 
@@ -20,3 +21,29 @@ low = 24.6
 high = 122.0
 when = { sex = "female" }
 legacy = true
+
+[[range]]
+set = "premenopausal-women-2011"
+kind = "reference"
+low = 18
+high = 86
+when = { sex = "female", menopause = "pre", age = [30.0, 30.0] }
+population = "Normally cycling healthy premenopausal women aged 18-49 (n=161); percentiles estimated for a typical 30-year-old woman (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "21771278", doi = "10.1111/j.1743-6109.2011.02380.x", url = "https://pubmed.ncbi.nlm.nih.gov/21771278/", title = "Testosterone reference ranges in normally cycling healthy premenopausal women.", locator = "Abstract, Results" },
+]
+note = "5th to 95th percentile for a 30-year-old premenopausal woman. The source reports SHBG stable across age in this group, but the 30-year estimate is the only one quoted. Immunoassay-based."
+
+[[range]]
+set = "chinese-adult-men-2018"
+kind = "reference"
+low = 11.5
+high = 66.3
+when = { sex = "male" }
+population = "Apparently healthy adult men (n=1043) from five Chinese cities, 2013; reference interval derived without partition by age (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29729137", doi = "10.1515/cclm-2017-0749", url = "https://pubmed.ncbi.nlm.nih.gov/29729137/", title = "Establishing reference intervals for sex hormones and SHBG in apparently healthy Chinese adult men based on a multicenter study.", locator = "Abstract, Results" },
+]
+note = "Reference interval as reported (median 29.4 nmol/L). The abstract does not state the percentile limits; the parametric method is usually 2.5th-97.5th. Automated immunoassay. Age was a source of variation for SHBG (rises with age), so the interval is not age-specific. Applies only to: ethnicity=Chinese."

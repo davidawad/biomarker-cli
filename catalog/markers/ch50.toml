@@ -1,0 +1,19 @@
+slug = "ch50"
+name = "Total Haemolytic Complement (CH50)"
+category = "immune"
+unit = "U/mL"
+loinc = "4532-8"
+description = "Total haemolytic complement activity (CH50), a functional measure of the classical complement pathway. Reference intervals are specific to the assay used."
+aliases = ["total complement activity", "ch50 haemolytic complement", "total haemolytic complement"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 41.68
+high = 95.06
+population = "Adults in an observational single-centre study of chronic spontaneous urticaria; reference range as reported by that laboratory (method: turbidimetric CH50 Optilite (The Binding Site))"
+evidence = "cohort"
+citations = [
+  { pmid = "41691541", doi = "10.1111/ijd.70339", url = "https://pubmed.ncbi.nlm.nih.gov/41691541/", title = "CH50 as a Clinically Useful Biomarker of Disease Activity and Antihistamine Resistance in Chronic Spontaneous Urticaria: An Observational Ambispective Single-Center Study.", locator = "Methods, laboratory measurements" },
+]
+note = "Assay-specific reference range (turbidimetric CH50 Optilite, The Binding Site). Do not apply to CH50 results from other methods (for example liposome or ELISA assays), which have different intervals."

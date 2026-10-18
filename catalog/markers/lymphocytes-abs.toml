@@ -2,6 +2,7 @@ slug = "lymphocytes-abs"
 name = "Lymphocytes (Absolute)"
 category = "cbc"
 unit = "10^3/µL"
+description = "Absolute count of circulating lymphocytes (T, B and NK cells). Low values (lymphopenia) occur with viral infection, steroids, chemotherapy, HIV or autoimmune disease; high values (lymphocytosis) with viral infection, pertussis or lymphoproliferative disorders."
 loinc = "731-0"
 aliases = ["lymphocytes", "lymphs (absolute)"]
 
@@ -11,3 +12,51 @@ kind = "reference"
 low = 0.7
 high = 3.1
 legacy = true
+
+[[range]]
+set = "time-race-specific-ri"
+kind = "reference"
+low = 1.0
+high = 3.0
+population = "Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Race- and time-specific adjusted interval; evening interval is 1.0-3.4 (not separately encoded). Black volunteers had higher mean lymphocyte counts than non-Black volunteers in this study. Applies only to: ethnicity=black."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 0.9
+high = 3.0
+population = "Non-Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Race- and time-specific adjusted interval; evening interval is 1.0-3.4 (not separately encoded). Applies only to: ethnicity=nonblack. Alternative to the default time-race-specific-ri reference range for the same population."
+
+[[range]]
+set = "barcelona-sysmex-xn"
+kind = "reference"
+low = 1.3
+high = 3.4
+population = "187 apparently healthy adults from the southern metropolitan area of Barcelona, Sysmex XN"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29765286", title = "Reference intervals for a complete blood count on an automated haematology analyser Sysmex XN in healthy adults from the southern metropolitan area of Barcelona.", locator = "Results, CBC reference intervals table" },
+]
+note = "Analyser-specific interval (Sysmex XN)."
+
+[[range]]
+set = "kenya-urban-adults"
+kind = "reference"
+low = 1.29
+high = 3.4
+population = "healthy adult urban population in Kenya (Nairobi), Beckman Coulter ACT 5 DIFF CP (region: Kenya)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29879171", doi = "10.1371/journal.pone.0198444", title = "Complete blood count reference intervals from a healthy adult urban population in Kenya.", locator = "Table, reference intervals" },
+]
+note = "All-participant interval (n = 461) from the reference-interval table."

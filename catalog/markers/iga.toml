@@ -1,0 +1,67 @@
+slug = "iga"
+name = "Immunoglobulin A"
+category = "immune"
+unit = "g/L"
+loinc = "2458-8"
+description = "The main antibody on mucosal surfaces such as the gut and airways. Very low serum IgA (selective IgA deficiency) is the commonest primary immunodeficiency and affects how coeliac disease serology is interpreted."
+aliases = ["immunoglobulin a, serum"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.72
+high = 3.75
+when = { age = [18.0, 56.0] }
+population = "Iranian healthy adult blood donor volunteers aged 18-55 years (n=914), measured by nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", locator = "Abstract, Methods" },
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", locator = "Abstract, Results" },
+]
+note = "Central reference interval as reported (mg/dL). Single-country blood-donor cohort. Converted from the source's mg/dL (72-375) to g/L using factor 0.01."
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.89
+high = 4.8
+population = "Adults (women and men) from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", locator = "Abstract, Results and conclusions" },
+]
+note = "Multicentre adult reference interval (sexes combined). Assay-specific; check against the local assay's own interval."
+
+[[range]]
+set = "hemochromatosis-probands-2026"
+kind = "reference"
+low = 0.91
+high = 4.14
+population = "Adults in a hemochromatosis proband study; the limits are the 1996 consensus reference limits it adopted, not hemochromatosis-specific data"
+evidence = "consensus"
+citations = [
+  { pmid = "42340960", doi = "10.1371/journal.pone.0352148", url = "https://pubmed.ncbi.nlm.nih.gov/42340960/", title = "Serum IgA and IgM levels in hemochromatosis probands with HFE p.C282Y homozygosity.", locator = "Full text, Methods" },
+]
+note = "Serum IgA reference limits (91-414 mg/dL) as adopted from 1996 consensus guidelines. Sexes and ages not partitioned in the quoted limits."
+
+[[range]]
+set = "iga-deficiency-review-2026"
+kind = "warn"
+high = 0.07
+population = "People older than 4 years with suspected selective IgA deficiency (as defined in a 2026 scoping review)"
+evidence = "cohort"
+citations = [
+  { pmid = "42820738", doi = "10.1002/ueg2.70296", url = "https://pubmed.ncbi.nlm.nih.gov/42820738/", title = "Immunoglobulin a Deficiency in Coeliac Disease: A Scoping Review.", locator = "Full text, Introduction" },
+]
+note = "Selective IgA deficiency: serum IgA below 0.07 g/L (strict) with normal IgM and IgG. Evidence is a scoping review of the literature, not a meta-analysis; the definition is the one it cites as current. Source kind: decision."
+
+[[range]]
+set = "iga-coeliac-flowchart-2026"
+kind = "warn"
+high = 0.2
+population = "Patients with suspected coeliac disease undergoing serology (flowchart in a 2026 scoping review)"
+evidence = "cohort"
+citations = [
+  { pmid = "42820738", doi = "10.1002/ueg2.70296", url = "https://pubmed.ncbi.nlm.nih.gov/42820738/", title = "Immunoglobulin a Deficiency in Coeliac Disease: A Scoping Review.", locator = "Full text, Figure legend (flowchart)" },
+]
+note = "Serum IgA cut-off used in the review's coeliac testing flowchart because IgA-based antibody tests may give false negatives. The quote states the cut-off value but not its direction; the review applies it to low serum IgA results. Evidence is a scoping review, not a meta-analysis. Source kind: decision."

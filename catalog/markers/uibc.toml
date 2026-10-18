@@ -1,0 +1,31 @@
+slug = "uibc"
+name = "Unsaturated iron-binding capacity"
+category = "iron"
+unit = "µg/dL"
+description = "Part of the transferrin iron-binding capacity still free to bind iron, calculated as TIBC minus serum iron. It moves in the same direction as TIBC and inversely with transferrin saturation; it is an adjunct to the iron panel rather than a stand-alone diagnostic test."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 104.44
+high = 302.15
+when = { sex = "male" }
+population = "Healthy Russian adults aged 18-80 (46% male), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row UIBC, LAVE(-), All, M" },
+]
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."
+
+[[range]]
+set = "russian-ifcc-2024"
+kind = "reference"
+low = 146.33
+high = 354.65
+when = { sex = "female" }
+population = "Healthy Russian adults aged 18-80 (54% female), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row UIBC, LAVE(+), All, F" },
+]
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."

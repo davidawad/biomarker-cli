@@ -1,0 +1,20 @@
+slug = "hcv-rna"
+name = "Hepatitis C Virus RNA"
+category = "infectious"
+unit = "IU/mL"
+loinc = "11011-4"
+description = "Amount of hepatitis C virus RNA in blood. Used to diagnose active infection and to confirm cure: undetectable HCV RNA about 12 weeks after completing treatment is sustained virologic response (SVR), which is treated as virologic cure."
+aliases = ["hcv rna", "hcv viral load", "hepatitis c viral load"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "aasld-idsa-2019-hcv"
+kind = "warn"
+high = 25
+population = "Adults with chronic hepatitis C, tested for treatment response or SVR"
+evidence = "guideline"
+citations = [
+  { pmid = "31816111", doi = "10.1002/hep.31060", url = "https://pubmed.ncbi.nlm.nih.gov/31816111/", title = "Hepatitis C Guidance 2019 Update: American Association for the Study of Liver Diseases-Infectious Diseases Society of America Recommendations for Testing, Managing, and Treating Hepatitis C Virus Infection.", locator = "Full text, Testing section (dried blood spot / assay detection level)" },
+  { pmid = "31816111", doi = "10.1002/hep.31060", url = "https://pubmed.ncbi.nlm.nih.gov/31816111/", title = "Hepatitis C Guidance 2019 Update: American Association for the Study of Liver Diseases-Infectious Diseases Society of America Recommendations for Testing, Managing, and Treating Hepatitis C Virus Infection.", locator = "Full text, SVR section" },
+]
+note = "Assay requirement, not a treatment-outcome cut-off: the guidance asks for an HCV RNA assay with a detection level of 25 IU/mL or lower (boundary <=25) so that undetectable results can be reported. The guidance gives no 15 IU/mL value. SVR is undetectable HCV RNA 12 or more weeks after completing DAA therapy. Source kind: decision."

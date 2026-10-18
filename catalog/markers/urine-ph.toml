@@ -1,0 +1,32 @@
+slug = "urine-ph"
+name = "Urine pH"
+category = "urinalysis"
+unit = "pH"
+loinc = "5803-2"
+description = "Acidity or alkalinity of a urine sample, measured by dipstick or meter. It guides kidney stone prevention, for example urine alkalinisation for uric acid stones and cystine stones."
+aliases = ["urinary ph", "urine acidity"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "uric-acid-stone-alkalinization-2025"
+kind = "optimal"
+low = 6.5
+high = 7.2
+population = "Patients with uric acid kidney stones, targets for urine alkalinisation"
+evidence = "consensus"
+citations = [
+  { pmid = "40958884", doi = "10.1016/j.euros.2025.04.003", url = "https://pubmed.ncbi.nlm.nih.gov/40958884/", title = "Revisiting Uric Acid Stone Dissolution Kinetics: Insights for Optimizing Medical Therapy.", locator = "Abstract, Conclusions and Clinical Implications" },
+]
+note = "Target urine pH above 6.5, preferably 7 to 7.2, for uric acid stone dissolution. The evidence is an in vitro dissolution-kinetics study that supports expert-based recommendations, not a clinical outcome study. Boundary >6.5 (exclusive)."
+
+[[range]]
+set = "cystinuria-eu-guideline-as-cited-2026"
+kind = "optimal"
+low = 7.5
+high = 8.0
+population = "Adults and children with cystinuria, urine alkalinisation target"
+evidence = "consensus"
+citations = [
+  { pmid = "42542789", doi = "10.2147/RRU.S629402", url = "https://pubmed.ncbi.nlm.nih.gov/42542789/", title = "Cystinuria: Diagnosis, Medical and Surgical Management, and Emerging Therapies. A Narrative Review.", locator = "Introduction (full text)" },
+]
+note = "European guideline target urine pH of 7.5 to 8.0 for cystine stone prevention, as reported in a 2026 narrative review. The primary guideline text was not retrieved, so this range is cited second-hand."

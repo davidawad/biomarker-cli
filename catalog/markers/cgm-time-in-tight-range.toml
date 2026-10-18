@@ -1,0 +1,18 @@
+slug = "cgm-time-in-tight-range"
+name = "CGM Time in Tight Range (70-140 mg/dL)"
+category = "glycemic"
+unit = "%"
+description = "Percentage of CGM readings between 70 and 140 mg/dL (3.9-7.8 mmol/L) over a day. A narrower alternative to time in range (70-180 mg/dL), used in diabetes care and research."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "target"
+kind = "optimal"
+low = 50
+when = { conditions = ["diabetes"] }
+population = "Adults and young people with type 1 or type 2 diabetes using CGM (real-world MiniMed 780G users)"
+evidence = "cohort"
+citations = [
+  { pmid = "38113453", doi = "10.2337/dc23-1581", title = "Time in Tight Glucose Range in Type 1 Diabetes: Predictive Factors and Achievable Targets in Real-World Users of the MiniMed 780G System.", locator = "Abstract (Conclusions)" },
+]
+note = "Suggested treatment goal from the authors' real-world analysis, not a guideline. Other analyses use the same 70-140 mg/dL band; no population reference interval for time in tight range was found. Source kind: target."

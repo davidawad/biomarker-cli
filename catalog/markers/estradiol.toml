@@ -2,6 +2,7 @@ slug = "estradiol"
 name = "Estradiol"
 category = "hormone"
 unit = "pg/mL"
+description = "Most potent estrogen; reflects ovarian follicular and luteal activity in women and testicular and adrenal sources in men. Interpretation depends strongly on cycle phase, menopausal status, age and assay method (LC-MS/MS preferred at low concentrations)."
 loinc = "2243-4"
 aliases = ["e2", "oestradiol"]
 
@@ -16,3 +17,248 @@ low = 7.6
 high = 42.6
 when = { sex = "male" }
 legacy = true
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 8.444
+high = 210.0
+when = { sex = "female", cycle_phase = "follicular" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method) (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", locator = "Abstract, Results" },
+]
+note = "Early follicular phase (days -15 to -6 relative to LH peak). Source unit pmol/L. Converted from the source's pmol/L (31-771) to pg/mL using factor 0.2724."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 28.33
+high = 474.5
+when = { sex = "female", cycle_phase = "follicular" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method) (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", locator = "Abstract, Results" },
+]
+note = "Late follicular phase (days -5 to -1 relative to LH peak). Source unit pmol/L. Converted from the source's pmol/L (104-1742) to pg/mL using factor 0.2724. Alternative to the default estradiol-lcms-cycle-2019 reference range for the same population."
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 74.91
+high = 780.2
+when = { sex = "female", cycle_phase = "ovulatory" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method) (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", locator = "Abstract, Results" },
+]
+note = "Day of LH peak (day 0). Source unit pmol/L. Peak-day values are the highest of the cycle. Converted from the source's pmol/L (275-2864) to pg/mL using factor 0.2724."
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 41.13
+high = 528.7
+when = { sex = "female", cycle_phase = "luteal" }
+population = "30 healthy premenopausal women sampled daily through the menstrual cycle, LC-MS/MS (traceable method) (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", locator = "Abstract, Results" },
+]
+note = "Mid luteal phase (days +5 to +9 relative to LH peak). Source unit pmol/L. Early luteal (days +1 to +4: 95-1188 pmol/L) and late luteal (days +10 to +14: 39-1769 pmol/L) intervals were also reported and are omitted here for brevity. Converted from the source's pmol/L (151-1941) to pg/mL using factor 0.2724."
+
+[[range]]
+set = "estradiol-lcms-cycle-2019"
+kind = "reference"
+low = 3.269
+high = 37.05
+when = { sex = "male" }
+population = "64 healthy men, LC-MS/MS (traceable method) (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", locator = "Abstract, Results" },
+]
+note = "Adult men. Source unit pmol/L. Converted from the source's pmol/L (12-136) to pg/mL using factor 0.2724."
+
+[[range]]
+set = "alt-2"
+kind = "reference"
+high = 7.082
+when = { sex = "female", menopause = "post" }
+population = "33 healthy postmenopausal women, LC-MS/MS (traceable method) (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30981845", doi = "10.1016/j.cca.2019.04.062", url = "https://pubmed.ncbi.nlm.nih.gov/30981845/", title = "Estradiol reference intervals in women during the menstrual cycle, postmenopausal women and men using an LC-MS/MS method.", locator = "Abstract, Results" },
+]
+note = "One-sided upper bound reported as <26 pmol/L. Source unit pmol/L. Converted from the source's pmol/L (26) to pg/mL using factor 0.2724. Alternative to the default estradiol-lcms-cycle-2019 reference range for the same population."
+
+[[range]]
+set = "estradiol-lcms-childhood-2020"
+kind = "reference"
+high = 20
+when = { sex = "female" }
+population = "healthy children aged 3 months to 61 years (n = 1838), LC-MS/MS, prepubertal girls (method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31720688", doi = "10.1210/clinem/dgz196", url = "https://pubmed.ncbi.nlm.nih.gov/31720688/", title = "Sex-specific Estrogen Levels and Reference Intervals from Infancy to Late Adulthood Determined by LC-MS/MS.", locator = "Abstract, Results" },
+]
+note = "Approximate upper value stated in the abstract for girls during childhood (before puberty). Mini-puberty values are higher (up to 100 pmol/L). Source unit pmol/L. Applies only to: tanner_max=1."
+
+[[range]]
+set = "estradiol-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 31.05
+high = 90.44
+when = { sex = "female", cycle_phase = "follicular" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Estradiol III immunoassay (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", locator = "Abstract, Results" },
+]
+note = "5th-95th percentile for the follicular phase (median 198 pmol/L). Method-specific immunoassay value; source unit pmol/L. Phase order in the source: follicular, ovulation, luteal. Converted from the source's pmol/L (114-332) to pg/mL using factor 0.2724."
+
+[[range]]
+set = "estradiol-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 60.47
+high = 533.6
+when = { sex = "female", cycle_phase = "ovulatory" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Estradiol III immunoassay (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", locator = "Abstract, Results" },
+]
+note = "5th-95th percentile in the ovulation phase (median 757 pmol/L). Method-specific immunoassay value; source unit pmol/L. Converted from the source's pmol/L (222-1959) to pg/mL using factor 0.2724."
+
+[[range]]
+set = "estradiol-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 60.47
+high = 232.6
+when = { sex = "female", cycle_phase = "luteal" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Estradiol III immunoassay (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", locator = "Abstract, Results" },
+]
+note = "5th-95th percentile for the luteal phase (median 412 pmol/L). Method-specific immunoassay value; source unit pmol/L. Converted from the source's pmol/L (222-854) to pg/mL using factor 0.2724."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 16.78
+high = 61.53
+when = { sex = "male", age = [0.0027, 0.0821] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, E2 column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 1 day to 1 month (neonatal mini-puberty peak), pg/mL. Median 31.08 is not a bound. Immunoassay-specific; LC-MS/MS ranges are not interchangeable."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 6.92
+high = 35.43
+when = { sex = "male", age = [0.0833, 12.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, E2 column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 1 month to 12 years, pg/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 2.77
+high = 62.82
+when = { sex = "male", age = [12.0, 15.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, E2 column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 12-15 years, pg/mL. Immunoassay-specific; the wide range reflects the pubertal transition."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 10.05
+high = 64.22
+when = { sex = "male", age = [15.0, 18.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, E2 column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 15-18 years, pg/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 19.31
+high = 59.45
+when = { sex = "male", age = [18.0, 19.0] }
+population = "Healthy Chinese young men aged 18-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, E2 column)" },
+]
+note = "2.5th-97.5th percentile for males aged 18-19 years, pg/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 13.51
+high = 67.44
+when = { sex = "female", age = [0.0027, 0.0821] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, E2 column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 1 day to 1 month, pg/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 10.0
+high = 48.01
+when = { sex = "female", age = [0.0833, 12.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, E2 column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 1 month to 12 years (prepubertal), pg/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 4.73
+high = 168.04
+when = { sex = "female", age = [12.0, 15.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, E2 column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 12-15 years (pubertal), pg/mL. Immunoassay-specific; wide range reflects pubertal estrogen rise."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 23.06
+high = 224.44
+when = { sex = "female", age = [15.0, 18.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, E2 column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 15-18 years, pg/mL. Immunoassay-specific; the upper bound is wide and the source does not separate cycle phase."

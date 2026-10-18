@@ -1,0 +1,54 @@
+slug = "monocytes-abs"
+name = "Absolute monocyte count"
+category = "cbc"
+unit = "10^3/µL"
+loinc = "742-7"
+description = "Absolute count of circulating monocytes, precursors of tissue macrophages and dendritic cells. High values (monocytosis) occur with chronic infection such as tuberculosis, inflammation, and myeloid disorders; low values are uncommon and usually drug- or marrow-related."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.1
+high = 0.7
+population = "Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Race- and time-specific adjusted interval; evening interval is 0.2-0.8 (not separately encoded). Black volunteers had lower mean monocyte counts than non-Black volunteers. Applies only to: ethnicity=black."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 0.2
+high = 0.9
+population = "Non-Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Race- and time-specific adjusted interval; evening interval is 0.2-0.9 (not separately encoded). Applies only to: ethnicity=nonblack. Alternative to the default time-race-specific-ri reference range for the same population."
+
+[[range]]
+set = "barcelona-sysmex-xn"
+kind = "reference"
+low = 0.31
+high = 0.92
+population = "191 apparently healthy adults from the southern metropolitan area of Barcelona, Sysmex XN"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29765286", title = "Reference intervals for a complete blood count on an automated haematology analyser Sysmex XN in healthy adults from the southern metropolitan area of Barcelona.", locator = "Results, CBC reference intervals table" },
+]
+note = "Analyser-specific interval (Sysmex XN)."
+
+[[range]]
+set = "kenya-urban-adults"
+kind = "reference"
+low = 0.14
+high = 0.74
+population = "healthy adult urban population in Kenya (Nairobi), Beckman Coulter ACT 5 DIFF CP (region: Kenya)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29879171", doi = "10.1371/journal.pone.0198444", title = "Complete blood count reference intervals from a healthy adult urban population in Kenya.", locator = "Table, reference intervals" },
+]
+note = "All-participant interval (n = 462) from the reference-interval table."

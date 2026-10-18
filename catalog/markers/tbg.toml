@@ -1,0 +1,18 @@
+slug = "tbg"
+name = "Thyroxine-Binding Globulin"
+category = "thyroid"
+unit = "mg/L"
+description = "Main carrier protein for thyroxine in blood. Its level changes with oestrogen, pregnancy, liver disease and inherited deficiency or excess, and it affects how free thyroid hormone immunoassays read."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.264
+high = 14.63
+when = { conditions = ["newborn-screening"] }
+population = "Dutch newborns, routine newborn-screening heel-prick cards (1,670 cards), both sexes, common screening sampling ages (specimen: dried-blood-spot)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34178708", doi = "10.1159/000513516", url = "https://pubmed.ncbi.nlm.nih.gov/34178708/", title = "Improving the Dutch Newborn Screening for Central Congenital Hypothyroidism by Using 95% Reference Intervals for Thyroxine-Binding Globulin.", locator = "Abstract, Results" },
+]
+note = "Total-sample dried-blood-spot 95% reference interval in nmol/L as printed; newborn screening use only, not a serum adult interval and not converted to mg/L. Converted from the source's nmol/L (116-271) to mg/L using factor 0.054."

@@ -1,0 +1,143 @@
+slug = "zinc"
+name = "Zinc, Serum"
+category = "mineral"
+unit = "µg/dL"
+description = "Serum or plasma zinc, the usual laboratory measure of zinc status. Low values indicate zinc deficiency at the population level, and the IZiNCG cut-offs depend on age, sex and fasting status of the blood sample. Cut-offs are population-level tools and are not diagnostic for an individual."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 59
+high = 125
+when = { sex = "male", fasting = true, age = [18.0, 66.0] }
+population = "Apparently healthy men aged 18-65 y from a rural community in Bangladesh, overnight fasting samples (n=154 adults, both sexes)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32549879", title = "Reference Value for Serum Zinc Level of Adult Population in Bangladesh.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentiles, GF-AAS, IFCC recommendations. Sex-specific values reported in the same abstract."
+
+[[range]]
+set = "bangladesh-adults"
+kind = "reference"
+low = 50
+high = 103
+when = { sex = "female", fasting = true, age = [18.0, 66.0] }
+population = "Apparently healthy women aged 18-65 y from a rural community in Bangladesh, overnight fasting samples"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32549879", title = "Reference Value for Serum Zinc Level of Adult Population in Bangladesh.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentiles, GF-AAS, IFCC recommendations."
+
+[[range]]
+set = "pediatric-ri-us"
+kind = "reference"
+low = 64
+high = 124
+when = { age = [0.5, 18.0] }
+population = "Clinically healthy US children aged 0.5-18 y (n=2115, 85% Caucasian), both sexes; no effect of sex or fasting found"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22192859", title = "Pediatric reference intervals for serum copper and zinc.", locator = "Results" },
+]
+note = "Central 95% interval by ICP-MS. Zinc showed no age dependence in this study."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 65
+when = { fasting = false, age = [0.0, 10.0] }
+population = "Children under 10 years, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
+evidence = "consensus"
+citations = [
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)" },
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)" },
+]
+note = "Low serum zinc: strictly below 65 ug/dL (IZiNCG cut-off, morning non-fasting sample). Applies to any sex. Population-level cut-off, not an individual diagnosis. The cited source gives no afternoon cut-off. Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 66
+when = { sex = "female", fasting = false, age = [10.0, 200] }
+population = "Girls aged 10 years and older, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
+evidence = "consensus"
+citations = [
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)" },
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)" },
+]
+note = "Low serum zinc: strictly below 66 ug/dL in girls aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis. Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 70
+when = { sex = "male", fasting = false, age = [10.0, 200] }
+population = "Boys aged 10 years and older, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
+evidence = "consensus"
+citations = [
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)" },
+  { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)" },
+]
+note = "Low serum zinc: strictly below 70 ug/dL in boys aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis. Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 70
+when = { sex = "female", fasting = true, age = [10.0, 200] }
+population = "Adolescents (10 years and older), fasting serum samples (cut-off as applied in the cited study)"
+evidence = "consensus"
+citations = [
+  { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)" },
+]
+note = "Low serum zinc in fasting samples: strictly below 70 ug/dL in females (the cited study applies this to fasting samples; the source quote does not state the time of day). Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 74
+when = { sex = "male", fasting = true, age = [10.0, 200] }
+population = "Adolescents (10 years and older), fasting serum samples (cut-off as applied in the cited study)"
+evidence = "consensus"
+citations = [
+  { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)" },
+]
+note = "Low serum zinc in fasting samples: strictly below 74 ug/dL in males (the cited study applies this to fasting samples; the source quote does not state the time of day). Source kind: diagnostic."
+
+[[range]]
+set = "izincg"
+kind = "warn"
+high = 70
+when = { sex = "female", pregnant = false, fasting = true, age = [15.0, 50.0] }
+population = "Nonpregnant women of reproductive age 15-49 y in 13 nationally representative surveys (BRINDA); cut-off applies to a morning fasting sample"
+evidence = "consensus"
+citations = [
+  { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions" },
+]
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Morning nonfasting cut-off is 66 (separate range); afternoon nonfasting cut-off is 59 µg/dL, not encoded because there is no time-of-day key. Source kind: deficient."
+
+[[range]]
+set = "izincg"
+kind = "warn"
+high = 66
+when = { sex = "female", pregnant = false, fasting = false, age = [15.0, 50.0] }
+population = "Nonpregnant women of reproductive age 15-49 y in BRINDA; cut-off applies to a morning nonfasting sample"
+evidence = "consensus"
+citations = [
+  { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions" },
+]
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon nonfasting cut-off is 59 µg/dL (not encoded: no time-of-day key). Source kind: deficient."
+
+[[range]]
+set = "izincg"
+kind = "warn"
+high = 65
+when = { age = [0.5, 5.0] }
+population = "Preschool children 6-59 months in BRINDA; cut-off applies to a morning sample presumed nonfasting"
+evidence = "consensus"
+citations = [
+  { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions" },
+]
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon cut-off is 57 µg/dL (not encoded: no time-of-day key). Source kind: deficient."

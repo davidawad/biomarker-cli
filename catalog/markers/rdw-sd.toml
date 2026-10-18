@@ -1,0 +1,44 @@
+slug = "rdw-sd"
+name = "Red cell distribution width, standard deviation"
+category = "cbc"
+unit = "fL"
+description = "Standard deviation of the red cell volume distribution, reported in femtolitres by Sysmex-type analysers. It measures red cell size variation (anisocytosis) and is reported alongside the coefficient-of-variation form of RDW (RDW-CV)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 35.26
+high = 48.7
+when = { age = [20.0, 41.0] }
+population = "280 healthy Korean adults (male and female pooled) aged 20-40 years, Sysmex XN-2000"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26915613", doi = "10.3343/alm.2016.36.3.244", title = "Establishment of Age- and Gender-Specific Reference Ranges for 36 Routine and 57 Cell Population Data Items in a New Automated Blood Cell Analyzer, Sysmex XN-2000.", locator = "Table 2, RDW-SD row" },
+]
+note = "Age-specific reference range from the study table; the RDW-SD difference between age groups was significant, sexes were pooled (no sex effect listed for this item). Analyser-specific."
+
+[[range]]
+set = "korea-sysmex-xn2000-2016"
+kind = "reference"
+low = 38.3
+high = 51.62
+when = { age = [41.0, 61.0] }
+population = "280 healthy Korean adults (male and female pooled) aged 41-60 years, Sysmex XN-2000"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26915613", doi = "10.3343/alm.2016.36.3.244", title = "Establishment of Age- and Gender-Specific Reference Ranges for 36 Routine and 57 Cell Population Data Items in a New Automated Blood Cell Analyzer, Sysmex XN-2000.", locator = "Table 2, RDW-SD row" },
+]
+note = "Age-specific reference range from the study table; sexes pooled. Analyser-specific."
+
+[[range]]
+set = "korea-sysmex-xn2000-2016"
+kind = "reference"
+low = 38.56
+high = 50.28
+when = { age = [61.0, 200] }
+population = "280 healthy Korean adults (male and female pooled) older than 60 years, Sysmex XN-2000"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26915613", doi = "10.3343/alm.2016.36.3.244", title = "Establishment of Age- and Gender-Specific Reference Ranges for 36 Routine and 57 Cell Population Data Items in a New Automated Blood Cell Analyzer, Sysmex XN-2000.", locator = "Table 2, RDW-SD row" },
+]
+note = "Age-specific reference range from the study table; sexes pooled. Analyser-specific. Upper age bound not stated (group is '>60')."

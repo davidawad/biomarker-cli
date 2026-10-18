@@ -1,0 +1,87 @@
+slug = "urine-pcr"
+name = "Urine Protein-to-Creatinine Ratio"
+category = "urinalysis"
+unit = "mg/g"
+description = "Total protein excreted in urine relative to creatinine, measured on a spot sample. It estimates 24-hour proteinuria and is used to diagnose and monitor pre-eclampsia and other proteinuric kidney disease."
+aliases = ["spot urine protein-creatinine ratio", "urine p/c ratio"]
+
+[[range]]
+set = "kdigo-2024"
+kind = "warn"
+low = 500
+population = "Adults with chronic kidney disease: heavy proteinuria threshold for CKD diagnosis and specialist referral"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Figure 48 (referral circumstances), CKD diagnosis box" },
+]
+note = "KDIGO 2024 states a PCR of 500 mg/g (50 mg/mmol) is approximately equivalent to an ACR of 300 mg/g (A3, heavily increased albuminuria). Boundary >=500 as printed. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 200
+population = "Children and adolescents: threshold for referral to specialist kidney care"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Practice Point 5.1.2 (pediatric referral criteria)" },
+]
+note = "KDIGO 2024 Practice Point 5.1.2 (pediatric considerations): refer when an ACR of 30 mg/g or a PCR of 200 mg/g or more is confirmed on a repeat first-morning sample. The 200 mg/g (20 mg/mmol) PCR is the PCR criterion. Boundary >=200. Source kind: decision. Alternative to the default kdigo-2024 warn range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 141.7
+population = "Healthy adults in Dalian, China (random morning spot urine), all adults combined"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34617627", doi = "10.1002/jcla.24043", url = "https://pubmed.ncbi.nlm.nih.gov/34617627/", title = "Reference values of urine protein/creatinine ratio in healthy Dalian adults.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit, taken as the 95th percentile of UPCR in healthy adults. The overall value is 141.7 mg/g; sex-specific values are given in the next two ranges. Single-centre Chinese cohort, so not a universal limit."
+
+[[range]]
+set = "upcr-reference-dalian-2021"
+kind = "reference"
+high = 128.7
+when = { sex = "male" }
+population = "Healthy adult men in Dalian, China (random morning spot urine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34617627", doi = "10.1002/jcla.24043", url = "https://pubmed.ncbi.nlm.nih.gov/34617627/", title = "Reference values of urine protein/creatinine ratio in healthy Dalian adults.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (95th percentile) for men: 128.7 mg/g."
+
+[[range]]
+set = "upcr-reference-dalian-2021"
+kind = "reference"
+high = 150.8
+when = { sex = "female" }
+population = "Healthy adult women in Dalian, China (random morning spot urine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34617627", doi = "10.1002/jcla.24043", url = "https://pubmed.ncbi.nlm.nih.gov/34617627/", title = "Reference values of urine protein/creatinine ratio in healthy Dalian adults.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (95th percentile) for women: 150.8 mg/g. Women had higher values than men in the same age group in this cohort."
+
+[[range]]
+set = "pregnancy-proteinuria-0-3"
+kind = "warn"
+low = 300.0
+when = { pregnant = true }
+population = "Pregnant women"
+evidence = "consensus"
+citations = [
+  { pmid = "32882208", doi = "10.1016/j.ajog.2020.08.108", url = "https://pubmed.ncbi.nlm.nih.gov/32882208/", title = "Proteinuria during pregnancy: definition, pathophysiology, methodology, and clinical significance.", locator = "Abstract" },
+]
+note = "Classic cut-off for significant proteinuria in pregnancy: a urine protein-to-creatinine ratio of at least 0.3 (mg/mg, i.e. 300 mg/g). The source is a narrative review citing this cut-off, not a guideline. Converted from the source's mg/mg (0.3) to mg/g using factor 1000. Source kind: decision."
+
+[[range]]
+set = "upcr-0-3-preeclampsia-validation"
+kind = "warn"
+low = 300.0
+when = { pregnant = true }
+population = "Women with suspected pre-eclampsia (setting: suspected-pre-eclampsia)"
+evidence = "cohort"
+citations = [
+  { pmid = "33386413", doi = "10.1007/s00404-020-05937-0", url = "https://pubmed.ncbi.nlm.nih.gov/33386413/", title = "Diagnostic accuracy of random urinary protein-to-creatinine ratio for proteinuria in patients with suspected pre-eclampsia.", locator = "Abstract, Results" },
+]
+note = "UPCR of 0.3 (mg/mg) as the threshold for predicting proteinuria >=300 mg/day in suspected pre-eclampsia, with sensitivity 90.1% and specificity 63.3%. The cited text also reports a UPCR >0.30 predictive accuracy. Converted from the source's mg/mg (0.3) to mg/g using factor 1000. Source kind: decision."

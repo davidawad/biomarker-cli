@@ -1,0 +1,44 @@
+slug = "leucine"
+name = "Leucine"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Plasma concentration of the branched-chain amino acid leucine. In maple syrup urine disease (MSUD) it accumulates and is the main treatment target; high values can cause encephalopathy and risk metabolic crisis."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "iranian-msud-2025"
+kind = "optimal"
+low = 75
+high = 200
+when = { age = [0.0, 6.0], conditions = ["msud"] }
+population = "Children with classic MSUD aged 5 years or younger (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, long-term management section" },
+]
+note = "Source kind: therapeutic."
+
+[[range]]
+set = "iranian-msud-2025"
+kind = "optimal"
+low = 75
+high = 300
+when = { age = [6.0, 200], conditions = ["msud"] }
+population = "Children with classic MSUD older than 5 years (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, long-term management section" },
+]
+note = "Source kind: therapeutic."
+
+[[range]]
+set = "iranian-msud-2025"
+kind = "critical"
+low = 1100
+when = { conditions = ["msud"] }
+population = "Patients with MSUD in metabolic crisis (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, acute metabolic crisis section" },
+]
+note = "Dialysis threshold rather than a steady-state target: the guideline says dialysis should be considered above this level and/or with rapid onset of neurological symptoms."

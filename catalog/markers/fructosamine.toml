@@ -1,0 +1,39 @@
+slug = "fructosamine"
+name = "Fructosamine"
+category = "glycemic"
+unit = "µmol/L"
+description = "Glycated serum proteins (mainly albumin), reflecting average glucose over an intermediate period (about 2-4 weeks). Used as an intermediate-term glycaemic marker alongside HbA1c and fasting glucose."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 194.8
+high = 258.0
+population = "Healthy US Black and White adults in the ARIC community cohort (1799 people, mean age 55 years, 51% women)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29436378", doi = "10.1373/clinchem.2017.285742", title = "Establishment of Community-Based Reference Intervals for Fructosamine, Glycated Albumin, and 1,5-Anhydroglucitol.", locator = "Abstract (Results)" },
+]
+note = "Central 95 % interval from the 2.5th and 97.5th percentiles in a healthy reference population. The source writes the values as umol/L; they are copied exactly. Distributions differed by race, sex and BMI, and no partition is given in the abstract."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 270.2
+population = "Adults (derived from the ARIC healthy reference population)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29436378", doi = "10.1373/clinchem.2017.285742", title = "Establishment of Community-Based Reference Intervals for Fructosamine, Glycated Albumin, and 1,5-Anhydroglucitol.", locator = "Abstract (Results)" },
+]
+note = "Fructosamine concentration equivalent to an HbA1c of 6.5 % (the 96.5th percentile of this reference population). This is a derived equivalent, not an official ADA diagnostic criterion. Source kind: diagnostic."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 261.7
+population = "Adults (derived from the ARIC healthy reference population)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29436378", doi = "10.1373/clinchem.2017.285742", title = "Establishment of Community-Based Reference Intervals for Fructosamine, Glycated Albumin, and 1,5-Anhydroglucitol.", locator = "Abstract (Results)" },
+]
+note = "Fructosamine concentration equivalent to a fasting glucose of 126 mg/dL (the 93.9th percentile of this reference population). This is a derived equivalent, not an official ADA diagnostic criterion. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."

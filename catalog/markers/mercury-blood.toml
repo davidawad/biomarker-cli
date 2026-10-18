@@ -1,0 +1,29 @@
+slug = "mercury-blood"
+name = "Mercury, whole blood"
+category = "toxic-metal"
+unit = "µg/L"
+description = "Mercury concentration in whole blood, reflecting recent exposure, mostly from fish and seafood as methylmercury. High values signal exposure, and in pregnancy they are relevant to fetal neurodevelopment."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 6.7
+when = { sex = "female", age = [16.0, 50.0] }
+population = "US women aged 16-49 in NHANES 1999-2000 (n = 1,709) (specimen: whole-blood)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15064162", doi = "10.1289/ehp.6587", title = "Blood organic mercury and dietary mercury intake: National Health and Nutrition Examination Survey, 1999 and 2000.", locator = "Abstract" },
+]
+note = "Measured value is blood organic (methylmercury) mercury, not total mercury, and reflects fish intake. 95th percentile shown as the upper reference bound. Older survey; later NHANES cycles were not retrieved."
+
+[[range]]
+set = "nhanes-1999-2000-cutoff"
+kind = "warn"
+low = 5.8
+when = { sex = "female", age = [16.0, 50.0] }
+population = "US adult women in NHANES 1999-2000, as used by the cited authors (specimen: whole-blood)"
+evidence = "cohort"
+citations = [
+  { pmid = "15064162", doi = "10.1289/ehp.6587", title = "Blood organic mercury and dietary mercury intake: National Health and Nutrition Examination Survey, 1999 and 2000.", locator = "Abstract" },
+]
+note = "Concentration above which the cited authors report the proportion of women; they describe newborns above levels 'without increased risk' of neurodevelopmental effects. The 5.8 µg/L value is widely attributed to EPA/NRC methylmercury benchmarks, but that attribution is not stated in the retrieved abstract, so treat as unverified benchmark context. Blood organic (methyl) mercury basis."

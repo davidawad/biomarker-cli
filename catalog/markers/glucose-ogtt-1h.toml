@@ -1,0 +1,41 @@
+slug = "glucose-ogtt-1h"
+name = "Glucose, 1-hour OGTT (75 g)"
+category = "glycemic"
+unit = "mg/dL"
+description = "Plasma glucose 1 hour after a 75 g oral glucose load. Used for gestational diabetes screening (IADPSG) and, per the 2024 IDF position statement, to detect intermediate hyperglycaemia and type 2 diabetes."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 155
+high = 209
+population = "Adults undergoing a 75 g OGTT"
+evidence = "consensus"
+citations = [
+  { pmid = "38458916", doi = "10.1016/j.diabres.2024.111589", title = "International Diabetes Federation Position Statement on the 1-hour post-load plasma glucose for the diagnosis of intermediate hyperglycaemia and type 2 diabetes.", locator = "Abstract (Conclusions)" },
+]
+note = "Intermediate hyperglycaemia by IDF 2024 1-hour criterion (lifestyle intervention and referral). Strictly below 209 mg/dL, where the diabetes criterion starts."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 180
+when = { pregnant = true }
+population = "Pregnant women, 75 g OGTT (IADPSG criteria)"
+evidence = "consensus"
+citations = [
+  { pmid = "20190296", doi = "10.2337/dc09-1848", title = "International association of diabetes and pregnancy study groups recommendations on the diagnosis and classification of hyperglycemia in pregnancy.", locator = "Threshold table (consensus thresholds)" },
+]
+note = "Gestational diabetes if any one 75 g OGTT value meets or exceeds the threshold (IADPSG 2010). Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 209
+population = "Adults undergoing a 75 g OGTT"
+evidence = "consensus"
+citations = [
+  { pmid = "38458916", doi = "10.1016/j.diabres.2024.111589", title = "International Diabetes Federation Position Statement on the 1-hour post-load plasma glucose for the diagnosis of intermediate hyperglycaemia and type 2 diabetes.", locator = "Abstract (Conclusions)" },
+]
+note = "Type 2 diabetes by IDF 2024 1-hour criterion; a repeat test is advised to confirm. Source kind: diagnostic."

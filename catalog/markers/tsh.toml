@@ -2,6 +2,7 @@ slug = "tsh"
 name = "Thyroid Stimulating Hormone"
 category = "thyroid"
 unit = "mIU/L"
+description = "Pituitary hormone that drives thyroid hormone production; the primary screening test for thyroid dysfunction. High TSH suggests hypothyroidism, low TSH hyperthyroidism."
 loinc = "3016-3"
 aliases = ["thyrotropin"]
 
@@ -25,3 +26,363 @@ kind = "optimal"
 low = 1.0
 high = 2.1
 legacy = true
+
+[[range]]
+set = "ata-2017"
+kind = "reference"
+high = 4.0
+when = { pregnant = true, trimester = 1 }
+population = "Pregnant women; ATA 2017 upper limit as quoted in a systematic review of gestational TSH reference intervals"
+evidence = "guideline"
+citations = [
+  { pmid = "30123185", doi = "10.3389/fendo.2018.00432", url = "https://pubmed.ncbi.nlm.nih.gov/30123185/", title = "Gestational TSH and FT4 Reference Intervals in Chinese Women: A Systematic Review and Meta-Analysis.", locator = "Abstract, Background" },
+]
+note = "Guideline upper TSH limit for early pregnancy. The ATA 2017 guideline text itself is not open access here, so the value is cited via the review that reports it. Trimester 2-3 limits are not stated in this quote."
+
+[[range]]
+set = "nhanes-surks-2007"
+kind = "reference"
+high = 3.56
+when = { age = [20.0, 29.0] }
+population = "US NHANES 1988-1994 reference population without thyroid disease or antibodies"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17911171", doi = "10.1210/jc.2007-1499", url = "https://pubmed.ncbi.nlm.nih.gov/17911171/", title = "Age-specific distribution of serum thyrotropin and antithyroid antibodies in the US population: implications for the prevalence of subclinical hypothyroidism.", locator = "Abstract, Results" },
+]
+note = "97.5th centile; the upper limit rises with age."
+
+[[range]]
+set = "nhanes-surks-2007"
+kind = "reference"
+high = 7.49
+when = { age = [80.0, 200] }
+population = "US NHANES 1988-1994 reference population without thyroid disease or antibodies"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17911171", doi = "10.1210/jc.2007-1499", url = "https://pubmed.ncbi.nlm.nih.gov/17911171/", title = "Age-specific distribution of serum thyrotropin and antithyroid antibodies in the US population: implications for the prevalence of subclinical hypothyroidism.", locator = "Abstract, Results" },
+]
+note = "97.5th centile in people aged 80 and over."
+
+[[range]]
+set = "gestational-japan-2022"
+kind = "reference"
+low = 0.04
+high = 6.06
+when = { pregnant = true, trimester = 1 }
+population = "Japanese pregnant women with negative thyroglobulin and TPO antibodies (serial samples from 481 women)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35811133", doi = "10.1507/endocrj.EJ22-0237", url = "https://pubmed.ncbi.nlm.nih.gov/35811133/", title = "Gestational trimester-specific reference ranges for serum thyrotropin and free thyroxine in Japanese.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, antibody-negative samples."
+
+[[range]]
+set = "gestational-japan-2022"
+kind = "reference"
+low = 0.31
+high = 3.11
+when = { pregnant = true, trimester = 2 }
+population = "Japanese pregnant women with negative thyroglobulin and TPO antibodies (serial samples from 481 women)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35811133", doi = "10.1507/endocrj.EJ22-0237", url = "https://pubmed.ncbi.nlm.nih.gov/35811133/", title = "Gestational trimester-specific reference ranges for serum thyrotropin and free thyroxine in Japanese.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, antibody-negative samples."
+
+[[range]]
+set = "gestational-japan-2022"
+kind = "reference"
+low = 0.48
+high = 3.93
+when = { pregnant = true, trimester = 3 }
+population = "Japanese pregnant women with negative thyroglobulin and TPO antibodies (serial samples from 481 women)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35811133", doi = "10.1507/endocrj.EJ22-0237", url = "https://pubmed.ncbi.nlm.nih.gov/35811133/", title = "Gestational trimester-specific reference ranges for serum thyrotropin and free thyroxine in Japanese.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, antibody-negative samples."
+
+[[range]]
+set = "trimester-india-2016"
+kind = "reference"
+low = 0.09
+high = 6.65
+when = { pregnant = true, trimester = 1 }
+population = "Normal Indian pregnant women followed serially through pregnancy"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26904477", doi = "10.4103/2230-8210.172239", url = "https://pubmed.ncbi.nlm.nih.gov/26904477/", title = "Trimester specific reference intervals for thyroid function tests in normal Indian pregnant women.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile. Source reports the value in uIU/mL, numerically equal to mIU/L. Upper limit is much higher than the ATA 2017 cut-off of 4.0."
+
+[[range]]
+set = "trimester-india-2016"
+kind = "reference"
+low = 0.51
+high = 6.66
+when = { pregnant = true, trimester = 2 }
+population = "Normal Indian pregnant women followed serially through pregnancy"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26904477", doi = "10.4103/2230-8210.172239", url = "https://pubmed.ncbi.nlm.nih.gov/26904477/", title = "Trimester specific reference intervals for thyroid function tests in normal Indian pregnant women.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile. Source reports the value in uIU/mL, numerically equal to mIU/L."
+
+[[range]]
+set = "trimester-india-2016"
+kind = "reference"
+low = 0.91
+high = 4.86
+when = { pregnant = true, trimester = 3 }
+population = "Normal Indian pregnant women followed serially through pregnancy"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26904477", doi = "10.4103/2230-8210.172239", url = "https://pubmed.ncbi.nlm.nih.gov/26904477/", title = "Trimester specific reference intervals for thyroid function tests in normal Indian pregnant women.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile. Source reports the value in uIU/mL, numerically equal to mIU/L."
+
+[[range]]
+set = "iodine-sufficient-trimester-2019"
+kind = "reference"
+low = 0.2
+high = 4.6
+when = { pregnant = true, trimester = 1 }
+population = "TPOAb-negative pregnant women in an iodine-sufficient area, first trimester"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30861562", doi = "10.1055/a-0855-7128", url = "https://pubmed.ncbi.nlm.nih.gov/30861562/", title = "Reference Intervals for Thyroid Hormones During the First Trimester of Gestation: A Report from an Area with a Sufficient Iodine Level.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile. Non-pregnant women in the same study had TSH 0.59-5.60 mIU/L."
+
+[[range]]
+set = "iodine-sufficient-trimester-2019"
+kind = "reference"
+low = 0.59
+high = 5.6
+when = { sex = "female", pregnant = false }
+population = "TPOAb-negative non-pregnant women in an iodine-sufficient area"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30861562", doi = "10.1055/a-0855-7128", url = "https://pubmed.ncbi.nlm.nih.gov/30861562/", title = "Reference Intervals for Thyroid Hormones During the First Trimester of Gestation: A Report from an Area with a Sufficient Iodine Level.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile, comparison group for the first-trimester study."
+
+[[range]]
+set = "ankara-multicenter-2026"
+kind = "reference"
+low = 0.495
+high = 5.83
+when = { sex = "male", age = [18.0, 200] }
+population = "Adults aged 18 and over from three Ankara hospitals, routine laboratory data, Maglumi chemiluminescence immunoassay, indirect refineR method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42351459", doi = "10.3390/diagnostics16121800", url = "https://pubmed.ncbi.nlm.nih.gov/42351459/", title = "Age- and Sex-Specific Reference Intervals for TSH, FT4, and FT3 Derived from the Turkish Multi-Center Cohort.", locator = "Abstract, Results" },
+]
+note = "Indirect (refineR) estimate from routine data, not a direct healthy-donor study. Assay-dependent."
+
+[[range]]
+set = "ankara-multicenter-2026"
+kind = "reference"
+low = 0.485
+high = 6.4
+when = { sex = "female", age = [18.0, 200] }
+population = "Adults aged 18 and over from three Ankara hospitals, routine laboratory data, Maglumi chemiluminescence immunoassay, indirect refineR method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42351459", doi = "10.3390/diagnostics16121800", url = "https://pubmed.ncbi.nlm.nih.gov/42351459/", title = "Age- and Sex-Specific Reference Intervals for TSH, FT4, and FT3 Derived from the Turkish Multi-Center Cohort.", locator = "Abstract, Results" },
+]
+note = "Indirect (refineR) estimate from routine data. Upper limit is higher in women than men in this cohort."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 1.46
+high = 10.87
+when = { sex = "male", age = [0.0, 0.0833] }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay, CLSI C28-A3"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Abstract, Results" },
+]
+note = "First month of life, male infants. Sex-specific bands differ in this period; the range narrows with age."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 1.08
+high = 11.35
+when = { sex = "female", age = [0.0, 0.0833] }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay, CLSI C28-A3"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Abstract, Results" },
+]
+note = "First month of life, female infants."
+
+[[range]]
+set = "uk-alinity-trimester-2025"
+kind = "reference"
+low = 0.06
+high = 2.73
+when = { pregnant = true, trimester = 1 }
+population = "UK pregnant women, 663 iodine-replete, TPO-antibody-negative, 49% non-white; ATA 2017 method (method: Abbott Alinity)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", locator = "Abstract, Results" },
+]
+note = "Trimester-specific 2.5-97.5 percentile style interval for Abbott Alinity TSH in pregnancy; assay-specific, do not transfer to other platforms."
+
+[[range]]
+set = "uk-alinity-trimester-2025"
+kind = "reference"
+low = 0.02
+high = 2.47
+when = { pregnant = true, trimester = 2 }
+population = "UK pregnant women, 663 iodine-replete, TPO-antibody-negative, 49% non-white; ATA 2017 method (method: Abbott Alinity)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", locator = "Abstract, Results" },
+]
+note = "Second-trimester interval for Abbott Alinity TSH; assay-specific, do not transfer to other platforms."
+
+[[range]]
+set = "uk-alinity-trimester-2025"
+kind = "reference"
+low = 0.41
+high = 2.8
+when = { pregnant = true, trimester = 3 }
+population = "UK pregnant women, 663 iodine-replete, TPO-antibody-negative, 49% non-white; ATA 2017 method (method: Abbott Alinity)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40156169", doi = "10.1177/00045632251333286", url = "https://pubmed.ncbi.nlm.nih.gov/40156169/", title = "Thyroid reference ranges in pregnancy utilizing an Abbott Alinity platform in a multi-ethnic population in the UK.", locator = "Abstract, Results" },
+]
+note = "Third-trimester interval for Abbott Alinity TSH; assay-specific, do not transfer to other platforms."
+
+[[range]]
+set = "korea-nhanes-vi-2018"
+kind = "reference"
+low = 0.59
+high = 7.03
+population = "Korea NHANES VI (2013-2015) reference population, iodine-sufficient, age groups from 10-19 years to over 70, age-pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29390008", doi = "10.1371/journal.pone.0190738", url = "https://pubmed.ncbi.nlm.nih.gov/29390008/", title = "Age- and gender-specific reference intervals of TSH and free T4 in an iodine-replete area: Data from Korean National Health and Nutrition Examination Survey IV (2013-2015).", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile of log-transformed TSH, overall (not age- or sex-partitioned) interval as printed; the study reports TSH rising in the youngest and oldest groups. Applies only to: ethnicity=Korean."
+
+[[range]]
+set = "jordan-control-group-2026"
+kind = "reference"
+low = 0.5
+high = 4.18
+when = { sex = "male" }
+population = "Jordanian adults, 6782 participants from several regions, symptom-screened control group; age-pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42506331", doi = "10.3390/medsci14030362", url = "https://pubmed.ncbi.nlm.nih.gov/42506331/", title = "A Robust Control Group Identification Approach for Reference Intervals of Thyroid Biomarkers: The Case of Jordan.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile TSH for males after symptom-based control selection; no significant age differences reported."
+
+[[range]]
+set = "jordan-control-group-2026"
+kind = "reference"
+low = 0.57
+high = 4.61
+when = { sex = "female" }
+population = "Jordanian adults, 6782 participants from several regions, symptom-screened control group; age-pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42506331", doi = "10.3390/medsci14030362", url = "https://pubmed.ncbi.nlm.nih.gov/42506331/", title = "A Robust Control Group Identification Approach for Reference Intervals of Thyroid Biomarkers: The Case of Jordan.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile TSH for females after symptom-based control selection; no significant age differences reported."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 1.21
+high = 10.71
+when = { age = [0.0027, 0.0849] }
+population = "Chinese healthy children aged 1 day to 12 years (n=1,279), Mindray CL-6000i; Table 3 age groups, sexes as printed in table"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Table 3" },
+]
+note = "2.5th-97.5th percentile TSH (table columns: median [2.5th, 97.5th]); first age group. Sex-specific values differ in the first month (see other ranges)."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 0.94
+high = 9.74
+when = { age = [0.0833, 1.0] }
+population = "Chinese healthy children aged 1 day to 12 years (n=1,279), Mindray CL-6000i; Table 3 age groups"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Table 3" },
+]
+note = "2.5th-97.5th percentile TSH (table columns: median [2.5th, 97.5th]); 1-12 months."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 0.97
+high = 7.94
+when = { age = [1.0, 3.0] }
+population = "Chinese healthy children aged 1 day to 12 years (n=1,279), Mindray CL-6000i; Table 3 age groups"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Table 3" },
+]
+note = "2.5th-97.5th percentile TSH (table columns: median [2.5th, 97.5th]); 12-36 months."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 1.11
+high = 7.71
+when = { age = [3.0, 6.0] }
+population = "Chinese healthy children aged 1 day to 12 years (n=1,279), Mindray CL-6000i; Table 3 age groups"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Table 3" },
+]
+note = "2.5th-97.5th percentile TSH (table columns: median [2.5th, 97.5th]); 36-72 months."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 0.85
+high = 6.74
+when = { age = [6.0, 9.0] }
+population = "Chinese healthy children aged 1 day to 12 years (n=1,279), Mindray CL-6000i; Table 3 age groups"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Table 3" },
+]
+note = "2.5th-97.5th percentile TSH (table columns: median [2.5th, 97.5th]); 72-108 months."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 1.0
+high = 7.21
+when = { age = [9.0, 12.0] }
+population = "Chinese healthy children aged 1 day to 12 years (n=1,279), Mindray CL-6000i; Table 3 age groups"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Table 3" },
+]
+note = "2.5th-97.5th percentile TSH (table columns: median [2.5th, 97.5th]); 108-144 months (9-12 years)."
+
+[[range]]
+set = "newborn-china-2025"
+kind = "warn"
+low = 9
+high = 20
+when = { age = [0.0, 0.0082] }
+population = "Newborns in a regional screening programme, heel-prick dried blood spot at about 72 hours of age (n=50,539) (specimen: dried-blood-spot)"
+evidence = "cohort"
+citations = [
+  { pmid = "40655394", doi = "10.3389/fendo.2025.1616748", url = "https://pubmed.ncbi.nlm.nih.gov/40655394/", title = "Screening of 50,539 newborns for congenital hypothyroidism: optimization of TSH cut-off values and seasonal impact in clinical practice.", locator = "Abstract, Results" },
+]
+note = "Screening borderline zone, not a diagnostic range: 9-20 mIU/L (source uses uIU/mL, numerically equal) triggers repeat heel-prick testing; 20 or more is an initial positive. Local cut-off, assay and programme dependent. Not a guideline value."

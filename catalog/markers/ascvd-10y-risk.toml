@@ -1,0 +1,43 @@
+slug = "ascvd-10y-risk"
+name = "10-year ASCVD Risk (Pooled Cohort Equations)"
+category = "composite"
+unit = "%"
+description = "Estimated 10-year risk of a first atherosclerotic cardiovascular event (heart attack, coronary death, or stroke), calculated from the Pooled Cohort Equations using age, sex, race, cholesterol, blood pressure, diabetes, smoking and treatment. It guides primary-prevention decisions such as statin therapy."
+aliases = ["pce 10-year risk", "pooled cohort equations risk", "10-year ascvd risk"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "acc-aha-2018-cholesterol"
+kind = "warn"
+low = 5
+high = 7.5
+population = "US adults 40 to 75 years of age evaluated for primary ASCVD prevention, without diabetes"
+evidence = "guideline"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", url = "https://pubmed.ncbi.nlm.nih.gov/30586774/", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Full text, Recommendations" },
+]
+note = "Borderline risk, 5% to <7.5% 10-year ASCVD risk. Risk-enhancing factors may favour statin therapy in this band. Boundary semantics: >=5 and <7.5."
+
+[[range]]
+set = "acc-aha-2018-cholesterol"
+kind = "warn"
+low = 7.5
+high = 19.9
+when = { age = [40.0, 76.0] }
+population = "US adults 40 to 75 years of age without diabetes mellitus, primary prevention"
+evidence = "guideline"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", url = "https://pubmed.ncbi.nlm.nih.gov/30586774/", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Full text, Recommendations" },
+]
+note = "Intermediate risk, 7.5% to <20% 10-year ASCVD risk. Risk-enhancing factors favour statin initiation; if uncertain, CAC may be measured. Boundary semantics: >=7.5 and <20 (19.9 stated as the upper limit of the band). Source kind: decision."
+
+[[range]]
+set = "acc-aha-2019-primary-prevention"
+kind = "warn"
+low = 20
+population = "US adults 40 to 75 years of age in primary prevention"
+evidence = "guideline"
+citations = [
+  { pmid = "30894319", doi = "10.1016/j.jacc.2019.03.009", url = "https://pubmed.ncbi.nlm.nih.gov/30894319/", title = "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease: Executive Summary: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Full text, Recommendations" },
+]
+note = "High risk, >=20% 10-year ASCVD risk. The 2018 guideline recommends a >=50% LDL-C reduction at this level. Lower bound only (open above). Source kind: decision."

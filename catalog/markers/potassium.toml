@@ -2,6 +2,7 @@ slug = "potassium"
 name = "Potassium"
 category = "cmp"
 unit = "mmol/L"
+description = "Serum potassium governs cardiac excitability. Hypokalaemia (<3.5 mmol/L) and hyperkalaemia (>=5.5 mmol/L) both carry arrhythmic risk, and outcome studies in CKD and heart failure show a U-shaped relation with mortality, with the lowest risk around 4-5 mmol/L. Serum values are usually higher than plasma values."
 loinc = "2823-3"
 aliases = ["k"]
 
@@ -11,3 +12,199 @@ kind = "reference"
 low = 3.5
 high = 5.2
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.8
+high = 4.98
+when = { sex = "male" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, male)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
+]
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 3.50-5.10 mmol/L. Plasma reference intervals are not covered here; serum values are usually higher than plasma."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.82
+high = 4.99
+when = { sex = "female" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, female)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
+]
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 3.50-5.10 mmol/L. Plasma reference intervals are not covered here; serum values are usually higher than plasma."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.4
+high = 5.3
+when = { age = [18.0, 66.0] }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.9
+high = 5.9
+when = { age = [0.0767, 1.0] }
+population = "Healthy check-up children aged 28 days to under 1 year, Shenzhen, China (serum; CLSI EP28 method); both sexes pooled (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Paediatric serum potassium reference interval (age 28 days, about 0.0767 years, to under 1 year). Values as printed in the source's Table 1. Indirect or direct partition: CLSI EP28 per the source's Methods."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.8
+high = 5.2
+when = { age = [1.0, 7.0] }
+population = "Healthy check-up children aged 1 to under 7 years, Shenzhen, China (serum; CLSI EP28 method); both sexes pooled (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Paediatric serum potassium reference interval, values as printed in the source's Table 1 (age band 1 to under 7 years)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.7
+high = 5.0
+when = { age = [7.0, 18.0] }
+population = "Healthy check-up children aged 7 to under 18 years, Shenzhen, China (serum; CLSI EP28 method); both sexes pooled (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Paediatric serum potassium reference interval, values as printed in the source's Table 1 (age band 7 to under 18 years)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 6.0
+population = "Adults with hyperkalaemia in the emergency department"
+evidence = "consensus"
+citations = [
+  { pmid = "32852924", doi = "10.1097/MEJ.0000000000000691", title = "Acute hyperkalemia in the emergency department: a summary from a Kidney Disease: Improving Global Outcomes conference.", locator = "ECG section" },
+]
+note = "Action threshold: the KDIGO Controversies Conference recommended cardiac monitoring and a 12-lead ECG for potassium strictly above 6.0 mmol/L."
+
+[[range]]
+set = "clinical"
+kind = "critical"
+low = 6.5
+population = "Adults with hyperkalaemia in the emergency department"
+evidence = "consensus"
+citations = [
+  { pmid = "32852924", doi = "10.1097/MEJ.0000000000000691", title = "Acute hyperkalemia in the emergency department: a summary from a Kidney Disease: Improving Global Outcomes conference.", locator = "Treatment algorithm" },
+]
+note = "Treatment threshold: give calcium when potassium is strictly above 6.5 mmol/L and an ECG or monitor is not immediately available (per the source's emergency algorithm)."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 3.5
+high = 5.1
+population = "Adults (textbook serum potassium reference interval as quoted in a simulation study) (specimen: serum)"
+evidence = "consensus"
+citations = [
+  { pmid = "37391118", doi = "10.1016/j.clinbiochem.2023.110606", title = "Characterizing ability of serum potassium (K) and the serum K reference interval to flag hypokalemia or hyperkalemia as observed in plasma: A simulation study.", locator = "Abstract" },
+]
+note = "Serum potassium runs about 0.35 mmol/L higher than plasma because of K release on clotting. Values are the textbook intervals quoted by the cited simulation study, not a measured population interval. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "reference"
+low = 3.4
+high = 4.5
+population = "Adults (textbook plasma potassium reference interval as quoted in a simulation study) (specimen: plasma)"
+evidence = "consensus"
+citations = [
+  { pmid = "37391118", doi = "10.1016/j.clinbiochem.2023.110606", title = "Characterizing ability of serum potassium (K) and the serum K reference interval to flag hypokalemia or hyperkalemia as observed in plasma: A simulation study.", locator = "Abstract" },
+]
+note = "Plasma potassium textbook interval quoted by the cited simulation study, for comparison with the serum interval in the same source. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 5.5
+population = "Adults"
+evidence = "consensus"
+citations = [
+  { pmid = "32852924", doi = "10.1097/MEJ.0000000000000691", title = "Acute hyperkalemia in the emergency department: a summary from a Kidney Disease: Improving Global Outcomes conference.", locator = "Introduction" },
+]
+note = "Hyperkalaemia (>=5.5 mmol/L); the source notes that the cut-off varies by laboratory and differs between serum and plasma measurements. Source kind: diagnostic."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 5.5
+high = 6.0
+population = "Adults with hyperkalaemia (cohort classified by potassium level)"
+evidence = "consensus"
+citations = [
+  { pmid = "42122012", doi = "10.3390/diagnostics16091309", title = "Prevalence of Hyperkalemia in a Contemporary European Cohort According to EKFC eGFR Categories.", locator = "Methods" },
+]
+note = "Moderate hyperkalaemia (5.5 to strictly below 6.0 mmol/L) as categorised in this cohort, following the European Society of Cardiology heart failure guidelines (per the source). The mild and severe categories in the source are <5.5 and >=6.0. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 6.0
+population = "Adults with hyperkalaemia"
+evidence = "consensus"
+citations = [
+  { pmid = "42122012", doi = "10.3390/diagnostics16091309", title = "Prevalence of Hyperkalemia in a Contemporary European Cohort According to EKFC eGFR Categories.", locator = "Methods" },
+]
+note = "Severe hyperkalaemia category (>=6.0 mmol/L) in this cohort; the source also notes that 6.0-6.4 mmol/L is classed as moderate or severe depending on ECG changes. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 3.5
+when = { conditions = ["heart-failure"] }
+population = "Adults with heart failure (pooled trial populations)"
+evidence = "cohort"
+citations = [
+  { pmid = "42206478", doi = "10.1093/eurheartj/ehag341", title = "Optimal serum potassium concentrations in heart failure: an individual patient data meta-analysis.", locator = "Results" },
+]
+note = "Hypokalaemia (strictly below 3.5 mmol/L) was associated with higher all-cause mortality in HFrEF."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 4.2
+high = 5.0
+when = { conditions = ["heart-failure"] }
+population = "Adults with heart failure with reduced or preserved ejection fraction (pooled RCT patients)"
+evidence = "cohort"
+citations = [
+  { pmid = "42206478", doi = "10.1093/eurheartj/ehag341", title = "Optimal serum potassium concentrations in heart failure: an individual patient data meta-analysis.", locator = "Conclusion" },
+]
+note = "Lowest all-cause mortality and cardiovascular risk in the individual patient data meta-analysis."
+
+[[range]]
+set = "alt-1"
+kind = "optimal"
+low = 4.0
+high = 5.0
+when = { conditions = ["ckd"] }
+population = "Adults with stage 3-4 chronic kidney disease (eGFR <60 mL/min/1.73 m2)"
+evidence = "cohort"
+citations = [
+  { pmid = "26228532", doi = "10.1159/000437151", title = "Serum Potassium, End-Stage Renal Disease and Mortality in Chronic Kidney Disease.", locator = "Conclusion" },
+]
+note = "Potassium below 4.0 and above 5.0 mmol/L was associated with higher all-cause mortality in CKD stages 3-4. Alternative to the default optimal optimal range for the same population."

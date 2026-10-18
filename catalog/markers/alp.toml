@@ -2,6 +2,7 @@ slug = "alp"
 name = "Alkaline Phosphatase"
 category = "cmp"
 unit = "U/L"
+description = "Enzyme of biliary and bone origin; elevated values suggest cholestasis or bone disease. Reference limits are sex-specific in adults and strongly age-dependent in children and in pregnancy."
 loinc = "6768-6"
 aliases = ["alkaline phosphatase"]
 
@@ -11,3 +12,157 @@ kind = "reference"
 low = 44.0
 high = 121.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 108
+when = { sex = "male" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men. Adults only; not valid for children or pregnancy."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 93
+when = { sex = "female" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women. Adults only; not valid for children or pregnancy."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 45
+high = 131
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult male 95% reference interval (LAVE-corrected in the source)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 31
+high = 98
+when = { sex = "female", age = [18.0, 45.0] }
+population = "Females aged 18 to under 45 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult female 95% reference interval (under 45 years)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 38
+high = 126
+when = { sex = "female", age = [45.0, 200] }
+population = "Females aged 45 years and older, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult female 95% reference interval (45 years and over)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 157.74
+high = 379.32
+when = { age = [1.0, 7.0] }
+population = "Healthy Chinese children aged 1 to under 7 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; ALP falls steeply with age, so bands are narrow."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 153.48
+high = 396.12
+when = { age = [7.0, 11.0] }
+population = "Healthy Chinese children aged 7 to under 11 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (n = 71)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 122.97
+high = 530.94
+when = { sex = "male", age = [11.0, 15.0] }
+population = "Healthy Chinese male children aged 11 to under 15 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Male pediatric 95% interval (n = 41 males in the source band); the source splits this band by sex."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 77.39
+high = 384.43
+when = { sex = "female", age = [11.0, 15.0] }
+population = "Healthy Chinese female children aged 11 to under 15 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Female pediatric 95% interval (n = 30 females in the source band); the source splits this band by sex."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 37.71
+high = 238.28
+when = { age = [15.0, 18.0] }
+population = "Healthy Chinese children aged 15 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; small band (n = 14), interpret with caution."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 135.47
+high = 517.64
+when = { age = [0.077, 0.5] }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 118.61
+high = 361.88
+when = { age = [0.5, 1.0] }
+population = "Healthy Chinese children aged 6 months to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."

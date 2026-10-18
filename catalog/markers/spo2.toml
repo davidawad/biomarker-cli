@@ -1,0 +1,33 @@
+slug = "spo2"
+name = "Oxygen Saturation (SpO2)"
+category = "vitals"
+unit = "%"
+loinc = "59408-5"
+description = "Peripheral oxygen saturation measured non-invasively with a pulse oximeter. Used to judge oxygenation and to decide on supplemental oxygen targets."
+aliases = ["pulse oximetry", "peripheral oxygen saturation"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "bts-2017-oxygen"
+kind = "optimal"
+low = 94
+high = 98
+population = "Acutely ill adults in healthcare and emergency settings, not at risk of hypercapnic respiratory failure"
+evidence = "guideline"
+citations = [
+  { pmid = "28883921", doi = "10.1136/bmjresp-2016-000170", url = "https://pubmed.ncbi.nlm.nih.gov/28883921/", title = "British Thoracic Society Guideline for oxygen use in adults in healthcare and emergency settings.", locator = "Full text, Recommendations" },
+]
+note = "Recommended oxygen saturation target for most acutely ill adults. This is a treatment target, not a general reference interval. Pulse oximetry can overestimate saturation in patients with darker skin pigmentation (occult hypoxaemia), a caveat not captured by these numbers."
+
+[[range]]
+set = "bts-2017-oxygen"
+kind = "optimal"
+low = 88
+high = 92
+when = { conditions = ["hypercapnic-respiratory-failure-risk"] }
+population = "Adults at risk of hypercapnic respiratory failure (for example COPD)"
+evidence = "guideline"
+citations = [
+  { pmid = "28883921", doi = "10.1136/bmjresp-2016-000170", url = "https://pubmed.ncbi.nlm.nih.gov/28883921/", title = "British Thoracic Society Guideline for oxygen use in adults in healthcare and emergency settings.", locator = "Full text, Recommendations" },
+]
+note = "Target saturation for patients at risk of hypercapnic respiratory failure, for example those with COPD. The guideline says to use a patient-specific range where one is set."

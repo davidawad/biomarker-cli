@@ -2,6 +2,7 @@ slug = "testosterone-total"
 name = "Testosterone, Total"
 category = "hormone"
 unit = "ng/dL"
+description = "Total testosterone in serum, the first-line test for male androgen deficiency and for androgen status in women. Interpret against sex- and age-specific ranges, and measure in the morning with an accurate (LC-MS/MS) assay."
 loinc = "2986-8"
 aliases = ["testosterone", "total testosterone", "tt"]
 
@@ -24,3 +25,168 @@ low = 8.0
 high = 48.0
 when = { sex = "female" }
 legacy = true
+
+[[range]]
+set = "premenopausal-women-2011"
+kind = "reference"
+low = 15
+high = 46
+when = { sex = "female", age = [30.0, 30.0] }
+population = "Normally cycling healthy premenopausal women aged 18-49 (n=161); percentiles estimated for a typical 30-year-old woman, pooled across menstrual cycle phases"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "21771278", doi = "10.1111/j.1743-6109.2011.02380.x", url = "https://pubmed.ncbi.nlm.nih.gov/21771278/", title = "Testosterone reference ranges in normally cycling healthy premenopausal women.", locator = "Abstract, Results" },
+]
+note = "5th to 95th percentile for a 30-year-old woman; the source reports the age-related decline, so use the age-matched estimate."
+
+[[range]]
+set = "harmonized-men-2017"
+kind = "reference"
+low = 264
+high = 916
+when = { sex = "male", age = [19.0, 39.0] }
+population = "Healthy nonobese men aged 19-39 from four US and European cohorts (Framingham, EMAS, MrOS, MSSO; n=9054 community men), values harmonized to a CDC reference method"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28324103", doi = "10.1210/jc.2016-2935", url = "https://pubmed.ncbi.nlm.nih.gov/28324103/", title = "Harmonized Reference Ranges for Circulating Testosterone Levels in Men of Four Cohort Studies in the United States and Europe.", locator = "Abstract, Conclusion" },
+]
+note = "Harmonized normal range (the abstract gives the 2.5th and 97.5th percentiles as 264 and 916 ng/dL). Applies to assays calibrated to the reference method; intercohort differences were largely assay-related. Nonobese men only; not an age-banded range beyond 19-39."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 8.0
+high = 711.0
+when = { sex = "male", age = [12.0, 15.0] }
+population = "Healthy Chinese boys and girls aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, TESTO column)" },
+]
+note = "2.5th-97.5th percentile (P2.5 to P97.5) for boys aged 12-15 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay, so not interchangeable with LC-MS/MS ranges. Median 1.55 ng/mL is not a bound. Converted from the source's ng/mL (0.08-7.11) to ng/dL using factor 100."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 87.0
+high = 947.0
+when = { sex = "male", age = [15.0, 19.0] }
+population = "Healthy Chinese boys and girls aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, TESTO column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 15-19 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay. Median 5.53 ng/mL is not a bound. Converted from the source's ng/mL (0.87-9.47) to ng/dL using factor 100."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 4.0
+high = 85.0
+when = { sex = "female", age = [12.0, 18.0] }
+population = "Healthy Chinese boys and girls aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, TESTO column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 12-18 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay. Median 0.26 ng/mL is not a bound. Table row pairs male and female columns; this row's female cells are the second pair. Converted from the source's ng/mL (0.04-0.85) to ng/dL using factor 100."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 12.0
+high = 76.0
+when = { sex = "female", age = [18.0, 19.0] }
+population = "Healthy Chinese young women aged 18-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, TESTO column)" },
+]
+note = "2.5th-97.5th percentile for females aged 18-19 years, source unit ng/mL (multiply by 100 for ng/dL). Immunoassay, lower-end sensitivity should be checked against the lab's own assay. Converted from the source's ng/mL (0.12-0.76) to ng/dL using factor 100."
+
+[[range]]
+set = "female-age-continuous-2026"
+kind = "reference"
+low = 13.99
+high = 79.17
+when = { sex = "female", age = [20.0, 20.0] }
+population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42340622", doi = "10.1007/s40618-026-02929-w", url = "https://pubmed.ncbi.nlm.nih.gov/42340622/", title = "Redefining testosterone reference ranges for adult females.", locator = "Table 4 (age 20 row)" },
+]
+note = "2.5th and 97.5th percentile (Q 0.025 and Q 0.975) for a 20-year-old woman, source unit nmol/L (about 14.0-79.2 ng/dL). Assay not named in the abstract; age-continuous model from the same study. Converted from the source's nmol/L (0.485-2.745) to ng/dL using factor 28.84."
+
+[[range]]
+set = "female-age-continuous-2026"
+kind = "reference"
+low = 7.037
+high = 65.78
+when = { sex = "female", age = [40.0, 40.0] }
+population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42340622", doi = "10.1007/s40618-026-02929-w", url = "https://pubmed.ncbi.nlm.nih.gov/42340622/", title = "Redefining testosterone reference ranges for adult females.", locator = "Table 4 (age 40 row)" },
+]
+note = "2.5th and 97.5th percentile for a 40-year-old woman, source unit nmol/L. Total testosterone falls with age in this cohort, so use the age-matched estimate. Converted from the source's nmol/L (0.244-2.281) to ng/dL using factor 28.84."
+
+[[range]]
+set = "female-age-continuous-2026"
+kind = "reference"
+low = 5.018
+high = 59.99
+when = { sex = "female", age = [50.0, 50.0] }
+population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42340622", doi = "10.1007/s40618-026-02929-w", url = "https://pubmed.ncbi.nlm.nih.gov/42340622/", title = "Redefining testosterone reference ranges for adult females.", locator = "Table 4 (age 50 row)" },
+]
+note = "2.5th and 97.5th percentile for a 50-year-old woman, source unit nmol/L. Reflects the age-related decline; the premenopausal estimate for age 30 is in the first range of this file. Converted from the source's nmol/L (0.174-2.08) to ng/dL using factor 28.84."
+
+[[range]]
+set = "pediatric-sex-hormone-review-2026"
+kind = "reference"
+high = 288.4
+when = { sex = "male", age = [0.0833, 0.5] }
+population = "Literature review of published age- and Tanner-stage-specific reference intervals for children aged 0-18 (LC-MS/MS or GC-MS/MS methods)"
+evidence = "consensus"
+citations = [
+  { pmid = "42554720", doi = "10.1530/JME-26-0037", url = "https://pubmed.ncbi.nlm.nih.gov/42554720/", title = "A literature overview of age- and Tanner stage-specific reference intervals for sex hormones for children aged 0-18 years.", locator = "Results (Fig. 1A)" },
+]
+note = "Upper limit of the reference interval only, in boys during mini-puberty; the source gives the value in nmol/L (canonical unit here is ng/dL). Source states the value is approximate. Converted from the source's nmol/L (10) to ng/dL using factor 28.84."
+
+[[range]]
+set = "endocrine-society-2018"
+kind = "warn"
+high = 264
+when = { sex = "male" }
+population = "Men with suspected male hypogonadism; cut-off restated in a 2026 joint position statement (Brazil)"
+evidence = "consensus"
+citations = [
+  { pmid = "41678706", doi = "10.1590/S1677-5538.IBJU.2025.0610", url = "https://pubmed.ncbi.nlm.nih.gov/41678706/", title = "Care of Patients with Male Hypogonadism: A Joint Position Statement from the Brazilian Society of Endocrinology and Metabolism (SBEM), the Brazilian Society of Urology (SBU), and the Brazilian Association for Sexual Medicine and Health (ABEMSS).", locator = "Discussion (threshold paragraph)" },
+]
+note = "Lower total testosterone limit for low-testosterone diagnosis (values below 264 ng/dL support hypogonadism) as the Endocrine Society 2018 guideline recommends, restated verbatim in an open-access position statement. Assay-dependent: CDC-certified LC-MS/MS or immunoassays recommended. Not verified against the paywalled guideline itself. Source kind: diagnostic."
+
+[[range]]
+set = "eau-srh-2026"
+kind = "warn"
+high = 346.1
+when = { sex = "male" }
+population = "Men with symptomatic suspected male hypogonadism; EAU Guidelines on Sexual and Reproductive Health (2026 summary)"
+evidence = "consensus"
+citations = [
+  { pmid = "42177105", doi = "10.1016/j.euf.2026.04.015", url = "https://pubmed.ncbi.nlm.nih.gov/42177105/", title = "EAU Guidelines on Sexual and Reproductive Health: A Summary of the 2026 Recommendations for Measurement and Biochemical Confirmation of Hypogonadism.", locator = "Abstract, Key findings" },
+]
+note = "Threshold for diagnosing symptomatic male hypogonadism: total testosterone of 12 nmol/L or less (the zone is values at or below 12 nmol/L). Summary of EAU guidelines in an open-access abstract, not the full guideline text. Source unit nmol/L (about 346 ng/dL). Converted from the source's nmol/L (12) to ng/dL using factor 28.84. Source kind: diagnostic."
+
+[[range]]
+set = "pcos-lcms-2021"
+kind = "warn"
+high = 33.7
+when = { sex = "female", conditions = ["pcos"] }
+population = "Women with PCOS (n=102) and healthy volunteers (n=41), Chinese cohort, LC-MS/MS (method: lc-ms/ms; test: ROC analysis for hyperandrogenemia)"
+evidence = "cohort"
+citations = [
+  { pmid = "33583431", doi = "10.1186/s13048-021-00781-5", url = "https://pubmed.ncbi.nlm.nih.gov/33583431/", title = "Comparison of the efficacy of different androgens measured by LC-MS/MS in representing hyperandrogenemia and an evaluation of adrenal-origin androgens with a dexamethasone suppression test in patients with PCOS.", locator = "Abstract, Results" },
+]
+note = "Optimal ROC cut-off for hyperandrogenemia in PCOS (sensitivity 72.0%, specificity 82.93%). Values above the cut-off indicate hyperandrogenemia in this study. Single-centre diagnostic accuracy, not a reference interval; source unit is ng/mL (about 33.7 ng/dL). Converted from the source's ng/mL (0.337) to ng/dL using factor 100. Source kind: diagnostic."

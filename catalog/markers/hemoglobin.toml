@@ -2,6 +2,7 @@ slug = "hemoglobin"
 name = "Hemoglobin"
 category = "cbc"
 unit = "g/dL"
+description = "Concentration of the oxygen-carrying protein hemoglobin in whole blood. Low values define anemia; high values suggest polycythemia, dehydration, smoking or altitude."
 loinc = "718-7"
 aliases = ["hgb", "hb", "haemoglobin"]
 
@@ -31,3 +32,165 @@ kind = "reference"
 low = 11.1
 high = 17.7
 legacy = true
+
+[[range]]
+set = "who"
+kind = "warn"
+high = 13.0
+when = { sex = "male", age = [15.0, 200] }
+population = "males over 15 years of age (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section" },
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Figure 4 legend" },
+]
+note = "Anaemia if Hb is below this value. The 2024 evidence review (Lancet Haematol) cites the same 130 g/L cutoff for males aged 15 and older. Source kind: diagnostic."
+
+[[range]]
+set = "who"
+kind = "warn"
+high = 12.0
+when = { sex = "female", pregnant = false, age = [15.0, 200] }
+population = "non-pregnant women over 15 years of age (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section" },
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row" },
+]
+note = "Anaemia if Hb is below this value. Source kind: diagnostic."
+
+[[range]]
+set = "who"
+kind = "warn"
+high = 11.0
+when = { sex = "female", pregnant = true, trimester = 2 }
+population = "pregnant women in the second trimester (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section" },
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row" },
+]
+note = "Anaemia if Hb is below this value. No first-trimester WHO value was retrieved, so no first-trimester range is given. Source kind: diagnostic."
+
+[[range]]
+set = "who"
+kind = "warn"
+high = 11.0
+when = { sex = "female", pregnant = true, trimester = 3 }
+population = "pregnant women in the third trimester (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section" },
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row" },
+]
+note = "Anaemia if Hb is below this value. Source kind: diagnostic."
+
+[[range]]
+set = "who"
+kind = "warn"
+high = 11.0
+when = { age = [0.5, 5.0] }
+population = "children aged 6-59 months (WHO anaemia definition, as quoted in a 2019 AJCN systematic review)"
+evidence = "guideline"
+citations = [
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row" },
+]
+note = "Anaemia if Hb is below this value. Age is in years (6 months = 0.5). Source kind: diagnostic."
+
+[[range]]
+set = "who"
+kind = "warn"
+high = 11.5
+when = { age = [5.0, 12.0] }
+population = "children aged 5-11 years (WHO anaemia definition, as quoted in a 2019 AJCN systematic review)"
+evidence = "guideline"
+citations = [
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row" },
+]
+note = "Anaemia if Hb is below this value. Source kind: diagnostic."
+
+[[range]]
+set = "who"
+kind = "warn"
+high = 12.0
+when = { age = [12.0, 15.0] }
+population = "children aged 12-14 years (WHO anaemia definition, as quoted in a 2019 AJCN systematic review)"
+evidence = "guideline"
+citations = [
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row" },
+]
+note = "Anaemia if Hb is below this value. Same cutoff as the 2024 evidence review for male 12-14 year olds. Source kind: diagnostic."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 13.4
+high = 17.0
+when = { sex = "male", age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 11.7
+high = 15.3
+when = { sex = "female", age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles."
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "warn"
+high = 11.97
+when = { sex = "female", pregnant = false, age = [18.0, 66.0] }
+population = "Pooled healthy non-pregnant females aged 18-65 (n=3640) from international population surveys"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings" },
+]
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs. Source kind: diagnostic."
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "warn"
+high = 13.49
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Pooled healthy males aged 18-65 (n=2377) from international population surveys"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings" },
+]
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs. Source kind: diagnostic."
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "warn"
+high = 11.03
+when = { sex = "female", pregnant = true, trimester = 1 }
+population = "Healthy pregnant women, first trimester (n=772)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings" },
+]
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs. Source kind: diagnostic."
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "warn"
+high = 10.59
+when = { sex = "female", pregnant = true, trimester = 2 }
+population = "Healthy pregnant women, second trimester (n=111)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings" },
+]
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs. Source kind: diagnostic."

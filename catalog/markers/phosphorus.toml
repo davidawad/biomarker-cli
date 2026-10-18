@@ -1,0 +1,83 @@
+slug = "phosphorus"
+name = "Phosphorus (Phosphate), Inorganic"
+category = "mineral"
+unit = "mg/dL"
+description = "Serum inorganic phosphate, which falls steadily through childhood and is regulated with calcium and PTH. Reference values are much higher in infants than in adults, and phosphate is a KDIGO CKD-MBD target."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.87
+high = 10.43
+when = { age = [0.0, 1.0] }
+population = "Healthy Iranian infants aged 0 to under 5 months (CLSI EP28-A3 indirect method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36524863", doi = "10.1111/jcmm.17646", title = "Age-specific reference intervals for routine biochemical parameters in healthy neonates, infants, and young children in Iran.", locator = "Table 1" },
+]
+note = "Infant phosphate. Phosphate required age partitioning at 5, 10 and 15 months in the source; the 0-<5 month row is shown."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.26
+high = 7.87
+when = { age = [1.0, 3.0] }
+population = "Healthy Iranian children aged 15 to under 30 months (CLSI EP28-A3 indirect method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36524863", doi = "10.1111/jcmm.17646", title = "Age-specific reference intervals for routine biochemical parameters in healthy neonates, infants, and young children in Iran.", locator = "Table 1" },
+]
+note = "Phosphate falls with age in the source; the 15-<30 month row is shown. Age bracket is approximated in whole years (age_min 1, age_max 3)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.4
+high = 4.7
+when = { age = [18.0, 66.0] }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled; sex-specific intervals were not reported for phosphate"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Inorganic phosphate (IP), central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.057
+high = 6.07
+when = { age = [1.0, 6.0] }
+population = "Healthy Chinese children aged 1 to under 6 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Phosphate in mmol/L as stated in the source (not converted). Infants under 1 year are not encoded here because the source bands are split at 6 months. Converted from the source's mmol/L (1.31-1.96) to mg/dL using factor 3.097."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.685
+high = 6.132
+when = { sex = "male", age = [6.0, 18.0] }
+population = "Healthy Chinese boys aged 6 to under 18 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Phosphate in mmol/L as stated in the source (not converted). Converted from the source's mmol/L (1.19-1.98) to mg/dL using factor 3.097."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.5
+high = 5.822
+when = { sex = "female", age = [6.0, 18.0] }
+population = "Healthy Chinese girls aged 6 to under 18 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Phosphate in mmol/L as stated in the source (not converted). Converted from the source's mmol/L (1.13-1.88) to mg/dL using factor 3.097."

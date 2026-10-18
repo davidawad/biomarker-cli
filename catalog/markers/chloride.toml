@@ -2,6 +2,7 @@ slug = "chloride"
 name = "Chloride"
 category = "cmp"
 unit = "mmol/L"
+description = "Serum chloride tracks sodium and acid-base status. Both low and high values are associated with mortality in hospital cohorts, with the lowest risk at intermediate values."
 loinc = "2075-0"
 aliases = ["cl"]
 
@@ -11,3 +12,91 @@ kind = "reference"
 low = 96.0
 high = 106.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 98.0
+high = 108
+when = { sex = "male" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, male)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
+]
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 99.0
+high = 108
+when = { sex = "female" }
+population = "Adults (Turkish population, indirect reference interval, reflimR, female)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
+]
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 94
+high = 111
+when = { age = [18.0, 66.0] }
+population = "Apparently healthy adults aged 18 years and over in Egypt (IFCC C-RIDL protocol, serum), both sexes pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 103.0
+high = 114.0
+when = { age = [0.077, 0.5] }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 102.0
+high = 111.0
+when = { age = [0.5, 18.0] }
+population = "Healthy Chinese children aged 6 months to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 100
+high = 108
+population = "Adult hospital survivors at discharge (tertiary referral hospital cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "32438557", doi = "10.3390/medsci8020022", title = "Serum Chloride Levels at Hospital Discharge and One-Year Mortality among Hospitalized Patients.", locator = "Results" },
+]
+note = "Discharge chloride 100-108 mmol/L was not associated with different one-year mortality; the nadir was at 103-105 mmol/L."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 99
+population = "Adult hospital survivors at discharge (tertiary referral hospital cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "32438557", doi = "10.3390/medsci8020022", title = "Serum Chloride Levels at Hospital Discharge and One-Year Mortality among Hospitalized Patients.", locator = "Abstract" },
+]
+note = "Discharge chloride at or below 99 mmol/L (strictly, <=99) was associated with higher one-year mortality, with HR 1.45 for 97-99 and 1.94 for <=96 mmol/L versus 103-105 mmol/L (reference); HR 1.41 for >=109."

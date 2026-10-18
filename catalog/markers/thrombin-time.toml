@@ -1,0 +1,43 @@
+slug = "thrombin-time"
+name = "Thrombin time"
+category = "coagulation"
+unit = "s"
+loinc = "3243-3"
+description = "Clotting time of plasma after a fixed amount of thrombin is added, reflecting conversion of fibrinogen to fibrin. Prolonged values suggest low or dysfunctional fibrinogen, heparin or direct thrombin inhibitor effect, or dysproteinaemia; it is used to detect heparin and fibrinogen abnormalities."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 9.9
+high = 16.7
+when = { pregnant = true }
+population = "10,472 parturient women (women at delivery) in one laboratory, age-specific intervals pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30934105", doi = "10.1055/s-0039-1683932", title = "Age-Specific Reference Intervals for PT, aPTT, Fibrinogen and Thrombin Time for Parturient Women.", locator = "Abstract, Results" },
+]
+note = "Reference interval calculated per CLSI C28-A3 on an ACL TOP 700 analyser. No non-pregnant adult thrombin time reference interval was retrieved."
+
+[[range]]
+set = "shanghai-cobas-t711-2022"
+kind = "reference"
+low = 14.5
+high = 17.1
+population = "ostensibly healthy adult volunteers and patients at a hospital in Shanghai, China, age groups pooled"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35242978", doi = "10.1016/j.plabm.2022.e00268", title = "Assessment and establishment of a reference interval for Roche Cobas t 711 coagulation analyzer for a hospital in China.", locator = "Abstract, Results" },
+]
+note = "Self-established interval on the Roche Cobas t 711 analyser, seconds. Analyser-specific; the reagent-specific TT interval differs from the Stago and Sysmex values."
+
+[[range]]
+set = "tibet-hoffmann-2026"
+kind = "reference"
+low = 14.92
+high = 19.46
+population = "adults at the People's Hospital of Tibet Autonomous Region (high altitude, Tibetan Plateau), 2019-2023 retrospective laboratory data with indirect (Hoffmann) method (region: Tibet)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42329361", doi = "10.1002/jcla.70287", title = "Reference Interval Establishment for Four Coagulation Parameters Using Indirect Methods in a High-Altitude Chinese Population: A Retrospective Real-World Analysis.", locator = "Abstract, Results" },
+]
+note = "Indirect method on retrospective hospital data, Stago STA-R Evolution. Seconds. The authors report the TT interval is significantly lower than plain-area intervals. refineR gives 14.88-18.93 s."

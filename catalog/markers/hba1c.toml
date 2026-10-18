@@ -2,6 +2,7 @@ slug = "hba1c"
 name = "Hemoglobin A1c"
 category = "metabolic"
 unit = "%"
+description = "Glycated haemoglobin, reflecting average glucose over about 2-3 months. Used to diagnose and monitor prediabetes and diabetes, and to set individual treatment goals. Diagnostic and target values are given in % (NGSP) and mmol/mol (IFCC)."
 loinc = "4548-4"
 aliases = ["a1c", "hemoglobin a1c", "glycated hemoglobin", "hb a1c"]
 
@@ -36,3 +37,146 @@ kind = "optimal"
 low = 4.5
 high = 5.6
 legacy = true
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 5.7
+high = 6.4
+population = "Adults without a previous diabetes diagnosis"
+evidence = "guideline"
+citations = [
+  { pmid = "41928882", doi = "10.3389/fendo.2026.1789777", title = "The impact of glucose and metabolic disturbances on white matter hyperintensity volume in apparently healthy adults.", locator = "Table 1" },
+]
+note = "Prediabetes by ADA criteria. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 5.72
+high = 6.36
+population = "Adults without a previous diabetes diagnosis"
+evidence = "guideline"
+citations = [
+  { pmid = "41598648", doi = "10.3390/jcm15020710", title = "Should Prediabetes Be Classified as a Treatable Disease?", locator = "Section 2 (Diagnostic criteria)" },
+]
+note = "Prediabetes by ADA criteria, expressed in IFCC units (mmol/mol). Converted from the source's mmol/mol (39-46) to % using factor 0.09148 offset 2.152. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 5.7
+population = "Adults (ADA diagnostic categories as tabulated in a 2026 review)"
+evidence = "guideline"
+citations = [
+  { pmid = "42321865", doi = "10.1186/s13098-026-02213-0", title = "Diagnostic utility of fasting versus non-fasting blood glucose: contextualising testing strategies-a narrative review.", locator = "Table 3" },
+]
+note = "Normal HbA1c category, strictly below 5.7%. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 6.5
+population = "Adults"
+evidence = "guideline"
+citations = [
+  { pmid = "41928882", doi = "10.3389/fendo.2026.1789777", title = "The impact of glucose and metabolic disturbances on white matter hyperintensity volume in apparently healthy adults.", locator = "Table 1" },
+]
+note = "Diabetes by HbA1c (ADA), confirm with a repeat test unless unequivocal symptoms or a second criterion is present. Source kind: diagnostic."
+
+[[range]]
+set = "alt-3"
+kind = "warn"
+low = 6.543
+population = "Adults"
+evidence = "guideline"
+citations = [
+  { pmid = "41598648", doi = "10.3390/jcm15020710", title = "Should Prediabetes Be Classified as a Treatable Disease?", locator = "Section 2 (Diagnostic criteria)" },
+]
+note = "Diabetes by HbA1c (ADA), expressed in IFCC units (mmol/mol). Converted from the source's mmol/mol (48) to % using factor 0.09148 offset 2.152. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 7.0
+when = { pregnant = false, conditions = ["diabetes"] }
+population = "Nonpregnant adults with diabetes"
+evidence = "guideline"
+citations = [
+  { pmid = "38559693", doi = "10.3389/fendo.2024.1352302", title = "Blood glucose monitoring devices for type 1 diabetes: a journey from the food and drug administration approval to market availability.", locator = "Introduction (paragraph citing ADA recommendations)" },
+]
+note = "Glycaemic treatment goal for most nonpregnant adults with diabetes (ADA), cited via a secondary review. Less stringent goals apply to some individuals. Source kind: target."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 6.543
+when = { conditions = ["diabetes", "planning-pregnancy"] }
+population = "Women with diabetes planning a pregnancy"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng3/chapter/recommendations", locator = "Recommendation 1.1.18" },
+]
+note = "Pre-pregnancy HbA1c goal (NICE), if achievable without problematic hypoglycaemia. Equals 6.5% in NGSP units. Converted from the source's mmol/mol (48) to % using factor 0.09148 offset 2.152. Source kind: target."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 7.5
+when = { age = [65.0, 200], conditions = ["diabetes"] }
+population = "Older adults with diabetes in good health (few coexisting chronic illnesses, intact cognitive and functional status)"
+evidence = "guideline"
+citations = [
+  { pmid = "37841649", doi = "10.2147/cia.s423122", title = "Management of Glucose-Lowering Therapy in Older Adults with Type 2 Diabetes: Challenges and Opportunities.", locator = "Table (Glycemic targets in older adults, ADA 2023 row)" },
+]
+note = "HbA1c goal for healthy older adults with diabetes, as tabulated from ADA 2023 by a review. Less stringent goals apply to complex/intermediate health. Source kind: target."
+
+[[range]]
+set = "alt-1"
+kind = "optimal"
+high = 8.0
+when = { age = [65.0, 200], conditions = ["complex-intermediate-health", "diabetes"] }
+population = "Older adults with diabetes and complex/intermediate health (3 or more chronic illnesses, 2 or more instrumental ADL impairments, or mild-to-moderate cognitive impairment)"
+evidence = "guideline"
+citations = [
+  { pmid = "37841649", doi = "10.2147/cia.s423122", title = "Management of Glucose-Lowering Therapy in Older Adults with Type 2 Diabetes: Challenges and Opportunities.", locator = "Table (Glycemic targets in older adults, ADA 2023 row)" },
+]
+note = "HbA1c goal for complex/intermediate older adults with diabetes, as tabulated from ADA 2023 by a review. Limited life expectancy or very complex/poor health are not covered by this quote; the source lists separate goals for them. Source kind: target. Alternative to the default target optimal range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.82
+high = 5.92
+when = { age = [0.0, 45.0] }
+population = "Healthy Saudi adults over 18 years, under 45 years (IFCC multicenter study, 215 people; LAVE applied to A1C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38527010", doi = "10.1371/journal.pone.0300028", title = "Establishment of reference interval for hemoglobin A1C and other hemoglobin subfractions for healthy Saudi adults.", locator = "Table 4" },
+]
+note = "Parametric reference interval for HbA1c (A1C) in healthy Saudi adults, age partition only (MF = both sexes; no sex or BMI partition). Values are in % as printed in the source table, which gives no unit column."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 4.93
+high = 7.16
+when = { age = [45.0, 200] }
+population = "Healthy Saudi adults over 18 years, 45 years and older (IFCC multicenter study, 100 people; LAVE applied to A1C)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38527010", doi = "10.1371/journal.pone.0300028", title = "Establishment of reference interval for hemoglobin A1C and other hemoglobin subfractions for healthy Saudi adults.", locator = "Table 4" },
+]
+note = "Parametric reference interval for HbA1c (A1C) in healthy Saudi adults aged 45 and over. The upper limit is considerably higher than the under-45 interval; the source says it is the highest upper limit compared with nine countries."
+
+[[range]]
+set = "alt-1"
+kind = "optimal"
+low = 5.0
+high = 5.5
+population = "Nondiabetic adults, ARIC cohort (black and white, mean age about 54 years)"
+evidence = "cohort"
+citations = [
+  { pmid = "20200384", doi = "10.1056/NEJMoa0908359", title = "Glycated hemoglobin, diabetes, and cardiovascular risk in nondiabetic adults.", locator = "Abstract (Results)" },
+]
+note = "Lowest-risk HbA1c category (reference group, HR 1.00) for diabetes and coronary heart disease in ARIC. The association with all-cause death was J-shaped, so this is not a proven optimum. Alternative to the default optimal optimal range for the same population."

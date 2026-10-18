@@ -1,0 +1,91 @@
+slug = "pregnenolone"
+name = "Pregnenolone"
+category = "adrenal"
+unit = "ng/dL"
+description = "Upstream steroid precursor of DHEA, progesterone and cortisol, measured by LC-MS/MS. Plasma levels fall with age. Interpret against age- and sex-matched intervals."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 31.92
+high = 659.2
+when = { sex = "female" }
+population = "Volunteers aged 18-81 years (median 42), 293 women, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Table 3" },
+]
+note = "Female 2.5th-97.5th percentile (Table 3), all ages pooled. Source unit nmol/L; numbers are not converted. Converted from the source's nmol/L (1.01-20.86) to ng/dL using factor 31.6."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 45.82
+high = 723.0
+when = { sex = "male" }
+population = "Volunteers aged 18-81 years (median 42), 232 men, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Table 3" },
+]
+note = "Male 2.5th-97.5th percentile (Table 3), all ages pooled. Source unit nmol/L. Converted from the source's nmol/L (1.45-22.88) to ng/dL using factor 31.6."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+low = 38.24
+high = 674.0
+population = "Volunteers aged 18-81 years (median 42), 525 people with and without hypertension, both sexes pooled (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Table 3" },
+]
+note = "Median with 2.5th-97.5th percentile, both sexes together (Table 3). Source unit nmol/L. Converted from the source's nmol/L (1.21-21.33) to ng/dL using factor 31.6."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 973.3
+when = { sex = "male", age = [22.0, 22.0] }
+population = "Volunteers aged 18-81 years, men, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Results, Fig. 2 (age-specific upper cut-offs)" },
+]
+note = "Upper cut-off (age-specific curve fit) at age 22 in men. Falls about 74% by age 70 (see the age-70 range). Source unit nmol/L. Converted from the source's nmol/L (30.8) to ng/dL using factor 31.6."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 913.2
+when = { sex = "female", age = [22.0, 22.0] }
+population = "Volunteers aged 18-81 years, women, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Results, Fig. 2 (age-specific upper cut-offs)" },
+]
+note = "Upper cut-off (age-specific curve fit) at age 22 in women. Source unit nmol/L. Converted from the source's nmol/L (28.9) to ng/dL using factor 31.6."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 252.8
+when = { sex = "male", age = [70.0, 70.0] }
+population = "Volunteers aged 18-81 years, men, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Results, Fig. 2 (age-specific upper cut-offs)" },
+]
+note = "Upper cut-off (age-specific curve fit) at age 70 in men. Source unit nmol/L. Converted from the source's nmol/L (8.0) to ng/dL using factor 31.6."
+
+[[range]]
+set = "adrenal-steroids-lcms-2017"
+kind = "reference"
+high = 230.7
+when = { sex = "female", age = [70.0, 70.0] }
+population = "Volunteers aged 18-81 years, women, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28479316", doi = "10.1016/j.cca.2017.05.002", url = "https://pubmed.ncbi.nlm.nih.gov/28479316/", title = "Reference intervals for plasma concentrations of adrenal steroids measured by LC-MS/MS: Impact of gender, age, oral contraceptives, body mass index and blood pressure status.", locator = "Results, Fig. 2 (age-specific upper cut-offs)" },
+]
+note = "Upper cut-off (age-specific curve fit) at age 70 in women. Source unit nmol/L. Converted from the source's nmol/L (7.3) to ng/dL using factor 31.6."

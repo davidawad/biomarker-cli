@@ -1,0 +1,256 @@
+slug = "ck"
+name = "Creatine Kinase"
+category = "chemistry"
+unit = "U/L"
+description = "Creatine kinase is a marker of skeletal and cardiac muscle damage. Reference limits are higher in men and in people of African ancestry, so a single laboratory interval can misclassify results (for example, in people taking statins)."
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "reference"
+high = 210
+when = { sex = "female", age = [18.0, 200] }
+population = "Adults with persistent hyperCKemia assessment, women aged 18 years and older, as cited in the EAN 2024 guideline (97.5th centile)"
+evidence = "guideline"
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", locator = "Full text, PICO 1 (upper limit of normal)" },
+]
+note = "Upper limit of normal (97.5th centile) for CK in women aged 18 and over, as stated in the EAN 2024 guideline on oligo/asymptomatic hyperCKemia. The guideline's sources for these centiles are not reproduced in the quoted text."
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "reference"
+high = 400
+when = { sex = "male", age = [18.0, 50.0] }
+population = "Adults with persistent hyperCKemia assessment, men aged 18 to 49 years, as cited in the EAN 2024 guideline (97.5th centile)"
+evidence = "guideline"
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", locator = "Full text, PICO 1 (upper limit of normal)" },
+]
+note = "Upper limit of normal (97.5th centile) for CK in men aged 18 to 49 years, as stated in the EAN 2024 guideline. The guideline's bands are written as 18-50 and 50 and up, so age 50 falls in both; this range uses 18 to 49 (exclusive upper bound 50) to avoid double counting. Age 50 is covered by the 280 U/L range."
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "reference"
+high = 280
+when = { sex = "male", age = [50.0, 200] }
+population = "Adults with persistent hyperCKemia assessment, men aged 50 years and older, as cited in the EAN 2024 guideline (97.5th centile)"
+evidence = "guideline"
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", locator = "Full text, PICO 1 (upper limit of normal)" },
+]
+note = "Upper limit of normal (97.5th centile) for CK in men aged 50 and over, as stated in the EAN 2024 guideline. Lower than the male 18 to 49 limit of 400 U/L in the same guideline."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 31
+high = 254
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Reference interval from the Egyptian adult study (IFCC C-RIDL protocol) (values as stated in U/L, the source's unit)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 35
+high = 151
+when = { sex = "female", age = [18.0, 45.0] }
+population = "Females aged 18 to under 45 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Age-partitioned in the source at 45 years; the source applied LAVE correction only to the 45+ group."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 32
+high = 173
+when = { sex = "female", age = [45.0, 200] }
+population = "Females aged 45 years and older, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Values as stated in the source table (LAVE-corrected in the source)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 17.86
+high = 227.84
+when = { age = [2.0, 18.0] }
+population = "Healthy Chinese children aged 2 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28); the source band starts at 2 years, sex not split."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 26.2
+high = 235.39
+when = { age = [0.077, 0.333] }
+population = "Healthy Chinese children aged 28 days to under 4 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 41.13
+high = 248.37
+when = { age = [0.333, 2.0] }
+population = "Healthy Chinese children aged 4 months to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "contextual"
+kind = "reference"
+low = 29
+high = 170
+when = { sex = "female", age = [13.0, 200] }
+population = "Women aged 13 years and older, primary care, West Midlands UK (indirect reference intervals, refineR), White ethnicity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Table 2" },
+]
+note = "Sex- and ethnicity-specific limits (2.5th and 97.5th percentiles, IU/L) from a UK primary-care laboratory dataset. Black individuals had the highest limits. Applies only to: ethnicity=white."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 35
+high = 188
+when = { sex = "female", age = [13.0, 200] }
+population = "Women aged 13 years and older, primary care, West Midlands UK (indirect reference intervals, refineR), Asian ethnicity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Table 2" },
+]
+note = "Sex- and ethnicity-specific limits (2.5th and 97.5th percentiles, IU/L) from a UK primary-care laboratory dataset. Applies only to: ethnicity=asian. Alternative to the default contextual reference range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "reference"
+low = 46
+high = 389
+when = { sex = "female", age = [13.0, 200] }
+population = "Women aged 13 years and older, primary care, West Midlands UK (indirect reference intervals, refineR), Black ethnicity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Table 2" },
+]
+note = "Sex- and ethnicity-specific limits (2.5th and 97.5th percentiles, IU/L) from a UK primary-care laboratory dataset. Upper limit is about 2.3 times the White female limit in the source. Applies only to: ethnicity=black. Alternative to the default contextual reference range for the same population."
+
+[[range]]
+set = "contextual"
+kind = "reference"
+low = 58
+high = 757
+when = { sex = "male", age = [13.0, 200] }
+population = "Men aged 13 years and older, primary care, West Midlands UK (indirect reference intervals, refineR), Black ethnicity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Table 2" },
+]
+note = "Sex- and ethnicity-specific limits (2.5th and 97.5th percentiles, IU/L) from a UK primary-care laboratory dataset. Applies only to: ethnicity=black."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 44
+high = 357
+when = { sex = "male", age = [13.0, 200] }
+population = "Men aged 13 years and older, primary care, West Midlands UK (indirect reference intervals, refineR), Asian ethnicity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Table 2" },
+]
+note = "Sex- and ethnicity-specific limits (2.5th and 97.5th percentiles, IU/L) from a UK primary-care laboratory dataset. Applies only to: ethnicity=asian. Alternative to the default contextual reference range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "reference"
+low = 35
+high = 314
+when = { sex = "male", age = [13.0, 200] }
+population = "Men aged 13 years and older, primary care, West Midlands UK (indirect reference intervals, refineR), White ethnicity"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Table 2" },
+]
+note = "Sex- and ethnicity-specific limits (2.5th and 97.5th percentiles, IU/L) from a UK primary-care laboratory dataset. Applies only to: ethnicity=white. Alternative to the default contextual reference range for the same population."
+
+[[range]]
+set = "ck-ethnicity-2026"
+kind = "reference"
+high = 389.0
+when = { sex = "female", age = [13.0, 200] }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, Black females aged 13 years and older"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (URL) for CK in Black females aged 13 and over, from a multi-ethnic UK dataset. Above this limit the result is flagged high. Limit is higher than the White female limit. Converted from the source's IU/L (389) to U/L using factor 1. Applies only to: ethnicity=black."
+
+[[range]]
+set = "alt-3"
+kind = "reference"
+high = 170.0
+when = { sex = "female", age = [13.0, 200] }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, White females aged 13 years and older"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit for CK in White females aged 13 and over. The study labels this group 'White'; mapped to the european ethnicity key. Converted from the source's IU/L (170) to U/L using factor 1. Applies only to: ethnicity=european. Alternative to the default ck-ethnicity-2026 reference range for the same population."
+
+[[range]]
+set = "ck-ethnicity-2026"
+kind = "reference"
+high = 757.0
+when = { sex = "male", age = [13.0, 200] }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, Black males aged 13 years and older"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit for CK in Black males aged 13 and over. Highest limit in the study; CK is highest in Black individuals overall. Converted from the source's IU/L (757) to U/L using factor 1. Applies only to: ethnicity=black."
+
+[[range]]
+set = "alt-3"
+kind = "reference"
+high = 314.0
+when = { sex = "male", age = [13.0, 200] }
+population = "Primary care patients in a West Midlands (UK) laboratory dataset, White males aged 13 years and older"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42142664", doi = "10.1016/j.clinme.2026.100596", url = "https://pubmed.ncbi.nlm.nih.gov/42142664/", title = "Age, sex and ethnicity changes in creatine kinase and sex- and ethnicity-specific reference intervals of creatine kinase.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit for CK in White males aged 13 and over. The study labels this group 'White'; mapped to the european ethnicity key. Converted from the source's IU/L (314) to U/L using factor 1. Applies only to: ethnicity=european. Alternative to the default ck-ethnicity-2026 reference range for the same population."
+
+[[range]]
+set = "rhabdo-review-2016"
+kind = "critical"
+low = 1000
+population = "Adults with suspected rhabdomyolysis (clinical review)"
+evidence = "consensus"
+citations = [
+  { pmid = "27301374", doi = "10.1186/s13054-016-1314-5", url = "https://pubmed.ncbi.nlm.nih.gov/27301374/", title = "Beyond muscle destruction: a systematic review of rhabdomyolysis for clinical practice.", locator = "Full text, diagnostic criteria" },
+]
+note = "Rhabdomyolysis threshold: CK above 1000 U/L (strict >1000). Taken from a systematic review of rhabdomyolysis for clinical practice, not a numbered guideline."

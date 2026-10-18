@@ -1,0 +1,53 @@
+slug = "apnea-hypopnea-index"
+name = "Apnea-Hypopnea Index"
+category = "wearable"
+unit = "events/h"
+loinc = "69990-0"
+description = "Number of apnea and hypopnea events per hour of sleep, the standard measure of obstructive sleep apnea severity. Higher values indicate more severe sleep-disordered breathing."
+aliases = ["ahi", "apnoea-hypopnoea index", "rei"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5
+population = "Adults (normal band of the AHI/REI severity grading used for obstructive sleep apnoea)"
+evidence = "guideline"
+citations = [
+  { pmid = "42200975", doi = "10.3390/clockssleep8020028", url = "https://pubmed.ncbi.nlm.nih.gov/42200975/", title = "Obstructive Sleep Apneas and Cardiovascular Diseases.", locator = "Full text, OSA severity paragraph" },
+]
+note = "Normal: AHI below 5 events/h, as graded in the cited 2026 review of OSA and cardiovascular disease. The review gives the grading without a separate source citation in the retrieved text."
+
+[[range]]
+set = "aasm-osa-severity"
+kind = "warn"
+low = 5
+high = 14
+population = "Adults with obstructive sleep apnoea"
+evidence = "guideline"
+citations = [
+  { pmid = "42073495", doi = "10.3390/life16040687", url = "https://pubmed.ncbi.nlm.nih.gov/42073495/", title = "Optimizing Surgical Choice in Mild and Moderate OSA: Anterior Palatoplasty vs. Radiofrequency Uvulopalatoplasty.", locator = "Introduction, paragraph on OSA severity (cites AASM)" },
+]
+note = "Mild OSA band as published (AHI 5-14 events/h). The source attributes this grading to the AASM and ICSD. Boundary as published; the 2026 review's own grading uses 5-15. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 15
+high = 29
+population = "Adults with obstructive sleep apnoea"
+evidence = "guideline"
+citations = [
+  { pmid = "42073495", doi = "10.3390/life16040687", url = "https://pubmed.ncbi.nlm.nih.gov/42073495/", title = "Optimizing Surgical Choice in Mild and Moderate OSA: Anterior Palatoplasty vs. Radiofrequency Uvulopalatoplasty.", locator = "Introduction, paragraph on OSA severity (cites AASM)" },
+]
+note = "Moderate OSA band as published (AHI 15-29 events/h). Source kind: decision. Alternative to the default aasm-osa-severity warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 30
+population = "Adults with obstructive sleep apnoea"
+evidence = "guideline"
+citations = [
+  { pmid = "42073495", doi = "10.3390/life16040687", url = "https://pubmed.ncbi.nlm.nih.gov/42073495/", title = "Optimizing Surgical Choice in Mild and Moderate OSA: Anterior Palatoplasty vs. Radiofrequency Uvulopalatoplasty.", locator = "Introduction, paragraph on OSA severity (cites AASM)" },
+]
+note = "Severe OSA band, published as AHI greater than 30 events/h (open upper bound). Boundary at exactly 30 is not explicit in the source; the 2026 review grades severe as '>30' as well. Source kind: decision. Alternative to the default aasm-osa-severity warn range for the same population."

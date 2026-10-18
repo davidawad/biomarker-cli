@@ -2,6 +2,7 @@ slug = "co2"
 name = "Carbon Dioxide (Bicarbonate)"
 category = "cmp"
 unit = "mmol/L"
+description = "Serum bicarbonate (total CO2) reflects the metabolic component of acid-base balance. In CKD, low bicarbonate is common and associated with worse outcomes, and KDIGO recommends considering treatment of acidosis when bicarbonate falls below 18 mmol/L."
 loinc = "2028-9"
 aliases = ["bicarbonate", "hco3", "carbon dioxide, total"]
 
@@ -11,3 +12,91 @@ kind = "reference"
 low = 20.0
 high = 29.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 18
+when = { conditions = ["ckd"] }
+population = "Adults with chronic kidney disease"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Practice Point 3.10.1" },
+]
+note = "KDIGO 2024: in people with CKD, consider pharmacological treatment (with or without diet) to prevent acidosis when bicarbonate is below 18 mmol/L. Monitor so that bicarbonate does not exceed the upper limit of normal."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 18
+high = 37
+population = "Healthy elderly adults (Asmara, Eritrea; CLSI C28-A3 reference interval study)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29258577", doi = "10.1186/s13104-017-3087-6", title = "Biochemistry reference intervals for healthy elderly population in Asmara, Eritrea.", locator = "Table 1" },
+]
+note = "Reference interval for healthy elderly Eritrean adults (combined sexes, 2.5th-97.5th percentile). Broader than typical adult intervals; use with care. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.15
+high = 22.51
+when = { age = [0.0, 2.0] }
+population = "Healthy Chinese children aged 28 days to under 2 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Serum CO2 (total carbon dioxide) in mmol/L as stated in the source (not converted). Wide interval; the source reports age-dependent values."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15.83
+high = 23.2
+when = { age = [2.0, 18.0] }
+population = "Healthy Chinese children aged 2 to under 18 years (Shenzhen, residual serum, CLSI EP28-A3c nonparametric method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Serum CO2 (total carbon dioxide) in mmol/L as stated in the source (not converted)."
+
+[[range]]
+set = "alt-2"
+kind = "reference"
+low = 22
+high = 30
+population = "Healthy adults aged about 18-75 years (n = 182, both sexes), Pakistan; venous blood gas bicarbonate, 2.5-97.5 percentile (specimen: venous-blood-gas)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39712818", doi = "10.7759/cureus.74223", title = "Reference Intervals for Venous Blood Gas in Healthy Adults: A One-Year Prospective Study", locator = "Table 2" },
+]
+note = "Venous blood gas bicarbonate, not serum total CO2 (a different specimen and method). Use for orientation only; no serum total CO2 reference interval from an open-access adult study was found in the sources checked. The source's 90 % confidence limits are 22-23 and 28-30 mmol/L. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 22
+when = { conditions = ["ckd"] }
+population = "Adults with non-dialysis-dependent CKD (moderate and advanced; male cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "19015169", doi = "10.1093/ndt/gfn633", title = "Association of serum bicarbonate levels with mortality in patients with non-dialysis-dependent CKD.", locator = "Results" },
+  { pmid = "23348878", doi = "10.1093/ndt/gfs609", title = "Serum bicarbonate and mortality in adults in NHANES III.", locator = "Results" },
+]
+note = "Strictly below 22 mmol/L: highest mortality in this non-dialysis CKD cohort (multivariable HR 1.33 vs 22 or higher, per the source). Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 26
+high = 29
+when = { conditions = ["ckd"] }
+population = "Adults with non-dialysis-dependent CKD (moderate and advanced; male cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "19015169", doi = "10.1093/ndt/gfn633", title = "Association of serum bicarbonate levels with mortality in patients with non-dialysis-dependent CKD.", locator = "Results" },
+]
+note = "Lowest observed mortality in this cohort at 26-29 mmol/L (the source reports this as the lowest-risk band; it is an observational finding, not a proven treatment target)."

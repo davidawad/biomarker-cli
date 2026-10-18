@@ -1,0 +1,111 @@
+slug = "igm"
+name = "Immunoglobulin M"
+category = "immune"
+unit = "g/L"
+loinc = "2472-9"
+description = "The first antibody made in an immune response, found mainly in the blood. Reference levels vary with age and sex in children, and persistently low IgM can indicate an immunodeficiency."
+aliases = ["immunoglobulin m, serum"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.39
+high = 2.83
+when = { age = [18.0, 56.0] }
+population = "Iranian healthy adult blood donor volunteers aged 18-55 years (n=914), measured by nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", locator = "Abstract, Methods" },
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", locator = "Abstract, Results" },
+]
+note = "Central reference interval as reported (mg/dL). Single-country blood-donor cohort. Converted from the source's mg/dL (39-283) to g/L using factor 0.01."
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 0.45
+high = 1.96
+when = { sex = "male", age = [1.0, 3.0] }
+population = "Healthy Brazilian boys aged 1-2 years (population-based)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", locator = "Abstract, Results" },
+]
+note = "Sex- and age-specific rank-method interval (mg/dL). Converted from the source's mg/dL (45-196) to g/L using factor 0.01."
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 0.34
+high = 1.9
+when = { sex = "male", age = [3.0, 11.0] }
+population = "Healthy Brazilian boys aged 3-10 years (population-based)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", locator = "Abstract, Results" },
+]
+note = "Sex- and age-specific rank-method interval (mg/dL). Converted from the source's mg/dL (34-190) to g/L using factor 0.01."
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 0.5
+high = 2.12
+when = { sex = "female", age = [1.0, 5.0] }
+population = "Healthy Brazilian girls aged 1-4 years (population-based)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", locator = "Abstract, Results" },
+]
+note = "Sex- and age-specific rank-method interval (mg/dL). Converted from the source's mg/dL (50-212) to g/L using factor 0.01."
+
+[[range]]
+set = "brazil-children-2024"
+kind = "reference"
+low = 0.39
+high = 2.12
+when = { sex = "female", age = [5.0, 11.0] }
+population = "Healthy Brazilian girls aged 5-10 years (population-based)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38145629", doi = "10.1016/j.jped.2023.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/38145629/", title = "Reference intervals for serum immunoglobulins G, M and E levels in Brazilian children aged 1 to 10 years: a population-based study.", locator = "Abstract, Results" },
+]
+note = "Sex- and age-specific rank-method interval (mg/dL). Converted from the source's mg/dL (39-212) to g/L using factor 0.01."
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.48
+high = 3.38
+when = { sex = "female" }
+population = "Adult women from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", locator = "Abstract, Results and conclusions" },
+]
+note = "Multicentre adult reference interval for women. Assay-specific; check against the local assay's own interval."
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.41
+high = 2.46
+when = { sex = "male" }
+population = "Adult men from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", locator = "Abstract, Results and conclusions" },
+]
+note = "Multicentre adult reference interval for men. Assay-specific; check against the local assay's own interval."
+
+[[range]]
+set = "hemochromatosis-probands-2026"
+kind = "reference"
+low = 0.4
+high = 2.3
+population = "Adults in a hemochromatosis proband study; the limits are the 1996 consensus reference limits it adopted, not hemochromatosis-specific data"
+evidence = "consensus"
+citations = [
+  { pmid = "42340960", doi = "10.1371/journal.pone.0352148", url = "https://pubmed.ncbi.nlm.nih.gov/42340960/", title = "Serum IgA and IgM levels in hemochromatosis probands with HFE p.C282Y homozygosity.", locator = "Full text, Methods" },
+]
+note = "Serum IgM reference limits (40-230 mg/dL) as adopted from 1996 consensus guidelines. Sexes and ages not partitioned in the quoted limits."

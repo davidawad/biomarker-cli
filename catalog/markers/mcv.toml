@@ -2,6 +2,7 @@ slug = "mcv"
 name = "Mean Corpuscular Volume"
 category = "cbc"
 unit = "fL"
+description = "Average volume of a red blood cell. Low values (microcytosis) suggest iron deficiency or thalassaemia trait; high values (macrocytosis) suggest B12 or folate deficiency, alcohol use, liver disease or reticulocytosis."
 loinc = "787-2"
 aliases = []
 
@@ -11,3 +12,27 @@ kind = "reference"
 low = 79.0
 high = 97.0
 legacy = true
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 82
+high = 98
+when = { age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types; no sex-specific interval reported"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles. The NORIP abstract reports one interval for both sexes."
+
+[[range]]
+set = "am-fam-physician-2009"
+kind = "warn"
+low = 100
+population = "adults with an incidental raised MCV on a complete blood count (macrocytosis evaluation review)"
+evidence = "consensus"
+citations = [
+  { pmid = "19202968", title = "Evaluation of macrocytosis.", locator = "Abstract" },
+]
+note = "Review (American Family Physician) defining macrocytosis as MCV above 100 fL; abstract-level citation, not a guideline threshold. No microcytosis (low MCV) cutoff was found in retrievable open-access text, so none is encoded."

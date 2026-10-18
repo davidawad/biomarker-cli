@@ -2,6 +2,7 @@ slug = "lh"
 name = "Luteinizing Hormone"
 category = "hormone"
 unit = "mIU/mL"
+description = "Pituitary gonadotropin that triggers ovulation and stimulates testosterone production in men. Reference values depend on sex, menstrual cycle phase and menopause; in children, basal LH is used to screen for central precocious puberty."
 loinc = "10501-5"
 aliases = []
 
@@ -12,3 +13,294 @@ low = 1.7
 high = 8.6
 when = { sex = "male" }
 legacy = true
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.83
+high = 7.65
+when = { sex = "male" }
+population = "healthy men (n = 220, aged 20-68 years) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "2.5th-97.5th percentile (Table 1, Advia Centaur; source unit mU/mL, equivalent to mIU/mL). Median 3.81."
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 2.18
+high = 10.6
+when = { sex = "female", cycle_phase = "follicular" }
+population = "women in the follicular phase (n = 139; days 3-5 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 5.00."
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.15
+high = 20.9
+when = { sex = "female", cycle_phase = "luteal" }
+population = "women in the luteal phase (n = 87; days 21-23 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 4.94."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 18.0
+high = 64.2
+when = { sex = "female", menopause = "post" }
+population = "postmenopausal women (n = 103; amenorrhea for at least 12 months) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "2.5th-97.5th percentile (Table 1). Source unit mU/mL, equivalent to mIU/mL. Median 32.6. Alternative to the default clsi-ep28-advia-2016 reference range for the same population."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.09
+high = 12.27
+when = { sex = "male", age = [0.0027, 0.0821] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i chemiluminescence immunoassay, CLSI C28-A3 method; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, LH column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 1 day to 1 month (neonatal mini-puberty), mIU/mL. Median 4.40 is not a bound. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.05
+high = 6.6
+when = { sex = "male", age = [0.0833, 1.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, LH column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 1-12 months, mIU/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.04
+high = 0.67
+when = { sex = "male", age = [1.0, 9.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, LH column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 1-9 years (prepubertal), mIU/mL. Immunoassay-specific; near the assay detection limit at the low end."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.03
+high = 2.89
+when = { sex = "male", age = [9.0, 12.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, LH column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 9-12 years (early puberty), mIU/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.83
+high = 11.55
+when = { sex = "male", age = [12.0, 15.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, LH column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 12-15 years (pubertal rise), mIU/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 2.0
+high = 10.52
+when = { sex = "male", age = [15.0, 19.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; male columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (male, LH column)" },
+]
+note = "2.5th-97.5th percentile for boys aged 15-19 years, mIU/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.09
+high = 7.14
+when = { sex = "female", age = [0.0027, 0.0821] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, LH column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 1 day to 1 month, mIU/mL. Median 0.53 is not a bound. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.03
+high = 5.21
+when = { sex = "female", age = [0.0833, 1.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, LH column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 1-12 months, mIU/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.03
+high = 0.51
+when = { sex = "female", age = [1.0, 9.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, LH column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 1-9 years (prepubertal), mIU/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 0.07
+high = 4.44
+when = { sex = "female", age = [9.0, 12.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, LH column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 9-12 years, mIU/mL. Immunoassay-specific."
+
+[[range]]
+set = "wuhan-pediatric-2025"
+kind = "reference"
+low = 1.0
+high = 19.49
+when = { sex = "female", age = [12.0, 19.0] }
+population = "Healthy Chinese children and adolescents aged 0-19 years, Wuhan (n=2477), Mindray CL-6000i immunoassay; female columns of Table 4 (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39944871", doi = "10.21037/tp-24-399", url = "https://pubmed.ncbi.nlm.nih.gov/39944871/", title = "Age- and sex-specific reference intervals for sex hormones in children in Wuhan: a cross-sectional study of 2,477 healthy children and adolescents.", locator = "Table 4 (female, LH column)" },
+]
+note = "2.5th-97.5th percentile for girls aged 12-19 years (pubertal), mIU/mL. Immunoassay-specific; wide range reflects cycle phase, which the source does not separate."
+
+[[range]]
+set = "gnrh-test-basal-lh-2026"
+kind = "warn"
+low = 0.5
+when = { age = [0.0, 9.0] }
+population = "258 children evaluated for suspected central precocious puberty with a first GnRH stimulation test, Edinburgh 2011-2025 (specimen: serum; test: early-morning fasting basal LH before GnRH stimulation test)"
+evidence = "cohort"
+citations = [
+  { pmid = "42440719", doi = "10.1210/jendso/bvag131", url = "https://pubmed.ncbi.nlm.nih.gov/42440719/", title = "Diagnostic utility of basal luteinizing hormone in evaluating central precocious puberty.", locator = "Abstract, Results" },
+]
+note = "Optimal basal LH threshold for a pubertal GnRH response (sensitivity 0.61, specificity 0.97). Assay dependent (Abbott LOD 0.5 U/L; Roche LOD 0.3 U/L). Source unit U/L (equivalent to IU/L). Eligibility: girls under 8 and boys under 9 years. Converted from the source's U/L (0.5) to mIU/mL using factor 1. Source kind: diagnostic."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 1.0
+when = { age = [0.0, 9.0] }
+population = "258 children evaluated for suspected central precocious puberty with a first GnRH stimulation test, Edinburgh 2011-2025 (specimen: serum; test: early-morning fasting basal LH before GnRH stimulation test)"
+evidence = "cohort"
+citations = [
+  { pmid = "42440719", doi = "10.1210/jendso/bvag131", url = "https://pubmed.ncbi.nlm.nih.gov/42440719/", title = "Diagnostic utility of basal luteinizing hormone in evaluating central precocious puberty.", locator = "Abstract, Results" },
+]
+note = "Basal LH at or above this value gave 100% specificity and positive predictive value for a pubertal GnRH response in the source. Assay dependent. Source unit U/L (equivalent to IU/L). Converted from the source's U/L (1.0) to mIU/mL using factor 1. Source kind: diagnostic. Alternative to the default gnrh-test-basal-lh-2026 warn range for the same population."
+
+[[range]]
+set = "basal-lh-weight-stratified-2026"
+kind = "warn"
+low = 0.165
+when = { sex = "female", conditions = ["normal-weight"] }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group (test: GnRH stimulation test, premenarcheal girls with breast development)"
+evidence = "cohort"
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", locator = "Abstract, Results" },
+]
+note = "Youden-optimal basal LH cut-off for CPP in normal-weight girls (AUC 0.770). Assay dependent. Source unit IU/L. Converted from the source's IU/L (0.165) to mIU/mL using factor 1. Source kind: diagnostic."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 0.145
+when = { sex = "female", conditions = ["overweight"] }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group (test: GnRH stimulation test, premenarcheal girls with breast development)"
+evidence = "cohort"
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", locator = "Abstract, Results" },
+]
+note = "Youden-optimal basal LH cut-off for CPP in overweight girls (AUC 0.822). Assay dependent. Source unit IU/L. Converted from the source's IU/L (0.145) to mIU/mL using factor 1. Source kind: diagnostic. Alternative to the default basal-lh-weight-stratified-2026 warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 0.135
+when = { sex = "female", conditions = ["obesity"] }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group (test: GnRH stimulation test, premenarcheal girls with breast development)"
+evidence = "cohort"
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", locator = "Abstract, Results" },
+]
+note = "Youden-optimal basal LH cut-off for CPP in girls with obesity (AUC 0.749). Assay dependent. Source unit IU/L. Converted from the source's IU/L (0.135) to mIU/mL using factor 1. Source kind: diagnostic. Alternative to the default basal-lh-weight-stratified-2026 warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 0.135
+when = { sex = "female", conditions = ["underweight"] }
+population = "premenarcheal girls with breast development (n about 1734), GnRH stimulation test, stratified by BMI z-score group (test: GnRH stimulation test, premenarcheal girls with breast development)"
+evidence = "cohort"
+citations = [
+  { pmid = "42564140", doi = "10.3389/fendo.2026.1900964", url = "https://pubmed.ncbi.nlm.nih.gov/42564140/", title = "The diagnostic value and optimal cutoff of basal luteinizing hormone for central precocious puberty in premenarcheal girls stratified by weight status.", locator = "Abstract, Results" },
+]
+note = "Youden-optimal basal LH cut-off for CPP in underweight girls (AUC 0.767). Assay dependent. Source unit IU/L. Converted from the source's IU/L (0.135) to mIU/mL using factor 1. Source kind: diagnostic. Alternative to the default basal-lh-weight-stratified-2026 warn range for the same population."
+
+[[range]]
+set = "gnrha-peak-lh-2024"
+kind = "warn"
+low = 5.0
+when = { sex = "female" }
+population = "971 girls with premature breast development who had a subcutaneous GnRHa (100 ug triptorelin) test, Tanner stages II-III; normal-weight group of 634 girls (test: subcutaneous triptorelin 100 ug GnRHa stimulation test, peak serum LH)"
+evidence = "cohort"
+citations = [
+  { pmid = "38300440", doi = "10.1111/cen.15026", url = "https://pubmed.ncbi.nlm.nih.gov/38300440/", title = "Peak serum luteinising hormone cut-off during gonadotropin-releasing hormone analogue test for diagnosing central precocious puberty was lower in girls with obesity as compared with girls with normal weight.", locator = "Abstract, Results" },
+]
+note = "Peak LH cut-off of 5 IU/L (the commonly used value) in normal-weight girls: sensitivity 75%, specificity 90%. A peak at or above the cut-off supports central precocious puberty. Source unit IU/L (equivalent to mIU/mL). Assay dependent. Converted from the source's IU/L (5) to mIU/mL using factor 1. Applies only to: tanner_min=2; tanner_max=3. Source kind: diagnostic."
+
+[[range]]
+set = "gnrha-peak-lh-2024"
+kind = "warn"
+low = 4.0
+when = { sex = "female", conditions = ["overweight-or-obesity"] }
+population = "971 girls with premature breast development who had a subcutaneous GnRHa (100 ug triptorelin) test; overweight or obesity group of 337 girls (test: subcutaneous triptorelin 100 ug GnRHa stimulation test, peak serum LH)"
+evidence = "cohort"
+citations = [
+  { pmid = "38300440", doi = "10.1111/cen.15026", url = "https://pubmed.ncbi.nlm.nih.gov/38300440/", title = "Peak serum luteinising hormone cut-off during gonadotropin-releasing hormone analogue test for diagnosing central precocious puberty was lower in girls with obesity as compared with girls with normal weight.", locator = "Abstract, Results" },
+]
+note = "Lower peak LH cut-off of 4 IU/L for girls with overweight or obesity: sensitivity 86%, specificity 93%. The authors suggest this lower value to avoid underdiagnosis. Source unit IU/L (equivalent to mIU/mL). Converted from the source's IU/L (4) to mIU/mL using factor 1. Applies only to: tanner_min=2; tanner_max=3. Source kind: diagnostic."

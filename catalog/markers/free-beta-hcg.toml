@@ -1,0 +1,42 @@
+slug = "free-beta-hcg"
+name = "Free β-hCG, Maternal Serum"
+category = "pregnancy"
+unit = "MoM"
+description = "Free beta subunit of hCG measured in first-trimester maternal serum and expressed as multiples of the median (MoM) for gestational age. Used with PAPP-A, nuchal translucency and maternal age in aneuploidy screening. Abnormal values raise the risk of trisomy 21 (high) or of other chromosomal abnormalities (low)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "contingent-screening-2023"
+kind = "warn"
+low = 2.75
+when = { pregnant = true, trimester = 1 }
+population = "First-trimester screening population with a contingent NIPT strategy (BMC Pregnancy Childbirth 2023) (specimen: serum)"
+evidence = "cohort"
+citations = [
+  { pmid = "37964244", doi = "10.1186/s12884-023-06115-1", url = "https://pubmed.ncbi.nlm.nih.gov/37964244/", title = "A new contingent screening strategy increased detection rate of trisomy 21 in the first trimester.", locator = "Abstract, Results" },
+]
+note = "Cut-off for an abnormal first-trimester result that triggered further NIPT in the contingent strategy: free β-hCG >= 2.75 MoM or PAPP-A <= 0.5 MoM. This is a screening-pathway threshold, not a diagnosis, and MoM values are centre-specific. Source kind: diagnostic."
+
+[[range]]
+set = "iran-amniocentesis-2026"
+kind = "warn"
+low = 1.52
+when = { pregnant = true, trimester = 1 }
+population = "First-trimester pregnancies in southern Iran (2021-2022) with abnormal amniocentesis results, cross-sectional study (specimen: serum)"
+evidence = "cohort"
+citations = [
+  { pmid = "42039225", doi = "10.30476/ijms.2025.107579.4208", url = "https://pubmed.ncbi.nlm.nih.gov/42039225/", title = "The Association between Serum Biochemical Markers and Early Amniocentesis in Diagnosing Chromosomal Anomalies: A Cross-Sectional Study in Southern Iran, 2021-2022.", locator = "Abstract, Results" },
+]
+note = "ROC-type cut-off for predicting Down syndrome among abnormal amniocentesis cases (sensitivity 76%, specificity 70%). Small single-region cross-sectional study; not a validated screening threshold, and it is higher than the 2.75 MoM contingent rule above. Source kind: diagnostic."
+
+[[range]]
+set = "atypical-cma-2021"
+kind = "warn"
+high = 0.37
+when = { pregnant = true, trimester = 1 }
+population = "877 singleton pregnancies with first-trimester combined screening data and chromosomal microarray (CMA), 2013-2020 (specimen: serum)"
+evidence = "cohort"
+citations = [
+  { pmid = "34872079", doi = "10.1159/000521345", url = "https://pubmed.ncbi.nlm.nih.gov/34872079/", title = "Significance of Low Maternal Serum Β-hCG Levels in the Assessment of the Risk of Atypical Chromosomal Abnormalities.", locator = "Abstract, Results" },
+]
+note = "Low free β-hCG (<= 0.37 MoM) was associated with atypical chromosomal abnormalities on CMA; risk of pathogenic CMA rose from 6% to 20% in the high-risk combined-screening group. It is not specific to trisomy 18 or 13, and no trisomy 18/13 threshold was verifiable."

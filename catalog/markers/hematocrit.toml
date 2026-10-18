@@ -2,6 +2,7 @@ slug = "hematocrit"
 name = "Hematocrit"
 category = "cbc"
 unit = "%"
+description = "Percentage of whole blood volume occupied by red blood cells (packed cell volume). Low values indicate anemia; high values indicate erythrocytosis (for example polycythemia vera) or dehydration."
 loinc = "4544-3"
 aliases = ["hct", "haematocrit"]
 
@@ -27,3 +28,53 @@ kind = "reference"
 low = 34.0
 high = 51.0
 legacy = true
+
+[[range]]
+set = "who"
+kind = "warn"
+low = 49
+when = { sex = "male", age = [18.0, 200] }
+population = "adult men, WHO 2016 criteria for polycythaemia vera (as quoted in a 2021 Annals of Hematology paper)"
+evidence = "guideline"
+citations = [
+  { pmid = "34013406", doi = "10.1007/s00277-021-04546-4", title = "Diagnosis and management of non-clonal erythrocytosis remains challenging: a single centre clinical experience.", locator = "Introduction" },
+]
+note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.5 g/dL in men). Not a general reference limit. Source kind: diagnostic."
+
+[[range]]
+set = "who"
+kind = "warn"
+low = 48
+when = { sex = "female", age = [18.0, 200] }
+population = "adult women, WHO 2016 criteria for polycythaemia vera (as quoted in a 2021 Annals of Hematology paper)"
+evidence = "guideline"
+citations = [
+  { pmid = "34013406", doi = "10.1007/s00277-021-04546-4", title = "Diagnosis and management of non-clonal erythrocytosis remains challenging: a single centre clinical experience.", locator = "Introduction" },
+]
+note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.0 g/dL in women). Not a general reference limit. Source kind: diagnostic."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 39.5
+high = 50.0
+when = { sex = "male", age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles; NORIP reports EVF as a fraction."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 34.8
+high = 45.9
+when = { sex = "female", age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles; NORIP reports EVF as a fraction."

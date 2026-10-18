@@ -1,0 +1,144 @@
+slug = "igfbp-3"
+name = "Insulin-like Growth Factor Binding Protein 3"
+category = "growth"
+unit = "mg/L"
+description = "Main binding protein carrying IGF-1 in plasma and a GH-dependent marker of GH action. Concentrations rise through childhood and puberty, so age- and sex-specific intervals are needed; assay differences are large."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.01
+high = 3.16
+when = { sex = "male", age = [0.0, 0.5] }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band >0 to under 0.5 years (specimen: capillary-blood; method: chemiluminescence immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+]
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. Units as printed (ug/ml is numerically equal to mg/L). Age bands are those of the IGF-1 sentence cited as the second citation. Converted from the source's µg/mL (1.01-3.16) to mg/L using factor 1."
+
+[[range]]
+set = "jiangsu-children-capillary-2026"
+kind = "reference"
+low = 2.44
+high = 5.62
+when = { sex = "male", age = [6.0, 7.0] }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band 6 to under 7 years (specimen: capillary-blood; method: chemiluminescence immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+]
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. Units as printed. Converted from the source's µg/mL (2.44-5.62) to mg/L using factor 1."
+
+[[range]]
+set = "jiangsu-children-capillary-2026"
+kind = "reference"
+low = 0.96
+high = 3.01
+when = { sex = "female", age = [0.0, 0.5] }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band >0 to under 0.5 years (specimen: capillary-blood; method: chemiluminescence immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+]
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. The girls' sentence gives no age labels; age bands follow the boys' sentence cited as the second citation. Converted from the source's µg/mL (0.96-3.01) to mg/L using factor 1."
+
+[[range]]
+set = "jiangsu-children-capillary-2026"
+kind = "reference"
+low = 2.47
+high = 5.99
+when = { sex = "female", age = [6.0, 7.0] }
+population = "Healthy children aged 0-6 years, multicentre in Jiangsu Province, China; age band 6 to under 7 years (specimen: capillary-blood; method: chemiluminescence immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+  { pmid = "42736152", doi = "10.3760/cma.j.cn112150-20260205-00111", url = "https://pubmed.ncbi.nlm.nih.gov/42736152/", title = "[Multicenter study on the establishment of continuous reference intervals for capillary blood IGF-1 and IGFBP-3 in children aged 0-6 years in Jiangsu Province].", locator = "Abstract, Results" },
+]
+note = "P3-P97 interval from GAMLSS centile modelling; capillary blood. Age bands follow the boys' sentence cited as the second citation. Converted from the source's µg/mL (2.47-5.99) to mg/L using factor 1."
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1.781
+high = 8.696
+when = { sex = "male", age = [20.0, 22.0] }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271), aged 20 to 65.9 years; age band 20 to under 22 years (method: electrochemiluminescence immunoassay (Roche Elecsys))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2, row 20-21.9" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2 caption" },
+]
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), printed in ng/mL and converted only by unit label (1781.0 ng/mL = 1.781 mg/L). Assay-specific (Roche Elecsys). Converted from the source's ng/mL (1781.0-8695.5) to mg/L using factor 0.001. Applies only to: ethnicity=indian."
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1.639
+high = 7.224
+when = { sex = "male", age = [30.0, 32.0] }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 30 to under 32 years (method: electrochemiluminescence immunoassay (Roche Elecsys))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2, row 30-31.9" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2 caption" },
+]
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys). Converted from the source's ng/mL (1639.2-7224.0) to mg/L using factor 0.001. Applies only to: ethnicity=indian."
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1.476
+high = 6.655
+when = { sex = "male", age = [40.0, 42.0] }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 40 to under 42 years (method: electrochemiluminescence immunoassay (Roche Elecsys))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2, row 40-41.9" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2 caption" },
+]
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys). Converted from the source's ng/mL (1476.2-6655.1) to mg/L using factor 0.001. Applies only to: ethnicity=indian."
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 1.195
+high = 6.483
+when = { sex = "male", age = [50.0, 52.0] }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 50 to under 52 years (method: electrochemiluminescence immunoassay (Roche Elecsys))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2, row 50-51.9" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2 caption" },
+]
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys). Converted from the source's ng/mL (1194.9-6482.7) to mg/L using factor 0.001. Applies only to: ethnicity=indian."
+
+[[range]]
+set = "india-males-ineco-2025"
+kind = "reference"
+low = 0.7402
+high = 5.494
+when = { sex = "male", age = [60.0, 62.0] }
+population = "Healthy adult males from Chandigarh, India (INDIIGo study, n=1271); age band 60 to under 62 years (method: electrochemiluminescence immunoassay (Roche Elecsys))"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2, row 60-61.9" },
+  { pmid = "41271899", doi = "10.1038/s41598-025-25235-6", url = "https://pubmed.ncbi.nlm.nih.gov/41271899/", title = "Normative data for insulin-like growth factor-1 and insulin-like growth factor binding protein-3 and their determinants in healthy adult males from india: the INDIIGo study.", locator = "Table 2 caption" },
+]
+note = "2.5th and 97.5th percentiles from LMS centile modelling (Table 2), in ng/mL. Assay-specific (Roche Elecsys). Converted from the source's ng/mL (740.2-5493.8) to mg/L using factor 0.001. Applies only to: ethnicity=indian."
+
+[[range]]
+set = "kuwait-males-2005"
+kind = "reference"
+low = 0.088
+high = 2.09
+when = { sex = "male", fasting = true, age = [15.0, 80.0] }
+population = "Healthy fasting Kuwaiti men aged 15-80 years (n=398), blood drawn 08:00-12:00 (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "16103701", doi = "10.1159/000086933", url = "https://pubmed.ncbi.nlm.nih.gov/16103701/", title = "Reference intervals for important serum sex steroid hormones, prostate-specific antigen, insulin-like growth factor-1 and IGF binding protein-3 concentration in a normal Kuwaiti adult male population.", locator = "Abstract, Results" },
+]
+note = "Single adult male interval as printed in the abstract (not split by age band in the abstract), Mean +/- 2 SD by the authors' method, because the abstract reports IGFBP-3 as normally distributed in this study. Method not stated. The abstract concludes lower IGFBP-3 reference values are needed for Kuwaitis than the kit or ministry ranges (900-4,000 ng/ml). Converted from the source's ng/mL (88-2090) to mg/L using factor 0.001. Applies only to: ethnicity=kuwaiti; time_of_day=morning."

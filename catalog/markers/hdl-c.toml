@@ -2,6 +2,7 @@ slug = "hdl-c"
 name = "HDL Cholesterol"
 category = "lipid"
 unit = "mg/dL"
+description = "Cholesterol in high-density lipoprotein particles. Adult ATP III categories (low below 40 mg/dL, high at 60 mg/dL or above), sex-specific metabolic-syndrome thresholds, pediatric NHLBI cut-points, non-fasting flag and pregnancy reference intervals."
 loinc = "2085-9"
 aliases = ["hdl", "hdl cholesterol", "hdl-cholesterol"]
 
@@ -41,3 +42,254 @@ kind = "optimal"
 low = 50.0
 high = 60.0
 legacy = true
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 40
+when = { age = [20.0, 200] }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2" },
+]
+note = "Low HDL-C: strictly below 40 mg/dL (ATP III). A risk factor in either sex; sex-specific metabolic-syndrome thresholds are separate ranges."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 60
+when = { age = [20.0, 200] }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2" },
+]
+note = "High HDL-C (>= 60 mg/dL, ATP III); counted as a negative risk factor."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 45
+when = { age = [0.0, 20.0] }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
+]
+note = "Acceptable pediatric HDL-C: strictly above 45 mg/dL."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 40
+high = 45
+when = { age = [0.0, 20.0] }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
+]
+note = "Pediatric borderline-low HDL-C (40-45 mg/dL)."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 40
+when = { sex = "male", age = [20.0, 200] }
+population = "Adult men, metabolic syndrome criteria"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Metabolic syndrome criteria table" },
+  { pmid = "42211141", doi = "10.12997/jla.2026.15.2.216", title = "Statins, LDL-C and Beyond: A Contemporary Review of Atherosclerotic Cardiovascular Risk Assessment and Management.", locator = "Table 3" },
+]
+note = "Metabolic syndrome component: HDL-C strictly below 40 mg/dL in men (ATP III criteria; the harmonized 2009 definition was not retrievable with numbers). Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 50
+when = { sex = "female", age = [20.0, 200] }
+population = "Adult women, metabolic syndrome criteria"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Metabolic syndrome criteria table" },
+  { pmid = "42211141", doi = "10.12997/jla.2026.15.2.216", title = "Statins, LDL-C and Beyond: A Contemporary Review of Atherosclerotic Cardiovascular Risk Assessment and Management.", locator = "Table 3" },
+]
+note = "Metabolic syndrome component: HDL-C strictly below 50 mg/dL in women (ATP III criteria). Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 40
+when = { age = [0.0, 20.0] }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
+]
+note = "Pediatric low HDL-C: strictly below 40 mg/dL. Source kind: diagnostic."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 40.99
+high = 84.3
+when = { pregnant = true, trimester = 1 }
+population = "Healthy singleton pregnant women, first trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1" },
+]
+note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.06-2.18) to mg/dL using factor 38.67."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 47.56
+high = 99.0
+when = { pregnant = true, trimester = 3 }
+population = "Healthy singleton pregnant women, third trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1" },
+]
+note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.23-2.56) to mg/dL using factor 38.67."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 26
+high = 71
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Apparently healthy Egyptian men aged 18-65 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 0.68-1.83 mmol/L)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 28
+high = 78
+when = { sex = "female", age = [18.0, 66.0] }
+population = "Apparently healthy Egyptian women aged 18-65 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "95% reference interval, Egyptian women, 18-65 years. Conventional mg/dL values from Table 3 (SI 0.72-2.12 mmol/L)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 30.94
+high = 85.46
+when = { age = [2.0, 11.0] }
+population = "Apparently healthy check-up children in Shenzhen, China, 2 to under 11 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Infant HDL-C bands not encoded (not whole-year ages). Converted from the source's mmol/L (0.8-2.21) to mg/dL using factor 38.67."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 31.71
+high = 77.73
+when = { age = [11.0, 18.0] }
+population = "Apparently healthy check-up children in Shenzhen, China, 11 to under 18 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (0.82-2.01) to mg/dL using factor 38.67."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15.47
+high = 88.94
+when = { age = [0.077, 0.583] }
+population = "Healthy Chinese children aged 28 days to under 7 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (0.4-2.3) to mg/dL using factor 38.67."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 23.98
+high = 69.61
+when = { age = [0.583, 2.0] }
+population = "Healthy Chinese children aged 7 months to under 2 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (0.62-1.8) to mg/dL using factor 38.67."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 40
+when = { fasting = false }
+population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract" },
+]
+note = "Laboratory flag: HDL-C at or below 40 mg/dL in non-fasting samples. Sex-specific cut-points may be used per the consensus."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 40
+when = { sex = "male", age = [18.0, 200] }
+population = "Adults without diabetes, Panama (ALAD metabolic syndrome criteria as tabulated in the source)"
+evidence = "consensus"
+citations = [
+  { pmid = "42646634", doi = "10.3390/medsci14040500", title = "Comparative Classification Performance of Anthropometric, Body Composition, and Cardiometabolic Indices for Identifying ALAD-Defined Metabolic Syndrome in Panamanian Adults.", locator = "Metabolic syndrome classification table" },
+]
+note = "Metabolic syndrome component (ALAD criteria as tabulated): HDL-C strictly below 40 mg/dL in men. The source tabulates the criterion; it is not a diagnostic threshold for an individual lab value on its own. Source kind: diagnostic."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 50
+when = { sex = "female", age = [18.0, 200] }
+population = "Adults without diabetes, Panama (ALAD metabolic syndrome criteria as tabulated in the source)"
+evidence = "consensus"
+citations = [
+  { pmid = "42646634", doi = "10.3390/medsci14040500", title = "Comparative Classification Performance of Anthropometric, Body Composition, and Cardiometabolic Indices for Identifying ALAD-Defined Metabolic Syndrome in Panamanian Adults.", locator = "Metabolic syndrome classification table" },
+]
+note = "Metabolic syndrome component (ALAD criteria as tabulated): HDL-C strictly below 50 mg/dL in women. Source kind: diagnostic."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 116
+when = { sex = "male" }
+population = "Adults in the Copenhagen City Heart Study and Copenhagen General Population Study (men)"
+evidence = "cohort"
+citations = [
+  { pmid = "28419274", doi = "10.1093/eurheartj/ehx163", title = "Extreme high high-density lipoprotein cholesterol is paradoxically associated with high mortality in men and women: two prospective cohort studies.", locator = "Abstract (Results)" },
+]
+note = "Very high HDL-C in men: HR 2.06 (1.44-2.95) all-cause mortality versus the lowest-risk HDL-C group, for HDL-C >= 116 mg/dL (>= 3.0 mmol/L). Outcome association, not a treatment target."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 135
+when = { sex = "female" }
+population = "Adults in the Copenhagen City Heart Study and Copenhagen General Population Study (women)"
+evidence = "cohort"
+citations = [
+  { pmid = "28419274", doi = "10.1093/eurheartj/ehx163", title = "Extreme high high-density lipoprotein cholesterol is paradoxically associated with high mortality in men and women: two prospective cohort studies.", locator = "Abstract (Results)" },
+]
+note = "Very high HDL-C in women: HR 1.68 (1.09-2.58) all-cause mortality versus the lowest-risk HDL-C group, for HDL-C >= 135 mg/dL (>= 3.5 mmol/L). Outcome association, not a treatment target."

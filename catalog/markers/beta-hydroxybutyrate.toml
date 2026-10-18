@@ -1,0 +1,56 @@
+slug = "beta-hydroxybutyrate"
+name = "Beta-Hydroxybutyrate (Ketones, Blood)"
+category = "chemistry"
+unit = "mmol/L"
+description = "Blood beta-hydroxybutyrate is the main ketone body and the preferred measure of ketonaemia. Measured directly (capillary or venous) it is more specific for diabetic ketoacidosis (DKA) than urine or acetoacetate tests."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.6
+high = 1.5
+when = { conditions = ["diabetes"] }
+population = "People with diabetes on sick-day rules (euglycaemic DKA prevention, medication stopped during illness)"
+evidence = "consensus"
+citations = [
+  { pmid = "40900206", doi = "10.1007/s11892-025-01604-3", title = "Developing a Protocol for Management of Euglycemic Diabetic Ketoacidosis.", locator = "Management, sick day rules paragraph" },
+]
+note = "Trace/small ketones or blood ketones 0.6-1.5 mmol/L during illness: take carbohydrate, correction insulin, fluids and recheck ketones every 3-4 hours, per the sick-day advice in the source review. This is a home-monitoring action level, not a diagnosis."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 1.6
+high = 3.0
+when = { conditions = ["diabetes"] }
+population = "People with diabetes on sick-day rules (euglycaemic DKA prevention)"
+evidence = "consensus"
+citations = [
+  { pmid = "40900206", doi = "10.1007/s11892-025-01604-3", title = "Developing a Protocol for Management of Euglycemic Diabetic Ketoacidosis.", locator = "Management, sick day rules paragraph" },
+]
+note = "Moderate ketones: the source says the same advice can be followed, but medical attention is recommended. Above 3.0 mmol/L the source advises immediate action (wording is cut off in the retrieved text); the DKA threshold of 3.0 mmol/L is in the diagnostic range above. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 3.0
+when = { conditions = ["diabetes"] }
+population = "Adults with diabetes presenting with suspected hyperglycaemic crisis"
+evidence = "consensus"
+citations = [
+  { pmid = "38907161", doi = "10.1007/s00125-024-06183-8", title = "Hyperglycaemic crises in adults with diabetes: a consensus report.", locator = "Full text, diagnosis of DKA" },
+]
+note = "Blood beta-hydroxybutyrate of 3.0 mmol/L or higher supports a diagnosis of DKA (with hyperglycaemia and acidosis), per the 2024 ADA/EASD/JBDS/AACE/DTS consensus. Source kind: diagnostic."
+
+[[range]]
+set = "target"
+kind = "optimal"
+low = 0.5
+when = { conditions = ["ketogenic-diet"] }
+population = "Adults following a ketogenic diet (14-day daily beta-hydroxybutyrate monitoring, 217 people)"
+evidence = "cohort"
+citations = [
+  { pmid = "42449121", doi = "10.1038/s41387-026-00454-6", title = "Defining a ketone threshold for weight loss: evidence from 14 day daily β-hydroxybutyrate monitoring in 217 subjects on a ketogenic diet.", locator = "Abstract (Conclusions)" },
+]
+note = "Nutritional ketosis threshold associated with weight loss in one cohort. Not a diagnostic or clinical safety range; the source gives no upper limit. Source kind: target."

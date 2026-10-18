@@ -2,6 +2,7 @@ slug = "wbc"
 name = "White Blood Cells"
 category = "cbc"
 unit = "10^3/µL"
+description = "Total leukocyte count in blood, the sum of neutrophils, lymphocytes, monocytes, eosinophils and basophils. Low values (leukopenia) occur with marrow failure, drugs, infection, or benign ethnic / Duffy-null neutropenia; high values (leukocytosis) occur with infection, inflammation, stress, steroids or leukaemia."
 loinc = "6690-2"
 aliases = ["white blood cell count", "leukocytes"]
 
@@ -25,3 +26,77 @@ kind = "optimal"
 low = 3.5
 high = 6.0
 legacy = true
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 3.5
+high = 8.8
+when = { age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), EDTA venous blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "B-Lkc, non-parametric 2.5th-97.5th percentiles; no sex-specific interval was derived."
+
+[[range]]
+set = "barcelona-sysmex-xn"
+kind = "reference"
+low = 3.9
+high = 9.5
+population = "191 apparently healthy adults (n = 188 for leukocytes) from the southern metropolitan area of Barcelona, K3EDTA blood on Sysmex XN, CLSI EP28-A3C"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29765286", title = "Reference intervals for a complete blood count on an automated haematology analyser Sysmex XN in healthy adults from the southern metropolitan area of Barcelona.", locator = "Results, CBC reference intervals table" },
+]
+note = "Analyser-specific interval (Sysmex XN); validation by each laboratory is recommended by the authors."
+
+[[range]]
+set = "kenya-urban-adults"
+kind = "reference"
+low = 3.08
+high = 7.83
+population = "healthy adult urban population in Kenya (Nairobi, PathCare laboratory), Beckman Coulter ACT 5 DIFF CP (region: Kenya)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29879171", doi = "10.1371/journal.pone.0198444", title = "Complete blood count reference intervals from a healthy adult urban population in Kenya.", locator = "Table, reference intervals" },
+]
+note = "All-participant interval (n = 464) from the reference-interval table; the paper also gives sex-specific intervals."
+
+[[range]]
+set = "time-race-specific-ri"
+kind = "reference"
+low = 2.7
+high = 7.3
+population = "Black volunteers from pooled screening/admission data of 35 UK phase I trials (7,157 volunteers), morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Adjusted race- and time-of-day-specific interval; the evening interval for the same group is 2.9-8.7 (not separately encoded). Quoted range is the morning interval. Applies only to: ethnicity=black."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 3.0
+high = 9.1
+population = "Non-Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals" },
+]
+note = "Adjusted race- and time-of-day-specific interval; the evening interval is 3.9-10.9 (not separately encoded). Applies only to: ethnicity=nonblack. Alternative to the default time-race-specific-ri reference range for the same population."
+
+[[range]]
+set = "duffy-null-ri"
+kind = "reference"
+low = 2.43
+high = 7.05
+when = { conditions = ["duffy-null"] }
+population = "122 healthy adults with Duffy-null phenotype Fy(a-b-), identified from 1695 adults with CBC and RBC phenotyping (2020-2026)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42345734", doi = "10.3390/hematolrep18030038", title = "Establishing Reference Intervals for White Blood Cell and Absolute Neutrophil Counts in Duffy Null Individuals.", locator = "Abstract, Results" },
+]
+note = "Non-parametric 95% interval per CLSI; the Duffy-null median WBC (3.24) was significantly below the institutional median (6.65)."

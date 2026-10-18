@@ -1,0 +1,31 @@
+slug = "androstenedione"
+name = "Androstenedione"
+category = "adrenal"
+unit = "ng/dL"
+description = "Adrenal and gonadal C19 steroid precursor of testosterone and estrone. Used to assess adrenal androgen excess and hyperandrogenism, particularly in women, and to investigate PCOS and non-classic CAH."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 86.49
+high = 270.1
+when = { sex = "female", age = [20.0, 30.0] }
+population = "Healthy women aged 20-30 y, indirect reference interval from Roche Cobas electrochemiluminescence immunoassay data (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", locator = "Results" },
+]
+note = "95% reference interval in the source unit nmol/L; immunoassay-specific. The source reports that the Roche androstenedione RI is higher than the manufacturer's. Band boundaries as printed in the source. Converted from the source's nmol/L (3.02-9.43) to ng/dL using factor 28.64."
+
+[[range]]
+set = "roche-cobas-2023"
+kind = "reference"
+low = 63.87
+high = 222.0
+when = { sex = "female", age = [30.0, 45.0] }
+population = "Healthy women aged 30-45 y, indirect reference interval from Roche Cobas electrochemiluminescence immunoassay data (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37324111", doi = "10.11613/BM.2023.020706", url = "https://pubmed.ncbi.nlm.nih.gov/37324111/", title = "Androgens in women: Establishing reference intervals for dehydroepiandrostenedione sulphate and androstenedione on the Roche Cobas.", locator = "Results" },
+]
+note = "95% reference interval in the source unit nmol/L; immunoassay-specific. Band boundaries as printed in the source. Converted from the source's nmol/L (2.23-7.75) to ng/dL using factor 28.64."

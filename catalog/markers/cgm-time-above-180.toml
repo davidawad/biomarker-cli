@@ -1,0 +1,30 @@
+slug = "cgm-time-above-180"
+name = "CGM time above range (>180 mg/dL)"
+category = "glycemic"
+unit = "%"
+description = "Percentage of CGM glucose readings (or hours per day) above 180 mg/dL (10.0 mmol/L). Maximum targets from the International Consensus on Time in Range; the pregnancy threshold is 140 mg/dL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 25
+when = { conditions = ["diabetes"] }
+population = "Adults and children with type 1 or type 2 diabetes (non-pregnant, not older/high-risk)"
+evidence = "consensus"
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 3" },
+]
+note = "Time above 180 mg/dL (10.0 mmol/L), less than 25 percent (less than 6 h per day). Older and/or high-risk individuals have a separate target (not included here). Source kind: target."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 25
+when = { pregnant = true, conditions = ["type-1-diabetes"] }
+population = "Pregnant women with type 1 diabetes"
+evidence = "consensus"
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 4" },
+]
+note = "Pregnancy threshold is above 140 mg/dL (7.8 mmol/L), not 180; target is less than 25 percent (less than 6 h per day). Source kind: target."

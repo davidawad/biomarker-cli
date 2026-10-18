@@ -2,6 +2,7 @@ slug = "platelets"
 name = "Platelets"
 category = "cbc"
 unit = "10^3/µL"
+description = "Number of circulating platelets, needed for primary haemostasis. Low values (thrombocytopenia) raise bleeding risk and have many causes including marrow failure, drugs, consumption and immune destruction; high values (thrombocytosis) occur with inflammation, iron deficiency, infection or myeloproliferative neoplasms."
 loinc = "777-3"
 aliases = ["plt", "platelet count"]
 
@@ -11,3 +12,29 @@ kind = "reference"
 low = 150.0
 high = 450.0
 legacy = true
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 165
+high = 387
+when = { sex = "female", age = [18.0, 90.0] }
+population = "Healthy female Nordic adults aged 18-90 (NORIP), EDTA venous blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "B-Trc, non-parametric 2.5th-97.5th percentiles, sex-specific."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 145
+high = 348
+when = { sex = "male", age = [18.0, 90.0] }
+population = "Healthy male Nordic adults aged 18-90 (NORIP), EDTA venous blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "B-Trc, non-parametric 2.5th-97.5th percentiles, sex-specific. The abstract prints the male upper limit as '145 x 348', which is read here as 145-348."

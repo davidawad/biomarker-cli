@@ -1,0 +1,58 @@
+slug = "phenylalanine"
+name = "Phenylalanine"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Plasma concentration of the essential amino acid phenylalanine. In phenylketonuria (PKU) it accumulates because phenylalanine hydroxylase is deficient, so treatment targets are set as ranges; persistently high values signal poor metabolic control."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "acmg-2014"
+kind = "optimal"
+low = 120
+high = 360
+when = { conditions = ["pku"] }
+population = "Individuals with phenylalanine hydroxylase deficiency (PKU) of all ages, treated lifelong with diet and/or pharmacotherapy (ACMG 2014 guideline)"
+evidence = "guideline"
+citations = [
+  { pmid = "24385074", doi = "10.1038/gim.2013.157", title = "Phenylalanine hydroxylase deficiency: diagnosis and management guideline.", locator = "Abstract" },
+]
+note = "Treatment goal for blood Phe; the guideline states it for all ages without an age split. Source kind: therapeutic."
+
+[[range]]
+set = "eu-pku-2017"
+kind = "optimal"
+low = 120
+high = 360
+when = { age = [0.0, 12.0], conditions = ["pku"] }
+population = "Patients with PKU younger than 12 years (European PKU guideline 2017)"
+evidence = "guideline"
+citations = [
+  { pmid = "29025426", doi = "10.1186/s13023-017-0685-2", title = "The complete European guidelines on phenylketonuria: diagnosis and treatment.", locator = "Treatment goals section" },
+]
+note = "Lower target 120 umol/L stated as advised; upper target 360 umol/L stated as the upper target for under-12s. Source kind: therapeutic."
+
+[[range]]
+set = "eu-pku-2017"
+kind = "optimal"
+low = 120
+high = 600
+when = { age = [12.0, 200], conditions = ["pku"] }
+population = "Patients with PKU aged 12 years and older (European PKU guideline 2017)"
+evidence = "guideline"
+citations = [
+  { pmid = "29025426", doi = "10.1186/s13023-017-0685-2", title = "The complete European guidelines on phenylketonuria: diagnosis and treatment.", locator = "Treatment goals section" },
+]
+note = "Source kind: therapeutic."
+
+[[range]]
+set = "eu-pku-2017"
+kind = "optimal"
+low = 120
+high = 360
+when = { pregnant = true, conditions = ["pku"] }
+population = "Women with PKU during pregnancy (European PKU guideline 2017, pregnancy section)"
+evidence = "guideline"
+citations = [
+  { pmid = "29025426", doi = "10.1186/s13023-017-0685-2", title = "The complete European guidelines on phenylketonuria: diagnosis and treatment.", locator = "Pregnancy section" },
+]
+note = "The guideline's pregnancy text gives 120-360 umol/L as the range of well-treated pregnancies and advises avoiding values below 120; the explicit range is taken from that pregnancy section, not from a single target statement. Source kind: therapeutic."

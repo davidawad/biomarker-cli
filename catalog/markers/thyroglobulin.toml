@@ -1,0 +1,101 @@
+slug = "thyroglobulin"
+name = "Thyroglobulin"
+category = "thyroid"
+unit = "ng/mL"
+description = "Protein made only by thyroid follicular cells; a tumour marker after thyroid cancer treatment. Healthy values depend on the assay, and post-thyroidectomy thresholds depend on whether radioiodine ablation was given and whether TSH was suppressed or stimulated."
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "warn"
+high = 0.2
+when = { conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-unstimulated serum Tg)"
+evidence = "guideline"
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", locator = "Table II.1 / Recommendations" },
+]
+note = "Excellent response threshold (unstimulated, on TSH suppression) as stated by the Korean Thyroid Association 2026 guideline; requires negative TgAb and no structural disease. Source kind: diagnostic."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 1.0
+when = { conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-stimulated serum Tg)"
+evidence = "guideline"
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", locator = "Table II.1 / Recommendations" },
+]
+note = "Excellent response threshold for TSH-stimulated Tg as stated by the Korean Thyroid Association 2026 guideline. Source kind: diagnostic. Alternative to the default kta-2026-dtc-followup warn range for the same population."
+
+[[range]]
+set = "kta-2026-dtc-followup"
+kind = "warn"
+high = 0.2
+when = { conditions = ["total-thyroidectomy-without-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy without RAI therapy (test: TSH-unstimulated serum Tg)"
+evidence = "guideline"
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", locator = "Recommendations" },
+]
+note = "Excellent response threshold after total thyroidectomy without RAI as stated by the Korean Thyroid Association 2026 guideline; the 2025 ATA guideline uses 2.5 ng/mL in this setting. Source kind: diagnostic."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 5.0
+when = { conditions = ["total-thyroidectomy-without-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy without RAI therapy (test: TSH-unstimulated serum Tg)"
+evidence = "guideline"
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", locator = "Recommendations" },
+]
+note = "Biochemical incomplete response threshold in this setting as stated by the Korean Thyroid Association 2026 guideline (consistent with the 2024 KTA guideline per the text). Source kind: diagnostic. Alternative to the default kta-2026-dtc-followup warn range for the same population."
+
+[[range]]
+set = "alt-3"
+kind = "warn"
+low = 1.0
+when = { conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-unstimulated serum Tg)"
+evidence = "guideline"
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", locator = "Recommendations" },
+]
+note = "Biochemical incomplete response threshold (unstimulated) as stated by the Korean Thyroid Association 2026 guideline, citing an ATA-derived criterion. Source kind: diagnostic. Alternative to the default kta-2026-dtc-followup warn range for the same population."
+
+[[range]]
+set = "alt-4"
+kind = "warn"
+low = 10.0
+when = { conditions = ["total-thyroidectomy-with-rai"] }
+population = "Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-stimulated serum Tg)"
+evidence = "guideline"
+citations = [
+  { pmid = "42705671", doi = "10.3803/EnM.2026.3149", url = "https://pubmed.ncbi.nlm.nih.gov/42705671/", title = "Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.", locator = "Recommendations" },
+]
+note = "Biochemical incomplete response threshold (TSH-stimulated) as stated by the Korean Thyroid Association 2026 guideline. Source kind: diagnostic. Alternative to the default kta-2026-dtc-followup warn range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 37.93
+when = { sex = "female" }
+population = "Healthy adults without thyroid abnormalities (cohort A, 99 women, nuclear medicine practice, Germany)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34386567", doi = "10.1016/j.plabm.2021.e00250", url = "https://pubmed.ncbi.nlm.nih.gov/34386567/", title = "Evaluation of a new automated assay for high-sensitivity thyroglobulin measurement and comparison with two established high-sensitivity thyroglobulin assays.", locator = "Results" },
+]
+note = "Upper reference limit (CLSI C28-A3c) for the LIAISON Tg II Gen immunoassay; assay dependent, not transferable to other platforms."
+
+[[range]]
+set = "liaison-tg-healthy-cohort-2021"
+kind = "reference"
+high = 24.59
+when = { sex = "male" }
+population = "Healthy adults without thyroid abnormalities (cohort A, 67 men, nuclear medicine practice, Germany)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34386567", doi = "10.1016/j.plabm.2021.e00250", url = "https://pubmed.ncbi.nlm.nih.gov/34386567/", title = "Evaluation of a new automated assay for high-sensitivity thyroglobulin measurement and comparison with two established high-sensitivity thyroglobulin assays.", locator = "Results" },
+]
+note = "Upper reference limit (CLSI C28-A3c) for the LIAISON Tg II Gen immunoassay; assay dependent."

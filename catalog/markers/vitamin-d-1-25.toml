@@ -1,0 +1,93 @@
+slug = "vitamin-d-1-25"
+name = "1,25-dihydroxyvitamin D"
+category = "vitamin"
+unit = "pg/mL"
+loinc = "1649-3"
+description = "Circulating 1,25-dihydroxyvitamin D [1,25(OH)2D], the active hormonal form of vitamin D made mainly by the kidney. It has a short half-life and does not reflect vitamin D stores; it is mainly used in calcium, PTH and kidney disorders, and low values in advanced CKD are associated with worse outcomes."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 32.08
+high = 196.22
+when = { age = [0.0, 1.0] }
+population = "Canadian children aged 0-1 year, CALIPER cohort (377 children and adolescents), DiaSorin Liaison XL method, as reported in a 2023 review (method: diasorin-liaison)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35238975", doi = "10.1007/s00223-022-00961-5", title = "Vitamin D Metabolites: Analytical Challenges and Clinical Relevance.", locator = "Text on paediatric 1,25(OH)2D reference intervals" },
+]
+note = "Pediatric interval; levels are higher in children than adults. Converted from pmol/L with factor 0.4166."
+
+[[range]]
+set = "caliper"
+kind = "reference"
+low = 47.07
+high = 151.22
+when = { age = [1.0, 3.0] }
+population = "Canadian children aged 1-3 years, CALIPER cohort (377 children and adolescents), DiaSorin Liaison XL method, as reported in a 2023 review (method: diasorin-liaison)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35238975", doi = "10.1007/s00223-022-00961-5", title = "Vitamin D Metabolites: Analytical Challenges and Clinical Relevance.", locator = "Text on paediatric 1,25(OH)2D reference intervals" },
+]
+note = "Pediatric interval. Converted from pmol/L with factor 0.4166."
+
+[[range]]
+set = "caliper"
+kind = "reference"
+low = 44.99
+high = 102.49
+when = { age = [3.0, 200] }
+population = "Canadian children older than 3 years, CALIPER cohort (377 children and adolescents), DiaSorin Liaison XL method, as reported in a 2023 review (method: diasorin-liaison)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35238975", doi = "10.1007/s00223-022-00961-5", title = "Vitamin D Metabolites: Analytical Challenges and Clinical Relevance.", locator = "Text on paediatric 1,25(OH)2D reference intervals" },
+]
+note = "Pediatric interval for children older than 3 years (the source gives no upper age limit). Converted from pmol/L with factor 0.4166."
+
+[[range]]
+set = "ids-ria"
+kind = "reference"
+low = 17.91
+high = 69.99
+population = "Healthy adults; IDS radioimmunoassay (RIA) as reported in a 2023 review (method: ria)"
+evidence = "consensus"
+citations = [
+  { pmid = "35238975", doi = "10.1007/s00223-022-00961-5", title = "Vitamin D Metabolites: Analytical Challenges and Clinical Relevance.", locator = "Text on 1,25(OH)2D reference intervals" },
+]
+note = "Method-specific interval, as reported by the review. Converted from pmol/L using MW 416.6 g/mol (1 pmol/L = 0.4166 pg/mL). Reference intervals are method-specific."
+
+[[range]]
+set = "ids-isys"
+kind = "reference"
+low = 26.25
+high = 94.98
+population = "Healthy adults; automated IDS iSYS immunoassay as reported in a 2023 review (method: chemiluminescence-immunoassay)"
+evidence = "consensus"
+citations = [
+  { pmid = "35238975", doi = "10.1007/s00223-022-00961-5", title = "Vitamin D Metabolites: Analytical Challenges and Clinical Relevance.", locator = "Text on 1,25(OH)2D reference intervals" },
+]
+note = "Method-specific interval, as reported by the review. Converted from pmol/L with factor 0.4166 (MW 416.6 g/mol)."
+
+[[range]]
+set = "lc-ms-ms-review"
+kind = "reference"
+low = 24.58
+high = 66.24
+population = "Healthy adults; LC-MS/MS as reported in a 2023 review (typically measures 1,25(OH)2D3 only) (method: lc-ms-ms)"
+evidence = "consensus"
+citations = [
+  { pmid = "35238975", doi = "10.1007/s00223-022-00961-5", title = "Vitamin D Metabolites: Analytical Challenges and Clinical Relevance.", locator = "Text on 1,25(OH)2D reference intervals" },
+]
+note = "Method-specific interval, as reported by the review. Converted from pmol/L with factor 0.4166 (MW 416.6 g/mol)."
+
+[[range]]
+set = "host-ckd-2012"
+kind = "warn"
+high = 15
+when = { conditions = ["ckd"] }
+population = "Patients with advanced CKD (stages 4-5, not yet on dialysis) in the HOST randomized trial, 1,099 veterans, plasma samples"
+evidence = "cohort"
+citations = [
+  { pmid = "22621970", doi = "10.1053/j.ajkd.2012.04.014", title = "Associations of plasma 25-hydroxyvitamin D and 1,25-dihydroxyvitamin D concentrations with death and progression to maintenance dialysis in patients with advanced kidney disease.", locator = "Abstract, Methods" },
+]
+note = "Statistical tertile cut-off, not a validated clinical threshold. Lowest tertile associated with death and dialysis initiation (HR 1.33 and 1.78 vs highest tertile). Reference-interval values above do not apply to this cut."

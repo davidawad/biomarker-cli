@@ -1,0 +1,94 @@
+slug = "d-dimer"
+name = "D-dimer"
+category = "coagulation"
+unit = "µg/mL FEU"
+loinc = "48065-7"
+description = "Fragment released when cross-linked fibrin is broken down by plasmin. A normal result helps exclude venous thromboembolism and pulmonary embolism in patients with low clinical probability; raised values are non-specific and increase with age, pregnancy and inflammation."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.169
+high = 1.202
+when = { pregnant = true, trimester = 1 }
+population = "102 healthy pregnant women followed longitudinally through pregnancy (first trimester)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29975107", doi = "10.1080/00365513.2018.1488177", title = "D-dimer during pregnancy: establishing trimester-specific reference intervals.", locator = "Abstract, Results" },
+]
+note = "CLSI-based 2.5th-97.5th percentiles, latex immunoturbidimetric assay on ACL 300 TOP. Quoted in ug/L and converted to ug/mL. FEU basis not stated in the abstract; the canonical unit is assumed to be FEU as for the other ranges."
+
+[[range]]
+set = "scand-2018-trimester"
+kind = "reference"
+low = 0.393
+high = 3.258
+when = { pregnant = true, trimester = 2 }
+population = "102 healthy pregnant women followed longitudinally through pregnancy (second trimester)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29975107", doi = "10.1080/00365513.2018.1488177", title = "D-dimer during pregnancy: establishing trimester-specific reference intervals.", locator = "Abstract, Results" },
+]
+note = "CLSI-based 2.5th-97.5th percentiles, latex immunoturbidimetric assay on ACL 300 TOP. Quoted in ug/L and converted to ug/mL. FEU basis not stated in the abstract."
+
+[[range]]
+set = "scand-2018-trimester"
+kind = "reference"
+low = 0.551
+high = 3.333
+when = { pregnant = true, trimester = 3 }
+population = "102 healthy pregnant women followed longitudinally through pregnancy (third trimester)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29975107", doi = "10.1080/00365513.2018.1488177", title = "D-dimer during pregnancy: establishing trimester-specific reference intervals.", locator = "Abstract, Results" },
+]
+note = "CLSI-based 2.5th-97.5th percentiles, latex immunoturbidimetric assay on ACL 300 TOP. Quoted in ug/L and converted to ug/mL. FEU basis not stated in the abstract."
+
+[[range]]
+set = "adjust-pe"
+kind = "reference"
+high = 0.5
+when = { age = [0.0, 50.0] }
+population = "outpatients with suspected pulmonary embolism and non-high clinical probability in 19 centres (Belgium, France, the Netherlands, Switzerland)"
+evidence = "cohort"
+citations = [
+  { pmid = "24643601", doi = "10.1001/jama.2014.2135", title = "Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism: the ADJUST-PE study.", locator = "Abstract, Interventions" },
+  { pmid = "24643601", doi = "10.1001/jama.2014.2135", title = "Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism: the ADJUST-PE study.", locator = "Abstract, Objective" },
+]
+note = "Conventional fixed cutoff of 500 µg/L (0.5 µg/mL). The abstract does not state FEU; the FEU basis of the canonical unit is assumed. For patients 50 years or older an age-adjusted cutoff applies (age x 10 µg/L); it is a formula, not a fixed range, so it is not encoded as a range."
+
+[[range]]
+set = "pregnancy-vte-cutoff"
+kind = "reference"
+high = 0.286
+when = { pregnant = true, trimester = 1 }
+population = "healthy pregnant women (89) for reference values, plus 12 women with clinically suspected VTE, first trimester"
+evidence = "cohort"
+citations = [
+  { pmid = "19804940", doi = "10.1016/j.ejogrb.2009.09.005", title = "The use of D-dimer with new cutoff can be useful in diagnosis of venous thromboembolism in pregnancy.", locator = "Abstract, Conclusion" },
+]
+note = "Trimester-specific threshold proposed for pregnancy-related VTE from a small study. Small single study; not validated in a larger management study."
+
+[[range]]
+set = "pregnancy-vte-cutoff"
+kind = "reference"
+high = 0.457
+when = { pregnant = true, trimester = 2 }
+population = "healthy pregnant women (89) for reference values, plus 12 women with clinically suspected VTE, second trimester"
+evidence = "cohort"
+citations = [
+  { pmid = "19804940", doi = "10.1016/j.ejogrb.2009.09.005", title = "The use of D-dimer with new cutoff can be useful in diagnosis of venous thromboembolism in pregnancy.", locator = "Abstract, Conclusion" },
+]
+note = "Trimester-specific threshold proposed for pregnancy-related VTE from a small study. Small single study; not validated in a larger management study."
+
+[[range]]
+set = "pregnancy-vte-cutoff"
+kind = "reference"
+high = 0.644
+when = { pregnant = true, trimester = 3 }
+population = "healthy pregnant women (89) for reference values, plus 12 women with clinically suspected VTE, third trimester"
+evidence = "cohort"
+citations = [
+  { pmid = "19804940", doi = "10.1016/j.ejogrb.2009.09.005", title = "The use of D-dimer with new cutoff can be useful in diagnosis of venous thromboembolism in pregnancy.", locator = "Abstract, Conclusion" },
+]
+note = "Trimester-specific threshold proposed for pregnancy-related VTE from a small study. Small single study; not validated in a larger management study."

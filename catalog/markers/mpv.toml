@@ -1,0 +1,18 @@
+slug = "mpv"
+name = "Mean platelet volume"
+category = "cbc"
+unit = "fL"
+loinc = "32623-1"
+description = "Average volume of circulating platelets, an automated analyser index. Larger platelets are younger and more reactive; high values are associated with increased platelet turnover and cardiovascular risk, and low values with marrow failure. It is analyser-dependent and should be interpreted with the platelet count."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 9.7
+high = 13.2
+population = "187 apparently healthy adults from the southern metropolitan area of Barcelona, Sysmex XN"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29765286", title = "Reference intervals for a complete blood count on an automated haematology analyser Sysmex XN in healthy adults from the southern metropolitan area of Barcelona.", locator = "Results, CBC reference intervals table" },
+]
+note = "Analyser-specific interval (Sysmex XN), sexes pooled; values from other analysers are not interchangeable."

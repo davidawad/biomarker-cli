@@ -2,6 +2,7 @@ slug = "homocysteine"
 name = "Homocysteine"
 category = "inflammation"
 unit = "µmol/L"
+description = "Total homocysteine (tHcy) is a sulfur amino acid whose blood level rises with low folate, vitamin B12 or B6 status and with reduced kidney function. Raised values (hyperhomocysteinaemia) are a metabolic marker of B-vitamin insufficiency and are associated with vascular disease risk."
 loinc = "13965-9"
 aliases = ["hcy"]
 
@@ -17,3 +18,177 @@ set = "optimal"
 kind = "optimal"
 high = 10.0
 legacy = true
+
+[[range]]
+set = "nhanes-iii-1999"
+kind = "reference"
+low = 5.9
+high = 15.3
+when = { sex = "male", age = [60.0, 200] }
+population = "NHANES III (1991-1994) participants aged 60 and over who were folate- and vitamin B12-replete with normal creatinine; serum tHcy, 5th-95th percentiles"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "10475885", doi = "10.7326/0003-4819-131-5-199909070-00003", title = "Serum total homocysteine concentrations in the third National Health and Nutrition Examination Survey (1991-1994): population reference ranges and contribution of vitamin status to high serum concentrations.", locator = "Results (Abstract)" },
+]
+note = "Upper reference limits rise with age and are higher in men than women at all ages. Reference values assume folate and B12 replete status; in NHANES III about two thirds of high values were linked to low vitamin concentrations."
+
+[[range]]
+set = "nhanes-iii-1999"
+kind = "reference"
+low = 4.9
+high = 11.6
+when = { sex = "female", age = [60.0, 200] }
+population = "NHANES III (1991-1994) participants aged 60 and over who were folate- and vitamin B12-replete with normal creatinine; serum tHcy, 5th-95th percentiles"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "10475885", doi = "10.7326/0003-4819-131-5-199909070-00003", title = "Serum total homocysteine concentrations in the third National Health and Nutrition Examination Survey (1991-1994): population reference ranges and contribution of vitamin status to high serum concentrations.", locator = "Results (Abstract)" },
+]
+note = "Same study as the male band. A high tHcy was defined as at least 10.4 micromol/L in women and 11.4 micromol/L in men, using the sex-specific 95th percentile in participants aged 20-39."
+
+[[range]]
+set = "plasma-reference-1996"
+kind = "reference"
+low = 6.3
+high = 11.2
+when = { sex = "male", age = [30.0, 60.0] }
+population = "Men aged 30-59 from a 1996 Clin Chem reference study (109 men aged 20-84; plasma tHcy, central 95% interval, pre-folic acid subset) (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "8605683", title = "Age- and gender-specific reference intervals for total homocysteine and methylmalonic acid in plasma before and after vitamin supplementation.", locator = "Abstract, Results" },
+]
+note = "The central 95% interval was taken from the 182-subject group before folic acid supplementation. Small single-centre sample, so treat as indicative. Assay not named in the abstract."
+
+[[range]]
+set = "plasma-reference-1996"
+kind = "reference"
+low = 4.5
+high = 7.9
+when = { sex = "female", age = [30.0, 60.0] }
+population = "Women aged 30-59 from a 1996 Clin Chem reference study (126 women aged 20-85; plasma tHcy, central 95% interval, pre-folic acid subset) (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "8605683", title = "Age- and gender-specific reference intervals for total homocysteine and methylmalonic acid in plasma before and after vitamin supplementation.", locator = "Abstract, Results" },
+]
+note = "Central 95% interval from the 182-subject pre-supplementation group. Small single-centre sample, so treat as indicative. Pregnancy and menopause were not separated in the quoted abstract."
+
+[[range]]
+set = "china-pregnancy-hcy-2023"
+kind = "reference"
+low = 4.35
+high = 10.16
+when = { pregnant = true, trimester = 1 }
+population = "Healthy Chinese pregnant women, longitudinal study (non-parametric 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37553809", doi = "10.1080/09513590.2023.2242974", url = "https://pubmed.ncbi.nlm.nih.gov/37553809/", title = "Trimester-specific reference intervals of serum homocysteine levels for pregnant women: a longitudinal study in China.", locator = "Abstract, Results" },
+]
+note = "First-trimester pregnancy reference interval for serum homocysteine. Fasting status and assay are not stated in the abstract."
+
+[[range]]
+set = "china-pregnancy-hcy-2023"
+kind = "reference"
+low = 3.38
+high = 8.6
+when = { pregnant = true, trimester = 2 }
+population = "Healthy Chinese pregnant women, longitudinal study (non-parametric 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37553809", doi = "10.1080/09513590.2023.2242974", url = "https://pubmed.ncbi.nlm.nih.gov/37553809/", title = "Trimester-specific reference intervals of serum homocysteine levels for pregnant women: a longitudinal study in China.", locator = "Abstract, Results" },
+]
+note = "Second-trimester pregnancy reference interval for serum homocysteine. Fasting status and assay are not stated in the abstract."
+
+[[range]]
+set = "china-pregnancy-hcy-2023"
+kind = "reference"
+low = 3.75
+high = 11.17
+when = { pregnant = true, trimester = 3 }
+population = "Healthy Chinese pregnant women, longitudinal study (non-parametric 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37553809", doi = "10.1080/09513590.2023.2242974", url = "https://pubmed.ncbi.nlm.nih.gov/37553809/", title = "Trimester-specific reference intervals of serum homocysteine levels for pregnant women: a longitudinal study in China.", locator = "Abstract, Results" },
+]
+note = "Third-trimester pregnancy reference interval for serum homocysteine. Fasting status and assay are not stated in the abstract."
+
+[[range]]
+set = "china-hcy-reference-2019"
+kind = "reference"
+low = 8.25
+high = 22.92
+when = { sex = "female", pregnant = false }
+population = "Healthy non-pregnant Chinese women"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30468714", doi = "10.1016/j.cca.2018.11.026", url = "https://pubmed.ncbi.nlm.nih.gov/30468714/", title = "Changes of serum homocysteine levels during pregnancy and the establishment of reference intervals in pregnant Chinese women.", locator = "Abstract, Results" },
+]
+note = "Reference interval for non-pregnant women. The abstract does not state fasting status or assay; the upper limit is taken from the source as written."
+
+[[range]]
+set = "hhcy-grading-cureus-2024"
+kind = "warn"
+low = 16
+high = 30
+population = "Plasma total homocysteine grading of hyperhomocysteinaemia as used in a 2024 systematic review (young adults with arterial dissection)"
+evidence = "consensus"
+citations = [
+  { pmid = "38910639", doi = "10.7759/cureus.60878", title = "Exploring the Nexus: A Systematic Review on the Interplay of the Methylenetetrahydrofolate Reductase (MTHFR) Gene C677T Genotype, Hyperhomocysteinemia, and Spontaneous Cervical/Vertebral Artery Dissection in Young Adults.", locator = "Introduction, para 1 (Abstract/full text)" },
+]
+note = "Moderate hyperhomocysteinaemia. The brief's grading (15-30) is not what this source quotes (16-30); the original consensus (Refsum 2004, Clin Chem) was not retrievable, so confirm the boundary there before use."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 31
+high = 100
+population = "Plasma total homocysteine grading of hyperhomocysteinaemia as used in a 2024 systematic review (young adults with arterial dissection)"
+evidence = "consensus"
+citations = [
+  { pmid = "38910639", doi = "10.7759/cureus.60878", title = "Exploring the Nexus: A Systematic Review on the Interplay of the Methylenetetrahydrofolate Reductase (MTHFR) Gene C677T Genotype, Hyperhomocysteinemia, and Spontaneous Cervical/Vertebral Artery Dissection in Young Adults.", locator = "Introduction, para 1 (Abstract/full text)" },
+]
+note = "Intermediate hyperhomocysteinaemia. See the moderate band for the source caveat. Alternative to the default hhcy-grading-cureus-2024 warn range for the same population."
+
+[[range]]
+set = "hhcy-grading-cureus-2024"
+kind = "critical"
+low = 100
+population = "Plasma total homocysteine grading of hyperhomocysteinaemia as used in a 2024 systematic review (young adults with arterial dissection)"
+evidence = "consensus"
+citations = [
+  { pmid = "38910639", doi = "10.7759/cureus.60878", title = "Exploring the Nexus: A Systematic Review on the Interplay of the Methylenetetrahydrofolate Reductase (MTHFR) Gene C677T Genotype, Hyperhomocysteinemia, and Spontaneous Cervical/Vertebral Artery Dissection in Young Adults.", locator = "Introduction, para 1 (Abstract/full text)" },
+]
+note = "Severe hyperhomocysteinaemia, open-ended above 100 micromol/L. See the moderate band for the source caveat."
+
+[[range]]
+set = "hhcy-categories-2021"
+kind = "warn"
+low = 15
+high = 30
+population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
+evidence = "cohort"
+citations = [
+  { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", locator = "Abstract, Background" },
+]
+note = "Moderate hyperhomocysteinaemia band (15-30 umol/L). A review quotes 16-30 for this band, so the lower boundary varies between sources. Source kind: decision."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 30
+high = 100
+population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
+evidence = "cohort"
+citations = [
+  { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", locator = "Abstract, Objective" },
+]
+note = "Intermediate hyperhomocysteinaemia band (30-100 umol/L; boundary 30 included, 100 included as stated in the source). Source kind: decision. Alternative to the default hhcy-categories-2021 warn range for the same population."
+
+[[range]]
+set = "alt-3"
+kind = "warn"
+low = 100
+population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
+evidence = "cohort"
+citations = [
+  { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", locator = "Abstract, Objective" },
+]
+note = "Severe hyperhomocysteinaemia band (above 100 umol/L; boundary > 100). Source kind: decision. Alternative to the default hhcy-categories-2021 warn range for the same population."

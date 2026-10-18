@@ -1,0 +1,240 @@
+slug = "cystatin-c"
+name = "Cystatin C"
+category = "kidney"
+unit = "mg/L"
+loinc = "33863-2"
+description = "Serum cystatin C, a filtration marker of kidney function that is less dependent on muscle mass than creatinine. Reference intervals rise with age, and are higher in males than females in adults in most studies."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.6
+high = 1.49
+when = { age = [0.0, 1.0] }
+population = "Healthy infants aged 0-1 year, children without renal disease (Croatia; CLSI C28-A3, robust/nonparametric method; n = 29)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38125620", doi = "10.11613/bm.2024.010702", title = "Determination of cystatin C reference interval for children in Croatia.", locator = "Results" },
+]
+note = "Paediatric reference interval, age 0-1 year. Small sample; sex difference not testable."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.61
+high = 1.08
+when = { age = [1.0, 19.0] }
+population = "Healthy children aged 1-18 years without renal disease (Croatia; CLSI C28-A3, robust/nonparametric method; n = 204)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38125620", doi = "10.11613/bm.2024.010702", title = "Determination of cystatin C reference interval for children in Croatia.", locator = "Results" },
+]
+note = "Paediatric reference interval, age 1-18 years. No sex difference found in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.68
+high = 1.04
+when = { sex = "male", age = [0.0, 19.0] }
+population = "Children and adolescents aged 18 years and under, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 6 males, sample size limited)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval. Sample size for this age band is below the CLSI EP28 minimum; interpret with caution."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.66
+high = 1.03
+when = { sex = "female", age = [0.0, 19.0] }
+population = "Children and adolescents aged 18 years and under, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 25 females, sample size limited)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval. Sample size for this age band is below the CLSI EP28 minimum; interpret with caution."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.64
+high = 1.01
+when = { sex = "male", age = [18.0, 31.0] }
+population = "Adults aged 18-30 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 1041 males)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 18-30 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.56
+high = 0.92
+when = { sex = "female", age = [18.0, 31.0] }
+population = "Adults aged 18-30 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 2778 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 18-30 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.62
+high = 1.02
+when = { sex = "male", age = [31.0, 41.0] }
+population = "Adults aged 31-40 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 1424 males)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 31-40 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.53
+high = 0.89
+when = { sex = "female", age = [31.0, 41.0] }
+population = "Adults aged 31-40 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 3447 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 31-40 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.63
+high = 1.07
+when = { sex = "male", age = [41.0, 51.0] }
+population = "Adults aged 41-50 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 958 males)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 41-50 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.54
+high = 0.93
+when = { sex = "female", age = [41.0, 51.0] }
+population = "Adults aged 41-50 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 2222 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 41-50 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.65
+high = 1.15
+when = { sex = "male", age = [51.0, 61.0] }
+population = "Adults aged 51-60 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 814 males)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 51-60 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.58
+high = 1.02
+when = { sex = "female", age = [51.0, 61.0] }
+population = "Adults aged 51-60 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 1387 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 51-60 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.68
+high = 1.26
+when = { sex = "male", age = [61.0, 71.0] }
+population = "Adults aged 61-70 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 305 males)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 61-70 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.64
+high = 1.15
+when = { sex = "female", age = [61.0, 71.0] }
+population = "Adults aged 61-70 years, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 372 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 61-70 y)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.72
+high = 1.46
+when = { sex = "male", age = [71.0, 200] }
+population = "Adults aged 71 years and over, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 94 males, below CLSI EP28 minimum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (males 71 y and over). Sample size is below the CLSI EP28 minimum; interpret with caution."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.75
+high = 1.4
+when = { sex = "female", age = [71.0, 200] }
+population = "Adults aged 71 years and over, health check-up cohort (Huashan Hospital, China; CLSI EP28 direct method, 2.5th-97.5th percentiles; n = 95 females, below CLSI EP28 minimum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40890437", doi = "10.1038/s41598-025-17545-6", title = "Updated reference intervals for serum cystatin C and creatinine based on age and sex variations.", locator = "Table 3" },
+]
+note = "Age- and sex-partitioned reference interval (females 71 y and over). Sample size is below the CLSI EP28 minimum; interpret with caution."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.72
+high = 1.18
+when = { sex = "male", age = [1.0, 18.0] }
+population = "Apparently healthy males aged 1 to under 18 years, Shenzhen, China (n = 342; Table 1 reference limits)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sex-partitioned reference interval, males 1 to under 18 years. The paper's infant bands (28 days to under 5 months, and 5 months to under 1 year) are not encoded because their limits cannot be expressed in whole years. Source numbers in mg/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.69
+high = 1.1
+when = { sex = "female", age = [1.0, 18.0] }
+population = "Apparently healthy females aged 1 to under 18 years, Shenzhen, China (n = 282; Table 1 reference limits)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sex-partitioned reference interval, females 1 to under 18 years. The paper's infant bands are not encoded (see the male range). Source numbers in mg/L."

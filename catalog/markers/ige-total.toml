@@ -1,0 +1,40 @@
+slug = "ige-total"
+name = "Immunoglobulin E, Total"
+category = "immune"
+unit = "kU/L"
+loinc = "19113-0"
+description = "Total IgE antibody in blood, raised in allergic and some parasitic or fungal conditions. Interpretation depends on age and assay, and very high levels are used as a criterion in allergic bronchopulmonary aspergillosis."
+aliases = ["total ige", "ige, total serum"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 302
+population = "Healthy Norwegian adults recruited through a regional blood donation programme (n=252), ImmunoCAP assay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36705407", doi = "10.1002/iid3.751", url = "https://pubmed.ncbi.nlm.nih.gov/36705407/", title = "Updated total IgE reference intervals in Norwegian adults.", locator = "Abstract, Results" },
+]
+note = "Upper 95% reference limit only (CLSI-based). The authors report that older manufacturer intervals (upper limit about 114 kU/L) are substantially lower, so check the assay's own interval."
+
+[[range]]
+set = "abpa-review-2026"
+kind = "warn"
+low = 500.0
+population = "Patients with asthma evaluated for allergic bronchopulmonary aspergillosis (ABPA)"
+evidence = "consensus"
+citations = [
+  { pmid = "41835114", doi = "10.2147/JIR.S546322", url = "https://pubmed.ncbi.nlm.nih.gov/41835114/", title = "Asthma and Allergic Bronchopulmonary Aspergillosis: Understanding, Insights, and State-of-the-Art.", locator = "Full text, ABPA diagnosis section" },
+]
+note = "Diagnostic criterion for ABPA: total IgE at or above 500 IU/mL (rule-in, together with fungal sensitisation and other features). The same review also says a level above 500 IU/mL is considered positive, and that lower levels may be acceptable with other supportive features. Cited as a summary of guideline criteria; the primary ISHAM document was not retrieved. Converted from the source's IU/mL (500) to kU/L using factor 1. Source kind: decision."
+
+[[range]]
+set = "japanese-abpa-criteria-cited-2026"
+kind = "warn"
+low = 417.0
+population = "Asthma patients with allergic bronchopulmonary mycosis (ABPA/ABPM) by Japanese diagnostic criteria"
+evidence = "cohort"
+citations = [
+  { pmid = "41796390", doi = "10.1186/s13223-026-01024-2", url = "https://pubmed.ncbi.nlm.nih.gov/41796390/", title = "High total serum IgE level at diagnosis was associated with a progressive decline in lung function in asthmatic patients with allergic bronchopulmonary mycosis.", locator = "Full text, Methods" },
+]
+note = "Japanese diagnostic criterion for ABPA/ABPM: elevated total serum IgE at or above 417 IU/mL, one of ten criteria (at least six needed). The number is the study's disease-specific cut-off. Converted from the source's IU/mL (417) to kU/L using factor 1. Source kind: decision."

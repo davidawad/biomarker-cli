@@ -1,0 +1,170 @@
+slug = "bilirubin-direct"
+name = "Bilirubin, Direct (Conjugated)"
+category = "liver"
+unit = "mg/dL"
+description = "Conjugated (direct) serum bilirubin. Used with total bilirubin to separate conjugated from unconjugated hyperbilirubinaemia; elevated direct bilirubin in infancy warrants cholestasis evaluation."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 1.0
+when = { age = [0.0, 1.0] }
+population = "Infants jaundiced after 2 weeks of age"
+evidence = "guideline"
+citations = [
+  { pmid = "27429428", doi = "10.1097/MPG.0000000000001334", title = "Guideline for the Evaluation of Cholestatic Jaundice in Infants: Joint Recommendations of the North American Society for Pediatric Gastroenterology, Hepatology, and Nutrition and the European Society for Pediatric Gastroenterology, Hepatology, and Nutrition.", locator = "Abstract" },
+]
+note = "NASPGHAN/ESPGHAN joint guideline: an elevated direct bilirubin prompts timely evaluation and referral for neonatal/infant cholestasis. Source kind: diagnostic."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 0.6
+population = "Healthy adults (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Abstract (Results)" },
+]
+note = "Combined adult 95% reference interval for conjugated bilirubin (lower limit 0.00)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.05848
+high = 0.5263
+when = { age = [0.0, 18.0] }
+population = "Healthy multiethnic children up to 18 years (CALIPER)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "25445233", doi = "10.1016/j.clinbiochem.2014.10.011", title = "Clinical decision limits for interpretation of direct bilirubin--a CALIPER study of healthy multiethnic children and case report reviews.", locator = "Abstract (Results)" },
+]
+note = "Pediatric direct bilirubin reference interval from CALIPER; source states the value in µmol/L only. Converted from the source's µmol/L (1-9) to mg/dL using factor 0.05848."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.07
+high = 0.76
+when = { age = [0.0, 0.333] }
+population = "Healthy Iranian infants aged 0 to <4 months"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38087776", doi = "10.1002/jcla.24995", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", locator = "Reference interval table (direct bilirubin rows)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.1
+high = 0.27
+when = { age = [0.333, 2.5] }
+population = "Healthy Iranian children aged 4 to <30 months"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38087776", doi = "10.1002/jcla.24995", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", locator = "Reference interval table (direct bilirubin rows)" },
+]
+note = "Upper age limit is approximate (30 months is 2.5 years)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.04
+high = 0.37
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult male 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.03
+high = 0.21
+when = { sex = "female", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); females"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult female 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.04269
+high = 0.2643
+when = { age = [1.0, 10.0] }
+population = "Healthy Chinese children aged 1 to under 10 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval; the source states this in umol/L. Converted from the source's µmol/L (0.73-4.52) to mg/dL using factor 0.05848."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.05848
+high = 0.4158
+when = { age = [10.0, 18.0] }
+population = "Healthy Chinese children aged 10 to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Pediatric 95% interval; the source states this in umol/L. Converted from the source's µmol/L (1.0-7.11) to mg/dL using factor 0.05848."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.07602
+high = 0.914
+when = { age = [0.077, 0.25] }
+population = "Healthy Chinese children aged 28 days to under 3 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's µmol/L (1.3-15.63) to mg/dL using factor 0.05848."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.03158
+high = 0.3012
+when = { age = [0.25, 0.583] }
+population = "Healthy Chinese children aged 3 months to under 7 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's µmol/L (0.54-5.15) to mg/dL using factor 0.05848."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.02632
+high = 0.1988
+when = { age = [0.583, 1.0] }
+population = "Healthy Chinese children aged 7 months to under 1 year (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's µmol/L (0.45-3.4) to mg/dL using factor 0.05848."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 0.5848
+when = { age = [0.0, 18.0] }
+population = "Children up to 18 years with hyperbilirubinaemia (CALIPER case reviews)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "25445233", doi = "10.1016/j.clinbiochem.2014.10.011", title = "Clinical decision limits for interpretation of direct bilirubin--a CALIPER study of healthy multiethnic children and case report reviews.", locator = "Abstract (Conclusions)" },
+]
+note = "Decision limit: direct bilirubin of 10 umol/L or more suggests conjugated hyperbilirubinaemia when total bilirubin is also above its reference interval. Converted from the source's µmol/L (10) to mg/dL using factor 0.05848. Source kind: diagnostic."

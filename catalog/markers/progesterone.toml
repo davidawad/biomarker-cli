@@ -1,0 +1,91 @@
+slug = "progesterone"
+name = "Progesterone"
+category = "hormone"
+unit = "ng/mL"
+description = "Steroid produced mainly by the corpus luteum after ovulation and by the placenta in pregnancy. Used to judge cycle phase and ovulation, and as a single-value marker of early pregnancy viability. Values are cycle-phase and assay dependent."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 0.86
+when = { sex = "male" }
+population = "healthy men (n = 220, aged 20-68 years) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "Upper reference limit (Table 1, Advia Centaur). Lower limit not reported for this group."
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+high = 1.03
+when = { sex = "female", cycle_phase = "follicular" }
+population = "women in the follicular phase (n = 139; days 3-5 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "Upper reference limit in the early follicular phase (Table 1). Lower limit not reported."
+
+[[range]]
+set = "clsi-ep28-advia-2016"
+kind = "reference"
+low = 1.14
+high = 20.6
+when = { sex = "female", cycle_phase = "luteal" }
+population = "women in the luteal phase (n = 87; days 21-23 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "Luteal-phase reference interval (Table 1), 2.5th-97.5th percentile as reported. Wide interval; a single value cannot confirm ovulation or cycle day without timing. Not an ovulation-confirmation threshold."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 0.6
+when = { sex = "female", menopause = "post" }
+population = "postmenopausal women (n = 103; amenorrhea for at least 12 months) measured on Advia Centaur, CLSI EP28-A3c method (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", locator = "Table 1" },
+]
+note = "Upper reference limit in postmenopausal women (Table 1). Lower limit not reported. Alternative to the default clsi-ep28-advia-2016 reference range for the same population."
+
+[[range]]
+set = "progesterone-elecsys-natural-cycle-2021"
+kind = "reference"
+low = 4.12
+high = 14.56
+when = { sex = "female", cycle_phase = "luteal" }
+population = "85 apparently healthy women over one standardised natural menstrual cycle (US and EU), Elecsys Progesterone III immunoassay (method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33869706", doi = "10.1016/j.plabm.2021.e00211", url = "https://pubmed.ncbi.nlm.nih.gov/33869706/", title = "Extensive monitoring of the natural menstrual cycle using the serum biomarkers estradiol, luteinizing hormone and progesterone.", locator = "Abstract, Results" },
+]
+note = "5th percentile for the whole luteal phase, not a mid-luteal-only threshold; the 95th percentile is 46.3 nmol/L. A value at or above 13.1 nmol/L is consistent with luteal activity after ovulation, but one value does not confirm ovulation or cycle day. Source unit nmol/L, not converted. Phase order in the source: follicular, ovulation, luteal. Converted from the source's nmol/L (13.1-46.3) to ng/mL using factor 0.3145."
+
+[[range]]
+set = "viability-meta-2022"
+kind = "warn"
+low = 20
+when = { pregnant = true, trimester = 1, conditions = ["symptomatic-first-trimester"] }
+population = "symptomatic first-trimester pregnant patients (pain or bleeding); 15,878 patients in the pooled studies"
+evidence = "cohort"
+citations = [
+  { pmid = "35921048", doi = "10.1007/s43678-022-00332-x", url = "https://pubmed.ncbi.nlm.nih.gov/35921048/", title = "Performance of single serum progesterone in the evaluation of symptomatic first-trimester pregnant patients: a systematic review and meta-analysis.", locator = "Abstract, Results" },
+]
+note = "Single serum progesterone at or above about 20 ng/mL (about 63.6 nmol/L) makes a viable pregnancy likely (NPV 0.89-0.99 across the prevalences reported in the review). Pregnancy-viability decision value, not a reference interval. Source kind: diagnostic."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 6.3
+when = { pregnant = true, trimester = 1, conditions = ["symptomatic-first-trimester"] }
+population = "symptomatic first-trimester pregnant patients (pain or bleeding); 15,878 patients in the pooled studies"
+evidence = "cohort"
+citations = [
+  { pmid = "35921048", doi = "10.1007/s43678-022-00332-x", url = "https://pubmed.ncbi.nlm.nih.gov/35921048/", title = "Performance of single serum progesterone in the evaluation of symptomatic first-trimester pregnant patients: a systematic review and meta-analysis.", locator = "Abstract, Results" },
+]
+note = "Single serum progesterone below about 6.3 ng/mL (about 20 nmol/L) makes a non-viable pregnancy likely (specificity 99.2% in the review). Pregnancy-viability decision value, not a reference interval. Source kind: diagnostic. Alternative to the default viability-meta-2022 warn range for the same population."

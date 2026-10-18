@@ -2,6 +2,7 @@ slug = "rbc"
 name = "Red Blood Cells"
 category = "cbc"
 unit = "10^6/µL"
+description = "Number of red blood cells per microlitre of whole blood. Low values indicate anemia; high values indicate erythrocytosis or dehydration."
 loinc = "789-8"
 aliases = ["red blood cell count", "erythrocytes"]
 
@@ -27,3 +28,29 @@ kind = "reference"
 low = 3.77
 high = 5.8
 legacy = true
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 4.25
+high = 5.71
+when = { sex = "male", age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles. 10^12/L is numerically equal to 10^6/µL."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 3.94
+high = 5.16
+when = { sex = "female", age = [18.0, 90.0] }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract" },
+]
+note = "Non-parametric 2.5th-97.5th percentiles. 10^12/L is numerically equal to 10^6/µL."

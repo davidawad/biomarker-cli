@@ -1,0 +1,53 @@
+slug = "body-temperature"
+name = "Body Temperature"
+category = "vitals"
+unit = "°C"
+loinc = "8310-5"
+description = "Core or oral body temperature. Normal values vary between individuals, and a raised temperature (fever) signals infection or inflammation."
+aliases = ["temperature", "body temp", "fever"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 35.7
+high = 37.3
+population = "Outpatient adults of a large academic hospital, USA (35,488 patients without infection or antibiotics; mean age 52.9 years)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29237616", doi = "10.1136/bmj.j5468", url = "https://pubmed.ncbi.nlm.nih.gov/29237616/", title = "Individual differences in normal body temperature: longitudinal big data analysis of patient records.", locator = "Abstract, Results" },
+]
+note = "95% range of individual-level baseline temperature. Temperature is lower with older age and higher in some groups, so individual values vary. The 99% range was 35.3-37.7 °C."
+
+[[range]]
+set = "mackowiak-jama-1992"
+kind = "reference"
+high = 37.7
+when = { age = [0.0, 41.0] }
+population = "Healthy men and women aged 18 to 40 years, oral temperature measured with an electronic thermometer"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "1302471", url = "https://pubmed.ncbi.nlm.nih.gov/1302471/", title = "A critical appraisal of 98.6 degrees F, the upper limit of the normal body temperature, and other legacies of Carl Reinhold August Wunderlich.", locator = "Abstract, Conclusions" },
+]
+note = "Upper limit of the normal oral temperature range in healthy adults aged 40 years or younger, as proposed by the authors. The upper limit is 37.7 °C; the authors argue against the older 37.0 °C (98.6 °F) convention."
+
+[[range]]
+set = "pyrexia-review-2016"
+kind = "warn"
+low = 38.0
+population = "Adults, including febrile critically ill patients (review of pyrexia definitions)"
+evidence = "consensus"
+citations = [
+  { pmid = "27581757", doi = "10.1186/s13054-016-1406-2", url = "https://pubmed.ncbi.nlm.nih.gov/27581757/", title = "Pyrexia: aetiology in the ICU.", locator = "Abstract" },
+]
+note = "Commonly used definition of fever (pyrexia) as 38.0 °C or greater. The source notes that definitions vary by population and thermometer, so this is a common convention rather than a single guideline cut-off. Source kind: decision."
+
+[[range]]
+set = "low-body-temp-review"
+kind = "critical"
+high = 35
+population = "Adults, including older adults; general definition of hypothermia by core temperature"
+evidence = "consensus"
+citations = [
+  { doi = "10.14740/jocmr6490", url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13094164/fullTextXML", title = "Approach to Low Body Temperature or Mild Hypothermia in the Geriatric Population: A Narrative Review.", locator = "Abstract" },
+]
+note = "Hypothermia is defined as a temperature below 35 °C (boundary strictly below 35 °C, so 35.0 °C is not hypothermia by this definition). Described in the source as a medical emergency; the source is a narrative review, so this is a definitional cut-off."

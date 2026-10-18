@@ -1,0 +1,29 @@
+slug = "apri"
+name = "AST to Platelet Ratio Index"
+category = "derived"
+unit = "index"
+description = "APRI is a simple serum score calculated from the AST level and platelet count. It is used as a low-cost, non-invasive estimate of liver fibrosis and cirrhosis, mainly in chronic hepatitis B and C."
+aliases = ["ast-to-platelet ratio index", "ast/plt ratio"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "who-2024-hbv-apri"
+kind = "warn"
+low = 0.5
+population = "Adults with chronic hepatitis B; thresholds from the WHO 2024 hepatitis B guidelines"
+evidence = "guideline"
+citations = [
+  { pmid = "39391287", doi = "10.1097/ID9.0000000000000128", url = "https://pubmed.ncbi.nlm.nih.gov/39391287/", title = "Guidelines for the Prevention, Diagnosis, Care and Treatment for People with Chronic Hepatitis B Infection (Text Extract): Executive Summary.", locator = "Full text, treatment recommendations" },
+]
+note = "Significant fibrosis (F2 or above) threshold: APRI greater than 0.5 (boundary > 0.5), used with or without HBV DNA or ALT levels to decide on treatment. Quoted from the WHO 2024 guideline text extract. Hepatitis C thresholds were not retrieved. Source kind: decision."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 1
+population = "Adults with chronic hepatitis B; thresholds from the WHO 2024 hepatitis B guidelines"
+evidence = "guideline"
+citations = [
+  { pmid = "40891225", doi = "10.1111/liv.70324", url = "https://pubmed.ncbi.nlm.nih.gov/40891225/", title = "The Impact of Access to Clinical Guidelines on LLM-Based Treatment Recommendations for Chronic Hepatitis B.", locator = "Full text, guideline excerpt quoted in Methods" },
+]
+note = "Cirrhosis (F4) threshold: APRI greater than 1 (boundary > 1), as reproduced in a 2025 paper quoting the WHO 2024 wording. The source paper is about LLM treatment recommendations, so this is a secondary reproduction of the guideline text. A supporting meta-analysis (PMID 39983746) gives the same cut-off (greater than 1.0) but its quote uses a decimal-comma style that the checker cannot match. Source kind: decision. Alternative to the default who-2024-hbv-apri warn range for the same population."

@@ -1,0 +1,59 @@
+slug = "c3"
+name = "Complement C3"
+category = "immune"
+unit = "g/L"
+loinc = "4485-9"
+description = "The central protein of the complement system, which helps clear pathogens and immune complexes. Low levels suggest complement consumption, as seen in active lupus and some other immune conditions."
+aliases = ["complement component 3"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.656
+high = 1.52
+when = { sex = "male", age = [20.0, 70.0] }
+population = "Healthy Chinese Han males aged 20-69 years from a community survey (n=1,234)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24839820", doi = "10.7754/clin.lab.2013.130514", url = "https://pubmed.ncbi.nlm.nih.gov/24839820/", title = "Determination of reference intervals for serum complement C3 and C4 levels in Chinese Han ethnic males.", locator = "Abstract, Methods" },
+  { pmid = "24839820", doi = "10.7754/clin.lab.2013.130514", url = "https://pubmed.ncbi.nlm.nih.gov/24839820/", title = "Determination of reference intervals for serum complement C3 and C4 levels in Chinese Han ethnic males.", locator = "Abstract, Results" },
+]
+note = "Central 95% interval (mean plus or minus 2 SD, parametric), immunoturbidimetry. Males only; the authors also report BMI-specific intervals, as C3 rises with BMI. Not a lupus classification threshold."
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.62
+high = 1.64
+population = "Adults (women and men) from 21 Spanish clinical laboratories, measured as complement C3c with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", locator = "Abstract, Results and conclusions" },
+]
+note = "Multicentre adult reference interval (sexes combined) for complement C3c, the assay measured by this method; C3c is used as the clinical C3 measure here. Assay-specific; check against the local assay's own interval."
+
+[[range]]
+set = "zimbabwe-adults-2003-c3c4"
+kind = "reference"
+low = 0.63
+high = 1.92
+when = { age = [18.0, 51.0] }
+population = "Apparently healthy adult blood donors aged 18-60 years in Zimbabwe (n=95, 50 males and 45 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "14562600", url = "https://pubmed.ncbi.nlm.nih.gov/14562600/", title = "Determination of normal ranges for serum C3 and C4 levels in an adult Zimbabwean population.", locator = "Abstract, Results" },
+]
+note = "Local adult C3 interval for ages 18-50 (63-192 mg/dL), not partitioned by sex. Small single-country sample; the study reports age-related lowering of C3 at 51-60 years (separate range). Converted from the source's mg/dL (63-192) to g/L using factor 0.01."
+
+[[range]]
+set = "zimbabwe-adults-2003-c3c4"
+kind = "reference"
+low = 0.8
+high = 1.24
+when = { age = [51.0, 61.0] }
+population = "Apparently healthy adult blood donors aged 18-60 years in Zimbabwe (n=95, 50 males and 45 females)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "14562600", url = "https://pubmed.ncbi.nlm.nih.gov/14562600/", title = "Determination of normal ranges for serum C3 and C4 levels in an adult Zimbabwean population.", locator = "Abstract, Results" },
+]
+note = "Local adult C3 interval for ages 51-60 (80-124 mg/dL), not partitioned by sex. Small single-country sample. Converted from the source's mg/dL (80-124) to g/L using factor 0.01."

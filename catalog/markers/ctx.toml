@@ -1,0 +1,141 @@
+slug = "ctx"
+name = "C-Terminal Telopeptide (β-CrossLaps, serum CTX)"
+category = "bone"
+unit = "ng/mL"
+description = "Serum fragment of type I collagen released during bone resorption (beta-CrossLaps, CTX-I). A bone resorption marker used to assess fracture risk and response to antiresorptive treatment. Sample handling matters: measure in the morning after an overnight fast."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.111
+high = 0.791
+when = { sex = "female", menopause = "pre", age = [35.0, 39.0] }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark) (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Results" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range for serum beta-CrossLaps on Elecsys 2010 and related automated assays. Values depend on assay; interpret against the same method."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 0.177
+high = 0.862
+when = { sex = "female", menopause = "pre", age = [35.0, 39.0] }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark) (specimen: serum; method: elisa)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Results" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range in the second assay group (led by the Serum Crosslaps ELISA). Assay-specific; not interchangeable with the Elecsys range. Alternative to the default bone-turnover-premenopausal-europe-2012 reference range for the same population."
+
+[[range]]
+set = "malaysia-2023"
+kind = "reference"
+low = 0.132
+high = 0.775
+when = { sex = "male", fasting = true, age = [45.0, 90.0] }
+population = "Healthy multi-ethnic Malaysian men aged 45-90 years from Selangor (specimen: plasma; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38155380", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", locator = "Abstract, Results" },
+  { pmid = "38155380", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", locator = "Abstract, Methods" },
+]
+note = "2.5th-97.5th percentile for plasma CTX (Roche e411), samples collected 8-9 a.m. after fasting. Values in ng/L (= pg/mL). Excluded people with bone disease, renal impairment or osteoporosis. Converted from the source's ng/L (132-775) to ng/mL using factor 0.001. Applies only to: time_of_day=morning; ethnicity=Malay, Chinese, Indian."
+
+[[range]]
+set = "malaysia-2023"
+kind = "reference"
+low = 0.152
+high = 1.025
+when = { sex = "female", menopause = "post", fasting = true, age = [45.0, 90.0] }
+population = "Healthy multi-ethnic Malaysian postmenopausal women aged 45-90 years from Selangor (specimen: plasma; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38155380", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", locator = "Abstract, Results" },
+  { pmid = "38155380", url = "https://pubmed.ncbi.nlm.nih.gov/38155380/", title = "Reference intervals for CTX and P1NP in a multi-ethnic Malaysian cohort.", locator = "Abstract, Methods" },
+]
+note = "2.5th-97.5th percentile for plasma CTX (Roche e411), samples collected 8-9 a.m. after fasting. Values in ng/L (= pg/mL). Converted from the source's ng/L (152-1025) to ng/mL using factor 0.001. Applies only to: time_of_day=morning; ethnicity=Malay, Chinese, Indian."
+
+[[range]]
+set = "southeast-asia-2024"
+kind = "reference"
+low = 0.128
+high = 0.811
+when = { sex = "female", menopause = "pre", age = [20.0, 44.0] }
+population = "Healthy premenopausal women aged 20-44 from Malaysia, the Philippines, Singapore, Thailand and Vietnam (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", title = "Bone turnover markers reference database in five Southeast Asian countries.", locator = "Abstract, Results" },
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", title = "Bone turnover markers reference database in five Southeast Asian countries.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range on the cobas modular (Roche) immunoassay. Values in ng/L (= pg/mL). Highest in 20s; the 30-44 range below is lower. Converted from the source's ng/L (128-811) to ng/mL using factor 0.001."
+
+[[range]]
+set = "southeast-asia-2024"
+kind = "reference"
+low = 0.117
+high = 0.678
+when = { sex = "female", menopause = "pre", age = [30.0, 44.0] }
+population = "Healthy premenopausal women aged 30-44 from five Southeast Asian countries (women in their 20s excluded) (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", title = "Bone turnover markers reference database in five Southeast Asian countries.", locator = "Abstract, Results" },
+  { pmid = "38945507", doi = "10.1016/j.bone.2024.117182", url = "https://pubmed.ncbi.nlm.nih.gov/38945507/", title = "Bone turnover markers reference database in five Southeast Asian countries.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range on the cobas modular (Roche) immunoassay, after excluding participants in their 20s. Values in ng/L (= pg/mL). Converted from the source's ng/L (117-678) to ng/mL using factor 0.001."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 0.05
+high = 0.67
+when = { sex = "female", menopause = "pre", age = [30.0, 54.0] }
+population = "Healthy premenopausal women aged 30-54 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range on the IDS-iSYS automated system (age-independent for women)."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 0.09
+high = 1.05
+when = { sex = "female", menopause = "post", age = [50.0, 79.0] }
+population = "Healthy postmenopausal women aged 50-79 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range on the IDS-iSYS automated system. Postmenopausal values are higher than premenopausal."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 0.12
+high = 0.83
+when = { sex = "male", age = [25.0, 29.0] }
+population = "Healthy men aged 25-29 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range; male CTX reference intervals decrease with age (see the 75-79 year range)."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 0.05
+high = 0.58
+when = { sex = "male", age = [75.0, 79.0] }
+population = "Healthy men aged 75-79 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range on the IDS-iSYS automated system."

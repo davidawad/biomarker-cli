@@ -2,6 +2,7 @@ slug = "ggt"
 name = "Gamma-Glutamyl Transferase"
 category = "liver"
 unit = "U/L"
+description = "Enzyme sensitive to biliary and alcohol-related liver injury; higher values are associated with cardiovascular and all-cause mortality in prospective cohorts."
 loinc = "2324-2"
 aliases = ["gamma gt", "ggtp"]
 
@@ -39,3 +40,92 @@ set = "blueprint"
 kind = "optimal"
 high = 14.0
 legacy = true
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 48
+when = { sex = "male" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men. The women's limit (75) is higher than the men's as published; confirmed in full-text Table 2 (women n=252 vs men n=144; log-transformed limits 44 men / 62 women). Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 75
+when = { sex = "female" }
+population = "Healthy middle-aged Finnish adults (Health 2000 Survey, aged 30 years or more) after excluding liver disease, advanced fibrosis, liver-related risk factors, hepatotoxic medication and systemic conditions"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
+]
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women. Higher than the men's limit as published; confirmed in full-text Table 2 (women n=252). Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 14
+high = 72
+when = { sex = "male", age = [18.0, 66.0] }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); males"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult male 95% reference interval (LAVE-corrected in the source)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11
+high = 38
+when = { sex = "female", age = [18.0, 45.0] }
+population = "Females aged 18 to under 45 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult female 95% reference interval (under 45 years), LAVE-corrected in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 12
+high = 62
+when = { sex = "female", age = [45.0, 200] }
+population = "Females aged 45 years and older, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
+]
+note = "Adult female 95% reference interval (45 years and over), LAVE-corrected in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 13.45
+high = 159.03
+when = { age = [0.077, 0.5] }
+population = "Healthy Chinese children aged 28 days to under 6 months (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 8.64
+high = 35.41
+when = { age = [0.5, 18.0] }
+population = "Healthy Chinese children aged 6 months to under 18 years (Shenzhen, check-up children; CLSI EP28)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
+]
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
