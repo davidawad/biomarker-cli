@@ -1,0 +1,76 @@
+slug = "respiratory-rate"
+name = "Respiratory Rate"
+loinc = "9279-1"
+category = "vitals"
+unit = "breaths/min"
+description = "Number of breaths taken per minute at rest. A raised respiratory rate is an early sign of acute illness, sepsis or respiratory distress, and it is one of the parameters in the NEWS2 early warning score and the qSOFA sepsis screen."
+aliases = ["RR", "breathing rate"]
+
+[[range]]
+set = "rcp-news2-2017"
+kind = "reference"
+low = 12
+high = 20
+population = "Adults, as used in the NEWS2 early warning score chart (score 0 band for respiration rate)"
+evidence = "consensus"
+note = "Respiration rate 12-20 breaths/min is the NEWS2 score-0 band, i.e. the normal range used for early-warning scoring. It is a scoring band, not a population reference interval; boundaries are inclusive as printed in the chart."
+citations = [
+  { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)", quote = "9–11 12–20 21–24" },
+]
+
+[[range]]
+set = "rcp-news2-2017"
+kind = "critical"
+high = 8
+population = "Adults, as used in the NEWS2 early warning score chart (score 3 band for respiration rate)"
+evidence = "consensus"
+note = "NEWS2 score-3 band: respiration rate of 8 breaths/min or fewer (scores 3 for a single parameter; a reduced rate indicates CNS depression or narcosis). Boundary as printed in the chart."
+citations = [
+  { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)", quote = "≤8 ≥25" },
+]
+
+[[range]]
+set = "rcp-news2-2017"
+kind = "critical"
+low = 25
+population = "Adults, as used in the NEWS2 early warning score chart (score 3 band for respiration rate)"
+evidence = "consensus"
+note = "NEWS2 score-3 band: respiration rate of 25 breaths/min or more. Boundary as printed in the chart."
+citations = [
+  { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)", quote = "≤8 ≥25" },
+]
+
+[[range]]
+set = "rcp-news2-2017"
+kind = "warn"
+low = 9
+high = 11
+population = "Adults, as used in the NEWS2 early warning score chart (score 1 band for respiration rate)"
+evidence = "consensus"
+note = "NEWS2 score-1 band: respiration rate 9-11 breaths/min (low-ish rate that adds one point). Boundaries inclusive as printed."
+citations = [
+  { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)", quote = "9–11 12–20 21–24" },
+]
+
+[[range]]
+set = "rcp-news2-2017"
+kind = "warn"
+low = 21
+high = 24
+population = "Adults, as used in the NEWS2 early warning score chart (score 2 band for respiration rate)"
+evidence = "consensus"
+note = "NEWS2 score-2 band: respiration rate 21-24 breaths/min. Boundaries inclusive as printed."
+citations = [
+  { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)", quote = "9–11 12–20 21–24" },
+]
+
+[[range]]
+set = "sepsis-3-2016-qsofa"
+kind = "decision"
+low = 22
+population = "Adults with suspected infection outside the ICU (out-of-hospital, emergency department or general ward) in the Sepsis-3 consensus"
+evidence = "consensus"
+note = "qSOFA criterion: respiratory rate of 22/min or greater (one of three bedside criteria; two or more positive criteria indicate higher risk of poor outcome). A screening threshold, not a diagnostic cut-off for sepsis."
+citations = [
+  { pmid = "26903338", doi = "10.1001/jama.2016.0287", title = "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3).", url = "https://pubmed.ncbi.nlm.nih.gov/26903338/", locator = "Abstract", quote = "respiratory rate of 22/min or greater" },
+]

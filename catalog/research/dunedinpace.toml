@@ -1,0 +1,18 @@
+slug = "dunedinpace"
+name = "DunedinPACE (Pace of Aging)"
+category = "aging"
+unit = "years/year"
+description = "DNA methylation estimate of the pace of biological ageing, expressed as biological years gained per chronological year. A value of 1.0 means ageing at the average rate of one biological year per calendar year; higher values indicate faster ageing and higher morbidity and mortality risk."
+aliases = ["Pace of Aging", "DunedinPACE DNAm"]
+
+[[range]]
+set = "dunedin-pace-belsky-2022"
+kind = "reference"
+low = 0.40
+high = 2.44
+population = "Single-birth-cohort (Dunedin Study, 1972-1973 birth cohort) distribution; observed extremes, not a clinical reference interval"
+evidence = "cohort-study"
+note = "Observed range of Pace of Aging in the Dunedin cohort, from slowest (0.40) to fastest (2.44) study member. The reported population mean is 1.0 biological year per chronological year with SD 0.29, but a range built from mean and SD is not quoted here. Not a clinical reference interval."
+citations = [
+  { pmid = "35029144", doi = "10.7554/eLife.73420", title = "DunedinPACE, a DNA methylation biomarker of the pace of aging.", url = "https://pubmed.ncbi.nlm.nih.gov/35029144/", locator = "Results, Dunedin Study pace of aging (full text)", quote = "the Study member with the slowest Pace of Aging aged by just 0.40 biological years per chronological year, while the Study member with the fastest Pace of Aging accrued 2.44 biological years per chronological year" },
+]

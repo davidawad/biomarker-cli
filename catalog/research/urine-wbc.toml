@@ -1,0 +1,85 @@
+slug = "urine-wbc"
+name = "Urine White Blood Cells (microscopy)"
+loinc = "5821-4"
+category = "urinalysis"
+unit = "/HPF"
+description = "White blood cells counted on microscopy of a urine sediment, per high-power field. Pyuria (raised WBC) suggests urinary tract infection or inflammation, but its predictive value depends on how concentrated the urine is."
+aliases = ["pyuria", "urine leukocytes", "urine WBC"]
+
+[[range]]
+set = "pediatric-pyuria-sg-2021"
+kind = "decision"
+low = 3
+when = { markers = { "urine-specific-gravity" = "<1.011" } }
+population = "Children under 24 months evaluated in the emergency department for suspected UTI, with paired urinalysis and urine culture"
+evidence = "validation-study"
+note = "Optimal microscopic WBC cut-off per HPF at low urine concentration (USG <1.011), against a positive urine culture (AAP culture thresholds). Cut-off applies to low-concentration urine only. Retrospective study in young children, not adults."
+citations = [
+  { pmid = "33514634", doi = "10.1542/peds.2020-014068", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", locator = "Abstract, Results", quote = "Optimal WBC cutoffs per high-power field (HPF) were 3 (positive likelihood ratio [LR+] 10.5; negative likelihood ratio [LR-] 0.12) at low, 6 (LR+ 12; LR- 0.14) at moderate, and 8 (LR+ 11.1; LR- 0.35) at high urine concentrations." },
+  { pmid = "33514634", doi = "10.1542/peds.2020-014068", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", locator = "Abstract, Methods", quote = "low <1.011, moderate 1.011 to 1.020, and high >1.020" },
+]
+
+[[range]]
+set = "pediatric-pyuria-sg-2021"
+kind = "decision"
+low = 6
+when = { markers = { "urine-specific-gravity" = "1.011-1.020" } }
+population = "Children under 24 months evaluated in the emergency department for suspected UTI, with paired urinalysis and urine culture"
+evidence = "validation-study"
+note = "Optimal microscopic WBC cut-off per HPF at moderate urine concentration (USG 1.011 to 1.020), against a positive urine culture. Retrospective study in young children, not adults."
+citations = [
+  { pmid = "33514634", doi = "10.1542/peds.2020-014068", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", locator = "Abstract, Results", quote = "Optimal WBC cutoffs per high-power field (HPF) were 3 (positive likelihood ratio [LR+] 10.5; negative likelihood ratio [LR-] 0.12) at low, 6 (LR+ 12; LR- 0.14) at moderate, and 8 (LR+ 11.1; LR- 0.35) at high urine concentrations." },
+  { pmid = "33514634", doi = "10.1542/peds.2020-014068", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", locator = "Abstract, Methods", quote = "low <1.011, moderate 1.011 to 1.020, and high >1.020" },
+]
+
+[[range]]
+set = "pediatric-pyuria-sg-2021"
+kind = "decision"
+low = 8
+when = { markers = { "urine-specific-gravity" = ">1.020" } }
+population = "Children under 24 months evaluated in the emergency department for suspected UTI, with paired urinalysis and urine culture"
+evidence = "validation-study"
+note = "Optimal microscopic WBC cut-off per HPF at high urine concentration (USG >1.020), against a positive urine culture. Retrospective study in young children, not adults."
+citations = [
+  { pmid = "33514634", doi = "10.1542/peds.2020-014068", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", locator = "Abstract, Results", quote = "Optimal WBC cutoffs per high-power field (HPF) were 3 (positive likelihood ratio [LR+] 10.5; negative likelihood ratio [LR-] 0.12) at low, 6 (LR+ 12; LR- 0.14) at moderate, and 8 (LR+ 11.1; LR- 0.35) at high urine concentrations." },
+  { pmid = "33514634", doi = "10.1542/peds.2020-014068", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", locator = "Abstract, Methods", quote = "low <1.011, moderate 1.011 to 1.020, and high >1.020" },
+]
+
+[[range]]
+set = "pyuria-cutoffs-older-women-2023"
+kind = "decision"
+low = 5
+high = 10
+unit = "/HPF"
+population = "Adults: commonly accepted pyuria cut-off range, as cited in a study of older women"
+evidence = "consensus"
+note = "Commonly accepted pyuria cut-off of 5 to 10 leukocytes per high-power field (adult background cited in the 2023 Clinical Infectious Diseases study). The study itself argues these cut-offs are too low for older women. Lower bound 5 is the threshold; the upper bound is the cited upper end of the band."
+citations = [
+  { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Introduction (full text)", quote = "commonly accepted cutoffs include 10 leukocytes/µL and 5–10 leukocytes per high-power field (hpf)" },
+]
+
+[[range]]
+set = "pyuria-cutoffs-older-women-2023"
+kind = "decision"
+low = 10
+unit = "/µL"
+population = "Adults: commonly used pyuria cut-off (urine leukocytes by automated microscopy or flow cytometry)"
+evidence = "consensus"
+note = "Commonly used pyuria cut-off of 10 leukocytes/µL. In women aged 65 and over with lower urinary tract symptoms, this cut-off had sensitivity 100% but specificity only 36% for UTI, which the authors use to argue for higher thresholds."
+citations = [
+  { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Abstract, Results", quote = "The commonly used cutoff of 10 leukocytes/µL had a poor specificity (36%) and a sensitivity of 100%." },
+]
+
+[[range]]
+set = "pyuria-cutoffs-older-women-2023"
+kind = "decision"
+low = 264
+unit = "/µL"
+when = { sex = "female", age_min = 65 }
+population = "Women aged 65 and over with new lower urinary tract symptoms, UTI versus asymptomatic bacteriuria and controls (164 participants)"
+evidence = "validation-study"
+note = "Microscopy cut-off derived for UTI in older women (sensitivity 88%, positive likelihood ratio 7.2). It is a single-study result in a selected population, not a general adult pyuria threshold."
+citations = [
+  { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Abstract, Results", quote = "At a cutoff of 264 leukocytes/µL, sensitivity and specificity of microscopy were 88%" },
+  { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Abstract, Methods", quote = "Women ≥65 years with ≥2 new-onset LUTS" },
+]

@@ -1,0 +1,43 @@
+slug = "urine-osmolality"
+name = "Urine Osmolality"
+loinc = "2695-5"
+category = "urinalysis"
+unit = "mOsm/kg"
+description = "Concentration of dissolved particles in urine, measured directly. It shows how well the kidneys concentrate urine and is used to assess hydration, water deprivation tests and the cause of polyuria."
+aliases = ["uOsm", "urine osmolarity"]
+
+[[range]]
+set = "hypohydration-usg-validation-2022"
+kind = "decision"
+low = 700
+unit = "mmol/kg"
+population = "Athletes, hydration status assessment"
+evidence = "validation-study"
+note = "Hypohydration diagnosis threshold of urine osmolality >=700 mmol/kg as used in the cited validation study, given as an alternative to USG >=1.020. Unit override mmol/kg is used because the source reports mmol/kg."
+citations = [
+  { pmid = "36034925", doi = "10.3389/fnut.2022.997189", title = "Validation of urine colour L*a*b* for assessing hydration amongst athletes.", url = "https://pubmed.ncbi.nlm.nih.gov/36034925/", locator = "Abstract, Results", quote = "Whether the diagnosis of hypohydration is based on Usg ≥ 1.020 or Uosm ≥ 700 mmol/kg" },
+]
+
+[[range]]
+set = "pediatric-water-deprivation-avp-2025"
+kind = "decision"
+low = 279
+when = { setting = "water-deprivation-test" }
+population = "Children with polyuria-polydipsia undergoing a water deprivation test"
+evidence = "validation-study"
+note = "Baseline uOsm above 279 mOsm/kgH2O excluded arginine vasopressin (AVP) deficiency and/or resistance in all patients in this cohort (sensitivity 100%, specificity 74%). Rule-out threshold, not a general reference range."
+citations = [
+  { pmid = "40929290", doi = "10.1152/ajpregu.00248.2024", title = "Water deprivation test in children: challenging but still necessary for the differential diagnosis of polyuria-polydipsia syndrome.", url = "https://pubmed.ncbi.nlm.nih.gov/40929290/", locator = "Abstract, Results", quote = "A baseline urinary osmolality (uOsm) > 279 mOsm/kgH2O excluded arginine vasopressin (AVP) disorders with 100% sensitivity and 74% specificity" },
+]
+
+[[range]]
+set = "pediatric-water-deprivation-avp-2025"
+kind = "decision"
+low = 533
+when = { setting = "water-deprivation-test" }
+population = "Children with polyuria-polydipsia undergoing a water deprivation test"
+evidence = "validation-study"
+note = "Interrupted-test uOsm above 533 mOsm/kgH2O excluded AVP disorders with 100% sensitivity and specificity in this cohort, as worded in the abstract ('an interrupt uOsm'). Rule-out threshold for this test setting only."
+citations = [
+  { pmid = "40929290", doi = "10.1152/ajpregu.00248.2024", title = "Water deprivation test in children: challenging but still necessary for the differential diagnosis of polyuria-polydipsia syndrome.", url = "https://pubmed.ncbi.nlm.nih.gov/40929290/", locator = "Abstract, Results", quote = "an interrupt uOsm > 533 mOsm/kgH2O excluded them with 100% sensitivity and specificity" },
+]

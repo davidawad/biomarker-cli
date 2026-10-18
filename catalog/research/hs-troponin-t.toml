@@ -1,0 +1,95 @@
+slug = "hs-troponin-t"
+name = "High-Sensitivity Cardiac Troponin T"
+loinc = "67151-1"
+category = "cardiac"
+unit = "ng/L"
+description = "High-sensitivity cardiac troponin T, a protein released from injured heart muscle. Measured with a high-sensitivity assay it is used to rule acute myocardial infarction in or out, typically with a 0/1-hour algorithm, and to detect myocardial injury."
+aliases = ["hs-cTnT", "hs-TnT", "troponin T high sensitivity"]
+
+[[range]]
+set = "ehjopen-2022-acs-0-1h"
+kind = "reference"
+high = 14
+unit = "ng/L"
+population = "Healthy reference population used for the Roche cobas 8000 hs-cTnT assay (overall, not sex-specific)"
+evidence = "reference-interval-study"
+note = "99th percentile upper reference limit (URL) for the Roche hs-cTnT assay as stated by the study. Values above the URL indicate myocardial injury; this single URL is not sex-specific."
+citations = [
+  { pmid = "36032815", doi = "10.1093/ehjopen/oeac048", title = "Rapid risk stratification of acute coronary syndrome: adoption of an adapted European Society of Cardiology 0/1-hour troponin algorithm in a real-world setting.", url = "https://pubmed.ncbi.nlm.nih.gov/36032815/", locator = "Methods, assay description", quote = "99th percentile of a healthy reference population 14 ng/L" },
+]
+
+[[range]]
+set = "ehjopen-2022-acs-0-1h"
+kind = "decision"
+high = 5
+when = { setting = "suspected-acute-mi", method = "roche-cobas-8000" }
+population = "Adults presenting to the emergency department or ambulatory emergency care with suspected acute coronary syndrome"
+evidence = "validation-study"
+note = "Adapted ESC 0/1-hour hs-cTnT algorithm, low-risk band: initial hs-cTnT below 5 ng/L (strict '<5') when chest pain onset was at least 3 h before presentation. Rule-out boundary is strict (<5 ng/L)."
+citations = [
+  { pmid = "36032815", doi = "10.1093/ehjopen/oeac048", title = "Rapid risk stratification of acute coronary syndrome: adoption of an adapted European Society of Cardiology 0/1-hour troponin algorithm in a real-world setting.", url = "https://pubmed.ncbi.nlm.nih.gov/36032815/", locator = "Results, risk categories", quote = "a hs-cTnT on presentation of <5 ng/L if chest pain onset was at least 3 h prior" },
+]
+
+[[range]]
+set = "ehjopen-2022-acs-0-1h"
+kind = "decision"
+low = 52
+when = { setting = "suspected-acute-mi", method = "roche-cobas-8000" }
+population = "Adults presenting to the emergency department or ambulatory emergency care with suspected acute coronary syndrome"
+evidence = "validation-study"
+note = "Adapted ESC 0/1-hour hs-cTnT algorithm, high-risk ('ACS likely') band: initial hs-cTnT of 52 ng/L or more, inclusive (>=52). Concentrations between 5 and 51 ng/L require a 1-hour repeat (rule-in if delta >=5 ng/L)."
+citations = [
+  { pmid = "36032815", doi = "10.1093/ehjopen/oeac048", title = "Rapid risk stratification of acute coronary syndrome: adoption of an adapted European Society of Cardiology 0/1-hour troponin algorithm in a real-world setting.", url = "https://pubmed.ncbi.nlm.nih.gov/36032815/", locator = "Results, risk categories (Figure 1)", quote = "initial hs-cTnT ≥52 ng/L" },
+]
+
+[[range]]
+set = "gen6-ref-tsix-2026"
+kind = "reference"
+high = 18
+unit = "ng/L"
+when = { sex = "female", method = "elecsys-troponin-t-hs-gen6" }
+population = "Healthy participants in the global REF-TSIX reference study, Elecsys hs-cTnT Gen 6 assay"
+evidence = "reference-interval-study"
+note = "Sex-specific 99th percentile upper reference limit for females on the Gen 6 assay (95% CI 16-23 ng/L). Applies only to the Gen 6 assay, not to the Roche Gen 5 URL of 14 ng/L."
+citations = [
+  { pmid = "41564003", doi = "10.1093/clinchem/hvag011", title = "Establishing Reference Values in Healthy Participants for the Cardiac Troponin T High-Sensitivity Gen 6 Assay: REF-TSIX Global Reference Study.", url = "https://pubmed.ncbi.nlm.nih.gov/41564003/", locator = "Abstract, Results", quote = "Sex-specific 99th percentile URLs (95% CI) were 18 (16-23) ng/L for females and 32 (28-35) ng/L for males" },
+]
+
+[[range]]
+set = "gen6-ref-tsix-2026"
+kind = "reference"
+high = 32
+unit = "ng/L"
+when = { sex = "male", method = "elecsys-troponin-t-hs-gen6" }
+population = "Healthy participants in the global REF-TSIX reference study, Elecsys hs-cTnT Gen 6 assay"
+evidence = "reference-interval-study"
+note = "Sex-specific 99th percentile upper reference limit for males on the Gen 6 assay (95% CI 28-35 ng/L). Applies only to the Gen 6 assay."
+citations = [
+  { pmid = "41564003", doi = "10.1093/clinchem/hvag011", title = "Establishing Reference Values in Healthy Participants for the Cardiac Troponin T High-Sensitivity Gen 6 Assay: REF-TSIX Global Reference Study.", url = "https://pubmed.ncbi.nlm.nih.gov/41564003/", locator = "Abstract, Results", quote = "Sex-specific 99th percentile URLs (95% CI) were 18 (16-23) ng/L for females and 32 (28-35) ng/L for males" },
+]
+
+[[range]]
+set = "ehjacc-2026-tnt-gen6-validation"
+kind = "decision"
+high = 3
+unit = "ng/L"
+when = { setting = "suspected-acute-mi", method = "elecsys-troponin-t-hs-gen5" }
+population = "Adults presenting with suspected myocardial infarction in a single-centre cohort, with the ESC 0/1-hour algorithm logic applied to the predecessor Elecsys hs-cTnT Gen 5 assay"
+evidence = "validation-study"
+note = "ESC 0/1-hour algorithm, 1-hour rule-out for Elecsys hs-cTnT Gen 5: absolute change below 3 ng/L (strict <3), with a baseline below 12 ng/L. The paper states this as the logic it applied to the Gen 5 assay for comparison; it is not the manufacturer's Gen 5 label."
+citations = [
+  { pmid = "42008514", doi = "10.1093/ehjacc/zuag044", title = "Diagnostic validation of a novel high-sensitivity cardiac troponin T assay.", url = "https://pubmed.ncbi.nlm.nih.gov/42008514/", locator = "Methods, Statistical analysis", quote = "For rule-out of MI, a 0 h cut-off of <5 ng/L or a 0/1 h algorithm with a 0 h < 12 ng/L and a Δ 0/1 h change of <3 ng/L was used." },
+]
+
+[[range]]
+set = "ehjacc-2026-tnt-gen6-validation"
+kind = "decision"
+low = 5
+unit = "ng/L"
+when = { setting = "suspected-acute-mi", method = "elecsys-troponin-t-hs-gen5" }
+population = "Adults presenting with suspected myocardial infarction in a single-centre cohort, with the ESC 0/1-hour algorithm logic applied to the predecessor Elecsys hs-cTnT Gen 5 assay"
+evidence = "validation-study"
+note = "ESC 0/1-hour algorithm, 1-hour rule-in for Elecsys hs-cTnT Gen 5: absolute change of 5 ng/L or more (inclusive, >=5) at 1 hour. The paper gives this as the logic it applied to the Gen 5 assay."
+citations = [
+  { pmid = "42008514", doi = "10.1093/ehjacc/zuag044", title = "Diagnostic validation of a novel high-sensitivity cardiac troponin T assay.", url = "https://pubmed.ncbi.nlm.nih.gov/42008514/", locator = "Methods, Statistical analysis", quote = "For rule-in of MI, a 0 h cut-off ≥52 ng/L or a Δ 0/1 h change of ≥5 ng/L was used." },
+]

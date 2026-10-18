@@ -1,0 +1,70 @@
+slug = "iga"
+name = "Immunoglobulin A"
+loinc = "2458-8"
+category = "immune"
+unit = "g/L"
+description = "The main antibody on mucosal surfaces such as the gut and airways. Very low serum IgA (selective IgA deficiency) is the commonest primary immunodeficiency and affects how coeliac disease serology is interpreted."
+aliases = ["IgA", "Immunoglobulin A, serum"]
+
+[[range]]
+set = "iran-adults-2003"
+kind = "reference"
+low = 72
+high = 375
+unit = "mg/dL"
+when = { age_min = 18, age_max = 56 }
+population = "Iranian healthy adult blood donor volunteers aged 18-55 years (n=914), measured by nephelometry"
+evidence = "reference-interval-study"
+note = "Central reference interval as reported (mg/dL). Single-country blood-donor cohort."
+citations = [
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", locator = "Abstract, Methods", quote = "In this study, serum levels of IgA, IgG, and IgM in 914 Iranian healthy adult blood donor volunteers, aged 18-55 years, were measured by nephelometry." },
+  { pmid = "14677654", doi = "10.1081/IAS-120025774", title = "Normal value of immunoglobulins IgA, IgG, and IgM in Iranian healthy adults, measured by nephelometry.", url = "https://pubmed.ncbi.nlm.nih.gov/14677654/", locator = "Abstract, Results", quote = "Our data showed that serum reference intervals of IgA, IgG, and IgM in subjects were 72-375, 636-1518, and 39-283 mg/dL, respectively." },
+]
+
+[[range]]
+set = "iga-deficiency-review-2026"
+kind = "decision"
+high = 0.07
+population = "People older than 4 years with suspected selective IgA deficiency (as defined in a 2026 scoping review)"
+evidence = "meta-analysis"
+note = "Selective IgA deficiency: serum IgA below 0.07 g/L (strict) with normal IgM and IgG. Evidence is a scoping review of the literature, not a meta-analysis; the definition is the one it cites as current."
+citations = [
+  { pmid = "42820738", doi = "10.1002/ueg2.70296", title = "Immunoglobulin a Deficiency in Coeliac Disease: A Scoping Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42820738/", locator = "Full text, Introduction", quote = "the disorder is defined by serum IgA levels < 0.07 g/L with normal IgM and IgG levels in people > 4 years old" },
+]
+
+[[range]]
+set = "iga-coeliac-flowchart-2026"
+kind = "decision"
+high = 0.2
+population = "Patients with suspected coeliac disease undergoing serology (flowchart in a 2026 scoping review)"
+evidence = "meta-analysis"
+note = "Serum IgA cut-off used in the review's coeliac testing flowchart because IgA-based antibody tests may give false negatives. The quote states the cut-off value but not its direction; the review applies it to low serum IgA results. Evidence is a scoping review, not a meta-analysis."
+citations = [
+  { pmid = "42820738", doi = "10.1002/ueg2.70296", title = "Immunoglobulin a Deficiency in Coeliac Disease: A Scoping Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42820738/", locator = "Full text, Figure legend (flowchart)", quote = "the cut-off for s-IgA in the flowchart is 0.2 g/L due to the risk of false-negative IgA antibody levels" },
+]
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.89
+high = 4.80
+unit = "g/L"
+population = "Adults (women and men) from 21 Spanish clinical laboratories, measured with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+note = "Multicentre adult reference interval (sexes combined). Assay-specific; check against the local assay's own interval."
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", locator = "Abstract, Results and conclusions", quote = "immunoglobulin A, 0.89-4.80 g/L for women and men" },
+]
+
+[[range]]
+set = "hemochromatosis-probands-2026"
+kind = "reference"
+low = 0.91
+high = 4.14
+unit = "g/L"
+population = "Adults in a hemochromatosis proband study; the limits are the 1996 consensus reference limits it adopted, not hemochromatosis-specific data"
+evidence = "consensus"
+note = "Serum IgA reference limits (91-414 mg/dL) as adopted from 1996 consensus guidelines. Sexes and ages not partitioned in the quoted limits."
+citations = [
+  { pmid = "42340960", doi = "10.1371/journal.pone.0352148", title = "Serum IgA and IgM levels in hemochromatosis probands with HFE p.C282Y homozygosity.", url = "https://pubmed.ncbi.nlm.nih.gov/42340960/", locator = "Full text, Methods", quote = "The following reference limits were based on 1996 consensus guidelines [34]: IgA 0.91–4.14 g/L (91–414 mg/dL) and IgM 0.40–2.30 g/L (40–230 mg/dL)." },
+]

@@ -68,3 +68,39 @@ note = "Age-specific reference interval from paediatric study (2.5th-97.5th perc
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| 12-<18 years | 123 | 183.09 | 179.68 | 131.57 | 241.08 | 116.13-136.55 | 236.49-248.74" },
 ]
+
+[[range]]
+set = "dlbcl-ldh-cohort-2026"
+kind = "reference"
+high = 250
+population = "Adults treated with R-CHOP for diffuse large B-cell lymphoma at one centre (institutional reference interval)"
+evidence = "cohort-study"
+note = "Single-institution upper limit of normal of 250 U/L as stated in the cohort, not an independently derived reference interval; elevated LDH defined as > 250 U/L. Assay and method not specified in the quoted sentence."
+citations = [
+  { pmid = "42490837", doi = "10.14740/jocmr6583", title = "Baseline Lactate Dehydrogenase Predicts Early Treatment Failure in Diffuse Large B-Cell Lymphoma Treated With R-CHOP: A Real-World Cohort Study.", url = "https://pubmed.ncbi.nlm.nih.gov/42490837/", locator = "Methods, LDH categorisation", quote = "The institutional reference interval for LDH was ≤ 250 U/L; therefore, elevated LDH was defined as LDH > 250 U/L." },
+]
+
+[[range]]
+set = "norip-ldh-verification-2018"
+kind = "reference"
+low = 127
+high = 240
+when = { age_min = 18, age_max = 70, method = "ifcc" }
+population = "Adults aged 18 to under 70 in a Nordic clinical laboratory database, LDH measured on an IFCC method (Dimension Vista 1500); indirect reference interval"
+evidence = "reference-interval-study"
+note = "Adult indirect reference interval for serum LDH on an IFCC method, from a verification of the NORIP intervals. Limits are 127 U/L (lower) and 240 U/L (upper) as quoted. The study proposes that the NORIP upper limit should be raised. Method temperature (37 degrees C) is not stated in the quoted abstract text."
+citations = [
+  { pmid = "29898609", doi = "10.1080/00365513.2018.1481223", title = "Verification study on the NORIP LDH reference intervals with a proposed new upper reference limit.", url = "https://pubmed.ncbi.nlm.nih.gov/29898609/", locator = "Abstract, Results", quote = "For the adult age group (18 to <70 years) the limits of the interval was 127 U/L (90 % CI: 123-132 U/L) and 240 U/L (90 % CI: 234-243 U/L)." },
+]
+
+[[range]]
+set = "norip-ldh-2018"
+kind = "reference"
+high = 205
+when = { age_min = 18, age_max = 70 }
+population = "Adults aged 18 to under 70 (NORIP LDH reference interval as quoted in a verification study)"
+evidence = "reference-interval-study"
+note = "Published NORIP adult upper limit for LDH of 205 U/L, as quoted by the verification study. That study found about a quarter of results above this value and proposed a higher limit (240 U/L, in the range above). Boundary as quoted."
+citations = [
+  { pmid = "29898609", doi = "10.1080/00365513.2018.1481223", title = "Verification study on the NORIP LDH reference intervals with a proposed new upper reference limit.", url = "https://pubmed.ncbi.nlm.nih.gov/29898609/", locator = "Abstract, Results", quote = "For the adult age group (18 to <70 years) the limits of the interval was 127 U/L (90 % CI: 123-132 U/L) and 240 U/L (90 % CI: 234-243 U/L). However, the NORIP upper limit for the adult age group is 205 U/L (90 % CI: 198-210 U/L)." },
+]

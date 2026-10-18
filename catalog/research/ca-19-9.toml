@@ -1,0 +1,67 @@
+slug = "ca-19-9"
+name = "Carbohydrate Antigen 19-9"
+loinc = "24108-3"
+category = "tumour"
+unit = "U/mL"
+description = "Carbohydrate antigen 19-9, a sialylated glycan marker used mainly to monitor pancreatic and biliary cancers. It is not produced in people who lack the Lewis antigen, so a low value does not exclude cancer in them, and it can be raised by benign biliary obstruction and inflammation."
+aliases = ["CA19-9", "CA 19-9", "CA19.9"]
+
+[[range]]
+set = "ca19-9-ipmn-meta-2026"
+kind = "decision"
+low = 37
+population = "Patients with intraductal papillary mucinous neoplasm (IPMN) who underwent resection (systematic review and meta-analysis)"
+evidence = "meta-analysis"
+note = "Guideline-referenced threshold: serum CA19-9 >= 37 U/mL is considered a worrisome feature. Boundary is >= 37. Used as a diagnostic cut-off in this IPMN meta-analysis; not a general screening threshold."
+citations = [
+  { pmid = "42360746", doi = "10.1001/jamanetworkopen.2026.17587", title = "Serum CA19.9 for Detecting High-Grade Dysplasia and Invasive Carcinoma in Patients With Intraductal Papillary Mucinous Neoplasm: A Systematic Review and Meta-Analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/42360746/", locator = "Abstract, Introduction", quote = "Guidelines consider an elevated serum CA19.9 level (≥37 U/mL) a worrisome feature and a relative indication for surgery." },
+]
+
+[[range]]
+set = "ca199-fut3-cutoff-2026"
+kind = "decision"
+high = 7
+population = "Patients with pancreatic ductal adenocarcinoma (PDAC) with FUT3-null (Lewis-negative) status, training and validation cohorts"
+evidence = "cohort-study"
+note = "Lewis-negative caveat: a CA19-9 at or below 7 U/mL suggests FUT3-null (Lewis-negative) status, in which CA19-9 is not produced and a low value does not exclude cancer. Boundary is <= 7 U/mL. Derived in one PDAC cohort."
+citations = [
+  { pmid = "42162970", doi = "10.1158/1078-0432.CCR-25-4564", title = "A New CA19-9 Cutoff Value Identifies Lewis Antigen Status and Refines Prognostic Stratification in PDAC.", url = "https://pubmed.ncbi.nlm.nih.gov/42162970/", locator = "Abstract, Results", quote = "ROC analysis identified 7 U/mL as the optimal CA19-9 cutoff for FUT3-null (positive predictive value 95.1%; accuracy 87.9%)." },
+]
+
+[[range]]
+set = "elderly-tumour-ri-2024"
+kind = "reference"
+high = 28.1
+when = { age_min = 60, age_max = 99 }
+population = "Apparently healthy elderly individuals aged 60 and above in southwestern China (indirect method); sexes combined in the table"
+evidence = "reference-interval-study"
+note = "Upper reference limit (95th percentile) for CA19-9 in adults aged 60 and over, as tabulated. Lower limit not identified and omitted."
+citations = [
+  { pmid = "38811867", doi = "10.1186/s12885-024-12408-1", title = "A preliminary study on the reference intervals of serum tumor marker in apparently healthy elderly population in southwestern China using real-world data.", url = "https://pubmed.ncbi.nlm.nih.gov/38811867/", locator = "Full text, Table 3 (reference intervals of tumor markers for elderly population)", quote = "CA19-9 (U/ml) † Total 60–98 28,707 - 28.10 (27.72–28.50)" },
+]
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 23.7
+unit = "IU/mL"
+when = { sex = "male", age_max = 70 }
+population = "Apparently healthy Korean men under 70 from health checkups (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) for CA19-9 in men under 70, reported in IU/mL by the source (treated as equivalent to U/mL here)."
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", locator = "Full text, Table 2", quote = "CA19‐9 (IU/mL) <70 M 12,359 20.2 (19.74–20.69) 23.7 (23.20–24.30)" },
+]
+
+[[range]]
+set = "korea-tumour-ri-2023"
+kind = "reference"
+high = 28.78
+unit = "IU/mL"
+when = { sex = "male", age_min = 70 }
+population = "Apparently healthy Korean men aged 70 and over from health checkups (indirect method, CLSI EP28-A3C)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile) for CA19-9 in men aged 70 and over, reported in IU/mL by the source."
+citations = [
+  { pmid = "36789402", doi = "10.1002/hsr2.1107", title = "Establishment and validation of reference intervals for tumor markers (AFP, CEA, CA19-9, CA15-3, CA125, PSA, HE4, Cyfra 21-1, and ProGRP) in primary care centers in Korea: A cross-sectional retrospective study.", url = "https://pubmed.ncbi.nlm.nih.gov/36789402/", locator = "Full text, Table 2", quote = "≥70 M 1,719 24.8 (24.41–25.14) 28.78 (28.33–29.18)" },
+]

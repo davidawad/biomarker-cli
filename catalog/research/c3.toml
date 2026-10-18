@@ -1,0 +1,62 @@
+slug = "c3"
+name = "Complement C3"
+loinc = "4485-9"
+category = "immune"
+unit = "g/L"
+description = "The central protein of the complement system, which helps clear pathogens and immune complexes. Low levels suggest complement consumption, as seen in active lupus and some other immune conditions."
+aliases = ["Complement component 3"]
+
+[[range]]
+set = "chinese-han-males-2013"
+kind = "reference"
+low = 0.656
+high = 1.52
+when = { sex = "male", age_min = 20, age_max = 70 }
+population = "Healthy Chinese Han males aged 20-69 years from a community survey (n=1,234)"
+evidence = "reference-interval-study"
+note = "Central 95% interval (mean plus or minus 2 SD, parametric), immunoturbidimetry. Males only; the authors also report BMI-specific intervals, as C3 rises with BMI. Not a lupus classification threshold."
+citations = [
+  { pmid = "24839820", doi = "10.7754/clin.lab.2013.130514", title = "Determination of reference intervals for serum complement C3 and C4 levels in Chinese Han ethnic males.", url = "https://pubmed.ncbi.nlm.nih.gov/24839820/", locator = "Abstract, Methods", quote = "A total of 1,234 healthy male subjects, aged 20 - 69 years, were collected from the Fangchenggang Area Male Health and Examination Survey (FAMHES)." },
+  { pmid = "24839820", doi = "10.7754/clin.lab.2013.130514", title = "Determination of reference intervals for serum complement C3 and C4 levels in Chinese Han ethnic males.", url = "https://pubmed.ncbi.nlm.nih.gov/24839820/", locator = "Abstract, Results", quote = "The two-sided 95% RIs (mean +/- 2 SD) for serum C3 and C4 were 0.656 - 1.52 g/L and 0.181 - 0.561 g/L, respectively." },
+]
+
+[[range]]
+set = "spain-multicentre-2007"
+kind = "reference"
+low = 0.62
+high = 1.64
+unit = "g/L"
+population = "Adults (women and men) from 21 Spanish clinical laboratories, measured as complement C3c with Tina-Quant reagents on RD/Hitachi analysers"
+evidence = "reference-interval-study"
+note = "Multicentre adult reference interval (sexes combined) for complement C3c, the assay measured by this method; C3c is used as the clinical C3 measure here. Assay-specific; check against the local assay's own interval."
+citations = [
+  { pmid = "17378738", doi = "10.1515/CCLM.2007.069", title = "Multicentre physiological reference intervals for serum concentrations of immunoglobulins A, G and M, complement C3c and C4 measured with Tina-Quant reagents systems.", url = "https://pubmed.ncbi.nlm.nih.gov/17378738/", locator = "Abstract, Results and conclusions", quote = "complement C3c, 0.62-1.64 g/L for women and men" },
+]
+
+[[range]]
+set = "zimbabwe-adults-2003-c3c4"
+kind = "reference"
+low = 63
+high = 192
+unit = "mg/dL"
+when = { age_min = 18, age_max = 51 }
+population = "Apparently healthy adult blood donors aged 18-60 years in Zimbabwe (n=95, 50 males and 45 females)"
+evidence = "reference-interval-study"
+note = "Local adult C3 interval for ages 18-50 (63-192 mg/dL), not partitioned by sex. Small single-country sample; the study reports age-related lowering of C3 at 51-60 years (separate range)."
+citations = [
+  { pmid = "14562600", title = "Determination of normal ranges for serum C3 and C4 levels in an adult Zimbabwean population.", url = "https://pubmed.ncbi.nlm.nih.gov/14562600/", locator = "Abstract, Results", quote = "Serum levels of C3 in patients aged 18 to 50 years were 63 to 192 mg/dl; they were lower (80 to 124 mg/dl) in patients in the 51 to 60 year old age bracket." },
+]
+
+[[range]]
+set = "zimbabwe-adults-2003-c3c4"
+kind = "reference"
+low = 80
+high = 124
+unit = "mg/dL"
+when = { age_min = 51, age_max = 61 }
+population = "Apparently healthy adult blood donors aged 18-60 years in Zimbabwe (n=95, 50 males and 45 females)"
+evidence = "reference-interval-study"
+note = "Local adult C3 interval for ages 51-60 (80-124 mg/dL), not partitioned by sex. Small single-country sample."
+citations = [
+  { pmid = "14562600", title = "Determination of normal ranges for serum C3 and C4 levels in an adult Zimbabwean population.", url = "https://pubmed.ncbi.nlm.nih.gov/14562600/", locator = "Abstract, Results", quote = "Serum levels of C3 in patients aged 18 to 50 years were 63 to 192 mg/dl; they were lower (80 to 124 mg/dl) in patients in the 51 to 60 year old age bracket." },
+]

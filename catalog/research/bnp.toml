@@ -1,0 +1,85 @@
+slug = "bnp"
+name = "B-type Natriuretic Peptide"
+loinc = "30934-4"
+category = "cardiac"
+unit = "pg/mL"
+description = "B-type natriuretic peptide, a hormone released by the heart ventricles in response to stretch. It is used to help diagnose or rule out heart failure, with cut-offs that depend on setting, body weight and other conditions."
+aliases = ["BNP", "brain natriuretic peptide"]
+
+[[range]]
+set = "hf-guideline-review-2026"
+kind = "decision"
+low = 35
+unit = "pg/mL"
+when = { setting = "ambulatory" }
+population = "Adults assessed for suspected heart failure in the community (non-acute setting)"
+evidence = "guideline"
+note = "Community (non-acute) heart failure diagnostic criterion: BNP at or above 35 pg/mL (boundary inclusive). Criteria are as tabulated in a systematic review of HF guideline recommendations."
+citations = [
+  { pmid = "41778370", doi = "10.1093/ehjqcco/qcag029", title = "Heart failure with reduced ejection fraction: a systematic review of clinical practice guidelines and recommendations.", url = "https://pubmed.ncbi.nlm.nih.gov/41778370/", locator = "Full text, guideline diagnostic criteria table", quote = "BNP ≥ 35 pg/mL (community setting)" },
+]
+
+[[range]]
+set = "hf-guideline-review-2026"
+kind = "decision"
+low = 100
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea" }
+population = "Adults presenting to the emergency department with acute dyspnoea"
+evidence = "guideline"
+note = "Emergency-setting heart failure diagnostic criterion: BNP at or above 100 pg/mL (boundary inclusive)."
+citations = [
+  { pmid = "41778370", doi = "10.1093/ehjqcco/qcag029", title = "Heart failure with reduced ejection fraction: a systematic review of clinical practice guidelines and recommendations.", url = "https://pubmed.ncbi.nlm.nih.gov/41778370/", locator = "Full text, guideline diagnostic criteria table", quote = "BNP ≥ 100 pg/mL (emergency setting)" },
+]
+
+[[range]]
+set = "breathing-not-properly-2006"
+kind = "decision"
+high = 100
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea" }
+population = "Patients presenting to the emergency department with acute dyspnoea (Breathing Not Properly multinational study)"
+evidence = "validation-study"
+note = "Low-range rule-out band in the emergency department: BNP below 100 pg/mL (strict <100). Reported negative predictive value of 90% in the study."
+citations = [
+  { pmid = "16431187", doi = "10.1016/j.amjmed.2005.04.029", title = "Impact of the history of congestive heart failure on the utility of B-type natriuretic peptide in the emergency diagnosis of heart failure: results from the Breathing Not Properly Multinational Study.", url = "https://pubmed.ncbi.nlm.nih.gov/16431187/", locator = "Abstract, Results", quote = "low-range B-type natriuretic peptide less than 100 pg/mL has a high negative predictive value (90%)" },
+]
+
+[[range]]
+set = "breathing-not-properly-2006"
+kind = "decision"
+low = 500
+unit = "pg/mL"
+when = { setting = "acute-dyspnoea" }
+population = "Patients presenting to the emergency department with acute dyspnoea (Breathing Not Properly multinational study)"
+evidence = "validation-study"
+note = "High-range rule-in band in the emergency department: BNP above 500 pg/mL (strict >500). Reported positive predictive value of 87%. Values from 100 to 500 pg/mL are the ambiguous medium range."
+citations = [
+  { pmid = "16431187", doi = "10.1016/j.amjmed.2005.04.029", title = "Impact of the history of congestive heart failure on the utility of B-type natriuretic peptide in the emergency diagnosis of heart failure: results from the Breathing Not Properly Multinational Study.", url = "https://pubmed.ncbi.nlm.nih.gov/16431187/", locator = "Abstract, Results", quote = "high-range B-type natriuretic peptide greater than 500 pg/mL has a high positive predictive value (87%)" },
+]
+
+[[range]]
+set = "breathing-not-properly-2006"
+kind = "decision"
+low = 110
+unit = "pg/mL"
+when = { conditions = ["overweight-obesity"] }
+population = "Patients with acute heart failure in the Breathing Not Properly multinational study, overweight or obese (not severely obese)"
+evidence = "cohort-study"
+note = "Obesity-adjusted BNP cut-point for overweight or obese patients, chosen to keep 90% sensitivity for heart failure. Boundary inclusive (>=110). Lean patients need a higher cut-point (170 pg/mL reported in the same study)."
+citations = [
+  { pmid = "16644321", doi = "10.1016/j.ahj.2005.10.011", title = "How obesity affects the cut-points for B-type natriuretic peptide in the diagnosis of acute heart failure. Results from the Breathing Not Properly Multinational Study.", url = "https://pubmed.ncbi.nlm.nih.gov/16644321/", locator = "Abstract, Results", quote = "B-type natriuretic peptide cut-points to maintain 90% sensitivity for a HF diagnosis were 170 pg/mL for lean subjects, 110 pg/mL for overweight/obese subjects, and 54 pg/mL in severely/morbidly obese patients" },
+]
+
+[[range]]
+set = "breathing-not-properly-2006"
+kind = "decision"
+low = 54
+unit = "pg/mL"
+when = { conditions = ["severe-obesity"] }
+population = "Patients with acute heart failure in the Breathing Not Properly multinational study, severely or morbidly obese"
+evidence = "cohort-study"
+note = "Obesity-adjusted BNP cut-point for severely or morbidly obese patients, chosen to keep 90% sensitivity. The study recommends this lower cut-point in severe obesity to preserve sensitivity (boundary inclusive, >=54)."
+citations = [
+  { pmid = "16644321", doi = "10.1016/j.ahj.2005.10.011", title = "How obesity affects the cut-points for B-type natriuretic peptide in the diagnosis of acute heart failure. Results from the Breathing Not Properly Multinational Study.", url = "https://pubmed.ncbi.nlm.nih.gov/16644321/", locator = "Abstract, Results and Conclusion", quote = "B-type natriuretic peptide cut-points to maintain 90% sensitivity for a HF diagnosis were 170 pg/mL for lean subjects, 110 pg/mL for overweight/obese subjects, and 54 pg/mL in severely/morbidly obese patients" },
+]

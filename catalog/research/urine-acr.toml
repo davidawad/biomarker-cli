@@ -1,0 +1,105 @@
+slug = "urine-acr"
+name = "Urine Albumin-to-Creatinine Ratio"
+loinc = "9318-7"
+category = "urinalysis"
+unit = "mg/g"
+description = "Albumin excreted in urine relative to creatinine, measured on a spot sample. It is the standard screen for albuminuria, the earliest marker of kidney damage in diabetes and hypertension, and an independent cardiovascular risk marker."
+aliases = ["uACR", "urine ACR", "microalbumin-to-creatinine ratio", "urine albumin/creatinine ratio"]
+
+[[range]]
+set = "kdigo-2024"
+kind = "decision"
+high = 30
+population = "People with chronic kidney disease, albuminuria category A1 (normal to mildly increased)"
+evidence = "guideline"
+note = "KDIGO 2024 A1 band: ACR below 30 mg/g (boundary <30, so 30 itself is not in A1). The mg/mmol equivalent is <3."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A1 <30 <3 <30 Normal to mildly increased" },
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Figure caption defining albuminuria categories A1-A3", quote = "A1, albuminuria <30 mg/g (<3 mg/mmol);" },
+]
+
+[[range]]
+set = "kdigo-2024"
+kind = "decision"
+low = 30
+high = 300
+population = "People with chronic kidney disease, albuminuria category A2 (moderately increased)"
+evidence = "guideline"
+note = "KDIGO 2024 A2 band: ACR 30 to 300 mg/g (both boundaries inclusive as printed, 3 to 30 mg/mmol). Replaces the earlier secondary-abstract citation now that the primary guideline text is retrievable."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A2 30–300 3–30 30–300 Moderately increased" },
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Figure caption defining albuminuria categories A1-A3", quote = "A2, albuminuria 30–300 mg/g (3–30 mg/mmol);" },
+]
+
+[[range]]
+set = "kdigo-2024"
+kind = "decision"
+low = 300
+population = "People with chronic kidney disease, albuminuria category A3 (severely increased)"
+evidence = "guideline"
+note = "KDIGO 2024 A3 band: ACR above 300 mg/g (boundary >300, mg/mmol equivalent >30)."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A3 >300 >30 >300 Severely increased" },
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Figure caption defining albuminuria categories A1-A3", quote = "A3, >300 mg/g (>30 mg/mmol)." },
+]
+
+[[range]]
+set = "nice-ng203"
+kind = "decision"
+high = 3
+unit = "mg/mmol"
+population = "Adults with chronic kidney disease, ACR category A1"
+evidence = "guideline"
+note = "NICE NG203 ACR category A1 (normal to mildly increased), boundary less than 3 mg/mmol."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng203/chapter/Recommendations", locator = "Table 1 (ACR categories)", quote = "ACR category A1: normal to mildly increased (less than 3 mg/mmol)" },
+]
+
+[[range]]
+set = "nice-ng203"
+kind = "decision"
+low = 3
+high = 30
+unit = "mg/mmol"
+population = "Adults with chronic kidney disease, ACR category A2"
+evidence = "guideline"
+note = "NICE NG203 ACR category A2 (moderately increased), 3 to 30 mg/mmol."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng203/chapter/Recommendations", locator = "Table 1 (ACR categories)", quote = "ACR category A2: moderately increased (3 to 30 mg/mmol)" },
+]
+
+[[range]]
+set = "nice-ng203"
+kind = "decision"
+low = 30
+unit = "mg/mmol"
+population = "Adults with chronic kidney disease, ACR category A3"
+evidence = "guideline"
+note = "NICE NG203 ACR category A3 (severely increased), above 30 mg/mmol (boundary >30)."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng203/chapter/Recommendations", locator = "Table 1 (ACR categories)", quote = "ACR category A3: severely increased (over 30 mg/mmol)" },
+]
+
+[[range]]
+set = "nice-ng203"
+kind = "decision"
+low = 3
+unit = "mg/mmol"
+population = "Adults and children with a confirmed raised urine ACR"
+evidence = "guideline"
+note = "NICE NG203 recommendation 1.1.13: a confirmed ACR of 3 mg/mmol or more is clinically important proteinuria (boundary >=3). Replaces the earlier ERBP commentary citation, which restated the same threshold secondhand."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng203/chapter/Recommendations", locator = "Recommendation 1.1.13", quote = "Regard a confirmed ACR of 3 mg/mmol or more as clinically important proteinuria." },
+]
+
+[[range]]
+set = "nice-ng203"
+kind = "decision"
+low = 70
+unit = "mg/mmol"
+population = "Adults and children with CKD being assessed for proteinuria"
+evidence = "guideline"
+note = "NICE NG203 recommendation 1.1.12: an initial ACR of 70 mg/mmol or more does not need a confirmatory repeat sample (boundary >=70)."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng203/chapter/Recommendations", locator = "Recommendation 1.1.12", quote = "A repeat sample is not needed if the initial ACR is 70 mg/mmol or more." },
+]

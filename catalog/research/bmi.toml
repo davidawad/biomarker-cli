@@ -1,0 +1,184 @@
+slug = "bmi"
+name = "Body Mass Index"
+loinc = "39156-5"
+category = "body"
+unit = "kg/m²"
+description = "Body mass index, weight in kilograms divided by height in metres squared. Used to classify underweight, overweight and obesity, and as a proxy for adiposity-related health risk."
+aliases = ["BMI", "body mass index", "Quetelet index"]
+
+[[range]]
+set = "global-bmi-mortality-2016"
+kind = "optimal"
+low = 20.0
+high = 25.0
+population = "Adults in 239 prospective cohorts across Asia, Australia and New Zealand, Europe and North America (never-smokers without chronic disease at recruitment who survived 5 years)"
+evidence = "meta-analysis"
+note = "All-cause mortality was minimal across BMI 20.0 to <25.0 kg/m2 (reference 22.5 to <25.0). Outcome-based optimal band, not a diagnostic cut-off."
+citations = [
+  { pmid = "27423262", doi = "10.1016/S0140-6736(16)30175-1", title = "Body-mass index and all-cause mortality: individual-participant-data meta-analysis of 239 prospective studies in four continents.", url = "https://pubmed.ncbi.nlm.nih.gov/27423262/", locator = "Abstract, Findings", quote = "All-cause mortality was minimal at 20·0-25·0 kg/m(2)" },
+]
+
+[[range]]
+set = "who-obesity-fact-sheet"
+kind = "decision"
+low = 25.0
+population = "Adults aged 18 years and over"
+evidence = "guideline"
+note = "WHO overweight category: BMI greater than or equal to 25 kg/m2."
+citations = [
+  { url = "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", title = "Obesity and overweight", locator = "Key facts / definition", quote = "overweight is a BMI greater than or equal to 25" },
+]
+
+[[range]]
+set = "who-obesity-fact-sheet"
+kind = "decision"
+low = 30.0
+population = "Adults aged 18 years and over"
+evidence = "guideline"
+note = "WHO obesity category: BMI greater than or equal to 30 kg/m2 (boundary is >= 30)."
+citations = [
+  { url = "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", title = "Obesity and overweight", locator = "Key facts / definition", quote = "obesity is a BMI greater than or equal to 30." },
+]
+
+[[range]]
+set = "who-2004-asia"
+kind = "warn"
+low = 23.0
+when = { ethnicity = "asian" }
+population = "Asian populations (WHO expert consultation)"
+evidence = "consensus"
+note = "Public health action point for Asian populations: increased risk begins at BMI 23.0 kg/m2. The next action point is 27.5 kg/m2. Applies to Asian populations only; WHO retained the standard international cut-offs."
+citations = [
+  { pmid = "14726171", doi = "10.1016/S0140-6736(03)15268-3", title = "Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.", url = "https://pubmed.ncbi.nlm.nih.gov/14726171/", locator = "Abstract, Results", quote = "(23.0, 27.5, 32.5, and 37.5 kg/m2)" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "reference"
+high = 18.5
+population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
+evidence = "guideline"
+note = "Underweight: BMI below 18.5 kg/m2 (boundary < 18.5)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI", quote = "Underweight < 18.5" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "reference"
+low = 18.5
+high = 24.9
+population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
+evidence = "guideline"
+note = "Normal weight band. Upper boundary as printed (24.9); values between 24.9 and 25.0 are not assigned by the source."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI", quote = "Normal 18.5 – 24.9" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "decision"
+low = 25.0
+high = 29.9
+population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
+evidence = "guideline"
+note = "Overweight class: BMI 25.0 to 29.9 kg/m2. The source does not use the term pre-obese."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI", quote = "Overweight 25.0 – 29.9" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "decision"
+low = 30.0
+high = 34.9
+population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
+evidence = "guideline"
+note = "Obesity class I: BMI 30.0 to 34.9 kg/m2."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI", quote = "Obesity I 30.0 – 34.9" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "decision"
+low = 35.0
+high = 39.9
+population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
+evidence = "guideline"
+note = "Obesity class II: BMI 35.0 to 39.9 kg/m2."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI", quote = "II 35.0 – 39.9" },
+]
+
+[[range]]
+set = "nhlbi-1998-obesity"
+kind = "decision"
+low = 40
+population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
+evidence = "guideline"
+note = "Extreme obesity, class III: BMI 40 kg/m2 or more."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI", quote = "Extreme Obesity III ≥ 40" },
+]
+
+[[range]]
+set = "who-2004-asia"
+kind = "warn"
+low = 27.5
+when = { ethnicity = "asian" }
+population = "Asian populations (WHO expert consultation)"
+evidence = "consensus"
+note = "Second WHO public health action point for Asian populations: 27.5 kg/m2. The source abstract lists the action points without stating their risk level."
+citations = [
+  { pmid = "14726171", doi = "10.1016/S0140-6736(03)15268-3", title = "Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.", url = "https://pubmed.ncbi.nlm.nih.gov/14726171/", locator = "Abstract, Results", quote = "(23.0, 27.5, 32.5, and 37.5 kg/m2)" },
+]
+
+[[range]]
+set = "indian-consensus-as-cited-2026"
+kind = "decision"
+low = 23
+when = { ethnicity = "south-asian" }
+population = "Asian Indian adults (as reported in a 2026 narrative review)"
+evidence = "consensus"
+note = "Overweight threshold recommended by the Indian Consensus Group, as quoted by a 2026 narrative review. The primary consensus document was not retrieved."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, BMI section", quote = "the Indian Consensus Group recommended overweight at ≥23 kg/m 2 and obesity at ≥25 kg/m 2 for Asian Indians" },
+]
+
+[[range]]
+set = "indian-consensus-as-cited-2026"
+kind = "decision"
+low = 25
+when = { ethnicity = "south-asian" }
+population = "Asian Indian adults (as reported in a 2026 narrative review)"
+evidence = "consensus"
+note = "Obesity threshold recommended by the Indian Consensus Group, as quoted by a 2026 narrative review. The primary consensus document was not retrieved."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, BMI section", quote = "the Indian Consensus Group recommended overweight at ≥23 kg/m 2 and obesity at ≥25 kg/m 2 for Asian Indians" },
+]
+
+[[range]]
+set = "zhou-2002-china-as-cited-2026"
+kind = "decision"
+low = 24
+high = 27.9
+when = { ethnicity = "east-asian" }
+population = "Chinese adults (cut-offs suggested by Zhou 2002, as quoted by a 2026 narrative review)"
+evidence = "cohort-study"
+note = "Overweight band for Chinese adults: BMI 24 to 27.9 kg/m2, as quoted by the review. Original study not retrieved."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, BMI section", quote = "24–27.9 for overweight, and ≥28 kg/m 2 for obesity in Chinese adults" },
+]
+
+[[range]]
+set = "zhou-2002-china-as-cited-2026"
+kind = "decision"
+low = 28
+when = { ethnicity = "east-asian" }
+population = "Chinese adults (cut-offs suggested by Zhou 2002, as quoted by a 2026 narrative review)"
+evidence = "cohort-study"
+note = "Obesity threshold for Chinese adults: BMI 28 kg/m2 or more, as quoted by the review. Original study not retrieved."
+citations = [
+  { pmid = "42739267", doi = "10.3390/diagnostics16172837", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", locator = "Full text, BMI section", quote = "24–27.9 for overweight, and ≥28 kg/m 2 for obesity in Chinese adults" },
+]

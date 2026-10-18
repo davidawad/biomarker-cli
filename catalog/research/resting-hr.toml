@@ -1,0 +1,18 @@
+slug = "resting-hr"
+name = "Resting Heart Rate"
+loinc = "40443-4"
+category = "vitals"
+unit = "bpm"
+description = "Heart rate measured at rest, in beats per minute. Higher resting rates in the general population are associated with greater all-cause and cardiovascular mortality."
+aliases = ["resting pulse", "RHR"]
+
+[[range]]
+set = "cmaj-2016-rhr-mortality"
+kind = "warn"
+low = 80
+population = "General population adults in prospective cohorts (meta-analysis of 46 studies)"
+evidence = "meta-analysis"
+note = "Resting heart rate above 80 beats/min: relative risk 1.45 for all-cause mortality compared with the lowest category in the meta-analysis. The 80 bpm cut-off is the one stated by the source; the boundary is read as strictly greater than 80."
+citations = [
+  { pmid = "26598376", doi = "10.1503/cmaj.150535", title = "Resting heart rate and all-cause and cardiovascular mortality in the general population: a meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/26598376/", locator = "Abstract, Results", quote = "those with a resting heart rate of greater than 80 beats/min had a relative risk of 1.45 (95% CI 1.34-1.57) for all-cause mortality" },
+]

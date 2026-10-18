@@ -1,0 +1,41 @@
+slug = "hbv-dna"
+name = "Hepatitis B Virus DNA"
+loinc = "29615-2"
+category = "infectious"
+unit = "IU/mL"
+description = "Amount of hepatitis B virus DNA in serum. It is used to decide whether chronic hepatitis B needs antiviral treatment and, in pregnancy, whether tenofovir should be given to prevent transmission to the baby."
+aliases = ["HBV DNA", "hepatitis B viral load", "HBV viral load"]
+
+[[range]]
+set = "easl-2017-hbv"
+kind = "decision"
+low = 2000
+population = "Adults with chronic hepatitis B"
+evidence = "guideline"
+note = "Typical treatment indication: HBV DNA above 2,000 IU/mL (boundary >2,000), together with elevated ALT and/or at least moderate histological lesions. The guideline text quoted here does not give the cirrhosis rule, so it is not included in this range."
+citations = [
+  { pmid = "28427875", doi = "10.1016/j.jhep.2017.03.021", title = "EASL 2017 Clinical Practice Guidelines on the management of hepatitis B virus infection.", url = "https://pubmed.ncbi.nlm.nih.gov/28427875/", locator = "Abstract", quote = "The typical indication for treatment requires HBV DNA >2,000IU/ml" },
+]
+
+[[range]]
+set = "aasld-2018-hbv"
+kind = "decision"
+low = 20000
+population = "Adults with chronic hepatitis B with immune-active disease (typically HBeAg-positive)"
+evidence = "guideline"
+note = "Immune-active chronic hepatitis B is described with HBV DNA above 20,000 IU/mL (boundary >20,000). The guideline states this cut-off is arbitrary, reflecting the detection limit of older non-PCR assays. Lower levels are generally seen with HBeAg-negative disease."
+citations = [
+  { pmid = "29405329", doi = "10.1002/hep.29800", title = "Update on prevention, diagnosis, and treatment of chronic hepatitis B: AASLD 2018 hepatitis B guidance.", url = "https://pubmed.ncbi.nlm.nih.gov/29405329/", locator = "Full text, Diagnosis of chronic hepatitis B", quote = "those with immune-active CHB have HBV DNA levels >20,000 IU/mL" },
+]
+
+[[range]]
+set = "aasld-2018-hbv"
+kind = "decision"
+low = 200000
+population = "Pregnant women with chronic hepatitis B"
+evidence = "guideline"
+when = { pregnancy = true, trimester = 3 }
+note = "Third trimester: antiviral therapy (tenofovir) is recommended for serum HBV DNA above 200,000 IU/mL (boundary >200,000), to reduce mother-to-child transmission."
+citations = [
+  { pmid = "29405329", doi = "10.1002/hep.29800", title = "Update on prevention, diagnosis, and treatment of chronic hepatitis B: AASLD 2018 hepatitis B guidance.", url = "https://pubmed.ncbi.nlm.nih.gov/29405329/", locator = "Full text, Pregnancy section", quote = "Antiviral therapy in the third trimester is recommended for pregnant women with serum HBV DNA >200,000 IU/mL" },
+]

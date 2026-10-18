@@ -94,3 +94,97 @@ note = "Severe hyperhomocysteinaemia, open-ended above 100 micromol/L. See the m
 citations = [
   { pmid = "38910639", doi = "10.7759/cureus.60878", title = "Exploring the Nexus: A Systematic Review on the Interplay of the Methylenetetrahydrofolate Reductase (MTHFR) Gene C677T Genotype, Hyperhomocysteinemia, and Spontaneous Cervical/Vertebral Artery Dissection in Young Adults.", locator = "Introduction, para 1 (Abstract/full text)", quote = "considered severe if >100 micro mol/L, intermediate at 31-100 micro mol/L, and moderate at 16-30 micromol/L" },
 ]
+
+[[range]]
+set = "hhcy-categories-2021"
+kind = "decision"
+low = 15
+high = 30
+unit = "µmol/L"
+population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
+evidence = "cohort-study"
+note = "Moderate hyperhomocysteinaemia band (15-30 umol/L). A review quotes 16-30 for this band, so the lower boundary varies between sources."
+citations = [
+  { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", locator = "Abstract, Background", quote = "moderate hyperhomocysteinemia (HHcy) (15-30 μmol/L)" },
+]
+
+[[range]]
+set = "hhcy-categories-2021"
+kind = "decision"
+low = 30
+high = 100
+unit = "µmol/L"
+population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
+evidence = "cohort-study"
+note = "Intermediate hyperhomocysteinaemia band (30-100 umol/L; boundary 30 included, 100 included as stated in the source)."
+citations = [
+  { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", locator = "Abstract, Objective", quote = "intermediate (30-100 μmol/L) and severe (>100 μmol/L) HHcy" },
+]
+
+[[range]]
+set = "hhcy-categories-2021"
+kind = "decision"
+low = 100
+unit = "µmol/L"
+population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
+evidence = "cohort-study"
+note = "Severe hyperhomocysteinaemia band (above 100 umol/L; boundary > 100)."
+citations = [
+  { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", locator = "Abstract, Objective", quote = "intermediate (30-100 μmol/L) and severe (>100 μmol/L) HHcy" },
+]
+
+[[range]]
+set = "china-pregnancy-hcy-2023"
+kind = "reference"
+low = 4.35
+high = 10.16
+unit = "µmol/L"
+when = { pregnancy = true, trimester = 1 }
+population = "Healthy Chinese pregnant women, longitudinal study (non-parametric 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "First-trimester pregnancy reference interval for serum homocysteine. Fasting status and assay are not stated in the abstract."
+citations = [
+  { pmid = "37553809", doi = "10.1080/09513590.2023.2242974", title = "Trimester-specific reference intervals of serum homocysteine levels for pregnant women: a longitudinal study in China.", url = "https://pubmed.ncbi.nlm.nih.gov/37553809/", locator = "Abstract, Results", quote = "The trimester-specific reference intervals of serum Hcy levels were 4.35 ∼ 10.16 μmol/L, 3.38 ∼ 8.60 μmol/L, and 3.75 ∼ 11.17 μmol/L for pregnant women in the first, second, and third trimester of gestation, respectively." },
+]
+
+[[range]]
+set = "china-pregnancy-hcy-2023"
+kind = "reference"
+low = 3.38
+high = 8.60
+unit = "µmol/L"
+when = { pregnancy = true, trimester = 2 }
+population = "Healthy Chinese pregnant women, longitudinal study (non-parametric 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Second-trimester pregnancy reference interval for serum homocysteine. Fasting status and assay are not stated in the abstract."
+citations = [
+  { pmid = "37553809", doi = "10.1080/09513590.2023.2242974", title = "Trimester-specific reference intervals of serum homocysteine levels for pregnant women: a longitudinal study in China.", url = "https://pubmed.ncbi.nlm.nih.gov/37553809/", locator = "Abstract, Results", quote = "The trimester-specific reference intervals of serum Hcy levels were 4.35 ∼ 10.16 μmol/L, 3.38 ∼ 8.60 μmol/L, and 3.75 ∼ 11.17 μmol/L for pregnant women in the first, second, and third trimester of gestation, respectively." },
+]
+
+[[range]]
+set = "china-pregnancy-hcy-2023"
+kind = "reference"
+low = 3.75
+high = 11.17
+unit = "µmol/L"
+when = { pregnancy = true, trimester = 3 }
+population = "Healthy Chinese pregnant women, longitudinal study (non-parametric 2.5th-97.5th percentiles)"
+evidence = "reference-interval-study"
+note = "Third-trimester pregnancy reference interval for serum homocysteine. Fasting status and assay are not stated in the abstract."
+citations = [
+  { pmid = "37553809", doi = "10.1080/09513590.2023.2242974", title = "Trimester-specific reference intervals of serum homocysteine levels for pregnant women: a longitudinal study in China.", url = "https://pubmed.ncbi.nlm.nih.gov/37553809/", locator = "Abstract, Results", quote = "The trimester-specific reference intervals of serum Hcy levels were 4.35 ∼ 10.16 μmol/L, 3.38 ∼ 8.60 μmol/L, and 3.75 ∼ 11.17 μmol/L for pregnant women in the first, second, and third trimester of gestation, respectively." },
+]
+
+[[range]]
+set = "china-hcy-reference-2019"
+kind = "reference"
+low = 8.25
+high = 22.92
+unit = "µmol/L"
+when = { sex = "female", pregnancy = false }
+population = "Healthy non-pregnant Chinese women"
+evidence = "reference-interval-study"
+note = "Reference interval for non-pregnant women. The abstract does not state fasting status or assay; the upper limit is taken from the source as written."
+citations = [
+  { pmid = "30468714", doi = "10.1016/j.cca.2018.11.026", title = "Changes of serum homocysteine levels during pregnancy and the establishment of reference intervals in pregnant Chinese women.", url = "https://pubmed.ncbi.nlm.nih.gov/30468714/", locator = "Abstract, Results", quote = "the RIs of serum HCY for healthy non-pregnant women is 8.25-22.92 μmol/L" },
+]

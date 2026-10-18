@@ -1,0 +1,200 @@
+slug = "vo2max"
+name = "VO2 Max"
+loinc = "94122-9"
+category = "vitals"
+unit = "mL/kg/min"
+description = "Maximal oxygen uptake per kilogram of body weight, the standard measure of cardiorespiratory fitness. Higher values are associated with lower all-cause and cardiovascular mortality. Some cut-offs below are published in METs (1 MET = 3.5 mL/kg/min by convention)."
+aliases = ["VO2peak", "maximal oxygen consumption", "cardiorespiratory fitness", "CRF"]
+
+[[range]]
+set = "kodama-2009-crf-mets"
+kind = "decision"
+high = 7.9
+unit = "METs"
+population = "Healthy men and women pooled from observational cohorts (meta-analysis of 33 studies)"
+evidence = "meta-analysis"
+note = "Low cardiorespiratory fitness band, maximal aerobic capacity below 7.9 METs (published as '< 7.9 METs'). Low CRF carried about 1.70 times the all-cause mortality of high CRF."
+citations = [
+  { pmid = "19454641", doi = "10.1001/jama.2009.681", title = "Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/19454641/", locator = "Abstract, Data Extraction", quote = "low CRF (< 7.9 METs)" },
+]
+
+[[range]]
+set = "kodama-2009-crf-mets"
+kind = "decision"
+low = 7.9
+high = 10.8
+unit = "METs"
+population = "Healthy men and women pooled from observational cohorts (meta-analysis of 33 studies)"
+evidence = "meta-analysis"
+note = "Intermediate cardiorespiratory fitness band, 7.9-10.8 METs (published boundaries)."
+citations = [
+  { pmid = "19454641", doi = "10.1001/jama.2009.681", title = "Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/19454641/", locator = "Abstract, Data Extraction", quote = "intermediate CRF (7.9-10.8 METs)" },
+]
+
+[[range]]
+set = "kodama-2009-crf-mets"
+kind = "optimal"
+low = 10.9
+unit = "METs"
+population = "Healthy men and women pooled from observational cohorts (meta-analysis of 33 studies)"
+evidence = "meta-analysis"
+note = "High cardiorespiratory fitness band, 10.9 METs or more (published as '> or = 10.9 METs'). Reference group with the lowest all-cause mortality in this meta-analysis."
+citations = [
+  { pmid = "19454641", doi = "10.1001/jama.2009.681", title = "Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/19454641/", locator = "Abstract, Data Extraction", quote = "high CRF (> or = 10.9 METs)" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 29.0
+high = 66.3
+when = { sex = "male", age_min = 20, age_max = 30 }
+population = "Men aged 20–29 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND men row 20–29", quote = "20–29 29.0 32.1 40.1 48.0 55.2 61.8 66.3" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 27.2
+high = 59.8
+when = { sex = "male", age_min = 30, age_max = 40 }
+population = "Men aged 30–39 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND men row 30–39", quote = "30–39 27.2 30.2 35.9 42.4 49.2 56.5 59.8" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 24.2
+high = 55.6
+when = { sex = "male", age_min = 40, age_max = 50 }
+population = "Men aged 40–49 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND men row 40–49", quote = "40–49 24.2 26.8 31.9 37.8 45.0 52.1 55.6" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 20.9
+high = 50.7
+when = { sex = "male", age_min = 50, age_max = 60 }
+population = "Men aged 50–59 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND men row 50–59", quote = "50–59 20.9 22.8 27.1 32.6 39.7 45.6 50.7" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 17.4
+high = 43.0
+when = { sex = "male", age_min = 60, age_max = 70 }
+population = "Men aged 60–69 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND men row 60–69", quote = "60–69 17.4 19.8 23.7 28.2 34.5 40.3 43.0" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 16.3
+high = 39.7
+when = { sex = "male", age_min = 70, age_max = 80 }
+population = "Men aged 70–79 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND men row 70–79", quote = "70–79 16.3 17.1 20.4 24.4 30.4 36.6 39.7" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 21.7
+high = 56.0
+when = { sex = "female", age_min = 20, age_max = 30 }
+population = "Women aged 20–29 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND women row 20–29", quote = "20–29 21.7 23.9 30.5 37.6 44.7 51.3 56.0" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 19.0
+high = 45.8
+when = { sex = "female", age_min = 30, age_max = 40 }
+population = "Women aged 30–39 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND women row 30–39", quote = "30–39 19.0 20.9 25.3 30.2 36.1 41.4 45.8" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 17.0
+high = 41.7
+when = { sex = "female", age_min = 40, age_max = 50 }
+population = "Women aged 40–49 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND women row 40–49", quote = "40–49 17.0 18.8 22.1 26.7 32.4 38.4 41.7" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 16.0
+high = 35.9
+when = { sex = "female", age_min = 50, age_max = 60 }
+population = "Women aged 50–59 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND women row 50–59", quote = "50–59 16.0 17.3 19.9 23.4 27.6 32.0 35.9" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 13.4
+high = 29.4
+when = { sex = "female", age_min = 60, age_max = 70 }
+population = "Women aged 60–69 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND women row 60–69", quote = "60–69 13.4 14.6 17.2 20.0 23.8 27.0 29.4" },
+]
+
+[[range]]
+set = "friend-2015-cpx-percentiles"
+kind = "reference"
+low = 13.1
+high = 24.1
+when = { sex = "female", age_min = 70, age_max = 80 }
+population = "Women aged 70–79 years without known cardiovascular disease, maximal treadmill CPX (respiratory exchange ratio >= 1.0) in eight US laboratories, FRIEND registry 2014-2015"
+evidence = "reference-interval-study"
+note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+citations = [
+  { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", locator = "Table 3, Sex-Specific Percentiles, FRIEND women row 70–79", quote = "70–79 13.1 13.6 15.6 18.3 20.8 23.1 24.1" },
+]

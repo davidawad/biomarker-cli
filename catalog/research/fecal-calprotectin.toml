@@ -1,0 +1,64 @@
+slug = "fecal-calprotectin"
+name = "Faecal Calprotectin"
+loinc = "38445-3"
+category = "stool"
+unit = "µg/g"
+description = "Calprotectin is a neutrophil-derived protein measured in stool. Raised faecal calprotectin indicates intestinal mucosal inflammation and is used to triage suspected inflammatory bowel disease and to monitor IBD activity. Values are higher in young children and vary with assay."
+aliases = ["faecal calprotectin", "fecal calprotectin", "FC", "FCP", "stool calprotectin"]
+
+[[range]]
+set = "fc-mre-systematic-review-2025"
+kind = "reference"
+high = 50
+population = "Adults and children over 4 years (typical reference values as reported in a systematic review)"
+evidence = "meta-analysis"
+note = "Typical reference value is below 50 µg/g; values at or above 50 µg/g are above the typical reference range. Children under 4 years have higher normal values, so this band should not be applied to that age group."
+citations = [
+  { pmid = "41216276", doi = "10.21037/tgh-24-159", title = "Comparison between fecal calprotectin and magnetic resonance enterography in ileal Crohn's disease for activity disease assessment: a systematic review.", url = "https://pubmed.ncbi.nlm.nih.gov/41216276/", locator = "Full text, Introduction", quote = "Typical reference values for FC concentrations are below 50 µg/g of feces for adults and children over 4 years of age." },
+]
+
+[[range]]
+set = "fc-mre-systematic-review-2025"
+kind = "reference"
+low = 100
+high = 112
+when = { age_min = 65 }
+population = "Individuals aged 65 years and older (reference range as recommended in a systematic review, which attributes it to age-related mucosal change)"
+evidence = "meta-analysis"
+note = "Age-adjusted reference band for older adults reported by the systematic review. The figure is quoted from the review rather than from a primary reference-interval study."
+citations = [
+  { pmid = "41216276", doi = "10.21037/tgh-24-159", title = "Comparison between fecal calprotectin and magnetic resonance enterography in ileal Crohn's disease for activity disease assessment: a systematic review.", url = "https://pubmed.ncbi.nlm.nih.gov/41216276/", locator = "Full text, Introduction", quote = "The recommended reference range for individuals aged 65 years and older is between 100 and 112 µg/g" },
+]
+
+[[range]]
+set = "uk-paeds-fc-cohort-2021"
+kind = "reference"
+high = 50
+population = "UK paediatric patients referred for suspected IBD, measured with a commercial calprotectin kit"
+evidence = "cohort-study"
+note = "Laboratory reference value used in this paediatric cohort. Results above 50 µg/g were common and many were not due to IBD, so the authors suggest a higher threshold for referral."
+citations = [
+  { pmid = "33571226", doi = "10.1371/journal.pone.0246091", title = "Guidance on the interpretation of faecal calprotectin levels in children.", url = "https://pubmed.ncbi.nlm.nih.gov/33571226/", locator = "Abstract, Results and Conclusion", quote = "In the paediatric patient population, the reference value of < 50 µg/g" },
+]
+
+[[range]]
+set = "fc-mre-systematic-review-2025"
+kind = "decision"
+low = 100
+population = "Adults with Crohn's disease or ulcerative colitis; activity cut-offs as reported across studies in a systematic review"
+evidence = "meta-analysis"
+note = "IBD activity cut-offs reported across studies ranged from above 100 to above 430 µg/g. The lower end of that range is shown here; this is not a single guideline threshold, so treat it as indicative only."
+citations = [
+  { pmid = "41216276", doi = "10.21037/tgh-24-159", title = "Comparison between fecal calprotectin and magnetic resonance enterography in ileal Crohn's disease for activity disease assessment: a systematic review.", url = "https://pubmed.ncbi.nlm.nih.gov/41216276/", locator = "Abstract, Results", quote = "The FC cutoff values ranged from >100 to >430 µg/g of feces to determine the activity of the disease." },
+]
+
+[[range]]
+set = "espghan-fc-250-as-cited"
+kind = "decision"
+low = 250
+population = "Children with suspected inflammatory bowel disease (ESPGHAN cut-off as cited by a UK paediatric cohort)"
+evidence = "consensus"
+note = "Cut-off above which faecal calprotectin was suggested to predict mucosal inflammation in IBD. The number is taken from ESPGHAN as cited in the 2021 paper, not from the ESPGHAN document itself. Quoted as above 250 µg/g."
+citations = [
+  { pmid = "33571226", doi = "10.1371/journal.pone.0246091", title = "Guidance on the interpretation of faecal calprotectin levels in children.", url = "https://pubmed.ncbi.nlm.nih.gov/33571226/", locator = "Methods, cut-off levels", quote = "FCP levels of > 250 μg/g have been suggested as cut-off values to predict mucosal inflammation in IBD according to the European Society of Paediatric Gastroenterology, Hepatology and Nutrition (ESPGHAN)" },
+]

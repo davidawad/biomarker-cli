@@ -69,3 +69,123 @@ note = "Source gives second-half range without gestational weeks; the 20-week sp
 citations = [
   { locator = "Abstract, Results", title = "Pregnancy and the erythrocyte sedimentation rate.", quote = "For non-anaemic women the 95% reference range rose from 18-48 mm/h in the first half of pregnancy to 30-70 mm/h in the second half of pregnancy.", pmid = "11762656" },
 ]
+
+[[range]]
+set = "norway-oslo-1996-esr"
+kind = "reference"
+high = 12
+when = { sex = "male", age_min = 20, age_max = 55 }
+population = "Subjectively healthy Norwegian adults (93% blood donors), age 20-90 years, Oslo area; Westergren or modified Westergren"
+evidence = "reference-interval-study"
+note = "Upper reference limit (exceeded by chance in 5% of readings) at age 20 years, applied across the 20-54 band. Step approximation of an age-rising limit (14 at 55 years), so limits are underestimated within the band."
+citations = [
+  { pmid = "8862121", doi = "10.1046/j.1365-2796.1996.30295851000.x", title = "Population-based erythrocyte sedimentation rates in 3910 subjectively healthy Norwegian adults. A statistical study based on men and women from the Oslo area.", url = "https://pubmed.ncbi.nlm.nih.gov/8862121/", locator = "Abstract, Conclusions", quote = "The upper reference levels expected to be exceeded only by chance in 5% of single individual recordings at the ages of 20, 55 or 90 years, respectively, were estimated to be 12, 14 and 19 mm h-1 for men, and 18, 21 and 23 mm h-1 for women." },
+]
+
+[[range]]
+set = "norway-oslo-1996-esr"
+kind = "reference"
+high = 14
+when = { sex = "male", age_min = 55, age_max = 90 }
+population = "Subjectively healthy Norwegian adults (93% blood donors), age 20-90 years, Oslo area; Westergren or modified Westergren"
+evidence = "reference-interval-study"
+note = "Upper reference limit at age 55 years, applied across the 55-89 band (step approximation; underestimated at older ages in the band)."
+citations = [
+  { pmid = "8862121", doi = "10.1046/j.1365-2796.1996.30295851000.x", title = "Population-based erythrocyte sedimentation rates in 3910 subjectively healthy Norwegian adults. A statistical study based on men and women from the Oslo area.", url = "https://pubmed.ncbi.nlm.nih.gov/8862121/", locator = "Abstract, Conclusions", quote = "The upper reference levels expected to be exceeded only by chance in 5% of single individual recordings at the ages of 20, 55 or 90 years, respectively, were estimated to be 12, 14 and 19 mm h-1 for men, and 18, 21 and 23 mm h-1 for women." },
+]
+
+[[range]]
+set = "norway-oslo-1996-esr"
+kind = "reference"
+high = 19
+when = { sex = "male", age_min = 90 }
+population = "Subjectively healthy Norwegian adults (93% blood donors), age 20-90 years, Oslo area; Westergren or modified Westergren"
+evidence = "reference-interval-study"
+note = "Upper reference limit at age 90 years, applied to 90 years and above (limit at the oldest sampled age; no data beyond 90)."
+citations = [
+  { pmid = "8862121", doi = "10.1046/j.1365-2796.1996.30295851000.x", title = "Population-based erythrocyte sedimentation rates in 3910 subjectively healthy Norwegian adults. A statistical study based on men and women from the Oslo area.", url = "https://pubmed.ncbi.nlm.nih.gov/8862121/", locator = "Abstract, Conclusions", quote = "The upper reference levels expected to be exceeded only by chance in 5% of single individual recordings at the ages of 20, 55 or 90 years, respectively, were estimated to be 12, 14 and 19 mm h-1 for men, and 18, 21 and 23 mm h-1 for women." },
+]
+
+[[range]]
+set = "norway-oslo-1996-esr"
+kind = "reference"
+high = 18
+when = { sex = "female", age_min = 20, age_max = 55 }
+population = "Subjectively healthy Norwegian adults (93% blood donors), age 20-90 years, Oslo area; Westergren or modified Westergren"
+evidence = "reference-interval-study"
+note = "Upper reference limit at age 20 years, applied across the 20-54 band (step approximation; underestimated within the band)."
+citations = [
+  { pmid = "8862121", doi = "10.1046/j.1365-2796.1996.30295851000.x", title = "Population-based erythrocyte sedimentation rates in 3910 subjectively healthy Norwegian adults. A statistical study based on men and women from the Oslo area.", url = "https://pubmed.ncbi.nlm.nih.gov/8862121/", locator = "Abstract, Conclusions", quote = "The upper reference levels expected to be exceeded only by chance in 5% of single individual recordings at the ages of 20, 55 or 90 years, respectively, were estimated to be 12, 14 and 19 mm h-1 for men, and 18, 21 and 23 mm h-1 for women." },
+]
+
+[[range]]
+set = "norway-oslo-1996-esr"
+kind = "reference"
+high = 21
+when = { sex = "female", age_min = 55, age_max = 90 }
+population = "Subjectively healthy Norwegian adults (93% blood donors), age 20-90 years, Oslo area; Westergren or modified Westergren"
+evidence = "reference-interval-study"
+note = "Upper reference limit at age 55 years, applied across the 55-89 band (step approximation; underestimated at older ages in the band)."
+citations = [
+  { pmid = "8862121", doi = "10.1046/j.1365-2796.1996.30295851000.x", title = "Population-based erythrocyte sedimentation rates in 3910 subjectively healthy Norwegian adults. A statistical study based on men and women from the Oslo area.", url = "https://pubmed.ncbi.nlm.nih.gov/8862121/", locator = "Abstract, Conclusions", quote = "The upper reference levels expected to be exceeded only by chance in 5% of single individual recordings at the ages of 20, 55 or 90 years, respectively, were estimated to be 12, 14 and 19 mm h-1 for men, and 18, 21 and 23 mm h-1 for women." },
+]
+
+[[range]]
+set = "norway-oslo-1996-esr"
+kind = "reference"
+high = 23
+when = { sex = "female", age_min = 90 }
+population = "Subjectively healthy Norwegian adults (93% blood donors), age 20-90 years, Oslo area; Westergren or modified Westergren"
+evidence = "reference-interval-study"
+note = "Upper reference limit at age 90 years, applied to 90 years and above (limit at the oldest sampled age; no data beyond 90)."
+citations = [
+  { pmid = "8862121", doi = "10.1046/j.1365-2796.1996.30295851000.x", title = "Population-based erythrocyte sedimentation rates in 3910 subjectively healthy Norwegian adults. A statistical study based on men and women from the Oslo area.", url = "https://pubmed.ncbi.nlm.nih.gov/8862121/", locator = "Abstract, Conclusions", quote = "The upper reference levels expected to be exceeded only by chance in 5% of single individual recordings at the ages of 20, 55 or 90 years, respectively, were estimated to be 12, 14 and 19 mm h-1 for men, and 18, 21 and 23 mm h-1 for women." },
+]
+
+[[range]]
+set = "bc720-china-2022-esr"
+kind = "reference"
+high = 15
+when = { sex = "male", method = "bc-720" }
+population = "Healthy adults aged 21-88 years at physical examination, three hospitals in China"
+evidence = "reference-interval-study"
+note = "95th percentile upper limit for the BC-720 automated analyser (Easy-W method), not for manual Westergren tubes. Lower limit 0 mm/h."
+citations = [
+  { pmid = "36172102", doi = "10.21037/atm-22-3486", title = "Performance evaluation of the BC-720 auto hematology analyzer and establishment of the reference intervals of erythrocyte sedimentation rate in healthy adults.", url = "https://pubmed.ncbi.nlm.nih.gov/36172102/", locator = "Abstract, Results", quote = "The 95th percentile of the biological reference interval for BC-720 ESR is 15 mm/h for men and 24 mm/h for women." },
+]
+
+[[range]]
+set = "bc720-china-2022-esr"
+kind = "reference"
+high = 24
+when = { sex = "female", method = "bc-720" }
+population = "Healthy adults aged 21-88 years at physical examination, three hospitals in China"
+evidence = "reference-interval-study"
+note = "95th percentile upper limit for the BC-720 automated analyser (Easy-W method), not for manual Westergren tubes. Lower limit 0 mm/h."
+citations = [
+  { pmid = "36172102", doi = "10.21037/atm-22-3486", title = "Performance evaluation of the BC-720 auto hematology analyzer and establishment of the reference intervals of erythrocyte sedimentation rate in healthy adults.", url = "https://pubmed.ncbi.nlm.nih.gov/36172102/", locator = "Abstract, Results", quote = "The 95th percentile of the biological reference interval for BC-720 ESR is 15 mm/h for men and 24 mm/h for women." },
+]
+
+[[range]]
+set = "spain-municipality-2019-esr"
+kind = "reference"
+high = 20
+when = { sex = "male" }
+population = "Adults of a Spanish municipality (n=1472, age 18-91 years); the hospital laboratory limits quoted in the study's Methods"
+evidence = "cohort-study"
+note = "Laboratory ESR upper limit for men used by one Spanish hospital (0-20 mm/h), applied without age adjustment. ESR rises with age, so this is a single flat limit, not an age-specific interval."
+citations = [
+  { pmid = "31441853", doi = "10.1097/MD.0000000000016816", title = "Factors influencing erythrocyte sedimentation rate in adults: New evidence for an old test.", url = "https://pubmed.ncbi.nlm.nih.gov/31441853/", locator = "Full text, Methods", quote = "The hospital's reference ESR values are 0 to 20 mm/h for males and 0 to 30 mm/h for females." },
+]
+
+[[range]]
+set = "spain-municipality-2019-esr"
+kind = "reference"
+high = 30
+when = { sex = "female" }
+population = "Adults of a Spanish municipality (n=1472, age 18-91 years); the hospital laboratory limits quoted in the study's Methods"
+evidence = "cohort-study"
+note = "Laboratory ESR upper limit for women used by one Spanish hospital (0-30 mm/h), applied without age adjustment. ESR rises with age, so this is a single flat limit, not an age-specific interval."
+citations = [
+  { pmid = "31441853", doi = "10.1097/MD.0000000000016816", title = "Factors influencing erythrocyte sedimentation rate in adults: New evidence for an old test.", url = "https://pubmed.ncbi.nlm.nih.gov/31441853/", locator = "Full text, Methods", quote = "The hospital's reference ESR values are 0 to 20 mm/h for males and 0 to 30 mm/h for females." },
+]

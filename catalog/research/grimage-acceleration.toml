@@ -1,0 +1,17 @@
+slug = "grimage-acceleration"
+name = "GrimAge Acceleration"
+category = "aging"
+unit = "years"
+description = "Epigenetic age acceleration from the DNA methylation GrimAge clock: GrimAge in years, adjusted for chronological age, so positive values mean an older-than-expected mortality-risk profile. It predicts time to death, coronary heart disease and cancer more strongly than earlier DNA methylation clocks."
+aliases = ["AgeAccelGrim", "GrimAge"]
+
+[[range]]
+set = "lu-grimage-2019"
+kind = "warn"
+low = 8.3
+population = "Adults in the Framingham and other validation cohorts in Lu et al. 2019; approximate 95th percentile of AgeAccelGrim"
+evidence = "cohort-study"
+note = "Fast ageing: AgeAccelGrim at about the top 5% (95th percentile) of the distribution, where the hazard of death is about twice that of the average person in the same stratum (HR about 2.2 from 1.10^8.3). The source text shows '=8.3 years', most likely a symbol lost in extraction for >=8.3. Lower bound only (open above). The bottom 5th percentile (-7.5 years) is not encoded because negative values cannot be matched by the quote check."
+citations = [
+  { pmid = "30669119", doi = "10.18632/aging.101684", title = "DNA methylation GrimAge strongly predicts lifespan and healthspan.", url = "https://pubmed.ncbi.nlm.nih.gov/30669119/", locator = "Results, AgeAccelGrim and mortality (full text)", quote = "A person in the top 95 th percentile of AgeAccelGrim (=8.3 years) faces a hazard of death that is twice that of the average person in their stratum" },
+]

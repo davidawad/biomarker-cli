@@ -1,0 +1,41 @@
+slug = "sleep-efficiency"
+name = "Sleep Efficiency"
+category = "wearable"
+unit = "%"
+description = "Percentage of time in bed that is spent asleep (total sleep time divided by time in bed), measured by actigraphy, polysomnography or wearable sleep tracking. Low values indicate fragmented or poor-quality sleep."
+aliases = ["sleep efficiency index", "SE"]
+
+[[range]]
+set = "sleep-2011-actigraphy-poor-sleep"
+kind = "decision"
+high = 85
+when = { method = "actigraphy" }
+population = "Healthy middle-aged community adults with 3-day actigraphy in a cross-sectional wave of a follow-up study"
+evidence = "cohort-study"
+note = "Research classification of objectively poor sleepers: actigraphy sleep efficiency below 85% (boundary < 85%). A study-defined threshold, not a clinical guideline cut-off; above 85% counts as good sleep in this comparison."
+citations = [
+  { pmid = "21286244", doi = "10.1093/sleep/34.2.225", title = "Relationship of sleep quantity and quality with 24-hour urinary catecholamines and salivary awakening cortisol in healthy middle-aged adults.", url = "https://pubmed.ncbi.nlm.nih.gov/21286244/", locator = "Abstract, Measurements and Results", quote = "objective poor sleepers (3-day actigraphy sleep efficiency < 85%)" },
+]
+
+[[range]]
+set = "insomnia-research-criteria-2019"
+kind = "decision"
+high = 85
+when = { method = "polysomnography", conditions = ["insomnia"] }
+population = "Adults meeting DSM-5 criteria for insomnia, selected for actigraphy versus in-laboratory polysomnography comparison"
+evidence = "validation-study"
+note = "Research inclusion criterion for insomnia: in-laboratory polysomnography sleep efficiency below 85% (boundary < 85%). The study used this as an entry threshold; it is not a diagnostic cut-off for insomnia by itself."
+citations = [
+  { pmid = "30941838", doi = "10.1111/jsr.12854", title = "Relation between ambulatory actigraphy and laboratory polysomnography in insomnia practice and research.", url = "https://pubmed.ncbi.nlm.nih.gov/30941838/", locator = "Abstract, Methods", quote = "in-laboratory PSG sleep efficiency (SE) of <85% were studied" },
+]
+
+[[range]]
+set = "jacc-adv-2026-sleep-health-women-mi"
+kind = "warn"
+high = 85
+population = "Women after myocardial infarction, sleep measured by actigraphy and diary"
+evidence = "cohort-study"
+note = "Authors' definition of suboptimal sleep health: efficiency below 85% (boundary < 85%), alongside duration and WASO thresholds. The thresholds are attributed by the authors to AASM/SRS recommendations and prior research; that attribution was not verified against the source documents here."
+citations = [
+  { pmid = "42748745", doi = "10.1016/j.jacadv.2026.103194", title = "Objective and Subjective Multidimensional Sleep Health in Women After Myocardial Infarction.", url = "https://pubmed.ncbi.nlm.nih.gov/42748745/", locator = "Full text, Methods (sleep health definitions)", quote = "We defined suboptimal sleep health in this study as duration <7 hours or >9 hours, efficiency <85%, and WASO more than 30 minutes" },
+]

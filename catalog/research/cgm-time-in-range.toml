@@ -39,3 +39,75 @@ note = "Pregnancy time-in-range glucose band is 63-140 mg/dL (3.5-7.8 mmol/L), n
 citations = [
   { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 4", quote = "Pregnancy, type 1§ | >70%; >16 h, 48 min | 63-140 mg/dL† (3.5-7.8 mmol/L†)" },
 ]
+
+[[range]]
+set = "battelino-2019-tir"
+kind = "optimal"
+low = 50
+population = "Older or high-risk adults with type 1 or type 2 diabetes"
+evidence = "consensus"
+note = "Individualised, more lenient TIR target for older or high-risk adults: above 50% (boundary strictly greater). The consensus lowered this target from >70% to emphasise hypoglycaemia avoidance."
+when = { conditions = ["diabetes"] }
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Discussion, paragraph on TIR target for older/high-risk adults", quote = "we have lowered the TIR target from >70% to >50%" },
+]
+
+[[range]]
+set = "battelino-2019-tir"
+kind = "optimal"
+high = 25
+population = "Adults with type 1 or type 2 diabetes (general target), CGM data over 14 days"
+evidence = "consensus"
+note = "Time above range (TAR, glucose above 180 mg/dL) target: below 25% (about 6 h per day). Boundary is strictly less than 25%."
+when = { conditions = ["diabetes"] }
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Table 3, Guidance for adults with type 1 or type 2 diabetes", quote = "<25%; <6 h" },
+]
+
+[[range]]
+set = "battelino-2019-tir"
+kind = "optimal"
+high = 4
+population = "Adults with type 1 or type 2 diabetes (general target), CGM data over 14 days"
+evidence = "consensus"
+note = "Time below range (TBR, glucose below 70 mg/dL) target: below 4% (under 1 h per day). Boundary is strictly less than 4%. Individualise for older or high-risk adults, where a stricter reduction in time below 70 mg/dL is emphasised."
+when = { conditions = ["diabetes"] }
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Discussion, Table 3 (TBR targets)", quote = "rather than using <4% and <1%, respectively, as the goal" },
+]
+
+[[range]]
+set = "battelino-2019-tir"
+kind = "optimal"
+high = 1
+population = "Adults with type 1 or type 2 diabetes (general target), CGM data over 14 days"
+evidence = "consensus"
+note = "Time below 54 mg/dL target: below 1% (under 15 min per day). Boundary is strictly less than 1%."
+when = { conditions = ["diabetes"] }
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Discussion, Table 3 (TBR targets)", quote = "rather than using <4% and <1%, respectively, as the goal" },
+]
+
+[[range]]
+set = "battelino-2019-tir"
+kind = "optimal"
+low = 70
+population = "Pregnant women with type 1 or type 2 diabetes, CGM data"
+evidence = "consensus"
+note = "Pregnancy TIR target: 70% within 63-140 mg/dL (3.5-7.8 mmol/L). The pregnancy band is narrower than the general 70-180 mg/dL band."
+when = { conditions = ["diabetes"], pregnancy = true }
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Discussion, pregnancy results paragraph", quote = "33% of women achieved the recommendation of 70% TIR 63–140 mg/dL" },
+]
+
+[[range]]
+set = "battelino-2019-tir"
+kind = "optimal"
+high = 4
+population = "Pregnant women with type 1 or type 2 diabetes, CGM data"
+evidence = "consensus"
+note = "Pregnancy time below range (glucose below 63 mg/dL) target: below 4%. Boundary is strictly less than 4%."
+when = { conditions = ["diabetes"], pregnancy = true }
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", url = "https://pubmed.ncbi.nlm.nih.gov/31177185/", locator = "Discussion, pregnancy TBR paragraph", quote = "TBR <63 mg/dL (<3.5 mmol/L) recommendation of <4% is safely achievable" },
+]

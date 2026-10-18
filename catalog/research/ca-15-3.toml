@@ -1,0 +1,30 @@
+slug = "ca-15-3"
+name = "Cancer Antigen 15-3"
+loinc = "6875-9"
+category = "tumour"
+unit = "U/mL"
+description = "Cancer antigen 15-3, a mucin-type glycoprotein marker used mainly to monitor metastatic or recurrent breast cancer. It is raised in other cancers and in some benign conditions, so it is not used alone for diagnosis."
+aliases = ["CA15-3", "CA 15-3", "CA 15.3"]
+
+[[range]]
+set = "ca153-recurrence-2024"
+kind = "decision"
+low = 30
+population = "Patients with suspected recurrent breast carcinoma (Bangladesh diagnostic accuracy study)"
+evidence = "cohort-study"
+note = "Diagnostic cut-off of 30 U/mL used in this study for recurrent breast carcinoma (sensitivity 95.7%, specificity 69.4%). Boundary taken as >= 30. Single-centre study; other cut-offs (roughly 30-35 U/mL) are used in practice and were not verified here."
+citations = [
+  { pmid = "39360039", doi = "10.7759/cureus.68448", title = "Diagnostic Accuracy of Cancer Antigen 15-3 as a Seromarker Among Recurrent Breast Carcinoma in Bangladesh.", url = "https://pubmed.ncbi.nlm.nih.gov/39360039/", locator = "Abstract, Results", quote = "At the cut-off level of 30 U/mL, the ROC curve demonstrated sensitivity, specificity, positive predictive value, and negative predictive value of 95.7%, 69.4%, 84.1%, and 72.8%, respectively, to diagnose recurrent breast carcinoma." },
+]
+
+[[range]]
+set = "elderly-tumour-ri-2024"
+kind = "reference"
+high = 22
+when = { sex = "female", age_min = 60, age_max = 98 }
+population = "Apparently healthy elderly women aged 60 and above in southwestern China (indirect method); CA15-3 was measured in women only"
+evidence = "reference-interval-study"
+note = "Upper reference limit (95th percentile) for CA15-3 in elderly women as tabulated. Lower limit not identified and omitted."
+citations = [
+  { pmid = "38811867", doi = "10.1186/s12885-024-12408-1", title = "A preliminary study on the reference intervals of serum tumor marker in apparently healthy elderly population in southwestern China using real-world data.", url = "https://pubmed.ncbi.nlm.nih.gov/38811867/", locator = "Full text, Table 3 (reference intervals of tumor markers for elderly population)", quote = "CA15-3 (U/ml) † Female 60–97 12,491 - 22.00 (21.82–22.30)" },
+]

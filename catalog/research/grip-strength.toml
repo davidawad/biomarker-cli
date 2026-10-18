@@ -1,0 +1,78 @@
+slug = "grip-strength"
+name = "Handgrip Strength"
+category = "body"
+unit = "kg"
+description = "Maximum voluntary force produced by squeezing a hand dynamometer, in kilograms. Used as the muscle strength criterion for sarcopenia; low grip strength predicts disability and mortality."
+aliases = ["grip strength", "hand grip strength", "handgrip"]
+
+[[range]]
+set = "ewgsop2-2019"
+kind = "decision"
+high = 27
+when = { sex = "male" }
+population = "Older adults (European consensus); low strength cut-off in men"
+evidence = "consensus"
+note = "Low muscle strength if below 27 kg in men (strict less-than boundary). Table lists chair stand or grip strength cut-offs."
+citations = [
+  { pmid = "30312372", doi = "10.1093/ageing/afy169", title = "Sarcopenia: revised European consensus on definition and diagnosis.", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", locator = "Table 3, EWGSOP2 cut-off points for low strength", quote = "<27 kg" },
+]
+
+[[range]]
+set = "ewgsop2-2019"
+kind = "decision"
+high = 16
+when = { sex = "female" }
+population = "Older adults (European consensus); low strength cut-off in women"
+evidence = "consensus"
+note = "Low muscle strength if below 16 kg in women (strict less-than boundary)."
+citations = [
+  { pmid = "30312372", doi = "10.1093/ageing/afy169", title = "Sarcopenia: revised European consensus on definition and diagnosis.", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", locator = "Table 3, EWGSOP2 cut-off points for low strength", quote = "<16 kg" },
+]
+
+[[range]]
+set = "awgs-2019"
+kind = "decision"
+high = 28
+when = { sex = "male" }
+population = "Asian older adults (AWGS 2019 consensus)"
+evidence = "consensus"
+note = "Low muscle strength if handgrip strength is below 28 kg in men (strict less-than boundary)."
+citations = [
+  { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", locator = "Abstract, Results", quote = "low muscle strength is defined as handgrip strength <28 kg for men and <18 kg for women" },
+]
+
+[[range]]
+set = "awgs-2019"
+kind = "decision"
+high = 18
+when = { sex = "female" }
+population = "Asian older adults (AWGS 2019 consensus)"
+evidence = "consensus"
+note = "Low muscle strength if handgrip strength is below 18 kg in women (strict less-than boundary)."
+citations = [
+  { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", locator = "Abstract, Results", quote = "low muscle strength is defined as handgrip strength <28 kg for men and <18 kg for women" },
+]
+
+[[range]]
+set = "dodds-2014-grip"
+kind = "warn"
+high = 32
+when = { sex = "male" }
+population = "Adults aged 20 to 80+ years from twelve British studies (normative data)"
+evidence = "reference-interval-study"
+note = "Authors' weak-grip band: T-score -2 or below, equivalent to 32 kg in men. The authors note a T-score of -2.5 (27 kg in men) may be more discriminatory. Band, not a diagnostic cut-off."
+citations = [
+  { pmid = "25474696", doi = "10.1371/journal.pone.0113637", title = "Grip strength across the life course: normative data from twelve British studies.", url = "https://pubmed.ncbi.nlm.nih.gov/25474696/", locator = "Discussion", quote = "based on a T-score of −2 or below (equivalent to 19 kg in females and 32 kg in males, or weaker)" },
+]
+
+[[range]]
+set = "dodds-2014-grip"
+kind = "warn"
+high = 19
+when = { sex = "female" }
+population = "Adults aged 20 to 80+ years from twelve British studies (normative data)"
+evidence = "reference-interval-study"
+note = "Authors' weak-grip band: T-score -2 or below, equivalent to 19 kg in women. The authors note a T-score of -2.5 (16 kg in women) may be more discriminatory. Band, not a diagnostic cut-off."
+citations = [
+  { pmid = "25474696", doi = "10.1371/journal.pone.0113637", title = "Grip strength across the life course: normative data from twelve British studies.", url = "https://pubmed.ncbi.nlm.nih.gov/25474696/", locator = "Discussion", quote = "based on a T-score of −2 or below (equivalent to 19 kg in females and 32 kg in males, or weaker)" },
+]

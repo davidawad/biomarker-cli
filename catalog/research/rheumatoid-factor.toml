@@ -1,0 +1,32 @@
+slug = "rheumatoid-factor"
+name = "Rheumatoid Factor"
+loinc = "11572-5"
+category = "autoimmune"
+unit = "IU/mL"
+description = "Autoantibody (mostly IgM) against the Fc portion of IgG. Positive results support a diagnosis of rheumatoid arthritis and feed into classification scores; low titres are also seen in other conditions and in healthy older adults."
+aliases = ["RF", "IgM RF"]
+
+[[range]]
+set = "acr-eular-2010-ra"
+kind = "decision"
+low = 3
+unit = "x ULN"
+population = "Adults with synovitis not better explained by another disease (2010 ACR/EULAR RA classification)"
+evidence = "consensus"
+note = "High-positive RF is above 3 times the laboratory upper limit of normal (ULN), scoring 3 points. Low-positive RF (above ULN up to and including 3x ULN) scores 2 points. ULN is laboratory-specific. Thresholds are taken from a 2026 analysis that quotes the 2010 criteria; the primary paper's text was not retrievable."
+citations = [
+  { pmid = "42476632", doi = "10.1136/rmdopen-2026-007007", title = "Refining serological scores in rheumatoid arthritis classification: an international study.", url = "https://pubmed.ncbi.nlm.nih.gov/42476632/", locator = "Full text, Introduction (ACR/EULAR 2010 serological scoring)", quote = "a high-positive RF or ACPA (>3 times the ULN) contributes three points" },
+]
+
+[[range]]
+set = "thermo-fisher-rf-cutoff"
+kind = "decision"
+low = 5
+high = 15
+when = { method = "thermo-fisher" }
+population = "RA and control patients in a review of autoimmune serology (Thermo Fisher assay)"
+evidence = "consensus"
+note = "Manufacturer-based low-positive band for this assay: above the 5 IU/mL cut-off up to 15 IU/mL; above 15 IU/mL is high positive. Assay-specific and not transferable to other RF methods."
+citations = [
+  { pmid = "35036891", doi = "10.1016/j.jtauto.2022.100142", title = "Impact of autoimmune serology test results on RA classification and diagnosis.", url = "https://pubmed.ncbi.nlm.nih.gov/35036891/", locator = "Full text, Figure 3 legend", quote = "rheumatoid factor (RF) test results (<5 IU/mL (cut-off), 5–15 IU/mL, > 15 IU/mL)" },
+]

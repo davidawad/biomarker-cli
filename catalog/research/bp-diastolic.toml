@@ -1,0 +1,53 @@
+slug = "bp-diastolic"
+name = "Blood Pressure, Diastolic"
+loinc = "8462-4"
+category = "vitals"
+unit = "mmHg"
+description = "The pressure in the arteries between heart beats, the lower number of a blood pressure reading. Used with systolic pressure to classify blood pressure and to set treatment targets."
+aliases = ["DBP", "diastolic blood pressure"]
+
+[[range]]
+set = "acc-aha-2017-bp-categories"
+kind = "decision"
+high = 80
+population = "Adults; categories as applied in a Chinese adult cohort using the 2017 ACC/AHA guideline"
+evidence = "guideline"
+note = "ACC/AHA 2017 normal and elevated categories: diastolic below 80 mmHg. The upper limit is strictly below 80. Primary guideline text was not retrievable; the category wording is as stated in the cited paper's Methods."
+citations = [
+  { pmid = "37710423", doi = "10.1111/jch.14719", title = "Stage 1 hypertension defined by the 2017 ACC/AHA blood pressure guideline and cardiometabolic multimorbidity in Chinese adults.", url = "https://pubmed.ncbi.nlm.nih.gov/37710423/", locator = "Methods, BP categories", quote = "normal BP (systolic BP [SBP] < 120 mm Hg and diastolic BP [DBP] < 80 mm Hg), elevated BP (SBP 120−129 mm Hg and DBP < 80 mm Hg)" },
+]
+
+[[range]]
+set = "acc-aha-2017-bp-categories"
+kind = "decision"
+low = 80
+high = 89
+population = "Adults; categories as applied in a Chinese adult cohort using the 2017 ACC/AHA guideline"
+evidence = "guideline"
+note = "ACC/AHA 2017 stage 1 hypertension: diastolic 80-89 mmHg and/or systolic 130-139 mmHg."
+citations = [
+  { pmid = "37710423", doi = "10.1111/jch.14719", title = "Stage 1 hypertension defined by the 2017 ACC/AHA blood pressure guideline and cardiometabolic multimorbidity in Chinese adults.", url = "https://pubmed.ncbi.nlm.nih.gov/37710423/", locator = "Methods, BP categories", quote = "stage 1 hypertension (SBP 130−139 mm Hg and/or DBP 80−89 mm Hg), and stage 2 hypertension (SBP ≥ 140 mm Hg and/or DBP ≥ 90 mm Hg" },
+]
+
+[[range]]
+set = "acc-aha-2017-bp-categories"
+kind = "decision"
+low = 90
+population = "Adults; categories as applied in a Chinese adult cohort using the 2017 ACC/AHA guideline"
+evidence = "guideline"
+note = "ACC/AHA 2017 stage 2 hypertension: diastolic 90 mmHg or higher and/or systolic 140 mmHg or higher."
+citations = [
+  { pmid = "37710423", doi = "10.1111/jch.14719", title = "Stage 1 hypertension defined by the 2017 ACC/AHA blood pressure guideline and cardiometabolic multimorbidity in Chinese adults.", url = "https://pubmed.ncbi.nlm.nih.gov/37710423/", locator = "Methods, BP categories", quote = "stage 1 hypertension (SBP 130−139 mm Hg and/or DBP 80−89 mm Hg), and stage 2 hypertension (SBP ≥ 140 mm Hg and/or DBP ≥ 90 mm Hg" },
+]
+
+[[range]]
+set = "esc-2024-pharmacotherapy-review"
+kind = "optimal"
+low = 70
+high = 79
+population = "Adults receiving antihypertensive pharmacotherapy (2024 ESC guideline, as summarised)"
+evidence = "guideline"
+note = "Diastolic treatment target of 70-79 mmHg (Class 2b) in the 2024 ESC guideline, as stated in the cited summary. The primary guideline text was not retrievable."
+citations = [
+  { pmid = "39439212", doi = "10.1093/ehjcvp/pvae084", title = "2024 ESC Guidelines for the management of elevated blood pressure and hypertension: what is new in pharmacotherapy?", url = "https://pubmed.ncbi.nlm.nih.gov/39439212/", locator = "Treatment target paragraph", quote = "The diastolic BP target is 70-79 mmHg (Class 2b)" },
+]

@@ -1,0 +1,18 @@
+slug = "anti-hbs"
+name = "Hepatitis B Surface Antibody"
+loinc = "16935-9"
+category = "infectious"
+unit = "mIU/mL"
+description = "Antibody to the hepatitis B surface antigen, measured to confirm immunity after hepatitis B vaccination or infection. Used mainly to check post-vaccination seroprotection, for example in healthcare workers."
+aliases = ["anti-HBs", "HBsAb", "HBs antibody", "hepatitis B surface antibody"]
+
+[[range]]
+set = "cdc-pinkbook-hepb"
+kind = "decision"
+low = 10
+population = "Persons after a complete hepatitis B vaccination series, including healthcare personnel tested for post-vaccination immunity"
+evidence = "guideline"
+note = "Anti-HBs at or above 10 mIU/mL is the protective (immune) level after a complete vaccine series (>=10 is immune). Below 10 mIU/mL the person should be revaccinated and retested."
+citations = [
+  { url = "https://www.cdc.gov/vaccines/pubs/pinkbook/hepb.html", locator = "Hepatitis B vaccine chapter, serologic testing / protective level", quote = "The level of anti-HBs considered as a protective level of immunity when following a complete vaccination series is 10 mIU/mL." },
+]
