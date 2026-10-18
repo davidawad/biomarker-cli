@@ -390,7 +390,11 @@ note = "..."
   loinc = "2345-7"        # optional
   category = "metabolic"
   priority = "core"       # core | common | specialist
+  derived = false         # optional: computed from other measurements
+  loinc_note = "..."      # optional: why loinc is "" (no code fits)
   ```
+
+  `loinc = ""` means no LOINC code fits and is treated like an absent code.
 
 ### Interventions, regimens, interactions
 

@@ -245,6 +245,12 @@ pub struct UniverseEntry {
     pub category: String,
     /// `core`, `common` or `specialist`.
     pub priority: String,
+    /// True when computed from other measurements (ratios, formulas, scores).
+    #[serde(default)]
+    pub derived: bool,
+    /// Why `loinc` is empty, when no code fits.
+    #[serde(default)]
+    pub loinc_note: Option<String>,
 }
 
 /// The raw catalog text: embedded, or read from a directory laid out like `catalog/`.
@@ -334,7 +340,10 @@ pub fn parse_universe(text: &str) -> Result<Vec<UniverseEntry>> {
         #[serde(default)]
         marker: Vec<UniverseEntry>,
     }
-    parse::<F>(text, "universe.toml").map(|f| f.marker)
+    // `loinc = ""` (with a `loinc_note`) means no code fits, the same as leaving it out.
+    let mut entries = parse::<F>(text, "universe.toml")?.marker;
+    entries.iter_mut().for_each(|e| e.loinc = e.loinc.take().filter(|l| !l.is_empty()));
+    Ok(entries)
 }
 
 /// The parsed catalog.
@@ -409,7 +418,9 @@ mod tests {
             assert_eq!(format!("{}.toml", m.slug), *file);
         }
         assert!(defs.has_set("clinical") && defs.has_set("optimal") && defs.has_set("blueprint"));
-        assert!(parse_universe(UNIVERSE_TOML).unwrap().len() >= defs.markers.len());
+        let universe = parse_universe(UNIVERSE_TOML).unwrap();
+        assert!(universe.len() >= defs.markers.len());
+        assert!(universe.iter().all(|e| e.loinc.as_deref() != Some("")), "empty loinc reads as none");
     }
 
     /// The published JSON Schema names exactly the fields the parser accepts.
