@@ -1,0 +1,30 @@
+slug = "holotranscobalamin"
+name = "Holotranscobalamin"
+category = "vitamin"
+unit = "pmol/L"
+description = "Holotranscobalamin (holoTC, also called active B12) is the fraction of serum B12 bound to transcobalamin, the form that cells can take up. Low values suggest that less B12 is available to tissues, and it is proposed as an earlier marker than total B12, although it is less established and assay-dependent."
+
+[[range]]
+set = "holotc-review-2011"
+kind = "reference"
+low = 40
+high = 200
+when = {}
+population = "Healthy individuals; consensus interval from published holoTC reference studies (mostly ELISA or RIA assays)"
+evidence = "review"
+note = "The review states the consensus as 40-200 pmol/L and advises confirming the interval locally before clinical use, because assays differ. Reported intervals in the review's table varied by method."
+citations = [
+  { pmid = "21593496", doi = "10.3945/ajcn.111.013458", title = "Holotranscobalamin, a marker of vitamin B-12 status: analytical aspects and clinical utility.", locator = "Reference intervals section (full text)", quote = "The current consensus seems to be that a reference interval of 40–200 pmol/L is appropriate." },
+]
+
+[[range]]
+set = "cclm-2010"
+kind = "deficient"
+high = 40
+when = { specimen = "serum" }
+population = "Routine serum samples from 107 men and 143 women (mean ages 59 and 54 y) with total B12 at or below 221 pmol/L, AxSYM active B12 assay"
+evidence = "outcome"
+note = "Single-laboratory cut-off chosen to flag cobalamin deficiency in a population with reduced total B12. Sensitivity 0.86 and specificity 0.66 against the study's criteria (total B12, folate, homocysteine). Not validated against clinical outcomes; the assay is method-specific."
+citations = [
+  { pmid = "19961395", doi = "10.1515/CCLM.2010.032", title = "Determination of serum holotranscobalamin concentrations with the AxSYM active B(12) assay: cut-off point evaluation in the clinical laboratory.", locator = "Results (Abstract)", quote = "A 40 pmol/L cut-off threshold was chosen for HoloTC and the associated sensitivity and specificity was 0.86 and 0.66, respectively." },
+]

@@ -1,0 +1,194 @@
+slug = "hemoglobin"
+name = "Hemoglobin"
+loinc = "718-7"
+category = "cbc"
+unit = "g/dL"
+description = "Concentration of the oxygen-carrying protein hemoglobin in whole blood. Low values define anemia; high values suggest polycythemia, dehydration, smoking or altitude."
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 13.4
+high = 17.0
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "male", age_min = 18, age_max = 90 }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles."
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract", quote = "B-Haemoglobin (females 117-153 g/L, males 134-170 g/L)" },
+]
+
+[[range]]
+set = "norip"
+kind = "reference"
+low = 11.7
+high = 15.3
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "female", age_min = 18, age_max = 90 }
+population = "1826 healthy Nordic adults aged 18-90 (NORIP), venous EDTA blood, 12 analyser types"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles."
+citations = [
+  { pmid = "15223702", doi = "10.1080/00365510410002797", title = "A multicentre study of reference intervals for haemoglobin, basic blood cell counts and erythrocyte indices in the adult population of the Nordic countries.", locator = "Abstract", quote = "B-Haemoglobin (females 117-153 g/L, males 134-170 g/L)" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+high = 13.0
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "male", age_min = 15 }
+population = "males over 15 years of age (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+note = "Anaemia if Hb is below this value. The 2024 evidence review (Lancet Haematol) cites the same 130 g/L cutoff for males aged 15 and older."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section", quote = "below 130 g/L in men over 15 years of age" },
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Figure 4 legend", quote = "there is a different cutoff for male adolescents aged 12–14 years (120 g/L) and those aged 15 years and older (130 g/L)" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+high = 12.0
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "female", age_min = 15, pregnant = false }
+population = "non-pregnant women over 15 years of age (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+note = "Anaemia if Hb is below this value."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section", quote = "below 120 g/L in non-pregnant women over 15 years of age" },
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row", quote = "Women ≥15 y: hemoglobin <120 g/L" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+high = 11.0
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "female", pregnant = true, trimester = 2 }
+population = "pregnant women in the second trimester (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+note = "Anaemia if Hb is below this value. No first-trimester WHO value was retrieved, so no first-trimester range is given."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section", quote = "below 110 g/L in pregnant women in the second and third trimester" },
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row", quote = "Pregnant women: hemoglobin <110 g/L" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+high = 11.0
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "female", pregnant = true, trimester = 3 }
+population = "pregnant women in the third trimester (WHO anaemia definition, as quoted by BSG 2021)"
+evidence = "guideline"
+note = "Anaemia if Hb is below this value."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Anaemia section", quote = "below 110 g/L in pregnant women in the second and third trimester" },
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row", quote = "Pregnant women: hemoglobin <110 g/L" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+high = 11.0
+source_unit = "g/L"
+source_factor = 0.1
+when = { age_min = 0.5, age_max = 5 }
+population = "children aged 6-59 months (WHO anaemia definition, as quoted in a 2019 AJCN systematic review)"
+evidence = "guideline"
+note = "Anaemia if Hb is below this value. Age is in years (6 months = 0.5)."
+citations = [
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row", quote = "Children 6–59 mo: hemoglobin <110 g/L" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+high = 11.5
+source_unit = "g/L"
+source_factor = 0.1
+when = { age_min = 5, age_max = 12 }
+population = "children aged 5-11 years (WHO anaemia definition, as quoted in a 2019 AJCN systematic review)"
+evidence = "guideline"
+note = "Anaemia if Hb is below this value."
+citations = [
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row", quote = "Children 5–11 y: hemoglobin <115 g/L" },
+]
+
+[[range]]
+set = "who"
+kind = "diagnostic"
+high = 12.0
+source_unit = "g/L"
+source_factor = 0.1
+when = { age_min = 12, age_max = 15 }
+population = "children aged 12-14 years (WHO anaemia definition, as quoted in a 2019 AJCN systematic review)"
+evidence = "guideline"
+note = "Anaemia if Hb is below this value. Same cutoff as the 2024 evidence review for male 12-14 year olds."
+citations = [
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Criteria table, Anemia row", quote = "Children 12–14 y: hemoglobin <120 g/L" },
+]
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "diagnostic"
+high = 11.97
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "female", age_min = 18, age_max = 66, pregnant = false }
+population = "Pooled healthy non-pregnant females aged 18-65 (n=3640) from international population surveys"
+evidence = "reference-interval"
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs."
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings", quote = "In pooled analyses of adults aged 18-65 years, the fifth centile was 119·7 g/L (90% CI 119·1-120·3) in 3640 non-pregnant females and 134·9 g/L (134·2-135·6) in 2377 males." },
+]
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "diagnostic"
+high = 13.49
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "male", age_min = 18, age_max = 66 }
+population = "Pooled healthy males aged 18-65 (n=2377) from international population surveys"
+evidence = "reference-interval"
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs."
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings", quote = "In pooled analyses of adults aged 18-65 years, the fifth centile was 119·7 g/L (90% CI 119·1-120·3) in 3640 non-pregnant females and 134·9 g/L (134·2-135·6) in 2377 males." },
+]
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "diagnostic"
+high = 11.03
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "female", pregnant = true, trimester = 1 }
+population = "Healthy pregnant women, first trimester (n=772)"
+evidence = "reference-interval"
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs."
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings", quote = "Fifth centiles in pregnancy were 110·3 g/L (90% CI 109·5-111·0) in the first trimester (n=772) and 105·9 g/L (104·0-107·7) in the second trimester (n=111)" },
+]
+
+[[range]]
+set = "braat-2024-fifth-centile"
+kind = "diagnostic"
+high = 10.59
+source_unit = "g/L"
+source_factor = 0.1
+when = { sex = "female", pregnant = true, trimester = 2 }
+population = "Healthy pregnant women, second trimester (n=111)"
+evidence = "reference-interval"
+note = "Fifth centile of haemoglobin in healthy, iron-replete, non-inflamed individuals (WHO-commissioned pooled analysis informing the 2024 WHO guideline); values below suggest anaemia. Slightly differs from the long-standing WHO 1968 cutoffs."
+citations = [
+  { pmid = "38432242", doi = "10.1016/S2352-3026(24)00030-9", title = "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources.", locator = "Abstract, Findings", quote = "Fifth centiles in pregnancy were 110·3 g/L (90% CI 109·5-111·0) in the first trimester (n=772) and 105·9 g/L (104·0-107·7) in the second trimester (n=111)" },
+]

@@ -1,0 +1,31 @@
+slug = "mercury-blood"
+name = "Mercury, whole blood"
+category = "toxic-metal"
+unit = "µg/L"
+description = "Mercury concentration in whole blood, reflecting recent exposure, mostly from fish and seafood as methylmercury. High values signal exposure, and in pregnancy they are relevant to fetal neurodevelopment."
+
+[[range]]
+set = "nhanes-1999-2000"
+kind = "reference"
+high = 6.7
+specimen = "whole-blood"
+when = { sex = "female", age_min = 16, age_max = 50 }
+population = "US women aged 16-49 in NHANES 1999-2000 (n = 1,709)"
+evidence = "reference-interval"
+note = "Measured value is blood organic (methylmercury) mercury, not total mercury, and reflects fish intake. 95th percentile shown as the upper reference bound. Older survey; later NHANES cycles were not retrieved."
+citations = [
+  { pmid = "15064162", doi = "10.1289/ehp.6587", title = "Blood organic mercury and dietary mercury intake: National Health and Nutrition Examination Survey, 1999 and 2000.", locator = "Abstract", quote = "1,709 women who were participants in the National Health and Nutrition Examination Survey (NHANES) in 1999 and 2000 ... to 6.7 microg/L (95th percentile)" },
+]
+
+[[range]]
+set = "nhanes-1999-2000-cutoff"
+kind = "warn"
+low = 5.8
+specimen = "whole-blood"
+when = { sex = "female", age_min = 16, age_max = 50 }
+population = "US adult women in NHANES 1999-2000, as used by the cited authors"
+evidence = "outcome"
+note = "Concentration above which the cited authors report the proportion of women; they describe newborns above levels 'without increased risk' of neurodevelopmental effects. The 5.8 µg/L value is widely attributed to EPA/NRC methylmercury benchmarks, but that attribution is not stated in the retrieved abstract, so treat as unverified benchmark context. Blood organic (methyl) mercury basis."
+citations = [
+  { pmid = "15064162", doi = "10.1289/ehp.6587", title = "Blood organic mercury and dietary mercury intake: National Health and Nutrition Examination Survey, 1999 and 2000.", locator = "Abstract", quote = "Blood organic/methyl mercury concentrations greater than or equal to 5.8 microg/L were lowest among Mexican Americans" },
+]

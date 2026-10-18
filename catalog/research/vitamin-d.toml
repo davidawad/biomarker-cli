@@ -1,0 +1,124 @@
+slug = "vitamin-d"
+name = "25-hydroxyvitamin D"
+loinc = "1989-3"
+category = "vitamin"
+unit = "ng/mL"
+description = "Circulating 25-hydroxyvitamin D [25(OH)D], the main marker of vitamin D status from skin synthesis and diet. Low values indicate deficiency or insufficiency relative to bone health; very high values indicate risk of vitamin D toxicity with hypercalcemia."
+
+[[range]]
+set = "iom-2011"
+kind = "deficient"
+high = 12
+population = "North American general population; IOM DRI scope (all life-stage groups, risk of deficiency relative to bone health)"
+evidence = "guideline"
+note = "Upper bound of deficiency (below 30 nmol/L). Value 12 ng/mL is the boundary; source quote gives it as 'below'."
+citations = [
+  { url = "https://nap.nationalacademies.org/read/13050/chapter/2", title = "Dietary Reference Intakes for Calcium and Vitamin D (IOM 2011, NAP 13050)", locator = "Chapter 2 (NAP online text)", quote = "persons are at risk of deficiency relative to bone health at serum 25OHD levels of below 30 nmol/L (12 ng/mL)" },
+]
+
+[[range]]
+set = "iom-2011"
+kind = "insufficient"
+low = 12
+high = 20
+population = "North American general population; IOM DRI scope (all life-stage groups)"
+evidence = "guideline"
+note = "IOM 'inadequacy' band, 30-50 nmol/L. Some but not all persons are potentially at risk."
+citations = [
+  { url = "https://nap.nationalacademies.org/read/13050/chapter/2", title = "Dietary Reference Intakes for Calcium and Vitamin D (IOM 2011, NAP 13050)", locator = "Chapter 2 (NAP online text)", quote = "inadequacy at serum 25OHD levels between 30 and 50 nmol/L (12 and 20 ng/mL)" },
+]
+
+[[range]]
+set = "iom-2011"
+kind = "reference"
+low = 20
+population = "North American general population; IOM DRI scope (all life-stage groups)"
+evidence = "guideline"
+note = "Sufficiency threshold (at least 50 nmol/L). The IOM gives no upper bound for sufficiency; see the excess range for concern above 50 ng/mL."
+citations = [
+  { url = "https://nap.nationalacademies.org/read/13050/chapter/2", title = "Dietary Reference Intakes for Calcium and Vitamin D (IOM 2011, NAP 13050)", locator = "Chapter 2 (NAP online text)", quote = "Practically all persons are sufficient at serum 25OHD levels of at least 50 nmol/L (20 ng/mL)" },
+]
+
+[[range]]
+set = "iom-2011"
+kind = "excess"
+low = 50
+population = "North American general population; IOM DRI scope"
+evidence = "guideline"
+note = "IOM: reason for concern about adverse effects above this level; not a diagnosis of toxicity."
+citations = [
+  { url = "https://nap.nationalacademies.org/read/13050/chapter/2", title = "Dietary Reference Intakes for Calcium and Vitamin D (IOM 2011, NAP 13050)", locator = "Chapter 2 (NAP online text)", quote = "There may be reason for concern at serum 25OHD levels above 125 nmol/L (50 ng/mL)" },
+]
+
+[[range]]
+set = "endo-rev-2024-consensus"
+kind = "optimal"
+low = 20
+high = 30
+population = "Adults and general population; summary of worldwide vitamin D guidelines cited in a 2024 consensus statement"
+evidence = "consensus"
+note = "Range as summarized by the consensus authors from guidelines (radioimmunoassay era); the consensus itself says optimal levels remain debated."
+citations = [
+  { pmid = "38676447", doi = "10.1210/endrev/bnae009", title = "Consensus Statement on Vitamin D Status Assessment and Supplementation: Whys, Whens, and Hows.", locator = "Vitamin D Metabolism and Mechanism of Action, para on optimal levels", quote = "vitamin D guidelines issued by major organizations worldwide recommend optimal 25(OH)D levels to be in the range of 50 to 75 nmol/L (20-30 ng/mL)" },
+]
+
+[[range]]
+set = "vitamin-d-toxicity-review-2018"
+kind = "toxic"
+low = 150
+population = "Adults with vitamin D overdosing (exogenous vitamin D toxicity, VDT)"
+evidence = "review"
+note = "Serum 25(OH)D above 150 ng/mL is the hallmark of exogenous VDT, usually with hypercalcemia and hypercalciuria; the review states that the IOM and the Endocrine Society also concluded that levels must exceed this value for toxicity."
+citations = [
+  { pmid = "30294301", doi = "10.3389/fendo.2018.00550", title = "Vitamin D Toxicity-A Clinical Perspective.", locator = "Introduction, para 1", quote = "Serum 25-hydroxyvitamin D [25(OH)D] concentrations higher than 150 ng/ml (375 nmol/l) are the hallmark of VDT due to vitamin D overdosing." },
+]
+
+[[range]]
+set = "endocrine-society-2011"
+kind = "deficient"
+high = 20
+when = {}
+population = "Adults and children at risk of deficiency (Endocrine Society 2011 clinical practice guideline, as quoted by Wacker and Holick 2013)"
+evidence = "guideline"
+note = "Endocrine Society 2011 deficiency cutoff; the guideline itself is paywalled, so the numbers are cited via a review by the guideline chair."
+citations = [
+  { pmid = "23306192", doi = "10.3390/nu5010111", title = "Vitamin D - effects on skeletal and extraskeletal health and the need for supplementation.", locator = "Section: Vitamin D deficiency (citing the Endocrine Society 2011 guideline, ref 16)", quote = "Vitamin D deficiency is diagnosed when 25(OH)D <20 ng/mL [16,53], vitamin D insufficiency is defined as 25(OH)D of 21–29 ng/mL, and 25(OH)D >30 ng/mL is considered sufficient, with 40–60 ng/mL being the preferred range [16]." },
+]
+
+[[range]]
+set = "endocrine-society-2011"
+kind = "insufficient"
+low = 21
+high = 29
+when = {}
+population = "Adults and children at risk of deficiency (Endocrine Society 2011 clinical practice guideline, as quoted by Wacker and Holick 2013)"
+evidence = "guideline"
+note = "Endocrine Society 2011 insufficiency band (21-29 ng/mL)."
+citations = [
+  { pmid = "23306192", doi = "10.3390/nu5010111", title = "Vitamin D - effects on skeletal and extraskeletal health and the need for supplementation.", locator = "Section: Vitamin D deficiency (citing the Endocrine Society 2011 guideline, ref 16)", quote = "Vitamin D deficiency is diagnosed when 25(OH)D <20 ng/mL [16,53], vitamin D insufficiency is defined as 25(OH)D of 21–29 ng/mL, and 25(OH)D >30 ng/mL is considered sufficient, with 40–60 ng/mL being the preferred range [16]." },
+]
+
+[[range]]
+set = "endocrine-society-2011"
+kind = "reference"
+low = 30
+when = {}
+population = "Adults and children at risk of deficiency (Endocrine Society 2011 clinical practice guideline, as quoted by Wacker and Holick 2013)"
+evidence = "guideline"
+note = "Endocrine Society 2011 sufficiency (>30 ng/mL). The 2024 Endocrine Society guideline (PMID 38828931) no longer endorses a target threshold."
+citations = [
+  { pmid = "23306192", doi = "10.3390/nu5010111", title = "Vitamin D - effects on skeletal and extraskeletal health and the need for supplementation.", locator = "Section: Vitamin D deficiency (citing the Endocrine Society 2011 guideline, ref 16)", quote = "Vitamin D deficiency is diagnosed when 25(OH)D <20 ng/mL [16,53], vitamin D insufficiency is defined as 25(OH)D of 21–29 ng/mL, and 25(OH)D >30 ng/mL is considered sufficient, with 40–60 ng/mL being the preferred range [16]." },
+]
+
+[[range]]
+set = "endocrine-society-2011"
+kind = "optimal"
+low = 40
+high = 60
+when = {}
+population = "Adults and children at risk of deficiency (Endocrine Society 2011 clinical practice guideline, as quoted by Wacker and Holick 2013)"
+evidence = "guideline"
+note = "Preferred range per the same review; opinion-level, not an outcome-trial-derived target."
+citations = [
+  { pmid = "23306192", doi = "10.3390/nu5010111", title = "Vitamin D - effects on skeletal and extraskeletal health and the need for supplementation.", locator = "Section: Vitamin D deficiency (citing the Endocrine Society 2011 guideline, ref 16)", quote = "Vitamin D deficiency is diagnosed when 25(OH)D <20 ng/mL [16,53], vitamin D insufficiency is defined as 25(OH)D of 21–29 ng/mL, and 25(OH)D >30 ng/mL is considered sufficient, with 40–60 ng/mL being the preferred range [16]." },
+]

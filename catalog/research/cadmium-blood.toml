@@ -1,0 +1,18 @@
+slug = "cadmium-blood"
+name = "Cadmium, whole blood"
+category = "toxic-metal"
+unit = "µg/L"
+description = "Cadmium concentration in whole blood, reflecting recent exposure from tobacco smoke and food; it rises with smoking. Blood cadmium is a short-term marker, while urinary cadmium better reflects body burden and kidney exposure."
+
+[[range]]
+set = "mayo-clinic-labs"
+kind = "reference"
+high = 5
+specimen = "whole-blood"
+when = {}
+population = "General population of all ages, as quoted by a 2022 NHANES-based study citing Mayo Clinic laboratory reference values"
+evidence = "textbook"
+note = "Laboratory reference value stated secondhand in the cited paper, not from the Mayo Clinic report itself. Not a health-based limit. ACGIH occupational BEI (5 µg/L) was not verifiable from retrieved text."
+citations = [
+  { pmid = "35215454", doi = "10.3390/nu14040802", title = "Trends in Urinary and Blood Cadmium Levels in U.S. Adults with or without Comorbidities, 1999-2018.", locator = "Introduction, para 3", quote = "Mayo Clinic laboratories have suggested that the reference value for Cd in the blood is <5 µg/L for all ages" },
+]

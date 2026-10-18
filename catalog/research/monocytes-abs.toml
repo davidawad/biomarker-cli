@@ -1,0 +1,67 @@
+slug = "monocytes-abs"
+name = "Absolute monocyte count"
+loinc = "742-7"
+category = "cbc"
+unit = "10^3/µL"
+description = "Absolute count of circulating monocytes, precursors of tissue macrophages and dendritic cells. High values (monocytosis) occur with chronic infection such as tuberculosis, inflammation, and myeloid disorders; low values are uncommon and usually drug- or marrow-related."
+
+[[range]]
+set = "time-race-specific-ri"
+kind = "reference"
+low = 0.1
+high = 0.7
+source_unit = "10^9/L"
+source_factor = 1
+when = { ethnicity = "black" }
+population = "Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval"
+note = "Race- and time-specific adjusted interval; evening interval is 0.2-0.8 (not separately encoded). Black volunteers had lower mean monocyte counts than non-Black volunteers."
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals", quote = "Monocytes | Black | 189 | 0.1–0.7 | 424 | 0.2–0.8 | Nonblack | 1,831 | 0.2–0.9" },
+]
+
+[[range]]
+set = "time-race-specific-ri"
+kind = "reference"
+low = 0.2
+high = 0.9
+source_unit = "10^9/L"
+source_factor = 1
+when = { ethnicity = "nonblack" }
+population = "Non-Black volunteers from pooled screening/admission data of 35 UK phase I trials, morning sampling"
+evidence = "reference-interval"
+note = "Race- and time-specific adjusted interval; evening interval is 0.2-0.9 (not separately encoded)."
+citations = [
+  { pmid = "32231575", doi = "10.3389/fphar.2020.00314", title = "Time- and Race-Specific Haematological Reference Intervals for Healthy Volunteer Trials: A Retrospective Analysis of Pooled Data From Multiple Phase I Trials.", locator = "Table 5, proposed reference intervals", quote = "Monocytes | Black | 189 | 0.1–0.7 | 424 | 0.2–0.8 | Nonblack | 1,831 | 0.2–0.9" },
+]
+
+[[range]]
+set = "barcelona-sysmex-xn"
+kind = "reference"
+low = 0.31
+high = 0.92
+source_unit = "10^9/L"
+source_factor = 1
+when = {}
+population = "191 apparently healthy adults from the southern metropolitan area of Barcelona, Sysmex XN"
+evidence = "reference-interval"
+note = "Analyser-specific interval (Sysmex XN)."
+citations = [
+  { pmid = "29765286", title = "Reference intervals for a complete blood count on an automated haematology analyser Sysmex XN in healthy adults from the southern metropolitan area of Barcelona.", locator = "Results, CBC reference intervals table", quote = "Monocytes | 109/L | 191 | [0.31-0.92]" },
+]
+
+[[range]]
+set = "kenya-urban-adults"
+kind = "reference"
+low = 0.14
+high = 0.74
+source_unit = "10^9/L"
+source_factor = 1
+when = {}
+region = "Kenya"
+population = "healthy adult urban population in Kenya (Nairobi), Beckman Coulter ACT 5 DIFF CP"
+evidence = "reference-interval"
+note = "All-participant interval (n = 462) from the reference-interval table."
+citations = [
+  { pmid = "29879171", doi = "10.1371/journal.pone.0198444", title = "Complete blood count reference intervals from a healthy adult urban population in Kenya.", locator = "Table, reference intervals", quote = "Mon (x10^9/L) | 462 | 0.14–0.74" },
+]

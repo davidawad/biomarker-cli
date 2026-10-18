@@ -1,0 +1,32 @@
+slug = "rdw"
+name = "Red Cell Distribution Width"
+loinc = "788-0"
+category = "cbc"
+unit = "%"
+description = "Coefficient of variation of red cell size (RDW-CV). A high RDW means mixed cell sizes, as in early iron, B12 or folate deficiency, recent bleeding or transfusion; it also rises with age."
+
+[[range]]
+set = "korea-cbc-2018"
+kind = "reference"
+low = 11.9
+high = 14.3
+when = { age_min = 3, age_max = 75 }
+population = "Korean health examinees (about 782,000 analysed after outlier exclusion), CLSI C28-A3 2.5th-97.5th percentiles; identical for males and females in the 3-74 year partition"
+evidence = "reference-interval"
+note = "RDW-CV; analyser-dependent, so local lab limits may differ."
+citations = [
+  { pmid = "30027692", doi = "10.3343/alm.2018.38.6.503", title = "Complete Blood Count Reference Intervals and Patterns of Changes Across Pediatric, Adult, and Geriatric Ages in Korea.", locator = "Table 1", quote = "Red blood cell distribution width (%) | 3–74 | 11.9 | 14.3 | 78,355 | 11.9 | 14.3 | 161,571" },
+]
+
+[[range]]
+set = "korea-cbc-2018"
+kind = "reference"
+low = 12.2
+high = 14.7
+when = { age_min = 75, age_max = 100 }
+population = "Korean health examinees aged 75-99 years, CLSI C28-A3 2.5th-97.5th percentiles; identical for males and females"
+evidence = "reference-interval"
+note = "RDW-CV upper limit rises in the elderly."
+citations = [
+  { pmid = "30027692", doi = "10.3343/alm.2018.38.6.503", title = "Complete Blood Count Reference Intervals and Patterns of Changes Across Pediatric, Adult, and Geriatric Ages in Korea.", locator = "Table 1", quote = "75–99 | 12.2 | 14.7 | 3,411 | 12.2 | 14.7 | 4,810" },
+]

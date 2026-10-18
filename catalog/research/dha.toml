@@ -1,0 +1,18 @@
+slug = "dha"
+name = "Docosahexaenoic acid (DHA)"
+category = "fatty-acid"
+unit = "%"
+description = "Docosahexaenoic acid (22:6n-3), the main long-chain omega-3 fatty acid in neural and retinal membranes, reported as a percent of total fatty acids in the blood lipid fraction measured. Low values indicate low marine omega-3 intake or status."
+
+[[range]]
+set = "nns97-nz"
+kind = "reference"
+low = 1.32
+high = 4.09
+when = { specimen = "serum" }
+population = "Adults in the 1997 New Zealand National Nutrition Survey (n=2416 with serum phospholipid fatty acids), non-fasting samples; 5th-95th percentiles"
+evidence = "reference-interval"
+note = "Serum phospholipid fraction, mol% of total fatty acids (survey-adjusted). Mean 2.61 (SD 1.07). Not stratified by sex or age in the cited table."
+citations = [
+  { pmid = "22254080", doi = "10.3390/nu3010152", title = "Serum fatty acid reference ranges: percentiles from a New Zealand national nutrition survey.", locator = "Table 4", quote = "Table 4National Nutrition Survey participant percentiles for serum phospholipid fatty acid composition. ... 22:6n-3 | 2.61 (1.07) | 1.32 | 1.63 | 2.05 | 2.55 | 3.12 | 3.70 | 4.09" },
+]

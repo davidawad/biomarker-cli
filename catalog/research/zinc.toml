@@ -67,3 +67,77 @@ citations = [
   { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)", quote = "and for the fasting samples (70 ug/dl for females and 74 ug/dl for males)" },
 ]
 
+[[range]]
+set = "izincg"
+kind = "deficient"
+high = 70
+when = { sex = "female", age_min = 15, age_max = 50, pregnant = false, fasting = true }
+population = "Nonpregnant women of reproductive age 15-49 y in 13 nationally representative surveys (BRINDA); cut-off applies to a morning fasting sample"
+evidence = "consensus"
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Morning nonfasting cut-off is 66 (separate range); afternoon nonfasting cut-off is 59 µg/dL, not encoded because there is no time-of-day key."
+citations = [
+  { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions", quote = "In WRA, a PZC cutoff of <70 μg/dL was used if the blood sample was drawn in the morning in a fasting state" },
+]
+
+[[range]]
+set = "izincg"
+kind = "deficient"
+high = 66
+when = { sex = "female", age_min = 15, age_max = 50, pregnant = false, fasting = false }
+population = "Nonpregnant women of reproductive age 15-49 y in BRINDA; cut-off applies to a morning nonfasting sample"
+evidence = "consensus"
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon nonfasting cut-off is 59 µg/dL (not encoded: no time-of-day key)."
+citations = [
+  { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions", quote = "<66 μg/dL was used if the blood sample was taken in the morning in a nonfasting state" },
+]
+
+[[range]]
+set = "izincg"
+kind = "deficient"
+high = 65
+when = { age_min = 0.5, age_max = 5 }
+population = "Preschool children 6-59 months in BRINDA; cut-off applies to a morning sample presumed nonfasting"
+evidence = "consensus"
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon cut-off is 57 µg/dL (not encoded: no time-of-day key)."
+citations = [
+  { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions", quote = "in PSC, PZC cutoffs of <65 μg/dL and <57 μg/dL were used to define zinc deficiency depending on whether the blood sample was obtained during the morning or afternoon, respectively" },
+]
+
+[[range]]
+set = "bangladesh-adults"
+kind = "reference"
+low = 59
+high = 125
+when = { sex = "male", age_min = 18, age_max = 66, fasting = true }
+population = "Apparently healthy men aged 18-65 y from a rural community in Bangladesh, overnight fasting samples (n=154 adults, both sexes)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentiles, GF-AAS, IFCC recommendations. Sex-specific values reported in the same abstract."
+citations = [
+  { pmid = "32549879", title = "Reference Value for Serum Zinc Level of Adult Population in Bangladesh.", locator = "Abstract, Results", quote = "The estimated reference range of serum zinc level in sample population was 60-120 μg/dL, where the range was 59-125 μg/dL for male and 50-103 μg/dL for female." },
+]
+
+[[range]]
+set = "bangladesh-adults"
+kind = "reference"
+low = 50
+high = 103
+when = { sex = "female", age_min = 18, age_max = 66, fasting = true }
+population = "Apparently healthy women aged 18-65 y from a rural community in Bangladesh, overnight fasting samples"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentiles, GF-AAS, IFCC recommendations."
+citations = [
+  { pmid = "32549879", title = "Reference Value for Serum Zinc Level of Adult Population in Bangladesh.", locator = "Abstract, Results", quote = "59-125 μg/dL for male and 50-103 μg/dL for female" },
+]
+
+[[range]]
+set = "pediatric-ri-us"
+kind = "reference"
+low = 64
+high = 124
+when = { age_min = 0.5, age_max = 18 }
+population = "Clinically healthy US children aged 0.5-18 y (n=2115, 85% Caucasian), both sexes; no effect of sex or fasting found"
+evidence = "reference-interval"
+note = "Central 95% interval by ICP-MS. Zinc showed no age dependence in this study."
+citations = [
+  { pmid = "22192859", title = "Pediatric reference intervals for serum copper and zinc.", locator = "Results", quote = "the resulting reference interval determined for serum zinc was 64-124 μg/dl" },
+]

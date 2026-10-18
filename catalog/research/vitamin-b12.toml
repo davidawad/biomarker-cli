@@ -1,0 +1,78 @@
+slug = "vitamin-b12"
+name = "Vitamin B12"
+loinc = "2132-9"
+category = "vitamin"
+unit = "pg/mL"
+description = "Total serum vitamin B12 (cobalamin), including the inactive haptocorrin-bound fraction. Low values indicate deficiency or depletion, but serum B12 alone misses many cases of functional deficiency, so it is usually read together with methylmalonic acid, holotranscobalamin or homocysteine."
+
+[[range]]
+set = "epi-review-2011"
+kind = "deficient"
+high = 200.5
+source_unit = "pmol/L"
+source_factor = 1.355
+when = {}
+population = "Clinical B12 deficiency threshold as summarised in an epidemiologic review of cobalamin biomarkers (adults, megaloblastic anaemia studies)"
+evidence = "review"
+note = "148 pmol/L is the traditional cut-off (about 200 pg/mL). It is about 95-97% sensitive for clinical deficiency but only 38-39% sensitive against metabolic (MMA or homocysteine) criteria in non-clinical surveys. Higher cut-offs of 221 or 258 pmol/L have been proposed; they raise sensitivity and lower specificity. The 1.355 factor is 1/0.7378 (1 pg/mL = 0.7378 pmol/L)."
+citations = [
+  { pmid = "21593511", doi = "10.3945/ajcn.111.013441", title = "Biomarkers of cobalamin (vitamin B-12) status in the epidemiologic setting: a critical overview of context, applications, and performance characteristics of cobalamin, methylmalonic acid, and holotranscobalamin II.", locator = "Performance characteristics, para 1 (full text)", quote = "the sensitivity of cobalamin concentrations <148 pmol/L (<200 ng/L) usually exceeded 95% in patients with megaloblastic anemia" },
+]
+
+[[range]]
+set = "nhanes-roundtable-2011"
+kind = "warn"
+low = 200.5
+high = 271.0
+source_unit = "pmol/L"
+source_factor = 1.355
+when = {}
+population = "US adults in NHANES (roundtable on B12 biomarker cut-offs; general population)"
+evidence = "consensus"
+note = "Band between the 3-SD (148 pmol/L) and 2-SD (about 200 pmol/L) cut-offs. The roundtable notes that a 148 pmol/L cut-off misses 3-5% of clinically deficient patients while about 200 pmol/L catches all of them but gives more false positives."
+citations = [
+  { pmid = "21593512", doi = "10.3945/ajcn.111.013243", title = "Biomarkers of vitamin B-12 status in NHANES: a roundtable summary.", locator = "Roundtable discussion, cut-off relevance (full text)", quote = "A cutoff value consistent with 2 SDs is ≈200 pmol/L, and a value of 148 pmol/L is consistent with 3 SDs" },
+]
+
+[[range]]
+set = "clarke-2003"
+kind = "warn"
+low = 203.3
+high = 271.0
+source_unit = "pmol/L"
+source_factor = 1.355
+when = { age_min = 65, markers = [{ marker = "methylmalonic-acid", low = 350 }] }
+population = "Older persons aged 65 and over in Oxford (population study, n=1562), borderline B12 with raised MMA or homocysteine"
+evidence = "outcome"
+note = "Borderline band 150-200 pmol/L counts as high risk of B12 deficiency only when MMA is above 0.35 micromol/L (350 nmol/L) or homocysteine is above 15 micromol/L (see the MMA and homocysteine files). The marker condition here encodes the MMA arm only."
+citations = [
+  { pmid = "12716678", doi = "10.1093/ajcn/77.5.1241", title = "Screening for vitamin B-12 and folate deficiency in older persons.", locator = "Design, para 1 (Abstract)", quote = "Individuals were classified as being at high risk of vitamin B-12 deficiency if they had low vitamin B-12 (< 150 pmol/L) or borderline vitamin B-12 (150-200 pmol/L) accompanied by elevated MMA (> 0.35 micromol/L) or tHcy (> 15.0 micromol/L)." },
+]
+
+[[range]]
+set = "pregnancy-prevalence-2019"
+kind = "insufficient"
+high = 284.6
+source_unit = "pmol/L"
+source_factor = 1.355
+when = { pregnant = true }
+population = "Pregnant women in the PREFORM prospective cohort (Toronto, n=368), sampled at 12-16 gestational weeks and at delivery"
+evidence = "review"
+note = "No pregnancy-specific B12 threshold was found in the retrieved sources; this is the suboptimal cut-off used in a pregnancy cohort, cited in a review. Deficiency at <148 pmol/L was 17% at 12-16 weeks and 38% at delivery in the same cohort."
+citations = [
+  { pmid = "30845641", doi = "10.3390/nu11030557", title = "The Effects of Vegetarian and Vegan Diet during Pregnancy on the Health of Mothers and Offspring.", locator = "Maternal B12 status section, para 1 (full text)", quote = "the prevalence of suboptimal B12 status (serum total B12 <210 pmol/L) was 35% at 12–16 gestational weeks and 43% at delivery" },
+]
+
+[[range]]
+set = "frontiers-2016"
+kind = "reference"
+low = 338.8
+source_unit = "pmol/L"
+source_factor = 1.355
+when = {}
+population = "General adult population; normal range used by most clinical chemistry laboratories, as cited from Clarke 2003 and others"
+evidence = "review"
+note = "Normal lower limit >250 pmol/L (about 339 pg/mL) as quoted in a 2016 review. Values 150-249 pmol/L are labelled low. Many labs use different assays, so local ranges should be checked."
+citations = [
+  { pmid = "27446930", doi = "10.3389/fmolb.2016.00027", title = "Biomarkers and Algorithms for the Diagnosis of Vitamin B12 Deficiency.", locator = "Total serum vitamin B12 section, para 1 (full text)", quote = "Ranges for normal (>250 pmol/L), low (150–249 pmol/L), and acute deficiency (<149 pmol/L) vitamin B12 have been defined and are used in most clinical chemistry laboratories worldwide" },
+]

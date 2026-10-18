@@ -1,0 +1,56 @@
+slug = "lactate"
+name = "Lactate"
+loinc = "2524-7"
+category = "organic-acid"
+unit = "mmol/L"
+description = "Blood lactate, the product of anaerobic glycolysis. Raised values reflect tissue hypoperfusion or hypoxia (for example in sepsis) and predict mortality; very high values indicate severe shock or other lactic acidosis."
+
+[[range]]
+set = "sepsis-3-2016"
+kind = "diagnostic"
+low = 2
+when = { condition = ["sepsis"] }
+population = "Adults with sepsis and septic shock, measured after adequate fluid resuscitation (Sepsis-3 septic shock criteria)"
+evidence = "consensus"
+note = "Septic-shock criterion in Sepsis-3 (with vasopressors); a level above 2 is the hyperlactataemia threshold used alongside hypotension."
+citations = [
+  { pmid = "26903336", doi = "10.1001/jama.2016.0289", title = "Developing a New Definition and Assessing New Clinical Criteria for Septic Shock: For the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3).", locator = "Abstract, Conclusions", quote = "having a serum lactate level greater than 2 mmol/L after adequate fluid resuscitation" },
+]
+
+[[range]]
+set = "ssc-2012"
+kind = "critical"
+low = 4
+when = { condition = ["sepsis"] }
+population = "Adults with sepsis-induced tissue hypoperfusion requiring protocolised resuscitation (Surviving Sepsis Campaign 2012)"
+evidence = "guideline"
+note = "Resuscitation threshold: hypoperfusion is defined as persistent hypotension after fluid challenge or lactate at or above this level."
+citations = [
+  { pmid = "23361625", doi = "10.1007/s00134-012-2769-8", title = "Surviving Sepsis Campaign: international guidelines for management of severe sepsis and septic shock, 2012.", locator = "Recommendation 1, Initial resuscitation", quote = "defined in this document as hypotension persisting after initial fluid challenge or blood lactate concentration ≥4 mmol/L" },
+]
+
+[[range]]
+set = "j-sscg-2020"
+kind = "diagnostic"
+low = 2
+when = { condition = ["sepsis"] }
+population = "Adults with sepsis in the Japanese guideline, septic shock definition (vasopressors to keep MAP at or above 65 mmHg, with lactate above this level despite fluids)"
+evidence = "guideline"
+note = "Septic-shock lactate criterion in the Japanese 2020 guideline, the same 2 mmol/L level as Sepsis-3. Included as a second source for that threshold."
+citations = [
+  { pmid = "34433491", doi = "10.1186/s40560-021-00555-7", title = "The Japanese Clinical Practice Guidelines for Management of Sepsis and Septic Shock 2020 (J-SSCG 2020).", locator = "Section on definitions, septic shock", quote = "having a serum lactate level > 2 mmol/L (18 mg/dL) despite adequate volume resuscitation" },
+]
+
+[[range]]
+set = "lactate-kinetics-2016"
+kind = "warn"
+low = 1.5
+source_unit = "mEq/L"
+source_factor = 1
+when = { condition = ["critical-illness"] }
+population = "Critically ill adults in a systematic review of blood lactate kinetics (observational and interventional studies)"
+evidence = "review"
+note = "Review statement that minor rises above this level are associated with higher mortality. For lactate, mEq/L equals mmol/L. The same review says the normal blood lactate concentration is around 1 mEq/L, a single value that is not encoded as an interval."
+citations = [
+  { pmid = "27520452", doi = "10.1186/s13054-016-1403-5", title = "The value of blood lactate kinetics in critically ill patients: a systematic review.", locator = "Introduction", quote = "Even minor increases in lactate concentrations to >1.5 mEq/l are associated with higher mortality rates" },
+]

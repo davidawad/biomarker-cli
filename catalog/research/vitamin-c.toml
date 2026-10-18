@@ -1,0 +1,53 @@
+slug = "vitamin-c"
+name = "Vitamin C (ascorbic acid)"
+category = "vitamin"
+unit = "mg/dL"
+description = "Ascorbic acid (vitamin C) concentration in serum or plasma, a measure of recent intake. Low values indicate deficiency (scurvy risk) or depletion; smoking markedly lowers levels."
+
+[[range]]
+set = "ajcn-2009-nhanes-2003-2004"
+kind = "deficient"
+high = 0.2008
+source_unit = "µmol/L"
+source_factor = 0.01761
+specimen = "serum"
+when = {}
+population = "US civilians aged 6 years and older, NHANES 2003-2004 (serum vitamin C); the 11.4 µmol/L cut-off is the NHANES III deficiency definition"
+evidence = "reference-interval"
+note = "Deficiency below 11.4 µmol/L (about 0.20 mg/dL). Overall deficiency prevalence was 7.1% in NHANES 2003-2004 and adult smokers had about one-third lower concentrations than nonsmokers."
+citations = [
+  { pmid = "19675106", doi = "10.3945/ajcn.2008.27016", title = "Serum vitamin C and the prevalence of vitamin C deficiency in the United States: 2003-2004 National Health and Nutrition Examination Survey (NHANES).", locator = "Background", quote = "(serum concentrations <11.4 micromol/L)" },
+]
+
+[[range]]
+set = "bmc-womens-health-2022-categories"
+kind = "insufficient"
+low = 0.2008
+high = 0.4225
+source_unit = "µmol/L"
+source_factor = 0.01761
+specimen = "serum"
+when = {}
+population = "US women aged 18-59 years, NHANES 2003-2006 (cut-offs adopted from a prior study, reference 22 of the source)"
+evidence = "consensus"
+note = "Hypovitaminosis C, classed together with deficiency in the source (0-23.99 µmol/L). Deficiency proper (below 11.4 µmol/L) is the range above."
+citations = [
+  { pmid = "36199060", doi = "10.1186/s12905-022-01993-7", title = "Association between serum vitamin C and HPV infection in American women: a cross-sectional study.", locator = "Methods, Statistical analysis", quote = "deficiency and hypovitaminosis (0–23.99 µmol/L), inadequate (24–49.99 µmol/L), adequate (50–69.99 µmol/L), and saturating (≥ 70 µmol/L)" },
+  { pmid = "19675106", doi = "10.3945/ajcn.2008.27016", title = "Serum vitamin C and the prevalence of vitamin C deficiency in the United States: 2003-2004 National Health and Nutrition Examination Survey (NHANES).", locator = "Background", quote = "(serum concentrations <11.4 micromol/L)" },
+]
+
+[[range]]
+set = "bmc-womens-health-2022-categories"
+kind = "optimal"
+low = 0.8805
+high = 1.2325
+source_unit = "µmol/L"
+source_factor = 0.01761
+specimen = "serum"
+when = {}
+population = "US women aged 18-59 years, NHANES 2003-2006 (categories adopted from a prior study, reference 22 of the source)"
+evidence = "consensus"
+note = "Adequate status (50-69.99 µmol/L). Saturating status (70 µmol/L and above, about 1.23 mg/dL) is the source's next class, not a deficiency or toxicity threshold."
+citations = [
+  { pmid = "36199060", doi = "10.1186/s12905-022-01993-7", title = "Association between serum vitamin C and HPV infection in American women: a cross-sectional study.", locator = "Methods, Statistical analysis", quote = "adequate (50–69.99 µmol/L), and saturating (≥ 70 µmol/L)" },
+]

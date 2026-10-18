@@ -1,0 +1,44 @@
+slug = "cobalt-blood"
+name = "Cobalt, whole blood"
+category = "toxic-metal"
+unit = "µg/L"
+description = "Cobalt concentration in whole blood. In people without metal exposure it is very low; cobalt released from chrome-cobalt hip implants raises it, and high values can signal implant wear and systemic cobalt toxicity."
+
+[[range]]
+set = "systemic-cobaltism-review"
+kind = "reference"
+high = 0.6
+specimen = "whole-blood"
+when = {}
+population = "People without abnormal cobalt exposure, as summarised in a 2019 systematic review of systemic cobaltism after chrome-cobalt hip implant wear"
+evidence = "review"
+note = "Background level as reported secondhand in the cited review (95th percentile of people without abnormal exposure). Not from the primary reference study."
+citations = [
+  { pmid = "26076080", doi = "10.1097/PTS.0000000000000220", title = "A Systematic Review of Systemic Cobaltism After Wear or Corrosion of Chrome-Cobalt Hip Implants.", locator = "Introduction, para 2", quote = "Subjects without abnormal cobalt exposure have a mean B[Co] of 0.3 μg/L, and 95% have a value of less than 0.6 μg/L." },
+]
+
+[[range]]
+set = "mhra-mom-cutoff"
+kind = "warn"
+low = 7
+specimen = "whole-blood"
+when = { condition = ["metal-on-metal-hip"] }
+population = "Patients with a unilateral metal-on-metal (chrome-cobalt) hip replacement, case-control study of failed vs well-functioning hips"
+evidence = "guideline"
+note = "MHRA cut-off for the higher of blood cobalt or chromium, used to prompt review of the implant. In the cited study the 7 ppb cut-off had specificity 89% and sensitivity 52% for unexplained failure, so it is a screening trigger rather than a diagnosis. Applies to the maximum of cobalt or chromium."
+citations = [
+  { pmid = "21969427", doi = "10.1302/0301-620X.93B10.26249", title = "Sensitivity and specificity of blood cobalt and chromium metal ions for predicting failure of metal-on-metal hip replacement.", locator = "Abstract", quote = "The Medicines and Healthcare products Regulatory Agency (MHRA) has suggested a cut-off level of 7 parts per billion (ppb)." },
+]
+
+[[range]]
+set = "acgih-bei-as-cited"
+kind = "warn"
+low = 1
+specimen = "whole-blood"
+when = { condition = ["occupational-exposure"] }
+population = "Occupationally exposed workers (biologic exposure index), as summarised in a 2019 systematic review"
+evidence = "textbook"
+note = "Occupational biologic exposure threshold quoted secondhand in the cited review. Not a clinical or hip-implant limit."
+citations = [
+  { pmid = "26076080", doi = "10.1097/PTS.0000000000000220", title = "A Systematic Review of Systemic Cobaltism After Wear or Corrosion of Chrome-Cobalt Hip Implants.", locator = "Introduction, para 2", quote = "The biologic exposure threshold for B[Co] is 1 μg/L" },
+]

@@ -1,0 +1,90 @@
+slug = "transferrin-saturation"
+name = "Transferrin saturation"
+loinc = "2502-3"
+category = "iron"
+unit = "%"
+description = "Percentage of transferrin iron-binding sites occupied by iron, calculated from serum iron and transferrin or TIBC. Low values indicate restricted iron supply to the marrow; high values (especially with raised ferritin) are the first-line screen for HFE hemochromatosis."
+
+[[range]]
+set = "bsg-2021"
+kind = "deficient"
+high = 20
+population = "Adults with iron deficiency anaemia assessment (UK guideline scope), not limited to CKD"
+evidence = "guideline"
+note = "Guideline describes TSAT below 20% as iron restriction, particularly in thalassaemia carriers. Use alongside ferritin; TSAT is the more useful marker when ferritin is falsely normal."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Discussion of iron restriction and thalassaemia", quote = "A transferrin saturation of <20% is indicative of iron restriction, particularly in thalassaemia carriers" },
+]
+
+[[range]]
+set = "bsg-2021"
+kind = "deficient"
+high = 20
+when = { condition = ["ckd"], markers = [{ marker = "ferritin", high = 100 }] }
+population = "Adults with CKD who are predialysis or on peritoneal dialysis"
+evidence = "guideline"
+note = "Absolute iron deficiency in CKD as defined in the guideline; applies only when ferritin is also at or below 100 ug/L. The guideline's 'absolute iron deficiency' definition, not a general population cut-off."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic kidney disease section", quote = "absolute iron deficiency in CKD has been defined as transferrin saturation ≤20%, with SF ≤100 µg/L (in predialysis and peritoneal dialysis patients) or ≤200 µg/L (in haemodialysis patients)" },
+]
+
+[[range]]
+set = "bsg-2021"
+kind = "deficient"
+high = 20
+when = { condition = ["ckd", "hemodialysis"], markers = [{ marker = "ferritin", high = 200 }] }
+population = "Adults with CKD on haemodialysis"
+evidence = "guideline"
+note = "Absolute iron deficiency in haemodialysis patients as defined in the guideline; applies only when ferritin is also at or below 200 ug/L."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic kidney disease section", quote = "absolute iron deficiency in CKD has been defined as transferrin saturation ≤20%, with SF ≤100 µg/L (in predialysis and peritoneal dialysis patients) or ≤200 µg/L (in haemodialysis patients)" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "diagnostic"
+low = 45
+when = { sex = "female", menopause = "pre", condition = ["hfe-c282y-homozygous"], markers = [{ marker = "ferritin", low = 200 }] }
+population = "Premenopausal women homozygous for HFE p.Cys282Tyr, provisional iron overload"
+evidence = "guideline"
+note = "Provisional iron overload criterion, applied together with ferritin above 200 ug/L. The guideline's 'females' wording is read as premenopausal women. The marker check treats 45 as inclusive, while the guideline says above 45%."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "TSAT >45% and ferritin >200 μg/L in females" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "diagnostic"
+low = 50
+when = { sex = "male", condition = ["hfe-c282y-homozygous"], markers = [{ marker = "ferritin", low = 300 }] }
+population = "Men homozygous for HFE p.Cys282Tyr, provisional iron overload"
+evidence = "guideline"
+note = "Provisional iron overload criterion, applied together with ferritin above 300 ug/L. Marker check treats 50 as inclusive; the guideline says above 50%."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "TSAT >50% and ferritin >300 μg/L in males and postmenopausal women" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "diagnostic"
+low = 50
+when = { sex = "female", menopause = "post", condition = ["hfe-c282y-homozygous"], markers = [{ marker = "ferritin", low = 300 }] }
+population = "Postmenopausal women homozygous for HFE p.Cys282Tyr, provisional iron overload"
+evidence = "guideline"
+note = "Provisional iron overload criterion, applied together with ferritin above 300 ug/L. Marker check treats 50 as inclusive; the guideline says above 50%."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "TSAT >50% and ferritin >300 μg/L in males and postmenopausal women" },
+]
+
+[[range]]
+set = "aasld-2011"
+kind = "reference"
+low = 20
+high = 50
+when = {}
+population = "Normal subjects, as tabulated in the AASLD 2011 hemochromatosis guideline (typical values, not a sampled reference interval)"
+evidence = "guideline"
+note = "Typical values table from the guideline. Used as the normal range there; the same table gives 45-100% for asymptomatic HFE haemochromatosis and 80-100% for symptomatic disease."
+citations = [
+  { pmid = "21452290", doi = "10.1002/hep.24330", title = "Diagnosis and management of hemochromatosis: 2011 practice guideline by the American Association for the Study of Liver Diseases.", locator = "Table 7, Laboratory findings in patients with HH", quote = "TS (%) | 20-50 | 45-100 | 80-100" },
+]

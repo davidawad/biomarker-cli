@@ -1,0 +1,372 @@
+slug = "ferritin"
+name = "Ferritin"
+loinc = "2276-4"
+category = "iron"
+unit = "ng/mL"
+description = "Storage protein that reflects body iron stores; low values indicate iron deficiency, high values indicate iron overload, but ferritin is also an acute-phase reactant, so inflammation, liver disease and heart failure raise it independently of iron stores."
+
+[[range]]
+set = "who-2020"
+kind = "deficient"
+high = 15
+source_unit = "µg/L"
+source_factor = 1
+when = { age_min = 5 }
+population = "Children older than 5 years, adolescents and adults, in the absence of inflammation (WHO ferritin guideline thresholds as reported in a 2024 review)"
+evidence = "guideline"
+note = "Secondary citation: the WHO 2020 guideline text could not be retrieved, so the threshold is taken from Hemasphere 2024 and BRINDA 2017 which both report it. Not valid when inflammation is present; see the inflammation ranges. The review cites WHO as 2022 in one sentence; the guideline itself is WHO 2020."
+citations = [
+  { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on WHO definition", quote = "The WHO defines ID as serum or plasma ferritin levels <15 ug/L in children older than 5 years, adolescents, and adults" },
+  { pmid = "28615259", doi = "10.3945/ajcn.116.141762", title = "Adjusting ferritin concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Abstract, Design", quote = "depleted iron stores (ferritin concentration <12 μg/L in PSC and <15 μg/L in WRA)" },
+]
+
+[[range]]
+set = "who-2020"
+kind = "deficient"
+high = 12
+source_unit = "µg/L"
+source_factor = 1
+when = { age_max = 5 }
+population = "Children younger than 5 years, in the absence of inflammation (WHO ferritin guideline thresholds as reported in a 2024 review); BRINDA preschool children aged 6-59 months"
+evidence = "guideline"
+note = "Secondary citation (see the adult range). Not valid when inflammation is present."
+citations = [
+  { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on WHO definition", quote = "less than 12 ug/L in children younger than 5 years" },
+  { pmid = "28615259", doi = "10.3945/ajcn.116.141762", title = "Adjusting ferritin concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Abstract, Design", quote = "depleted iron stores (ferritin concentration <12 μg/L in PSC and <15 μg/L in WRA)" },
+]
+
+[[range]]
+set = "who-2020"
+kind = "deficient"
+high = 30
+source_unit = "µg/L"
+source_factor = 1
+when = { age_max = 5, condition = ["inflammation"] }
+population = "Children under 5 years with systemic inflammation (raised ESR or CRP)"
+evidence = "guideline"
+note = "Inflammation-adjusted WHO threshold as reported in a 2024 review (secondary citation). The BRINDA 2017 abstract also describes raising the cut-off to 30 ug/L as an adjustment approach."
+citations = [
+  { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on inflammation", quote = "the WHO defines ID at a ferritin concentration of less than 30 µg/L in children under five years and less than 70 µg/L in older children and adults" },
+  { pmid = "28615259", doi = "10.3945/ajcn.116.141762", title = "Adjusting ferritin concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Abstract, Design", quote = "increase ferritin-concentration cutoff to <30 μg/L" },
+]
+
+[[range]]
+set = "who-2020"
+kind = "deficient"
+high = 70
+source_unit = "µg/L"
+source_factor = 1
+when = { age_min = 5, condition = ["inflammation"] }
+population = "Children older than 5 years, adolescents and adults with systemic inflammation (raised ESR or CRP)"
+evidence = "guideline"
+note = "Inflammation-adjusted WHO threshold as reported in a 2024 review (secondary citation)."
+citations = [
+  { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on inflammation", quote = "the WHO defines ID at a ferritin concentration of less than 30 µg/L in children under five years and less than 70 µg/L in older children and adults" },
+]
+
+[[range]]
+set = "bsg-2021"
+kind = "insufficient"
+high = 30
+source_unit = "µg/L"
+source_factor = 1
+when = { age_min = 18 }
+population = "Adults in the UK guideline scope for iron deficiency anaemia (absence of inflammation implied by the guideline's wording)"
+evidence = "guideline"
+note = "Guideline states SF below 30 indicates low body iron stores and the lower limit of normal lies at 15-30 ug/L. Below 15 indicates absent iron stores."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Diagnosis section, para on serum ferritin", quote = "An SF level of <15 µg/L is indicative of absent iron stores, while SF levels of less than 30 µg/L are generally indicative of low body iron stores" },
+]
+
+[[range]]
+set = "pregnancy-first-trimester-study"
+kind = "deficient"
+high = 30
+source_unit = "µg/L"
+source_factor = 1
+when = { pregnant = true, trimester = 1 }
+population = "Unselected non-anaemic women in the first trimester (single US study as summarised in a 2020 review)"
+evidence = "review"
+note = "Weak: a single study reported by a review. A 2024 review states there are no standardized ferritin thresholds in pregnancy, and a normal ferritin cannot exclude iron deficiency. Also applies the TSAT<19% criterion (see transferrin-saturation)."
+citations = [
+  { pmid = "32053933", doi = "10.3390/nu12020447", title = "Iron Deficiency and Iron Deficiency Anemia: Implications and Impact in Pregnancy, Fetal Development, and Early Childhood Parameters.", locator = "Section on diagnostic criteria in pregnancy", quote = "defining ID by either low serum ferritin (<30 µg/L) or low transferrin saturation (<19%)" },
+]
+
+[[range]]
+set = "hf-trial-definition"
+kind = "deficient"
+high = 100
+when = { condition = ["heart-failure"] }
+population = "Patients with heart failure (definition used in heart failure trials and carried into cardiology guidance)"
+evidence = "guideline"
+note = "Attribution caveat: the ESC 2021 HF guideline text could not be retrieved; the definition is taken from a 2023 European Heart Journal review that describes it as the one used in HF trials. Use with transferrin saturation criterion in the next range."
+citations = [
+  { pmid = "36282723", doi = "10.1093/eurheartj/ehac569", title = "Iron deficiency and cardiovascular disease.", locator = "Section on definition of iron deficiency in heart failure", quote = "comprising a serum ferritin concentration <100 ng/mL, or a ferritin concentration 100–299 ng/mL in combination with a transferrin saturation (TSAT) <20%" },
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic heart failure section", quote = "as defined by an SF <100 µg/L and/or a transferrin saturation of <20%" },
+]
+
+[[range]]
+set = "hf-trial-definition"
+kind = "deficient"
+low = 100
+high = 299
+when = { condition = ["heart-failure"], markers = [{ marker = "transferrin-saturation", high = 20 }] }
+population = "Patients with heart failure, ferritin 100-299 ng/mL with transferrin saturation below 20%"
+evidence = "guideline"
+note = "Applies only when TSAT is also low (source says TSAT <20%; the marker check treats 20 as inclusive, so a TSAT of exactly 20 is included here)."
+citations = [
+  { pmid = "36282723", doi = "10.1093/eurheartj/ehac569", title = "Iron deficiency and cardiovascular disease.", locator = "Section on definition of iron deficiency in heart failure", quote = "comprising a serum ferritin concentration <100 ng/mL, or a ferritin concentration 100–299 ng/mL in combination with a transferrin saturation (TSAT) <20%" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "diagnostic"
+low = 200
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "female", menopause = "pre", condition = ["hfe-c282y-homozygous"], markers = [{ marker = "transferrin-saturation", low = 45 }] }
+population = "Premenopausal women homozygous for HFE p.Cys282Tyr with high transferrin saturation"
+evidence = "guideline"
+note = "Provisional iron overload criterion. Guideline gives the female threshold without a menopausal split; the male and postmenopausal values are in the next ranges, so this is read as premenopausal women. Requires TSAT above 45% at the same time."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "TSAT >45% and ferritin >200 μg/L in females" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "diagnostic"
+low = 300
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "male", condition = ["hfe-c282y-homozygous"], markers = [{ marker = "transferrin-saturation", low = 50 }] }
+population = "Men homozygous for HFE p.Cys282Tyr with high transferrin saturation"
+evidence = "guideline"
+note = "Provisional iron overload criterion. Requires TSAT above 50% at the same time. Hepatic iron or genotype confirmation still needed for other HFE genotypes."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "TSAT >50% and ferritin >300 μg/L in males and postmenopausal women" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "diagnostic"
+low = 300
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "female", menopause = "post", condition = ["hfe-c282y-homozygous"], markers = [{ marker = "transferrin-saturation", low = 50 }] }
+population = "Postmenopausal women homozygous for HFE p.Cys282Tyr with high transferrin saturation"
+evidence = "guideline"
+note = "Provisional iron overload criterion. Requires TSAT above 50% at the same time."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "TSAT >50% and ferritin >300 μg/L in males and postmenopausal women" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "therapeutic"
+high = 50
+source_unit = "µg/L"
+source_factor = 1
+when = { condition = ["hemochromatosis"] }
+population = "Patients with haemochromatosis on phlebotomy, induction phase"
+evidence = "guideline"
+note = "Phlebotomy target during the induction phase (not a diagnostic range)."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "Treatment targets for phlebotomy are ferritin <50 μg/L during the induction phase and <100 μg/L during the maintenance phase" },
+]
+
+[[range]]
+set = "easl-2022"
+kind = "therapeutic"
+high = 100
+source_unit = "µg/L"
+source_factor = 1
+when = { condition = ["hemochromatosis"] }
+population = "Patients with haemochromatosis on phlebotomy, maintenance phase"
+evidence = "guideline"
+note = "Phlebotomy target during the maintenance phase (not a diagnostic range)."
+citations = [
+  { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract", quote = "Treatment targets for phlebotomy are ferritin <50 μg/L during the induction phase and <100 μg/L during the maintenance phase" },
+]
+
+[[range]]
+set = "aasld-2011"
+kind = "reference"
+low = 20
+high = 200
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "male" }
+population = "Normal subjects, as tabulated in the AASLD 2011 hemochromatosis guideline (typical values, not a sampled reference interval)"
+evidence = "guideline"
+note = "Typical values table from the guideline, not a percentile-based reference interval."
+citations = [
+  { pmid = "21452290", doi = "10.1002/hep.24330", title = "Diagnosis and management of hemochromatosis: 2011 practice guideline by the American Association for the Study of Liver Diseases.", locator = "Table 3, Typical laboratory values in normal subjects", quote = "Serum ferritin level (μg/L) | Men | 20-200" },
+]
+
+[[range]]
+set = "aasld-2011"
+kind = "reference"
+low = 15
+high = 150
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "female" }
+population = "Normal subjects, as tabulated in the AASLD 2011 hemochromatosis guideline (typical values, not a sampled reference interval)"
+evidence = "guideline"
+note = "Typical values table from the guideline, not a percentile-based reference interval."
+citations = [
+  { pmid = "21452290", doi = "10.1002/hep.24330", title = "Diagnosis and management of hemochromatosis: 2011 practice guideline by the American Association for the Study of Liver Diseases.", locator = "Table 3, Typical laboratory values in normal subjects", quote = "Women | 15-150" },
+]
+
+[[range]]
+set = "seniorlab"
+kind = "reference"
+low = 23
+high = 241
+when = { sex = "female", age_min = 60, method = "cmia" }
+population = "Healthy older adults aged 60 and over, Liechtenstein, SENIORLAB cohort, chemiluminescent microparticle immunoassay (CMIA)"
+evidence = "reference-interval"
+note = "Direct method (CLSI EP28-A3c style) in a prospective cohort. Values are method-specific and higher than the manufacturer's inserts, per the authors."
+citations = [
+  { pmid = "42074939", doi = "10.3390/jcm15083135", title = "Reference Intervals for Serum Ferritin in Older Adults-Results from the Prospective SENIORLAB Study.", locator = "Abstract, Results", quote = "RIs were 23-241 ng/mL (W) and 19-396 ng/mL (M) for CMIA" },
+]
+
+[[range]]
+set = "seniorlab"
+kind = "reference"
+low = 19
+high = 396
+when = { sex = "male", age_min = 60, method = "cmia" }
+population = "Healthy older adults aged 60 and over, Liechtenstein, SENIORLAB cohort, chemiluminescent microparticle immunoassay (CMIA)"
+evidence = "reference-interval"
+note = "Direct method (CLSI EP28-A3c style) in a prospective cohort. Method-specific."
+citations = [
+  { pmid = "42074939", doi = "10.3390/jcm15083135", title = "Reference Intervals for Serum Ferritin in Older Adults-Results from the Prospective SENIORLAB Study.", locator = "Abstract, Results", quote = "RIs were 23-241 ng/mL (W) and 19-396 ng/mL (M) for CMIA" },
+]
+
+[[range]]
+set = "seniorlab"
+kind = "reference"
+low = 27
+high = 293
+when = { sex = "female", age_min = 60, method = "eclia" }
+population = "Healthy older adults aged 60 and over, Liechtenstein, SENIORLAB cohort, electrochemiluminescence immunoassay (ECLIA)"
+evidence = "reference-interval"
+note = "Direct method in a prospective cohort. Method-specific."
+citations = [
+  { pmid = "42074939", doi = "10.3390/jcm15083135", title = "Reference Intervals for Serum Ferritin in Older Adults-Results from the Prospective SENIORLAB Study.", locator = "Abstract, Results", quote = "27-293 ng/mL (W) and 23-480 ng/mL (M) for ECLIA" },
+]
+
+[[range]]
+set = "seniorlab"
+kind = "reference"
+low = 23
+high = 480
+when = { sex = "male", age_min = 60, method = "eclia" }
+population = "Healthy older adults aged 60 and over, Liechtenstein, SENIORLAB cohort, electrochemiluminescence immunoassay (ECLIA)"
+evidence = "reference-interval"
+note = "Direct method in a prospective cohort. Method-specific."
+citations = [
+  { pmid = "42074939", doi = "10.3390/jcm15083135", title = "Reference Intervals for Serum Ferritin in Older Adults-Results from the Prospective SENIORLAB Study.", locator = "Abstract, Results", quote = "27-293 ng/mL (W) and 23-480 ng/mL (M) for ECLIA" },
+]
+
+[[range]]
+set = "west-china-2026"
+kind = "reference"
+low = 98.02
+high = 997.78
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "male", method = "eclia" }
+population = "Apparently healthy adults on health examinations at West China Hospital, China (2020-2024), Roche Cobas e801"
+evidence = "reference-interval"
+note = "Indirect (data-mining) reference interval from health-examination records at one Chinese hospital, Roche Cobas e801. Male upper limit is far above conventional cutoffs; treat as population-descriptive, not a health target."
+citations = [
+  { pmid = "41682658", doi = "10.3390/jcm15030976", title = "Establishment and Validation of Serum Ferritin Reference Intervals Based on Real-World Big Data and Multi-Strategy Partitioning Algorithms.", locator = "Abstract, Results", quote = "98.02-997.78 µg/L for males" },
+]
+
+[[range]]
+set = "west-china-2026"
+kind = "reference"
+low = 10.3
+high = 299.55
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "female", age_max = 51, method = "eclia" }
+population = "Apparently healthy women aged 50 years and under, West China Hospital, China (2020-2024), Roche Cobas e801"
+evidence = "reference-interval"
+note = "Indirect (data-mining) reference interval from health-examination records at one Chinese hospital, Roche Cobas e801. Male upper limit is far above conventional cutoffs; treat as population-descriptive, not a health target."
+citations = [
+  { pmid = "41682658", doi = "10.3390/jcm15030976", title = "Establishment and Validation of Serum Ferritin Reference Intervals Based on Real-World Big Data and Multi-Strategy Partitioning Algorithms.", locator = "Abstract, Results", quote = "10.30-299.55 µg/L for females ≤ 50 years" },
+]
+
+[[range]]
+set = "west-china-2026"
+kind = "reference"
+low = 36.61
+high = 507.0
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "female", age_min = 51, method = "eclia" }
+population = "Apparently healthy women over 50 years, West China Hospital, China (2020-2024), Roche Cobas e801"
+evidence = "reference-interval"
+note = "Indirect (data-mining) reference interval from health-examination records at one Chinese hospital, Roche Cobas e801. Male upper limit is far above conventional cutoffs; treat as population-descriptive, not a health target."
+citations = [
+  { pmid = "41682658", doi = "10.3390/jcm15030976", title = "Establishment and Validation of Serum Ferritin Reference Intervals Based on Real-World Big Data and Multi-Strategy Partitioning Algorithms.", locator = "Abstract, Results", quote = "36.61-507.00 µg/L for females > 50 years" },
+]
+
+[[range]]
+set = "hyperferritinemia-review"
+kind = "reference"
+high = 200
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "female" }
+population = "General adult population; typical upper cut-off used in clinical practice"
+evidence = "review"
+note = "Typical upper limit cited in a 2021 review (not derived in the review). Other laboratories' limits vary by assay."
+citations = [
+  { pmid = "34067164", doi = "10.3390/jcm10092008", title = "Hyperferritinemia-A Clinical Overview.", locator = "Introduction", quote = "upper cut off is typically set to 200 μg/L in women and 300 μg/L in men" },
+]
+
+[[range]]
+set = "hyperferritinemia-review"
+kind = "reference"
+high = 300
+source_unit = "µg/L"
+source_factor = 1
+when = { sex = "male" }
+population = "General adult population; typical upper cut-off used in clinical practice"
+evidence = "review"
+note = "Typical upper limit cited in a 2021 review (not derived in the review). Other laboratories' limits vary by assay."
+citations = [
+  { pmid = "34067164", doi = "10.3390/jcm10092008", title = "Hyperferritinemia-A Clinical Overview.", locator = "Introduction", quote = "upper cut off is typically set to 200 μg/L in women and 300 μg/L in men" },
+]
+
+[[range]]
+set = "bsg-2021"
+kind = "deficient"
+high = 100
+source_unit = "µg/L"
+source_factor = 1
+when = { condition = ["ckd"], markers = [{ marker = "transferrin-saturation", high = 20 }] }
+population = "Adults with CKD who are predialysis or on peritoneal dialysis"
+evidence = "guideline"
+note = "Absolute iron deficiency in CKD as defined in the guideline; applies only when TSAT is also at or below 20%. Not a general population cut-off."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic kidney disease section", quote = "absolute iron deficiency in CKD has been defined as transferrin saturation ≤20%, with SF ≤100 µg/L (in predialysis and peritoneal dialysis patients) or ≤200 µg/L (in haemodialysis patients)" },
+]
+
+[[range]]
+set = "bsg-2021"
+kind = "deficient"
+high = 200
+source_unit = "µg/L"
+source_factor = 1
+when = { condition = ["ckd", "hemodialysis"], markers = [{ marker = "transferrin-saturation", high = 20 }] }
+population = "Adults with CKD on haemodialysis"
+evidence = "guideline"
+note = "Absolute iron deficiency in haemodialysis patients as defined in the guideline; applies only when TSAT is also at or below 20%."
+citations = [
+  { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic kidney disease section", quote = "absolute iron deficiency in CKD has been defined as transferrin saturation ≤20%, with SF ≤100 µg/L (in predialysis and peritoneal dialysis patients) or ≤200 µg/L (in haemodialysis patients)" },
+]

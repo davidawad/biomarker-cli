@@ -1,0 +1,71 @@
+slug = "esr"
+name = "Erythrocyte sedimentation rate (ESR)"
+loinc = "4537-7"
+category = "inflammation"
+unit = "mm/h"
+description = "Rate at which red cells settle in an anticoagulated tube over one hour (Westergren method), a non-specific marker of acute-phase response and chronic inflammation. Raised values reflect inflammation, infection, malignancy or high fibrinogen/immunoglobulin levels; it rises with age, is higher in women, and is raised in pregnancy."
+
+[[range]]
+set = "arezzo-clsi-2025"
+kind = "reference"
+low = 1
+high = 22
+when = { sex = "female", age_min = 18 }
+population = "989 presumed healthy adults from Arezzo Hospital, Italy, aged 18 and over; CLSI-based reference interval for the Westergren reference method"
+evidence = "reference-interval"
+note = "Single range for all adult women (no age split). Lower limit reported as 1 mm/h. Westergren reference method."
+citations = [
+  { pmid = "40361919", doi = "10.3390/diagnostics15091101", title = "Erythrocyte Sedimentation Rate Reference Intervals Determined via VES-MATIC 5 and CUBE 30 Touch with Respect to the Westergren Method.", locator = "Abstract, Results", quote = "we identified only one range for females ≥ 18 years (Westergren: 1-22 mm/h" },
+]
+
+[[range]]
+set = "arezzo-clsi-2025"
+kind = "reference"
+low = 1
+high = 14
+when = { sex = "male", age_min = 18, age_max = 69 }
+population = "989 presumed healthy adults from Arezzo Hospital, Italy; men aged 18 to under 69; CLSI-based, Westergren reference method"
+evidence = "reference-interval"
+note = "Men aged 18 to <69 years. Lower limit reported as 1 mm/h."
+citations = [
+  { pmid = "40361919", doi = "10.3390/diagnostics15091101", title = "Erythrocyte Sedimentation Rate Reference Intervals Determined via VES-MATIC 5 and CUBE 30 Touch with Respect to the Westergren Method.", locator = "Abstract, Results", quote = "one for those aged ≥ 18 but < 69 years (Westergren: 1-14 mm/h" },
+]
+
+[[range]]
+set = "arezzo-clsi-2025"
+kind = "reference"
+low = 1
+high = 22
+when = { sex = "male", age_min = 70 }
+population = "989 presumed healthy adults from Arezzo Hospital, Italy; men aged 70 and over; CLSI-based, Westergren reference method"
+evidence = "reference-interval"
+note = "Men aged 70 and over. Lower limit reported as 1 mm/h."
+citations = [
+  { pmid = "40361919", doi = "10.3390/diagnostics15091101", title = "Erythrocyte Sedimentation Rate Reference Intervals Determined via VES-MATIC 5 and CUBE 30 Touch with Respect to the Westergren Method.", locator = "Abstract, Results", quote = "one for those aged 70 years or above (Westergren: 1-22 mm/h" },
+]
+
+[[range]]
+set = "bjog-2001"
+kind = "reference"
+low = 18
+high = 48
+when = { sex = "female", pregnant = true, gestation_week_max = 20 }
+population = "1019 healthy pregnant women at routine antenatal visits, London (Westergren method), non-anaemic women; source reports the first half of pregnancy"
+evidence = "reference-interval"
+note = "Source gives first-half and second-half ranges without gestational weeks; the 20-week split is an approximation of half of a ~40-week pregnancy. Non-anaemic women only (anaemic women: 21-62 mm/h first half, 40-95 mm/h second half). 95% reference range."
+citations = [
+  { locator = "Abstract, Results", title = "Pregnancy and the erythrocyte sedimentation rate.", quote = "For non-anaemic women the 95% reference range rose from 18-48 mm/h in the first half of pregnancy to 30-70 mm/h in the second half of pregnancy.", pmid = "11762656" },
+]
+
+[[range]]
+set = "bjog-2001"
+kind = "reference"
+low = 30
+high = 70
+when = { sex = "female", pregnant = true, gestation_week_min = 20 }
+population = "1019 healthy pregnant women at routine antenatal visits, London (Westergren method), non-anaemic women; source reports the second half of pregnancy"
+evidence = "reference-interval"
+note = "Source gives second-half range without gestational weeks; the 20-week split is an approximation. Non-anaemic women only (anaemic women: 40-95 mm/h second half). 95% reference range."
+citations = [
+  { locator = "Abstract, Results", title = "Pregnancy and the erythrocyte sedimentation rate.", quote = "For non-anaemic women the 95% reference range rose from 18-48 mm/h in the first half of pregnancy to 30-70 mm/h in the second half of pregnancy.", pmid = "11762656" },
+]

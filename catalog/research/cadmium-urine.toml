@@ -1,0 +1,32 @@
+slug = "cadmium-urine"
+name = "Cadmium, urine"
+category = "toxic-metal"
+unit = "µg/g creatinine"
+description = "Cadmium excreted in urine, normalized to creatinine. It reflects long-term body burden (kidney cadmium) and is the preferred marker for chronic exposure; higher values indicate kidney and bone risk."
+
+[[range]]
+set = "mayo-clinic-labs"
+kind = "reference"
+high = 0.6
+specimen = "urine"
+when = { age_min = 18 }
+population = "Adults aged 18 and over, as quoted by a 2022 NHANES-based study citing Mayo Clinic laboratory reference values"
+evidence = "textbook"
+note = "Laboratory reference value stated secondhand in the cited paper. Not a health-based limit."
+citations = [
+  { pmid = "35215454", doi = "10.3390/nu14040802", title = "Trends in Urinary and Blood Cadmium Levels in U.S. Adults with or without Comorbidities, 1999-2018.", locator = "Introduction, para 3", quote = "Cd in urine is <0.6 μg/g creatinine for people aged 18 years and above" },
+]
+
+[[range]]
+set = "outcome-review"
+kind = "warn"
+low = 1
+specimen = "urine"
+when = {}
+population = "Adults in Swedish cadmium-exposed populations, outcome study (calciuria) as summarised in a 2004 review"
+evidence = "outcome"
+note = "Outcome-based level: calciuria (urinary calcium loss) increased in women 50-70 years old above this urinary cadmium level (Jarup et al. 1998, as cited). Not an official limit; the ACGIH BEI (5 µg/g) and EFSA value were not verifiable from retrieved text."
+citations = [
+  { pmid = "15238284", doi = "10.1289/ehp.6751", title = "Adverse health effects of chronic exposure to low-level cadmium in foodstuffs and cigarette smoke.", locator = "Results, para (calciuria)", quote = "urinary Cd excretion exceeded 1 μg/g creatinine" },
+]
+

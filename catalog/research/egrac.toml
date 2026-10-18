@@ -1,0 +1,42 @@
+slug = "egrac"
+name = "Erythrocyte glutathione reductase activation coefficient (EGRAC)"
+category = "vitamin"
+unit = "ratio"
+description = "Functional riboflavin (vitamin B2) status: the ratio of erythrocyte glutathione reductase activity with added FAD to activity without it. Higher values mean lower riboflavin status; cut-offs vary between laboratories and methods."
+
+[[range]]
+set = "ajcn-2022-irish-nans-tuda"
+kind = "optimal"
+high = 1.26
+when = {}
+population = "Irish adults aged 18-102 y (population-based NANS plus TUDA and Genovit volunteer cohorts), EGRac method of the Irish study"
+evidence = "outcome"
+note = "Optimal riboflavin status. Plasma PLP fell stepwise across these classes, most strongly in older adults."
+citations = [
+  { pmid = "36264281", doi = "10.1093/ajcn/nqac240", title = "Vitamin B-6 and riboflavin, their metabolic interaction, and relationship with MTHFR genotype in adults aged 18-102 years.", locator = "Abstract, Results", quote = "from optimal (EGRac ≤1.26), to suboptimal (EGRac: 1.27-1.39), to deficient (EGRac ≥1.40)" },
+]
+
+[[range]]
+set = "ajcn-2022-irish-nans-tuda"
+kind = "insufficient"
+low = 1.27
+high = 1.39
+when = {}
+population = "Irish adults aged 18-102 y (NANS, TUDA and Genovit cohorts)"
+evidence = "outcome"
+note = "Suboptimal (marginal) riboflavin status in the same Irish study classification."
+citations = [
+  { pmid = "36264281", doi = "10.1093/ajcn/nqac240", title = "Vitamin B-6 and riboflavin, their metabolic interaction, and relationship with MTHFR genotype in adults aged 18-102 years.", locator = "Abstract, Results", quote = "from optimal (EGRac ≤1.26), to suboptimal (EGRac: 1.27-1.39), to deficient (EGRac ≥1.40)" },
+]
+
+[[range]]
+set = "jnutr-2026-riboflavin"
+kind = "deficient"
+low = 1.40
+when = {}
+population = "females of reproductive age and children in population samples from Ireland, UK, Cambodia, DR Congo, and cohorts in Northern Ireland, Spain, Canada, Malaysia, Lao PDR, Uganda"
+evidence = "consensus"
+note = "Deficiency at 1.40 or above, as used in the 2026 multi-country study. Other national surveys have used a lower threshold: the UK NDNS analysis cited EGRAC of 1.30 or above as deficient (PMID 19102813), and the authors call for re-evaluating the threshold because the method changes results."
+citations = [
+  { pmid = "41735095", doi = "10.1016/j.tjnut.2025.101277", title = "Riboflavin Deficiency Is Highly Prevalent in Females and Children across High and Low/Middle Income Countries Worldwide.", locator = "Methods", quote = "with higher values indicating lower status and EGRac ≥ 1.40 indicative of deficiency" },
+]

@@ -1,0 +1,43 @@
+slug = "omega-3-index"
+name = "Omega-3 Index"
+category = "fatty-acid"
+unit = "%"
+description = "Red blood cell EPA plus DHA expressed as a percent of total fatty acids, a long-term marker of omega-3 status. Low values (below 4%) are associated with higher risk of coronary heart disease death; values above 8% are associated with the lowest risk."
+
+[[range]]
+set = "harris-2004"
+kind = "optimal"
+low = 8
+when = { specimen = "rbc" }
+population = "Adults in the Harris and von Schacky analysis of published primary and secondary prevention studies (CHD death and sudden cardiac death outcomes)"
+evidence = "outcome"
+note = "Stated as the level associated with greatest cardioprotection. Stark 2016 uses the same >8% boundary as its high-level cutoff. Quote is from the abstract; the abstract gives only the >=8% and <=4% points, not the intermediate band."
+citations = [
+  { pmid = "15208005", doi = "10.1016/j.ypmed.2004.02.030", title = "The Omega-3 Index: a new risk factor for death from coronary heart disease?", locator = "Abstract, Results", quote = "An Omega-3 Index of > or = 8% was associated with the greatest cardioprotection, whereas an index of < or = 4% was associated with the least." },
+  { pmid = "27216485", doi = "10.1016/j.plipres.2016.05.001", title = "Global survey of the omega-3 fatty acids, docosahexaenoic acid and eicosapentaenoic acid in the blood stream of healthy adults.", locator = "Abstract", quote = "Regions with high EPA+DHA blood levels (>8%) included the Sea of Japan, Scandinavia, and areas with indigenous populations" },
+]
+
+[[range]]
+set = "harris-2008"
+kind = "warn"
+low = 4
+high = 8
+when = { specimen = "rbc" }
+population = "Adults; risk zones proposed for erythrocyte EPA plus DHA from the omega-3 index risk-factor review"
+evidence = "consensus"
+note = "Proposed intermediate-risk band for the Omega-3 Index (percent of erythrocyte fatty acids). Proposed zones, not a population reference interval."
+citations = [
+  { pmid = "18541601", title = "The omega-3 index as a risk factor for coronary heart disease.", locator = "Abstract", quote = "Proposed omega-3 index risk zones are (in percentages of erythrocyte FAs): high risk, <4%; intermediate risk, 4-8%; and low risk, >8%." },
+]
+
+[[range]]
+set = "harris-2008"
+kind = "deficient"
+high = 4
+when = { specimen = "rbc" }
+population = "Adults; high-risk zone for erythrocyte EPA plus DHA from the omega-3 index risk-factor review"
+evidence = "consensus"
+note = "Proposed high-risk zone for the Omega-3 Index. Proposed cutoff, not a population reference interval."
+citations = [
+  { pmid = "18541601", title = "The omega-3 index as a risk factor for coronary heart disease.", locator = "Abstract", quote = "Proposed omega-3 index risk zones are (in percentages of erythrocyte FAs): high risk, <4%; intermediate risk, 4-8%; and low risk, >8%." },
+]

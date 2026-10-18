@@ -1,0 +1,44 @@
+slug = "vwf-antigen"
+name = "von Willebrand factor antigen (VWF:Ag)"
+loinc = "27816-7"
+category = "coagulation"
+unit = "IU/dL"
+description = "Quantity of von Willebrand factor protein in plasma, measured by immunoassay. Low levels suggest von Willebrand disease or acquired von Willebrand syndrome; levels are raised by inflammation, pregnancy and stress, and depend on ABO blood group."
+
+[[range]]
+set = "gill-abo-cohort-as-cited"
+kind = "reference"
+low = 36
+high = 157
+when = { condition = ["blood-group-o"] }
+population = "Healthy individuals of blood group O (large cohort of 1117 healthy individuals, as summarised in a 2007 review)"
+evidence = "review"
+note = "Mean +/- 2SD range for blood group O, quoted from a review that cites the Gill et al. cohort; the source states the group O lower limit extends below 50 IU/dL, so the 50 IU/dL cutoff used for all groups is not appropriate for group O. Not a pooled adult reference interval."
+citations = [
+  { pmid = "17894864", doi = "10.1186/1477-9560-5-14", title = "Relationship between ABO blood group and von Willebrand factor levels: from biology to clinical implications.", locator = "ABO and VWF:Ag normal range section, full text", quote = "the normal range for VWF:Ag in group O individuals extends below 50 IU/dL (mean ± 2SD: 36–157 IU/dL)" },
+]
+
+[[range]]
+set = "vwd-guidelines-as-cited-jcm-2017"
+kind = "diagnostic"
+high = 30
+when = {}
+population = "Adults and children suspected of von Willebrand disease (as summarised in a 2017 review of VWD diagnosis and treatment)"
+evidence = "review"
+note = "Threshold attributed by the review to 'several guidelines' (its ref 16); the 2021 ASH/ISTH/NHF/WFH guideline text itself was not retrievable, and the 2025 monitoring report full text contains no numeric cutoffs. Values below this level are diagnostic of VWD."
+citations = [
+  { pmid = "28394285", doi = "10.3390/jcm6040045", title = "Diagnosis and Treatment of von Willebrand Disease and Rare Bleeding Disorders.", locator = "Full text, type 1 VWD paragraph", quote = "Several guidelines suggest that levels below 30% are diagnostic for VWD, while between 30% and 50% are considered as “low VWF” with a mild risk of bleeding" },
+]
+
+[[range]]
+set = "vwd-guidelines-as-cited-jcm-2017"
+kind = "warn"
+low = 30
+high = 50
+when = {}
+population = "Adults and children with low VWF levels suspected of von Willebrand disease (as summarised in a 2017 review)"
+evidence = "review"
+note = "Described as 'low VWF' with a mild bleeding risk, as attributed to guidelines by the review. Not a diagnostic threshold."
+citations = [
+  { pmid = "28394285", doi = "10.3390/jcm6040045", title = "Diagnosis and Treatment of von Willebrand Disease and Rare Bleeding Disorders.", locator = "Full text, type 1 VWD paragraph", quote = "Several guidelines suggest that levels below 30% are diagnostic for VWD, while between 30% and 50% are considered as “low VWF” with a mild risk of bleeding" },
+]

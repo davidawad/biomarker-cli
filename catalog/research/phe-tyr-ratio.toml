@@ -1,0 +1,17 @@
+slug = "phe-tyr-ratio"
+name = "Phenylalanine/Tyrosine ratio"
+category = "amino-acid"
+unit = "ratio"
+description = "Molar ratio of phenylalanine to tyrosine measured by tandem mass spectrometry, used in newborn screening for phenylketonuria. A raised ratio helps separate true PKU from false-positive hyperphenylalaninaemia, because tyrosine is low in untreated PKU, so the ratio rises."
+
+[[range]]
+set = "clin-chem-1997-phe-tyr"
+kind = "warn"
+low = 2.5
+when = { specimen = "dried-blood-spot", method = "lc-ms-ms", condition = ["newborn-screening"] }
+population = "Newborns under 24 hours old; retrospective California newborn screening blood spots (n=208) re-analysed by MS/MS"
+evidence = "outcome"
+note = "Cutoff molar Phe/Tyr ratio used in a retrospective evaluation to reduce false positives after a Phe cutoff of 180 umol/L; it is a study threshold, not a national programme cutoff. Ratio rises with age of collection in affected infants."
+citations = [
+  { pmid = "9836704", doi = "10.1093/clinchem/43.12.2397", title = "Use of phenylalanine-to-tyrosine ratio determined by tandem mass spectrometry to improve newborn screening for phenylketonuria of early discharge specimens collected in the first 24 hours.", locator = "Abstract, Results", quote = "Simultaneous quantification of Phe and Tyr by MS/MS with the use of a cutoff Phe/Tyr molar ratio of 2.5 further reduced the number of false positives to 1." },
+]

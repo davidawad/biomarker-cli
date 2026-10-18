@@ -1,0 +1,65 @@
+slug = "transferrin"
+name = "Transferrin"
+category = "iron"
+unit = "mg/dL"
+description = "Iron-transport protein made in the liver; its serum concentration is the basis of total iron-binding capacity. It is a negative acute-phase protein, so it falls in inflammation, malnutrition and liver disease, and rises in iron deficiency and pregnancy."
+
+[[range]]
+set = "russian-ifcc-2024"
+kind = "reference"
+low = 188.00
+high = 316.00
+source_unit = "g/L"
+source_factor = 100
+when = { sex = "male" }
+population = "Healthy Russian adults aged 18-80 (46% male), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row TF, LAVE(-), All, M", quote = "TF | g/L | LAVE(-) | All | M | All | 225 | 1.80 | 1.92 | 1.88 | 2.42 | 3.16 | 3.07 | 3.22" },
+]
+
+[[range]]
+set = "russian-ifcc-2024"
+kind = "reference"
+low = 194.00
+high = 357.00
+source_unit = "g/L"
+source_factor = 100
+when = { sex = "female" }
+population = "Healthy Russian adults aged 18-80 (54% female), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row TF, LAVE(+), All, F", quote = "LAVE(+) | All | F | All | 178 | 1.85 | 1.98 | 1.94 | 2.59 | 3.57 | 3.43 | 3.70" },
+]
+
+[[range]]
+set = "uppsala-75y-2012"
+kind = "reference"
+low = 179.00
+high = 327.00
+source_unit = "g/L"
+source_factor = 100
+when = { sex = "male", age_min = 75, age_max = 76 }
+population = "Healthy 75-year-old men without diabetes, Sweden (n = 354), including individuals with cardiovascular disease"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits from a Swedish cohort examined at age 75, Ortho Vitros assay. Older-adult values."
+citations = [
+  { pmid = "22300333", doi = "10.3109/03009734.2011.644873", title = "Reference values of thirty-one frequently used laboratory markers for 75-year-old males and females.", locator = "Table IV, row Transferrin (g/L), Males, all", quote = "Transferrin (g/L) | Males, all | 1.79 (1.70–1.88) | – | 3.27 (3.06–3.48)" },
+]
+
+[[range]]
+set = "uppsala-75y-2012"
+kind = "reference"
+low = 180.00
+high = 327.00
+source_unit = "g/L"
+source_factor = 100
+when = { sex = "female", age_min = 75, age_max = 76 }
+population = "Healthy 75-year-old women without diabetes, Sweden (n = 373), including individuals with cardiovascular disease"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits from a Swedish cohort examined at age 75, Ortho Vitros assay. Older-adult values."
+citations = [
+  { pmid = "22300333", doi = "10.3109/03009734.2011.644873", title = "Reference values of thirty-one frequently used laboratory markers for 75-year-old males and females.", locator = "Table IV, row Transferrin (g/L), Females, all", quote = "Females, all | 1.80 (1.70–1.89) | – | 3.27 (3.13–3.42)" },
+]

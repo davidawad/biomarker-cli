@@ -1,0 +1,83 @@
+slug = "fibrinogen"
+name = "Fibrinogen"
+loinc = "3255-7"
+category = "coagulation"
+unit = "g/L"
+description = "Clottable plasma protein that forms the fibrin clot, measured functionally (Clauss method). Low levels indicate consumption, dilution or reduced synthesis and raise bleeding risk; levels rise physiologically in pregnancy and are an acute-phase reactant."
+
+[[range]]
+set = "burkina-faso-donor-ri"
+kind = "reference"
+low = 2.04
+high = 3.83
+when = { sex = "female" }
+population = "140 healthy female blood donors at a transfusion centre in Ouagadougou, Burkina Faso (CLSI C28-A3)"
+evidence = "reference-interval"
+note = "Central 95 percentile method, as stated in the abstract. Local population; not separated by age in the abstract."
+citations = [
+  { pmid = "37987309", doi = "10.1684/abc.2023.1835", title = "Establishment of reference values for prothrombin time, activated partial thromboplastin time and fibrinogen in adults in Burkina Faso.", locator = "Abstract, Results", quote = "[2.04-3.83] g/L for females" },
+]
+
+[[range]]
+set = "burkina-faso-donor-ri"
+kind = "reference"
+low = 1.58
+high = 3.35
+when = { sex = "male" }
+population = "140 healthy male blood donors at a transfusion centre in Ouagadougou, Burkina Faso (CLSI C28-A3)"
+evidence = "reference-interval"
+note = "Central 95% of values. Local population; not separated by age in the abstract."
+citations = [
+  { pmid = "37987309", doi = "10.1684/abc.2023.1835", title = "Establishment of reference values for prothrombin time, activated partial thromboplastin time and fibrinogen in adults in Burkina Faso.", locator = "Abstract, Results", quote = "[1.58-3.35] g/L for males" },
+]
+
+[[range]]
+set = "pregnancy-fibrinogen-ri"
+kind = "reference"
+low = 2.60
+high = 6.56
+when = { pregnant = true, trimester = 1 }
+population = "71 pregnant women aged 25-44 years, sampled at 11-14 weeks"
+evidence = "reference-interval"
+note = "Unadjusted trimester ranges (Clauss method). The same study gives risk-adjusted ranges (gestational diabetes, smoking) that differ and are not encoded."
+citations = [
+  { pmid = "32596295", doi = "10.1155/2020/3192350", title = "Reference Values of D-Dimers and Fibrinogen in the Course of Physiological Pregnancy: the Potential Impact of Selected Risk Factors-A Pilot Study.", locator = "Abstract, Results", quote = "Reference ranges for fibrinogen were, in trimester order, 2.60-6.56 g/L, 3.40-8.53 g/L, and 3.63-9.14 g/L" },
+]
+
+[[range]]
+set = "pregnancy-fibrinogen-ri"
+kind = "reference"
+low = 3.40
+high = 8.53
+when = { pregnant = true, trimester = 2 }
+population = "71 pregnant women aged 25-44 years, sampled at 20-22 weeks"
+evidence = "reference-interval"
+note = "Unadjusted trimester ranges (Clauss method). Risk-adjusted ranges from the same study are not encoded."
+citations = [
+  { pmid = "32596295", doi = "10.1155/2020/3192350", title = "Reference Values of D-Dimers and Fibrinogen in the Course of Physiological Pregnancy: the Potential Impact of Selected Risk Factors-A Pilot Study.", locator = "Abstract, Results", quote = "Reference ranges for fibrinogen were, in trimester order, 2.60-6.56 g/L, 3.40-8.53 g/L, and 3.63-9.14 g/L" },
+]
+
+[[range]]
+set = "pregnancy-fibrinogen-ri"
+kind = "reference"
+low = 3.63
+high = 9.14
+when = { pregnant = true, trimester = 3 }
+population = "71 pregnant women aged 25-44 years, sampled at 30-31 weeks"
+evidence = "reference-interval"
+note = "Unadjusted trimester ranges (Clauss method). Risk-adjusted ranges from the same study are not encoded."
+citations = [
+  { pmid = "32596295", doi = "10.1155/2020/3192350", title = "Reference Values of D-Dimers and Fibrinogen in the Course of Physiological Pregnancy: the Potential Impact of Selected Risk Factors-A Pilot Study.", locator = "Abstract, Results", quote = "Reference ranges for fibrinogen were, in trimester order, 2.60-6.56 g/L, 3.40-8.53 g/L, and 3.63-9.14 g/L" },
+]
+
+[[range]]
+set = "european-trauma-bleeding"
+kind = "critical"
+high = 2.0
+when = { condition = ["major-bleeding"] }
+population = "adults with major bleeding and trauma-induced coagulopathy (European trauma guideline, 4th edition)"
+evidence = "guideline"
+note = "Replacement threshold band: Recommendation 28 (Grade 1C) advises fibrinogen concentrate or cryoprecipitate when significant bleeding is accompanied by viscoelastic signs of functional fibrinogen deficit or fibrinogen below 1.5-2.0 g/L. Guideline gives a band, not a single cut-off."
+citations = [
+  { pmid = "27072503", doi = "10.1186/s13054-016-1265-x", title = "The European guideline on management of major bleeding and coagulopathy following trauma: fourth edition.", locator = "Recommendation 28", quote = "we recommend treatment with fibrinogen concentrate or cryoprecipitate if significant bleeding is accompanied by viscoelastic signs of a functional fibrinogen deficit or a plasma fibrinogen level of less than 1.5–2.0 g/l" },
+]

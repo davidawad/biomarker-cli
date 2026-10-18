@@ -1,0 +1,66 @@
+slug = "iron"
+name = "Serum iron"
+loinc = "2498-4"
+category = "iron"
+unit = "µg/dL"
+description = "Iron circulating bound to transferrin, measured as serum iron. It varies widely through the day and with recent intake, so a single value is weak evidence on its own; low values with low transferrin saturation and ferritin point to iron deficiency, while high values with high transferrin saturation point to iron overload."
+
+[[range]]
+set = "russian-ifcc-2024"
+kind = "reference"
+low = 54.73
+high = 196.03
+source_unit = "µmol/L"
+source_factor = 5.585
+when = { sex = "male" }
+population = "Healthy Russian adults aged 18-80 (506 participants, 46% male), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row Fe, LAVE(-), All, M", quote = "Fe | μmol/L | LAVE(-) | All | M | All | 225 | 8.5 | 10.6 | 9.8 | 18.8 | 35.1 | 32.5 | 37.3" },
+]
+
+[[range]]
+set = "russian-ifcc-2024"
+kind = "reference"
+low = 40.21
+high = 170.34
+source_unit = "µmol/L"
+source_factor = 5.585
+when = { sex = "female" }
+population = "Healthy Russian adults aged 18-80 (506 participants, 54% female), IFCC C-RIDL protocol, Beckman Coulter AU 5800"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits from the paper's Table 4 (IFCC C-RIDL protocol, single country, Beckman AU 5800; method-specific). The paper labels rows LAVE(+) or LAVE(-), defined in its text as one or more vs no abnormal reference-test values; that does not clearly describe the exclusion applied to this row, so check the supplementary source data before relying on it."
+citations = [
+  { pmid = "39348390", doi = "10.1371/journal.pone.0304020", title = "Derivation of Russian-specific reference intervals for complete blood count, iron markers and related vitamins.", locator = "Table 4, row Fe, LAVE(+), All, F", quote = "LAVE(+) | All | F | All | 177 | 6.0 | 7.8 | 7.2 | 16.4 | 30.5 | 29.0 | 33.7" },
+]
+
+[[range]]
+set = "uppsala-75y-2012"
+kind = "reference"
+low = 46.36
+high = 191.57
+source_unit = "µmol/L"
+source_factor = 5.585
+when = { sex = "male", age_min = 75, age_max = 76 }
+population = "Healthy 75-year-old men without diabetes, Sweden (n = 354), including individuals with cardiovascular disease"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits (IFCC method) from a Swedish cohort examined at age 75, Ortho Vitros assay. Older-adult values; not a general adult interval. The paper also reports a subgroup without cardiovascular disease that is nearly identical (8.4-34.8 umol/L)."
+citations = [
+  { pmid = "22300333", doi = "10.3109/03009734.2011.644873", title = "Reference values of thirty-one frequently used laboratory markers for 75-year-old males and females.", locator = "Table IV, row Iron (µmol/L), Males, all", quote = "Iron (µmol/L) | Males, all | 8.3 (6.8–9.9) | – | 34.3 (32.9–35.6)" },
+]
+
+[[range]]
+set = "uppsala-75y-2012"
+kind = "reference"
+low = 49.15
+high = 160.85
+source_unit = "µmol/L"
+source_factor = 5.585
+when = { sex = "female", age_min = 75, age_max = 76 }
+population = "Healthy 75-year-old women without diabetes, Sweden (n = 373), including individuals with cardiovascular disease"
+evidence = "reference-interval"
+note = "2.5-97.5 percentile limits (IFCC method) from a Swedish cohort examined at age 75, Ortho Vitros assay. Older-adult values; not a general adult interval."
+citations = [
+  { pmid = "22300333", doi = "10.3109/03009734.2011.644873", title = "Reference values of thirty-one frequently used laboratory markers for 75-year-old males and females.", locator = "Table IV, row Iron (µmol/L), Females, all", quote = "Females, all | 8.8 (8.0–9.7) | – | 28.8 (27.5–30.1)" },
+]

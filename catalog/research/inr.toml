@@ -1,0 +1,71 @@
+slug = "inr"
+name = "International normalized ratio"
+loinc = "6301-6"
+category = "coagulation"
+unit = "ratio"
+description = "Prothrombin time expressed as a ratio to a standard reference, so results are comparable across laboratories. Used to monitor vitamin K antagonist (warfarin) therapy; values above the target range indicate excess anticoagulation and bleeding risk, values below it indicate under-anticoagulation and thrombosis risk."
+
+[[range]]
+set = "chest-2012-vka"
+kind = "therapeutic"
+low = 2.0
+high = 3.0
+when = { condition = ["on-warfarin"] }
+population = "adults on long-term vitamin K antagonist therapy (general indications, CHEST 2012 anticoagulation guideline)"
+evidence = "guideline"
+note = "Strong recommendation (Grade 1B) for a target INR of 2.0 to 3.0 on VKA therapy. Indication-specific targets for mechanical valves are separate ranges; no reference (non-anticoagulated) INR range was retrieved."
+citations = [
+  { pmid = "22315259", doi = "10.1378/chest.11-2295", title = "Evidence-based management of anticoagulant therapy: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.", locator = "Abstract, Results", quote = "targeting an international normalized ratio of 2.0 to 3.0 for patients on vitamin K antagonist therapy" },
+]
+
+[[range]]
+set = "chest-2012-valve"
+kind = "therapeutic"
+low = 2.5
+high = 2.5
+when = { condition = ["on-warfarin", "mechanical-aortic-valve"] }
+population = "adults with a mechanical aortic valve on long-term vitamin K antagonist therapy"
+evidence = "guideline"
+note = "Guideline states a single target INR of 2.5 (Grade 1B), not a range; low and high are set equal to encode the point target. The lower/upper bounds of a 2.5-3.5 style range are not stated in the retrieved text."
+citations = [
+  { pmid = "22315272", doi = "10.1378/chest.11-2305", title = "Antithrombotic and thrombolytic therapy for valvular disease: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.", locator = "Abstract, Results", quote = "target INR 2.5 for aortic (Grade 1B)" },
+]
+
+[[range]]
+set = "chest-2012-valve"
+kind = "therapeutic"
+low = 3.0
+high = 3.0
+when = { condition = ["on-warfarin", "mechanical-mitral-valve"] }
+population = "adults with a mechanical mitral or double valve on long-term vitamin K antagonist therapy"
+evidence = "guideline"
+note = "Guideline states a single target INR of 3.0 (Grade 2C), not a range; low and high are set equal to encode the point target."
+citations = [
+  { pmid = "22315272", doi = "10.1378/chest.11-2305", title = "Antithrombotic and thrombolytic therapy for valvular disease: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.", locator = "Abstract, Results", quote = "3.0 for mitral or double valve (Grade 2C)" },
+]
+
+[[range]]
+set = "debre-berhan-2025"
+kind = "reference"
+low = 0.7
+high = 1.14
+when = { sex = "male", age_min = 18, age_max = 51 }
+population = "120 healthy male adults aged 18-50 in Debre Berhan town, Ethiopia, not anticoagulated (240 healthy adults in total)"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles, Sysmex CA-104 (reagent not named). Combined sexes 0.7-1.1. Ratio (INR), not seconds."
+citations = [
+  { pmid = "41275213", doi = "10.1186/s12959-025-00808-7", title = "Coagulation parameters reference interval for adult population of Debre Berhan town, Northeast Ethiopia.", locator = "Table 3", quote = "INR | M | 0.9(0.83–0.97) | 0.7–1.14 | 0.0006* | F | 0.84(0.8–0.92) | 0.7–1.12" },
+]
+
+[[range]]
+set = "debre-berhan-2025"
+kind = "reference"
+low = 0.7
+high = 1.12
+when = { sex = "female", age_min = 18, age_max = 51 }
+population = "120 healthy female adults aged 18-50 in Debre Berhan town, Ethiopia, not anticoagulated (240 healthy adults in total)"
+evidence = "reference-interval"
+note = "Non-parametric 2.5th-97.5th percentiles, Sysmex CA-104 (reagent not named). Ratio (INR), not seconds."
+citations = [
+  { pmid = "41275213", doi = "10.1186/s12959-025-00808-7", title = "Coagulation parameters reference interval for adult population of Debre Berhan town, Northeast Ethiopia.", locator = "Table 3", quote = "INR | M | 0.9(0.83–0.97) | 0.7–1.14 | 0.0006* | F | 0.84(0.8–0.92) | 0.7–1.12" },
+]
