@@ -1,0 +1,43 @@
+slug = "tsi"
+name = "Thyroid Stimulating Immunoglobulin (TSI)"
+loinc = "30567-2"
+category = "thyroid"
+unit = "%"
+description = "Thyroid-stimulating immunoglobulin (TSI) bioassay: functional autoantibody that activates the TSH receptor, reported as a percentage of the assay reference. Tracked to diagnose Graves' disease, to predict relapse after antithyroid drug withdrawal, and to follow thyroid eye disease activity. No published healthy-population reference interval was verified; expected result in a person without Graves' disease is below the assay positivity cut-off."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 140
+population = "Patients with recent-onset symptomatic thyroid eye disease (single cohort, cited study); TSI result expressed as specimen-to-reference ratio"
+evidence = "outcome-study"
+when = { conditions = ["thyroid-eye-disease"] }
+note = "Positivity cut-off used by the cited study (result considered positive at or above 140%). Single-study classification, not a guideline cut-off."
+citations = [
+  { pmid = "38847819", doi = "10.1530/ETJ-23-0129", title = "Epidemiology of thyroid-stimulating immunoglobulin in recent-onset symptomatic thyroid eye disease.", locator = "Methods (TSI measurement)", quote = "Results were considered positive if the specimen-to-reference ratio was greater or equal to 140%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.31
+unit = "IU/L"
+population = "Graves' disease patients on low-dose antithyroid drugs, followed after withdrawal (single retrospective cohort)"
+evidence = "outcome-study"
+when = { conditions = ["graves-disease"] }
+note = "Relapse-risk cut-off reported by the cited study (sensitivity 63.64%, specificity 78.79%). Not a diagnostic threshold. Reported in IU/L, the assay unit of that study."
+citations = [
+  { pmid = "41234232", doi = "10.3389/fendo.2025.1697122", title = "Thyroid-stimulating immunoglobulin levels during low-dose antithyroid therapy predict Graves' disease relapse.", locator = "Results", quote = "Independent relapse predictors included a TSI >=1.31 IU/L" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 66.5
+population = "Graves' disease patients after antithyroid drug withdrawal (single retrospective cohort, ROC analysis)"
+evidence = "outcome-study"
+when = { conditions = ["graves-disease"] }
+note = "Relapse prediction cut-off from the cited study's ROC analysis (57.0% sensitivity, 60.9% specificity, AUC 0.557): weak discrimination, not recommended as a decision threshold."
+citations = [
+  { pmid = "35441120", doi = "10.1210/jendso/bvac023", title = "The Prediction Model Using Thyroid-stimulating Immunoglobulin Bioassay For Relapse of Graves' Disease.", locator = "Results (Clinical values of the TBII assay and the TSI bioassay)", quote = "above the cutoff value (66.5%) to predict the relapse of GD showed 57.0% sensitivity and 60.9% specificity" },
+]

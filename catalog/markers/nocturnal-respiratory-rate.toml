@@ -1,0 +1,30 @@
+slug = "nocturnal-respiratory-rate"
+name = "Nocturnal Respiratory Rate"
+category = "wearable"
+unit = "breaths/min"
+loinc = "9286-6"
+description = "Mean breathing rate during sleep, measured by polysomnography, chest belts, Holter waveforms or consumer wearables. Tracked as a cardiopulmonary risk marker and as a possible early-warning signal. No verified adult reference interval was found in the sources checked; the cited cut-offs are 16 breaths/min (older adults, mortality risk) and 18 breaths/min (cardiomyopathy, ICD benefit)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 16
+population = "Community-dwelling older men and women (MrOS and SOF cohorts), overnight polysomnography"
+evidence = "cohort"
+citations = [
+  { pmid = "31151958", doi = "10.1183/13993003.02175-2018", title = "Mean nocturnal respiratory rate predicts cardiovascular and all-cause mortality in community-dwelling older men and women.", locator = "Abstract (Conclusion)" },
+]
+note = "Prognostic cut-off (dichotomised mean nocturnal respiratory rate at 16 breaths/min) for long-term cardiovascular and all-cause mortality. Not a diagnostic threshold. Source band >= 16; stored as the warn high bound 16."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 18
+when = { conditions = ["cardiomyopathy"] }
+population = "Patients with ischaemic or non-ischaemic cardiomyopathy meeting primary prophylactic ICD implantation criteria (EU-CERT-ICD sub-study), nocturnal respiratory rate from pre-implantation 24-hour Holter"
+evidence = "cohort"
+citations = [
+  { pmid = "33554086", doi = "10.1016/j.eclinm.2020.100695", title = "Nocturnal respiratory rate predicts ICD benefit: A prospective, controlled, multicentre cohort study.", locator = "Interpretation" },
+]
+note = "Threshold at which the mortality benefit of prophylactic ICD implantation was not demonstrated (interaction analysis, not a diagnostic value). Source band >= 18; stored as the warn high bound 18."

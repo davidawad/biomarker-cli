@@ -1,0 +1,18 @@
+slug = "coq10-nmol-l"
+name = "Coenzyme Q10 (nmol/L)"
+category = "vitamin"
+unit = "nmol/L"
+description = "Coenzyme Q10 reported in nmol/L. Results in nmol/L are assay specific and are not interchangeable with Coenzyme Q10 in umol/L."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 516.0
+when = { conditions = ["coronary-artery-disease"] }
+population = "Patients with at least 50% stenosis of one major coronary artery (case group, n = 45) compared with healthy controls with normal blood biochemistry (n = 89)"
+evidence = "cohort"
+citations = [
+  { pmid = "23146771", doi = "10.1016/j.nutres.2012.09.003", title = "A significant correlation between the plasma levels of coenzyme Q10 and vitamin B-6 and a reduced risk of coronary artery disease.", locator = "Abstract, Results" },
+]
+note = "Single observational case-control study threshold for plasma CoQ10 (nmol/L), reported as the cut-off above which risk of CAD was significantly lower after adjustment. Not a validated clinical cut-off; the study does not state how the threshold was chosen."

@@ -1,0 +1,44 @@
+slug = "free-thyroxine-index"
+name = "Free Thyroxine Index (FTI)"
+category = "thyroid"
+unit = "index"
+description = "Free thyroxine index (FT4I), a calculated thyroid index from total T4 and T3 resin uptake. Expected result in pregnancy: within the trimester-specific reference interval (5th to 95th percentile in healthy pregnant women); the index is unitless and assay-specific."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 8.5
+high = 19
+when = { pregnant = true, trimester = 1 }
+population = "Healthy pregnant women with singleton pregnancies, first trimester (iodine-sufficient area, Iran; thyroid disease, thyroid autoantibody positive and iodine deficient women excluded; n = 152 women across trimesters)"
+evidence = "reference-interval-study"
+note = "Trimester-specific reference interval for FT4I, defined by the source as the 5th to 95th percentiles (bootstrap method). Index scale is specific to the source's assay (TT4 and T3 resin uptake, immunoassay); not transferable to other labs' FTI scales. No non-pregnant interval is coded: none was verified."
+citations = [
+  { pmid = "23167270", doi = "10.1089/thy.2012.0407", title = "Establishment of the trimester-specific reference range for free thyroxine index.", locator = "Abstract (Results) and Methods", quote = "Reference intervals were defined as 5th and 95th percentiles, using the bootstrap-based procedure... Reference intervals in the first, second, and third trimesters were as follows (respectively): TSH-0.2-3.9, 0.5-4.1, and 0.6-4.1 mIU/L; TT4-8.2-18.5, 10.1-20.6, and 9-19.4 ug/dL; and FT4I-8.5-19, 9.7-21, and 8.7-20.4." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 9.7
+high = 21
+when = { pregnant = true, trimester = 2 }
+population = "Healthy pregnant women with singleton pregnancies, second trimester (iodine-sufficient area, Iran; thyroid disease, thyroid autoantibody positive and iodine deficient women excluded; n = 152 women across trimesters)"
+evidence = "reference-interval-study"
+note = "Trimester-specific reference interval for FT4I, defined by the source as the 5th to 95th percentiles (bootstrap method). Index scale is specific to the source's assay (TT4 and T3 resin uptake, immunoassay); not transferable to other labs' FTI scales."
+citations = [
+  { pmid = "23167270", doi = "10.1089/thy.2012.0407", title = "Establishment of the trimester-specific reference range for free thyroxine index.", locator = "Abstract (Results) and Methods", quote = "Reference intervals were defined as 5th and 95th percentiles, using the bootstrap-based procedure... Reference intervals in the first, second, and third trimesters were as follows (respectively): TSH-0.2-3.9, 0.5-4.1, and 0.6-4.1 mIU/L; TT4-8.2-18.5, 10.1-20.6, and 9-19.4 ug/dL; and FT4I-8.5-19, 9.7-21, and 8.7-20.4." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 8.7
+high = 20.4
+when = { pregnant = true, trimester = 3 }
+population = "Healthy pregnant women with singleton pregnancies, third trimester (iodine-sufficient area, Iran; thyroid disease, thyroid autoantibody positive and iodine deficient women excluded; n = 152 women across trimesters)"
+evidence = "reference-interval-study"
+note = "Trimester-specific reference interval for FT4I, defined by the source as the 5th to 95th percentiles (bootstrap method). Index scale is specific to the source's assay (TT4 and T3 resin uptake, immunoassay); not transferable to other labs' FTI scales."
+citations = [
+  { pmid = "23167270", doi = "10.1089/thy.2012.0407", title = "Establishment of the trimester-specific reference range for free thyroxine index.", locator = "Abstract (Results) and Methods", quote = "Reference intervals were defined as 5th and 95th percentiles, using the bootstrap-based procedure... Reference intervals in the first, second, and third trimesters were as follows (respectively): TSH-0.2-3.9, 0.5-4.1, and 0.6-4.1 mIU/L; TT4-8.2-18.5, 10.1-20.6, and 9-19.4 ug/dL; and FT4I-8.5-19, 9.7-21, and 8.7-20.4." },
+]

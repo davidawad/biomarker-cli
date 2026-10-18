@@ -1,0 +1,31 @@
+slug = "m-protein"
+name = "M-Protein (Serum Protein Electrophoresis)"
+category = "protein"
+unit = "g/dL"
+loinc = "33358-3"
+description = "Monoclonal (M) protein: a single, clonal immunoglobulin band seen on serum protein electrophoresis (SPEP) and quantified in g/dL. It is the marker used to detect and monitor monoclonal gammopathies such as MGUS, smoldering multiple myeloma and multiple myeloma. Expected result in a person without a plasma cell disorder: no M-protein band detected (negative)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 3
+when = { conditions = ["smoldering-multiple-myeloma"] }
+population = "Adults with smoldering multiple myeloma criteria (IMWG 2014 definition as stated in the cited paper)"
+evidence = "consensus"
+citations = [
+  { pmid = "42519532", doi = "10.2147/jbm.s599779", title = "Estimated Whole Blood Viscosity in Smoldering Multiple Myeloma: Preliminary Data from a Retrospective Single Center Analysis.", locator = "Full text, Introduction (paragraph on SMM definition)" },
+]
+note = "Serum M-protein of 3 g/dL or more, as stated for the IMWG 2014 smoldering multiple myeloma definition in the cited paper; the same paper states further required criteria that are not part of this range. Source kind: diagnostic. Source band >= 3; stored as the warn high bound 3."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 3
+when = { conditions = ["mgus"] }
+population = "Adults in a cohort study; M-protein case definition for monoclonal gammopathy of undetermined significance (SPEP and immunofixation positive)"
+evidence = "cohort"
+citations = [
+  { pmid = "41529215", doi = "10.1182/bloodadvances.2024015266", title = "A nested case-control study of monoclonal gammopathy of undetermined significance in the Multiethnic Cohort study.", locator = "Full text, MGUS case definition paragraph (Methods)" },
+]
+note = "Strictly below 3 g/dL: the case definition of MGUS in the cited cohort study. Source kind: diagnostic. Source band <= 3; stored as the warn low bound 3. Alternative to the default diagnostic warn range for the same population."

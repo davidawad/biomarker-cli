@@ -23,7 +23,7 @@ SOFT = {"method", "specimen", "setting", "test", "region"}
 
 def norm_unit(u):
     # kUA/L (allergen units) equal kU/L; mU/L equals mIU/L (international units)
-    u = u.replace("kUA/L", "kU/L").replace("mU/L", "mIU/L")
+    u = u.replace("kUA/L", "kU/L").replace("mU/L", "mIU/L").replace("uL(-1)", "/µL")
     return u.replace("μ", "µ").replace("mIU/l", "mIU/L").replace("/ml", "/mL").strip()
 
 
@@ -35,7 +35,8 @@ def T(slug, frm, to, f, o=0.0):
 CONV = dict([
     T("glucose", "mmol/L", "mg/dL", 18.016), T("hdl-c", "mmol/L", "mg/dL", 38.67), T("ldl-c", "mmol/L", "mg/dL", 38.67),
     T("non-hdl-c", "mmol/L", "mg/dL", 38.67), T("total-cholesterol", "mmol/L", "mg/dL", 38.67),
-    T("remnant-cholesterol", "mmol/L", "mg/dL", 38.67), T("triglycerides", "mmol/L", "mg/dL", 88.57),
+    T("remnant-cholesterol", "mmol/L", "mg/dL", 38.67),
+    T("ldl-c-direct", "mmol/L", "mg/dL", 38.67), T("ldl-c-martin-hopkins", "mmol/L", "mg/dL", 38.67), T("ldl-c-sampson", "mmol/L", "mg/dL", 38.67), T("triglycerides", "mmol/L", "mg/dL", 88.57),
     T("creatinine", "µmol/L", "mg/dL", 0.01131), T("bun", "mmol/L", "mg/dL", 2.801),
     T("bilirubin-total", "µmol/L", "mg/dL", 0.05848), T("bilirubin-direct", "µmol/L", "mg/dL", 0.05848),
     T("uric-acid", "µmol/L", "mg/dL", 0.01681), T("calcium", "mmol/L", "mg/dL", 4.008),
@@ -76,12 +77,43 @@ CONV = dict([
     # 1 MET = 3.5 mL O2/kg/min by definition
     T("vo2max", "METs", "mL/kg/min", 3.5),
     T("corrected-calcium", "mmol/L", "mg/dL", 4.008),
+    # 8-OHdG MW 283.24 g/mol, creatinine MW 113.12 g/mol: 1 nmol/mmol creatinine = 2.504 ng/mg creatinine
+    T("urine-8-ohdg", "nmol/mmol", "ng/mg creatinine", 2.504), T("urine-8-ohdg", "pmol/umol(creat)", "ng/mg creatinine", 2.504),
+    T("immature-granulocytes-abs", "/µL", "10^9/L", 0.001),  # 1000 per uL = 1 x10^9/L
+    T("bilirubin-transcutaneous", "µmol/L", "mg/dL", 0.05848), T("bilirubin-indirect", "µmol/L", "mg/dL", 0.05848),
+    T("testosterone-free-calculated", "nmol/L", "pg/mL", 288.42),  # testosterone MW 288.42
     # ng/L and pg/mL are numerically equal
     T("pth-intact", "ng/L", "pg/mL", 1),
     # total T4 MW 776.87: 1 nmol/L = 0.0777 ug/dL
     T("t4-total", "nmol/L", "µg/dL", 0.0777),
 ])
 CONV = {(s, norm_unit(u)): v for (s, u), v in CONV.items()}
+
+
+_MASS = {"": 1.0, "k": 1e3, "m": 1e-3, "µ": 1e-6, "u": 1e-6, "mc": 1e-6, "n": 1e-9, "p": 1e-12, "f": 1e-15}
+_VOL = {"": 1.0, "d": 0.1, "c": 0.01, "m": 1e-3, "µ": 1e-6, "u": 1e-6}
+_MV = re.compile(r"^(mc|k|m|µ|u|n|p|f)?g/(d|c|m|µ|u)?L$")
+
+
+_IU = re.compile(r"^(k|m|µ|u)?(IU|U)/(d|c|m|µ|u)?L$", re.I)
+# IU (WHO reference standard) and U (arbitrary assay unit) are equal only for enzyme activity
+ENZYME_SLUGS = {"alt", "ast", "alp", "ggt", "ldh", "ck", "amylase", "lipase"}
+
+
+def generic_factor(frm, to, enzyme=False):
+    """Exact factor between two mass-per-volume units (g, mg, ug, ng, pg over L, dL, mL) or two
+    international-unit-per-volume units (IU/L = U/L = mIU/mL), else None."""
+    iu_a, iu_b = _IU.match(norm_unit(frm)), _IU.match(norm_unit(to))
+    if iu_a and iu_b and (enzyme or iu_a.group(2).upper() == iu_b.group(2).upper()):
+        pre = lambda m: _MASS[(m.group(1) or "").lower()] if (m.group(1) or "").lower() != "m" else 1e-3
+        vol = lambda m: _VOL[(m.group(3) or "").lower()]
+        return (pre(iu_a) / vol(iu_a)) / (pre(iu_b) / vol(iu_b))
+    a, b = _MV.match(norm_unit(frm)), _MV.match(norm_unit(to))
+    if not (a and b):
+        return None
+    mass = lambda m: _MASS[m.group(1) or ""]
+    vol = lambda m: _VOL[m.group(2) or ""]
+    return (mass(a) / vol(a)) / (mass(b) / vol(b))
 
 
 def sig(x, n=4):
@@ -266,6 +298,30 @@ def build():
     for f in sorted(glob.glob(f"{SRC}/*.toml")):
         d = tomllib.load(open(f, "rb"))
         research[d["slug"]] = d
+    # A range whose source unit cannot be converted to the marker's unit measures a different
+    # quantity (vendor units, mass vs activity, ...). Move it to a companion marker in that unit
+    # instead of dropping it.
+    for slug in sorted(research):
+        rd = research[slug]
+        dest = norm_unit(ex[slug]["unit"] if slug in ex else rd["unit"])
+        keep, moved = [], {}
+        for r in rd.get("range", []):
+            u = norm_unit(r.get("unit", rd["unit"]))
+            gf = None if (u == dest or (slug, u) in CONV) else generic_factor(u, dest, slug in ENZYME_SLUGS)
+            if gf is not None:
+                CONV[(slug, u)] = (dest, gf, 0.0)
+            if u == dest or (slug, u) in CONV:
+                keep.append(r)
+            else:
+                moved.setdefault(u, []).append(r)
+        for u, rs in moved.items():
+            comp = f"{slug}-{slugify(u)}"
+            c = research.setdefault(comp, {
+                "slug": comp, "name": f"{rd['name']} ({u})", "category": rd["category"], "unit": u,
+                "description": f"{rd['name']} reported in {u}. Results in {u} are assay specific and are not interchangeable with {rd['name']} in {dest}.",
+                "range": []})
+            c["range"] += [{k: v for k, v in r.items() if k != "unit"} for r in rs]
+        rd["range"] = keep
     known = set(ex) | set(research)
     sets = {}
     conditions = {}
@@ -459,7 +515,7 @@ def build():
             if created:
                 text = text.replace(f"no_reference = {tv(NO_REF)}\n", "")
                 if not any(r["set"] == "clinical" and r["kind"] == "reference" for r in final):
-                    text = text.rstrip() + f"\nno_reference = {tv(NO_REF)}\n"
+                    text = text.rstrip() + f"\nno_reference = {tv(rd.get('no_reference', NO_REF))}\n"
             if "description" not in e and rd.get("description"):
                 text = re.sub(r"^(unit = .*\n)", lambda m: m.group(1) + f"description = {tv(rd['description'])}\n", text, count=1, flags=re.M)
             if "loinc" not in e and rd.get("loinc") and re.fullmatch(r"[0-9]{1,7}-[0-9]", rd["loinc"]):

@@ -1,0 +1,31 @@
+slug = "creatinine-clearance-ml-min-1-73-m2"
+name = "Creatinine Clearance (ml/min/1.73 m2)"
+category = "kidney"
+unit = "ml/min/1.73 m2"
+description = "Creatinine Clearance reported in ml/min/1.73 m2. Results in ml/min/1.73 m2 are assay specific and are not interchangeable with Creatinine Clearance in mL/min."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 60
+high = 119
+when = { sex = "female" }
+population = "Healthy adult blood donors (women); creatinine clearance predicted with the Cockcroft and Gault formula"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "10672373", title = "Adult reference ranges for serum cystatin C, creatinine and predicted creatinine clearance.", locator = "Abstract (Results)" },
+]
+note = "Predicted (Cockcroft-Gault) creatinine clearance indexed to 1.73 m2, not a measured clearance. 95% reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 57
+high = 122
+when = { sex = "male" }
+population = "Healthy adult blood donors (men); creatinine clearance predicted with the Cockcroft and Gault formula"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "10672373", title = "Adult reference ranges for serum cystatin C, creatinine and predicted creatinine clearance.", locator = "Abstract (Results)" },
+]
+note = "Predicted (Cockcroft-Gault) creatinine clearance indexed to 1.73 m2, not a measured clearance. 95% reference interval."

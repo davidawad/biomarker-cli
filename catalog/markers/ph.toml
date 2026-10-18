@@ -1,0 +1,7 @@
+slug = "ph"
+name = "pH, Arterial Blood"
+category = "metabolic"
+unit = "pH"
+loinc = "2744-1"
+description = "pH, Arterial Blood. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

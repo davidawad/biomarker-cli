@@ -1,45 +1,18 @@
 slug = "glycine"
 name = "Glycine"
-loinc = "2391-1"
-category = "amino-acid"
-unit = "µmol/L"
-description = "Non-essential amino acid measured in plasma as a free amino acid by LC-MS/MS. Glycine is a precursor for glutathione, creatine, purines and collagen."
+category = "chemistry"
+unit = "umol/L"
+description = "Plasma glycine, a proteinogenic amino acid measured by LC-MS/MS or chromatography."
 
 [[range]]
 set = "reference"
 kind = "reference"
-low = 95.3
-high = 397.7
-when = { ethnicity = "japanese" }
-population = "Healthy volunteers living in Japan, Japanese subpopulation (n=31; 16 male, 15 female; mean age 46.5 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma glycine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval). Sex-stratified values not reported in the table."
+low = 204.01
+high = 574.55
+when = { specimen = "plasma" }
+population = "Chinese healthy adults, plasma, LC-MS/MS"
+evidence = "reference-interval-study"
+note = "Reference interval established in a Chinese adult population (abstract-level source)."
 citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Gly | 246.4 ± 58.9 (95.3-397.7) | 240.1 ± 53.4 (119.1-381.0) | 229.0 ± 40.4 (166.1-326.0) |" },
-]
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 119.1
-high = 381.0
-when = { ethnicity = "korean" }
-population = "Healthy volunteers living in Japan, Korean subpopulation (n=36; 19 male, 17 female; mean age 37.2 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma glycine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Gly | 246.4 ± 58.9 (95.3-397.7) | 240.1 ± 53.4 (119.1-381.0) | 229.0 ± 40.4 (166.1-326.0) |" },
-]
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 166.1
-high = 326.0
-when = { ethnicity = "chinese" }
-population = "Healthy volunteers living in Japan, Chinese subpopulation (n=28; 13 male, 15 female; mean age 45.1 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma glycine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Gly | 246.4 ± 58.9 (95.3-397.7) | 240.1 ± 53.4 (119.1-381.0) | 229.0 ± 40.4 (166.1-326.0) |" },
+  { pmid = "37956824", doi = "10.1016/j.cca.2023.117650", title = "Simultaneous determination of human plasma 5 amino acid neurotransmitters using liquid chromatography-tandem mass spectrometry: Establishment of reference intervals in Chinese adult population and application to patients with schizophrenia.", locator = "Abstract", quote = "The reference interval for Glu, Asp, Gly, Tau, and GABA were 55.51-189.06, 27.51-92.38, 204.01-574.55, 107.50-227.65, and <1 umol/L, respectively." },
 ]

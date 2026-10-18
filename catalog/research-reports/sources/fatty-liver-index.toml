@@ -1,0 +1,39 @@
+slug = "fatty-liver-index"
+name = "Fatty Liver Index"
+category = "liver"
+unit = "index"
+description = "Score from 0 to 100 calculated from BMI, waist circumference, triglycerides and GGT that estimates the likelihood of fatty liver on ultrasound. A non-imaging screen, not a diagnosis. Below 30 rules out fatty liver; 60 or above rules it in."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 30
+population = "General population adults (Dionysos Nutrition & Liver Study), ultrasound-defined fatty liver"
+evidence = "outcome-study"
+note = "Strictly below 30: rules out fatty liver (negative likelihood ratio 0.2)."
+citations = [
+  { pmid = "17081293", doi = "10.1186/1471-230X-6-33", title = "The Fatty Liver Index: a simple and accurate predictor of hepatic steatosis in the general population.", locator = "Abstract (Results)", quote = "A FLI < 30 (negative likelihood ratio = 0.2) rules out and a FLI > or = 60 (positive likelihood ratio = 4.3) rules in fatty liver." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 30
+high = 60
+population = "General population adults (Dionysos Nutrition & Liver Study), ultrasound-defined fatty liver"
+evidence = "outcome-study"
+note = "30 up to 60: between the rule-out and rule-in cut-offs. The source gives no classification for this band."
+citations = [
+  { pmid = "17081293", doi = "10.1186/1471-230X-6-33", title = "The Fatty Liver Index: a simple and accurate predictor of hepatic steatosis in the general population.", locator = "Abstract (Results)", quote = "A FLI < 30 (negative likelihood ratio = 0.2) rules out and a FLI > or = 60 (positive likelihood ratio = 4.3) rules in fatty liver." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 60
+population = "General population adults (Dionysos Nutrition & Liver Study), ultrasound-defined fatty liver"
+evidence = "outcome-study"
+note = "60 or above: rules in fatty liver (positive likelihood ratio 4.3)."
+citations = [
+  { pmid = "17081293", doi = "10.1186/1471-230X-6-33", title = "The Fatty Liver Index: a simple and accurate predictor of hepatic steatosis in the general population.", locator = "Abstract (Results)", quote = "A FLI < 30 (negative likelihood ratio = 0.2) rules out and a FLI > or = 60 (positive likelihood ratio = 4.3) rules in fatty liver." },
+]

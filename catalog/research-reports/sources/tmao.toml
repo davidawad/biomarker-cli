@@ -1,0 +1,44 @@
+slug = "tmao"
+name = "Trimethylamine N-Oxide (TMAO)"
+loinc = "90360-9"
+category = "cardiac"
+unit = "µmol/L"
+description = "Gut-microbe-derived metabolite measured in plasma by LC-MS/MS or assay kit; studied as a cardiovascular and kidney risk marker. Expected result for a healthy adult: within the population reference interval below. No single validated clinical cut-off is established; reference intervals differ by sex and by cohort and method."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.28
+high = 19.67
+when = { sex = "male" }
+population = "Community-based men aged 25-82 years free of clinical CVD, CKD and type 2 diabetes (PopGen control cohort); LC-MS/MS plasma TMAO"
+evidence = "reference-interval-study"
+note = "2.5th-97.5th percentile reference interval, men."
+citations = [
+  { pmid = "32084001", doi = "10.1515/cclm-2019-1146", title = "Trimethylamine-N-oxide (TMAO) determined by LC-MS/MS: distribution and correlates in the population-based PopGen cohort.", locator = "Abstract, Results", quote = "The median TMAO plasma concentration in men was 3.91 (Q1-Q3: 2.87-6.10) umol/L and the reference interval 1.28-19.67 umol/L (2.5th-97.5th percentile)." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.08
+high = 17.12
+when = { sex = "female" }
+population = "Community-based women aged 25-82 years free of clinical CVD, CKD and type 2 diabetes (PopGen control cohort); LC-MS/MS plasma TMAO"
+evidence = "reference-interval-study"
+note = "2.5th-97.5th percentile reference interval, women."
+citations = [
+  { pmid = "32084001", doi = "10.1515/cclm-2019-1146", title = "Trimethylamine-N-oxide (TMAO) determined by LC-MS/MS: distribution and correlates in the population-based PopGen cohort.", locator = "Abstract, Results", quote = "In women median TMAO plasma concentration was 3.56 (Q1-Q3: 2.41-5.15) umol/L and the reference interval 1.08-17.12 umol/L." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 5.72
+when = {}
+population = "Healthy adults in China (multicenter, 649 individuals); plasma TMAO with assay kit"
+evidence = "reference-interval-study"
+note = "Upper limit of the 95% reference interval only; the lower limit is not stated in the source."
+citations = [
+  { pmid = "40032200", doi = "10.1016/j.cca.2025.120223", title = "Plasma reference interval of Trimethylamine-N-oxide in healthy adults: A multicenter study using Trimethylamine-N-oxide assay kit for analysis and validation.", locator = "Abstract, Results", quote = "The 95 % reference interval for plasma TMAO is 5.72 uM, with a median of 1.70 uM and an interquartile range of 1.09-2.53 uM." },
+]

@@ -1,0 +1,7 @@
+slug = "lyme-ab"
+name = "Lyme Disease Antibody (Borrelia burgdorferi)"
+category = "infectious"
+unit = "qualitative"
+loinc = "20449-5"
+description = "Antibodies to Borrelia burgdorferi, the agent of Lyme disease, tested by a two-tier algorithm (ELISA or equivalent first, immunoblot to confirm). Tracked to diagnose Lyme disease after a tick bite with compatible symptoms. Expected result: negative (not detected) in people without past or current infection."
+no_reference = "Qualitative result under the two-tier CDC algorithm (immunoblot band criteria, not an analyte cut-off); no numeric reference interval applies."

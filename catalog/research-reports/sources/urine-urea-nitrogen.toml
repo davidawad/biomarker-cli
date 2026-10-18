@@ -1,0 +1,7 @@
+slug = "urine-urea-nitrogen"
+name = "Urine Urea Nitrogen"
+loinc = "3095-7"
+category = "urinalysis"
+unit = "mg/dL"
+description = "Urine Urea Nitrogen. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

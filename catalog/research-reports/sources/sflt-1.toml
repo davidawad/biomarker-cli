@@ -1,0 +1,7 @@
+slug = "sflt-1"
+name = "Soluble fms-like Tyrosine Kinase-1 (sFlt-1)"
+loinc = "74756-8"
+category = "pregnancy"
+unit = "pg/mL"
+description = "Soluble fms-like Tyrosine Kinase-1 (sFlt-1). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

@@ -1,0 +1,7 @@
+slug = "igg-subclass-1"
+name = "IgG Subclass 1"
+loinc = "2466-1"
+category = "immune"
+unit = "g/L"
+description = "IgG Subclass 1. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

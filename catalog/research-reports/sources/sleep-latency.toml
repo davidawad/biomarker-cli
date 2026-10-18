@@ -1,0 +1,17 @@
+slug = "sleep-latency"
+name = "Sleep Latency"
+category = "sleep"
+unit = "min"
+description = "Time from lights-out or going to bed until the onset of sleep, in minutes. Tracked to assess how quickly a person falls asleep and as one of the criteria for insomnia. Expected result for most adults is a short latency; a usual or average latency of 20 minutes or longer is the research cut-off used to classify primary insomnia, so values under that are below it."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+unit = "min"
+population = "Adults; average sleep-onset latency over 2 weeks of sleep-log data, primary insomnia vs normal sleepers"
+evidence = "outcome-study"
+note = "Research classification cut-off for primary insomnia (sensitivity 94.4%, specificity 79.6% in that study); 20 min or longer is the flagged value. Not a population reference interval."
+citations = [
+  { pmid = "16676781", doi = "10.1093/sleep/29.4.479", title = "Defining insomnia: quantitative criteria for insomnia severity and frequency.", locator = "Abstract, Results", quote = "cutoff of 20 minutes or longer over 2 weeks of sleep-log monitoring appeared to best maximize sensitivity (94.4%) and specificity (79.6%) for insomnia classification" },
+]

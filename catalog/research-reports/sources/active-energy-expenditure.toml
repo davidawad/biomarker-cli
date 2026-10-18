@@ -1,0 +1,6 @@
+slug = "active-energy-expenditure"
+name = "Active Energy Expenditure"
+category = "wearable"
+unit = "kcal"
+description = "Energy burned through movement above resting metabolism, in kcal per day, estimated by wearables. Tracked for activity and weight-management goals. Expected result: no fixed target was verified."
+no_reference = "No numeric reference interval was verified for this wearable-derived energy measure."

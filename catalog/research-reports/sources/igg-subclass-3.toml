@@ -1,0 +1,18 @@
+slug = "igg-subclass-3"
+name = "IgG Subclass 3"
+loinc = "2468-7"
+category = "immune"
+unit = "g/L"
+description = "Serum concentration of immunoglobulin G subclass 3, one of the four IgG subclasses that make up total IgG. Tracked when evaluating antibody deficiency. Expected result: within the reference interval."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.08
+high = 0.80
+population = "Healthy adults aged 18-85 years (n=636), Chinese, measured by Siemens immunonephelometry"
+evidence = "reference-interval-study"
+note = "Adult reference interval as reported by the authors (2.5th-97.5th percentile). Siemens assay; no significant sex or age difference reported."
+citations = [
+  { pmid = "29042863", doi = "10.1186/s13223-017-0216-7", title = "Adult reference intervals for IgG subclasses with Siemens immunonephelometric assays in Chinese population.", url = "https://pubmed.ncbi.nlm.nih.gov/29042863/", locator = "Abstract, Results", quote = "IgGSc reference intervals were as follows: IgG1 4.45-9.76 g/L, IgG2 2.07-8.57 g/L, IgG3 0.08-0.80 g/L and IgG4 0.05-1.54 g/L." },
+]

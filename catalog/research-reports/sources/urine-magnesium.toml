@@ -1,0 +1,21 @@
+slug = "urine-magnesium"
+name = "Urine Magnesium"
+loinc = "19124-7"
+category = "urinalysis"
+unit = "mg/24h"
+description = "Magnesium excreted in urine, usually collected over 24 hours to assess magnesium handling and kidney stone risk (hypomagnesuria). Expected result: at or above the hypomagnesuria cut-off in the range below. Ranges are copied in the units the sources state; the mmol/day cut-off is a companion unit."
+no_reference = "No general reference interval for 24-hour urine magnesium was verifiable; the only range is a stone-risk cut-off."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 3
+unit = "mmol/day"
+when = { conditions = ["kidney-stones"] }
+population = "Adults assessed for kidney stone risk on 24-hour urine (urolithiasis clinic patients and post-bariatric surgery patients in the cited observational studies); not a population reference interval"
+evidence = "outcome-study"
+note = "Hypomagnesuria, a stone risk factor: strictly below 3 mmol/day on 24-hour urine. The cited papers attribute the cut-off to the EAU urolithiasis guideline; it is cited here from the observational papers that state it."
+citations = [
+  { pmid = "41606098", doi = "10.1038/s41598-026-37440-y", title = "24-hour urine chemistry shows higher stone formation risk after malabsorptive than restrictive type bariatric surgery.", locator = "Methods", quote = "hypomagnesuria (< 3 mmol/day)" },
+  { pmid = "32395325", doi = "10.5173/ceju.2020.0051", title = "Metabolic evaluation in urolithiasis - study of the prevalence of metabolic abnormalities in a tertiary centre.", locator = "Table 2", quote = "Hypomagnesuria (<3 mmol/day)" },
+]

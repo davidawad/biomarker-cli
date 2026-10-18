@@ -1,0 +1,30 @@
+slug = "hepcidin"
+name = "Hepcidin-25"
+loinc = "71386-7"
+category = "iron"
+unit = "ng/mL"
+description = "Iron-regulatory hormone measured in serum. No verified population reference interval was found in the sources checked; the cited values are diagnostic cut-offs for iron deficiency anemia from one Indian cohort, where a hepcidin value at or below the cut-off indicates high likelihood of iron deficiency anemia."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 6.8
+when = { conditions = ["iron-deficiency-anemia"] }
+population = "Community-dwelling Indian preschool children with and without iron deficiency anemia"
+evidence = "outcome-study"
+note = "Iron deficiency anemia, high diagnostic likelihood (likelihood ratio 14.3): hepcidin at or below 6.8 ng/mL."
+citations = [
+  { pmid = "30093400", doi = "10.3324/haematol.2018.193243", title = "Optimizing diagnostic biomarkers of iron deficiency anemia in community-dwelling Indian women and preschool children.", locator = "Abstract (Results)", quote = "Hepcidin cut-off values of <=6.8ng/mL in children and <=4.5ng/mL in women were associated with a high diagnostic likelihood for iron deficiency anemia" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 4.5
+when = { sex = "female", conditions = ["iron-deficiency-anemia"] }
+population = "Community-dwelling Indian women with and without iron deficiency anemia"
+evidence = "outcome-study"
+note = "Iron deficiency anemia, high diagnostic likelihood (likelihood ratio 16.2): hepcidin at or below 4.5 ng/mL."
+citations = [
+  { pmid = "30093400", doi = "10.3324/haematol.2018.193243", title = "Optimizing diagnostic biomarkers of iron deficiency anemia in community-dwelling Indian women and preschool children.", locator = "Abstract (Results)", quote = "Hepcidin cut-off values of <=6.8ng/mL in children and <=4.5ng/mL in women were associated with a high diagnostic likelihood for iron deficiency anemia" },
+]

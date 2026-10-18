@@ -1,0 +1,19 @@
+slug = "deamidated-gliadin-igg"
+name = "Deamidated Gliadin IgG"
+loinc = "109391-3"
+category = "autoimmune"
+unit = "AU/mL"
+description = "IgG antibody against synthetic deamidated gliadin peptides (DGP), measured by immunoassay. Used as a serologic test for celiac disease, including in people with IgA deficiency or in whom tTG-IgA is unreliable. Results are assay-specific and reported against a manufacturer or study cut-off. Expected result: negative (below the cut-off)."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 119
+unit = "AU"
+population = "Children with biopsy-confirmed celiac disease (n = 92) compared with TGA-negative HLA-DQ2 or DQ8 children (n = 82)"
+evidence = "outcome-study"
+note = "Optimal ROC cut-off for IgG anti-DGP positivity (time-resolved immunofluorometric assay), single study in children. Sensitivity 97.8%, specificity 97.6% at this cut-off."
+when = { conditions = ["celiac-disease"], method = "tr-ifma" }
+citations = [
+  { pmid = "25522308", doi = "10.1097/MPG.0000000000000666", title = "Antibodies to deamidated gliadin peptide in diagnosis of celiac disease in children.", locator = "Abstract (Results)", quote = "and that for IgG anti-DGP 119 AU, with a sensitivity of 97.8% and specificity of 97.6%" },
+]

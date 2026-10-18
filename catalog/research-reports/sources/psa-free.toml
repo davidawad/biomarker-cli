@@ -1,0 +1,19 @@
+slug = "psa-free"
+name = "Free PSA"
+loinc = "10886-0"
+category = "tumor-marker"
+unit = "%"
+description = "Free PSA, reported as the percentage of free to total PSA, used with total PSA to assess prostate cancer risk and biopsy need. Expected result: a percentage where lower values carry higher risk; a percentage cut-off applies to men with total PSA in the cited range."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 25
+unit = "%"
+when = { conditions = ["suspected-prostate-cancer"] }
+population = "Men aged 50 to 75 years with total PSA 4.0 to 10.0 ng/mL and a palpably benign prostate gland (cohort in the cited study)"
+evidence = "outcome-study"
+note = "Biopsy cut-off as recommended by the source: 25% or less free PSA (strictly at or below 25)."
+citations = [
+  { pmid = "9605898", doi = "10.1001/jama.279.19.1542", title = "Use of the percentage of free prostate-specific antigen to enhance differentiation of prostate cancer from benign prostatic disease: a prospective multicenter clinical trial.", locator = "Abstract, Conclusions", quote = "A cutoff of 25% or less free PSA is recommended for patients with PSA values between 4.0 and 10.0 ng/mL and a palpably benign gland" },
+]

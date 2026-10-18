@@ -1,0 +1,28 @@
+slug = "ldl-size"
+name = "LDL Particle Size"
+category = "lipid"
+unit = "nm"
+description = "Average diameter of LDL particles in nanometres, calculated from LDL composition. In one cohort study, both larger and smaller average LDL diameters than the intermediate category were associated with higher mortality. No population reference interval was verified; the ranges below are single-study outcome classification cut-offs."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 16.5
+population = "Patients referred to coronary angiography, not on lipid-lowering drugs (Ludwigshafen Risk and Cardiovascular Health Study, n = 1643) (method: beta-quantification)"
+evidence = "cohort"
+citations = [
+  { pmid = "24569029", doi = "10.1093/eurheartj/ehu055", title = "Low-density lipoprotein particle diameter and mortality: the Ludwigshafen Risk and Cardiovascular Health Study.", locator = "Abstract, Results" },
+]
+note = "Small average LDL diameter (strictly below 16.5 nm) versus intermediate reference category (16.5-16.8 nm). Diameter calculated from beta-quantification LDL composition, not NMR. Hazard ratio for cardiovascular death 1.54 (95% CI 1.06-2.12). Source band <= 16.5; stored as the warn low bound 16.5."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 16.8
+population = "Patients referred to coronary angiography, not on lipid-lowering drugs (Ludwigshafen Risk and Cardiovascular Health Study, n = 1643) (method: beta-quantification)"
+evidence = "cohort"
+citations = [
+  { pmid = "24569029", doi = "10.1093/eurheartj/ehu055", title = "Low-density lipoprotein particle diameter and mortality: the Ludwigshafen Risk and Cardiovascular Health Study.", locator = "Abstract, Results" },
+]
+note = "Large average LDL diameter (strictly above 16.8 nm) versus intermediate reference category (16.5-16.8 nm). Diameter calculated from beta-quantification LDL composition, not NMR. Hazard ratio for cardiovascular death 1.89 (95% CI 1.32-2.70). Source band >= 16.8; stored as the warn high bound 16.8. Alternative to the default clinical warn range for the same population."

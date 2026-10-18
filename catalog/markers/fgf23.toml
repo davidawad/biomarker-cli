@@ -1,0 +1,44 @@
+slug = "fgf23"
+name = "Fibroblast Growth Factor 23 (Intact)"
+category = "bone"
+unit = "pg/mL"
+loinc = "54390-0"
+description = "Intact fibroblast growth factor 23 (FGF23), a bone-derived phosphaturic hormone essential for phosphate homeostasis. Measured to evaluate FGF23-related disorders such as hypophosphatemic rickets and tumor-induced osteomalacia, where elevated levels are found. Reference intervals are assay-specific; the ranges below use the LIAISON XL chemiluminescent immunoassay. Expected result: within the healthy reference interval for the assay and age."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 28.04
+high = 100.33
+population = "Healthy Korean adults aged 20-79 years (n=386), LIAISON XL intact FGF23 assay, all ages combined (method: liaison-xl)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41869037", doi = "10.3389/fendo.2026.1730871", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13002424/", title = "Reference intervals for intact FGF 23 in healthy Korean adults: lower concentrations in young adulthood require age-specific partitioning.", locator = "Results; Table 1" },
+]
+note = "Overall nonparametric 2.5th-97.5th percentile reference interval (primary, per CLSI EP28-A3c). Age-partitioned intervals are separate ranges; sex partitioning was not supported."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 25.73
+high = 78.76
+when = { age = [20.0, 30.0] }
+population = "Healthy Korean adults aged 20-29 years, LIAISON XL intact FGF23 assay (method: liaison-xl)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41869037", doi = "10.3389/fendo.2026.1730871", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13002424/", title = "Reference intervals for intact FGF 23 in healthy Korean adults: lower concentrations in young adulthood require age-specific partitioning.", locator = "Results; Table 1" },
+]
+note = "Age-partitioned 2.5th-97.5th percentile reference interval (Harris-Boyd partitioning; Table 1, nonparametric)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 32.01
+high = 107.0
+when = { age = [30.0, 200] }
+population = "Healthy Korean adults aged 30-79 years, LIAISON XL intact FGF23 assay (method: liaison-xl)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41869037", doi = "10.3389/fendo.2026.1730871", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13002424/", title = "Reference intervals for intact FGF 23 in healthy Korean adults: lower concentrations in young adulthood require age-specific partitioning.", locator = "Results; Table 1" },
+]
+note = "Age-partitioned 2.5th-97.5th percentile reference interval (Harris-Boyd partitioning; Table 1, nonparametric)."

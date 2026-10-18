@@ -1,0 +1,54 @@
+slug = "urine-orotic-acid"
+name = "Orotic Acid, Urine"
+category = "organic-acid"
+unit = "mmol/mol creatinine"
+loinc = "2686-4"
+description = "Urinary orotic acid, an intermediate of pyrimidine synthesis. Measured to screen for and differentiate hereditary orotic aciduria and urea cycle or basic amino acid transporter defects that cause hyperammonemia. Expected result: at or below the age-specific upper reference limit; values above it prompt further workup. Excretion is higher in infants and falls with age."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 3.44
+when = { age = [0.0, 1.0] }
+population = "Apparently healthy subjects aged three days to 1 year"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22019295", doi = "10.1016/j.jchromb.2011.09.054", title = "Reference intervals for orotic acid in urine, plasma and dried blood spot using hydrophilic interaction liquid chromatography-tandem mass spectrometry.", locator = "Abstract" },
+]
+note = "Upper reference limit (99th percentile) only; the study reports no lower limit. Group 1 of the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 1.3
+when = { age = [1.0, 13.0] }
+population = "Apparently healthy subjects aged 1 to 12 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22019295", doi = "10.1016/j.jchromb.2011.09.054", title = "Reference intervals for orotic acid in urine, plasma and dried blood spot using hydrophilic interaction liquid chromatography-tandem mass spectrometry.", locator = "Abstract" },
+]
+note = "Upper reference limit (99th percentile) only; the study reports no lower limit. Group 2 of the source; the abstract writes the band as 1 year to 12 years."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 0.64
+when = { age = [13.0, 20.0] }
+population = "Apparently healthy subjects aged 13 to 19 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22019295", doi = "10.1016/j.jchromb.2011.09.054", title = "Reference intervals for orotic acid in urine, plasma and dried blood spot using hydrophilic interaction liquid chromatography-tandem mass spectrometry.", locator = "Abstract" },
+]
+note = "Upper reference limit (99th percentile) only; the study reports no lower limit. Group 3 of the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 1.21
+when = { age = [20.0, 41.0] }
+population = "Apparently healthy adults aged 20 to 40 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22019295", doi = "10.1016/j.jchromb.2011.09.054", title = "Reference intervals for orotic acid in urine, plasma and dried blood spot using hydrophilic interaction liquid chromatography-tandem mass spectrometry.", locator = "Abstract" },
+]
+note = "Upper reference limit (99th percentile) only; the study reports no lower limit. Group 4 of the source."

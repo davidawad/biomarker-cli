@@ -1,0 +1,7 @@
+slug = "stool-ova-parasites"
+name = "Stool Ova and Parasites"
+category = "infectious"
+unit = "qualitative"
+loinc = "10701-1"
+description = "Microscopic examination of stool for helminth eggs (ova), larvae, and protozoan parasites, usually after concentration and staining, reported as seen or not seen by organism. Tracked to diagnose intestinal parasitic infection in people with diarrhea, abdominal symptoms, or travel or exposure history. Expected result: no ova or parasites seen (negative)."
+no_reference = "Qualitative result (organisms seen or not seen); no numeric reference interval applies."

@@ -1,0 +1,44 @@
+slug = "immature-granulocytes-abs"
+name = "Immature Granulocytes (Absolute)"
+loinc = "51584-1"
+category = "hematology"
+unit = "10^9/L"
+description = "Absolute count of immature granulocytes (myelocytes, metamyelocytes and promyelocytes) per litre of blood, reported by automated haematology analysers. Raised counts are seen with bacterial infection, sepsis, inflammation, pregnancy, glucocorticoid or chemotherapy use, and haematologic malignancy. Expected result in healthy people: within the reference interval, typically a very small count."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.01
+high = 0.04
+population = "25,431 routine laboratory records (16,122 females, 9309 males) from a tertiary-care hospital, Sysmex XN-1000, indirect laboratory-information-system derivation with 2.5th-97.5th percentiles; sexes pooled"
+evidence = "reference-interval-study"
+note = "Indirect LIS-based local reference interval; the authors state it is without individual clinical verification. Sexes pooled by the source."
+citations = [
+  { pmid = "42470060", doi = "10.1097/MD.0000000000049832", title = "Local reference intervals for MacroR, MicroR, IG% and IG# on Sysmex XN-1000: A retrospective indirect LIS-based study.", locator = "Abstract, Results", quote = "RIs of 0.01 to 0.04 x 109/L for IG#" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 40.0
+unit = "uL(-1)"
+when = { age_max = 11 }
+population = "Outpatients up to the age of 10 years (source split at 10 years, encoded as integer ages below 11); 1-tailed upper reference limit recommended by the source for routine outpatient use; no male-female difference reported"
+evidence = "reference-interval-study"
+note = "Upper reference limit in per-microlitre units as the source states it (40.0 per uL equals 0.04 x 10^9/L). Age split encoded as age_max = 11 for ages up to and including 10. Based on more than 2400 outpatient samples."
+citations = [
+  { pmid = "21466364", doi = "10.5858/2010-0258-OA.1", title = "Age-dependent reference ranges for automated assessment of immature granulocytes and clinical significance in an outpatient setting.", locator = "Abstract, Results", quote = "0.30%/40.0 uL(-1) (<=10 years) and 0.90%/70.0 uL(-1) (>10 years)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 70.0
+unit = "uL(-1)"
+when = { age_min = 11 }
+population = "Outpatients above the age of 10 years (source split at 10 years, encoded as integer ages from 11); 1-tailed upper reference limit recommended by the source for routine outpatient use; no male-female difference reported"
+evidence = "reference-interval-study"
+note = "Upper reference limit in per-microlitre units as the source states it (70.0 per uL equals 0.07 x 10^9/L). Age split encoded as age_min = 11 for ages above 10. Based on more than 2400 outpatient samples."
+citations = [
+  { pmid = "21466364", doi = "10.5858/2010-0258-OA.1", title = "Age-dependent reference ranges for automated assessment of immature granulocytes and clinical significance in an outpatient setting.", locator = "Abstract, Results", quote = "0.30%/40.0 uL(-1) (<=10 years) and 0.90%/70.0 uL(-1) (>10 years)" },
+]

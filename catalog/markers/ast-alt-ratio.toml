@@ -1,0 +1,51 @@
+slug = "ast-alt-ratio"
+name = "AST/ALT Ratio (De Ritis)"
+category = "liver"
+unit = "ratio"
+loinc = "1916-6"
+description = "Ratio of aspartate aminotransferase to alanine aminotransferase (AST/ALT), the De Ritis ratio. Used to help separate alcohol-related liver injury from nonalcoholic steatohepatitis and to flag possible cirrhosis. Expected result in a healthy adult is about 0.7 to 2.1; values below 1 suggest NASH and values of 2 or above suggest alcoholic liver disease."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.7
+high = 2.1
+population = "Healthy adults, Gandaki Province, Nepal (combined sexes)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Abstract" },
+]
+note = "Combined 95% reference interval for AST/ALT ratio in healthy adults."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 1
+population = "Adults with NASH or alcoholic liver disease (matched case-control study)"
+evidence = "cohort"
+citations = [
+  { pmid = "10201476", doi = "10.1111/j.1572-0241.1999.01006.x", title = "The ratio of aspartate aminotransferase to alanine aminotransferase: potential value in differentiating nonalcoholic steatohepatitis from alcoholic liver disease.", locator = "Abstract (Conclusions)" },
+]
+note = "Below 1: pattern suggesting NASH rather than alcoholic liver disease. Discriminates between the two; not a standalone diagnosis. Source kind: diagnostic. Source band <= 1; stored as the warn low bound 1."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 2
+population = "Adults with NASH or alcoholic liver disease (matched case-control study)"
+evidence = "cohort"
+citations = [
+  { pmid = "10201476", doi = "10.1111/j.1572-0241.1999.01006.x", title = "The ratio of aspartate aminotransferase to alanine aminotransferase: potential value in differentiating nonalcoholic steatohepatitis from alcoholic liver disease.", locator = "Abstract (Conclusions)" },
+]
+note = "2 or above: strongly suggestive of alcoholic liver disease. Source kind: diagnostic. Source band >= 2; stored as the warn high bound 2. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+high = 1.0
+population = "Adults with biopsy-staged chronic nonalcoholic liver disease (single study)"
+evidence = "cohort"
+citations = [
+  { pmid = "3135226", doi = "10.1016/s0016-5085(88)80022-2", title = "Ratio of serum aspartate to alanine aminotransferase in chronic hepatitis. Relationship to cirrhosis.", locator = "Abstract" },
+]
+note = "Strictly above 1.0 in nonalcoholic liver disease: suggests cirrhosis. The source notes the ratio is less helpful in the presence of cirrhosis. Not validated for other etiologies. Source kind: diagnostic. Source band >= 1.0; stored as the warn high bound 1.0. Alternative to the default diagnostic warn range for the same population."

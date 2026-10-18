@@ -1,0 +1,17 @@
+slug = "b2gp1-igm"
+name = "Beta-2 Glycoprotein I IgM Antibody"
+category = "autoimmune"
+unit = "AU/mL"
+loinc = "16136-4"
+description = "IgM autoantibody against beta-2 glycoprotein I, measured by solid-phase immunoassay (ELISA, chemiluminescence, or fluorescence enzyme immunoassay). Used as a laboratory criterion for antiphospholipid syndrome, alongside anticardiolipin and lupus anticoagulant testing. Results are assay-specific and reported as units against an assay cut-off. Expected result: negative (below the assay cut-off)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 12
+population = "Blood donors (n = 266), in-house 99th percentile cut-off for the Phadia/EliA assay (method: phadia-elia)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29848159", doi = "10.1177/0961203318776105", title = "Revisiting the Phadia/EliA cut-off values for anticardiolipin and anti-β2-glycoprotein I antibodies: a systematic evaluation according to the guidelines.", locator = "Abstract (Results)" },
+]
+note = "Upper reference limit (99th percentile) for beta-2 glycoprotein I IgM on the Phadia/EliA assay. The study advises each laboratory to determine its own cut-offs."

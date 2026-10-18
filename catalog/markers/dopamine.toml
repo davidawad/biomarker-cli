@@ -1,0 +1,7 @@
+slug = "dopamine"
+name = "Dopamine (Plasma)"
+category = "adrenal"
+unit = "pg/mL"
+loinc = "2216-0"
+description = "Dopamine (Plasma). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

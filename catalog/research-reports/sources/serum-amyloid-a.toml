@@ -1,0 +1,18 @@
+slug = "serum-amyloid-a"
+name = "Serum Amyloid A"
+loinc = "48498-0"
+category = "inflammation"
+unit = "mg/L"
+description = "Acute-phase inflammation marker, used to track inflammation-mediated disease. Expected result for a healthy adult: at or below the upper reference limit of 11.0 mg/L (one Chinese reference-interval study, ages 20 to 79)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 11.0
+when = { age_min = 20, age_max = 80 }
+population = "Healthy Chinese adults aged 20 to 79 years (n = 2365); no sex difference found"
+evidence = "reference-interval-study"
+note = "Upper reference limit (95th percentile, CLSI C28-A3 / WS/T 402-2012); 90% CI of the upper limit 9.3 to 12.3 mg/L; latex immunoturbidimetry."
+citations = [
+  { pmid = "31724213", doi = "10.1002/jcla.23120", title = "Distribution of serum amyloid A and establishment of reference intervals in healthy adults.", locator = "Abstract (Objective and Results)", quote = "healthy Chinese adults 20-79 years of age ... the population reference interval for SAA was established as an upper limit of 11.0 mg/L (90% confidence interval: 9.3-12.3 mg/L)" },
+]

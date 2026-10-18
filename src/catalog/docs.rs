@@ -108,10 +108,9 @@ fn index_page(defs: &Defs, report: &LintReport) -> String {
     let mut s = String::from("# Biomarker catalog\n\n");
     let _ = writeln!(
         s,
-        "{} markers, {} ranges ({} cited). See [coverage](coverage.md) for the range coverage matrix.\n",
-        report.markers,
-        report.ranges,
-        report.coverage.iter().map(|c| c.cited).sum::<usize>()
+        "{} markers, {} ranges ({} cited), {} markers pending range research. See [coverage](coverage.md) for\n\
+         the range coverage matrix.\n",
+        report.markers, report.ranges, report.cited, report.pending
     );
     s.push_str("Range sets:\n\n");
     for set in &defs.sets {
@@ -185,6 +184,18 @@ fn coverage_page(defs: &Defs, report: &LintReport) -> String {
             "| [{0}]({0}.md) | {1} | {per_set} | {dims} | {2}/{3} |",
             c.marker, c.category, c.cited, c.ranges
         );
+    }
+    let pending: Vec<&str> = report.coverage.iter().filter(|c| c.pending).map(|c| c.marker.as_str()).collect();
+    if !pending.is_empty() {
+        let _ = write!(
+            s,
+            "\n## Pending\n\n{} markers have no verified range yet (`no_reference` starts with `pending:`; \
+             see catalog/research-reports/UNCOVERED.md):\n\n",
+            pending.len()
+        );
+        pending.iter().for_each(|m| {
+            let _ = writeln!(s, "* [{m}]({m}.md)");
+        });
     }
     if let Some(u) = &report.universe {
         let _ = write!(

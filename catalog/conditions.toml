@@ -340,3 +340,191 @@ name = "Statin therapy"
 [[condition]]
 slug = "short-bowel-syndrome"
 name = "Short bowel syndrome"
+
+[[condition]]
+slug = "hepatitis-c"
+name = "Hepatitis c"
+
+[[condition]]
+slug = "cardiomyopathy"
+name = "Cardiomyopathy"
+
+[[condition]]
+slug = "septic-shock"
+name = "Septic shock"
+
+[[condition]]
+slug = "stable-coronary-artery-disease"
+name = "Stable coronary artery disease"
+
+[[condition]]
+slug = "telomere-biology-disorder"
+name = "Telomere biology disorder"
+
+[[condition]]
+slug = "myasthenia-gravis"
+name = "Myasthenia gravis"
+
+[[condition]]
+slug = "systemic-mastocytosis"
+name = "Systemic mastocytosis"
+
+[[condition]]
+slug = "anca-associated-vasculitis"
+name = "Anca associated vasculitis"
+
+[[condition]]
+slug = "pernicious-anemia"
+name = "Pernicious anemia"
+
+[[condition]]
+slug = "primary-biliary-cholangitis"
+name = "Primary biliary cholangitis"
+
+[[condition]]
+slug = "antisynthetase-syndrome"
+name = "Antisynthetase syndrome"
+
+[[condition]]
+slug = "goodpasture-syndrome"
+name = "Goodpasture syndrome"
+
+[[condition]]
+slug = "autoimmune-hepatitis"
+name = "Autoimmune hepatitis"
+
+[[condition]]
+slug = "gad-antibody-neurological-disorder"
+name = "Gad antibody neurological disorder"
+
+[[condition]]
+slug = "antiphospholipid-syndrome"
+name = "Antiphospholipid syndrome"
+
+[[condition]]
+slug = "celiac-disease"
+name = "Celiac disease"
+
+[[condition]]
+slug = "metabolic-syndrome"
+name = "Metabolic syndrome"
+
+[[condition]]
+slug = "alzheimers-disease"
+name = "Alzheimers disease"
+
+[[condition]]
+slug = "beta-thalassemia-carrier"
+name = "Beta thalassemia carrier"
+
+[[condition]]
+slug = "dengue"
+name = "Dengue"
+
+[[condition]]
+slug = "immune-thrombocytopenia"
+name = "Immune thrombocytopenia"
+
+[[condition]]
+slug = "polycythemia-vera"
+name = "Polycythemia vera"
+
+[[condition]]
+slug = "preeclampsia"
+name = "Preeclampsia"
+
+[[condition]]
+slug = "sickle-cell-trait"
+name = "Sickle cell trait"
+
+[[condition]]
+slug = "acquired-methemoglobinemia"
+name = "Acquired methemoglobinemia"
+
+[[condition]]
+slug = "iron-deficiency"
+name = "Iron deficiency"
+
+[[condition]]
+slug = "iron-deficiency-anemia"
+name = "Iron deficiency anemia"
+
+[[condition]]
+slug = "cirrhosis"
+name = "Cirrhosis"
+
+[[condition]]
+slug = "newborn"
+name = "Newborn"
+
+[[condition]]
+slug = "al-amyloidosis"
+name = "Al amyloidosis"
+
+[[condition]]
+slug = "carcinoid-syndrome"
+name = "Carcinoid syndrome"
+
+[[condition]]
+slug = "mgus"
+name = "Mgus"
+
+[[condition]]
+slug = "smoldering-multiple-myeloma"
+name = "Smoldering multiple myeloma"
+
+[[condition]]
+slug = "obstructive-sleep-apnea"
+name = "Obstructive sleep apnea"
+
+[[condition]]
+slug = "pancreatic-exocrine-insufficiency"
+name = "Pancreatic exocrine insufficiency"
+
+[[condition]]
+slug = "thyroid-eye-disease"
+name = "Thyroid eye disease"
+
+[[condition]]
+slug = "non-small-cell-lung-cancer"
+name = "Non small cell lung cancer"
+
+[[condition]]
+slug = "prostate-cancer"
+name = "Prostate cancer"
+
+[[condition]]
+slug = "acute-tubular-necrosis"
+name = "Acute tubular necrosis"
+
+[[condition]]
+slug = "cervical-cancer"
+name = "Cervical cancer"
+
+[[condition]]
+slug = "pelvic-mass"
+name = "Pelvic mass"
+
+[[condition]]
+slug = "prerenal-azotemia"
+name = "Prerenal azotemia"
+
+[[condition]]
+slug = "suspected-prostate-cancer"
+name = "Suspected prostate cancer"
+
+[[condition]]
+slug = "kidney-stones"
+name = "Kidney stones"
+
+[[condition]]
+slug = "nephrolithiasis"
+name = "Nephrolithiasis"
+
+[[condition]]
+slug = "sarcopenia-screening"
+name = "Sarcopenia screening"
+
+[[condition]]
+slug = "severe-microcephaly"
+name = "Severe microcephaly"

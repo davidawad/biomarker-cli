@@ -1,0 +1,7 @@
+slug = "ebv-vca-igg"
+name = "Epstein-Barr Virus VCA IgG"
+category = "infectious"
+unit = "qualitative"
+loinc = "20490-9"
+description = "IgG antibody to Epstein-Barr virus viral capsid antigen (VCA). Present during acute EBV infection and persists after it, so it indicates EBV exposure but cannot by itself date the infection; it is interpreted with VCA IgM and EBNA-1 IgG. Expected result: negative in people never exposed to EBV; positive in people with past or current infection."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

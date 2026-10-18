@@ -5467,3 +5467,289 @@ loinc_note = "no single LOINC code verified for this unit or derived form"
 category = "bone"
 priority = "specialist"
 derived = true
+
+[[marker]]
+slug = "anca-mpo-cu"
+name = "ANCA, Anti-MPO Antibody (chemiluminescence units)"
+loinc = ""
+loinc_note = "vendor-unit companion of anca-mpo"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anticardiolipin-igm-units"
+name = "Anticardiolipin IgM Antibody (units)"
+loinc = ""
+loinc_note = "vendor-unit companion of anticardiolipin-igm"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "b2gp1-igm-cu"
+name = "Beta-2 Glycoprotein I IgM Antibody (CU)"
+loinc = ""
+loinc_note = "vendor-unit companion of b2gp1-igm"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "b2gp1-igm-ru-ml"
+name = "Beta-2 Glycoprotein I IgM Antibody (RU/mL)"
+loinc = ""
+loinc_note = "vendor-unit companion of b2gp1-igm"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "deamidated-gliadin-igg-au"
+name = "Deamidated Gliadin IgG (AU)"
+loinc = ""
+loinc_note = "vendor-unit companion of deamidated-gliadin-igg"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+
+[[marker]]
+slug = "ia-2-antibodies-dk-units"
+name = "IA-2 Autoantibodies (ICA512) (DK units)"
+loinc = ""
+loinc_note = "vendor-unit companion of ia-2-antibodies"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+
+[[marker]]
+slug = "insulin-autoantibodies-au-ml"
+name = "Insulin Autoantibodies (AU/mL)"
+loinc = ""
+loinc_note = "vendor-unit companion of insulin-autoantibodies"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "insulin-autoantibodies-index"
+name = "Insulin Autoantibodies (index)"
+loinc = ""
+loinc_note = "vendor-unit companion of insulin-autoantibodies"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+
+
+
+
+[[marker]]
+slug = "myeloperoxidase-pmol-l"
+name = "Myeloperoxidase (MPO, inflammatory marker) (pmol/L)"
+loinc = ""
+loinc_note = "vendor-unit companion of myeloperoxidase"
+category = "inflammation"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "creatinine-clearance-ml-min-1-73-m2"
+name = "Creatinine Clearance (ml/min/1.73 m2)"
+loinc = ""
+loinc_note = "vendor-unit companion of creatinine-clearance"
+category = "kidney"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "mumps-igg-u-ml"
+name = "Mumps IgG (U/mL)"
+loinc = ""
+loinc_note = "vendor-unit companion of mumps-igg"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "sars-cov-2-spike-igg-au-ml"
+name = "SARS-CoV-2 Spike IgG Antibody (AU/mL)"
+loinc = ""
+loinc_note = "vendor-unit companion of sars-cov-2-spike-igg"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "sars-cov-2-spike-igg-ru-ml"
+name = "SARS-CoV-2 Spike IgG Antibody (RU/mL)"
+loinc = ""
+loinc_note = "vendor-unit companion of sars-cov-2-spike-igg"
+category = "infectious"
+priority = "specialist"
+derived = false
+
+
+[[marker]]
+slug = "urine-5-hiaa-umol-24h"
+name = "5-Hydroxyindoleacetic Acid (5-HIAA), Urine (umol/24h)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-5-hiaa"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-calcium-mmol-24h"
+name = "Urine Calcium (mmol/24h)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-calcium"
+category = "mineral"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-citrate-mg-1-73m2-24h"
+name = "Citrate, Urine (mg/1.73m2/24h)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-citrate"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-hva-mmol-mol-creatinine"
+name = "Homovanillic Acid (HVA), Urine (mmol/mol creatinine)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-hva"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-oxalate-mmol-d"
+name = "Oxalate, Urine (mmol/d)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-oxalate"
+category = "organic-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "tsi-iu-l"
+name = "Thyroid Stimulating Immunoglobulin (TSI) (IU/L)"
+loinc = ""
+loinc_note = "vendor-unit companion of tsi"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-jo-1-iu-l"
+name = "Anti-Jo-1 Antibody (IU/L)"
+loinc = ""
+loinc_note = "vendor-unit companion of anti-jo-1"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "ia-2-antibodies-iu-ml"
+name = "IA-2 Autoantibodies (ICA512) (IU/mL)"
+loinc = ""
+loinc_note = "vendor-unit companion of ia-2-antibodies"
+category = "autoimmune"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "arsenic-urine-nmol-l"
+name = "Arsenic, Total Urine (nmol/l)"
+loinc = ""
+loinc_note = "vendor-unit companion of arsenic-urine"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "mercury-urine-g-g-creatinine"
+name = "Mercury, Urine (µg/g creatinine)"
+loinc = ""
+loinc_note = "vendor-unit companion of mercury-urine"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "thallium-urine-umol-mol-creatinine"
+name = "Thallium, Urine (umol/mol creatinine)"
+loinc = ""
+loinc_note = "vendor-unit companion of thallium-urine"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "uranium-urine-ng-24h"
+name = "Uranium, Urine (ng/24h)"
+loinc = ""
+loinc_note = "vendor-unit companion of uranium-urine"
+category = "toxic-metal"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "coq10-nmol-l"
+name = "Coenzyme Q10 (nmol/L)"
+loinc = ""
+loinc_note = "vendor-unit companion of coq10"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-magnesium-mmol-day"
+name = "Urine Magnesium (mmol/day)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-magnesium"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-squamous-epithelial-cells-lpf"
+name = "Urine Squamous Epithelial Cells (/LPF)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-squamous-epithelial-cells"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-uric-acid-mg-day-1-73-m2"
+name = "Urine Uric Acid (mg/day/1.73 m2)"
+loinc = ""
+loinc_note = "vendor-unit companion of urine-uric-acid"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "deep-sleep-duration-of-tst"
+name = "Deep (N3) Sleep Duration (% of TST)"
+loinc = ""
+loinc_note = "vendor-unit companion of deep-sleep-duration"
+category = "sleep"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "rem-sleep-duration-of-tst"
+name = "REM Sleep Duration (% of TST)"
+loinc = ""
+loinc_note = "vendor-unit companion of rem-sleep-duration"
+category = "sleep"
+priority = "specialist"
+derived = false

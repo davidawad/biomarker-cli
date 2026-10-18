@@ -1,0 +1,7 @@
+slug = "sit-to-stand"
+name = "Sit-to-Stand Test (30 seconds)"
+loinc = "66247-8"
+category = "fitness"
+unit = "reps"
+description = "Sit-to-Stand Test (30 seconds). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

@@ -1,0 +1,16 @@
+slug = "mets-max"
+name = "Peak METs"
+category = "fitness"
+unit = "METs"
+description = "Peak metabolic equivalents achieved on a symptom-limited exercise treadmill test (cardiorespiratory fitness). Lower peak METs are associated with higher mortality and major adverse cardiovascular event (MACE) risk in cohort studies."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 6.0
+population = "US veterans referred for symptom-limited exercise tolerance testing, without prior MACE or evidence of ischemia"
+evidence = "outcome-study"
+note = "Peak METs below 6.0: MACE risk rises steeply below this level. Outcome threshold from a single cohort, not a diagnostic cut-off."
+citations = [
+  { pmid = "27876315", doi = "10.1016/j.mayocp.2016.09.013", title = "Cardiorespiratory Fitness and Incidence of Major Adverse Cardiovascular Events in US Veterans: A Cohort Study.", locator = "Results", quote = "The risk for MACE declined precipitously for those with a CRF level of 6.0 METs or higher." },
+]

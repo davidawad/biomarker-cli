@@ -1,0 +1,44 @@
+slug = "alpha-1-globulin"
+name = "Alpha-1 Globulin (SPEP)"
+category = "protein"
+unit = "g/dL"
+loinc = "13978-2"
+description = "Alpha-1 globulin fraction of serum protein electrophoresis (SPEP), reported as g/dL of serum. It contains alpha-1 antitrypsin and other acute-phase proteins, so it rises in inflammation and falls in some liver and protein-losing states. People track it when SPEP is ordered for protein abnormalities or inflammation. Expected result: within the reference interval for the patient's sex (about 0.30-0.50 g/dL combined in the cited adult study)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.3
+high = 0.5
+population = "Apparently healthy adults aged 18-65 years, Addis Ababa, Ethiopia (N=297; male 124, female 173); sexes combined"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36039308", doi = "10.2147/IJGM.S376450", title = "Establishment of Reference Intervals for Serum Protein Electrophoresis of Apparently Healthy Adults in Addis Ababa, Ethiopia.", locator = "Table 3, Alpha-1 rows, Combined sex, g/dL line" },
+]
+note = "Combined-sex 2.5th-97.5th percentile reference interval (CLSI EP28-A3c, non-parametric) as printed in Table 3 of the source. Source bounds are inclusive. Reference-interval study; single centre."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.21
+high = 0.5
+when = { sex = "male" }
+population = "Apparently healthy adults aged 18-65 years, Addis Ababa, Ethiopia (male, N=124)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36039308", doi = "10.2147/IJGM.S376450", title = "Establishment of Reference Intervals for Serum Protein Electrophoresis of Apparently Healthy Adults in Addis Ababa, Ethiopia.", locator = "Table 3, Alpha-1 rows, Male g/dL line" },
+]
+note = "Male 2.5th-97.5th percentile reference interval (CLSI EP28-A3c, non-parametric) as printed in Table 3 of the source. Reference-interval study; single centre."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.3
+high = 0.5
+when = { sex = "female" }
+population = "Apparently healthy adults aged 18-65 years, Addis Ababa, Ethiopia (female, N=173)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36039308", doi = "10.2147/IJGM.S376450", title = "Establishment of Reference Intervals for Serum Protein Electrophoresis of Apparently Healthy Adults in Addis Ababa, Ethiopia.", locator = "Table 3, Alpha-1 rows, Female g/dL line" },
+]
+note = "Female 2.5th-97.5th percentile reference interval (CLSI EP28-A3c, non-parametric) as printed in Table 3 of the source. Reference-interval study; single centre."

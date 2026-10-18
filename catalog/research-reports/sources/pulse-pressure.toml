@@ -1,0 +1,41 @@
+slug = "pulse-pressure"
+name = "Pulse Pressure"
+category = "vitals"
+unit = "mmHg"
+description = "Systolic minus diastolic blood pressure. Tracked as a marker of arterial stiffness and cardiovascular risk. No population reference interval was verified for this shard; the ranges below are cut-offs from single observational studies in specific patient groups."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 30
+population = "Adults admitted with heart failure (retrospective cohort, 21,768 patients, China)"
+evidence = "outcome-study"
+when = { conditions = ["heart-failure"] }
+note = "Low admission pulse pressure: strictly below 30 mmHg, associated with higher in-hospital mortality. Single-study cut-off."
+citations = [
+  { pmid = "42147065", doi = "10.3389/fcvm.2026.1747168", title = "Low admission pulse pressure and increased in-hospital mortality in patients with heart failure.", locator = "Abstract (Results)", quote = "PP <30 mmHg independently predicted both all-cause mortality" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 60
+population = "Adults admitted with heart failure (retrospective cohort, 21,768 patients, China)"
+evidence = "outcome-study"
+when = { conditions = ["heart-failure"] }
+note = "High admission pulse pressure: strictly above 60 mmHg. Study category, not a clinical threshold."
+citations = [
+  { pmid = "42147065", doi = "10.3389/fcvm.2026.1747168", title = "Low admission pulse pressure and increased in-hospital mortality in patients with heart failure.", locator = "Results (pulse pressure categories)", quote = "high PP (>60 mmHg; n = 5,328)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 60
+population = "Adults with stable coronary artery disease and normal ejection fraction (prospective cohort, 7,027 patients)"
+evidence = "outcome-study"
+when = { conditions = ["stable-coronary-artery-disease"] }
+note = "Highest pulse-pressure quartile (Q4) in the study cohort. Quartile boundary, not a clinical threshold."
+citations = [
+  { pmid = "42082683", doi = "10.1038/s44325-026-00118-5", title = "Pulse pressure associates with severity and worse outcomes in patients with stable coronary artery disease.", locator = "Figure 1 legend", quote = "Q4: >=60 mmHg" },
+]

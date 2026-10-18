@@ -1,0 +1,30 @@
+slug = "eosinophil-cationic-protein"
+name = "Eosinophil Cationic Protein"
+category = "allergy"
+unit = "µg/L"
+loinc = "25638-8"
+description = "Serum concentration of eosinophil cationic protein, a granule protein released by activated eosinophils. Tracked as a marker of eosinophilic airway and allergic inflammation, for example in asthma management. Expected result: below the reference upper limit for the age group; higher values indicate eosinophil activation."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.3
+high = 15.9
+population = "Apparently healthy individuals (n=100), serum; age not stated in the abstract (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "1742647", doi = "10.1111/j.1365-2222.1991.tb00847.x", url = "https://pubmed.ncbi.nlm.nih.gov/1742647/", title = "Radioimmunoassay of human eosinophil cationic protein (ECP) by an improved method. Establishment of normal levels in serum and turnover in vivo.", locator = "Abstract" },
+]
+note = "Range (95%) of serum ECP in apparently healthy individuals, as stated by the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 19.9
+when = { age = [1.0, 16.0] }
+population = "Healthy nonatopic, nonasthmatic children aged 1-15 years (n=123), serum, Royal Belfast Hospital for Sick Children (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "10604557", doi = "10.1034/j.1398-9995.1999.00137.x", url = "https://pubmed.ncbi.nlm.nih.gov/10604557/", title = "Serum eosinophil cationic protein (ECP): reference values in healthy nonatopic children.", locator = "Abstract, Results" },
+]
+note = "97.5th percentile of serum ECP, the upper reference limit stated in the source. Source ages 1-15 years encoded as age_min 1, age_max 16 (half-open)."

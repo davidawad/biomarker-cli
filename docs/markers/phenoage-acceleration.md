@@ -1,6 +1,6 @@
 # PhenoAge Acceleration (`phenoage-acceleration`)
 
-Difference between PhenoAge biological age and chronological age, in years. Zero means biological age equals chronological age; positive values mean older-than-expected biology.
+PhenoAge Acceleration. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range.
 
 | | |
 |---|---|
@@ -12,7 +12,7 @@ Difference between PhenoAge biological age and chronological age, in years. Zero
 
 ## Ranges
 
-No clinical reference range: Difference score with no published clinical reference interval; zero is the neutral point.
+No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
 
 No ranges yet.
 

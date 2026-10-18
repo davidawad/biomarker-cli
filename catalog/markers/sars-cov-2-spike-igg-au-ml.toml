@@ -1,0 +1,17 @@
+slug = "sars-cov-2-spike-igg-au-ml"
+name = "SARS-CoV-2 Spike IgG Antibody (AU/mL)"
+category = "infectious"
+unit = "AU/mL"
+description = "SARS-CoV-2 Spike IgG Antibody reported in AU/mL. Results in AU/mL are assay specific and are not interchangeable with SARS-CoV-2 Spike IgG Antibody in BAU/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 50.0
+population = "Healthcare workers after two doses of CoronaVac, Turkey (method: abbott-sars-cov-2-igg-ii-quant)"
+evidence = "cohort"
+citations = [
+  { pmid = "34019704", doi = "10.1002/jmv.27098", title = "Quantitation of antibodies against SARS-CoV-2 spike protein after two doses of CoronaVac in healthcare workers.", locator = "Abstract, Methods" },
+]
+note = "Positive on Abbott SARS-CoV-2 IgG II Quant, per the manufacturer cut-off as used in the cited study. Source kind: diagnostic. Source band >= 50.0; stored as the warn high bound 50.0."

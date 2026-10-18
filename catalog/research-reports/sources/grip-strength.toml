@@ -6,30 +6,6 @@ description = "Maximum voluntary force produced by squeezing a hand dynamometer,
 aliases = ["grip strength", "hand grip strength", "handgrip"]
 
 [[range]]
-set = "ewgsop2-2019"
-kind = "decision"
-high = 27
-when = { sex = "male" }
-population = "Older adults (European consensus); low strength cut-off in men"
-evidence = "consensus"
-note = "Low muscle strength if below 27 kg in men (strict less-than boundary). Table lists chair stand or grip strength cut-offs."
-citations = [
-  { pmid = "30312372", doi = "10.1093/ageing/afy169", title = "Sarcopenia: revised European consensus on definition and diagnosis.", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", locator = "Table 3, EWGSOP2 cut-off points for low strength", quote = "<27 kg" },
-]
-
-[[range]]
-set = "ewgsop2-2019"
-kind = "decision"
-high = 16
-when = { sex = "female" }
-population = "Older adults (European consensus); low strength cut-off in women"
-evidence = "consensus"
-note = "Low muscle strength if below 16 kg in women (strict less-than boundary)."
-citations = [
-  { pmid = "30312372", doi = "10.1093/ageing/afy169", title = "Sarcopenia: revised European consensus on definition and diagnosis.", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", locator = "Table 3, EWGSOP2 cut-off points for low strength", quote = "<16 kg" },
-]
-
-[[range]]
 set = "awgs-2019"
 kind = "decision"
 high = 28

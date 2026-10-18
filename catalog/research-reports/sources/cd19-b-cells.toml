@@ -1,0 +1,44 @@
+slug = "cd19-b-cells"
+name = "CD19 B Cells (Absolute)"
+loinc = "8116-6"
+category = "immune"
+unit = "cells/µL"
+description = "Absolute count of CD19-positive B lymphocytes per microlitre of blood, measured by flow cytometry. Used in immune deficiency work-up (low B-cell counts) and to monitor B-cell-directed therapy. Expected result in healthy adults: within the reference interval."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 85.2
+high = 501.6
+population = "351 healthy Brazilian adults aged 42-82 years (ELSA-Brasil); 2.5th and 97.5th percentiles; flow cytometry; overall (sex and age split not given in the abstract)"
+evidence = "reference-interval-study"
+note = "Absolute CD19+ B-cell reference interval, 2.5th-97.5th percentile. Inclusive bounds."
+citations = [
+  { pmid = "41124450", doi = "10.1590/1414-431X2025e14956", title = "Establishing the reference intervals for subpopulations of T lymphocytes, B lymphocytes, and natural killer cells: insight from the Brazilian Longitudinal Study of Adult Health (ELSA-Brasil).", locator = "Abstract", quote = "CD19+: 85.2-501.6 cells/uL, 5.6-21.0%" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 94.14
+high = 461.44
+when = { sex = "female" }
+population = "Healthy Polish adults (blood donors, over 18 years), female n = 31; 5th and 95th percentiles; flow cytometry"
+evidence = "reference-interval-study"
+note = "Female B-cell (CD19+) absolute count, 5th-95th percentile (central 90%, not 95%). Small sample (n = 31); provisional."
+citations = [
+  { pmid = "38812608", doi = "10.5114/ceji.2024.136371", title = "Reference values of lymphocyte subsets from healthy Polish adults.", locator = "Table 2 (B lymphocytes/CD19+ abs. count, Female)", quote = "Female | 236.98 | 99.44 | 17.86 | 205.30 | 94.14 | - | 461.44" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 132.03
+high = 680.32
+when = { sex = "male" }
+population = "Healthy Polish adults (blood donors, over 18 years), male n = 30; 5th and 95th percentiles; flow cytometry"
+evidence = "reference-interval-study"
+note = "Male B-cell (CD19+) absolute count, 5th-95th percentile (central 90%, not 95%). Small sample (n = 30); provisional."
+citations = [
+  { pmid = "38812608", doi = "10.5114/ceji.2024.136371", title = "Reference values of lymphocyte subsets from healthy Polish adults.", locator = "Table 2 (B lymphocytes/CD19+ abs. count, Male)", quote = "Male | 249.56 | 160.68 | 29,34 | 221.50 | 132.03 | - | 680.32" },
+]

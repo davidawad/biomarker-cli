@@ -1,0 +1,107 @@
+slug = "ldl-c-martin-hopkins"
+name = "LDL Cholesterol, Martin-Hopkins Calculated"
+category = "lipid"
+unit = "mg/dL"
+loinc = "96259-7"
+description = "LDL cholesterol calculated from the standard lipid profile (total cholesterol, HDL-C, triglycerides, non-HDL-C) by the Martin-Hopkins method. It replaces the Friedewald fixed triglyceride-to-VLDL-C factor of 5 with an adjustable factor taken from a 180-cell table of triglyceride and non-HDL-C strata (Martin et al., JAMA 2013). Calculated, not measured. Used for the same ATP III LDL-C categories and goals as measured LDL-C. Expected result for a healthy adult: below 100 mg/dL (optimal)."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 100
+when = { age = [20.0, 200] }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract" },
+]
+note = "Optimal: strictly below 100 mg/dL (ATP III), applied to calculated LDL-C."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 100
+high = 130
+when = { age = [20.0, 200] }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract" },
+]
+note = "Near optimal/above optimal, 100 to 129 mg/dL (ATP III), applied to calculated LDL-C. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "ldl-c-martin-hopkins-bands-130-160"
+kind = "reference"
+low = 130
+high = 160
+when = { age = [20.0, 200] }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract" },
+]
+note = "Borderline high, 130 to 159 mg/dL (ATP III), applied to calculated LDL-C. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "ldl-c-martin-hopkins-bands-160-190"
+kind = "reference"
+low = 160
+high = 190
+when = { age = [20.0, 200] }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract" },
+]
+note = "High, 160 to 189 mg/dL (ATP III), applied to calculated LDL-C. Source kind: diagnostic. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 190
+when = { age = [20.0, 200] }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract" },
+]
+note = "Very high, 190 mg/dL or above (ATP III), applied to calculated LDL-C. Source kind: diagnostic. Source band >= 190; stored as the warn high bound 190."
+
+[[range]]
+set = "target"
+kind = "optimal"
+high = 100
+population = "Adults with coronary heart disease or CHD risk equivalents"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4" },
+]
+note = "ATP III LDL-C goal (strictly below 100 mg/dL) for CHD and CHD risk equivalents, applied to calculated LDL-C. Applies only to: risk=chd-or-risk-equivalent. Source kind: target."
+
+[[range]]
+set = "alt-1"
+kind = "optimal"
+high = 130
+population = "Adults with two or more risk factors and 10-year CHD risk of 20% or less"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4" },
+]
+note = "ATP III LDL-C goal (strictly below 130 mg/dL) for two or more risk factors, applied to calculated LDL-C. Applies only to: risk=two-or-more-risk-factors. Source kind: target. Alternative to the default target optimal range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "optimal"
+high = 160
+population = "Adults with zero to one risk factor"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4" },
+]
+note = "ATP III LDL-C goal (strictly below 160 mg/dL) for zero to one risk factor, applied to calculated LDL-C. Applies only to: risk=zero-to-one-risk-factor. Source kind: target. Alternative to the default target optimal range for the same population."

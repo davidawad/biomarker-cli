@@ -1,0 +1,7 @@
+slug = "lupus-anticoagulant"
+name = "Lupus Anticoagulant"
+category = "coagulation"
+unit = "qualitative"
+loinc = "3281-3"
+description = "Antiphospholipid antibody detected by clot-based functional tests (dilute Russell viper venom time and aPTT-based screen, confirm and mixing steps). Expected result: negative (not detected). Reported as positive or negative against laboratory-specific cut-offs; the cut-off values and ratio normalization are set in-house per the ISTH-SSC approach."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

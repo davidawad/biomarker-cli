@@ -1,0 +1,18 @@
+slug = "urine-hyaline-casts"
+name = "Urine Hyaline Casts"
+category = "urinalysis"
+unit = "/uL"
+loinc = "88966-7"
+description = "Hyaline casts (Tamm-Horsfall protein cylinders) counted in urine sediment. Casts can occur in normal subjects and in many renal and non-renal conditions, so the count is read with the clinical context. Expected result: none or very few casts per specimen; the only verified numeric upper limit found is for newborns and infants, from bright-field microscopy and an automated analyser."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 0
+when = { age = [0.0, 1.0] }
+population = "Healthy newborns and infants in the second month of life (75 subjects); bright-field microscopy"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "27132496", url = "https://pubmed.ncbi.nlm.nih.gov/27132496/", title = "UriSed - Preliminary reference intervals and optimal method for urine sediment analysis in newborns and infants.", locator = "Abstract, Results" },
+]
+note = "Upper reference value for hyaline casts by bright-field microscopy in newborns and infants in the second month of life. Source unit is x10(6)/L, numerically identical to /uL (1 x10(6)/L = 1 /uL), so 0 is unchanged. The age cap of 1 year is the nearest year bound, not a bound stated by the source. No verified adult interval was found."

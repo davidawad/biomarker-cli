@@ -1,0 +1,7 @@
+slug = "h-pylori-stool-antigen"
+name = "H. pylori Stool Antigen"
+loinc = "31843-6"
+category = "infectious"
+unit = "qualitative"
+description = "Detection of Helicobacter pylori antigen in a stool sample, used to test for active H. pylori infection, for example before or after eradication treatment. Reported as positive or negative. Expected result: negative (not detected) in people without H. pylori infection."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

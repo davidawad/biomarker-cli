@@ -1,0 +1,28 @@
+slug = "semen-total-motility"
+name = "Sperm Total Motility"
+loinc = "6800-7"
+category = "sex-hormone"
+unit = "%"
+description = "Percentage of spermatozoa showing any motility (progressive plus non-progressive) in a semen sample. Tracked with sperm concentration and morphology to assess male fertility potential and to classify asthenozoospermia. Expected result: at or above the WHO lower reference limit (42% in the WHO 2021 manual; 40% in WHO 2010)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 40
+population = "Men whose partners had time-to-pregnancy of 12 months or less (WHO 2010 reference population)"
+evidence = "reference-interval-study"
+note = "WHO 2010 one-sided lower reference limit (fifth centile). Superseded by the WHO 2021 manual."
+citations = [
+  { pmid = "19934213", doi = "10.1093/humupd/dmp048", title = "World Health Organization reference values for human semen characteristics.", locator = "Abstract, Results", quote = "The following one-sided lower reference limits, the fifth centiles (with 95th percent confidence intervals), were generated from men whose partners had TTP < or =12 months ... total (progressive + non-progressive) motility, 40% (38-42)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 42
+population = "Reference population of fertile men, WHO 2021 (sixth edition) semen reference values"
+evidence = "reference-interval-study"
+note = "WHO 2021 (sixth edition) lower reference limit, as reproduced in Table 1 of the cited review."
+citations = [
+  { pmid = "35726049", doi = "10.1111/andr.13213", title = "The impact of different WHO reference criteria for semen analysis in clinical practice: Who will benefit from the new 2021 thresholds for normal semen parameters?", locator = "Full text, Table 1", quote = "Of note, slight differences in reference values (lower 5th percentile) compared with the previous edition was noted ... Total motility (%) | >=50 | 40 | 42" },
+]

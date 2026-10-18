@@ -19,18 +19,6 @@ citations = [
 [[range]]
 set = "clsi-ep28-advia-2016"
 kind = "reference"
-high = 1.03
-when = { sex = "female", cycle_phase = "follicular", method = "immunoassay" }
-population = "women in the follicular phase (n = 139; days 3-5 after menses onset) measured on Advia Centaur, CLSI EP28-A3c method"
-evidence = "reference-interval"
-note = "Upper reference limit in the early follicular phase (Table 1). Lower limit not reported."
-citations = [
-  { pmid = "26522760", doi = "10.3343/alm.2016.36.1.55", title = "Establishing reference intervals for sex hormones on the analytical platforms Advia Centaur and Immulite 2000XP.", url = "https://pubmed.ncbi.nlm.nih.gov/26522760/", locator = "Table 1", quote = "0.47 0.43-0.58 - <1.03 0.93-1.08" },
-]
-
-[[range]]
-set = "clsi-ep28-advia-2016"
-kind = "reference"
 low = 1.14
 high = 20.6
 when = { sex = "female", cycle_phase = "luteal", method = "immunoassay" }

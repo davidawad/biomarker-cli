@@ -1,0 +1,28 @@
+slug = "semen-sperm-concentration"
+name = "Sperm Concentration"
+category = "sex-hormone"
+unit = "10^6/mL"
+loinc = "9780-8"
+description = "Number of spermatozoa per millilitre of semen, from a semen analysis. Tracked to assess male fertility potential and to classify oligozoospermia. Expected result: at or above the WHO lower reference limit (16 x 10^6/mL in the WHO 2021 manual; 15 x 10^6/mL in WHO 2010)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15
+population = "Men whose partners had time-to-pregnancy of 12 months or less (WHO 2010 reference population)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "19934213", doi = "10.1093/humupd/dmp048", title = "World Health Organization reference values for human semen characteristics.", locator = "Abstract, Results" },
+]
+note = "WHO 2010 one-sided lower reference limit (fifth centile). Superseded by the WHO 2021 manual."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 16
+population = "Reference population of fertile men, WHO 2021 (sixth edition) semen reference values"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35726049", doi = "10.1111/andr.13213", title = "The impact of different WHO reference criteria for semen analysis in clinical practice: Who will benefit from the new 2021 thresholds for normal semen parameters?", locator = "Full text, Table 1" },
+]
+note = "WHO 2021 (sixth edition) lower reference limit, as reproduced in Table 1 of the cited review. Alternative to the default clinical reference range for the same population."

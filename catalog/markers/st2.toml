@@ -1,0 +1,148 @@
+slug = "st2"
+name = "Soluble ST2"
+category = "cardiac"
+unit = "ng/mL"
+loinc = "90239-5"
+description = "Soluble isoform of suppression of tumorigenicity 2, released by cardiomyocytes and fibroblasts under mechanical strain; measured as a prognostic marker in heart failure and cardiovascular risk. Expected result in healthy people: within the reference interval, which is lower in females and varies with age in males."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.4
+high = 36.4
+population = "Apparently healthy children and adolescents aged 0-18 years referred to a laboratory (n=412 after outlier removal), all ages and both sexes"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Abstract (Results)" },
+]
+note = "Whole-population reference interval (central 95 %) from the paediatric study. Sex- and age-specific intervals follow."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.4
+high = 34.3
+when = { sex = "female" }
+population = "Apparently healthy females aged 0-18 years (n=212)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Reference interval for all females in the paediatric study (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.4
+high = 41.6
+when = { sex = "male" }
+population = "Apparently healthy males aged 0-18 years (n=200)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Reference interval for all males in the paediatric study (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.4
+high = 33.6
+when = { sex = "female", age = [0.0, 7.0] }
+population = "Apparently healthy females aged 0-6 years (n=41)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Age and sex band labelled 0-6 y in Table 1 (whole years 0 to 6)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.8
+high = 31.7
+when = { sex = "male", age = [0.0, 7.0] }
+population = "Apparently healthy males aged 0-6 years (n=38)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Age and sex band labelled 0-6 y in Table 1 (whole years 0 to 6)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.4
+high = 35.6
+when = { sex = "female", age = [7.0, 12.0] }
+population = "Apparently healthy females aged 7-11 years (n=68)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Age and sex band labelled 7-11 y in Table 1 (whole years 7 to 11)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.8
+high = 34.2
+when = { sex = "male", age = [7.0, 12.0] }
+population = "Apparently healthy males aged 7-11 years (n=74)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Age and sex band labelled 7-11 y in Table 1 (whole years 7 to 11)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.4
+high = 33.8
+when = { sex = "female", age = [12.0, 19.0] }
+population = "Apparently healthy females aged 12-18 years (n=103)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Age and sex band labelled 12-18 y in Table 1 (whole years 12 to 18)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.3
+high = 40.6
+when = { sex = "male", age = [12.0, 19.0] }
+population = "Apparently healthy males aged 12-18 years (n=88)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1" },
+]
+note = "Age and sex band labelled 12-18 y in Table 1 (whole years 12 to 18). Males 12-18 y have the highest mean in the study."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 5.7
+high = 53.5
+when = { sex = "male" }
+population = "Healthy community-based adults in the Beijing area, China (n=597 men)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26652993", title = "[Reference value and clinical correlates of soluble ST2 in healthy community-based Chinese population].", locator = "Abstract (Results)" },
+]
+note = "95 % nonparametric reference interval for men. Source states the numbers in ug/L (equal to ng/mL). Adult age is not stated in the abstract. Converted from the source's ug/L (5.7-53.5) to ng/mL using factor 1.0. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 4.4
+high = 42.4
+when = { sex = "female" }
+population = "Healthy community-based adults in the Beijing area, China (n=737 women)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26652993", title = "[Reference value and clinical correlates of soluble ST2 in healthy community-based Chinese population].", locator = "Abstract (Results)" },
+]
+note = "95 % nonparametric reference interval for women. Source states the numbers in ug/L (equal to ng/mL). Adult age is not stated in the abstract. Converted from the source's ug/L (4.4-42.4) to ng/mL using factor 1.0. Alternative to the default clinical reference range for the same population."

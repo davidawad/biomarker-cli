@@ -1,0 +1,30 @@
+slug = "urine-calcium-mmol-24h"
+name = "Urine Calcium (mmol/24h)"
+category = "mineral"
+unit = "mmol/24h"
+description = "Urine Calcium reported in mmol/24h. Results in mmol/24h are assay specific and are not interchangeable with Urine Calcium in mg/24h."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 7.5
+when = { sex = "male" }
+population = "Adults in a Chinese multicenter cohort (24-hour urinary calcium excretion)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40036793", doi = "10.1210/clinem/dgae805", title = "Reference Intervals for 24-Hour Urinary Calcium Excretion and Its Association With Bone Metabolism: A Multicenter Study.", locator = "Methods (urine measurements)" },
+]
+note = "Hypercalciuria in men: 24-hour urinary calcium strictly above 7.5 mmol, as defined in the source. Source kind: diagnostic. Source band >= 7.5; stored as the warn high bound 7.5."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 6.25
+when = { sex = "female" }
+population = "Adults in a Chinese multicenter cohort (24-hour urinary calcium excretion)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40036793", doi = "10.1210/clinem/dgae805", title = "Reference Intervals for 24-Hour Urinary Calcium Excretion and Its Association With Bone Metabolism: A Multicenter Study.", locator = "Methods (urine measurements)" },
+]
+note = "Hypercalciuria in women: 24-hour urinary calcium strictly above 6.25 mmol, as defined in the source. Source kind: diagnostic. Source band >= 6.25; stored as the warn high bound 6.25."

@@ -1,0 +1,32 @@
+slug = "roma"
+name = "ROMA (Risk of Ovarian Malignancy Algorithm)"
+loinc = "104551-7"
+category = "tumor-marker"
+unit = "%"
+description = "Risk of Ovarian Malignancy Algorithm: a calculated index from HE4 and CA125 combined with menopausal status, used to estimate ovarian malignancy risk in women with a pelvic mass. Expected result: a percentage; a low-risk result is below the cited menopause-specific cut-off."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 6
+unit = "%"
+when = { sex = "female", menopause = "pre", conditions = ["pelvic-mass"] }
+population = "Premenopausal women with a pelvic mass scheduled for conservative management or surgery (cohort in the cited study)"
+evidence = "outcome-study"
+note = "Premenopausal low-risk cut-off as stated by the source: ROMA below 6% (strictly below 6 is low risk)."
+citations = [
+  { pmid = "26364809", doi = "10.1016/j.ygyno.2015.09.010", title = "Assessing the risk of ovarian malignancy algorithm for the conservative management of women with a pelvic mass.", locator = "Full text (PMC4868067), ROMA score low-risk statement", quote = "In premenopausal women, a ROMA score of <6% was considered low risk for ovarian malignancy." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 10
+unit = "%"
+when = { sex = "female", menopause = "post", conditions = ["pelvic-mass"] }
+population = "Postmenopausal women with a pelvic mass scheduled for conservative management or surgery (cohort in the cited study)"
+evidence = "outcome-study"
+note = "Postmenopausal low-risk cut-off as stated by the source: ROMA below 10% (strictly below 10 is low risk)."
+citations = [
+  { pmid = "26364809", doi = "10.1016/j.ygyno.2015.09.010", title = "Assessing the risk of ovarian malignancy algorithm for the conservative management of women with a pelvic mass.", locator = "Full text (PMC4868067), ROMA score low-risk statement", quote = "In post-menopausal women, a ROMA score of <10% was considered low risk for ovarian malignancy." },
+]

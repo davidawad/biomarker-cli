@@ -1,0 +1,28 @@
+slug = "mumps-igg-u-ml"
+name = "Mumps IgG (U/mL)"
+category = "infectious"
+unit = "U/mL"
+description = "Mumps IgG reported in U/mL. Results in U/mL are assay specific and are not interchangeable with Mumps IgG in RU/mL."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 100
+population = "Patients attending selected hospitals in Kenya, mumps IgG by SERION ELISA (method: serion-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "42064691", doi = "10.24248/eahrj.v9i2.856", title = "Seroprevalence of Mumps among Patients Attending Selected Hospitals in Kenya.", locator = "Methods" },
+]
+note = "Positive mumps IgG on SERION ELISA: strictly greater than 100 U/mL, per the cited study. Source kind: diagnostic. Source band >= 100; stored as the warn high bound 100."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 30
+high = 100
+population = "Patients attending selected hospitals in Kenya, mumps IgG by SERION ELISA (method: serion-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "42064691", doi = "10.24248/eahrj.v9i2.856", title = "Seroprevalence of Mumps among Patients Attending Selected Hospitals in Kenya.", locator = "Methods" },
+]
+note = "Equivocal mumps IgG on SERION ELISA (30 to 100 U/mL). Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."

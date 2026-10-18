@@ -1,0 +1,30 @@
+slug = "tnf-alpha"
+name = "Tumor Necrosis Factor-alpha"
+loinc = "3074-2"
+category = "inflammation"
+unit = "pg/mL"
+description = "Pro-inflammatory cytokine measured in serum. Expected result for a healthy adult: at or below the sex-specific upper reference limits in the one cited study (women 2.94 pg/mL, men 2.65 pg/mL)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 2.94
+when = { sex = "female" }
+population = "Healthy adults from East China, women (n = 299 total, flow cytometry)"
+evidence = "reference-interval-study"
+note = "Upper reference limit for women (95th percentile method, EP28-A3c / WS/T 402-2012)."
+citations = [
+  { pmid = "41512996", doi = "10.1016/j.jim.2026.114034", title = "Establishment of reference intervals for serum TNF-α, IFN-α, IL-1β, IL-2, IL-4, IL-5, IL-6, IL-8, IL-10, IL-12p70, IL-17 and IFN-γ in healthy Chinese adults using flow cytometry.", locator = "Abstract (Results)", quote = "For women, these were: TNF-α <=2.94 pg/mL" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 2.65
+when = { sex = "male" }
+population = "Healthy adults from East China, men (n = 299 total, flow cytometry)"
+evidence = "reference-interval-study"
+note = "Upper reference limit for men (95th percentile method, EP28-A3c / WS/T 402-2012)."
+citations = [
+  { pmid = "41512996", doi = "10.1016/j.jim.2026.114034", title = "Establishment of reference intervals for serum TNF-α, IFN-α, IL-1β, IL-2, IL-4, IL-5, IL-6, IL-8, IL-10, IL-12p70, IL-17 and IFN-γ in healthy Chinese adults using flow cytometry.", locator = "Abstract (Results)", quote = "For men: TNF-α <= 2.65 pg/mL" },
+]

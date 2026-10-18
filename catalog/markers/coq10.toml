@@ -1,0 +1,7 @@
+slug = "coq10"
+name = "Coenzyme Q10"
+category = "vitamin"
+unit = "umol/L"
+loinc = "110286-2"
+description = "Total coenzyme Q10 (ubiquinone plus ubiquinol) in plasma or serum, an endogenous lipid-soluble antioxidant and electron carrier in mitochondria. People track it to assess CoQ10 status, for example during supplementation or in cardiovascular, neurological and statin-treated patients. Expected result: not a diagnostic test with an established normal range; in one case-control study, higher concentrations were associated with lower coronary artery disease risk."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."

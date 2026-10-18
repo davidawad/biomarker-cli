@@ -1,0 +1,44 @@
+slug = "mercury-urine"
+name = "Mercury, Urine"
+loinc = "5689-5"
+category = "toxic-metal"
+unit = "µg/L"
+description = "Urinary mercury, reflecting inorganic mercury exposure from dental amalgam, and some exposure from diet and occupation. Tracked for exposure assessment; the typical result in an unexposed person is low. Creatinine-corrected values are reported in µg/g creatinine in the cited studies."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 3.66
+unit = "µg/g creatinine"
+when = { method = "hg-aas" }
+population = "Adults in four Italian cities (n = 383), urinary mercury by hydride generation atomic absorption"
+evidence = "reference-interval-study"
+note = "Upper reference value (95th percentile) reported in creatinine-corrected units, not a 2.5th-97.5th interval. Fish intake, tobacco smoking, dental amalgam and city were significant determinants in the study."
+citations = [
+  { pmid = "12049389", doi = "10.1016/s0048-9697(01)01013-0", title = "Assessment of reference values for mercury in urine: the results of an Italian polycentric study.", locator = "Abstract", quote = "with 5 degrees and 95 degrees percentiles, respectively, of 0.17 and 3.66 microg/g creatinine" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 5.02
+unit = "µg/g creatinine"
+when = { method = "fi-icp-ms" }
+population = "Adults in four Italian cities (n = 383), urinary mercury by flow injection ICP-MS"
+evidence = "reference-interval-study"
+note = "Upper reference value (95th percentile) reported in creatinine-corrected units, not a 2.5th-97.5th interval. Same study as the HG-AAS range; the two methods give comparable upper values."
+citations = [
+  { pmid = "12049389", doi = "10.1016/s0048-9697(01)01013-0", title = "Assessment of reference values for mercury in urine: the results of an Italian polycentric study.", locator = "Abstract", quote = "When determined by FI ICP-MS, the median value was 0.79 microg/g creatinine (0.77 for males and 0.79 for females) with 5 degrees and 95 degrees percentiles of, respectively, 0.12 and 5.02 microg/g creatinine." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 2.5
+when = { sex = "female" }
+population = "Non-smoking, non-occupationally exposed women in Riyadh, Saudi Arabia (2011-2013)"
+evidence = "reference-interval-study"
+note = "RV95 (95th percentile, German Human Biomonitoring Commission method) reported in ug/l; the creatinine-corrected value in the same sentence is 1.9 ug/g creatinine. Upper reference value only."
+citations = [
+  { pmid = "32044536", doi = "10.1016/j.ijheh.2020.113473", title = "Reference values for heavy metals in the urine and blood of Saudi women derived from two human biomonitoring studies.", locator = "Abstract", quote = "RV95s for urinary mercury, cadmium and lead in Riyadh samples expressed in ug/l (ug/g creatinine) were 2.5 (1.9), 1.2 (0.96) and 14 (10.8), respectively." },
+]

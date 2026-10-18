@@ -1,0 +1,77 @@
+slug = "urine-uric-acid"
+name = "Urine Uric Acid"
+loinc = "3086-6"
+category = "urinalysis"
+unit = "mg/day"
+description = "24-hour urinary uric acid excretion. Tracked to assess uric acid kidney stone risk (uric acid stones) and urinary uric acid handling, interpreted together with urinary pH. Expected result: within the reference range; values above the action level prompt evaluation."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 250
+high = 750
+when = { }
+population = "Adults, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Guideline reference range for 24-hour urinary uric acid. The guideline states reference values are a suggestion that varies by laboratory standardization."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults (Uric Acid row)", quote = "| Uric Acid | 250-750 mg/day | - | >750 mg (F) >800 mg (M) | Evaluate along with urinary pH" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 750
+when = { sex = "female" }
+population = "Adult women, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Action level for women: above 750 mg/day (strictly greater than), per guideline Table 4. The guideline states therapeutic decisions are recommended from the action level."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults (Uric Acid row)", quote = "Attention level | Action level | Relevance ... | Uric Acid | 250-750 mg/day | - | >750 mg (F) >800 mg (M)" },
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Section on urinary laboratory parameters (text preceding Table 4)", quote = "Therapeutic decisions could be applied from the attention level and are recommended from the action level." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 800
+when = { sex = "male" }
+population = "Adult men, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Action level for men: above 800 mg/day (strictly greater than), per guideline Table 4. The guideline states therapeutic decisions are recommended from the action level."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults (Uric Acid row)", quote = "Attention level | Action level | Relevance ... | Uric Acid | 250-750 mg/day | - | >750 mg (F) >800 mg (M)" },
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Section on urinary laboratory parameters (text preceding Table 4)", quote = "Therapeutic decisions could be applied from the attention level and are recommended from the action level." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 280
+high = 827
+unit = "mg/day/1.73 m2"
+when = { sex = "male", age_min = 20, age_max = 66 }
+population = "Healthy Japanese men aged 20-65 years, 24-hour collection, BSA-standardized urinary uric acid excretion (Eua)"
+evidence = "reference-interval-study"
+note = "Central 95% reference interval (2.5th-97.5th percentiles) for the BSA-standardized 24-hour uric acid excretion index Eua. Vendor-style BSA-indexed unit, so it is a companion marker."
+citations = [
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Results", quote = "BSA-standardized Eua reference intervals were 280-827 mg/day/1.73 m2 in men and 263-812 mg/day/1.73 m2 in women for 24-h collection" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods", quote = "This multicenter prospective observational study included 445 reference individuals (214 men and 231 women; age, 20-65 years)" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods", quote = "Reference intervals were estimated separately by sex using the non-parametric central 95% range (2.5th-97.5th percentiles)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 263
+high = 812
+unit = "mg/day/1.73 m2"
+when = { sex = "female", age_min = 20, age_max = 66 }
+population = "Healthy Japanese women aged 20-65 years, 24-hour collection, BSA-standardized urinary uric acid excretion (Eua)"
+evidence = "reference-interval-study"
+note = "Central 95% reference interval (2.5th-97.5th percentiles) for the BSA-standardized 24-hour uric acid excretion index Eua. Vendor-style BSA-indexed unit, so it is a companion marker."
+citations = [
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Results", quote = "BSA-standardized Eua reference intervals were 280-827 mg/day/1.73 m2 in men and 263-812 mg/day/1.73 m2 in women for 24-h collection" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods", quote = "This multicenter prospective observational study included 445 reference individuals (214 men and 231 women; age, 20-65 years)" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods", quote = "Reference intervals were estimated separately by sex using the non-parametric central 95% range (2.5th-97.5th percentiles)" },
+]

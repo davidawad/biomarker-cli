@@ -1,0 +1,110 @@
+slug = "ldl-c-martin-hopkins"
+name = "LDL Cholesterol, Martin-Hopkins Calculated"
+loinc = "96259-7"
+category = "lipid"
+unit = "mg/dL"
+description = "LDL cholesterol calculated from the standard lipid profile (total cholesterol, HDL-C, triglycerides, non-HDL-C) by the Martin-Hopkins method. It replaces the Friedewald fixed triglyceride-to-VLDL-C factor of 5 with an adjustable factor taken from a 180-cell table of triglyceride and non-HDL-C strata (Martin et al., JAMA 2013). Calculated, not measured. Used for the same ATP III LDL-C categories and goals as measured LDL-C. Expected result for a healthy adult: below 100 mg/dL (optimal)."
+
+[[range]]
+set = "clinical"
+kind = "optimal"
+high = 100
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Optimal: strictly below 100 mg/dL (ATP III), applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract", quote = "Individual patient-level concordance in clinical practice guideline LDL-C risk classification using estimated vs directly measured LDL-C" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 100
+high = 130
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Near optimal/above optimal, 100 to 129 mg/dL (ATP III), applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract", quote = "Individual patient-level concordance in clinical practice guideline LDL-C risk classification using estimated vs directly measured LDL-C" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 130
+high = 160
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Borderline high, 130 to 159 mg/dL (ATP III), applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract", quote = "Individual patient-level concordance in clinical practice guideline LDL-C risk classification using estimated vs directly measured LDL-C" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 160
+high = 190
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "High, 160 to 189 mg/dL (ATP III), applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract", quote = "Individual patient-level concordance in clinical practice guideline LDL-C risk classification using estimated vs directly measured LDL-C" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 190
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Very high, 190 mg/dL or above (ATP III), applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+  { pmid = "24240933", doi = "10.1001/jama.2013.280532", title = "Comparison of a novel method vs the Friedewald equation for estimating low-density lipoprotein cholesterol levels from the standard lipid profile.", locator = "Abstract", quote = "Individual patient-level concordance in clinical practice guideline LDL-C risk classification using estimated vs directly measured LDL-C" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 100
+when = { risk = "chd-or-risk-equivalent" }
+population = "Adults with coronary heart disease or CHD risk equivalents"
+evidence = "guideline"
+note = "ATP III LDL-C goal (strictly below 100 mg/dL) for CHD and CHD risk equivalents, applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4", quote = "Risk Category LDL Goal (mg/dL) CHD and CHD risk equivalents <100 Multiple (2+) risk factors* <130 Zero to one risk factor <160" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 130
+when = { risk = "two-or-more-risk-factors" }
+population = "Adults with two or more risk factors and 10-year CHD risk of 20% or less"
+evidence = "guideline"
+note = "ATP III LDL-C goal (strictly below 130 mg/dL) for two or more risk factors, applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4", quote = "Risk Category LDL Goal (mg/dL) CHD and CHD risk equivalents <100 Multiple (2+) risk factors* <130 Zero to one risk factor <160" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 160
+when = { risk = "zero-to-one-risk-factor" }
+population = "Adults with zero to one risk factor"
+evidence = "guideline"
+note = "ATP III LDL-C goal (strictly below 160 mg/dL) for zero to one risk factor, applied to calculated LDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4", quote = "Risk Category LDL Goal (mg/dL) CHD and CHD risk equivalents <100 Multiple (2+) risk factors* <130 Zero to one risk factor <160" },
+]

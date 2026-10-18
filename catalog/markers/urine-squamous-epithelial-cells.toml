@@ -1,0 +1,7 @@
+slug = "urine-squamous-epithelial-cells"
+name = "Urine Squamous Epithelial Cells"
+category = "urinalysis"
+unit = "/HPF"
+loinc = "11277-1"
+description = "Squamous epithelial cells on urine sediment microscopy, a marker of contamination of the specimen by vaginal or periurethral cells. Expected result: a low count. The cut-off in the range below comes from one retrospective observational study, not from a guideline or reference interval. Ranges are copied in the units the source states; the /LPF cut-off is a companion unit."
+no_reference = "No numeric reference interval for squamous epithelial cells was verifiable; the only range is a single-study cut-off."

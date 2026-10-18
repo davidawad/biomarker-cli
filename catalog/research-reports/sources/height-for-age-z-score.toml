@@ -1,0 +1,27 @@
+slug = "height-for-age-z-score"
+name = "Height-for-Age Z-Score"
+category = "pediatric"
+unit = "z-score"
+description = "Child length or height for age, expressed as a standard-deviation score (z-score) against the WHO Child Growth Standards median for the same age and sex. It is the standard measure of linear growth and of stunting. A z-score below -2 defines stunting and below -3 defines severe stunting."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = -2.0
+population = "Children, length/height-for-age z-score against the WHO Child Growth Standards for the same age and sex"
+evidence = "consensus"
+note = "Stunting: z-score strictly below -2 (the bound is exclusive)."
+citations = [
+  { pmid = "27187907", doi = "10.1111/mcn.12231", title = "Childhood stunting: a global perspective.", locator = "Full text, paragraph defining stunting by length/height-for-age cut-offs", quote = "children are stunted if their length/height is below -2 SDs from the WHO Child Growth Standards median for the same age and sex" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = -3.0
+population = "Children, length/height-for-age z-score against the WHO Child Growth Standards for the same age and sex"
+evidence = "consensus"
+note = "Severe stunting: z-score strictly below -3 (the bound is exclusive)."
+citations = [
+  { pmid = "27187907", doi = "10.1111/mcn.12231", title = "Childhood stunting: a global perspective.", locator = "Full text, paragraph defining stunting by length/height-for-age cut-offs", quote = "children are considered severely stunted if their length/height is below -3 SDs from the WHO Child Growth Standards median for the same age and sex." },
+]

@@ -1,0 +1,19 @@
+slug = "coq10"
+name = "Coenzyme Q10"
+loinc = "110286-2"
+category = "vitamin"
+unit = "umol/L"
+description = "Total coenzyme Q10 (ubiquinone plus ubiquinol) in plasma or serum, an endogenous lipid-soluble antioxidant and electron carrier in mitochondria. People track it to assess CoQ10 status, for example during supplementation or in cardiovascular, neurological and statin-treated patients. Expected result: not a diagnostic test with an established normal range; in one case-control study, higher concentrations were associated with lower coronary artery disease risk."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 516.0
+unit = "nmol/L"
+when = { conditions = ["coronary-artery-disease"] }
+population = "Patients with at least 50% stenosis of one major coronary artery (case group, n = 45) compared with healthy controls with normal blood biochemistry (n = 89)"
+evidence = "outcome-study"
+note = "Single observational case-control study threshold for plasma CoQ10 (nmol/L), reported as the cut-off above which risk of CAD was significantly lower after adjustment. Not a validated clinical cut-off; the study does not state how the threshold was chosen."
+citations = [
+  { pmid = "23146771", doi = "10.1016/j.nutres.2012.09.003", title = "A significant correlation between the plasma levels of coenzyme Q10 and vitamin B-6 and a reduced risk of coronary artery disease.", locator = "Abstract, Results", quote = "Subjects with higher coenzyme Q10 concentration (>=516.0 nmol/L) had a significantly lower risk of CAD" },
+]

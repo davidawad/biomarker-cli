@@ -1,0 +1,16 @@
+slug = "metabolic-syndrome-score"
+name = "Metabolic Syndrome Score"
+category = "metabolic"
+unit = "criteria met"
+description = "Count (0 to 5) of the harmonized metabolic syndrome criteria met: raised waist circumference, triglycerides, reduced HDL-C, raised blood pressure and raised fasting glucose. Metabolic syndrome is diagnosed when 3 or more are met."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 3
+population = "Adults"
+evidence = "guideline"
+note = "Harmonized (IDF/AHA/NHLBI/WHF/IAS/IASO 2009) definition: metabolic syndrome when at least 3 of the 5 criteria are met. No criterion is obligatory. Cited through a study that restates the 2009 joint interim statement."
+citations = [
+  { pmid = "35591907", doi = "10.2147/DMSO.S360689", title = "A Cross-Sectional Study of Serum Ferritin Levels in Vietnamese Adults with Metabolic Syndrome.", locator = "Methods, inclusion criteria", quote = "Diagnosis of metabolic syndrome must be fulfilled at least 3 out of 5 following criteria of International Diabetes Federation (IDF)/American Heart Association (AHA)/ National Heart, Lung, and Blood Institute (NHLBL)/ World Heart Federation (WHF)/International Atherosclerosis Society (IAS)/ International Association for the Study of Obesity (IASO) 200910" },
+]

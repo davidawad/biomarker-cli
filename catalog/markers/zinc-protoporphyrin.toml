@@ -1,0 +1,68 @@
+slug = "zinc-protoporphyrin"
+name = "Zinc Protoporphyrin"
+category = "iron"
+unit = "umol/mol heme"
+loinc = "33007-6"
+description = "Erythrocyte porphyrin that rises when iron is short for heme synthesis; measured (ZPP/heme) with a portable haematofluorometer to screen for iron deficiency. Expected result for a healthy child: within the age- and sex-specific 2.5th to 97.5th percentile limits in the cited pediatric study; values above the iron-deficiency cut-offs suggest iron deficiency."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 16.6
+high = 73.6
+when = { sex = "female", age = [0.0, 1.0] }
+population = "Children aged 0 to 12 months, female (pediatric hospital patients, n = 6478 specimens, 0-17 years)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "12554055", doi = "10.1016/s0009-9120(02)00405-8", title = "Pediatric reference ranges for zinc protoporphyrin.", locator = "Abstract (Results and Conclusions)" },
+]
+note = "2.5th to 97.5th percentile (Hoffman approach); reported as 9 to 40 microg/dL in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15.6
+high = 63.5
+when = { sex = "male", age = [0.0, 1.0] }
+population = "Children aged 0 to 12 months, male (pediatric hospital patients, n = 6478 specimens, 0-17 years)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "12554055", doi = "10.1016/s0009-9120(02)00405-8", title = "Pediatric reference ranges for zinc protoporphyrin.", locator = "Abstract (Results and Conclusions)" },
+]
+note = "2.5th to 97.5th percentile (Hoffman approach); reported as 8.5 to 34.5 microg/dL in the source."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 90
+when = { conditions = ["iron-deficiency-anemia"] }
+population = "Community-dwelling Indian preschool children with and without iron deficiency anemia"
+evidence = "cohort"
+citations = [
+  { pmid = "30093400", doi = "10.3324/haematol.2018.193243", title = "Optimizing diagnostic biomarkers of iron deficiency anemia in community-dwelling Indian women and preschool children.", locator = "Abstract (Results)" },
+]
+note = "Iron deficiency anemia, high diagnostic likelihood (likelihood ratio 20.2): ZPP/heme strictly above 90 umol/mol heme in children. Source kind: diagnostic. Source band >= 90; stored as the warn high bound 90."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 107
+when = { sex = "female", conditions = ["iron-deficiency-anemia"] }
+population = "Community-dwelling Indian women with and without iron deficiency anemia"
+evidence = "cohort"
+citations = [
+  { pmid = "30093400", doi = "10.3324/haematol.2018.193243", title = "Optimizing diagnostic biomarkers of iron deficiency anemia in community-dwelling Indian women and preschool children.", locator = "Abstract (Results)" },
+]
+note = "Iron deficiency anemia, high diagnostic likelihood (likelihood ratio 10.8): ZPP/heme strictly above 107 umol/mol heme in women. Source kind: diagnostic. Source band >= 107; stored as the warn high bound 107."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 70
+when = { conditions = ["iron-deficiency"] }
+population = "Rural Kenyan pregnant women (conventional whole-blood ZPP cut-off, which this study found to overestimate iron deficiency)"
+evidence = "cohort"
+citations = [
+  { pmid = "25428714", doi = "10.1186/s12916-014-0229-8", title = "Diagnostic utility of zinc protoporphyrin to detect iron deficiency in Kenyan pregnant women.", locator = "Abstract (Results)" },
+]
+note = "Conventional whole-blood ZPP cut-off, strictly above 70 umol/mol heme, cited as giving gross overestimates of iron deficiency prevalence in this population; not validated here. Source kind: diagnostic. Source band >= 70; stored as the warn high bound 70. Alternative to the default diagnostic warn range for the same population."

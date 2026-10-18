@@ -1,0 +1,32 @@
+slug = "urine-protein-24h"
+name = "Urine Protein, 24 Hour"
+loinc = "2889-4"
+category = "kidney"
+unit = "mg/24h"
+description = "Total protein excreted in urine over 24 hours, in mg/24h, from a timed urine collection (or estimated from a spot urine protein-to-creatinine ratio). Used to detect and stage proteinuria, a marker of kidney damage used with GFR to define chronic kidney disease. The ranges below give the cited thresholds only: the pregnancy upper limit of normal and the KDIGO 2024 CKD diagnostic threshold. No adult non-pregnant reference interval was verified."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 260
+unit = "mg/24h"
+when = { pregnant = true }
+population = "Healthy pregnant women aged 35 or under without diabetes, hypertension, pyelonephritis, preeclampsia, or renal or connective tissue disease; 24-hour urine protein"
+evidence = "reference-interval-study"
+note = "Upper limit of normal in pregnancy (upper 95% confidence limit 259.4 mg per 24 hours; mean 116.9 mg per 24 hours). Source states the value as 260 mg per 24 hours."
+citations = [
+  { pmid = "7943114", title = "Normal values of urinary albumin and total protein excretion during pregnancy.", locator = "Abstract (Conclusion)", quote = "These data support 260 mg per 24 hours of urinary protein and 29 mg per 24 hours of albumin as the upper limit of normal in pregnancy." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 500
+unit = "mg/24h"
+when = {}
+population = "Adults; 24-hour urine protein excretion (PER) or the approximately equivalent PCR"
+evidence = "guideline"
+note = "Persistent protein excretion of 500 mg/24 h or more (PER), approximately equivalent to PCR 500 mg/g or more, is listed with the diagnosis of CKD with significant albuminuria (KDIGO 2024 Figure 48), written as >=500 in the source."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Figure 48 (circumstances for referral: diagnosis of CKD with significant albuminuria)", quote = "approximately equivalent to PCR >=500 mg/g [>=50 mg/mmol] ... Albuminuria or PER >=500 mg/24 h" },
+]

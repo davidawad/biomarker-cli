@@ -40,6 +40,8 @@ pub struct Coverage {
     pub cited: usize,
     pub legacy: usize,
     pub no_reference: Option<String>,
+    /// `no_reference` starts with `pending:`: range research is still open.
+    pub pending: bool,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -65,6 +67,10 @@ pub struct UniverseReport {
 pub struct LintReport {
     pub markers: usize,
     pub ranges: usize,
+    /// Ranges with at least one citation.
+    pub cited: usize,
+    /// Markers whose `no_reference` starts with `pending:`.
+    pub pending: usize,
     pub errors: usize,
     pub warnings: usize,
     pub findings: Vec<Finding>,
@@ -92,6 +98,15 @@ impl Ctx {
     fn warn(&mut self, code: &'static str, marker: &str, message: String) {
         self.push(Severity::Warning, code, Some(marker), message);
     }
+}
+
+/// A `no_reference` reason starting with this prefix marks a marker whose range research has not
+/// found a verified source yet; lint reports it under its own `pending` code, apart from
+/// markers that are qualitative by nature.
+const PENDING_PREFIX: &str = "pending:";
+
+fn is_pending(no_reference: &str) -> bool {
+    no_reference.starts_with(PENDING_PREFIX)
 }
 
 fn is_slug(s: &str) -> bool {
@@ -153,7 +168,7 @@ pub fn lint(src: &Sources, known_units: &[&str], universe: bool, strict: bool) -
     }
     let world = World { slugs: &slugs, sets: &set_names, conditions: &condition_slugs, units: known_units };
     markers.iter().for_each(|m| lint_marker(&mut cx, m, &world));
-    let coverage = markers.iter().map(coverage_of).collect();
+    let coverage: Vec<Coverage> = markers.iter().map(coverage_of).collect();
     let universe = universe.then(|| universe_report(&mut cx, &src.universe, &markers));
     if strict {
         cx.findings.iter_mut().for_each(|f| f.severity = Severity::Error);
@@ -163,6 +178,8 @@ pub fn lint(src: &Sources, known_units: &[&str], universe: bool, strict: bool) -
     LintReport {
         markers: markers.len(),
         ranges: markers.iter().map(|m| m.ranges.len()).sum(),
+        cited: coverage.iter().map(|c| c.cited).sum(),
+        pending: coverage.iter().filter(|c| c.pending).count(),
         errors: count(Severity::Error),
         warnings: count(Severity::Warning),
         coverage,
@@ -227,6 +244,11 @@ fn lint_marker(cx: &mut Ctx, m: &MarkerDef, w: &World) {
             cx.err("no-reference", s, "no clinical reference range (add one or no_reference = \"reason\")".into())
         }
         (Some(_), true) => cx.warn("no-reference", s, "has a clinical reference range and no_reference".into()),
+        (Some(why), false) if is_pending(why) => cx.warn(
+            "pending",
+            s,
+            "no verified range yet (no_reference starts with 'pending:'); counted as a gap".into(),
+        ),
         (Some(_), false) => cx.warn("coverage", s, "no clinical reference range (no_reference)".into()),
         (None, true) => {}
     }
@@ -366,6 +388,7 @@ fn coverage_of(m: &MarkerDef) -> Coverage {
         cited: m.ranges.iter().filter(|r| !r.citations.is_empty()).count(),
         legacy: m.ranges.iter().filter(|r| r.legacy).count(),
         no_reference: m.no_reference.clone(),
+        pending: m.no_reference.as_deref().is_some_and(is_pending),
     }
 }
 
@@ -496,5 +519,15 @@ mod tests {
         assert_eq!(codes(&r, Severity::Error), ["file-name", "no-reference"]);
         let r = lint(&src(&[("x.toml", "slug = 1")]), &[], false, false);
         assert_eq!(codes(&r, Severity::Error), ["schema"]);
+    }
+
+    #[test]
+    fn pending_markers_are_counted_apart_from_other_gaps() {
+        let pending = format!("{HEAD}no_reference = \"pending: no verified range yet\"\n");
+        let other = HEAD.replace("\"x\"", "\"y\"") + "no_reference = \"qualitative result\"\n";
+        let r = lint(&src(&[("x.toml", &pending), ("y.toml", &other)]), &["mg/dL"], false, false);
+        assert!(r.ok(), "{:?}", r.findings);
+        assert_eq!(codes(&r, Severity::Warning), ["pending", "coverage"]);
+        assert_eq!((r.pending, r.coverage.iter().filter(|c| c.pending).count()), (1, 1));
     }
 }

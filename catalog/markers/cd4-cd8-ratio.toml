@@ -1,0 +1,32 @@
+slug = "cd4-cd8-ratio"
+name = "CD4/CD8 Ratio"
+category = "immune"
+unit = "ratio"
+loinc = "54218-3"
+description = "Ratio of CD4+ helper T cells to CD8+ cytotoxic T cells in blood, from lymphocyte subset flow cytometry. Used in HIV monitoring (a low ratio is associated with non-AIDS mortality in people living with HIV) and in immune deficiency or immune dysregulation work-up. Expected result in healthy adults: within the reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.11
+high = 3.28
+when = { sex = "female" }
+population = "Healthy Polish adults (blood donors, over 18 years), female n = 31; 5th and 95th percentiles; flow cytometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38812608", doi = "10.5114/ceji.2024.136371", title = "Reference values of lymphocyte subsets from healthy Polish adults.", locator = "Table 2 (CD4/CD8 T lymphocyte ratio, Female)" },
+]
+note = "Female CD4/CD8 T-lymphocyte ratio, 5th-95th percentile (central 90%, not 95%). Small sample (n = 31); provisional. Sex difference reported (p = 0.0411)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.82
+high = 2.7
+when = { sex = "male" }
+population = "Healthy Polish adults (blood donors, over 18 years), male n = 30; 5th and 95th percentiles; flow cytometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38812608", doi = "10.5114/ceji.2024.136371", title = "Reference values of lymphocyte subsets from healthy Polish adults.", locator = "Table 2 (CD4/CD8 T lymphocyte ratio, Male)" },
+]
+note = "Male CD4/CD8 T-lymphocyte ratio, 5th-95th percentile (central 90%, not 95%). Small sample (n = 30); provisional."

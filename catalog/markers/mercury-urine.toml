@@ -1,0 +1,18 @@
+slug = "mercury-urine"
+name = "Mercury, Urine"
+category = "toxic-metal"
+unit = "µg/L"
+loinc = "5689-5"
+description = "Urinary mercury, reflecting inorganic mercury exposure from dental amalgam, and some exposure from diet and occupation. Tracked for exposure assessment; the typical result in an unexposed person is low. Creatinine-corrected values are reported in µg/g creatinine in the cited studies."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 2.5
+when = { sex = "female" }
+population = "Non-smoking, non-occupationally exposed women in Riyadh, Saudi Arabia (2011-2013)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32044536", doi = "10.1016/j.ijheh.2020.113473", title = "Reference values for heavy metals in the urine and blood of Saudi women derived from two human biomonitoring studies.", locator = "Abstract" },
+]
+note = "RV95 (95th percentile, German Human Biomonitoring Commission method) reported in ug/l; the creatinine-corrected value in the same sentence is 1.9 ug/g creatinine. Upper reference value only."

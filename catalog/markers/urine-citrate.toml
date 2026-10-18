@@ -1,0 +1,18 @@
+slug = "urine-citrate"
+name = "Citrate, Urine"
+category = "organic-acid"
+unit = "mg/24h"
+loinc = "2128-7"
+description = "Citrate excreted in urine, usually collected over 24 hours. Low excretion (hypocitraturia) is a major, treatable risk factor for calcium kidney stones. Expected result: at or above the cut-offs in the ranges below; values below the adult definition indicate hypocitraturia. Pediatric cut-offs are normalised to body surface area and are a companion unit."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 320
+population = "Not stated in the quote (official definition as reported in the source review)"
+evidence = "consensus"
+citations = [
+  { pmid = "33232062", title = "Hypocitraturia and Renal Calculi", locator = "Abstract" },
+]
+note = "Hypocitraturia: 24-hour urinary citrate strictly below 320 mg/day, as officially defined and reported in the source. Source kind: diagnostic. Source band <= 320; stored as the warn low bound 320."

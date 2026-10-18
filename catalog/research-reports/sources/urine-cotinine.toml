@@ -1,0 +1,18 @@
+slug = "urine-cotinine"
+name = "Urine Cotinine"
+loinc = "10366-3"
+category = "urinalysis"
+unit = "ng/mL"
+description = "Cotinine, the major metabolite of nicotine, measured in urine to objectively verify tobacco or nicotine exposure, for example to check self-reported smoking status. The ranges below are classification cut-offs for smokers versus nonsmokers, not reference intervals. No numeric reference interval for nonsmokers is given here."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 91.7
+when = {}
+population = "US adults aged 20 years and older, total population, NHANES 2013 to 2014 data"
+evidence = "outcome-study"
+note = "ROC analysis cut-off classifying smokers versus nonsmokers, with sensitivity and specificity both 97.1% in this single study. Single-study cut-off, not a reference interval. The abstract does not state the comparison direction verbatim."
+citations = [
+  { pmid = "31953760", doi = "10.1007/s11356-020-07710-x", title = "Estimates of cutoffs with specificities and sensitivities for urine cotinine and hydroxycotinine for US adults aged >= 20 years to classify smokers and nonsmokers.", url = "https://pubmed.ncbi.nlm.nih.gov/31953760/", locator = "Abstract (Results)", quote = "For the total population, cutoff for urine cotinine was 91.7 ng/mL estimated with a specificity as well as a sensitivity of 97.1%." },
+]

@@ -1,0 +1,30 @@
+slug = "po2"
+name = "Partial Pressure of O2, Arterial Blood"
+category = "metabolic"
+unit = "mmHg"
+loinc = "2703-7"
+description = "Arterial partial pressure of oxygen, measured on arterial blood gas analysis; reflects oxygenation of the blood. It falls with age. Expected result: at or above the lower limit of normal for the age group."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 62.0
+when = { sex = "male", age = [70.0, 200] }
+population = "Men older than 70 years without respiratory disease, significant dyspnea, symptomatic heart disease, hypertension, or current smoking (arterial samples, supine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15189921", doi = "10.1378/chest.125.6.2053", url = "https://doi.org/10.1378/chest.125.6.2053", title = "Reference values for arterial blood gases in the elderly.", locator = "Results" },
+]
+note = "Lower limit of normal PaO2 (mm Hg) for men over 70, as stated by the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 59.6
+when = { sex = "female", age = [70.0, 200] }
+population = "Women older than 70 years without respiratory disease, significant dyspnea, symptomatic heart disease, hypertension, or current smoking (arterial samples, supine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15189921", doi = "10.1378/chest.125.6.2053", url = "https://doi.org/10.1378/chest.125.6.2053", title = "Reference values for arterial blood gases in the elderly.", locator = "Results" },
+]
+note = "Lower limit of normal PaO2 (mm Hg) for women over 70, as stated by the source."

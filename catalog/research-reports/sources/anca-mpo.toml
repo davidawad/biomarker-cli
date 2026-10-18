@@ -1,0 +1,31 @@
+slug = "anca-mpo"
+name = "ANCA, Anti-Myeloperoxidase (MPO) Antibody"
+loinc = "6969-0"
+category = "autoimmune"
+unit = "U/mL"
+description = "IgG autoantibody against myeloperoxidase (MPO-ANCA), measured by immunoassay. Tracked for diagnosis and relapse monitoring in ANCA-associated vasculitis (microscopic polyangiitis, EGPA, GPA). Expected result: negative (below the assay positivity threshold)."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+when = { conditions = ["anca-associated-vasculitis"] }
+population = "Patients with positive MPO-ANCA serology from a university laboratory, including EGPA and GPA/MPA patients in remission (CLEIA assay)"
+evidence = "outcome-study"
+note = "Assay positivity threshold stated by the source for the CLEIA method (>= 20 U/mL)."
+citations = [
+  { pmid = "40959075", doi = "10.3389/fimmu.2025.1649708", title = "Clinical value at baseline and follow-up of myeloperoxidase-antibodies in ANCA-associated vasculitis.", locator = "Methods, ANCA-related laboratory analysis and interpretation", quote = "MPO-ANCA detection and quantification was performed using a chemiluminescence enzyme immunoassay (CLEIA) with a positivity threshold at >= 20 U/mL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+unit = "CU"
+when = { conditions = ["anca-associated-vasculitis"] }
+population = "Patients newly diagnosed with ANCA-associated vasculitis or newly detected ANCA positivity, single-centre cohort, Northern Spain (BIO-FLASH chemiluminescence assay)"
+evidence = "outcome-study"
+note = "ANCA positivity cut-off stated by the source for the BIO-FLASH assay (applies to both PR3- and MPO-ANCA); source unit CU."
+citations = [
+  { pmid = "41728626", doi = "10.3389/fmed.2026.1766518", title = "Incidence and clinical features of ANCA-associated vasculitis before and during the COVID-19 pandemic: experience from a single-center in Northern Spain.", locator = "Methods, ANCA testing", quote = "A value of 20 chemiluminescent units (CU) was established as the cut-off point to consider positive results for ANCA." },
+]

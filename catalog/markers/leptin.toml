@@ -1,0 +1,32 @@
+slug = "leptin"
+name = "Leptin"
+category = "metabolic"
+unit = "ng/mL"
+loinc = "21365-2"
+description = "Adipose-derived hormone that signals energy stores to the brain; serum levels track body fat and are higher in women and in people with higher BMI and insulin resistance. Tracked for obesity, metabolic syndrome and energy-balance research. Expected result: within the sex-specific reference interval for a healthy adult (fasting serum)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.33
+high = 19.85
+when = { sex = "male" }
+population = "Men, randomly sampled Chinese residents (fasting serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35941672", doi = "10.1186/s12986-022-00689-x", url = "https://doi.org/10.1186/s12986-022-00689-x", title = "Sex- and body mass index-specific reference intervals for serum leptin: a population based study in China.", locator = "Abstract, Results" },
+]
+note = "Sex-specific reference interval for men, 2.5th to 97.5th percentile. Leptin also varies with BMI; the study gives BMI-specific intervals that the when keys here cannot express."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.6
+high = 54.86
+when = { sex = "female" }
+population = "Women, randomly sampled Chinese residents (fasting serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35941672", doi = "10.1186/s12986-022-00689-x", url = "https://doi.org/10.1186/s12986-022-00689-x", title = "Sex- and body mass index-specific reference intervals for serum leptin: a population based study in China.", locator = "Abstract, Results" },
+]
+note = "Sex-specific reference interval for women, 2.5th to 97.5th percentile. Leptin also varies with BMI; the study gives BMI-specific intervals that the when keys here cannot express."

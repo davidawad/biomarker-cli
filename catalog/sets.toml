@@ -1940,3 +1940,31 @@ description = "Published source set: frax-10y-bands-8-6-19-8"
 [[set]]
 name = "frax-10y-bands-9-5-15-2"
 description = "Published source set: frax-10y-bands-9-5-15-2"
+
+[[set]]
+name = "ldl-c-direct-bands-130-160"
+description = "Published source set: ldl-c-direct-bands-130-160"
+
+[[set]]
+name = "ldl-c-direct-bands-160-190"
+description = "Published source set: ldl-c-direct-bands-160-190"
+
+[[set]]
+name = "ldl-c-martin-hopkins-bands-130-160"
+description = "Published source set: ldl-c-martin-hopkins-bands-130-160"
+
+[[set]]
+name = "ldl-c-martin-hopkins-bands-160-190"
+description = "Published source set: ldl-c-martin-hopkins-bands-160-190"
+
+[[set]]
+name = "ldl-c-sampson-bands-130-160"
+description = "Published source set: ldl-c-sampson-bands-130-160"
+
+[[set]]
+name = "ldl-c-sampson-bands-160-190"
+description = "Published source set: ldl-c-sampson-bands-160-190"
+
+[[set]]
+name = "toxoplasma-igg-bands-5-3-187-5"
+description = "Published source set: toxoplasma-igg-bands-5-3-187-5"

@@ -1,0 +1,18 @@
+slug = "meld-na"
+name = "MELD-Na Score"
+loinc = "100348-2"
+category = "liver"
+unit = "points"
+description = "Model for End-Stage Liver Disease score with serum sodium added (MELD-Na), calculated from creatinine, bilirubin, INR and sodium. Used for liver transplant allocation and to estimate short-term mortality in cirrhosis. There is no normal range; a higher score means more severe liver disease and higher mortality risk."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 28
+when = { conditions = ["cirrhosis"] }
+population = "Adults with cirrhosis listed for liver transplantation on the UNOS waiting list (2002-2019), single retrospective cohort"
+evidence = "outcome-study"
+note = "Score of 28 or more used as the trigger for hospice referral discussion (6-month mortality). Single observational study; a decision trigger, not a diagnostic category."
+citations = [
+  { pmid = "34802021", doi = "10.1097/MCG.0000000000001642", title = "MELD-Na Accurately Predicts 6-Month Mortality in Patients With Decompensated Cirrhosis: Potential Trigger for Hospice Referral.", locator = "Discussion (limitations paragraph, PMC full text)", quote = "Our analysis suggests that a trigger of MELD-Na score >= 28 reasonably allows a clinician to fulfill the hospice criteria." },
+]

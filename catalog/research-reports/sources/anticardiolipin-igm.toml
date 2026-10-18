@@ -1,0 +1,44 @@
+slug = "anticardiolipin-igm"
+name = "Anticardiolipin IgM Antibody"
+loinc = "3182-3"
+category = "autoimmune"
+unit = "MPL"
+description = "IgM autoantibody to cardiolipin (anticardiolipin, aCL), measured by ELISA or chemiluminescence and reported in M phospholipid units (MPL). Used with IgG aCL and anti-beta-2-glycoprotein I tests in the evaluation of antiphospholipid syndrome. Expected result in people without antiphospholipid syndrome: below the laboratory's cut-off, usually not detected. Isolated IgM positivity carries low weight in the 2023 ACR/EULAR classification criteria."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 40
+high = 79
+unit = "units"
+when = { conditions = ["antiphospholipid-syndrome"] }
+population = "Patients evaluated for primary antiphospholipid syndrome under the 2023 ACR/EULAR classification criteria"
+evidence = "outcome-study"
+note = "Moderate aCL positivity band (40-79 units) as the cited paper describes the 2023 ACR/EULAR criteria. The source gives units only (arbitrary units, not MPL); the number is copied as stated. Isolated IgM positivity is scored low-weight in those criteria."
+citations = [
+  { pmid = "39689033", doi = "10.1093/rheumatology/keae665", title = "Insights into the 2023 ACR/EULAR antiphospholipid syndrome classification criteria: findings from a cohort of 205 patients with primary APS.", locator = "Introduction", quote = "moderate (40-79 units) and high positivity (>80 units)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 80
+unit = "units"
+when = { conditions = ["antiphospholipid-syndrome"] }
+population = "Patients evaluated for primary antiphospholipid syndrome under the 2023 ACR/EULAR classification criteria"
+evidence = "outcome-study"
+note = "High aCL positivity band as the cited paper describes the 2023 ACR/EULAR criteria. The source writes '>80 units' here and '>=80 units' in its Discussion; the number is copied as stated. Units are the source's arbitrary units, not converted."
+citations = [
+  { pmid = "39689033", doi = "10.1093/rheumatology/keae665", title = "Insights into the 2023 ACR/EULAR antiphospholipid syndrome classification criteria: findings from a cohort of 205 patients with primary APS.", locator = "Introduction", quote = "moderate (40-79 units) and high positivity (>80 units)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 12.4
+population = "Healthy individuals, South India (n = 125)"
+evidence = "reference-interval-study"
+note = "Upper limit only: 99th percentile of IgM aCL in healthy controls, ELISA (AutoBind, Tosoh), before outlier exclusion; same value after exclusion. Single study, assay-specific; not a central 95 percent interval and not a general population interval."
+citations = [
+  { pmid = "41906152", doi = "10.1186/s41927-026-00636-w", title = "Population-specific antiphospholipid antibody titres in a South Indian cohort: defining cut-off values and implications for diagnosis from a cross-sectional validation study.", locator = "Abstract, Results", quote = "The 99th percentile cut-offs before excluding outliers were 17.3 GPL (IgG aCL), 12.4 MPL (IgM aCL)" },
+]

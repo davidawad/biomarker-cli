@@ -1,0 +1,27 @@
+slug = "urine-oxalate-mmol-d"
+name = "Oxalate, Urine (mmol/d)"
+category = "organic-acid"
+unit = "mmol/d"
+description = "Oxalate, Urine reported in mmol/d. Results in mmol/d are assay specific and are not interchangeable with Oxalate, Urine in mmol/mol creatinine."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 0.44
+population = "Laboratory reference population for 24-hour urinary oxalate, as quoted in one observational study"
+evidence = "cohort"
+citations = [
+  { pmid = "42180016", doi = "10.1093/crocol/otag033", title = "Urinary biomarkers of urolithiasis risk in Crohn's disease: hyperoxaluria, hypocitraturia, and hypomagnesuria in patients with and without ileocolic resection.", locator = "Methods, Outcomes and variables definition" },
+]
+note = "Laboratory reference value for 24-hour urinary oxalate quoted (not derived) in one observational study of Crohn's disease patients. Companion 24-hour unit mmol/d."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.6
+population = "Adults aged 19 and older with Crohn's disease (with or without ileocolic resection) and healthy volunteers, in one observational study"
+evidence = "cohort"
+citations = [
+  { pmid = "42180016", doi = "10.1093/crocol/otag033", title = "Urinary biomarkers of urolithiasis risk in Crohn's disease: hyperoxaluria, hypocitraturia, and hypomagnesuria in patients with and without ileocolic resection.", locator = "Methods, Outcomes and variables definition" },
+]
+note = "24-hour urinary oxalate cut-off defining hyperoxaluria in one observational study (strictly greater than 0.6 mmol/d). Not a population reference interval. Companion 24-hour unit mmol/d. Source kind: diagnostic. Source band >= 0.6; stored as the warn high bound 0.6."

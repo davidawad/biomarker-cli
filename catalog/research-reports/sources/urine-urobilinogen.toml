@@ -1,0 +1,8 @@
+slug = "urine-urobilinogen"
+name = "Urine Urobilinogen (dipstick)"
+loinc = "5818-0"
+category = "urinalysis"
+unit = "mg/dL"
+description = "Urobilinogen detected in urine by the Ehrlich reaction on a urine dipstick, reported as semi-quantitative grades (Ehrlich units). Tracked as a screen for hepatobiliary disease or hemolysis, and for acute hepatic porphyria. Expected result: normal (low) urobilinogen, not elevated."
+
+no_reference = "Semi-quantitative dipstick grade (Ehrlich reaction); no verifiable numeric reference interval was retrieved."

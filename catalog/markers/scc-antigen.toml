@@ -1,0 +1,20 @@
+slug = "scc-antigen"
+name = "Squamous Cell Carcinoma Antigen (SCC Ag)"
+category = "tumor-marker"
+unit = "ng/mL"
+loinc = "9679-2"
+description = "Squamous cell carcinoma antigen, a serum tumor marker used in squamous cell cancers (notably cervical) for monitoring response and recurrence. Expected result: low in healthy people; the verified sources give a positivity cut-off in cervical cancer but no numeric reference interval for healthy people."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 1.5
+when = { conditions = ["cervical-cancer"] }
+population = "Adults with cervical squamous cell carcinoma (cohorts in the cited studies)"
+evidence = "cohort"
+citations = [
+  { pmid = "40697691", doi = "10.1016/j.mjafi.2024.05.016", title = "Role of squamous cell carcinoma antigen (SCC-Ag) in the management of carcinoma cervix in an Indian population: A pilot study.", locator = "Abstract" },
+  { pmid = "32221801", doi = "10.1007/s10147-020-01664-3", title = "Can serial evaluation of serum SCC-Ag-level predict tumor recurrence and patient survival in squamous-cell carcinoma of uterine cervix treated with definitive chemoradiotherapy? A multi-institutional analysis.", locator = "Abstract, Results" },
+]
+note = "Positivity cut-off as stated by the sources: 1.5 ng/mL or more is positive (40697691); post-treatment level of 1.5 ng/mL or more versus below 1.5 ng/mL (32221801). Source band >= 1.5; stored as the warn high bound 1.5."

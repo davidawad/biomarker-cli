@@ -1,0 +1,41 @@
+slug = "peth"
+name = "Phosphatidylethanol (PEth)"
+category = "metabolic"
+unit = "ng/mL"
+loinc = "74661-0"
+description = "Direct blood biomarker of recent alcohol intake: phosphatidylethanol 16:0/18:1 forms in red blood cells only when ethanol is present. Used to monitor abstinence, alcohol use disorder treatment, and forensic or fitness-to-drive assessment. Expected result for an abstinent or low-consumption person: below 20 ng/mL. Cut-offs are classification thresholds, not reference intervals."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20
+population = "General adults, PEth 16:0/18:1 in whole blood"
+evidence = "consensus"
+citations = [
+  { pmid = "42248449", doi = "10.1016/j.jhepr.2026.101906", url = "https://doi.org/10.1016/j.jhepr.2026.101906", title = "Assessing alcohol consumption in an era of direct alcohol markers.", locator = "Section on PEth cut-offs" },
+]
+note = "Cut-off of 20 ng/mL (US laboratory practice, per review): at or above it indicates deliberate alcohol consumption rather than abstinence or incidental exposure. Secondary source: narrative review, not the primary Consensus of Basel (full text not accessible). Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 200
+population = "General adults, PEth in whole blood"
+evidence = "consensus"
+citations = [
+  { pmid = "42248449", doi = "10.1016/j.jhepr.2026.101906", url = "https://doi.org/10.1016/j.jhepr.2026.101906", title = "Assessing alcohol consumption in an era of direct alcohol markers.", locator = "Section on PEth cut-offs" },
+]
+note = "Approximately 200 ng/mL: commonly considered indicative of high-risk alcohol consumption (per review; cited as in agreement with the Consensus of Basel). Secondary source: narrative review, not the primary consensus. Source kind: diagnostic. Source band >= 200; stored as the warn high bound 200. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 8
+when = { pregnant = true }
+population = "Pregnant women, Western Cape Province, South Africa (n = 222), PEth from dried blood spots"
+evidence = "cohort"
+citations = [
+  { pmid = "37102125", doi = "10.1016/j.crtox.2023.100105", url = "https://doi.org/10.1016/j.crtox.2023.100105", title = "Assessing the sensitivity and specificity of phosphatidylethanol (PEth) cutoffs to identify alcohol exposed pregnancies.", locator = "Abstract" },
+]
+note = "Research-use positive cut-off of 8 ng/mL for identifying alcohol-consuming pregnant women in this single sample, judged against self-report and AUDIT; not a validated clinical threshold. Source kind: diagnostic. Source band >= 8; stored as the warn high bound 8."

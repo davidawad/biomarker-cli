@@ -1,0 +1,18 @@
+slug = "manganese"
+name = "Manganese, Whole Blood"
+loinc = "5681-2"
+category = "trace-element"
+unit = "ug/L"
+description = "Manganese measured in whole blood, an essential trace element that is also a potential toxicant at high levels; tracked for exposure and toxicity assessment. Expected result: below the commonly used 1.5 ug/dL reference cited in the range below."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.5
+unit = "ug/dL"
+population = "Non-pregnant US females aged 12-49 years (NHANES 2015-2018); source cites 1.5 ug/dL as a commonly used reference"
+evidence = "outcome-study"
+note = "Elevated whole-blood manganese: above 1.5 ug/dL. Single-study classification; the source calls 1.5 ug/dL a commonly used reference without citing it in the abstract."
+citations = [
+  { pmid = "40972513", doi = "10.1093/mtomcs/mfaf032", title = "The interplay of iron status and manganese biomarkers in U.S. females: NHANES 2015-2018 analysis.", locator = "Abstract (Results)", quote = "Conversely, 16.9% of participants exhibited blood Mn levels exceeding 1.5 ug/dL, a commonly used reference." },
+]

@@ -1,0 +1,18 @@
+slug = "ia-2-antibodies-iu-ml"
+name = "IA-2 Autoantibodies (ICA512) (IU/mL)"
+category = "autoimmune"
+unit = "IU/mL"
+description = "IA-2 Autoantibodies (ICA512) reported in IU/mL. Results in IU/mL are assay specific and are not interchangeable with IA-2 Autoantibodies (ICA512) in U/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 10
+when = { conditions = ["type-1-diabetes"] }
+population = "Siblings aged 2-17 years of children with type 1 diabetes, Latvia, two-stage screening (Euroimmun ELISA)"
+evidence = "cohort"
+citations = [
+  { pmid = "42533171", doi = "10.1007/s00431-026-07278-7", title = "Screening of pre-type 1 diabetes in high-risk paediatric population: a pilot study in Latvia.", locator = "Methods, second screening stage (Euroimmun antibody assays)" },
+]
+note = "Positive result cut-off for the Euroimmun IA-2 ELISA as stated by the source (>= 10 IU/mL). Source kind: diagnostic. Source band >= 10; stored as the warn high bound 10."

@@ -1,0 +1,7 @@
+slug = "syphilis-treponemal"
+name = "Syphilis Treponemal Antibody (IgG+IgM)"
+category = "infectious"
+unit = "index"
+loinc = "47236-5"
+description = "Treponema pallidum-specific antibody test for syphilis, detecting IgG and IgM. Used to confirm a reactive nontreponemal (RPR) result. Reported as reactive or nonreactive, sometimes with a signal-to-cutoff index. Expected result: nonreactive (not detected)."
+no_reference = "Qualitative result (reactive or nonreactive); no numeric reference interval applies. A signal-to-cutoff index is assay-specific and has no universal interval."

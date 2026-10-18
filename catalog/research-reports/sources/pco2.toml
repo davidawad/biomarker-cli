@@ -1,0 +1,18 @@
+slug = "pco2"
+name = "Partial Pressure of CO2, Arterial Blood"
+loinc = "2019-8"
+category = "metabolic"
+unit = "mmHg"
+description = "Arterial partial pressure of carbon dioxide, the main respiratory measure of ventilation and of respiratory acid-base status. Measured on arterial blood gas analysis. Expected result: at or below the upper limit of normal for the age group."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 44.8
+when = { age_min = 70 }
+population = "Persons older than 70 years without respiratory disease, significant dyspnea, symptomatic heart disease, hypertension, or current smoking (arterial samples, supine)"
+evidence = "reference-interval-study"
+note = "Upper limit of normal PaCO2 (mm Hg) for both sexes in persons over 70. Only an upper limit is given in the source; no lower limit is stated."
+citations = [
+  { pmid = "15189921", doi = "10.1378/chest.125.6.2053", title = "Reference values for arterial blood gases in the elderly.", url = "https://doi.org/10.1378/chest.125.6.2053", locator = "Results", quote = "Mean (SD; upper limit of normal) PaCO(2) was 39.4 mm Hg (3.3; 44.8) for both sexes." },
+]

@@ -1,0 +1,7 @@
+slug = "urine-mucus"
+name = "Urine Mucus (microscopy)"
+category = "urinalysis"
+unit = "qualitative"
+loinc = "105106-9"
+description = "Mucus seen on urine sediment microscopy, reported as a qualitative grade. Tracked as a non-specific sediment finding that is read together with the squamous epithelial cell count. Expected result: none or rare."
+no_reference = "Qualitative microscopy grade (none, few, moderate, many); no numeric reference interval applies."

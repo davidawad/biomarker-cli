@@ -1,0 +1,68 @@
+slug = "he4"
+name = "HE4 (Human Epididymis Protein 4)"
+loinc = "96044-3"
+category = "tumor-marker"
+unit = "pmol/L"
+description = "Human epididymis protein 4, a serum glycoprotein measured by immunoassay. Used with CA125 and the ROMA index in evaluating ovarian tumours and monitoring ovarian cancer. Expected result in healthy women: at or below the reference upper limit, which is higher after menopause."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 29.30
+high = 68.79
+when = { sex = "female", menopause = "pre" }
+population = "Healthy premenopausal Chinese women, multicentre study (n = 618 healthy women), ECLIA"
+evidence = "reference-interval-study"
+note = "Premenopausal healthy reference range (2.5-97.5 % central interval)."
+citations = [
+  { pmid = "26552478", doi = "10.1186/s13048-015-0201-z", title = "Determination of reference intervals of serum levels of human epididymis protein 4 (HE4) in Chinese women.", locator = "Abstract, Methods and Results", quote = "Confidence intervals (2.5-97.5 %) were determined in different populations. ... In pre-menopause stage, the reference ranges of HE4 level were 29.30-68.79, 28.12-1284.83 and 34.75-981.91 pmol/L in healthy, benign and malignant populations, respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 35.96
+high = 114.43
+when = { sex = "female", menopause = "post" }
+population = "Healthy postmenopausal Chinese women, multicentre study (n = 618 healthy women), ECLIA"
+evidence = "reference-interval-study"
+note = "Postmenopausal healthy reference range (2.5-97.5 % central interval). The source gives the three population ranges in the order healthy, benign, malignant."
+citations = [
+  { pmid = "26552478", doi = "10.1186/s13048-015-0201-z", title = "Determination of reference intervals of serum levels of human epididymis protein 4 (HE4) in Chinese women.", locator = "Abstract, Methods and Results", quote = "Confidence intervals (2.5-97.5 %) were determined in different populations. ... In post-menopause stage, the reference ranges are 35.96-114.43, 39.11-2208.70 and 39.40-1678.13 pmol/L for those populations." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 44.63
+when = { sex = "female", menopause = "pre", age_min = 40 }
+population = "Healthy premenopausal Chinese women aged 40 years or older (n = 325 premenopausal), multicentre cross-sectional study, ELISA"
+evidence = "reference-interval-study"
+note = "Upper 95th percentile, premenopausal healthy women."
+citations = [
+  { pmid = "32404690", doi = "10.1097/CM9.0000000000000785", title = "Age and menopausal status are important factors influencing the serum human epididymis secretory protein 4 level: a prospective cross-sectional study in healthy Chinese people.", locator = "Abstract, Results", quote = "A total of 2493 healthy females aged 40 years or older were recruited ... The upper 95th percentile of HE4 levels were 44.63 pmol/L for pre-menopausal women, 78.17 pmol/L for post-menopausal women, and 73.3 pmol/L for all women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 78.17
+when = { sex = "female", menopause = "post", age_min = 40 }
+population = "Healthy postmenopausal Chinese women aged 40 years or older (n = 2168 postmenopausal), multicentre cross-sectional study, ELISA"
+evidence = "reference-interval-study"
+note = "Upper 95th percentile, postmenopausal healthy women."
+citations = [
+  { pmid = "32404690", doi = "10.1097/CM9.0000000000000785", title = "Age and menopausal status are important factors influencing the serum human epididymis secretory protein 4 level: a prospective cross-sectional study in healthy Chinese people.", locator = "Abstract, Results", quote = "A total of 2493 healthy females aged 40 years or older were recruited ... The upper 95th percentile of HE4 levels were 44.63 pmol/L for pre-menopausal women, 78.17 pmol/L for post-menopausal women, and 73.3 pmol/L for all women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 82.62
+when = { sex = "female", age_min = 21, age_max = 82 }
+population = "Healthy Chinese women aged 21-81 years, premenopausal and postmenopausal pooled (n not stated in abstract), Roche Cobas E601 ECLIA"
+evidence = "reference-interval-study"
+note = "Pooled upper 95th percentile for all healthy women; does not split by menopausal status."
+citations = [
+  { pmid = "24012857", doi = "10.1016/j.clinbiochem.2013.08.019", title = "The reference intervals for HE4, CA125 and ROMA in healthy female with electrochemiluminescence immunoassay.", locator = "Abstract, Results", quote = "The upper limits of the 95% percentile intervals were 82.62 pmol/L for HE4, 30.91 U/mL for CA125 and 19.27 for ROMA." },
+]

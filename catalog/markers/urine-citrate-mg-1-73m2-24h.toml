@@ -1,0 +1,29 @@
+slug = "urine-citrate-mg-1-73m2-24h"
+name = "Citrate, Urine (mg/1.73m2/24h)"
+category = "organic-acid"
+unit = "mg/1.73m2/24h"
+description = "Citrate, Urine reported in mg/1.73m2/24h. Results in mg/1.73m2/24h are assay specific and are not interchangeable with Citrate, Urine in mg/24h."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 180
+when = { sex = "male", age = [2.0, 19.0] }
+population = "Healthy boys aged 2 to 18 years (24-hour urine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24696006", doi = "10.1007/s00467-014-2806-7", title = "Urinary citrate excretion in healthy children depends on age and gender.", locator = "Abstract (Results)" },
+]
+note = "Lower cut-off for boys, citrate normalised to 1.73 m2 body surface area per 24 hours. Age_max 19 is 18 years inclusive."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 250
+when = { sex = "female", age = [2.0, 19.0] }
+population = "Healthy girls aged 2 to 18 years (24-hour urine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24696006", doi = "10.1007/s00467-014-2806-7", title = "Urinary citrate excretion in healthy children depends on age and gender.", locator = "Abstract (Results)" },
+]
+note = "Lower cut-off for girls, citrate normalised to 1.73 m2 body surface area per 24 hours. Age_max 19 is 18 years inclusive."

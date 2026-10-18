@@ -1,0 +1,7 @@
+slug = "urine-magnesium"
+name = "Urine Magnesium"
+category = "urinalysis"
+unit = "mg/24h"
+loinc = "19124-7"
+description = "Magnesium excreted in urine, usually collected over 24 hours to assess magnesium handling and kidney stone risk (hypomagnesuria). Expected result: at or above the hypomagnesuria cut-off in the range below. Ranges are copied in the units the sources state; the mmol/day cut-off is a companion unit."
+no_reference = "No general reference interval for 24-hour urine magnesium was verifiable; the only range is a stone-risk cut-off."

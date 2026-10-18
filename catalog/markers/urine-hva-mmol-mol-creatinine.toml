@@ -1,0 +1,89 @@
+slug = "urine-hva-mmol-mol-creatinine"
+name = "Homovanillic Acid (HVA), Urine (mmol/mol creatinine)"
+category = "organic-acid"
+unit = "mmol/mol creatinine"
+description = "Homovanillic Acid (HVA), Urine reported in mmol/mol creatinine. Results in mmol/mol creatinine are assay specific and are not interchangeable with Homovanillic Acid (HVA), Urine in mg/24h."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 23.1
+when = { age = [0.0, 1.0] }
+population = "Children under 1 year, creatinine-normalised urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/BM.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Davidson 2011 rows)" },
+]
+note = "Upper reference limit, Davidson 2011 HPLC-ECD rows as tabulated in the source review."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 18
+when = { age = [1.0, 3.0] }
+population = "Children aged 1 to 2 years, creatinine-normalised urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/BM.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Davidson 2011 rows)" },
+]
+note = "Upper reference limit, Davidson 2011 HPLC-ECD rows as tabulated in the source review."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 12
+when = { age = [3.0, 5.0] }
+population = "Children aged 3 to 4 years, creatinine-normalised urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/BM.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Davidson 2011 rows)" },
+]
+note = "Upper reference limit, Davidson 2011 HPLC-ECD rows as tabulated in the source review."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 10.5
+when = { age = [5.0, 8.0] }
+population = "Children aged 5 to 7 years, creatinine-normalised urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/BM.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Davidson 2011 rows)" },
+]
+note = "Upper reference limit, Davidson 2011 HPLC-ECD rows as tabulated in the source review."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 9.8
+when = { age = [8.0, 11.0] }
+population = "Children aged 8 to 10 years, creatinine-normalised urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/BM.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Davidson 2011 rows)" },
+]
+note = "Upper reference limit, Davidson 2011 HPLC-ECD rows as tabulated in the source review."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5.9
+when = { age = [11.0, 14.0] }
+population = "Children aged 11 to 13 years, creatinine-normalised urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/BM.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Davidson 2011 rows)" },
+]
+note = "Upper reference limit, Davidson 2011 HPLC-ECD rows as tabulated in the source review."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5.0
+when = { age = [14.0, 20.0] }
+population = "Adolescents aged 14 to 19 years, creatinine-normalised urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/BM.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Davidson 2011 rows)" },
+]
+note = "Upper reference limit, Davidson 2011 HPLC-ECD rows as tabulated in the source review. Age_max 20 is 19 years inclusive."

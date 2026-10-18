@@ -1,0 +1,18 @@
+slug = "tsi-iu-l"
+name = "Thyroid Stimulating Immunoglobulin (TSI) (IU/L)"
+category = "thyroid"
+unit = "IU/L"
+description = "Thyroid Stimulating Immunoglobulin (TSI) reported in IU/L. Results in IU/L are assay specific and are not interchangeable with Thyroid Stimulating Immunoglobulin (TSI) in %."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 1.31
+when = { conditions = ["graves-disease"] }
+population = "Graves' disease patients on low-dose antithyroid drugs, followed after withdrawal (single retrospective cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "41234232", doi = "10.3389/fendo.2025.1697122", title = "Thyroid-stimulating immunoglobulin levels during low-dose antithyroid therapy predict Graves' disease relapse.", locator = "Results" },
+]
+note = "Relapse-risk cut-off reported by the cited study (sensitivity 63.64%, specificity 78.79%). Not a diagnostic threshold. Reported in IU/L, the assay unit of that study. Source band >= 1.31; stored as the warn high bound 1.31."

@@ -1,0 +1,30 @@
+slug = "cyfra-21-1"
+name = "CYFRA 21-1 (Cytokeratin 19 Fragment)"
+category = "tumor-marker"
+unit = "ng/mL"
+loinc = "25390-6"
+description = "Cytokeratin 19 fragment measured in serum by immunoassay. Tracked as a tumour marker, mainly for non-small cell lung cancer, and for monitoring. Expected result in healthy people: at or below the reference upper limit."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 3.7
+when = { sex = "male" }
+population = "Healthy persons from routine health check-up, Chengdu, China (n = 4,988 for CYFRA 21-1); indirect method; no correlation with age"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31414742", doi = "10.7754/Clin.Lab.2019.190113", title = "Establishment of Reference Intervals for Serum Cytokeratin-19 Fragment and Neuron Specific Enolase by Indirect Method Using Data Obtained from Healthy Chinese Population in Chengdu.", locator = "Results" },
+]
+note = "Indirect 95th percentile interval, males. Source states the lower limit as 0.0; source label Cyfra211."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 3.35
+when = { sex = "female" }
+population = "Healthy persons from routine health check-up, Chengdu, China (n = 4,988 for CYFRA 21-1); indirect method; no correlation with age"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31414742", doi = "10.7754/Clin.Lab.2019.190113", title = "Establishment of Reference Intervals for Serum Cytokeratin-19 Fragment and Neuron Specific Enolase by Indirect Method Using Data Obtained from Healthy Chinese Population in Chengdu.", locator = "Results" },
+]
+note = "Indirect 95th percentile interval, females. Source states the lower limit as 0.0; source label Cyfra211."

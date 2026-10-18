@@ -1,0 +1,53 @@
+slug = "galectin-3"
+name = "Galectin-3"
+category = "cardiac"
+unit = "ng/mL"
+loinc = "62419-7"
+description = "Beta-galactoside-binding lectin released by activated macrophages; measured as a marker of myocardial fibrosis and remodelling and as a prognostic marker in heart failure. Expected result in healthy adults: below the upper reference limit. Limits differ by assay and by age, so use the range that matches the assay and age."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 26.1
+population = "Healthy blood donors (n=706, age 18-65 years), 97.5th percentile upper reference limit, non-parametric"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29180917", doi = "10.11613/BM.2017.030709", title = "Establishing the upper reference limit of Galectin-3 in healthy blood donors.", locator = "Results" },
+]
+note = "Upper reference limit only (one-sided). Assay not named in the abstract. The same study reports age-specific limits below."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 31.5
+when = { age = [46.0, 200] }
+population = "Healthy blood donors older than 45 years (age 46 and above in whole years), upper reference limit"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29180917", doi = "10.11613/BM.2017.030709", title = "Establishing the upper reference limit of Galectin-3 in healthy blood donors.", locator = "Results" },
+]
+note = "Age-specific upper reference limit from the same study. The source states the cut as '> 45 years'; age_min = 46 is the whole-year equivalent."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 21.8
+when = { age = [0.0, 46.0] }
+population = "Healthy blood donors aged 45 years or younger (whole years below 46), upper reference limit"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29180917", doi = "10.11613/BM.2017.030709", title = "Establishing the upper reference limit of Galectin-3 in healthy blood donors.", locator = "Results" },
+]
+note = "Age-specific upper reference limit from the same study (younger group). The source states the cut as '> 45 years'; age_max = 46 is the whole-year equivalent."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 5.9
+high = 18.1
+population = "Apparently healthy adults, reference group of 180 selected from 533 questionnaire-screened individuals (method: architect-stat-immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28322756", doi = "10.1016/j.clinbiochem.2017.03.015", title = "Establishing reference intervals for galectin-3 concentrations in serum requires careful consideration of its biological determinants.", locator = "Results" },
+]
+note = "2.5th to 97.5th percentile reference interval on the Architect STAT immunoassay. Source states the numbers in ug/L. The authors recommend one URL for the whole adult population. Converted from the source's ug/L (5.9-18.1) to ng/mL using factor 1.0. Alternative to the default clinical reference range for the same population."

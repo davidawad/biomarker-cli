@@ -1,0 +1,7 @@
+slug = "trichomonas-naat"
+name = "Trichomonas vaginalis NAAT"
+loinc = "69937-1"
+category = "infectious"
+unit = "qualitative"
+description = "Nucleic acid amplification test (NAAT) detecting Trichomonas vaginalis DNA or RNA in vaginal, urethral, or urine specimens, reported as detected or not detected. Tracked as a sexually transmitted infection screen, including in people without symptoms. Expected result: not detected (negative)."
+no_reference = "Qualitative result (detected or not detected); no numeric reference interval applies."

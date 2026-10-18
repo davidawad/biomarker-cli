@@ -1,0 +1,71 @@
+slug = "troponin-t"
+name = "Troponin T"
+category = "cardiac"
+unit = "ng/L"
+description = "Cardiac troponin T, a myocardial injury marker measured in blood. The ranges below are age- and sex-specific cut-offs for the 99th percentile upper reference limit of the Roche high-sensitivity cardiac troponin T (hs-cTnT) assay, as proposed from three population cohorts; limits are assay-specific and do not transfer to other troponin methods."
+aliases = ["ctnt", "troponin t"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 14
+when = { sex = "male", age = [0.0, 50.0] }
+population = "Men younger than 50 years; hs-cTnT (Roche) assay; cohorts Dallas Heart Study, ARIC, CHS excluding overt and subclinical cardiovascular and kidney disease"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Discussion" },
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Abstract, Objectives" },
+]
+note = "Authors state the 14 ng/L hs-cTnT cutoff should remain only for men younger than 50 years and women younger than 65 years. Upper limit (99th percentile)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 14
+when = { sex = "female", age = [0.0, 65.0] }
+population = "Women younger than 65 years; hs-cTnT (Roche) assay; cohorts Dallas Heart Study, ARIC, CHS excluding overt and subclinical cardiovascular and kidney disease"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Discussion" },
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Abstract, Objectives" },
+]
+note = "Authors state the 14 ng/L hs-cTnT cutoff should remain only for men younger than 50 years and women younger than 65 years. The true 99th percentile for women younger than 50 may be lower than 14 ng/L per the authors."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 17
+when = { sex = "male", age = [50.0, 65.0] }
+population = "Men aged 50-64 years; hs-cTnT (Roche) assay; proposed cutoff from the lowest 99th percentile across three cohorts' reference subcohort 2"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Discussion" },
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Abstract, Objectives" },
+]
+note = "Proposed upper cutoff (needs clinical validation per the authors)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 17
+when = { sex = "female", age = [65.0, 200] }
+population = "Women aged 65 years or older; hs-cTnT (Roche) assay; proposed cutoff from the lowest 99th percentile across three cohorts' reference subcohort 2"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Discussion" },
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Abstract, Objectives" },
+]
+note = "Proposed upper cutoff (needs clinical validation per the authors)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 31
+when = { sex = "male", age = [65.0, 200] }
+population = "Men aged 65 years or older; hs-cTnT (Roche) assay; proposed cutoff from the lowest 99th percentile across three cohorts' reference subcohort 2"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Discussion" },
+  { pmid = "24530665", doi = "10.1016/j.jacc.2013.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/24530665/", title = "Age- and sex-dependent upper reference limits for the high-sensitivity cardiac troponin T assay.", locator = "Abstract, Objectives" },
+]
+note = "Proposed upper cutoff (needs clinical validation per the authors)."

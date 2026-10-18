@@ -1,0 +1,86 @@
+slug = "toxoplasma-igg"
+name = "Toxoplasma IgG"
+loinc = "22580-5"
+category = "infectious"
+unit = "IU/mL"
+description = "Serum IgG antibody against Toxoplasma gondii, reported in IU/mL by immunoassay as negative, equivocal or positive. Tracked to establish past or latent infection, and during pregnancy or immunosuppression to assess risk. Expected result: negative (no prior exposure) or, if previously infected, positive; a positive IgG alone does not date infection, so IgM and IgG avidity testing are used with it."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 4.4
+unit = "IU/mL"
+when = { method = "platelia-toxo-igg" }
+population = "384 routine-screening sera, Pitie-Salpetriere Hospital, Paris, tested with Platelia Toxo IgG and Western blot"
+evidence = "outcome-study"
+note = "Seropositive (IgG positivity) on Platelia Toxo IgG; cut-off chosen in one study against Western blot, and lower than the manufacturer's cut-off."
+citations = [
+  { pmid = "26187780", doi = "10.1051/parasite/2015022", title = "The impact of lowering the cut-off value on the sensitivity of the Platelia Elisa IgG (Bio-Rad) test for toxoplasmosis diagnosis.", locator = "Abstract", quote = "Our results indicated that an IgG titer cut-off value of >=4.4 IU/mL for the Platelia Toxo IgG met the definition of positivity, a value significantly lower than that indicated by the manufacturers." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 6
+high = 9
+unit = "IU/mL"
+when = { method = "platelia-toxo-igg" }
+population = "384 routine-screening sera, Pitie-Salpetriere Hospital, Paris, tested with Platelia Toxo IgG and Western blot"
+evidence = "outcome-study"
+note = "Equivocal IgG on Platelia Toxo IgG (6-9 IU/mL), per the classes used in the cited study."
+citations = [
+  { pmid = "26187780", doi = "10.1051/parasite/2015022", title = "The impact of lowering the cut-off value on the sensitivity of the Platelia Elisa IgG (Bio-Rad) test for toxoplasmosis diagnosis.", locator = "Abstract", quote = "We performed a study on 384 sera, including 123 IgG negative (<6 IU/mL) and 261 IgG equivocal (6-9 IU/mL) sera tested with Platelia Toxo IgG" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 6
+unit = "IU/mL"
+when = { method = "platelia-toxo-igg" }
+population = "384 routine-screening sera, Pitie-Salpetriere Hospital, Paris, tested with Platelia Toxo IgG and Western blot"
+evidence = "outcome-study"
+note = "Negative IgG on Platelia Toxo IgG (<6 IU/mL), per the classes used in the cited study."
+citations = [
+  { pmid = "26187780", doi = "10.1051/parasite/2015022", title = "The impact of lowering the cut-off value on the sensitivity of the Platelia Elisa IgG (Bio-Rad) test for toxoplasmosis diagnosis.", locator = "Abstract", quote = "We performed a study on 384 sera, including 123 IgG negative (<6 IU/mL) and 261 IgG equivocal (6-9 IU/mL) sera tested with Platelia Toxo IgG" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 5.2
+unit = "IU/mL"
+when = { pregnant = true, method = "meia" }
+population = "757 pregnant women (843 sera), MEIA classified against Sabin-Feldman dye test and specific IgM"
+evidence = "outcome-study"
+note = "Group 1, no infection, by MEIA IgG band with dye test and IgM. The source states these threshold values need confirmation in a larger prospective study."
+citations = [
+  { pmid = "7709628", title = "Microparticle enzyme immunoassay (MEIA) for toxoplasma specific immunoglobulin G in comparison to the Sabin-Feldman dye test. A pilot study.", locator = "Abstract", quote = "which allowed the following cut-off points to be laid down: group 1: 0-5.2 IU/ml, group 2: 5.3-187.5, and group 3: 187.6 IU/ml and higher." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 5.3
+high = 187.5
+unit = "IU/mL"
+when = { pregnant = true, method = "meia" }
+population = "757 pregnant women (843 sera), MEIA classified against Sabin-Feldman dye test and specific IgM"
+evidence = "outcome-study"
+note = "Group 2, latent infection, by MEIA IgG band. The source states these threshold values need confirmation in a larger prospective study."
+citations = [
+  { pmid = "7709628", title = "Microparticle enzyme immunoassay (MEIA) for toxoplasma specific immunoglobulin G in comparison to the Sabin-Feldman dye test. A pilot study.", locator = "Abstract", quote = "which allowed the following cut-off points to be laid down: group 1: 0-5.2 IU/ml, group 2: 5.3-187.5, and group 3: 187.6 IU/ml and higher." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 187.6
+unit = "IU/mL"
+when = { pregnant = true, method = "meia" }
+population = "757 pregnant women (843 sera), MEIA classified against Sabin-Feldman dye test and specific IgM"
+evidence = "outcome-study"
+note = "Group 3, acute infection, by MEIA IgG band. The source states these threshold values need confirmation in a larger prospective study."
+citations = [
+  { pmid = "7709628", title = "Microparticle enzyme immunoassay (MEIA) for toxoplasma specific immunoglobulin G in comparison to the Sabin-Feldman dye test. A pilot study.", locator = "Abstract", quote = "which allowed the following cut-off points to be laid down: group 1: 0-5.2 IU/ml, group 2: 5.3-187.5, and group 3: 187.6 IU/ml and higher." },
+]

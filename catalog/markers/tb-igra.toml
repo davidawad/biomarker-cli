@@ -1,0 +1,18 @@
+slug = "tb-igra"
+name = "TB Interferon-gamma Release Assay (QuantiFERON)"
+category = "infectious"
+unit = "IU/mL"
+loinc = "96754-7"
+description = "Whole-blood interferon-gamma release assay (QuantiFERON-TB Gold Plus) for Mycobacterium tuberculosis infection. Interferon-gamma is measured after stimulation with TB antigens (TB1, TB2) minus the nil control, in IU/mL. Reported as positive, negative, borderline or indeterminate. Expected result: negative (TB1 and TB2 below the 0.35 IU/mL cut-off)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.35
+population = "Patients tested with QuantiFERON-TB Gold Plus in clinical laboratories in Sweden (58,539 patients, linked to the national TB registry)"
+evidence = "cohort"
+citations = [
+  { pmid = "34550805", doi = "10.1128/JCM.01370-21", url = "https://pubmed.ncbi.nlm.nih.gov/34550805/", title = "The Impact of Borderline Quantiferon-TB Gold Plus Results for Latent Tuberculosis Screening under Routine Conditions in a Low-Endemicity Setting.", locator = "Abstract (Results)" },
+]
+note = "0.35 IU/mL is the cut-off applied to QuantiFERON-TB Gold Plus results in this study. Single-study observational evidence. Source kind: diagnostic. Source band >= 0.35; stored as the warn high bound 0.35."

@@ -1,42 +1,17 @@
 slug = "glycine"
 name = "Glycine"
-category = "amino-acid"
-unit = "µmol/L"
-loinc = "2391-1"
-description = "Non-essential amino acid measured in plasma as a free amino acid by LC-MS/MS. Glycine is a precursor for glutathione, creatine, purines and collagen."
-
-[[range]]
-set = "contextual"
-kind = "reference"
-low = 95.3
-high = 397.7
-population = "Healthy volunteers living in Japan, Japanese subpopulation (n=31; 16 male, 15 female; mean age 46.5 years)"
-evidence = "cohort"
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1" },
-]
-note = "Observed min-max range of plasma glycine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval). Sex-stratified values not reported in the table. Applies only to: ethnicity=japanese."
+category = "chemistry"
+unit = "umol/L"
+description = "Plasma glycine, a proteinogenic amino acid measured by LC-MS/MS or chromatography."
 
 [[range]]
 set = "clinical"
 kind = "reference"
-low = 119.1
-high = 381.0
-population = "Healthy volunteers living in Japan, Korean subpopulation (n=36; 19 male, 17 female; mean age 37.2 years)"
-evidence = "cohort"
+low = 204.01
+high = 574.55
+population = "Chinese healthy adults, plasma, LC-MS/MS (specimen: plasma)"
+evidence = "reference-interval-study"
 citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1" },
+  { pmid = "37956824", doi = "10.1016/j.cca.2023.117650", title = "Simultaneous determination of human plasma 5 amino acid neurotransmitters using liquid chromatography-tandem mass spectrometry: Establishment of reference intervals in Chinese adult population and application to patients with schizophrenia.", locator = "Abstract" },
 ]
-note = "Observed min-max range of plasma glycine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval). Applies only to: ethnicity=korean. Alternative to the default contextual reference range for the same population."
-
-[[range]]
-set = "alt-2"
-kind = "reference"
-low = 166.1
-high = 326.0
-population = "Healthy volunteers living in Japan, Chinese subpopulation (n=28; 13 male, 15 female; mean age 45.1 years)"
-evidence = "cohort"
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1" },
-]
-note = "Observed min-max range of plasma glycine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval). Applies only to: ethnicity=chinese. Alternative to the default contextual reference range for the same population."
+note = "Reference interval established in a Chinese adult population (abstract-level source)."

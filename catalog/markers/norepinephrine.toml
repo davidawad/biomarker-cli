@@ -1,0 +1,7 @@
+slug = "norepinephrine"
+name = "Norepinephrine (Plasma)"
+category = "adrenal"
+unit = "pg/mL"
+loinc = "2666-6"
+description = "Norepinephrine (Plasma). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

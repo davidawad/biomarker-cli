@@ -1,0 +1,19 @@
+slug = "prealbumin"
+name = "Prealbumin (Transthyretin)"
+category = "protein"
+unit = "mg/dL"
+loinc = "14338-8"
+description = "Prealbumin, also called transthyretin, a serum transport protein measured to assess nutritional status. In systemic AL amyloidosis, serum prealbumin was an independent predictor of survival in one cohort. Expected result in a healthy adult: a value within the laboratory's reference interval; no numeric healthy-population reference interval was verified for this marker."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 20.0
+when = { conditions = ["al-amyloidosis"] }
+population = "Outpatients with systemic immunoglobulin light-chain (AL) amyloidosis; serum prealbumin"
+evidence = "cohort"
+citations = [
+  { pmid = "16469994", title = "Nutritional status of outpatients with systemic immunoglobulin light-chain amyloidosis 1.", locator = "Abstract (Results)" },
+]
+note = "Lower reference limit as stated by the authors of this single cohort study (values below it are reported as below the lower reference limit). Not a healthy-population reference interval. Converted from the source's mg/L (200) to mg/dL using factor 0.1. Source band >= 20.0; stored as the warn high bound 20.0."

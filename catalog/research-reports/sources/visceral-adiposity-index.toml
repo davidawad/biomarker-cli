@@ -1,0 +1,65 @@
+slug = "visceral-adiposity-index"
+name = "Visceral Adiposity Index"
+category = "body-composition"
+unit = "index"
+description = "Sex-specific computed index from waist circumference, BMI, triglycerides and HDL cholesterol, intended to express visceral fat function and cardiometabolic risk. A calculated score, not a measured analyte. The cut-offs below are single-study ROC thresholds for metabolic syndrome in one Sicilian primary-care sample, not established clinical thresholds. Expected result: no universal normal value."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 2.52
+when = { age_max = 30, conditions = ["metabolic-syndrome"] }
+population = "Caucasian Sicilian primary-care patients aged under 30 years (n=1,764; 16-99 y in sample)"
+evidence = "outcome-study"
+note = "Single-study ROC cut-off identifying metabolic syndrome (NCEP-ATP III); age-stratified, not an established threshold. Values at or above the cut-off flag visceral adipose dysfunction in that sample."
+citations = [
+  { pmid = "22011564", doi = "10.1186/1476-511X-10-183", title = "Cut-off points of the visceral adiposity index (VAI) identifying a visceral adipose dysfunction associated with cardiometabolic risk in a Caucasian Sicilian population.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3224548/", locator = "Results (age-stratified cut-offs)", quote = "Optimal VAI cut-off points were: 2.52 (age < 30 years), 2.23 (age >= 30 and < 42 years), 1.92 (age >= 42 and < 52 years), 1.93 (age >= 52 and < 66 years) and 2.00 (age >= 66 years)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 2.23
+when = { age_min = 30, age_max = 42, conditions = ["metabolic-syndrome"] }
+population = "Caucasian Sicilian primary-care patients aged 30-41 years (n=1,764; 16-99 y in sample)"
+evidence = "outcome-study"
+note = "Single-study ROC cut-off identifying metabolic syndrome (NCEP-ATP III); age-stratified, not an established threshold. Values at or above the cut-off flag visceral adipose dysfunction in that sample."
+citations = [
+  { pmid = "22011564", doi = "10.1186/1476-511X-10-183", title = "Cut-off points of the visceral adiposity index (VAI) identifying a visceral adipose dysfunction associated with cardiometabolic risk in a Caucasian Sicilian population.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3224548/", locator = "Results (age-stratified cut-offs)", quote = "Optimal VAI cut-off points were: 2.52 (age < 30 years), 2.23 (age >= 30 and < 42 years), 1.92 (age >= 42 and < 52 years), 1.93 (age >= 52 and < 66 years) and 2.00 (age >= 66 years)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.92
+when = { age_min = 42, age_max = 52, conditions = ["metabolic-syndrome"] }
+population = "Caucasian Sicilian primary-care patients aged 42-51 years (n=1,764; 16-99 y in sample)"
+evidence = "outcome-study"
+note = "Single-study ROC cut-off identifying metabolic syndrome (NCEP-ATP III); age-stratified, not an established threshold. Values at or above the cut-off flag visceral adipose dysfunction in that sample."
+citations = [
+  { pmid = "22011564", doi = "10.1186/1476-511X-10-183", title = "Cut-off points of the visceral adiposity index (VAI) identifying a visceral adipose dysfunction associated with cardiometabolic risk in a Caucasian Sicilian population.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3224548/", locator = "Results (age-stratified cut-offs)", quote = "Optimal VAI cut-off points were: 2.52 (age < 30 years), 2.23 (age >= 30 and < 42 years), 1.92 (age >= 42 and < 52 years), 1.93 (age >= 52 and < 66 years) and 2.00 (age >= 66 years)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.93
+when = { age_min = 52, age_max = 66, conditions = ["metabolic-syndrome"] }
+population = "Caucasian Sicilian primary-care patients aged 52-65 years (n=1,764; 16-99 y in sample)"
+evidence = "outcome-study"
+note = "Single-study ROC cut-off identifying metabolic syndrome (NCEP-ATP III); age-stratified, not an established threshold. Values at or above the cut-off flag visceral adipose dysfunction in that sample."
+citations = [
+  { pmid = "22011564", doi = "10.1186/1476-511X-10-183", title = "Cut-off points of the visceral adiposity index (VAI) identifying a visceral adipose dysfunction associated with cardiometabolic risk in a Caucasian Sicilian population.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3224548/", locator = "Results (age-stratified cut-offs)", quote = "Optimal VAI cut-off points were: 2.52 (age < 30 years), 2.23 (age >= 30 and < 42 years), 1.92 (age >= 42 and < 52 years), 1.93 (age >= 52 and < 66 years) and 2.00 (age >= 66 years)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 2.00
+when = { age_min = 66, conditions = ["metabolic-syndrome"] }
+population = "Caucasian Sicilian primary-care patients aged 66 years and older (n=1,764; 16-99 y in sample)"
+evidence = "outcome-study"
+note = "Single-study ROC cut-off identifying metabolic syndrome (NCEP-ATP III); age-stratified, not an established threshold. Values at or above the cut-off flag visceral adipose dysfunction in that sample."
+citations = [
+  { pmid = "22011564", doi = "10.1186/1476-511X-10-183", title = "Cut-off points of the visceral adiposity index (VAI) identifying a visceral adipose dysfunction associated with cardiometabolic risk in a Caucasian Sicilian population.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3224548/", locator = "Results (age-stratified cut-offs)", quote = "Optimal VAI cut-off points were: 2.52 (age < 30 years), 2.23 (age >= 30 and < 42 years), 1.92 (age >= 42 and < 52 years), 1.93 (age >= 52 and < 66 years) and 2.00 (age >= 66 years)" },
+]

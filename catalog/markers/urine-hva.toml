@@ -1,0 +1,7 @@
+slug = "urine-hva"
+name = "Homovanillic Acid (HVA), Urine"
+category = "organic-acid"
+unit = "mg/24h"
+loinc = "11144-3"
+description = "Dopamine metabolite excreted in urine, used with VMA as a biochemical screen for neuroblastoma and other catecholamine-secreting tumours in children. Pediatric values fall with age and are normalised to creatinine in the ranges below, so ranges are age-specific. Expected result for a healthy child: below the age-specific upper limit."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."

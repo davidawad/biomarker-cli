@@ -1,0 +1,46 @@
+slug = "kfre"
+name = "Kidney Failure Risk Equation (KFRE)"
+loinc = "85626-0"
+category = "kidney"
+unit = "%"
+description = "Calculated absolute risk of kidney failure (requiring kidney replacement therapy) over 2 years and 5 years, from an externally validated kidney failure risk equation (KFRE). Expressed as a percentage. KDIGO 2024 recommends using such an equation in people with CKD G3-G5 and uses risk thresholds to time nephrology referral and kidney replacement planning. Not applicable outside CKD G3-G5; no normal range applies."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 3
+high = 5
+unit = "%"
+when = { conditions = ["ckd"] }
+population = "People with CKD G3-G5; 5-year kidney failure risk"
+evidence = "guideline"
+note = "5-year kidney failure risk of 3%-5% (KDIGO 2024 Practice Point 2.2.1): a threshold for nephrology referral in addition to eGFR and ACR criteria. Figure 15 labels the threshold as KF risk >=3%-5% over 5 years."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Practice Point 2.2.1; Figure 15", quote = "A 5-year kidney failure risk of 3%-5% ... KF risk >=3%-5%" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 10
+unit = "%"
+when = { conditions = ["ckd"] }
+population = "People with CKD G3-G5; 2-year kidney failure risk"
+evidence = "guideline"
+note = "2-year kidney failure risk strictly above 10% (KDIGO 2024 Practice Point 2.2.2): a threshold for timing multidisciplinary care. Figure 15 labels it KF risk >=10% at 2 years."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Practice Point 2.2.2; Figure 15", quote = "A 2-year kidney failure risk of >10% ... KF risk >=10%" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 40
+unit = "%"
+when = { conditions = ["ckd"] }
+population = "People with CKD G3-G5; 2-year kidney failure risk"
+evidence = "guideline"
+note = "2-year kidney failure risk strictly above 40% (KDIGO 2024 Practice Point 2.2.3): a threshold for kidney replacement therapy modality education, preparation and transplant referral. Figure 15 labels it KF risk >=40% at 2 years."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Practice Point 2.2.3; Figure 15", quote = "A 2-year kidney failure risk threshold of >40% ... KF risk >=40%" },
+]

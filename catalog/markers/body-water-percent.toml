@@ -1,0 +1,7 @@
+slug = "body-water-percent"
+name = "Body Water Percent"
+category = "body-composition"
+unit = "%"
+loinc = "101684-9"
+description = "Body Water Percent. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

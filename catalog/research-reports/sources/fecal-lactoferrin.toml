@@ -1,0 +1,30 @@
+slug = "fecal-lactoferrin"
+name = "Fecal Lactoferrin"
+loinc = "42924-1"
+category = "stool"
+unit = "µg/g"
+description = "Lactoferrin measured in stool by immunoassay as a marker of intestinal inflammation, used to help distinguish inflammatory bowel disease from irritable bowel syndrome. Expected result: below the cut-off used in the cited study, i.e. not indicative of intestinal inflammation. The ranges below are single-study cut-offs, not reference intervals."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 13
+when = {}
+population = "Children with inflammatory bowel disease (Crohn disease, ulcerative colitis), aged 0.92 to 18 years, and IBD-free controls"
+evidence = "outcome-study"
+note = "Cut-off that optimally distinguished children with IBD from controls in this single study (sensitivity 80.7%, specificity 92.7%). Single-study cut-off, not a reference interval. Direction (at or above) is implied by the cut-off use, not stated verbatim."
+citations = [
+  { pmid = "26339799", doi = "10.18388/abp.2015_982", title = "Fecal lactoferrin, a marker of intestinal inflammation in children with inflammatory bowel disease.", url = "https://pubmed.ncbi.nlm.nih.gov/26339799/", locator = "Abstract", quote = "The cut-off value of fecal lactoferrin concentration optimally distinguishing between the children with IBD and the controls was identified as 13 ug/g" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 7.75
+when = {}
+population = "Patients with IBD, patients with IBS (Rome III), and healthy controls, Dhaka, Bangladesh, 2016 to 2017 (cross-sectional)"
+evidence = "outcome-study"
+note = "Cut-off that separated IBD from IBS in this single cross-sectional study (sensitivity 88%, specificity 84%). Single-study cut-off, not a reference interval. Direction (at or above) is implied by the cut-off use, not stated verbatim."
+citations = [
+  { pmid = "40370884", doi = "10.7759/cureus.82187", title = "Diagnostic Value of Fecal Lactoferrin in Differentiating Inflammatory Bowel Disease From Irritable Bowel Syndrome: A Comparative Study in a Bangladeshi Cohort.", url = "https://pubmed.ncbi.nlm.nih.gov/40370884/", locator = "Methods", quote = "with a cutoff value of 7.75 ug/g considered indicative of intestinal inflammation" },
+]

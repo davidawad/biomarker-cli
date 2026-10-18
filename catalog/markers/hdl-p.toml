@@ -1,0 +1,32 @@
+slug = "hdl-p"
+name = "HDL Particle Number"
+category = "lipid"
+unit = "umol/L"
+loinc = "49748-7"
+description = "Total HDL particle concentration (HDL-P) measured by NMR spectroscopy, reported in umol/L. Tracked because NMR-measured HDL-P has been reported as more strongly associated with coronary artery disease and incident cardiovascular events than HDL cholesterol. Expected result: within the laboratory reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 22.0
+high = 46.0
+when = { sex = "male" }
+population = "Men in a clinical NMR HDL-P method study (Vantera analyzer); population description not in the abstract (method: nmr)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "25438074", doi = "10.1016/j.clinbiochem.2014.11.017", title = "HDL particle number measured on the Vantera®, the first clinical NMR analyzer.", locator = "Abstract, Results" },
+]
+note = "Male reference interval stated by the source for HDL-P on the Vantera NMR analyzer. Derivation method and sample size are not in the abstract."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 26.7
+high = 52.9
+when = { sex = "female" }
+population = "Women in a clinical NMR HDL-P method study (Vantera analyzer); population description not in the abstract (method: nmr)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "25438074", doi = "10.1016/j.clinbiochem.2014.11.017", title = "HDL particle number measured on the Vantera®, the first clinical NMR analyzer.", locator = "Abstract, Results" },
+]
+note = "Female reference interval stated by the source for HDL-P on the Vantera NMR analyzer. Derivation method and sample size are not in the abstract."

@@ -1,0 +1,7 @@
+slug = "cmv-igg"
+name = "Cytomegalovirus IgG"
+loinc = "5124-3"
+category = "infectious"
+unit = "qualitative"
+description = "IgG antibody to cytomegalovirus (CMV). Shows past or current CMV infection and is used to establish CMV serostatus (for example before pregnancy or transplant). Results are usually reported as positive or negative against the laboratory assay cut-off. Expected result: negative in people never infected with CMV; positive in people with past infection."
+no_reference = "Qualitative result (positive or negative against the assay cut-off); no numeric reference interval applies."

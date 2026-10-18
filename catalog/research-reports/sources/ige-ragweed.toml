@@ -1,0 +1,17 @@
+slug = "ige-ragweed"
+name = "Specific IgE, Ragweed"
+category = "allergy"
+unit = "kU/L"
+description = "Serum IgE antibodies specific to ragweed (Ambrosia) pollen allergens, including the major allergen component Amb a 1. Values at or above the assay positivity threshold indicate sensitisation and must be interpreted with the clinical history."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 0.35
+unit = "kUA/L"
+population = "Patients with allergic rhinitis with or without asthma in Northwest China tested for mugwort, birch, Timothy grass and ragweed (including Amb a 1) sIgE, ALLEOS 2000 assay"
+evidence = "outcome-study"
+note = "Positivity threshold (sensitisation) for sIgE as defined in this single cross-sectional study, applied to ragweed and Amb a 1 among the allergens tested. It is a study definition on one assay, not a guideline cut-off."
+citations = [
+  { pmid = "39424620", doi = "10.1038/s41598-024-73465-x", title = "Profile of cross-reactivity to common pollen allergens in Northwest China based on component resolved diagnosis.", url = "https://pubmed.ncbi.nlm.nih.gov/39424620/", locator = "Methods, sIgE measurement", quote = "Tests with sIgE levels below 0.35 kUA/L were defined as negative (level 0), and those >= 0.35 kUA/L as positive." },
+]

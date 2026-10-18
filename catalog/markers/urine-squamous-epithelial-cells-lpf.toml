@@ -1,0 +1,17 @@
+slug = "urine-squamous-epithelial-cells-lpf"
+name = "Urine Squamous Epithelial Cells (/LPF)"
+category = "urinalysis"
+unit = "/LPF"
+description = "Urine Squamous Epithelial Cells reported in /LPF. Results in /LPF are assay specific and are not interchangeable with Urine Squamous Epithelial Cells in /HPF."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 8
+population = "Adults (18 years and older) with urinalysis with microscopy and urine culture at a tertiary academic medical center (retrospective cross-sectional study)"
+evidence = "cohort"
+citations = [
+  { pmid = "26782662", doi = "10.1111/acem.12894", title = "Urinary Squamous Epithelial Cells Do Not Accurately Predict Urine Culture Contamination, but May Predict Urinalysis Performance in Predicting Bacteriuria.", locator = "Results" },
+]
+note = "Strictly above 8 squamous epithelial cells per low-power field (LPF). In this single study the urinalysis performance for predicting bacteriuria was lower above this count. Not a reference interval or guideline cut-off. Source band >= 8; stored as the warn high bound 8."

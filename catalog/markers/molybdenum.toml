@@ -1,0 +1,7 @@
+slug = "molybdenum"
+name = "Molybdenum, Blood"
+category = "trace-element"
+unit = "µg/L"
+loinc = "5696-0"
+description = "Molybdenum, Blood. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

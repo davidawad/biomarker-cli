@@ -1,0 +1,44 @@
+slug = "mets-ir"
+name = "METS-IR (Metabolic Score for Insulin Resistance)"
+category = "glycemic"
+unit = "index"
+description = "Computed, non-insulin-based insulin resistance score from fasting glucose, triglycerides, HDL-C and BMI. Tracked as a surrogate for insulin resistance and cardiometabolic risk. Expected result: no established normal range; interpret against study-specific cut-offs."
+no_reference = "Computed score with no established reference interval; the ranges below are single-study or pooled cut-offs for specific outcomes, not normal limits."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 38.644
+unit = "index"
+when = { conditions = ["preeclampsia"], pregnant = true }
+population = "Singleton pregnant women delivering at participating hospitals (multicenter cohort)"
+evidence = "outcome-study"
+note = "ROC-optimal cut-off for predicting preeclampsia in one cohort (AUC 0.649). Predictive threshold, not a diagnostic criterion."
+citations = [
+  { pmid = "41094658", doi = "10.1186/s12944-025-02705-4", title = "Association of metabolic score for insulin resistance and preeclampsia: a multicenter cohort study.", locator = "Abstract (Results)", quote = "with an optimal cutoff value of 38.644" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 33.33
+unit = "index"
+when = { conditions = ["diabetes"] }
+population = "Adults with diabetes (cohort study)"
+evidence = "outcome-study"
+note = "Threshold-effect inflection for all-cause and CVD mortality; risk is associated only above this value per the source."
+citations = [
+  { pmid = "35647046", doi = "10.3389/fcvm.2022.895609", title = "Association Between a Novel Metabolic Score for Insulin Resistance and Mortality in People With Diabetes.", locator = "Abstract (Results)", quote = "threshold values of METS-IR for all-cause and CVDs-related mortality were both 33.33" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 38.24
+unit = "index"
+population = "Adults in pooled cohort studies of cardiovascular outcomes"
+evidence = "meta-analysis"
+note = "Inflection point of the pooled dose-response curve (Figure 8C); risk rises beyond it per the source. Not a diagnostic cut-off."
+citations = [
+  { pmid = "41180178", doi = "10.3389/fendo.2025.1699985", title = "Metabolic score for insulin resistance and the incidence of cardiovascular disease: a meta-analysis of cohort studies.", locator = "Results, dose-response analysis (Figure 8C)", quote = "The inflection point was at approximately 38.24, indicating accelerated risk beyond this threshold." },
+]

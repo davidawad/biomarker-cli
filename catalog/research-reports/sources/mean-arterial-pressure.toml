@@ -1,0 +1,17 @@
+slug = "mean-arterial-pressure"
+name = "Mean Arterial Pressure"
+category = "vitals"
+unit = "mmHg"
+description = "Average arterial pressure over one cardiac cycle, calculated from systolic and diastolic blood pressure. Used to judge organ perfusion, mainly in critical care. Expected result in septic shock: at least 65 mmHg on vasopressors."
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 65
+population = "Adults with septic shock on vasopressors"
+evidence = "guideline"
+when = { conditions = ["septic-shock"] }
+note = "Initial MAP target of 65 mm Hg over higher targets. Strong recommendation, moderate-quality evidence (Surviving Sepsis Campaign 2021, Recommendation 9)."
+citations = [
+  { pmid = "34599691", doi = "10.1007/s00134-021-06506-y", title = "Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021.", locator = "Recommendation 9 (Mean arterial pressure)", quote = "we recommend an initial target mean arterial pressure (MAP) of 65 mm Hg over higher MAP targets" },
+]

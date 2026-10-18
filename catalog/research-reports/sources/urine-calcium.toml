@@ -1,0 +1,56 @@
+slug = "urine-calcium"
+name = "Urine Calcium"
+loinc = "2004-0"
+category = "mineral"
+unit = "mg/24h"
+description = "Calcium excreted in urine, usually collected over 24 hours to assess calcium stone risk (hypercalciuria), calcium balance and bone metabolism. Expected result: below the sex-specific hypercalciuria cut-offs in the ranges below. Ranges are copied in the units the sources state; the mmol/24h cut-offs are a companion unit."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 7.5
+unit = "mmol/24h"
+when = { sex = "male" }
+population = "Adults in a Chinese multicenter cohort (24-hour urinary calcium excretion)"
+evidence = "reference-interval-study"
+note = "Hypercalciuria in men: 24-hour urinary calcium strictly above 7.5 mmol, as defined in the source."
+citations = [
+  { pmid = "40036793", doi = "10.1210/clinem/dgae805", title = "Reference Intervals for 24-Hour Urinary Calcium Excretion and Its Association With Bone Metabolism: A Multicenter Study.", locator = "Methods (urine measurements)", quote = "Hypercalciuria was defined as 24-hour UCaE > 7.5 mmol in men and > 6.25 mmol in women" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 6.25
+unit = "mmol/24h"
+when = { sex = "female" }
+population = "Adults in a Chinese multicenter cohort (24-hour urinary calcium excretion)"
+evidence = "reference-interval-study"
+note = "Hypercalciuria in women: 24-hour urinary calcium strictly above 6.25 mmol, as defined in the source."
+citations = [
+  { pmid = "40036793", doi = "10.1210/clinem/dgae805", title = "Reference Intervals for 24-Hour Urinary Calcium Excretion and Its Association With Bone Metabolism: A Multicenter Study.", locator = "Methods (urine measurements)", quote = "Hypercalciuria was defined as 24-hour UCaE > 7.5 mmol in men and > 6.25 mmol in women" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 275
+when = { sex = "male" }
+population = "Not stated in the quote (traditional definition as reported in the source)"
+evidence = "consensus"
+note = "Traditional hypercalciuria definition in men: daily urinary calcium strictly above 275 mg."
+citations = [
+  { pmid = "28846247", title = "Hypercalciuria.", locator = "Abstract", quote = "Traditionally, it has been defined as daily urinary calcium excretion of greater than 275 mg in men and greater than 250 mg in women" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 250
+when = { sex = "female" }
+population = "Not stated in the quote (traditional definition as reported in the source)"
+evidence = "consensus"
+note = "Traditional hypercalciuria definition in women: daily urinary calcium strictly above 250 mg."
+citations = [
+  { pmid = "28846247", title = "Hypercalciuria.", locator = "Abstract", quote = "Traditionally, it has been defined as daily urinary calcium excretion of greater than 275 mg in men and greater than 250 mg in women" },
+]

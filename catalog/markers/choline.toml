@@ -1,0 +1,27 @@
+slug = "choline"
+name = "Choline"
+category = "methylation"
+unit = "umol/L"
+description = "Free choline in serum or plasma, a dietary methyl-group precursor that feeds betaine and phosphatidylcholine synthesis; measured by NMR or mass spectrometry. Reference intervals are specimen-specific (serum and EDTA plasma differ). Expected result in healthy adults: within the reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 20.0
+population = "Apparently healthy adults; serum; NMR assay (cohort size and age range not stated in the abstract) (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34871562", doi = "10.1016/j.cca.2021.11.031", title = "Quantification of choline in serum and plasma using a clinical nuclear magnetic resonance analyzer.", locator = "Abstract (Results)" },
+]
+note = "Serum choline reference interval, upper limit. The lower limit is reported only as below the serum LOQ of 7.1 umol/L, so no lower bound is recorded."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 13.1
+population = "Apparently healthy adults; plasma; NMR assay (cohort size and age range not stated in the abstract) (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34871562", doi = "10.1016/j.cca.2021.11.031", title = "Quantification of choline in serum and plasma using a clinical nuclear magnetic resonance analyzer.", locator = "Abstract (Results)" },
+]
+note = "Plasma choline reference interval, upper limit. The lower limit is reported only as below the plasma LOQ of 5.9 umol/L, so no lower bound is recorded. Alternative to the default clinical reference range for the same population."

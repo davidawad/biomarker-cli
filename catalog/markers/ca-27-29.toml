@@ -1,0 +1,7 @@
+slug = "ca-27-29"
+name = "CA 27.29 (Cancer Antigen 27.29)"
+category = "tumor-marker"
+unit = "U/mL"
+loinc = "17842-6"
+description = "CA 27.29 (Cancer Antigen 27.29). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

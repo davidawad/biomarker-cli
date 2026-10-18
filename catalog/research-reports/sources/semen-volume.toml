@@ -1,0 +1,19 @@
+slug = "semen-volume"
+name = "Semen Volume"
+loinc = "3160-9"
+category = "sex-hormone"
+unit = "mL"
+description = "Volume of one ejaculate, measured in a semen analysis. Low volume can indicate incomplete collection, obstruction or ejaculatory or accessory gland problems; it is one of the parameters used to judge male fertility potential. The WHO 2010 manual gives a one-sided lower reference limit of 1.5 mL for fertile men."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.5
+unit = "mL"
+when = { sex = "male" }
+population = "Men whose partners had time-to-pregnancy of 12 months or less (fertile reference population; samples from men in 14 countries on four continents)"
+evidence = "reference-interval-study"
+note = "One-sided lower reference limit (fifth centile), not a two-sided interval. Values below 1.5 mL are below the reference population. The 2021 WHO manual edition is not used here because its source text does not state the direction of its volume threshold."
+citations = [
+  { pmid = "19934213", doi = "10.1093/humupd/dmp048", title = "World Health Organization reference values for human semen characteristics.", url = "https://pubmed.ncbi.nlm.nih.gov/19934213/", locator = "Abstract, Results", quote = "The following one-sided lower reference limits, the fifth centiles (with 95th percent confidence intervals), were generated from men whose partners had TTP < or = 12 months: semen volume, 1.5 ml (1.4-1.7)" },
+]

@@ -1,0 +1,44 @@
+slug = "alpha-2-globulin"
+name = "Alpha-2 Globulin (SPEP)"
+loinc = "13981-6"
+category = "protein"
+unit = "g/dL"
+description = "Alpha-2 globulin fraction of serum protein electrophoresis (SPEP), reported as g/dL of serum. It includes haptoglobin, alpha-2 macroglobulin and ceruloplasmin, so it rises in inflammation and nephrotic-range protein loss and can fall in liver disease. People track it when SPEP is ordered for protein abnormalities or inflammation. Expected result: within the reference interval for the patient's sex (about 0.60-1.10 g/dL combined in the cited adult study)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.60
+high = 1.10
+population = "Apparently healthy adults aged 18-65 years, Addis Ababa, Ethiopia (N=297; male 124, female 173); sexes combined"
+evidence = "reference-interval-study"
+note = "Combined-sex 2.5th-97.5th percentile reference interval (CLSI EP28-A3c, non-parametric) as printed in Table 3 of the source. Source bounds are inclusive. Reference-interval study; single centre."
+citations = [
+  { pmid = "36039308", doi = "10.2147/IJGM.S376450", title = "Establishment of Reference Intervals for Serum Protein Electrophoresis of Apparently Healthy Adults in Addis Ababa, Ethiopia.", locator = "Table 3, Alpha-2 rows, Combined sex, g/dL line", quote = "| 0.6-1.2 | 0.60-1.10 | 0.6-0.7 | 1.10-1.10" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.60
+high = 1.10
+when = { sex = "male" }
+population = "Apparently healthy adults aged 18-65 years, Addis Ababa, Ethiopia (male, N=124)"
+evidence = "reference-interval-study"
+note = "Male 2.5th-97.5th percentile reference interval (CLSI EP28-A3c, non-parametric) as printed in Table 3 of the source. Reference-interval study; single centre."
+citations = [
+  { pmid = "36039308", doi = "10.2147/IJGM.S376450", title = "Establishment of Reference Intervals for Serum Protein Electrophoresis of Apparently Healthy Adults in Addis Ababa, Ethiopia.", locator = "Table 3, Alpha-2 rows, Male g/dL line", quote = "| 0.6-1.2 | 0.60-1.1 | 0.60-0.70 | 1.10-1.20" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.64
+high = 1.10
+when = { sex = "female" }
+population = "Apparently healthy adults aged 18-65 years, Addis Ababa, Ethiopia (female, N=173)"
+evidence = "reference-interval-study"
+note = "Female 2.5th-97.5th percentile reference interval (CLSI EP28-A3c, non-parametric) as printed in Table 3 of the source. Reference-interval study; single centre."
+citations = [
+  { pmid = "36039308", doi = "10.2147/IJGM.S376450", title = "Establishment of Reference Intervals for Serum Protein Electrophoresis of Apparently Healthy Adults in Addis Ababa, Ethiopia.", locator = "Table 3, Alpha-2 rows, Female g/dL line", quote = "| 0.6-1.2 | 0.64-1.10 | 0.60-0.70 | 1.0-1.20" },
+]

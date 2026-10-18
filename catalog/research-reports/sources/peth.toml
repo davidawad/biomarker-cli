@@ -1,0 +1,40 @@
+slug = "peth"
+name = "Phosphatidylethanol (PEth)"
+loinc = "74661-0"
+category = "metabolic"
+unit = "ng/mL"
+description = "Direct blood biomarker of recent alcohol intake: phosphatidylethanol 16:0/18:1 forms in red blood cells only when ethanol is present. Used to monitor abstinence, alcohol use disorder treatment, and forensic or fitness-to-drive assessment. Expected result for an abstinent or low-consumption person: below 20 ng/mL. Cut-offs are classification thresholds, not reference intervals."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+population = "General adults, PEth 16:0/18:1 in whole blood"
+evidence = "textbook"
+note = "Cut-off of 20 ng/mL (US laboratory practice, per review): at or above it indicates deliberate alcohol consumption rather than abstinence or incidental exposure. Secondary source: narrative review, not the primary Consensus of Basel (full text not accessible)."
+citations = [
+  { pmid = "42248449", doi = "10.1016/j.jhepr.2026.101906", title = "Assessing alcohol consumption in an era of direct alcohol markers.", url = "https://doi.org/10.1016/j.jhepr.2026.101906", locator = "Section on PEth cut-offs", quote = "In the United States, a cut-off of 20 ng/ml (0.028 umol/L) for PEth 16:0/18:1 is widely used to differentiate deliberate alcohol consumption from abstinence or incidental exposure... A PEth value below this cut-off is generally considered compatible with abstinence or low alcohol consumption." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 200
+population = "General adults, PEth in whole blood"
+evidence = "textbook"
+note = "Approximately 200 ng/mL: commonly considered indicative of high-risk alcohol consumption (per review; cited as in agreement with the Consensus of Basel). Secondary source: narrative review, not the primary consensus."
+citations = [
+  { pmid = "42248449", doi = "10.1016/j.jhepr.2026.101906", title = "Assessing alcohol consumption in an era of direct alcohol markers.", url = "https://doi.org/10.1016/j.jhepr.2026.101906", locator = "Section on PEth cut-offs", quote = "Although PEth concentrations above ∼200 ng/ml are commonly considered indicative of high-risk alcohol consumption" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 8
+when = { pregnant = true }
+population = "Pregnant women, Western Cape Province, South Africa (n = 222), PEth from dried blood spots"
+evidence = "outcome-study"
+note = "Research-use positive cut-off of 8 ng/mL for identifying alcohol-consuming pregnant women in this single sample, judged against self-report and AUDIT; not a validated clinical threshold."
+citations = [
+  { pmid = "37102125", doi = "10.1016/j.crtox.2023.100105", title = "Assessing the sensitivity and specificity of phosphatidylethanol (PEth) cutoffs to identify alcohol exposed pregnancies.", url = "https://doi.org/10.1016/j.crtox.2023.100105", locator = "Abstract", quote = "For research purposes, less stringent cutoffs, such as PEth >= 8 ng/ml, may be considered a valid, positive cutoff for identifying women who consume alcohol during pregnancy in this population." },
+]

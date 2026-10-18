@@ -1,0 +1,29 @@
+slug = "nocturnal-respiratory-rate"
+name = "Nocturnal Respiratory Rate"
+loinc = "9286-6"
+category = "wearable"
+unit = "breaths/min"
+description = "Mean breathing rate during sleep, measured by polysomnography, chest belts, Holter waveforms or consumer wearables. Tracked as a cardiopulmonary risk marker and as a possible early-warning signal. No verified adult reference interval was found in the sources checked; the cited cut-offs are 16 breaths/min (older adults, mortality risk) and 18 breaths/min (cardiomyopathy, ICD benefit)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 16
+population = "Community-dwelling older men and women (MrOS and SOF cohorts), overnight polysomnography"
+evidence = "outcome-study"
+note = "Prognostic cut-off (dichotomised mean nocturnal respiratory rate at 16 breaths/min) for long-term cardiovascular and all-cause mortality. Not a diagnostic threshold."
+citations = [
+  { pmid = "31151958", doi = "10.1183/13993003.02175-2018", title = "Mean nocturnal respiratory rate predicts cardiovascular and all-cause mortality in community-dwelling older men and women.", locator = "Abstract (Conclusion)", quote = "In community-dwelling older men and women, polysomnography-derived mean nocturnal f R >=16 breaths.min-1 is an independent predictor of long-term cardiovascular and all-cause mortality." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 18
+population = "Patients with ischaemic or non-ischaemic cardiomyopathy meeting primary prophylactic ICD implantation criteria (EU-CERT-ICD sub-study), nocturnal respiratory rate from pre-implantation 24-hour Holter"
+evidence = "outcome-study"
+when = { conditions = ["cardiomyopathy"] }
+note = "Threshold at which the mortality benefit of prophylactic ICD implantation was not demonstrated (interaction analysis, not a diagnostic value)."
+citations = [
+  { pmid = "33554086", doi = "10.1016/j.eclinm.2020.100695", title = "Nocturnal respiratory rate predicts ICD benefit: A prospective, controlled, multicentre cohort study.", locator = "Interpretation", quote = "patients with NRR>=18 brpm showed limited benefit from primary prophylactic ICD implantation" },
+]

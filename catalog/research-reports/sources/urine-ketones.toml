@@ -1,0 +1,7 @@
+slug = "urine-ketones"
+name = "Urine Ketones (dipstick)"
+loinc = "2514-8"
+category = "urinalysis"
+unit = "qualitative"
+description = "Ketones in urine measured by reagent-strip dipstick as a qualitative reading. Expected result: negative."
+no_reference = "Qualitative dipstick result (negative or positive); no numeric reference interval applies."

@@ -1,0 +1,31 @@
+slug = "lh-fsh-ratio"
+name = "LH/FSH Ratio"
+category = "sex-hormone"
+unit = "ratio"
+loinc = "34434-1"
+description = "Ratio of serum luteinizing hormone to follicle-stimulating hormone, measured on the same sample. Tracked as a supporting marker for polycystic ovary syndrome (PCOS), where LH is often elevated relative to FSH. Expected result: below the diagnostic cut-offs in the ranges (a ratio at or above the cut-off is reported as increased)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 1
+when = { conditions = ["pcos"] }
+population = "Women with polycystic ovary on transvaginal Doppler ultrasound (single-centre study, China)"
+evidence = "cohort"
+citations = [
+  { pmid = "21575449", title = "[Preliminary study on the value of ratio of serum luteinizing hormone/follicle-stimulating hormone in diagnosis of polycystic ovarian syndrome among women with polycystic ovary].", locator = "Abstract, Conclusions" },
+]
+note = "Diagnostic cut-off for PCOS in a single-centre study. Not a validated population-wide threshold. Source kind: diagnostic. Source band >= 1; stored as the warn high bound 1."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 0.749
+when = { conditions = ["pcos"] }
+population = "Sudanese women with PCOS compared with normal ovulatory women; cut-off from ROC analysis"
+evidence = "cohort"
+citations = [
+  { pmid = "37275514", doi = "10.2147/IJWH.S403347", title = "Diagnostic Performance of Anti-Müllerian Hormone, Luteinizing Hormone to Follicle-Stimulating Hormone Ratio, Testosterone, and Prolactin to Predict Polycystic Ovary Syndrome Among Sudanese Women.", locator = "Results; Table 3" },
+]
+note = "ROC-derived cut-off in a single-country study (AUC 0.932 reported). Not a validated population-wide threshold. Source kind: diagnostic. Source band >= 0.749; stored as the warn high bound 0.749. Alternative to the default diagnostic warn range for the same population."

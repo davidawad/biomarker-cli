@@ -1,0 +1,7 @@
+slug = "pantothenic-acid"
+name = "Vitamin B5 (Pantothenic Acid)"
+category = "vitamin"
+unit = "µg/L"
+loinc = "2722-7"
+description = "Vitamin B5 (Pantothenic Acid). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

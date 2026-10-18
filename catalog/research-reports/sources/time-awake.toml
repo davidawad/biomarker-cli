@@ -1,0 +1,6 @@
+slug = "time-awake"
+name = "Time Awake"
+category = "sleep"
+unit = "min"
+description = "Time Awake. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

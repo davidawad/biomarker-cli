@@ -1,0 +1,110 @@
+slug = "lipid-accumulation-product"
+name = "Lipid Accumulation Product"
+category = "body-composition"
+unit = "cm mmol/L"
+description = "Computed index of visceral adiposity from waist circumference (cm) and fasting triglycerides (mmol/L): LAP = (WC - 58) x TG for women; LAP = (WC - 65) x TG for men (formula as stated in PMID 34045594, Methods). Tracked as a simple marker of visceral obesity and cardiometabolic risk. Expected result: below the cut-off for the person's sex and age band."
+no_reference = "Computed score with no established reference interval; the source states that reference and cut-off values for LAP have not been defined. The ranges below are ROC-derived hypertension cut-offs from one cross-sectional study."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 27.0
+unit = "cm mmol/L"
+when = { sex = "female", conditions = ["hypertension"] }
+population = "Adults aged 20-64 years, hypertensive cases and normotensive controls, cross-sectional case-control study (1960 subjects, 1052 women)"
+evidence = "outcome-study"
+note = "ROC cut-off point for predicting hypertension in the whole female group (20-64 years), with sensitivity 70.6% and specificity 75.8% per the source."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Women", quote = "20-64 | 0.785 (0.754-0.816) | 27.0 | 70.6 | 75.8 | < 0.001" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 13.8
+unit = "cm mmol/L"
+when = { sex = "female", age_min = 20, age_max = 35, conditions = ["hypertension"] }
+population = "Women aged 20-34 years, hypertensive cases and normotensive controls, cross-sectional case-control study"
+evidence = "outcome-study"
+note = "Age-band ROC cut-off point for predicting hypertension in women aged 20-34, with sensitivity 75.0% and specificity 73.5% per the source."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Women, 20-34", quote = "20-34 | 0.801 (0.701-0.902) | 13.8 | 75.0 | 73.5 | < 0.001" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 27.0
+unit = "cm mmol/L"
+when = { sex = "female", age_min = 35, age_max = 50, conditions = ["hypertension"] }
+population = "Women aged 35-49 years, hypertensive cases and normotensive controls, cross-sectional case-control study"
+evidence = "outcome-study"
+note = "Age-band ROC cut-off point for predicting hypertension in women aged 35-49, with sensitivity 69.2% and specificity 72.3% per the source."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Women, 35-49", quote = "35-49 | 0.735 (0.679-0.791) | 27.0 | 69.2 | 72.3 | < 0.001" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 44.6
+unit = "cm mmol/L"
+when = { sex = "female", age_min = 50, age_max = 65, conditions = ["hypertension"] }
+population = "Women aged 50-64 years, hypertensive cases and normotensive controls, cross-sectional case-control study"
+evidence = "outcome-study"
+note = "Age-band ROC cut-off point for predicting hypertension in women aged 50-64, with sensitivity 46.8% and specificity 72.5% per the source."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Women, 50-64", quote = "50-64 | 0.624 (0.555-0.693) | 44.6 | 46.8 | 72.5 | < 0.001" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 27.6
+unit = "cm mmol/L"
+when = { sex = "male", conditions = ["hypertension"] }
+population = "Adults aged 20-64 years, hypertensive cases and normotensive controls, cross-sectional case-control study (1960 subjects, 908 men)"
+evidence = "outcome-study"
+note = "ROC cut-off point for predicting hypertension in the whole male group (20-64 years), with sensitivity 63.6% and specificity 68.3% per the source. AUROC 0.694 (95% CI 0.650-0.738)."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Men", quote = "20-64 | 0.694 (0.650-0.738) | 27.6 | 63.6 | 68.3 | < 0.001" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 24.0
+unit = "cm mmol/L"
+when = { sex = "male", age_min = 20, age_max = 35, conditions = ["hypertension"] }
+population = "Men aged 20-34 years, hypertensive cases and normotensive controls, cross-sectional case-control study"
+evidence = "outcome-study"
+note = "Age-band ROC cut-off point for predicting hypertension in men aged 20-34, with sensitivity 68.4% and specificity 74.7% per the source."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Men, 20-34", quote = "20-34 | 0.715 (0.571-0.858) | 24.0 | 68.4 | 74.7 | 0.003" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 36.4
+unit = "cm mmol/L"
+when = { sex = "male", age_min = 35, age_max = 50, conditions = ["hypertension"] }
+population = "Men aged 35-49 years, hypertensive cases and normotensive controls, cross-sectional case-control study"
+evidence = "outcome-study"
+note = "Age-band ROC cut-off point for predicting hypertension in men aged 35-49, with sensitivity 61.2% and specificity 78.4% per the source."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Men, 35-49", quote = "35-49 | 0.712 (0.641-0.783) | 36.4 | 61.2 | 78.4 | < 0.001" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 26.7
+unit = "cm mmol/L"
+when = { sex = "male", age_min = 50, age_max = 65, conditions = ["hypertension"] }
+population = "Men aged 50-64 years, hypertensive cases and normotensive controls, cross-sectional case-control study"
+evidence = "outcome-study"
+note = "Age-band ROC cut-off point for predicting hypertension in men aged 50-64, with sensitivity 64.4% and specificity 53.3% per the source. The source reports AUROC 0.551 (95% CI 0.474-0.629) for this band and states the men's 50+ confidence intervals include 0.5 (no predictive performance)."
+citations = [
+  { pmid = "34045594", doi = "10.1038/s41598-021-90648-y", title = "Age-adjusted cut-off values of lipid accumulation product (LAP) for predicting hypertension.", locator = "Table 3, Men, 50-64; Results text", quote = "50-64 | 0.551 (0.474-0.629) | 26.7 | 64.4 | 53.3 | 0.193" },
+]

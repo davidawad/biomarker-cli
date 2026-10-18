@@ -1,0 +1,19 @@
+slug = "urine-magnesium-mmol-day"
+name = "Urine Magnesium (mmol/day)"
+category = "urinalysis"
+unit = "mmol/day"
+description = "Urine Magnesium reported in mmol/day. Results in mmol/day are assay specific and are not interchangeable with Urine Magnesium in mg/24h."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 3
+when = { conditions = ["kidney-stones"] }
+population = "Adults assessed for kidney stone risk on 24-hour urine (urolithiasis clinic patients and post-bariatric surgery patients in the cited observational studies); not a population reference interval"
+evidence = "cohort"
+citations = [
+  { pmid = "41606098", doi = "10.1038/s41598-026-37440-y", title = "24-hour urine chemistry shows higher stone formation risk after malabsorptive than restrictive type bariatric surgery.", locator = "Methods" },
+  { pmid = "32395325", doi = "10.5173/ceju.2020.0051", title = "Metabolic evaluation in urolithiasis - study of the prevalence of metabolic abnormalities in a tertiary centre.", locator = "Table 2" },
+]
+note = "Hypomagnesuria, a stone risk factor: strictly below 3 mmol/day on 24-hour urine. The cited papers attribute the cut-off to the EAU urolithiasis guideline; it is cited here from the observational papers that state it. Source kind: diagnostic. Source band <= 3; stored as the warn low bound 3."

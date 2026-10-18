@@ -1,0 +1,32 @@
+slug = "hsv2-igg"
+name = "Herpes Simplex Virus 2 IgG"
+loinc = "17851-7"
+category = "infectious"
+unit = "index"
+description = "IgG antibody to herpes simplex virus type 2 (HSV-2), usually a gG2-based ELISA reported as a normalised optical density index. Tracked to establish past HSV-2 (genital herpes) infection, which is often asymptomatic. Expected result: negative (not detected) in most people without past HSV-2 infection."
+no_reference = "Serology reported as negative, equivocal or positive by assay cut-offs; a population reference interval is not established."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.9
+high = 1.1
+unit = "index"
+population = "Adults tested with the HerpeSelect HSV-2 gG2 ELISA (normalised OD index)"
+evidence = "outcome-study"
+note = "Equivocal zone for the HerpeSelect HSV-2 ELISA (0.9 to 1.1), per the study's stated interpretation of the manufacturer's bands."
+citations = [
+  { pmid = "19837726", doi = "10.1136/sti.2009.036541", title = "Comparison of focus HerpesSelect and Kalon HSV-2 gG2 ELISA serological assays to detect herpes simplex virus type 2 antibodies in a South African population.", locator = "Methods", quote = "Samples with normalised OD readings <0.9 were recorded as negative, those with values >1.1 were recorded as positive, and those with intermediate values (0.9-1.1) were recorded as equivocal as per manufacturer's instructions." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.1
+unit = "index"
+population = "Adults tested with the HerpeSelect HSV-2 gG2 ELISA (normalised OD index)"
+evidence = "outcome-study"
+note = "Positive for HSV-2 IgG on the HerpeSelect ELISA (value strictly above 1.1); the cut-off is the manufacturer's, and the study notes higher cut-offs improve specificity."
+citations = [
+  { pmid = "19837726", doi = "10.1136/sti.2009.036541", title = "Comparison of focus HerpesSelect and Kalon HSV-2 gG2 ELISA serological assays to detect herpes simplex virus type 2 antibodies in a South African population.", locator = "Methods", quote = "Samples with normalised OD readings <0.9 were recorded as negative, those with values >1.1 were recorded as positive, and those with intermediate values (0.9-1.1) were recorded as equivocal as per manufacturer's instructions." },
+]

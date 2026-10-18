@@ -1,0 +1,17 @@
+slug = "anca-mpo-cu"
+name = "ANCA, Anti-MPO Antibody (chemiluminescence units)"
+category = "autoimmune"
+unit = "CU"
+description = "MPO-ANCA reported in vendor chemiluminescence units (CU), as on the BIO-FLASH platform. CU are assay specific and not interchangeable with U/mL results from other methods."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+when = { conditions = ["anca-associated-vasculitis"] }
+population = "Patients newly diagnosed with ANCA-associated vasculitis or newly detected ANCA positivity, single-centre cohort, Northern Spain (BIO-FLASH chemiluminescence assay)"
+evidence = "outcome-study"
+note = "ANCA positivity cut-off stated by the source for the BIO-FLASH assay (applies to both PR3- and MPO-ANCA); source unit CU."
+citations = [
+  { pmid = "41728626", doi = "10.3389/fmed.2026.1766518", title = "Incidence and clinical features of ANCA-associated vasculitis before and during the COVID-19 pandemic: experience from a single-center in Northern Spain.", locator = "Methods, ANCA testing", quote = "A value of 20 chemiluminescent units (CU) was established as the cut-off point to consider positive results for ANCA." },
+]

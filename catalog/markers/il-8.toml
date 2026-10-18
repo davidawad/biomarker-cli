@@ -1,0 +1,30 @@
+slug = "il-8"
+name = "Interleukin-8"
+category = "inflammation"
+unit = "pg/mL"
+loinc = "33211-4"
+description = "Chemokine (CXCL8) measured in serum by immunoassay or flow cytometry. Tracked as a marker of neutrophil-recruiting inflammatory activity. Expected result in healthy adults: at or below the sex-specific upper reference limit (values in the single- to low double-digit pg/mL range); the reference values are method-specific."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 23.42
+when = { sex = "female" }
+population = "Healthy Chinese adults from East China (n = 299, selected by predetermined inclusion and exclusion criteria), women"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41512996", doi = "10.1016/j.jim.2026.114034", title = "Establishment of reference intervals for serum TNF-α, IFN-α, IL-1β, IL-2, IL-4, IL-5, IL-6, IL-8, IL-10, IL-12p70, IL-17 and IFN-γ in healthy Chinese adults using flow cytometry.", locator = "Abstract, Methods and Results" },
+]
+note = "Upper limit of the 95th-percentile reference interval, women, serum by flow cytometry. Source states the limit as <=; no lower limit is reported."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 15.88
+when = { sex = "male" }
+population = "Healthy Chinese adults from East China (n = 299, selected by predetermined inclusion and exclusion criteria), men"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41512996", doi = "10.1016/j.jim.2026.114034", title = "Establishment of reference intervals for serum TNF-α, IFN-α, IL-1β, IL-2, IL-4, IL-5, IL-6, IL-8, IL-10, IL-12p70, IL-17 and IFN-γ in healthy Chinese adults using flow cytometry.", locator = "Abstract, Methods and Results" },
+]
+note = "Upper limit of the 95th-percentile reference interval, men, serum by flow cytometry. Source states the limit as <=; no lower limit is reported."

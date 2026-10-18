@@ -1,0 +1,7 @@
+slug = "anti-smith"
+name = "Anti-Smith Antibody"
+loinc = "11090-8"
+category = "autoimmune"
+unit = "qualitative"
+description = "Autoantibody to the Smith (Sm) antigen, a small nuclear ribonucleoprotein complex, detected by immunoassay and reported as positive or negative. Positive results are associated with systemic lupus erythematosus, and are used alongside ANA and other lupus serology. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

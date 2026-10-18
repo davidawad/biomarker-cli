@@ -1,0 +1,7 @@
+slug = "urine-yeast"
+name = "Urine Yeast (microscopy)"
+loinc = "105098-8"
+category = "urinalysis"
+unit = "qualitative"
+description = "Yeast cells seen on microscopic examination of urine sediment, reported as a semi-quantitative grade (none, few, moderate, many per high-power field). Tracked to detect candiduria, which may indicate yeast urinary tract infection or contamination. Expected result: none or few (not detected)."
+no_reference = "Qualitative microscopy grade (presence or absence, graded per high-power field); no numeric reference interval applies."

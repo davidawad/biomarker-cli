@@ -1,0 +1,46 @@
+slug = "erythropoietin"
+name = "Erythropoietin"
+loinc = "15061-5"
+category = "hematology"
+unit = "mIU/mL"
+description = "Glycoprotein hormone that drives red cell production, measured by immunoassay. Used in the workup of anemia and erythrocytosis, including polycythemia vera versus secondary erythrocytosis. Expected result: within the reference interval; subnormal values favour polycythemia vera over secondary causes."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.3
+high = 26.3
+unit = "IU/L"
+population = "Healthy donors (n=393); age not stated in the abstract"
+evidence = "reference-interval-study"
+note = "2.5th-97.5th percentile of healthy donors. IU/L is numerically equal to mIU/mL."
+citations = [
+  { pmid = "39272689", doi = "10.3390/diagnostics14171902", title = "Diagnostic Performance of Serum Erythropoietin to Discriminate Polycythemia Vera from Secondary Erythrocytosis through Established Subnormal Limits.", locator = "Abstract (Results)", quote = "The RI (2.5-97.5 percentile from HDs) of sEPO was 5.3-26.3 IU/L." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 3.1
+unit = "IU/L"
+when = { conditions = ["polycythemia-vera"] }
+population = "Patients with erythrocytosis (41 polycythemia vera, 49 secondary erythrocytosis)"
+evidence = "outcome-study"
+note = "Clinical decision limit from ROC analysis: values below this favour polycythemia vera (sensitivity 80.5%, specificity 87.8%). Single study."
+citations = [
+  { pmid = "39272689", doi = "10.3390/diagnostics14171902", title = "Diagnostic Performance of Serum Erythropoietin to Discriminate Polycythemia Vera from Secondary Erythrocytosis through Established Subnormal Limits.", locator = "Abstract (Results)", quote = "A CDL of 3.1 IU/L, determined by ROC analysis in erythrocytosis patients, had a sensitivity of 80.5% and specificity of 87.8% for diagnosing PV." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 9.1
+high = 27.6
+unit = "miu/ml"
+when = { age_min = 0, age_max = 17 }
+population = "Healthy children aged 1 month to 16 years"
+evidence = "reference-interval-study"
+note = "Pediatric 95% range (geometric-mean study, n=130). Adult values from the same study (n=22) omitted as too small a sample."
+citations = [
+  { pmid = "3191035", doi = "10.1111/j.1365-2141.1988.tb02471.x", title = "Serum immunoreactive erythropoietin in healthy normal children.", locator = "Abstract (Results)", quote = "with 95% range (the range within which 95% of the observations are predicted to fall) 9.1-27.6 miu/ml" },
+]

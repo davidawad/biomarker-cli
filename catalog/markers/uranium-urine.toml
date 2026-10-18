@@ -1,0 +1,7 @@
+slug = "uranium-urine"
+name = "Uranium, Urine"
+category = "toxic-metal"
+unit = "ug/L"
+loinc = "5752-1"
+description = "Uranium excreted in urine, a toxic metal tracked to monitor exposure from natural or depleted uranium. Expected result: at or below the general-population 95th-percentile level in the range below (24-hour excretion, companion unit)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."

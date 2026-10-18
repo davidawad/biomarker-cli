@@ -1,0 +1,7 @@
+slug = "urine-bilirubin"
+name = "Urine Bilirubin (dipstick)"
+loinc = "5770-3"
+category = "urinalysis"
+unit = "qualitative"
+description = "Bilirubin in urine measured by reagent-strip dipstick as a qualitative reading. Expected result: negative."
+no_reference = "Qualitative dipstick result (negative or positive); no numeric reference interval applies."

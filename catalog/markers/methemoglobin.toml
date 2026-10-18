@@ -1,0 +1,42 @@
+slug = "methemoglobin"
+name = "Methemoglobin"
+category = "hematology"
+unit = "%"
+loinc = "2614-6"
+description = "Percentage of hemoglobin in the oxidized form (methemoglobin, MetHb), which cannot carry oxygen. Measured to evaluate methemoglobinemia (acquired, from drugs or toxins, or inherited) and unexplained cyanosis or low pulse-oximeter readings. Expected result in healthy people: within the reference interval for age; children run higher than adults."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.61
+high = 6.44
+when = { age = [6.0, 11.0] }
+population = "Clinically healthy children aged 6-10 years (n = 78); reference values from the 2.5th and 97.5th percentiles; spectrophotometric method"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "23049377", doi = "10.5581/1516-8484.20120007", title = "Reference values for methemoglobin concentrations in children.", locator = "Table 1 (children, Methemoglobin row); Methods (2.5 and 97.5 percentiles)" },
+]
+note = "Pediatric reference interval (2.5th-97.5th percentile). Sample size (n = 78) is below the usual 120 minimum for a 95% reference interval; treat as provisional. The adult values in the same paper (n = 15, 2.51-3.90%) are not stored: too small a sample."
+
+[[range]]
+set = "clinical"
+kind = "critical"
+high = 70
+population = "Patients with methemoglobinemia, all ages"
+evidence = "consensus"
+citations = [
+  { pmid = "34467556", doi = "10.1002/ajh.26340", title = "Recommendations for diagnosis and treatment of methemoglobinemia.", locator = "Section on management in infancy and childhood (PMC full text)" },
+]
+note = "MetHb strictly above 70% is described as potentially lethal (Delphi-like expert consensus). Table 1 of the same paper lists >70% as severe hypoxemia, death. Source band >= 70; stored as the critical high bound 70."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20
+when = { conditions = ["acquired-methemoglobinemia"] }
+population = "Patients with acquired methemoglobinemia"
+evidence = "consensus"
+citations = [
+  { pmid = "34467556", doi = "10.1002/ajh.26340", title = "Recommendations for diagnosis and treatment of methemoglobinemia.", locator = "Section on management in infancy and childhood (PMC full text)" },
+]
+note = "Treatment-indication threshold (decision limit, not a diagnostic criterion) for symptomatic patients. The same sentence gives 30% for asymptomatic patients, which is not stored as a separate range. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."

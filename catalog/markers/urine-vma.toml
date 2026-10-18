@@ -1,0 +1,90 @@
+slug = "urine-vma"
+name = "Vanillylmandelic Acid (VMA), Urine"
+category = "organic-acid"
+unit = "mmol/mol creatinine"
+loinc = "9624-8"
+description = "Urinary vanillylmandelic acid (VMA), a catecholamine (epinephrine and norepinephrine) metabolite. Measured to screen for and monitor catecholamine-secreting tumors, mainly neuroblastoma in children and pheochromocytoma in adults. Expected result: at or below the age-specific upper reference limit. Values are creatinine-adjusted and are higher in infants; interfering medications and diet can raise results."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 12.9
+when = { age = [0.0, 1.0] }
+population = "Children under 1 year"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/bm.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Reference ranges for HVA and VMA in mmol/mol creatinine)" },
+]
+note = "Upper reference limit for urinary VMA (creatinine-adjusted, mmol/mol creatinine) from Davidson 2011 (N=1658), as laid out in Table 2 of a 2026 review; the primary study was not retrieved. Row attribution follows the review table layout. Upper limit only; no lower limit given."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 12.3
+when = { age = [1.0, 3.0] }
+population = "Children aged 1 or 2 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/bm.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Reference ranges for HVA and VMA in mmol/mol creatinine)" },
+]
+note = "Upper reference limit for urinary VMA (mmol/mol creatinine) from Davidson 2011 (N=1658) as laid out in Table 2 of a 2026 review; primary study not retrieved. Upper limit only."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 8.9
+when = { age = [3.0, 5.0] }
+population = "Children aged 3 or 4 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/bm.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Reference ranges for HVA and VMA in mmol/mol creatinine)" },
+]
+note = "Upper reference limit for urinary VMA (mmol/mol creatinine) from Davidson 2011 (N=1658) as laid out in Table 2 of a 2026 review; primary study not retrieved. Upper limit only."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 7.9
+when = { age = [5.0, 8.0] }
+population = "Children aged 5 to 7 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/bm.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Reference ranges for HVA and VMA in mmol/mol creatinine)" },
+]
+note = "Upper reference limit for urinary VMA (mmol/mol creatinine) from Davidson 2011 (N=1658) as laid out in Table 2 of a 2026 review; primary study not retrieved. Upper limit only."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5
+when = { age = [8.0, 11.0] }
+population = "Children aged 8 to 10 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/bm.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Reference ranges for HVA and VMA in mmol/mol creatinine)" },
+]
+note = "Upper reference limit for urinary VMA (mmol/mol creatinine) from Davidson 2011 (N=1658) as laid out in Table 2 of a 2026 review; primary study not retrieved. Upper limit only."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5.6
+when = { age = [11.0, 14.0] }
+population = "Children aged 11 to 13 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/bm.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Reference ranges for HVA and VMA in mmol/mol creatinine)" },
+]
+note = "Upper reference limit for urinary VMA (mmol/mol creatinine) from Davidson 2011 (N=1658) as laid out in Table 2 of a 2026 review; primary study not retrieved. Upper limit only."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5.5
+when = { age = [14.0, 20.0] }
+population = "Adolescents aged 14 to 19 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42299350", doi = "10.11613/bm.2026.020505", title = "Homovanillic acid and vanillylmandelic acid as neuroblastoma biomarkers in children.", locator = "Table 2 (Reference ranges for HVA and VMA in mmol/mol creatinine)" },
+]
+note = "Upper reference limit for urinary VMA (mmol/mol creatinine) from Davidson 2011 (N=1658) as laid out in Table 2 of a 2026 review; primary study not retrieved. Upper limit only. No adult VMA interval was verified."

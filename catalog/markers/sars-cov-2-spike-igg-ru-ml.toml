@@ -1,0 +1,39 @@
+slug = "sars-cov-2-spike-igg-ru-ml"
+name = "SARS-CoV-2 Spike IgG Antibody (RU/mL)"
+category = "infectious"
+unit = "RU/mL"
+description = "SARS-CoV-2 Spike IgG Antibody reported in RU/mL. Results in RU/mL are assay specific and are not interchangeable with SARS-CoV-2 Spike IgG Antibody in BAU/mL."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 8
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021 (method: euroimmun-quantivac-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Methods" },
+]
+note = "Negative on EUROIMMUN QuantiVac ELISA (IgG), per manufacturer categories as reported in the cited study. Source kind: diagnostic. Source band <= 8; stored as the warn low bound 8."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 8
+high = 11
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021 (method: euroimmun-quantivac-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Methods" },
+]
+note = "Borderline on EUROIMMUN QuantiVac ELISA (IgG); the cited study counted borderline as positive. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 11
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021 (method: euroimmun-quantivac-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Methods" },
+]
+note = "Positive on EUROIMMUN QuantiVac ELISA (IgG), per manufacturer categories as reported in the cited study. Source kind: diagnostic. Source band >= 11; stored as the warn high bound 11. Alternative to the default diagnostic warn range for the same population."

@@ -1,0 +1,82 @@
+slug = "egfr-creatinine-cystatin"
+name = "eGFR (Creatinine + Cystatin C, CKD-EPI 2021)"
+loinc = "98980-6"
+category = "kidney"
+unit = "mL/min/1.73m²"
+description = "Estimated glomerular filtration rate from the race-free CKD-EPI 2021 creatinine-cystatin C equation (Inker et al., NEJM 2021), reported in mL/min/1.73 m2. Combining creatinine and cystatin C is more accurate than creatinine alone and is used to confirm GFR when creatinine-based estimates are unreliable. Used to classify GFR categories G1-G5 and, with albuminuria, to define chronic kidney disease. Expected result for a healthy adult: 90 or higher (G1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 90
+when = {}
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+note = "GFR category G1 (normal or high). CKD requires markers of kidney damage in addition to GFR category."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G1 Normal or high >=90" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 60
+high = 90
+when = {}
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+note = "GFR category G2 (mildly decreased), 60 to strictly below 90. CKD is diagnosed only with markers of kidney damage or GFR below 60 for more than 3 months."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G2 Mildly decreased 60-89 ... G1 Normal or high >=90" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 45
+high = 60
+when = {}
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+note = "GFR category G3a (mildly to moderately decreased), 45 to strictly below 60. CKD when GFR is below 60 for more than 3 months."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G3a 45-59 ... G2 Mildly decreased 60-89" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 30
+high = 45
+when = {}
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+note = "GFR category G3b (moderately to severely decreased), 30 to strictly below 45."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G3b severely decreased 30-44 ... G3a 45-59" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 15
+high = 30
+when = {}
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+note = "GFR category G4 (severely decreased), 15 to strictly below 30."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G4 Severely decreased 15-29 ... G3b severely decreased 30-44" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 15
+when = {}
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+note = "GFR category G5 (kidney failure), strictly below 15."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G5 Kidney failure <15" },
+]

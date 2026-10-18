@@ -1,0 +1,41 @@
+slug = "gad65-antibodies"
+name = "GAD65 Autoantibodies"
+category = "autoimmune"
+unit = "IU/mL"
+loinc = "13926-1"
+description = "Autoantibodies against glutamic acid decarboxylase 65 (GAD65), measured by radioimmunoassay, ELISA or chemiluminescence immunoassay. Used to support a diagnosis of type 1 diabetes (including latent autoimmune diabetes in adults) and to evaluate GAD antibody-spectrum neurological syndromes. Results are assay-specific. Expected result: negative (below the upper reference limit)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5.1
+population = "Healthy Danish children (0-18 years) and adults (18-70 years) (method: maglumi)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30727763", doi = "10.1080/00365513.2019.1566566", title = "Reference limits for GAD65 and IA-2 autoantibodies by chemiluminescence immunoassay in Northern European adults and children.", locator = "Abstract" },
+]
+note = "Upper reference limit for GAD65 antibodies on the MAGLUMI 800 chemiluminescence assay, established per CLSI guidance. The study found a substantial discrepancy from the manufacturer's limit."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 6778
+when = { conditions = ["gad-antibody-neurological-disorder"] }
+population = "Patients with suspected autoimmune diabetes or GAD antibody-spectrum neurological syndromes (n = 90), tested on Maglumi and RIA (method: maglumi)"
+evidence = "cohort"
+citations = [
+  { pmid = "41076178", doi = "10.1016/j.clinbiochem.2025.111024", title = "Clinical relevance of the Maglumi immunoassay for anti-GAD65 in diabetes and neurological disorders: Analytical challenges and diagnostic insights.", locator = "Abstract (Results)" },
+]
+note = "Maglumi-specific cut-off (ROC analysis, single study) separating neurological from diabetic patients; values at or above this cut-off indicate the neurological group. Source kind: diagnostic. Source band >= 6778; stored as the warn high bound 6778."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 10000
+when = { conditions = ["gad-antibody-neurological-disorder"] }
+population = "Patients with suspected GAD antibody-spectrum neurological disease, serum, tested on GAD65 ELISA (method: elisa; specimen: serum)"
+evidence = "cohort"
+citations = [
+  { pmid = "41902651", doi = "10.1002/acn3.70378", title = "GAD65 Antibody ELISA With Extended Reportable Range: Validation and Guidance for Neurological Practice.", locator = "Results" },
+]
+note = "Neurological serum cut-off for the GAD65 ELISA (single validation study, correlated with RIA neurological cut-off). The study states this value is informative but requires clinical context. Source kind: diagnostic. Source band >= 10000; stored as the warn high bound 10000. Alternative to the default diagnostic warn range for the same population."

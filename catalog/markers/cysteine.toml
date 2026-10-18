@@ -1,0 +1,7 @@
+slug = "cysteine"
+name = "Cysteine"
+category = "amino-acid"
+unit = "µmol/L"
+loinc = "20641-7"
+description = "Cysteine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

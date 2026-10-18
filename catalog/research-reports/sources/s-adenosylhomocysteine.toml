@@ -1,0 +1,7 @@
+slug = "s-adenosylhomocysteine"
+name = "S-Adenosylhomocysteine (SAH)"
+loinc = "80175-3"
+category = "methylation"
+unit = "nmol/L"
+description = "S-Adenosylhomocysteine (SAH). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

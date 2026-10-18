@@ -1,0 +1,40 @@
+slug = "varicella-igg"
+name = "Varicella Zoster IgG"
+category = "infectious"
+unit = "IU/mL"
+loinc = "19162-7"
+description = "IgG antibody to varicella-zoster virus (VZV), measured by ELISA. Indicates prior varicella infection or vaccination. Reported against an assay cut-off as positive, borderline or negative. Expected result: positive."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 11
+population = "Children and adults tested with EUROIMMUN anti-VZV IgG ELISA (Northern Lebanon cross-sectional study, n = 180, aged 1-18 years)"
+evidence = "cohort"
+citations = [
+  { pmid = "41295539", doi = "10.3390/vaccines13111166", title = "Seroprevalence and Vaccination Determinants of Varicella Zoster Virus Among Pediatric and Adolescent Populations in Northern Lebanon.", locator = "2.3. Serological Testing" },
+]
+note = "Positive by the EUROIMMUN ELISA classification (>= 11 IU/mL). Assay-specific manufacturer criterion; not a general clinical cut-off. Source kind: diagnostic. Source band >= 11; stored as the warn high bound 11."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 8
+high = 11
+population = "Children and adults tested with EUROIMMUN anti-VZV IgG ELISA (Northern Lebanon cross-sectional study, n = 180, aged 1-18 years)"
+evidence = "cohort"
+citations = [
+  { pmid = "41295539", doi = "10.3390/vaccines13111166", title = "Seroprevalence and Vaccination Determinants of Varicella Zoster Virus Among Pediatric and Adolescent Populations in Northern Lebanon.", locator = "2.3. Serological Testing" },
+]
+note = "Borderline by the EUROIMMUN ELISA classification (>= 8 and strictly below 11 IU/mL). Assay-specific. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 8
+population = "Children and adults tested with EUROIMMUN anti-VZV IgG ELISA (Northern Lebanon cross-sectional study, n = 180, aged 1-18 years)"
+evidence = "cohort"
+citations = [
+  { pmid = "41295539", doi = "10.3390/vaccines13111166", title = "Seroprevalence and Vaccination Determinants of Varicella Zoster Virus Among Pediatric and Adolescent Populations in Northern Lebanon.", locator = "2.3. Serological Testing" },
+]
+note = "Negative by the EUROIMMUN ELISA classification (strictly below 8 IU/mL). Assay-specific. Source kind: diagnostic. Source band <= 8; stored as the warn low bound 8. Alternative to the default diagnostic warn range for the same population."

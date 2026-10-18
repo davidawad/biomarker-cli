@@ -1,0 +1,17 @@
+slug = "thallium-urine-umol-mol-creatinine"
+name = "Thallium, Urine (umol/mol creatinine)"
+category = "toxic-metal"
+unit = "umol/mol creatinine"
+description = "Thallium, Urine reported in umol/mol creatinine. Results in umol/mol creatinine are assay specific and are not interchangeable with Thallium, Urine in ug/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 0.27
+population = "Non-occupationally exposed people (reference background, 95th percentile)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "23446652", doi = "10.1007/s00420-013-0859-8", title = "Comparison of urinary thallium levels in non-occupationally exposed people and workers.", locator = "Abstract (Methods; Results)" },
+  { pmid = "23446652", doi = "10.1007/s00420-013-0859-8", title = "Comparison of urinary thallium levels in non-occupationally exposed people and workers.", locator = "Abstract (Methods)" },
+]
+note = "Creatinine-corrected urinary thallium; the source defines the reference background as the 95th percentile of a non-occupationally exposed population."

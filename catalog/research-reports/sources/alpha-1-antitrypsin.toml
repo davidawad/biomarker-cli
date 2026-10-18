@@ -1,0 +1,40 @@
+slug = "alpha-1-antitrypsin"
+name = "Alpha-1 Antitrypsin"
+loinc = "1825-9"
+category = "liver"
+unit = "g/L"
+description = "Serum alpha-1 antitrypsin (AAT), the main circulating inhibitor of neutrophil elastase. Measured first when screening for alpha-1 antitrypsin deficiency (AATD). AAT is an acute-phase protein, so levels can rise during inflammation. Expected result: above 1.1 g/L (levels below 1.1 g/L prompt confirmatory testing; levels at or below 0.57 g/L indicate severe deficiency)."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.57
+population = "Adults undergoing initial screening for alpha-1 antitrypsin deficiency"
+evidence = "consensus"
+note = "Severe AAT deficiency, as stated in a 2026 narrative review (the review's reference [19] was not retrieved). Upper bound is inclusive (<=)."
+citations = [
+  { pmid = "42075511", doi = "10.3390/medicina62040639", title = "Alpha-1 Antitrypsin Deficiency-Associated Chronic Obstructive Pulmonary Disease.", locator = "Diagnosis section, initial screening paragraph", quote = "with severe deficiency defined as AAT levels <=0.57 g/L" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 0.57
+high = 1.1
+population = "Adults undergoing initial screening for alpha-1 antitrypsin deficiency"
+evidence = "consensus"
+note = "Milder AAT deficiency band, as stated in the same 2026 narrative review: strictly above 0.57 g/L and strictly below 1.1 g/L."
+citations = [
+  { pmid = "42075511", doi = "10.3390/medicina62040639", title = "Alpha-1 Antitrypsin Deficiency-Associated Chronic Obstructive Pulmonary Disease.", locator = "Diagnosis section, initial screening paragraph", quote = "severe deficiency defined as AAT levels <=0.57 g/L, and milder as levels between <1.1 g/L and >0.57g/L" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 1.1
+population = "Adults undergoing initial screening for alpha-1 antitrypsin deficiency"
+evidence = "consensus"
+note = "Confirmatory-testing threshold, as stated in the same 2026 narrative review, which also says these thresholds are not absolute biological cut-offs."
+citations = [
+  { pmid = "42075511", doi = "10.3390/medicina62040639", title = "Alpha-1 Antitrypsin Deficiency-Associated Chronic Obstructive Pulmonary Disease.", locator = "Diagnosis section, paragraph after the CRP/acute-phase discussion", quote = "Levels below 1.1 g.L-1 (≈25 uM) prompt further confirmatory testing." },
+]

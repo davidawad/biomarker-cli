@@ -1,0 +1,31 @@
+slug = "eosinophil-cationic-protein"
+name = "Eosinophil Cationic Protein"
+loinc = "25638-8"
+category = "allergy"
+unit = "µg/L"
+description = "Serum concentration of eosinophil cationic protein, a granule protein released by activated eosinophils. Tracked as a marker of eosinophilic airway and allergic inflammation, for example in asthma management. Expected result: below the reference upper limit for the age group; higher values indicate eosinophil activation."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.3
+high = 15.9
+when = { specimen = "serum" }
+population = "Apparently healthy individuals (n=100), serum; age not stated in the abstract"
+evidence = "reference-interval-study"
+note = "Range (95%) of serum ECP in apparently healthy individuals, as stated by the source."
+citations = [
+  { pmid = "1742647", doi = "10.1111/j.1365-2222.1991.tb00847.x", title = "Radioimmunoassay of human eosinophil cationic protein (ECP) by an improved method. Establishment of normal levels in serum and turnover in vivo.", url = "https://pubmed.ncbi.nlm.nih.gov/1742647/", locator = "Abstract", quote = "Sera from 100 apparently healthy individuals revealed a geometric mean of 6.0 micrograms ECP/l and a range (95%) of 2.3-15.9 micrograms/l" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 19.9
+when = { specimen = "serum", age_min = 1, age_max = 16 }
+population = "Healthy nonatopic, nonasthmatic children aged 1-15 years (n=123), serum, Royal Belfast Hospital for Sick Children"
+evidence = "reference-interval-study"
+note = "97.5th percentile of serum ECP, the upper reference limit stated in the source. Source ages 1-15 years encoded as age_min 1, age_max 16 (half-open)."
+citations = [
+  { pmid = "10604557", doi = "10.1034/j.1398-9995.1999.00137.x", title = "Serum eosinophil cationic protein (ECP): reference values in healthy nonatopic children.", url = "https://pubmed.ncbi.nlm.nih.gov/10604557/", locator = "Abstract, Results", quote = "The median serum ECP concentration was 6.5 microg/l and the 95th and 97.5 th percentiles were 18.8 and 19.9 microg/l" },
+]

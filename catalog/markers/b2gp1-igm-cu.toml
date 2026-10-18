@@ -1,0 +1,30 @@
+slug = "b2gp1-igm-cu"
+name = "Beta-2 Glycoprotein I IgM Antibody (CU)"
+category = "autoimmune"
+unit = "CU"
+description = "Beta-2 Glycoprotein I IgM Antibody reported in CU. Results in CU are assay specific and are not interchangeable with Beta-2 Glycoprotein I IgM Antibody in AU/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 40
+when = { conditions = ["antiphospholipid-syndrome"] }
+population = "Patients with suspected antiphospholipid syndrome, tested on QUANTA Flash CLIA (method: quanta-flash)"
+evidence = "cohort"
+citations = [
+  { pmid = "39044613", doi = "10.1515/cclm-2024-0570", title = "Establishment of ELISA-comparable moderate and high thresholds for anticardiolipin and anti-β2 glycoprotein I chemiluminescent immunoassays according to the 2023 ACR/EULAR APS classification criteria and evaluation of their diagnostic performance.", locator = "Abstract (Results)" },
+]
+note = "Moderate-level threshold for anti-beta2 glycoprotein I IgM (2023 ACR/EULAR APS classification criteria), single study. Values at or above the high threshold (80 CU) are classed as high. Source kind: diagnostic. Source band >= 40; stored as the warn high bound 40."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 80
+when = { conditions = ["antiphospholipid-syndrome"] }
+population = "Patients with suspected antiphospholipid syndrome, tested on QUANTA Flash CLIA (method: quanta-flash)"
+evidence = "cohort"
+citations = [
+  { pmid = "39044613", doi = "10.1515/cclm-2024-0570", title = "Establishment of ELISA-comparable moderate and high thresholds for anticardiolipin and anti-β2 glycoprotein I chemiluminescent immunoassays according to the 2023 ACR/EULAR APS classification criteria and evaluation of their diagnostic performance.", locator = "Abstract (Results)" },
+]
+note = "High-level threshold for anti-beta2 glycoprotein I IgM (2023 ACR/EULAR APS classification criteria), single study. Source kind: diagnostic. Source band >= 80; stored as the warn high bound 80. Alternative to the default diagnostic warn range for the same population."

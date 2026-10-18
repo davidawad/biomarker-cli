@@ -1,0 +1,18 @@
+slug = "insulin-autoantibodies-au-ml"
+name = "Insulin Autoantibodies (AU/mL)"
+category = "autoimmune"
+unit = "AU/mL"
+description = "Insulin Autoantibodies reported in AU/mL. Results in AU/mL are assay specific and are not interchangeable with Insulin Autoantibodies in U/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20
+when = { conditions = ["type-1-diabetes"] }
+population = "Pediatric population screened for type 1 diabetes autoantibodies, Bulgaria (MAGLUMI chemiluminescence IAA assay)"
+evidence = "cohort"
+citations = [
+  { pmid = "42074878", doi = "10.3390/jcm15083075", title = "The First Selective Screening for Type 1 Diabetes in a Pediatric Population in Bulgaria.", locator = "Table 1, Result interpretation" },
+]
+note = "Manufacturer cut-off for the MAGLUMI IAA assay as reported in the source's assay table (Table 1, first assay column). Column order taken from the table header. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."

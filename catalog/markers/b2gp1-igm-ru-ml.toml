@@ -1,0 +1,17 @@
+slug = "b2gp1-igm-ru-ml"
+name = "Beta-2 Glycoprotein I IgM Antibody (RU/mL)"
+category = "autoimmune"
+unit = "RU/mL"
+description = "Beta-2 Glycoprotein I IgM Antibody reported in RU/mL. Results in RU/mL are assay specific and are not interchangeable with Beta-2 Glycoprotein I IgM Antibody in AU/mL."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 27.54
+when = { sex = "female", pregnant = false }
+population = "Non-pregnant women of reproductive age in Southwest China (healthy cohort, n = 181), 99th percentile cut-off for the HOB BioCLIA assay (method: hob-bioclia)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39227704", doi = "10.1038/s41598-024-71549-2", title = "Establishment of cutoff values for anti-β2 glycoprotein I antibodies in women of reproductive age in Southwest China.", locator = "Abstract" },
+]
+note = "Upper reference limit (99th percentile) for beta-2 glycoprotein I IgM on the HOB BioCLIA kit. Population-specific; the study reports the value in RU/mL."

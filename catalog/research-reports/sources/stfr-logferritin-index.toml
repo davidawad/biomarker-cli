@@ -1,0 +1,54 @@
+slug = "stfr-logferritin-index"
+name = "sTfR/log Ferritin Index"
+loinc = "74807-9"
+category = "iron"
+unit = "index"
+description = "Ratio of soluble transferrin receptor to log ferritin (unitless index) used to assess iron status. Expected result for a healthy child or adolescent: at or below the age- and sex-specific cut-off; values above the cut-off indicate iron deficiency without anemia in the cited study."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.5
+when = { age_min = 1, age_max = 6, conditions = ["iron-deficiency"] }
+population = "Healthy children and adolescents aged 1 to 16 years, population-based sample (n = 1239)"
+evidence = "outcome-study"
+note = "Iron deficiency without anaemia: index strictly above 1.5, ages 1 to 5 years (both sexes)."
+citations = [
+  { pmid = "30264352", doi = "10.1007/s00431-018-3257-0", title = "The usefulness of reticulocyte haemoglobin content, serum transferrin receptor and the sTfR-ferritin index to identify iron deficiency in healthy children aged 1-16 years.", locator = "Abstract (Results)", quote = "The following cut-off points defined ID: sTfR-F Index > 1.5 (1-5 years and 12-16 years boys) and > 1.4 (6-11 years and 12-16 years girls)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.5
+when = { sex = "male", age_min = 12, age_max = 17, conditions = ["iron-deficiency"] }
+population = "Healthy boys aged 12 to 16 years, population-based sample (n = 1239)"
+evidence = "outcome-study"
+note = "Iron deficiency without anaemia: index strictly above 1.5, boys aged 12 to 16 years."
+citations = [
+  { pmid = "30264352", doi = "10.1007/s00431-018-3257-0", title = "The usefulness of reticulocyte haemoglobin content, serum transferrin receptor and the sTfR-ferritin index to identify iron deficiency in healthy children aged 1-16 years.", locator = "Abstract (Results)", quote = "The following cut-off points defined ID: sTfR-F Index > 1.5 (1-5 years and 12-16 years boys) and > 1.4 (6-11 years and 12-16 years girls)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.4
+when = { age_min = 6, age_max = 12, conditions = ["iron-deficiency"] }
+population = "Healthy children aged 6 to 11 years, population-based sample (n = 1239)"
+evidence = "outcome-study"
+note = "Iron deficiency without anaemia: index strictly above 1.4, ages 6 to 11 years (both sexes)."
+citations = [
+  { pmid = "30264352", doi = "10.1007/s00431-018-3257-0", title = "The usefulness of reticulocyte haemoglobin content, serum transferrin receptor and the sTfR-ferritin index to identify iron deficiency in healthy children aged 1-16 years.", locator = "Abstract (Results)", quote = "The following cut-off points defined ID: sTfR-F Index > 1.5 (1-5 years and 12-16 years boys) and > 1.4 (6-11 years and 12-16 years girls)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1.4
+when = { sex = "female", age_min = 12, age_max = 17, conditions = ["iron-deficiency"] }
+population = "Healthy girls aged 12 to 16 years, population-based sample (n = 1239)"
+evidence = "outcome-study"
+note = "Iron deficiency without anaemia: index strictly above 1.4, girls aged 12 to 16 years."
+citations = [
+  { pmid = "30264352", doi = "10.1007/s00431-018-3257-0", title = "The usefulness of reticulocyte haemoglobin content, serum transferrin receptor and the sTfR-ferritin index to identify iron deficiency in healthy children aged 1-16 years.", locator = "Abstract (Results)", quote = "The following cut-off points defined ID: sTfR-F Index > 1.5 (1-5 years and 12-16 years boys) and > 1.4 (6-11 years and 12-16 years girls)" },
+]

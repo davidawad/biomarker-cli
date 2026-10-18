@@ -74,32 +74,6 @@ citations = [
 note = "ESC/EAS 2019 secondary target: apoB strictly below 100 mg/dL (as summarised in the cited review). Applies only to: risk=moderate-cardiovascular-risk. Source kind: target. Alternative to the default target optimal range for the same population."
 
 [[range]]
-set = "population-ri"
-kind = "reference"
-low = 60.0
-high = 150.0
-when = { sex = "male" }
-population = "Healthy reference sample of the Finnish FINRISK 2007 population study (n = 2828; adult age range not stated in the abstract)"
-evidence = "reference-interval-study"
-citations = [
-  { pmid = "21419755", doi = "10.1016/j.cca.2011.03.015", title = "Apolipoprotein A-I, apolipoprotein B, and apolipoprotein B/apolipoprotein A-I ratio: reference intervals compared with values in different pathophysiological conditions from the FINRISK 2007 study.", locator = "Abstract (Results)" },
-]
-note = "Sex-specific 95% reference interval (FINRISK 2007 reference sample; source abstract is sex-ordered for apoB as men then women, inferred from the sentence order). Abstract only: the paper is not open access. Converted from the source's g/L (0.6-1.5) to mg/dL using factor 100. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
-
-[[range]]
-set = "population-ri"
-kind = "reference"
-low = 60.0
-high = 130.0
-when = { sex = "female" }
-population = "Healthy reference sample of the Finnish FINRISK 2007 population study (n = 2828; adult age range not stated in the abstract)"
-evidence = "reference-interval-study"
-citations = [
-  { pmid = "21419755", doi = "10.1016/j.cca.2011.03.015", title = "Apolipoprotein A-I, apolipoprotein B, and apolipoprotein B/apolipoprotein A-I ratio: reference intervals compared with values in different pathophysiological conditions from the FINRISK 2007 study.", locator = "Abstract (Results)" },
-]
-note = "Sex-specific 95% reference interval (FINRISK 2007 reference sample; source abstract is sex-ordered for apoB as men then women, inferred from the sentence order). Abstract only: the paper is not open access. Converted from the source's g/L (0.6-1.3) to mg/dL using factor 100. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
-
-[[range]]
 set = "alt-3"
 kind = "optimal"
 high = 90.0

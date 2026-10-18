@@ -1,0 +1,18 @@
+slug = "urine-glucose"
+name = "Urine Glucose"
+category = "kidney"
+unit = "mg/dL"
+description = "Glucose in urine (glucosuria), measured by semiquantitative dipstick or a laboratory hexokinase method. Glucose normally appears in urine only when blood glucose exceeds the renal threshold, or with renal glucosuria or SGLT2 inhibitor use. The range below is the study case definition for glucosuria cited; no guideline reference interval was verified."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 100
+unit = "mg/dL"
+when = { specimen = "urine" }
+population = "Adults in a biobank cohort (Marshfield Clinic) with semiquantitative urine dipstick glucose results"
+evidence = "outcome-study"
+note = "Study case definition of glucosuria: at least two dipstick urine glucose values of 100 mg/dL or more; values from 0 to 100 mg/dL were excluded because of assay imprecision and limit of detection. Operational research definition, not a guideline threshold."
+citations = [
+  { pmid = "39412882", doi = "10.34067/kid.0000000621", title = "Familial Renal Glucosuria and Potential Pharmacogenetic Impact on Sodium-Glucose Cotransporter-2 Inhibitors.", url = "https://pubmed.ncbi.nlm.nih.gov/39412882/", locator = "Methods", quote = "Participants with at least two laboratory values >=100 mg/dl were defined as cases for glucosuria" },
+]

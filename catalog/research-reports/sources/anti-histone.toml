@@ -1,0 +1,7 @@
+slug = "anti-histone"
+name = "Anti-Histone Antibody"
+loinc = "18230-3"
+category = "autoimmune"
+unit = "qualitative"
+description = "Autoantibody against histone proteins, reported as positive or negative. Tracked as a marker of lupus, including drug-induced lupus. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

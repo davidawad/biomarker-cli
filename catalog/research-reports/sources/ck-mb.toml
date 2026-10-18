@@ -1,0 +1,66 @@
+slug = "ck-mb"
+name = "Creatine Kinase-MB"
+loinc = "13969-1"
+category = "cardiac"
+unit = "ng/mL"
+description = "Mass concentration of the MB isoenzyme of creatine kinase, a heart-enriched enzyme measured to detect myocardial injury. Expected result in healthy people: at or below the age- and sex-specific upper reference limit. Infant limits (under 1 year) from the same study are not stored because whole-year age keys cannot express them."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 6.29
+when = { age_min = 1, age_max = 4, method = "roche-cobas-e411" }
+population = "Healthy Chinese children aged 1 to under 4 years (both sexes, prospective study, n=247)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile, CLSI C28-A3 approach, Roche cobas e411). One-sided: no lower limit."
+citations = [
+  { pmid = "39550417", doi = "10.1038/s41598-024-77153-8", title = "Age- and sex-specific upper reference limits for cardiac biomarkers in Chinese children and adolescents: a prospective study.", locator = "Table 2", quote = "1y-<4y | F + M | 247 | 2.94 | 6.29" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 5.37
+when = { age_min = 4, age_max = 7, method = "roche-cobas-e411" }
+population = "Healthy Chinese children aged 4 to under 7 years (both sexes, prospective study, n=254)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile, CLSI C28-A3 approach, Roche cobas e411). One-sided: no lower limit."
+citations = [
+  { pmid = "39550417", doi = "10.1038/s41598-024-77153-8", title = "Age- and sex-specific upper reference limits for cardiac biomarkers in Chinese children and adolescents: a prospective study.", locator = "Table 2", quote = "4 y -< 7y | F + M | 254 | 2.17 | 5.37" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 3.68
+when = { age_min = 7, age_max = 13, method = "roche-cobas-e411" }
+population = "Healthy Chinese children aged 7 to under 13 years (both sexes, prospective study, n=675)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile, CLSI C28-A3 approach, Roche cobas e411). One-sided: no lower limit."
+citations = [
+  { pmid = "39550417", doi = "10.1038/s41598-024-77153-8", title = "Age- and sex-specific upper reference limits for cardiac biomarkers in Chinese children and adolescents: a prospective study.", locator = "Table 2", quote = "7y-<13y | F + M | 675 | 1.47 | 3.68" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 3.36
+when = { sex = "male", age_min = 13, age_max = 19, method = "roche-cobas-e411" }
+population = "Healthy Chinese male adolescents aged 13-18 years (prospective study, n=123)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile, CLSI C28-A3 approach, Roche cobas e411). One-sided. Source reports a sex difference in this age band only."
+citations = [
+  { pmid = "39550417", doi = "10.1038/s41598-024-77153-8", title = "Age- and sex-specific upper reference limits for cardiac biomarkers in Chinese children and adolescents: a prospective study.", locator = "Table 2", quote = "13y-18y | M | 123 | 1.25 | 3.36" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 2.71
+when = { sex = "female", age_min = 13, age_max = 19, method = "roche-cobas-e411" }
+population = "Healthy Chinese female adolescents aged 13-18 years (prospective study, n=125)"
+evidence = "reference-interval-study"
+note = "Upper reference limit (97.5th percentile, CLSI C28-A3 approach, Roche cobas e411). One-sided. Source reports a sex difference in this age band only."
+citations = [
+  { pmid = "39550417", doi = "10.1038/s41598-024-77153-8", title = "Age- and sex-specific upper reference limits for cardiac biomarkers in Chinese children and adolescents: a prospective study.", locator = "Table 2", quote = "F | 125 | 1.02 | 2.71" },
+]

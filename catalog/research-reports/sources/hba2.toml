@@ -1,0 +1,66 @@
+slug = "hba2"
+name = "Hemoglobin A2"
+loinc = "4551-8"
+category = "hematology"
+unit = "%"
+description = "Share of total haemoglobin present as HbA2 (alpha2 delta2 globin), measured by electrophoresis, HPLC or capillary methods. Tracked mainly for beta-thalassemia carrier screening, where a raised HbA2 is the key finding. Expected result: within the reference interval for the population and method."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.3
+high = 3.1
+population = "832 individuals of reproductive age without hypochromic microcytic anaemia, Guizhou population (China); overall normal individuals, sex and pregnancy status reported to have no obvious influence"
+evidence = "reference-interval-study"
+note = "Single-centre reference interval study."
+citations = [
+  { pmid = "30503531", doi = "10.1016/j.clinbiochem.2018.11.007", title = "Reference intervals for HbA2 and HbF and cut-off value of HbA2 for β-thalassemia carrier screening in a Guizhou population of reproductive age.", locator = "Abstract, Results", quote = "The reference interval for HbA2 in overall normal individuals was 2.3%-3.1%" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.3
+high = 3.4
+population = "3306 individuals aged 3 to 92 years included in the reference interval calculation, Northern Alberta (retrospective laboratory data, Alberta)"
+evidence = "reference-interval-study"
+note = "Retrospective laboratory-based reference interval study."
+citations = [
+  { pmid = "25869492", doi = "10.1016/j.clinbiochem.2015.04.001", title = "Incidence of hemoglobinopathies and thalassemias in Northern Alberta. Establishment of reference intervals for HbF and HbA2.", locator = "Abstract, Results", quote = "HbA2 RI was 2.3% to 3.4%" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 4.40
+when = { sex = "male", conditions = ["beta-thalassemia-carrier"] }
+population = "Males of reproductive age, Guizhou population (China), with HbA2 and beta-globin gene analysis"
+evidence = "outcome-study"
+note = "ROC-derived HbA2 cut-off for beta-thalassemia carrier screening in males. Single-study classification, not a guideline cut-off."
+citations = [
+  { pmid = "30503531", doi = "10.1016/j.clinbiochem.2018.11.007", title = "Reference intervals for HbA2 and HbF and cut-off value of HbA2 for β-thalassemia carrier screening in a Guizhou population of reproductive age.", locator = "Abstract, Results", quote = "The cut-off values of HbA2 for β-thalassemia carrier screening in males, non-pregnant women, pregnant women and the overall set were 4.40%, 3.75%, 3.70% and 3.95% respectively." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 3.75
+when = { sex = "female", pregnant = false, conditions = ["beta-thalassemia-carrier"] }
+population = "Non-pregnant women of reproductive age, Guizhou population (China), with HbA2 and beta-globin gene analysis"
+evidence = "outcome-study"
+note = "ROC-derived HbA2 cut-off for beta-thalassemia carrier screening in non-pregnant women. Single-study classification, not a guideline cut-off."
+citations = [
+  { pmid = "30503531", doi = "10.1016/j.clinbiochem.2018.11.007", title = "Reference intervals for HbA2 and HbF and cut-off value of HbA2 for β-thalassemia carrier screening in a Guizhou population of reproductive age.", locator = "Abstract, Results", quote = "The cut-off values of HbA2 for β-thalassemia carrier screening in males, non-pregnant women, pregnant women and the overall set were 4.40%, 3.75%, 3.70% and 3.95% respectively." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 3.70
+when = { sex = "female", pregnant = true, conditions = ["beta-thalassemia-carrier"] }
+population = "Pregnant women, Guizhou population (China), with HbA2 and beta-globin gene analysis"
+evidence = "outcome-study"
+note = "ROC-derived HbA2 cut-off for beta-thalassemia carrier screening in pregnant women. Single-study classification, not a guideline cut-off."
+citations = [
+  { pmid = "30503531", doi = "10.1016/j.clinbiochem.2018.11.007", title = "Reference intervals for HbA2 and HbF and cut-off value of HbA2 for β-thalassemia carrier screening in a Guizhou population of reproductive age.", locator = "Abstract, Results", quote = "The cut-off values of HbA2 for β-thalassemia carrier screening in males, non-pregnant women, pregnant women and the overall set were 4.40%, 3.75%, 3.70% and 3.95% respectively." },
+]

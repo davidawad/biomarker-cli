@@ -1,0 +1,60 @@
+slug = "creatinine-clearance"
+name = "Creatinine Clearance"
+loinc = "2164-2"
+category = "kidney"
+unit = "mL/min"
+description = "Clearance of creatinine from the blood, in mL/min, used as an estimate of glomerular filtration rate. Measured from a timed (24-hour) urine collection with a paired serum creatinine, or predicted with the Cockcroft-Gault equation. Expected result for a healthy adult: about 66 to 151 mL/min depending on the creatinine method and sex (see ranges). Creatinine clearance is method-dependent; compare results only with the same method."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 66
+high = 143
+when = { method = "enzymatic" }
+population = "Healthy adults aged 18-74 (n=252, median age 27); measured 24-hour urine creatinine clearance"
+evidence = "reference-interval-study"
+note = "Enzymatic creatinine assay (Creatinine Plus). Reference interval for the entire group of healthy subjects, not stratified by sex (the source reports no sex difference)."
+citations = [
+  { pmid = "15149882", title = "Determination of reference intervals for serum creatinine, creatinine excretion and creatinine clearance with an enzymatic and a modified Jaffé method.", locator = "Abstract (Results)", quote = "The reference interval for the entire group was found to be 66-143 ml/min with the enzymatic assay and 71-151 ml/min with the chemical one." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 71
+high = 151
+when = { method = "jaffe-compensated" }
+population = "Healthy adults aged 18-74 (n=252, median age 27); measured 24-hour urine creatinine clearance"
+evidence = "reference-interval-study"
+note = "Modified (compensated) Jaffe creatinine method. Reference interval for the entire group of healthy subjects."
+citations = [
+  { pmid = "15149882", title = "Determination of reference intervals for serum creatinine, creatinine excretion and creatinine clearance with an enzymatic and a modified Jaffé method.", locator = "Abstract (Results)", quote = "The reference interval for the entire group was found to be 66-143 ml/min with the enzymatic assay and 71-151 ml/min with the chemical one." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 60
+high = 119
+unit = "ml/min/1.73 m2"
+when = { sex = "female" }
+population = "Healthy adult blood donors (women); creatinine clearance predicted with the Cockcroft and Gault formula"
+evidence = "reference-interval-study"
+note = "Predicted (Cockcroft-Gault) creatinine clearance indexed to 1.73 m2, not a measured clearance. 95% reference interval."
+citations = [
+  { pmid = "10672373", title = "Adult reference ranges for serum cystatin C, creatinine and predicted creatinine clearance.", locator = "Abstract (Results)", quote = "For women, the intervals were 68-98 mumol/L, 60-119 ml/min/1.73 m2 and 0.49-0.94 mg/L; for men, they were 78-123 mumol/L, 57-122 ml/min/1.73 m2 and 0.56-0.98 mg/L." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 57
+high = 122
+unit = "ml/min/1.73 m2"
+when = { sex = "male" }
+population = "Healthy adult blood donors (men); creatinine clearance predicted with the Cockcroft and Gault formula"
+evidence = "reference-interval-study"
+note = "Predicted (Cockcroft-Gault) creatinine clearance indexed to 1.73 m2, not a measured clearance. 95% reference interval."
+citations = [
+  { pmid = "10672373", title = "Adult reference ranges for serum cystatin C, creatinine and predicted creatinine clearance.", locator = "Abstract (Results)", quote = "For women, the intervals were 68-98 mumol/L, 60-119 ml/min/1.73 m2 and 0.49-0.94 mg/L; for men, they were 78-123 mumol/L, 57-122 ml/min/1.73 m2 and 0.56-0.98 mg/L." },
+]

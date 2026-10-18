@@ -1,0 +1,118 @@
+slug = "ldl-c-direct"
+name = "LDL Cholesterol (direct)"
+loinc = "18262-6"
+category = "lipid"
+unit = "mg/dL"
+description = "Cholesterol carried in low-density lipoprotein particles, measured directly by laboratory assay rather than calculated from the lipid profile. The primary lipid target of cholesterol-lowering therapy. Used to classify ATP III LDL-C categories and to set LDL-lowering goals by cardiovascular risk. Expected result for a healthy adult: below 100 mg/dL (optimal)."
+
+[[range]]
+set = "clinical"
+kind = "optimal"
+high = 100
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Optimal: strictly below 100 mg/dL (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 100
+high = 130
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Near optimal/above optimal, 100 to 129 mg/dL (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 130
+high = 160
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Borderline high, 130 to 159 mg/dL (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 160
+high = 190
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "High, 160 to 189 mg/dL (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 190
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Very high, 190 mg/dL or above (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 2", quote = "LDL Cholesterol <100 Optimal 100-129 Near optimal/above optimal 130-159 Borderline high 160-189 High >=190 Very high" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 100
+when = { risk = "chd-or-risk-equivalent" }
+population = "Adults with coronary heart disease or CHD risk equivalents"
+evidence = "guideline"
+note = "ATP III LDL-C goal (strictly below 100 mg/dL) for CHD and CHD risk equivalents."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4", quote = "Risk Category LDL Goal (mg/dL) CHD and CHD risk equivalents <100 Multiple (2+) risk factors* <130 Zero to one risk factor <160" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 130
+when = { risk = "two-or-more-risk-factors" }
+population = "Adults with two or more risk factors and 10-year CHD risk of 20% or less"
+evidence = "guideline"
+note = "ATP III LDL-C goal (strictly below 130 mg/dL) for two or more risk factors."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4", quote = "Risk Category LDL Goal (mg/dL) CHD and CHD risk equivalents <100 Multiple (2+) risk factors* <130 Zero to one risk factor <160" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 160
+when = { risk = "zero-to-one-risk-factor" }
+population = "Adults with zero to one risk factor"
+evidence = "guideline"
+note = "ATP III LDL-C goal (strictly below 160 mg/dL) for zero to one risk factor."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", title = "ATP III Executive Summary (NHLBI)", locator = "Table 4", quote = "Risk Category LDL Goal (mg/dL) CHD and CHD risk equivalents <100 Multiple (2+) risk factors* <130 Zero to one risk factor <160" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+unit = "mmol/L"
+high = 2.0
+when = { conditions = ["established-cvd"] }
+population = "Adults with established cardiovascular disease (secondary prevention)"
+evidence = "guideline"
+note = "NICE NG238 secondary-prevention LDL-C target, stated in mmol/L; numbers kept as the source states them, not converted."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng238/chapter/recommendations", title = "NICE NG238 recommendations", locator = "Recommendation 1.7.1", quote = "For secondary prevention of CVD, aim for LDL cholesterol levels of 2.0 mmol per litre or less" },
+]

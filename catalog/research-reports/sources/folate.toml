@@ -6,20 +6,6 @@ unit = "ng/mL"
 description = "Serum folate reflects recent dietary folate intake and is the first-line test for folate status. Low values indicate folate deficiency or insufficiency; the metabolic consequence of low folate is raised homocysteine."
 
 [[range]]
-set = "who-2018-review"
-kind = "deficient"
-high = 4.4
-source_unit = "nmol/L"
-source_factor = 0.4413
-when = {}
-population = "Serum folate cut-offs derived from NHANES III folate data (Bio-Rad radioassay) and used in WHO folate-status assessment"
-evidence = "review"
-note = "10 nmol/L is about 4.4 ng/mL. The WHO-authored review says rising homocysteine appears at higher serum folate levels (10 or 14 nmol/L). Cut-offs depend strongly on the assay: microbiological assays with 5-methyl-THF calibration give lower values than folic acid calibration."
-citations = [
-  { pmid = "30239016", doi = "10.1111/nyas.13963", title = "Global folate status in women of reproductive age: a systematic review with emphasis on methodological issues.", locator = "Table 1 footnote (full text)", quote = "Folate data from NHANES III were derived using this assay and used in developing the cutoff values <10 nmol/L for serum folate and <340 nmol/L for red blood cell folate." },
-]
-
-[[range]]
 set = "nutrients-2017-review"
 kind = "insufficient"
 low = 3
@@ -43,19 +29,4 @@ evidence = "review"
 note = "Historical reference only. Current assays and calibrators give different values, so this band should not be used for modern assays without local validation."
 citations = [
   { pmid = "21593497", doi = "10.3945/ajcn.111.013367", title = "Folate status assessment history: implications for measurement of biomarkers in NHANES.", locator = "Results or history section (full text)", quote = "These early studies suggested that a serum folate concentration <3 ng/mL represented clinical deficiency, concentrations between 3 and 6 ng/mL were marginal, and 6–20 ng/mL was the normal range." },
-]
-
-[[range]]
-set = "clarke-2003"
-kind = "warn"
-low = 2.2
-high = 3.1
-source_unit = "nmol/L"
-source_factor = 0.4413
-when = { age_min = 65, markers = [{ marker = "homocysteine", low = 15 }] }
-population = "Older persons aged 65 and over in Oxford (population study, n=1562); borderline folate with raised homocysteine"
-evidence = "outcome"
-note = "Borderline band (5-7 nmol/L) counts as high risk of folate deficiency only with homocysteine above 15 micromol/L. In the same study, folate below 5 nmol/L (about 2.2 ng/mL) put people in the high-risk group without a homocysteine condition."
-citations = [
-  { pmid = "12716678", doi = "10.1093/ajcn/77.5.1241", title = "Screening for vitamin B-12 and folate deficiency in older persons.", locator = "Design, para 1 (Abstract)", quote = "borderline folate (5-7 nmol/L) accompanied by elevated tHcy (> 15 micromol/L)" },
 ]

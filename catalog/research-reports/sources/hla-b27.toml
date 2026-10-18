@@ -1,0 +1,7 @@
+slug = "hla-b27"
+name = "HLA-B27"
+loinc = "4821-5"
+category = "genetic"
+unit = "qualitative"
+description = "Presence of the HLA-B*27 allele, a major-histocompatibility antigen associated with ankylosing spondylitis, reactive arthritis, acute anterior uveitis and other spondyloarthropathies. Tracked when spondyloarthritis or uveitis is suspected. The allele is common in the general population and is neither diagnostic nor sufficient for disease. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative for the allele); no numeric reference interval applies."

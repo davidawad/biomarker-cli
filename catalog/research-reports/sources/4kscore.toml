@@ -1,0 +1,31 @@
+slug = "4kscore"
+name = "4Kscore"
+loinc = "90740-2"
+category = "tumor-marker"
+unit = "%"
+description = "Blood test combining four kallikreins with clinical information, reported as a percent risk of Gleason 7 or higher (significant) prostate cancer on biopsy. Used to decide whether a man needs a prostate biopsy. Expected result: a low percent risk, below the cut-offs in the ranges below."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 5
+high = 23
+when = { conditions = ["prostate-cancer"] }
+population = "Men scheduled for prostate biopsy (US prospective validation study)"
+evidence = "outcome-study"
+note = "Intermediate band 5% to 23% for high-grade prostate cancer; the source places <5% in the low band and >23% in the high band."
+citations = [
+  { pmid = "31378585", doi = "10.1016/j.urolonc.2019.07.010", title = "Developing an effective strategy to improve the detection of significant prostate cancer by combining the 4Kscore and multiparametric MRI.", locator = "Abstract (Results)", quote = "patients with <5% risk from a blood marker ... patients with a risk >23% would not have risk sufficiently reduced by a negative imaging study to forgo biopsy. From the 4Kscore validation study, 46% of men considered for biopsy in the US have risks 5% to 23%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 7.5
+when = { conditions = ["prostate-cancer"] }
+population = "Men considered for prostate biopsy (meta-analysis background)"
+evidence = "meta-analysis"
+note = "Cut-off below which the source describes low risk of high-grade cancer. The same meta-analysis concludes the 7.5% to 10% cut-offs need confirmation in larger studies."
+citations = [
+  { pmid = "33685800", doi = "10.1016/j.urolonc.2020.11.001", title = "4Kscore diagnostic value in patients with high-grade prostate cancer using cutoff values of 7.5% to 10%: A meta-analysis.", locator = "Abstract (Background)", quote = "Patients with 4Kscore results <7.5% have been proven to be at low risk of carrying high-grade CaP." },
+]

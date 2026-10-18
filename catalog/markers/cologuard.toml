@@ -1,0 +1,7 @@
+slug = "cologuard"
+name = "Multitarget Stool DNA (Cologuard)"
+category = "stool"
+unit = "qualitative"
+loinc = "77354-9"
+description = "Multitarget stool DNA test that assays DNA molecular markers and hemoglobin in a stool sample for colorectal cancer screening; reported as positive or negative. Expected result: negative."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

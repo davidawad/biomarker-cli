@@ -124,6 +124,9 @@ fn emit_lint(ctx: &Ctx, r: &LintReport, json_flag: bool) -> Result<()> {
             .collect();
         ctx.emit(&Report::list("catalog_universe", rows))?;
     }
-    ctx.info(&format!("{} markers, {} ranges: {} error(s), {} warning(s)", r.markers, r.ranges, r.errors, r.warnings));
+    ctx.info(&format!(
+        "{} markers, {} ranges ({} cited), {} pending: {} error(s), {} warning(s)",
+        r.markers, r.ranges, r.cited, r.pending, r.errors, r.warnings
+    ));
     Ok(())
 }

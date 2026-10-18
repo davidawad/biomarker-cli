@@ -12,11 +12,9 @@ Linoleic acid (18:2n-6), the main dietary omega-6 polyunsaturated fatty acid, re
 
 ## Ranges
 
-Bounds in %. The most specific matching range of each set applies.
+No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
 
-| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
-|---|---|---|---|---|---|---|---|---|
-| clinical | reference | all | 12.72 | 24.54 | reference-interval-study | Adults in the 1997 New Zealand National Nutrition Survey (n=2416 with serum phospholipid fatty acids), non-fasting samples; 5th-95th percentiles (specimen: serum) | [Serum fatty acid reference ranges: percentiles from a New Zealand national nutrition survey.](https://pubmed.ncbi.nlm.nih.gov/22254080/), Table 4 | Serum phospholipid fraction, mol% of total fatty acids (survey-adjusted). Mean 19.01 (SD 5.22). Not stratified by sex or age in the cited table. |
+No ranges yet.
 
 ---
 

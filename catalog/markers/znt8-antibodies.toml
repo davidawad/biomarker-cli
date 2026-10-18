@@ -1,0 +1,54 @@
+slug = "znt8-antibodies"
+name = "ZnT8 Autoantibodies"
+category = "autoimmune"
+unit = "WHO U/mL"
+loinc = "76651-9"
+description = "IgG autoantibodies against zinc transporter 8 (ZnT8), a beta-cell antigen, measured by immunoassay (ELISA or radiobinding). Tracked as one of the islet autoantibodies (with GADA, IA-2A, IAA) to screen for and classify type 1 diabetes, and to tell autoimmune diabetes from type 2 diabetes in young people. Expected result: negative (below the age-specific cut-off)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 18
+when = { age = [0.0, 30.0] }
+population = "Control sera from people without diabetes and with HbA1c below 6.0% (<42 mmol/mol), aged 0-83 years; participants tested under 30 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34348918", doi = "10.1136/bmjdrc-2021-002296", title = "Zinc transporter 8 autoantibody testing requires age-related cut-offs.", locator = "Abstract, Results" },
+]
+note = "97.5th centile of control sera for people tested under 30 years, as stated by the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 9
+when = { age = [30.0, 200] }
+population = "Control sera from people without diabetes and with HbA1c below 6.0% (<42 mmol/mol), aged 0-83 years; participants tested 30 years and over"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34348918", doi = "10.1136/bmjdrc-2021-002296", title = "Zinc transporter 8 autoantibody testing requires age-related cut-offs.", locator = "Abstract, Results" },
+]
+note = "97.5th centile of control sera for people tested 30 years and over, as stated by the source."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 127
+when = { age = [0.0, 30.0] }
+population = "Control sera from people without diabetes and with HbA1c below 6.0% (<42 mmol/mol), aged 0-83 years; participants tested under 30 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34348918", doi = "10.1136/bmjdrc-2021-002296", title = "Zinc transporter 8 autoantibody testing requires age-related cut-offs.", locator = "Abstract, Conclusions" },
+]
+note = "99th centile of control sera for people tested under 30 years, which the source recommends as the positivity cut-off for ZnT8A testing in this age group. Upper bound stated as a cut-off; the source does not state whether the boundary is >= or >. Source kind: diagnostic. Source band <= 127; stored as the warn low bound 127."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 21
+when = { age = [30.0, 200] }
+population = "Control sera from people without diabetes and with HbA1c below 6.0% (<42 mmol/mol), aged 0-83 years; participants tested 30 years and over"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34348918", doi = "10.1136/bmjdrc-2021-002296", title = "Zinc transporter 8 autoantibody testing requires age-related cut-offs.", locator = "Abstract, Conclusions" },
+]
+note = "99th centile of control sera for people tested 30 years and over, which the source recommends as the positivity cut-off for ZnT8A testing in this age group. Upper bound stated as a cut-off; the source does not state whether the boundary is >= or >. Source kind: diagnostic. Source band <= 21; stored as the warn low bound 21."

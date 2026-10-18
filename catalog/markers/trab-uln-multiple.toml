@@ -3,16 +3,4 @@ name = "TSH Receptor Antibodies (multiple of upper limit of normal)"
 category = "thyroid"
 unit = "x ULN"
 description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
-
-[[range]]
-set = "ata-2017"
-kind = "warn"
-high = 3
-when = { pregnant = true, conditions = ["graves-disease"] }
-population = "Pregnant women with Graves disease or a high TRAb, as summarised in a 2022 review of fetal and neonatal thyrotoxicosis"
-evidence = "consensus"
-citations = [
-  { pmid = "36676660", doi = "10.3390/medicina59010036", url = "https://pubmed.ncbi.nlm.nih.gov/36676660/", title = "Diagnosis and Management of Fetal and Neonatal Thyrotoxicosis.", locator = "Full text" },
-]
-note = "ATA pregnancy guidance as restated: TRAb more than three times the upper limit of normal for the maternal assay counts as high and calls for fetal/neonatal monitoring. Expressed as a multiple of the assay upper limit; the alternative absolute form (>5 IU/L) is a separate range. Source kind: diagnostic. Source band >= 3; stored as the warn high bound 3."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

@@ -1,0 +1,7 @@
+slug = "adiponectin"
+name = "Adiponectin"
+category = "metabolic"
+unit = "µg/mL"
+loinc = "47828-9"
+description = "Adiponectin. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

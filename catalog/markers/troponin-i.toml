@@ -1,0 +1,41 @@
+slug = "troponin-i"
+name = "Troponin I (conventional)"
+category = "cardiac"
+unit = "ng/L"
+loinc = "10839-9"
+description = "Cardiac troponin I, a myocardial injury marker measured in serum or plasma and used to diagnose myocardial infarction and injury. Expected result for a healthy adult: at or below the 99th percentile upper reference limit. Cut-offs are assay-specific and do not transfer between troponin I methods. Ranges below are the 99th percentile upper reference limits of the Beckman Coulter AccuTnI+3 assay."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 31
+when = { sex = "male" }
+population = "Healthy adults in Northern California (Kaiser Permanente members, 1764 tested); Beckman Coulter AccuTnI+3 assay; male 99th percentile upper reference limit"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "25684454", doi = "10.1016/j.cca.2015.02.005", title = "Age, sex, and racial influences on the Beckman Coulter AccuTnI+3 99th percentile.", locator = "Abstract, Results" },
+]
+note = "Male 99th percentile upper reference limit (AccuTnI+3)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 21
+when = { sex = "female" }
+population = "Healthy adults in Northern California (Kaiser Permanente members, 1764 tested); Beckman Coulter AccuTnI+3 assay; female 99th percentile upper reference limit"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "25684454", doi = "10.1016/j.cca.2015.02.005", title = "Age, sex, and racial influences on the Beckman Coulter AccuTnI+3 99th percentile.", locator = "Abstract, Results" },
+]
+note = "Female 99th percentile upper reference limit (AccuTnI+3)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 25
+population = "Healthy adults in Northern California (Kaiser Permanente members, 1764 tested); Beckman Coulter AccuTnI+3 assay; all samples"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "25684454", doi = "10.1016/j.cca.2015.02.005", title = "Age, sex, and racial influences on the Beckman Coulter AccuTnI+3 99th percentile.", locator = "Abstract, Results" },
+]
+note = "Overall 99th percentile upper reference limit for all samples (AccuTnI+3); sex-specific limits above are reported by the same study."

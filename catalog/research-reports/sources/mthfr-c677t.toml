@@ -1,0 +1,7 @@
+slug = "mthfr-c677t"
+name = "MTHFR C677T Genotype"
+loinc = "28005-7"
+category = "genetic"
+unit = "qualitative"
+description = "Genotype at the MTHFR C677T variant (genotype calls CC, CT or TT). Requested in genetic panels that look at folate-pathway enzyme variants. Expected result: a genotype call (CC, CT or TT); the result is not a numeric value and no numeric cut-off applies."
+no_reference = "Genotype result (CC, CT or TT); no numeric reference interval applies."

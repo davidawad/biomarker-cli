@@ -1,0 +1,30 @@
+slug = "lh-fsh-ratio"
+name = "LH/FSH Ratio"
+loinc = "34434-1"
+category = "sex-hormone"
+unit = "ratio"
+description = "Ratio of serum luteinizing hormone to follicle-stimulating hormone, measured on the same sample. Tracked as a supporting marker for polycystic ovary syndrome (PCOS), where LH is often elevated relative to FSH. Expected result: below the diagnostic cut-offs in the ranges (a ratio at or above the cut-off is reported as increased)."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 1
+when = { conditions = ["pcos"] }
+population = "Women with polycystic ovary on transvaginal Doppler ultrasound (single-centre study, China)"
+evidence = "outcome-study"
+note = "Diagnostic cut-off for PCOS in a single-centre study. Not a validated population-wide threshold."
+citations = [
+  { pmid = "21575449", title = "[Preliminary study on the value of ratio of serum luteinizing hormone/follicle-stimulating hormone in diagnosis of polycystic ovarian syndrome among women with polycystic ovary].", locator = "Abstract, Conclusions", quote = "The ratio of LH/FSH >= 1 provide the significant value in the diagnosis of PCOS." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 0.749
+when = { conditions = ["pcos"] }
+population = "Sudanese women with PCOS compared with normal ovulatory women; cut-off from ROC analysis"
+evidence = "outcome-study"
+note = "ROC-derived cut-off in a single-country study (AUC 0.932 reported). Not a validated population-wide threshold."
+citations = [
+  { pmid = "37275514", doi = "10.2147/IJWH.S403347", title = "Diagnostic Performance of Anti-Müllerian Hormone, Luteinizing Hormone to Follicle-Stimulating Hormone Ratio, Testosterone, and Prolactin to Predict Polycystic Ovary Syndrome Among Sudanese Women.", locator = "Results; Table 3", quote = "LH: FSH ratio at cut-off 0.749 ... 86.3% (n=259) had increased LH: FSH ratio; 71.0% (n=213) had hyperandrogenemia and 58.0% (n=174) had hyperprolactinemia based on their cut-off values" },
+]

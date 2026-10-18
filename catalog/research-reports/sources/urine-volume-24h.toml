@@ -1,0 +1,58 @@
+slug = "urine-volume-24h"
+name = "24-Hour Urine Volume"
+loinc = "3167-4"
+category = "urinalysis"
+unit = "L/day"
+description = "Total urine volume collected over 24 hours. Tracked to judge adequacy of fluid intake and to assess kidney stone risk, since low urine volume raises urinary supersaturation. Expected result: within the reference range; low volume prompts a fluid-intake target."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.0
+high = 2.5
+when = { }
+population = "Adults, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Guideline reference range for 24-hour urine volume, written in the source as '>2.0-2.5 L/day (25-30 mL/kg/day)'. The guideline states reference values are a suggestion that varies by laboratory standardization."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults (Volume row)", quote = "Attention level | Action level | Relevance ... | Volume | >2.0-2.5 L/day (25-30 mL/kg/day) | <1.5 L/day | <1 L/day | Adequacy of fluid intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 1.5
+when = { }
+population = "Adults, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Attention level: strictly below 1.5 L/day, per guideline Table 4. The guideline states therapeutic decisions could be applied from the attention level."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults (Volume row)", quote = "Attention level | Action level | Relevance ... | Volume | >2.0-2.5 L/day (25-30 mL/kg/day) | <1.5 L/day | <1 L/day | Adequacy of fluid intake" },
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Section on urinary laboratory parameters (text preceding Table 4)", quote = "Therapeutic decisions could be applied from the attention level and are recommended from the action level." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 1.0
+when = { }
+population = "Adults, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Action level: strictly below 1 L/day, per guideline Table 4. The guideline states therapeutic decisions are recommended from the action level."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults (Volume row)", quote = "Attention level | Action level | Relevance ... | Volume | >2.0-2.5 L/day (25-30 mL/kg/day) | <1.5 L/day | <1 L/day | Adequacy of fluid intake" },
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Section on urinary laboratory parameters (text preceding Table 4)", quote = "Therapeutic decisions could be applied from the attention level and are recommended from the action level." },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 2.5
+high = 3.0
+when = { conditions = ["nephrolithiasis"] }
+population = "Adults with kidney stones (nephrolithiasis) and low urinary volume"
+evidence = "guideline"
+note = "Treatment target for low urinary volume in nephrolithiasis: urine output 2.5 to 3.0 L/day through increased fluid intake (guideline recommendation level A)."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 5, Nutritional recommendations according to risk factors and metabolic disorders (Low Urinary Volume row)", quote = "Low Urinary Volume | ↑ Fluid intake (30 mL/kg/day + 400 mL insensible losses): urine output 2.5 to 3.0 L/day | A" },
+]

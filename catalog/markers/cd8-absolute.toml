@@ -1,0 +1,56 @@
+slug = "cd8-absolute"
+name = "CD8 T Cells (Absolute)"
+category = "immune"
+unit = "cells/µL"
+loinc = "14135-8"
+description = "Absolute count of CD8-positive (cytotoxic) T lymphocytes per microlitre of blood, measured by flow cytometry. Used in immune deficiency work-up, in HIV monitoring alongside the CD4 count, and in lymphocyte subset panels. Expected result in healthy adults: within the reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 175.3
+high = 879.8
+population = "351 healthy Brazilian adults aged 42-82 years (ELSA-Brasil); 2.5th and 97.5th percentiles; flow cytometry; overall (sex and age split not given in the abstract)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41124450", doi = "10.1590/1414-431X2025e14956", title = "Establishing the reference intervals for subpopulations of T lymphocytes, B lymphocytes, and natural killer cells: insight from the Brazilian Longitudinal Study of Adult Health (ELSA-Brasil).", locator = "Abstract" },
+]
+note = "Absolute CD8+ T-cell reference interval, 2.5th-97.5th percentile. Inclusive bounds."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 145
+high = 884
+population = "2,570 apparently healthy HIV-negative adults from the six geopolitical zones of Nigeria; Cyflow method"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "19641097", doi = "10.1128/CVI.00378-08", title = "Establishment of reference values of CD4 and CD8 lymphocyte subsets in healthy Nigerian adults.", locator = "Abstract" },
+]
+note = "Reference range for CD8 stated in the abstract. The percentile method and the sex and age partition are not in the text retrieved (abstract only), so the range is stored as stated. Alternative to the default clinical reference range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 294.43
+high = 869.37
+when = { sex = "female" }
+population = "Healthy Polish adults (blood donors, over 18 years), female n = 31; 5th and 95th percentiles; flow cytometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38812608", doi = "10.5114/ceji.2024.136371", title = "Reference values of lymphocyte subsets from healthy Polish adults.", locator = "Table 2 (Tc lymphocytes/CD3+CD8+ abs. count, Female)" },
+]
+note = "Female CD8 (CD3+CD8+) absolute count, 5th-95th percentile (central 90%, not 95%). Small sample (n = 31); provisional."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 212.03
+high = 949.74
+when = { sex = "male" }
+population = "Healthy Polish adults (blood donors, over 18 years), male n = 30; 5th and 95th percentiles; flow cytometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38812608", doi = "10.5114/ceji.2024.136371", title = "Reference values of lymphocyte subsets from healthy Polish adults.", locator = "Table 2 (Tc lymphocytes/CD3+CD8+ abs. count, Male)" },
+]
+note = "Male CD8 (CD3+CD8+) absolute count, 5th-95th percentile (central 90%, not 95%). Small sample (n = 30); provisional."

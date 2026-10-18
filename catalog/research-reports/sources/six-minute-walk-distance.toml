@@ -1,0 +1,32 @@
+slug = "six-minute-walk-distance"
+name = "Six-Minute Walk Distance"
+loinc = "64098-7"
+category = "fitness"
+unit = "m"
+description = "Distance walked in six minutes on the standardized six-minute walk test, a measure of functional exercise capacity. Tracked in cardiopulmonary, neuromuscular and cognitive disease. Healthy-adult values depend on age, sex, height and weight (published reference equations, not fixed intervals). No single expected result."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 389
+unit = "m"
+when = { sex = "male", conditions = ["alzheimers-disease"] }
+population = "Community-dwelling men attending a neurology department, classified as MCI (MMSE >= 26) or moderate AD dementia (MMSE 10-19) by IWG-2 criteria"
+evidence = "outcome-study"
+note = "Single-study ROC threshold (Youden index) separating MCI from moderate AD dementia, n = 233; not externally validated. Values strictly below 389 m were in the moderate AD dementia direction. Not a reference interval."
+citations = [
+  { pmid = "42513287", doi = "10.3390/jcm15145374", title = "Criterion-Referenced Sex-Specific Six-Minute Walk Distance Cut-Offs for Staging Alzheimer's Disease.", locator = "Abstract (Results)", quote = "Sex-specific thresholds were 389 m in men (AUC = 0.96, sensitivity = 96.4%, specificity = 79.3%) and 367 m in women" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 367
+unit = "m"
+when = { sex = "female", conditions = ["alzheimers-disease"] }
+population = "Community-dwelling women attending a neurology department, classified as MCI (MMSE >= 26) or moderate AD dementia (MMSE 10-19) by IWG-2 criteria"
+evidence = "outcome-study"
+note = "Single-study ROC threshold (Youden index) separating MCI from moderate AD dementia, n = 233 (128 women); not externally validated. Values strictly below 367 m were in the moderate AD dementia direction. Not a reference interval."
+citations = [
+  { pmid = "42513287", doi = "10.3390/jcm15145374", title = "Criterion-Referenced Sex-Specific Six-Minute Walk Distance Cut-Offs for Staging Alzheimer's Disease.", locator = "Abstract (Results)", quote = "Sex-specific thresholds were 389 m in men (AUC = 0.96, sensitivity = 96.4%, specificity = 79.3%) and 367 m in women" },
+]

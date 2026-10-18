@@ -1,0 +1,7 @@
+slug = "urine-5-hiaa"
+name = "5-Hydroxyindoleacetic Acid (5-HIAA), Urine"
+category = "organic-acid"
+unit = "mg/24h"
+loinc = "1694-9"
+description = "Serotonin metabolite excreted in urine, usually collected over 24 hours; the standard biochemical test for carcinoid syndrome and serotonin-secreting neuroendocrine tumours, also used to monitor treatment. Expected result: at or below the upper limit of normal in the first range below (50 umol/24h); values above it are elevated. Ranges are in the umol/24h unit the source states (companion unit)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."

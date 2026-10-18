@@ -1,0 +1,28 @@
+slug = "urine-5-hiaa-umol-24h"
+name = "5-Hydroxyindoleacetic Acid (5-HIAA), Urine (umol/24h)"
+category = "organic-acid"
+unit = "umol/24h"
+description = "5-Hydroxyindoleacetic Acid (5-HIAA), Urine reported in umol/24h. Results in umol/24h are assay specific and are not interchangeable with 5-Hydroxyindoleacetic Acid (5-HIAA), Urine in mg/24h."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 50
+population = "Adults with neuroendocrine tumours (24-hour urine), cut-off as used in the source"
+evidence = "cohort"
+citations = [
+  { pmid = "40314148", doi = "10.1210/clinem/dgaf263", title = "Serum 5-Hydroxyindoleacetic Acid Measurements for the Diagnosis and Follow-up of Carcinoid Syndrome.", locator = "Methods (laboratory analysis)" },
+]
+note = "Upper limit of normal for 24-hour urinary 5-HIAA, as stated in the source."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 50
+when = { conditions = ["carcinoid-syndrome"] }
+population = "Patients with neuroendocrine tumours in a tertiary cohort"
+evidence = "cohort"
+citations = [
+  { pmid = "40314148", doi = "10.1210/clinem/dgaf263", title = "Serum 5-Hydroxyindoleacetic Acid Measurements for the Diagnosis and Follow-up of Carcinoid Syndrome.", locator = "Methods (outcome definition)" },
+]
+note = "Elevated urinary 5-HIAA used in the source's carcinoid syndrome definition: strictly above 50 umol/24h. Source kind: diagnostic. Source band >= 50; stored as the warn high bound 50."

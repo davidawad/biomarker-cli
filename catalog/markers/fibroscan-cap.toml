@@ -1,0 +1,17 @@
+slug = "fibroscan-cap"
+name = "Controlled Attenuation Parameter (FibroScan CAP)"
+category = "liver"
+unit = "dB/m"
+loinc = "81894-8"
+description = "Ultrasound-based estimate of hepatic steatosis (fat in the liver) from FibroScan, reported in dB/m and graded S0 to S3. Used to screen for and grade liver fat without biopsy. Expected result in a person without steatosis is below 248 dB/m."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 248
+population = "Adults with histology-graded steatosis (individual patient data meta-analysis of FibroScan M-probe studies; mainly hepatitis B, hepatitis C and NAFLD/NASH)"
+evidence = "cohort"
+citations = [
+  { pmid = "28039099", doi = "10.1016/j.jhep.2016.12.022", title = "Individual patient data meta-analysis of controlled attenuation parameter (CAP) technology for assessing steatosis.", locator = "Abstract (Results)" },
+]
+note = "Below 248 dB/m: S0 (no steatosis). Cut-off 95% CI 237-261. Source reports NAFLD/NASH and diabetes shift CAP upward by about 10 dB/m, and BMI by 4.4 dB/m per unit."

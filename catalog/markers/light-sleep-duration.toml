@@ -1,0 +1,7 @@
+slug = "light-sleep-duration"
+name = "Light Sleep Duration"
+category = "sleep"
+unit = "min"
+loinc = "93830-8"
+description = "Light Sleep Duration. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

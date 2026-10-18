@@ -1,0 +1,27 @@
+slug = "mercury-urine-g-g-creatinine"
+name = "Mercury, Urine (µg/g creatinine)"
+category = "toxic-metal"
+unit = "µg/g creatinine"
+description = "Mercury, Urine reported in µg/g creatinine. Results in µg/g creatinine are assay specific and are not interchangeable with Mercury, Urine in µg/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 3.66
+population = "Adults in four Italian cities (n = 383), urinary mercury by hydride generation atomic absorption (method: hg-aas)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "12049389", doi = "10.1016/s0048-9697(01)01013-0", title = "Assessment of reference values for mercury in urine: the results of an Italian polycentric study.", locator = "Abstract" },
+]
+note = "Upper reference value (95th percentile) reported in creatinine-corrected units, not a 2.5th-97.5th interval. Fish intake, tobacco smoking, dental amalgam and city were significant determinants in the study."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+high = 5.02
+population = "Adults in four Italian cities (n = 383), urinary mercury by flow injection ICP-MS (method: fi-icp-ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "12049389", doi = "10.1016/s0048-9697(01)01013-0", title = "Assessment of reference values for mercury in urine: the results of an Italian polycentric study.", locator = "Abstract" },
+]
+note = "Upper reference value (95th percentile) reported in creatinine-corrected units, not a 2.5th-97.5th interval. Same study as the HG-AAS range; the two methods give comparable upper values. Alternative to the default clinical reference range for the same population."

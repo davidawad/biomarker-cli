@@ -1,0 +1,31 @@
+slug = "dxa-z-score"
+name = "DXA Z-Score (Lumbar Spine)"
+loinc = "85394-5"
+category = "bone"
+unit = "z-score"
+description = "Lumbar spine areal bone mineral density (aBMD) Z-score from DXA: the standard deviation difference from the mean of an age-, sex- and ethnicity-matched reference population. Used to flag bone density below the expected range for age, and preferred over the T-score in premenopausal women and in men under 50. A calculated, not a measured, score. Expected result: within the expected range for age (Z-score above -2.0)."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = -2.0
+when = { }
+population = "Adults and children with DXA aBMD Z-scores against age-, sex- and ethnicity-matched reference data (ISCD definition)"
+evidence = "consensus"
+note = "Z-score -2.0 or lower: below the expected range for age (ISCD). Prompts evaluation for secondary causes."
+citations = [
+  { pmid = "42788133", doi = "10.4103/ijem.ijem_872_25", title = "Bone Health and Psychological Wellbeing in Turner Syndrome: A Tertiary Healthcare Centre Experience from North India.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13609914/", locator = "Methods (DXA analysis)", quote = "A Z-score of -2.0 or lower was defined as \"below the expected range for age\", and a Z-score above -2.0 as \"within the expected range for age\"." },
+  { pmid = "42661519", doi = "10.5371/hp.2026.38.3.213", title = "Osteoporosis Diagnosis and Management: A Review from an Orthopedic Perspective.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13533619/", locator = "Section 2 (T-scores and Z-scores)", quote = "A Z-score <=-2.0 is defined by ISCD as \"below the expected range for age\" and should prompt evaluation for secondary causes" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = -2.0
+when = { }
+population = "Adults and children with DXA aBMD Z-scores against age-, sex- and ethnicity-matched reference data (ISCD definition)"
+evidence = "consensus"
+note = "Z-score above -2.0: within the expected range for age (ISCD)."
+citations = [
+  { pmid = "42788133", doi = "10.4103/ijem.ijem_872_25", title = "Bone Health and Psychological Wellbeing in Turner Syndrome: A Tertiary Healthcare Centre Experience from North India.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13609914/", locator = "Methods (DXA analysis)", quote = "A Z-score of -2.0 or lower was defined as \"below the expected range for age\", and a Z-score above -2.0 as \"within the expected range for age\"." },
+]

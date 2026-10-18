@@ -1,0 +1,19 @@
+slug = "taurine"
+name = "Taurine"
+category = "chemistry"
+unit = "umol/L"
+description = "Plasma taurine, a sulfur-containing amino acid. Reference interval from an LC-MS/MS study of Chinese adults."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 107.50
+high = 227.65
+unit = "umol/L"
+when = { specimen = "plasma" }
+population = "Chinese adults (LC-MS/MS, dansyl chloride derivatization)"
+evidence = "reference-interval-study"
+note = "Population- and method-specific interval; other labs and populations differ."
+citations = [
+  { pmid = "37956824", doi = "10.1016/j.cca.2023.117650", title = "Simultaneous determination of human plasma 5 amino acid neurotransmitters using liquid chromatography-tandem mass spectrometry: Establishment of reference intervals in Chinese adult population and application to patients with schizophrenia.", locator = "Abstract", quote = "The reference interval for Glu, Asp, Gly, Tau, and GABA were 55.51-189.06, 27.51-92.38, 204.01-574.55, 107.50-227.65, and <1 umol/L, respectively." },
+]

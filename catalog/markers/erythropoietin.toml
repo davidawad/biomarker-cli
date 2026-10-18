@@ -1,0 +1,43 @@
+slug = "erythropoietin"
+name = "Erythropoietin"
+category = "hematology"
+unit = "mIU/mL"
+loinc = "15061-5"
+description = "Glycoprotein hormone that drives red cell production, measured by immunoassay. Used in the workup of anemia and erythrocytosis, including polycythemia vera versus secondary erythrocytosis. Expected result: within the reference interval; subnormal values favour polycythemia vera over secondary causes."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5.3
+high = 26.3
+population = "Healthy donors (n=393); age not stated in the abstract"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39272689", doi = "10.3390/diagnostics14171902", title = "Diagnostic Performance of Serum Erythropoietin to Discriminate Polycythemia Vera from Secondary Erythrocytosis through Established Subnormal Limits.", locator = "Abstract (Results)" },
+]
+note = "2.5th-97.5th percentile of healthy donors. IU/L is numerically equal to mIU/mL. Converted from the source's IU/L (5.3-26.3) to mIU/mL using factor 1.0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 9.1
+high = 27.6
+when = { age = [0.0, 17.0] }
+population = "Healthy children aged 1 month to 16 years"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "3191035", doi = "10.1111/j.1365-2141.1988.tb02471.x", title = "Serum immunoreactive erythropoietin in healthy normal children.", locator = "Abstract (Results)" },
+]
+note = "Pediatric 95% range (geometric-mean study, n=130). Adult values from the same study (n=22) omitted as too small a sample. Converted from the source's miu/mL (9.1-27.6) to mIU/mL using factor 1.0."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 3.1
+when = { conditions = ["polycythemia-vera"] }
+population = "Patients with erythrocytosis (41 polycythemia vera, 49 secondary erythrocytosis)"
+evidence = "cohort"
+citations = [
+  { pmid = "39272689", doi = "10.3390/diagnostics14171902", title = "Diagnostic Performance of Serum Erythropoietin to Discriminate Polycythemia Vera from Secondary Erythrocytosis through Established Subnormal Limits.", locator = "Abstract (Results)" },
+]
+note = "Clinical decision limit from ROC analysis: values below this favour polycythemia vera (sensitivity 80.5%, specificity 87.8%). Single study. Converted from the source's IU/L (3.1) to mIU/mL using factor 1.0. Source kind: diagnostic. Source band <= 3.1; stored as the warn low bound 3.1."

@@ -1,0 +1,19 @@
+slug = "anca-mpo"
+name = "ANCA, Anti-Myeloperoxidase (MPO) Antibody"
+category = "autoimmune"
+unit = "U/mL"
+loinc = "6969-0"
+description = "IgG autoantibody against myeloperoxidase (MPO-ANCA), measured by immunoassay. Tracked for diagnosis and relapse monitoring in ANCA-associated vasculitis (microscopic polyangiitis, EGPA, GPA). Expected result: negative (below the assay positivity threshold)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20
+when = { conditions = ["anca-associated-vasculitis"] }
+population = "Patients with positive MPO-ANCA serology from a university laboratory, including EGPA and GPA/MPA patients in remission (CLEIA assay)"
+evidence = "cohort"
+citations = [
+  { pmid = "40959075", doi = "10.3389/fimmu.2025.1649708", title = "Clinical value at baseline and follow-up of myeloperoxidase-antibodies in ANCA-associated vasculitis.", locator = "Methods, ANCA-related laboratory analysis and interpretation" },
+]
+note = "Assay positivity threshold stated by the source for the CLEIA method (>= 20 U/mL). Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."

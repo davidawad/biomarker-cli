@@ -1,0 +1,18 @@
+slug = "uranium-urine"
+name = "Uranium, Urine"
+loinc = "5752-1"
+category = "toxic-metal"
+unit = "ug/L"
+description = "Uranium excreted in urine, a toxic metal tracked to monitor exposure from natural or depleted uranium. Expected result: at or below the general-population 95th-percentile level in the range below (24-hour excretion, companion unit)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 67
+unit = "ng/24h"
+population = "Adult Swiss general population, 24-hour urinary uranium excretion (n = 1393)"
+evidence = "reference-interval-study"
+note = "Upper value is the 95th percentile of a nationwide Swiss population sample. The source reports a percentile, not a formal reference interval."
+citations = [
+  { pmid = "32294221", doi = "10.4414/smw.2020.20207", title = "Uranium exposure of the Swiss population based on 24-hour urinary excretion.", locator = "Abstract (Results)", quote = "Overall median and 95th percentile were 15 and 67 ng/24 h, respectively." },
+]

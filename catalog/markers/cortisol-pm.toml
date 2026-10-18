@@ -1,0 +1,32 @@
+slug = "cortisol-pm"
+name = "Cortisol (PM)"
+category = "adrenal"
+unit = "ug/dL"
+loinc = "48099-6"
+description = "Serum cortisol collected in the evening (6-8 PM), measured by LC-MS/MS. Cortisol falls through the day, so evening samples have their own reference interval and collection time must be standardized. Expected result in healthy adults: within the reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.0
+high = 18.1
+when = { sex = "female" }
+population = "Healthy females aged 19-67 years, evening serum sample (6-8 PM), LC-MS/MS, 2.5th-97.5th percentile (n = 120)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30400040", doi = "10.1530/EC-18-0417", title = "Diurnal variation of steroid hormones and their reference intervals using mass spectrometric analysis.", locator = "Table 2 (PM column, female)" },
+]
+note = "Evening (PM) female reference interval (2.5th-97.5th percentile)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.8
+high = 15.9
+when = { sex = "male" }
+population = "Healthy males aged 19-75 years, evening serum sample (6-8 PM), LC-MS/MS, 2.5th-97.5th percentile (n = 62)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30400040", doi = "10.1530/EC-18-0417", title = "Diurnal variation of steroid hormones and their reference intervals using mass spectrometric analysis.", locator = "Table 2 (PM column, male, proposed)" },
+]
+note = "Evening (PM) male reference interval (2.5th-97.5th percentile). The source labels male ranges as proposed/preliminary."

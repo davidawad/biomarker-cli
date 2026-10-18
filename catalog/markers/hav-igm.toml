@@ -1,0 +1,7 @@
+slug = "hav-igm"
+name = "Hepatitis A Antibody IgM"
+category = "infectious"
+unit = "qualitative"
+loinc = "22314-9"
+description = "IgM antibody to hepatitis A virus (anti-HAV IgM), which indicates recent or acute hepatitis A infection. Tracked to diagnose acute hepatitis A in people with liver symptoms or known exposure. Expected result: negative (not detected) unless there is current or recent infection."
+no_reference = "Qualitative result (positive or negative by assay cut-off); no numeric reference interval applies."

@@ -1,0 +1,19 @@
+slug = "aspartate"
+name = "Aspartate"
+category = "amino-acid"
+unit = "µmol/L"
+loinc = "1913-3"
+description = "Non-essential amino acid and excitatory neurotransmitter, measured in plasma by LC-MS/MS. Used in amino acid profiling. Expected result: within the reference interval for the population studied."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "contextual"
+kind = "reference"
+low = 27.51
+high = 92.38
+population = "Chinese adult population (LC-MS/MS with dansyl chloride derivatization)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37956824", doi = "10.1016/j.cca.2023.117650", title = "Simultaneous determination of human plasma 5 amino acid neurotransmitters using liquid chromatography-tandem mass spectrometry: Establishment of reference intervals in Chinese adult population and application to patients with schizophrenia.", locator = "Abstract, Results" },
+]
+note = "Reference interval for plasma aspartate as reported by one LC-MS/MS method study in Chinese adults. The abstract does not state the percentile limits used. Applies only to: ethnicity=chinese."

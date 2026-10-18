@@ -1,0 +1,57 @@
+slug = "b2gp1-igm"
+name = "Beta-2 Glycoprotein I IgM Antibody"
+loinc = "16136-4"
+category = "autoimmune"
+unit = "AU/mL"
+description = "IgM autoantibody against beta-2 glycoprotein I, measured by solid-phase immunoassay (ELISA, chemiluminescence, or fluorescence enzyme immunoassay). Used as a laboratory criterion for antiphospholipid syndrome, alongside anticardiolipin and lupus anticoagulant testing. Results are assay-specific and reported as units against an assay cut-off. Expected result: negative (below the assay cut-off)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 12
+population = "Blood donors (n = 266), in-house 99th percentile cut-off for the Phadia/EliA assay"
+evidence = "reference-interval-study"
+note = "Upper reference limit (99th percentile) for beta-2 glycoprotein I IgM on the Phadia/EliA assay. The study advises each laboratory to determine its own cut-offs."
+when = { method = "phadia-elia" }
+citations = [
+  { pmid = "29848159", doi = "10.1177/0961203318776105", title = "Revisiting the Phadia/EliA cut-off values for anticardiolipin and anti-β2-glycoprotein I antibodies: a systematic evaluation according to the guidelines.", locator = "Abstract (Results)", quote = "The in-house 99th (97.5th) percentile cut-off values were 11 (8.7), 12 (6.9) 8.5 (5.0) AU/mL for aβ2GPI IgG, IgM and IgA" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 27.54
+unit = "RU/mL"
+population = "Non-pregnant women of reproductive age in Southwest China (healthy cohort, n = 181), 99th percentile cut-off for the HOB BioCLIA assay"
+evidence = "reference-interval-study"
+note = "Upper reference limit (99th percentile) for beta-2 glycoprotein I IgM on the HOB BioCLIA kit. Population-specific; the study reports the value in RU/mL."
+when = { sex = "female", pregnant = false, method = "hob-bioclia" }
+citations = [
+  { pmid = "39227704", doi = "10.1038/s41598-024-71549-2", title = "Establishment of cutoff values for anti-β2 glycoprotein I antibodies in women of reproductive age in Southwest China.", locator = "Abstract", quote = "The 99th percentile cutoff values were 3.36 RU/mL for aβ2GPI IgA, 27.54 RU/mL for aβ2GPI IgM and 1.81 RU/mL for aβ2GPI IgG" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 40
+unit = "CU"
+population = "Patients with suspected antiphospholipid syndrome, tested on QUANTA Flash CLIA"
+evidence = "outcome-study"
+note = "Moderate-level threshold for anti-beta2 glycoprotein I IgM (2023 ACR/EULAR APS classification criteria), single study. Values at or above the high threshold (80 CU) are classed as high."
+when = { conditions = ["antiphospholipid-syndrome"], method = "quanta-flash" }
+citations = [
+  { pmid = "39044613", doi = "10.1515/cclm-2024-0570", title = "Establishment of ELISA-comparable moderate and high thresholds for anticardiolipin and anti-β2 glycoprotein I chemiluminescent immunoassays according to the 2023 ACR/EULAR APS classification criteria and evaluation of their diagnostic performance.", locator = "Abstract (Results)", quote = "40 CU for moderate and 80 CU for high levels for aCL and anti-β2GPI IgG and IgM" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 80
+unit = "CU"
+population = "Patients with suspected antiphospholipid syndrome, tested on QUANTA Flash CLIA"
+evidence = "outcome-study"
+note = "High-level threshold for anti-beta2 glycoprotein I IgM (2023 ACR/EULAR APS classification criteria), single study."
+when = { conditions = ["antiphospholipid-syndrome"], method = "quanta-flash" }
+citations = [
+  { pmid = "39044613", doi = "10.1515/cclm-2024-0570", title = "Establishment of ELISA-comparable moderate and high thresholds for anticardiolipin and anti-β2 glycoprotein I chemiluminescent immunoassays according to the 2023 ACR/EULAR APS classification criteria and evaluation of their diagnostic performance.", locator = "Abstract (Results)", quote = "40 CU for moderate and 80 CU for high levels for aCL and anti-β2GPI IgG and IgM" },
+]

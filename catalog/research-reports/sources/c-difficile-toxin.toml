@@ -1,0 +1,7 @@
+slug = "c-difficile-toxin"
+name = "C. difficile Toxin"
+loinc = "10895-1"
+category = "infectious"
+unit = "qualitative"
+description = "Qualitative test for Clostridioides difficile toxin in stool, used in the laboratory diagnosis of C. difficile infection in people with diarrhea. Expected result: negative (toxin not detected)."
+no_reference = "Qualitative result (positive or negative toxin detection); no numeric reference interval applies."

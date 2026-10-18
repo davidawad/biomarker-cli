@@ -1,6 +1,6 @@
 # Basal Metabolic Rate (`basal-metabolic-rate`)
 
-Energy the body uses at rest, in kilocalories per day. It is estimated from age, sex, height and weight with predictive equations, or measured by indirect calorimetry. Used to set energy needs for weight management. It is an individual estimate, not a population reference interval, so there is no normal range; expected result depends on the person's size, age and sex.
+Basal Metabolic Rate. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range.
 
 | | |
 |---|---|
@@ -12,7 +12,7 @@ Energy the body uses at rest, in kilocalories per day. It is estimated from age,
 
 ## Ranges
 
-No clinical reference range: Computed or measured energy expenditure estimate with no published population reference interval; the value is individual, so no numeric normal range applies.
+No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
 
 No ranges yet.
 

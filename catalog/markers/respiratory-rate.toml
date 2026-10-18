@@ -20,28 +20,6 @@ note = "Respiration rate 12-20 breaths/min is the NEWS2 score-0 band, i.e. the n
 
 [[range]]
 set = "rcp-news2-2017"
-kind = "critical"
-low = 8
-population = "Adults, as used in the NEWS2 early warning score chart (score 3 band for respiration rate)"
-evidence = "consensus"
-citations = [
-  { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)" },
-]
-note = "NEWS2 score-3 band: respiration rate of 8 breaths/min or fewer (scores 3 for a single parameter; a reduced rate indicates CNS depression or narcosis). Boundary as printed in the chart. Source band <= 8; stored as the critical low bound 8."
-
-[[range]]
-set = "alt-1"
-kind = "critical"
-high = 25
-population = "Adults, as used in the NEWS2 early warning score chart (score 3 band for respiration rate)"
-evidence = "consensus"
-citations = [
-  { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)" },
-]
-note = "NEWS2 score-3 band: respiration rate of 25 breaths/min or more. Boundary as printed in the chart. Source band >= 25; stored as the critical high bound 25. Alternative to the default rcp-news2-2017 critical range for the same population."
-
-[[range]]
-set = "rcp-news2-2017"
 kind = "warn"
 low = 9
 population = "Adults, as used in the NEWS2 early warning score chart (score 1 band for respiration rate)"

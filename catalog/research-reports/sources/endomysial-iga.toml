@@ -1,0 +1,7 @@
+slug = "endomysial-iga"
+name = "Endomysial IgA Antibodies"
+loinc = "110847-1"
+category = "autoimmune"
+unit = "qualitative"
+description = "IgA antibody against endomysium (the smooth-muscle connective tissue around intestinal muscle fibres), detected by indirect immunofluorescence on primate oesophagus or human umbilical cord and reported as positive or negative, sometimes with a titer. Used as a confirmatory test for celiac disease, after a screening tTG-IgA result. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative by immunofluorescence); no numeric reference interval applies and no verifiable numeric titer cut-off was found."

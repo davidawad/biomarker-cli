@@ -1,0 +1,17 @@
+slug = "semen-progressive-motility"
+name = "Sperm Progressive Motility"
+category = "sex-hormone"
+unit = "%"
+loinc = "14194-5"
+description = "Percentage of spermatozoa moving actively forward (progressive motility) in a semen sample. Tracked with sperm concentration, total motility and morphology to assess male fertility potential. Expected result: at or above the WHO 2010 lower reference limit of 32%."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 32
+population = "Men whose partners had time-to-pregnancy of 12 months or less (WHO 2010 reference population)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "19934213", doi = "10.1093/humupd/dmp048", title = "World Health Organization reference values for human semen characteristics.", locator = "Abstract, Results" },
+]
+note = "WHO 2010 one-sided lower reference limit (fifth centile). The WHO 2021 manual value is not written here: the only 2021 progressive-motility figure found is inside a combined asthenoteratozoospermia definition, not a standalone reference limit."

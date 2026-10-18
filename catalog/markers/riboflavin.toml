@@ -1,0 +1,18 @@
+slug = "riboflavin"
+name = "Vitamin B2 (Riboflavin)"
+category = "vitamin"
+unit = "nmol/L"
+loinc = "2924-9"
+description = "Plasma riboflavin (vitamin B2), the free vitamin measured by reversed-phase HPLC with fluorescence detection after acid protein precipitation. Riboflavin is the precursor of the coenzymes FMN and FAD. People track it to assess vitamin B2 status, mainly in at-risk individuals or during supplementation. Expected result: within the reference interval (about 6.7-50.1 nmol/L in the cited study); lower values suggest low riboflavin status."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.7
+high = 50.1
+population = "Self-reported healthy adults who were not taking vitamin supplements (age and sex not stated in the abstract)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "20816949", doi = "10.1016/j.cca.2010.08.037", title = "Rapid determination of vitamin B2 (riboflavin) in plasma by HPLC.", locator = "Abstract, Results" },
+]
+note = "Plasma riboflavin reference interval established by nonparametric analysis, as stated in the cited HPLC method paper. Sample size is not stated in the abstract."

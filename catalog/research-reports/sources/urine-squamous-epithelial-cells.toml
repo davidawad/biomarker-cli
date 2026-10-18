@@ -1,0 +1,19 @@
+slug = "urine-squamous-epithelial-cells"
+name = "Urine Squamous Epithelial Cells"
+loinc = "11277-1"
+category = "urinalysis"
+unit = "/HPF"
+description = "Squamous epithelial cells on urine sediment microscopy, a marker of contamination of the specimen by vaginal or periurethral cells. Expected result: a low count. The cut-off in the range below comes from one retrospective observational study, not from a guideline or reference interval. Ranges are copied in the units the source states; the /LPF cut-off is a companion unit."
+no_reference = "No numeric reference interval for squamous epithelial cells was verifiable; the only range is a single-study cut-off."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 8
+unit = "/LPF"
+population = "Adults (18 years and older) with urinalysis with microscopy and urine culture at a tertiary academic medical center (retrospective cross-sectional study)"
+evidence = "outcome-study"
+note = "Strictly above 8 squamous epithelial cells per low-power field (LPF). In this single study the urinalysis performance for predicting bacteriuria was lower above this count. Not a reference interval or guideline cut-off."
+citations = [
+  { pmid = "26782662", doi = "10.1111/acem.12894", title = "Urinary Squamous Epithelial Cells Do Not Accurately Predict Urine Culture Contamination, but May Predict Urinalysis Performance in Predicting Bacteriuria.", locator = "Results", quote = "for samples with more than 8 SECs/low-powered field (lpf)" },
+]

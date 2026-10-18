@@ -1,0 +1,7 @@
+slug = "urine-crystals"
+name = "Urine Crystals (microscopy)"
+loinc = "105893-2"
+category = "urinalysis"
+unit = "qualitative"
+description = "Crystals identified by type (for example calcium oxalate, uric acid, triple phosphate, cystine) in unspun urine sediment by microscopy. Tracked for stone risk and metabolic context. Expected result: none seen or not detected; crystals are reported by identity, not by a numeric count with a reference interval."
+no_reference = "Qualitative result (crystal type present or absent); no numeric reference interval applies."

@@ -1,0 +1,32 @@
+slug = "fena"
+name = "Fractional Excretion of Sodium (FENa)"
+loinc = "49135-7"
+category = "urinalysis"
+unit = "%"
+description = "Fractional excretion of sodium: the percentage of filtered sodium excreted in urine, calculated from urine and plasma sodium and creatinine, used to differentiate prerenal azotemia from acute tubular necrosis in oliguric acute kidney injury. Expected result: low in prerenal azotemia, higher in acute tubular necrosis."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 1
+unit = "%"
+when = { conditions = ["prerenal-azotemia"] }
+population = "Patients in the oliguric phase of acute renal failure (cohort in the cited study)"
+evidence = "outcome-study"
+note = "Prerenal azotemia as classified by the source: FENa of less than 1 (strictly below 1)."
+citations = [
+  { pmid = "947239", doi = "10.1001/jama.236.6.579", title = "The FENa test. Use in the differential diagnosis of acute renal failure.", locator = "Abstract", quote = "Patients with prerenal azotemia had an FENa of less than 1" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 3
+unit = "%"
+when = { conditions = ["acute-tubular-necrosis"] }
+population = "Patients in the oliguric phase of acute renal failure (cohort in the cited study)"
+evidence = "outcome-study"
+note = "Acute tubular necrosis as classified by the source: FENa of more than 3 (strictly above 3)."
+citations = [
+  { pmid = "947239", doi = "10.1001/jama.236.6.579", title = "The FENa test. Use in the differential diagnosis of acute renal failure.", locator = "Abstract", quote = "patients with acute tubular necrosis had an FENa of more than 3" },
+]

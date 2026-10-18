@@ -1,0 +1,17 @@
+slug = "anticardiolipin-igm"
+name = "Anticardiolipin IgM Antibody"
+category = "autoimmune"
+unit = "MPL"
+loinc = "3182-3"
+description = "IgM autoantibody to cardiolipin (anticardiolipin, aCL), measured by ELISA or chemiluminescence and reported in M phospholipid units (MPL). Used with IgG aCL and anti-beta-2-glycoprotein I tests in the evaluation of antiphospholipid syndrome. Expected result in people without antiphospholipid syndrome: below the laboratory's cut-off, usually not detected. Isolated IgM positivity carries low weight in the 2023 ACR/EULAR classification criteria."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 12.4
+population = "Healthy individuals, South India (n = 125)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41906152", doi = "10.1186/s41927-026-00636-w", title = "Population-specific antiphospholipid antibody titres in a South Indian cohort: defining cut-off values and implications for diagnosis from a cross-sectional validation study.", locator = "Abstract, Results" },
+]
+note = "Upper limit only: 99th percentile of IgM aCL in healthy controls, ELISA (AutoBind, Tosoh), before outlier exclusion; same value after exclusion. Single study, assay-specific; not a central 95 percent interval and not a general population interval."

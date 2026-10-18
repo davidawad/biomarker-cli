@@ -1,0 +1,17 @@
+slug = "hav-igg"
+name = "Hepatitis A Antibody IgG"
+loinc = "32018-4"
+category = "infectious"
+unit = "mIU/mL"
+description = "IgG antibody to hepatitis A virus (anti-HAV IgG). Positive after past infection or hepatitis A vaccination, so it shows immunity; it is most often checked after vaccination to confirm a response. Many laboratories report it qualitatively (positive or negative); quantitative assays report mIU/mL. Expected result: positive (immune) after infection or vaccination; negative in people without immunity."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 10
+population = "Persons tested for anti-HAV IgG after hepatitis A vaccination (postvaccination studies)"
+evidence = "guideline"
+note = "Minimum protective anti-HAV IgG level after vaccination, per ACIP 2020. The source states no absolute protective level has been defined."
+citations = [
+  { url = "https://www.cdc.gov/mmwr/volumes/69/rr/rr6905a1.htm", title = "Prevention of Hepatitis A Virus Infection in the United States: Recommendations of the Advisory Committee on Immunization Practices, 2020", locator = "Vaccine Performance: Detection of Anti-HAV after Vaccination (Correlate of protection)", quote = "Because no absolute protective level has been defined, the lower limit of detection of the particular assay being used has typically been considered the protective level; postvaccination studies use >=10 mIU/mL as the minimum protective level" },
+]

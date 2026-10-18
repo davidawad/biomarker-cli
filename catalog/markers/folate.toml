@@ -17,17 +17,6 @@ low = 3.0
 legacy = true
 
 [[range]]
-set = "who-2018-review"
-kind = "warn"
-low = 4.4
-population = "Serum folate cut-offs derived from NHANES III folate data (Bio-Rad radioassay) and used in WHO folate-status assessment"
-evidence = "consensus"
-citations = [
-  { pmid = "30239016", doi = "10.1111/nyas.13963", title = "Global folate status in women of reproductive age: a systematic review with emphasis on methodological issues.", locator = "Table 1 footnote (full text)" },
-]
-note = "10 nmol/L is about 4.4 ng/mL. The WHO-authored review says rising homocysteine appears at higher serum folate levels (10 or 14 nmol/L). Cut-offs depend strongly on the assay: microbiological assays with 5-methyl-THF calibration give lower values than folic acid calibration. Source kind: deficient. Source band <= 4.4; stored as the warn low bound 4.4."
-
-[[range]]
 set = "nutrients-2017-review"
 kind = "warn"
 low = 5.9
@@ -49,15 +38,3 @@ citations = [
   { pmid = "21593497", doi = "10.3945/ajcn.111.013367", title = "Folate status assessment history: implications for measurement of biomarkers in NHANES.", locator = "Results or history section (full text)" },
 ]
 note = "Historical reference only. Current assays and calibrators give different values, so this band should not be used for modern assays without local validation."
-
-[[range]]
-set = "clarke-2003"
-kind = "warn"
-low = 2.2
-when = { markers = [{ marker = "homocysteine", op = ">=", value = 15 }], age = [65.0, 200] }
-population = "Older persons aged 65 and over in Oxford (population study, n=1562); borderline folate with raised homocysteine"
-evidence = "cohort"
-citations = [
-  { pmid = "12716678", doi = "10.1093/ajcn/77.5.1241", title = "Screening for vitamin B-12 and folate deficiency in older persons.", locator = "Design, para 1 (Abstract)" },
-]
-note = "Borderline band (5-7 nmol/L) counts as high risk of folate deficiency only with homocysteine above 15 micromol/L. In the same study, folate below 5 nmol/L (about 2.2 ng/mL) put people in the high-risk group without a homocysteine condition. Source band 2.2-3.1; stored as the warn low bound 2.2."

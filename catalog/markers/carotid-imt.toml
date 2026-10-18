@@ -1,0 +1,28 @@
+slug = "carotid-imt"
+name = "Carotid Intima-Media Thickness"
+category = "cardiac"
+unit = "mm"
+description = "Ultrasound thickness of the intima-media complex of the common carotid artery; measured as a subclinical atherosclerosis and cardiovascular risk marker. Expected result in healthy adults: a thickness at or below the cut-offs below, and no plaque (plaque is a separate measure)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.7
+population = "Healthy middle-aged adults in urban poor settings in Kenya (AWI-Gen Nairobi site, observational study)"
+evidence = "cohort"
+citations = [
+  { pmid = "36153304", doi = "10.1016/j.hipert.2022.08.001", title = "Carotid intima media thickness (CIMT) in adults in the AWI-Gen Nairobi site study: Profiles and predictors.", locator = "Discussion (Increased left CIMT values)" },
+]
+note = "Single observational study's classification of left CIMT as high (strictly above 0.70 mm). Not a guideline cut-off. Source band <= 0.7; stored as the warn low bound 0.7."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.9
+population = "Adults (general population), as stated by the Kenyan AWI-Gen observational study"
+evidence = "cohort"
+citations = [
+  { pmid = "36153304", doi = "10.1016/j.hipert.2022.08.001", title = "Carotid intima media thickness (CIMT) in adults in the AWI-Gen Nairobi site study: Profiles and predictors.", locator = "Discussion (Normal values of CIMT)" },
+]
+note = "Strictly above 0.90 mm: the study attributes this value to the ESC as indicating organ damage. The ESC document itself was not retrieved and not verified. Source kind: diagnostic. Source band >= 0.9; stored as the warn high bound 0.9."

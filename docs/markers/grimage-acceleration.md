@@ -8,7 +8,7 @@ Epigenetic age acceleration from the DNA methylation GrimAge clock: GrimAge in y
 | Canonical unit | years |
 | LOINC | - |
 | Specimen | - |
-| Aliases | `ageaccelgrim`, `grimage` |
+| Aliases | `ageaccelgrim` |
 
 ## Ranges
 

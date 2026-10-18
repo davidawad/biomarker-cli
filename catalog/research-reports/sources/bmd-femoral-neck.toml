@@ -1,0 +1,7 @@
+slug = "bmd-femoral-neck"
+name = "Bone Mineral Density, Femoral Neck (DXA)"
+loinc = "24701-5"
+category = "bone"
+unit = "g/cm2"
+description = "Bone Mineral Density, Femoral Neck (DXA). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

@@ -1,0 +1,39 @@
+slug = "urine-albumin"
+name = "Urine Albumin"
+category = "kidney"
+unit = "mg/g"
+loinc = "1754-1"
+description = "Albumin excreted in urine, measured as the spot urine albumin-to-creatinine ratio (ACR) in mg/g for CKD staging and diabetic kidney disease screening. Albuminuria is the marker of kidney damage used with GFR to define CKD (KDIGO albuminuria categories A1-A3). Expected result for a healthy adult: below 30 mg/g (A1). Ranges below apply to the ACR, not to the raw urine albumin concentration (mg/L)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 30
+population = "Adults; spot urine albumin-to-creatinine ratio"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (albuminuria categories in CKD)" },
+]
+note = "Albuminuria category A1 (normal to mildly increased), strictly below 30 mg/g. Category A1 does not by itself define CKD."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 300
+population = "Adults; spot urine albumin-to-creatinine ratio"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (albuminuria categories in CKD)" },
+]
+note = "Albuminuria category A2 (moderately increased), 30 to 300 mg/g. Relative to the young adult level, per KDIGO footnote. Source band 30-300; stored as the warn high bound 300."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 300
+population = "Adults; spot urine albumin-to-creatinine ratio"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (albuminuria categories in CKD)" },
+]
+note = "Albuminuria category A3 (severely increased), strictly above 300 mg/g. Source kind: diagnostic. Source band >= 300; stored as the warn high bound 300."

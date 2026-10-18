@@ -1,0 +1,29 @@
+slug = "hsv2-igg"
+name = "Herpes Simplex Virus 2 IgG"
+category = "infectious"
+unit = "index"
+loinc = "17851-7"
+description = "IgG antibody to herpes simplex virus type 2 (HSV-2), usually a gG2-based ELISA reported as a normalised optical density index. Tracked to establish past HSV-2 (genital herpes) infection, which is often asymptomatic. Expected result: negative (not detected) in most people without past HSV-2 infection."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.9
+high = 1.1
+population = "Adults tested with the HerpeSelect HSV-2 gG2 ELISA (normalised OD index)"
+evidence = "cohort"
+citations = [
+  { pmid = "19837726", doi = "10.1136/sti.2009.036541", title = "Comparison of focus HerpesSelect and Kalon HSV-2 gG2 ELISA serological assays to detect herpes simplex virus type 2 antibodies in a South African population.", locator = "Methods" },
+]
+note = "Equivocal zone for the HerpeSelect HSV-2 ELISA (0.9 to 1.1), per the study's stated interpretation of the manufacturer's bands. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 1.1
+population = "Adults tested with the HerpeSelect HSV-2 gG2 ELISA (normalised OD index)"
+evidence = "cohort"
+citations = [
+  { pmid = "19837726", doi = "10.1136/sti.2009.036541", title = "Comparison of focus HerpesSelect and Kalon HSV-2 gG2 ELISA serological assays to detect herpes simplex virus type 2 antibodies in a South African population.", locator = "Methods" },
+]
+note = "Positive for HSV-2 IgG on the HerpeSelect ELISA (value strictly above 1.1); the cut-off is the manufacturer's, and the study notes higher cut-offs improve specificity. Source kind: diagnostic. Source band >= 1.1; stored as the warn high bound 1.1."

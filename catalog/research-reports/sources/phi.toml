@@ -1,0 +1,32 @@
+slug = "phi"
+name = "Prostate Health Index (PHI)"
+loinc = "97150-7"
+category = "tumor-marker"
+unit = "index"
+description = "Prostate Health Index: a calculated score combining [-2]proPSA, free PSA and total PSA, used with total PSA to estimate prostate cancer risk and biopsy need. Expected result: a numeric score where higher values carry higher risk; no single normal value is established in the verified sources."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 40
+unit = "index"
+when = { conditions = ["suspected-prostate-cancer"] }
+population = "Men at initial prostate biopsy (cohort named in the cited title)"
+evidence = "outcome-study"
+note = "Usual positivity cut-off as stated by the source: PHI above 40 (source wording 'PHI >40'). Strictly above 40."
+citations = [
+  { pmid = "25327361", doi = "10.1002/pros.22898", title = "Accuracy of the prostate health index versus the urinary prostate cancer antigen 3 score to predict overall and significant prostate cancer at initial biopsy.", locator = "Abstract", quote = "usual cut-off values for positivity (i.e., PHI >40 and PCA-3 >35)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 35
+high = 55
+when = { conditions = ["suspected-prostate-cancer"] }
+population = "Chinese men with PSA 10-20 ng/mL and normal digital rectal examination"
+evidence = "outcome-study"
+note = "PHI category 'PHI 35-55' as labelled by the source, which also labels PHI<35 and PHI>55. The source does not state whether 35 or 55 is inclusive. Percentages in the quote are Gleason 7 or above prevalence by category in this cohort."
+citations = [
+  { pmid = "27617315", doi = "10.4111/icu.2016.57.5.336", title = "Extended use of Prostate Health Index and percentage of [-2]pro-prostate-specific antigen in Chinese men with prostate specific antigen 10-20 ng/mL and normal digital rectal examination.", locator = "Abstract", quote = "were 2.2% for PHI<35, 7.9% for PHI 35-55, and 36.4% for PHI>55" },
+]

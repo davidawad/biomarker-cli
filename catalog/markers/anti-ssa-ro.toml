@@ -1,0 +1,7 @@
+slug = "anti-ssa-ro"
+name = "Anti-SSA/Ro Antibody"
+category = "autoimmune"
+unit = "qualitative"
+loinc = "8093-7"
+description = "Autoantibody to the Ro/SSA ribonucleoprotein antigens, detected by immunoassay and reported as positive or negative. Associated with Sjogren syndrome and systemic lupus erythematosus, and relevant to neonatal lupus risk in pregnancy. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

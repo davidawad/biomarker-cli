@@ -1,0 +1,55 @@
+slug = "galectin-3"
+name = "Galectin-3"
+loinc = "62419-7"
+category = "cardiac"
+unit = "ng/mL"
+description = "Beta-galactoside-binding lectin released by activated macrophages; measured as a marker of myocardial fibrosis and remodelling and as a prognostic marker in heart failure. Expected result in healthy adults: below the upper reference limit. Limits differ by assay and by age, so use the range that matches the assay and age."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 26.1
+population = "Healthy blood donors (n=706, age 18-65 years), 97.5th percentile upper reference limit, non-parametric"
+evidence = "reference-interval-study"
+note = "Upper reference limit only (one-sided). Assay not named in the abstract. The same study reports age-specific limits below."
+citations = [
+  { pmid = "29180917", doi = "10.11613/BM.2017.030709", title = "Establishing the upper reference limit of Galectin-3 in healthy blood donors.", locator = "Results", quote = "The 97.5th percentile URL of plasma Gal-3 in our study population (90% CI) was 26.1 (23.3-31.5) ng/mL." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 31.5
+when = { age_min = 46 }
+population = "Healthy blood donors older than 45 years (age 46 and above in whole years), upper reference limit"
+evidence = "reference-interval-study"
+note = "Age-specific upper reference limit from the same study. The source states the cut as '> 45 years'; age_min = 46 is the whole-year equivalent."
+citations = [
+  { pmid = "29180917", doi = "10.11613/BM.2017.030709", title = "Establishing the upper reference limit of Galectin-3 in healthy blood donors.", locator = "Results", quote = "the URL of Gal-3 was found to be considerably higher in older (> 45 years) than in younger subjects (31.5 (26.2-51.4) vs 21.8 (21-26.1) ng/mL, respectively)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 21.8
+when = { age_max = 46 }
+population = "Healthy blood donors aged 45 years or younger (whole years below 46), upper reference limit"
+evidence = "reference-interval-study"
+note = "Age-specific upper reference limit from the same study (younger group). The source states the cut as '> 45 years'; age_max = 46 is the whole-year equivalent."
+citations = [
+  { pmid = "29180917", doi = "10.11613/BM.2017.030709", title = "Establishing the upper reference limit of Galectin-3 in healthy blood donors.", locator = "Results", quote = "the URL of Gal-3 was found to be considerably higher in older (> 45 years) than in younger subjects (31.5 (26.2-51.4) vs 21.8 (21-26.1) ng/mL, respectively)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.9
+high = 18.1
+unit = "ug/L"
+when = { method = "architect-stat-immunoassay" }
+population = "Apparently healthy adults, reference group of 180 selected from 533 questionnaire-screened individuals"
+evidence = "reference-interval-study"
+note = "2.5th to 97.5th percentile reference interval on the Architect STAT immunoassay. Source states the numbers in ug/L. The authors recommend one URL for the whole adult population."
+citations = [
+  { pmid = "28322756", doi = "10.1016/j.clinbiochem.2017.03.015", title = "Establishing reference intervals for galectin-3 concentrations in serum requires careful consideration of its biological determinants.", locator = "Results", quote = "2.5th and 97.5th percentiles of distribution of galectin-3 concentrations in the reference group (90% confidence interval) were 5.9 (5.0-6.8) and 18.1 (17.2-19.0) ug/L, respectively." },
+]

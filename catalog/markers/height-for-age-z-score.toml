@@ -1,0 +1,28 @@
+slug = "height-for-age-z-score"
+name = "Height-for-Age Z-Score"
+category = "pediatric"
+unit = "z-score"
+description = "Child length or height for age, expressed as a standard-deviation score (z-score) against the WHO Child Growth Standards median for the same age and sex. It is the standard measure of linear growth and of stunting. A z-score below -2 defines stunting and below -3 defines severe stunting."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = -2.0
+population = "Children, length/height-for-age z-score against the WHO Child Growth Standards for the same age and sex"
+evidence = "consensus"
+citations = [
+  { pmid = "27187907", doi = "10.1111/mcn.12231", title = "Childhood stunting: a global perspective.", locator = "Full text, paragraph defining stunting by length/height-for-age cut-offs" },
+]
+note = "Stunting: z-score strictly below -2 (the bound is exclusive). Source kind: diagnostic. Source band <= -2.0; stored as the warn low bound -2.0."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = -3.0
+population = "Children, length/height-for-age z-score against the WHO Child Growth Standards for the same age and sex"
+evidence = "consensus"
+citations = [
+  { pmid = "27187907", doi = "10.1111/mcn.12231", title = "Childhood stunting: a global perspective.", locator = "Full text, paragraph defining stunting by length/height-for-age cut-offs" },
+]
+note = "Severe stunting: z-score strictly below -3 (the bound is exclusive). Source kind: diagnostic. Source band <= -3.0; stored as the warn low bound -3.0. Alternative to the default diagnostic warn range for the same population."

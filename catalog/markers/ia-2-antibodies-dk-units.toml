@@ -1,0 +1,18 @@
+slug = "ia-2-antibodies-dk-units"
+name = "IA-2 Autoantibodies (ICA512) (DK units)"
+category = "autoimmune"
+unit = "DK units"
+description = "IA-2 Autoantibodies (ICA512) reported in DK units. Results in DK units are assay specific and are not interchangeable with IA-2 Autoantibodies (ICA512) in U/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 5
+when = { conditions = ["type-1-diabetes"] }
+population = "Individuals newly diagnosed with type 1 diabetes, children and adults, retrospective cohort tested within 1 year of diagnosis (fluid-phase radiobinding assay)"
+evidence = "cohort"
+citations = [
+  { pmid = "41925716", doi = "10.2337/dc25-2660", title = "Differences in Clinical Manifestations and Islet Autoantibodies by Age in Adult-Onset Type 1 Diabetes.", locator = "Methods, islet autoantibody analysis" },
+]
+note = "Positive cut-off for IA-2A stated by the source in DK units. The source does not state whether the boundary is >= or >, so low = 5 is recorded without a direction. Source kind: diagnostic. Source band >= 5; stored as the warn high bound 5."

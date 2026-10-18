@@ -1,0 +1,46 @@
+slug = "ia-2-antibodies"
+name = "IA-2 Autoantibodies (ICA512)"
+loinc = "31209-0"
+category = "autoimmune"
+unit = "U/mL"
+description = "IgG autoantibodies against insulinoma-associated antigen-2 (IA-2, ICA512), a beta-cell antigen, measured by immunoassay (radiobinding, ELISA or chemiluminescence). Tracked to screen for and classify islet autoimmunity and type 1 diabetes, alongside GADA, IAA and ZnT8A. Expected result: negative (below the assay positivity cut-off)."
+no_reference = "Qualitative result (positive or negative against an assay-specific cut-off); no numeric reference interval applies to the population. The ranges below are assay positivity cut-offs stated by individual studies."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 5
+unit = "DK units"
+when = { conditions = ["type-1-diabetes"] }
+population = "Individuals newly diagnosed with type 1 diabetes, children and adults, retrospective cohort tested within 1 year of diagnosis (fluid-phase radiobinding assay)"
+evidence = "outcome-study"
+note = "Positive cut-off for IA-2A stated by the source in DK units. The source does not state whether the boundary is >= or >, so low = 5 is recorded without a direction."
+citations = [
+  { pmid = "41925716", doi = "10.2337/dc25-2660", title = "Differences in Clinical Manifestations and Islet Autoantibodies by Age in Adult-Onset Type 1 Diabetes.", locator = "Methods, islet autoantibody analysis", quote = "The positive cutoff values were defined as an index of 0.010 for IAA, 20 DK units for GADA, 5 DK units for IA-2A, and an index of 0.020 for ZnT8A." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 10
+unit = "IU/mL"
+when = { conditions = ["type-1-diabetes"] }
+population = "Siblings aged 2-17 years of children with type 1 diabetes, Latvia, two-stage screening (Euroimmun ELISA)"
+evidence = "outcome-study"
+note = "Positive result cut-off for the Euroimmun IA-2 ELISA as stated by the source (>= 10 IU/mL)."
+citations = [
+  { pmid = "42533171", doi = "10.1007/s00431-026-07278-7", title = "Screening of pre-type 1 diabetes in high-risk paediatric population: a pilot study in Latvia.", locator = "Methods, second screening stage (Euroimmun antibody assays)", quote = "IA-2 antibodies (Euroimmun, catalogue No EA 1023-9601 G, cut-off value for positive result >= 10 IU/ml)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 28
+unit = "U/mL"
+when = { conditions = ["type-1-diabetes"] }
+population = "Pediatric population screened for type 1 diabetes autoantibodies, Bulgaria (MAGLUMI chemiluminescence IA-2A assay)"
+evidence = "outcome-study"
+note = "Manufacturer cut-off for the MAGLUMI IA-2A assay as reported in the source's assay table (Table 1, third assay column). Column order taken from the table header."
+citations = [
+  { pmid = "42074878", doi = "10.3390/jcm15083075", title = "The First Selective Screening for Type 1 Diabetes in a Pediatric Population in Bulgaria.", locator = "Table 1, Result interpretation", quote = "Negative: <28 U/mL Positive: >=28 U/mL" },
+]

@@ -3,7 +3,7 @@ name = "GrimAge Acceleration"
 category = "aging"
 unit = "years"
 description = "Epigenetic age acceleration from the DNA methylation GrimAge clock: GrimAge in years, adjusted for chronological age, so positive values mean an older-than-expected mortality-risk profile. It predicts time to death, coronary heart disease and cancer more strongly than earlier DNA methylation clocks."
-aliases = ["ageaccelgrim", "grimage"]
+aliases = ["ageaccelgrim"]
 no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]

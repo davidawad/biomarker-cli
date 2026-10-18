@@ -1,0 +1,7 @@
+slug = "biotin"
+name = "Vitamin B7 (Biotin)"
+loinc = "1980-2"
+category = "vitamin"
+unit = "ng/L"
+description = "Vitamin B7 (Biotin). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

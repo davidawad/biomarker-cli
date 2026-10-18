@@ -1,0 +1,30 @@
+slug = "anticardiolipin-igm-units"
+name = "Anticardiolipin IgM Antibody (units)"
+category = "autoimmune"
+unit = "units"
+description = "Anticardiolipin IgM Antibody reported in units. Results in units are assay specific and are not interchangeable with Anticardiolipin IgM Antibody in MPL."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 40
+high = 79
+when = { conditions = ["antiphospholipid-syndrome"] }
+population = "Patients evaluated for primary antiphospholipid syndrome under the 2023 ACR/EULAR classification criteria"
+evidence = "cohort"
+citations = [
+  { pmid = "39689033", doi = "10.1093/rheumatology/keae665", title = "Insights into the 2023 ACR/EULAR antiphospholipid syndrome classification criteria: findings from a cohort of 205 patients with primary APS.", locator = "Introduction" },
+]
+note = "Moderate aCL positivity band (40-79 units) as the cited paper describes the 2023 ACR/EULAR criteria. The source gives units only (arbitrary units, not MPL); the number is copied as stated. Isolated IgM positivity is scored low-weight in those criteria. Source kind: diagnostic. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 80
+when = { conditions = ["antiphospholipid-syndrome"] }
+population = "Patients evaluated for primary antiphospholipid syndrome under the 2023 ACR/EULAR classification criteria"
+evidence = "cohort"
+citations = [
+  { pmid = "39689033", doi = "10.1093/rheumatology/keae665", title = "Insights into the 2023 ACR/EULAR antiphospholipid syndrome classification criteria: findings from a cohort of 205 patients with primary APS.", locator = "Introduction" },
+]
+note = "High aCL positivity band as the cited paper describes the 2023 ACR/EULAR criteria. The source writes '>80 units' here and '>=80 units' in its Discussion; the number is copied as stated. Units are the source's arbitrary units, not converted. Source kind: diagnostic. Source band >= 80; stored as the warn high bound 80."

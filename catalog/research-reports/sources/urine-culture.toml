@@ -1,0 +1,18 @@
+slug = "urine-culture"
+name = "Urine Culture"
+loinc = "630-4"
+category = "infectious"
+unit = "CFU/mL"
+description = "Quantitative bacterial culture of a urine specimen to identify a uropathogen and count colony-forming units per mL. The colony count is compared with a threshold to separate infection from contamination. Expected result: no growth or a count below the diagnostic threshold (no significant bacteriuria)."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 100000
+population = "Hospitalized patients with urine culture results (case review of 185 cases)"
+evidence = "outcome-study"
+note = "Colony count of 100,000 CFU/mL or more is the threshold for clinically significant UTI in this study. Single-study observational evidence, not a guideline cut-off."
+citations = [
+  { pmid = "22523217", doi = "10.1309/AJCP4KVGQZEG1YDM", title = "Impact of laboratory-reported urine culture colony counts on the diagnosis and treatment of urinary tract infection for hospitalized patients.", url = "https://pubmed.ncbi.nlm.nih.gov/22523217/", locator = "Abstract (Results)", quote = "patients with colony counts 100,000 CFU/mL or more were 73.86 times more likely to have a clinically significant UTI" },
+  { pmid = "6349344", doi = "10.1016/0002-9343(83)90072-4", title = "Quantitative definition of bacteriuria.", url = "https://pubmed.ncbi.nlm.nih.gov/6349344/", locator = "Abstract", quote = "a criterion of 1 X 10(5) cfu/ml provides optimal separation of infection from contamination of voided urine" },
+]

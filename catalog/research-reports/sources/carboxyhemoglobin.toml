@@ -1,0 +1,30 @@
+slug = "carboxyhemoglobin"
+name = "Carboxyhemoglobin"
+loinc = "20563-3"
+category = "hematology"
+unit = "%"
+description = "Fraction of hemoglobin bound to carbon monoxide, measured by co-oximetry. Used to assess CO exposure and tobacco smoke exposure, and to guide CO poisoning management. Expected result: low single-digit percent in non-smokers; higher in smokers and in CO exposure."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 2.5
+unit = "%"
+population = "Volunteer non-smokers occupationally not exposed to carbon monoxide (n=200), South of Minas Gerais, Brazil"
+evidence = "reference-interval-study"
+note = "Upper reference value for non-smokers only. FORMAT has no smoking key, so apply only to non-smokers."
+citations = [
+  { pmid = "9629717", doi = "10.1590/s0034-89101997000700010", title = "[Reference values for carboxyhemoglobin].", locator = "Abstract (Results and conclusions)", quote = "the upper reference value was 2.5%" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 2
+unit = "%"
+population = "Nonsmokers (general population, as summarised by ATSDR)"
+evidence = "regulatory"
+note = "Typical nonsmoker COHb level stated as an upper bound in an agency toxicological profile summarising published studies. Not a laboratory reference interval."
+citations = [
+  { url = "https://www.atsdr.cdc.gov/toxprofiles/tp201.pdf", locator = "Section 3.4 Toxicokinetics (Distribution), Carbon Monoxide toxicological profile", quote = "typical levels of COHb in nonsmokers are <2%" },
+]

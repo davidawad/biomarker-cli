@@ -1,0 +1,72 @@
+slug = "egfr-creatinine-cystatin"
+name = "eGFR (Creatinine + Cystatin C, CKD-EPI 2021)"
+category = "kidney"
+unit = "mL/min/1.73m²"
+loinc = "98980-6"
+description = "Estimated glomerular filtration rate from the race-free CKD-EPI 2021 creatinine-cystatin C equation (Inker et al., NEJM 2021), reported in mL/min/1.73 m2. Combining creatinine and cystatin C is more accurate than creatinine alone and is used to confirm GFR when creatinine-based estimates are unreliable. Used to classify GFR categories G1-G5 and, with albuminuria, to define chronic kidney disease. Expected result for a healthy adult: 90 or higher (G1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 90
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G1 (normal or high). CKD requires markers of kidney damage in addition to GFR category."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 60
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G2 (mildly decreased), 60 to strictly below 90. CKD is diagnosed only with markers of kidney damage or GFR below 60 for more than 3 months. Source band 60-90; stored as the warn low bound 60."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 45
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G3a (mildly to moderately decreased), 45 to strictly below 60. CKD when GFR is below 60 for more than 3 months. Source kind: diagnostic. Source band 45-60; stored as the warn low bound 45."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 30
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G3b (moderately to severely decreased), 30 to strictly below 45. Source kind: diagnostic. Source band 30-45; stored as the warn low bound 30. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 15
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G4 (severely decreased), 15 to strictly below 30. Source kind: diagnostic. Source band 15-30; stored as the warn low bound 15. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 15
+population = "Adults; GFR estimated by the creatinine-cystatin C equation"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G5 (kidney failure), strictly below 15. Source kind: diagnostic. Source band <= 15; stored as the warn low bound 15. Alternative to the default diagnostic warn range for the same population."

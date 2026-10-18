@@ -3,40 +3,5 @@ name = "Lysine"
 category = "amino-acid"
 unit = "µmol/L"
 loinc = "2585-8"
-description = "Essential amino acid measured in plasma as a free amino acid by LC-MS/MS. Lysine is required for protein synthesis, carnitine synthesis and collagen cross-linking."
-
-[[range]]
-set = "contextual"
-kind = "reference"
-low = 113.0
-high = 255.2
-population = "Healthy volunteers living in Japan, Japanese subpopulation (n=31; 16 male, 15 female; mean age 46.5 years)"
-evidence = "cohort"
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1" },
-]
-note = "Observed min-max range of plasma lysine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval). Applies only to: ethnicity=japanese."
-
-[[range]]
-set = "clinical"
-kind = "reference"
-low = 131.8
-high = 249.7
-population = "Healthy volunteers living in Japan, Korean subpopulation (n=36; 19 male, 17 female; mean age 37.2 years)"
-evidence = "cohort"
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1" },
-]
-note = "Observed min-max range of plasma lysine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval). Applies only to: ethnicity=korean. Alternative to the default contextual reference range for the same population."
-
-[[range]]
-set = "alt-2"
-kind = "reference"
-low = 102.6
-high = 276.7
-population = "Healthy volunteers living in Japan, Chinese subpopulation (n=28; 13 male, 15 female; mean age 45.1 years)"
-evidence = "cohort"
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1" },
-]
-note = "Observed min-max range of plasma lysine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval). Applies only to: ethnicity=chinese. Alternative to the default contextual reference range for the same population."
+description = "Lysine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

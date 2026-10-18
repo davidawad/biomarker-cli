@@ -1,0 +1,30 @@
+slug = "meld"
+name = "MELD Score (Model for End-Stage Liver Disease)"
+loinc = "44760-7"
+category = "liver"
+unit = "points"
+description = "Model for End-Stage Liver Disease score, calculated from serum creatinine, total bilirubin and INR. Used to rank liver transplant candidates and to estimate short-term (3-month) waiting-list mortality. There is no normal range; a higher score means more severe liver disease and higher mortality risk."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 9
+when = { conditions = ["cirrhosis"] }
+population = "Adult liver transplant candidates with chronic liver disease on the OPTN waiting list (2A/2B status, 1999-2001)"
+evidence = "outcome-study"
+note = "Lowest MELD risk band: 3-month mortality 1.9%. Strictly below 9 (the source says '<9'). Risk category, not a diagnosis."
+citations = [
+  { pmid = "12512033", doi = "10.1053/gast.2003.50016", title = "Model for end-stage liver disease (MELD) and allocation of donor livers.", locator = "Abstract (Results)", quote = "Patients having a MELD score <9 experienced a 1.9% mortality" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 40
+when = { conditions = ["cirrhosis"] }
+population = "Adult liver transplant candidates with chronic liver disease on the OPTN waiting list (2A/2B status, 1999-2001)"
+evidence = "outcome-study"
+note = "Highest MELD risk band: 3-month mortality 71.3% (score 40 or more). Risk category, not a diagnosis."
+citations = [
+  { pmid = "12512033", doi = "10.1053/gast.2003.50016", title = "Model for end-stage liver disease (MELD) and allocation of donor livers.", locator = "Abstract (Results)", quote = "patients having a MELD score > or =40 had a mortality rate of 71.3%" },
+]

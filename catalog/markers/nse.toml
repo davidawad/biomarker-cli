@@ -1,0 +1,78 @@
+slug = "nse"
+name = "Neuron-Specific Enolase (NSE)"
+category = "tumor-marker"
+unit = "ng/mL"
+loinc = "15060-7"
+description = "Neuron-specific enolase, a glycolytic enzyme measured in serum by immunoassay. Tracked as a tumour marker for small cell lung cancer and neuroendocrine tumours and as a marker of neuronal damage. Expected result in healthy people: at or below the reference upper limit."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 25.4
+when = { age = [20.0, 80.0] }
+population = "Healthy Chinese adults aged 20-79 years (n = 10,575), Cobas e602 NSE assay; no difference by sex or age"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30779465", doi = "10.1002/jcla.22863", title = "Distribution of serum neuron-specific enolase and the establishment of a population reference interval in healthy adults.", locator = "Methods and Results" },
+]
+note = "Population upper reference limit (unilateral 95th percentile) stated by the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 17.26
+when = { sex = "male" }
+population = "Healthy persons from routine health check-up, Chengdu, China (n = 3,293 for NSE); indirect method; no correlation with age"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31414742", doi = "10.7754/Clin.Lab.2019.190113", title = "Establishment of Reference Intervals for Serum Cytokeratin-19 Fragment and Neuron Specific Enolase by Indirect Method Using Data Obtained from Healthy Chinese Population in Chengdu.", locator = "Results" },
+]
+note = "Indirect 95th percentile interval, males. Source states the lower limit as 0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 16.29
+when = { sex = "female" }
+population = "Healthy persons from routine health check-up, Chengdu, China (n = 3,293 for NSE); indirect method; no correlation with age"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31414742", doi = "10.7754/Clin.Lab.2019.190113", title = "Establishment of Reference Intervals for Serum Cytokeratin-19 Fragment and Neuron Specific Enolase by Indirect Method Using Data Obtained from Healthy Chinese Population in Chengdu.", locator = "Results" },
+]
+note = "Indirect 95th percentile interval, females. Source states the lower limit as 0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 36.9
+when = { age = [0.0, 6.0] }
+population = "Danish children aged 0.1-17.9 years from residual serum of routine allergy testing (n = 242), Roche Elecsys NSE assay, samples with haemoglobin <10 mg/dL"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41035379", doi = "10.1515/cclm-2025-0582", title = "Serum neuron-specific enolase - reference interval in Danish children and the impact of preanalytical factors.", locator = "Results" },
+]
+note = "Age-partitioned paediatric upper limit, 95th percentile one-sided, age 0-5 years. Source unit ug/L. Converted from the source's ug/L (36.9) to ng/mL using factor 1.0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 32.0
+when = { age = [6.0, 18.0] }
+population = "Danish children aged 0.1-17.9 years from residual serum of routine allergy testing (n = 242), Roche Elecsys NSE assay, samples with haemoglobin <10 mg/dL"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41035379", doi = "10.1515/cclm-2025-0582", title = "Serum neuron-specific enolase - reference interval in Danish children and the impact of preanalytical factors.", locator = "Results" },
+]
+note = "Age-partitioned paediatric upper limit, 95th percentile one-sided, age 6-17 years. Source unit ug/L. Converted from the source's ug/L (32.0) to ng/mL using factor 1.0."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20.5
+when = { conditions = ["non-small-cell-lung-cancer"] }
+population = "Patients with NSCLC in a serum NSE study of 417 lung cancer patients (ROC analysis for SCLC vs NSCLC)"
+evidence = "cohort"
+citations = [
+  { pmid = "11956631", title = "Cut-off levels of NSE to differentiate SCLC from NSCLC.", locator = "Abstract" },
+]
+note = "Strictly above 20.5 ng/mL in NSCLC: source says pathological features must be examined for neuroendocrine differentiation. Source kind: diagnostic. Source band >= 20.5; stored as the warn high bound 20.5."

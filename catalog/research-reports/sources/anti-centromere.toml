@@ -1,0 +1,7 @@
+slug = "anti-centromere"
+name = "Anti-Centromere Antibody"
+loinc = "53981-7"
+category = "autoimmune"
+unit = "qualitative"
+description = "Autoantibody against centromere proteins, reported as positive or negative. Tracked as a marker of autoimmune disease, including systemic sclerosis and Sjogren syndrome. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

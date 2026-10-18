@@ -1,0 +1,32 @@
+slug = "11-deoxycortisol"
+name = "11-Deoxycortisol"
+loinc = "1657-6"
+category = "adrenal"
+unit = "ng/dL"
+description = "Serum 11-deoxycortisol, the cortisol precursor, measured by LC-MS/MS. Reference intervals apply to morning (6-8 AM) samples only; values are higher in the morning than in the evening. Expected result in healthy adults: within the reference interval."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 13.3
+high = 264.9
+when = { sex = "female" }
+population = "Healthy females aged 19-67 years, morning serum sample (6-8 AM), LC-MS/MS, 2.5th-97.5th percentile (n = 120)"
+evidence = "reference-interval-study"
+note = "Morning female reference interval (2.5th-97.5th percentile)."
+citations = [
+  { pmid = "30400040", doi = "10.1530/EC-18-0417", title = "Diurnal variation of steroid hormones and their reference intervals using mass spectrometric analysis.", locator = "Table 2 (AM column, female)", quote = "| 11-DOC (ng/dL) | 13.3 | 264.9 | 0.7 | 110.0 | 11.0 | 232.1 | 0.0 | 79.8" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 11.0
+high = 232.1
+when = { sex = "male" }
+population = "Healthy males aged 19-75 years, morning serum sample (6-8 AM), LC-MS/MS, 2.5th-97.5th percentile (n = 62)"
+evidence = "reference-interval-study"
+note = "Morning male reference interval (2.5th-97.5th percentile). The source labels male ranges as proposed/preliminary."
+citations = [
+  { pmid = "30400040", doi = "10.1530/EC-18-0417", title = "Diurnal variation of steroid hormones and their reference intervals using mass spectrometric analysis.", locator = "Table 2 (AM column, male, proposed)", quote = "| 11-DOC (ng/dL) | 13.3 | 264.9 | 0.7 | 110.0 | 11.0 | 232.1 | 0.0 | 79.8" },
+]

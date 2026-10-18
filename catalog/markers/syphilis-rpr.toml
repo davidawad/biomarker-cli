@@ -1,0 +1,7 @@
+slug = "syphilis-rpr"
+name = "Syphilis RPR (Reagin)"
+category = "infectious"
+unit = "titer"
+loinc = "20507-0"
+description = "Nontreponemal serologic screening test for syphilis (rapid plasma reagin, RPR). Detects reagin antibodies in serum or plasma. Reported as reactive or nonreactive; when reactive, a titer (dilution) is reported and is used to follow treatment response. Expected result: nonreactive."
+no_reference = "Qualitative result (reactive or nonreactive); no numeric reference interval applies. The titer is reported for monitoring only."

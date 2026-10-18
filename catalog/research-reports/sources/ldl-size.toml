@@ -1,0 +1,29 @@
+slug = "ldl-size"
+name = "LDL Particle Size"
+category = "lipid"
+unit = "nm"
+description = "Average diameter of LDL particles in nanometres, calculated from LDL composition. In one cohort study, both larger and smaller average LDL diameters than the intermediate category were associated with higher mortality. No population reference interval was verified; the ranges below are single-study outcome classification cut-offs."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 16.5
+when = { method = "beta-quantification" }
+population = "Patients referred to coronary angiography, not on lipid-lowering drugs (Ludwigshafen Risk and Cardiovascular Health Study, n = 1643)"
+evidence = "outcome-study"
+note = "Small average LDL diameter (strictly below 16.5 nm) versus intermediate reference category (16.5-16.8 nm). Diameter calculated from beta-quantification LDL composition, not NMR. Hazard ratio for cardiovascular death 1.54 (95% CI 1.06-2.12)."
+citations = [
+  { pmid = "24569029", doi = "10.1093/eurheartj/ehu055", title = "Low-density lipoprotein particle diameter and mortality: the Ludwigshafen Risk and Cardiovascular Health Study.", locator = "Abstract, Results", quote = "in patients with large (>16.8 nm) or small LDL (<16.5 nm), respectively" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 16.8
+when = { method = "beta-quantification" }
+population = "Patients referred to coronary angiography, not on lipid-lowering drugs (Ludwigshafen Risk and Cardiovascular Health Study, n = 1643)"
+evidence = "outcome-study"
+note = "Large average LDL diameter (strictly above 16.8 nm) versus intermediate reference category (16.5-16.8 nm). Diameter calculated from beta-quantification LDL composition, not NMR. Hazard ratio for cardiovascular death 1.89 (95% CI 1.32-2.70)."
+citations = [
+  { pmid = "24569029", doi = "10.1093/eurheartj/ehu055", title = "Low-density lipoprotein particle diameter and mortality: the Ludwigshafen Risk and Cardiovascular Health Study.", locator = "Abstract, Results", quote = "in patients with large (>16.8 nm) or small LDL (<16.5 nm), respectively" },
+]

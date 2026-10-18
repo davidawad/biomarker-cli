@@ -1,0 +1,18 @@
+slug = "bilirubin-transcutaneous"
+name = "Bilirubin, Transcutaneous (Newborn)"
+loinc = "58941-6"
+category = "pediatric"
+unit = "mg/dL"
+description = "Skin bilirubin estimated non-invasively with a transcutaneous bilirubinometer (TcB) on the newborn's skin, used to screen for neonatal hyperbilirubinemia and decide whether a serum total bilirubin (TSB) is needed. TcB underestimates TSB, most in phototherapy. Expected result: below the age-specific phototherapy threshold; a TcB above the cut-off below means a serum TSB should be measured."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 250
+unit = "µmol/L"
+population = "Newborns with TcB measurement, cited as the AAP-based recommendation in a Swedish multicentre home-phototherapy study"
+evidence = "guideline"
+note = "Serum TSB confirmation threshold for TcB, stated in the source as a recommendation (citing AAP guidance). Bound is strictly above 250 umol/L (kept in the source unit, not converted). Secondary citation: the source reports the AAP recommendation, not a primary guideline text."
+citations = [
+  { pmid = "40131901", doi = "10.1371/journal.pone.0320067", title = "Transcutaneous bilirubin in newborns before, during, and after home phototherapy-Results from a secondary analysis of a randomized controlled trial.", locator = "Introduction, paragraph 3", quote = "If TcB is > 250 umol/L or within 50 umol/L of phototherapy threshold, it is recommended to confirm the result by measuring TSB" },
+]

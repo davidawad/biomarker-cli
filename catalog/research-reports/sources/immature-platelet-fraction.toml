@@ -1,0 +1,118 @@
+slug = "immature-platelet-fraction"
+name = "Immature Platelet Fraction"
+loinc = "71693-6"
+category = "hematology"
+unit = "%"
+description = "Percentage of circulating platelets that are immature (reticulated), reported by automated haematology analysers as IPF. Reflects platelet production in the marrow. Raised values suggest consumptive or recovering thrombocytopenia; low values suggest marrow failure. Expected result in healthy adults: within the reference interval (roughly 1-9 percent, depending on analyser)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.6
+high = 9.6
+population = "153 healthy Caucasian adults from Spain, Sysmex XN-2000 analyser, non-parametric percentile method per CLSI; no significant sex difference"
+evidence = "reference-interval-study"
+note = "Analyser-specific (Sysmex XN-2000) reference interval; 153 adults."
+citations = [
+  { pmid = "29472803", doi = "10.11613/BM.2018.010708", title = "Reference interval for immature platelet fraction on Sysmex XN haematology analyser in adult population.", locator = "Abstract, Results", quote = "The obtained reference interval for IPF on the Sysmex XN-2000 was 1.6-9.6%" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.0
+high = 7.3
+population = "2104 healthy individuals analysed on Sysmex XN (non-parametric percentile method per CLSI C28-A3); sexes not separated in the quoted interval"
+evidence = "reference-interval-study"
+note = "Analyser-specific (Sysmex XN) reference interval from a comparison study with the XE-2100."
+citations = [
+  { pmid = "25460288", doi = "10.1515/cclm-2014-0839", title = "Reference interval for immature platelet fraction on Sysmex XN hematology analyzer: a comparison study with Sysmex XE-2100.", locator = "Abstract, Results", quote = "The reference intervals for %-IPF and A-IPF on Sysmex XN were: 1.0%-7.3% and 2.49-15.64x109/L in healthy individuals" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.3
+high = 9.0
+population = "1674 apparently healthy individuals (910 females, 764 males) from the Danish General Suburban Population Study, Sysmex XE-5000 analyser, non-parametric method; no significant age, sex or smoking difference"
+evidence = "reference-interval-study"
+note = "Analyser-specific (Sysmex XE-5000) reference interval."
+citations = [
+  { pmid = "26853453", doi = "10.3109/00365513.2015.1124448", title = "Reference intervals for mean platelet volume and immature platelet fraction determined on a sysmex XE5000 hematology analyzer.", locator = "Abstract, Results", quote = "The reference interval was 9.6-13.1 fL for MPV and 1.3-9.0% for IPF" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.5
+high = 3.1
+when = { sex = "male" }
+population = "Males from 2152 healthy individuals (1252 men, 900 women), Sysmex XE-2100 analyser, non-parametric percentile method per CLSI"
+evidence = "reference-interval-study"
+note = "Analyser-specific (Sysmex XE-2100) reference interval for males. Source quotes total 0.5-3.3%, men 0.5-3.1%, women 0.5-3.4%."
+citations = [
+  { pmid = "23286350", doi = "10.1111/ijlh.12049", title = "Establishment of reference interval for immature platelet fraction.", locator = "Abstract, Results", quote = "0.5-3.3% (0.5-3.1% in men; 0.5-3.4% in women)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.5
+high = 3.4
+when = { sex = "female" }
+population = "Females from 2152 healthy individuals (1252 men, 900 women), Sysmex XE-2100 analyser, non-parametric percentile method per CLSI"
+evidence = "reference-interval-study"
+note = "Analyser-specific (Sysmex XE-2100) reference interval for females. Source quotes total 0.5-3.3%, men 0.5-3.1%, women 0.5-3.4%."
+citations = [
+  { pmid = "23286350", doi = "10.1111/ijlh.12049", title = "Establishment of reference interval for immature platelet fraction.", locator = "Abstract, Results", quote = "0.5-3.3% (0.5-3.1% in men; 0.5-3.4% in women)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.5
+high = 3.2
+when = { sex = "male" }
+population = "Healthy males, 2039 individuals (1161 males, 878 females) including children, 95% confidence interval reference range"
+evidence = "reference-interval-study"
+note = "Reference interval for males from the 2010 study (analyser not named in the quoted sentence)."
+citations = [
+  { pmid = "20890075", doi = "10.3343/kjlm.2010.30.5.451", title = "Immature platelet fraction: establishment of a reference interval and diagnostic measure for thrombocytopenia.", locator = "Abstract, Results", quote = "The reference intervals of IPF were 0.5-3.2% in males and 0.4-3.0% in females (95% confidence interval)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.4
+high = 3.0
+when = { sex = "female" }
+population = "Healthy females, 2039 individuals (1161 males, 878 females) including children, 95% confidence interval reference range"
+evidence = "reference-interval-study"
+note = "Reference interval for females from the 2010 study (analyser not named in the quoted sentence)."
+citations = [
+  { pmid = "20890075", doi = "10.3343/kjlm.2010.30.5.451", title = "Immature platelet fraction: establishment of a reference interval and diagnostic measure for thrombocytopenia.", locator = "Abstract, Results", quote = "The reference intervals of IPF were 0.5-3.2% in males and 0.4-3.0% in females (95% confidence interval)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 7.3
+when = { conditions = ["immune-thrombocytopenia"] }
+population = "Patients with immune thrombocytopenic purpura (N=150) and aplastic anaemia (N=51) with platelet counts below 100x10(9)/L"
+evidence = "outcome-study"
+note = "ROC cut-off for differentiating ITP from aplastic anaemia (sensitivity 54.0%, specificity 92.2%). Single-study classification, not a guideline cut-off."
+citations = [
+  { pmid = "20890075", doi = "10.3343/kjlm.2010.30.5.451", title = "Immature platelet fraction: establishment of a reference interval and diagnostic measure for thrombocytopenia.", locator = "Abstract, Results", quote = "The cut-off value of IPF for differentiating ITP from AA was 7.3% with a sensitivity and specificity of 54.0% and 92.2%, respectively." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 10.55
+when = { conditions = ["dengue"] }
+population = "Dengue patients with thrombocytopenia (platelet count below 50x10^9/L), 54 patients"
+evidence = "outcome-study"
+note = "Prognostic ROC cut-off for predicting platelet recovery in dengue (sensitivity 69%, specificity 67%). Single small study; a prognostic threshold, not a diagnostic one."
+citations = [
+  { pmid = "36591717", title = "Estimation of a cut-off value for immature platelet fraction (IPF) in predicting platelet recovery in dengue patients with thrombocytopenia.", locator = "Abstract, Results", quote = "ROC curve analysis showed IFP% of 10.55% can be used to predict platelet recovery" },
+]

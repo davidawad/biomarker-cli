@@ -1,0 +1,32 @@
+slug = "dpa"
+name = "Docosapentaenoic Acid (DPA, omega-3)"
+category = "fatty-acid"
+unit = "%"
+loinc = "35180-9"
+description = "Omega-3 docosapentaenoic acid (n-3 DPA, 22:5n-3) measured as a percentage of total plasma fatty acids. Tracked as part of omega-3 status alongside EPA and DHA."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.61
+high = 0.69
+when = { sex = "female", pregnant = false }
+population = "Apparently healthy non-pregnant women, northern India (n = 56)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract" },
+]
+note = "95% reference interval estimated from the 95th and 97.5th percentile reference limits. Small sample. Percent of total plasma fatty acids."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.65
+high = 0.76
+when = { sex = "female", pregnant = true }
+population = "Apparently healthy pregnant women, northern India (n = 108)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract" },
+]
+note = "95% reference interval estimated from the 95th and 97.5th percentile reference limits. Small sample. Percent of total plasma fatty acids."

@@ -1,7 +1,53 @@
 slug = "head-circumference"
 name = "Head Circumference"
-loinc = "9843-4"
-category = "pediatric"
+category = "growth"
 unit = "cm"
-description = "Occipitofrontal head circumference, plotted against age- and sex-specific growth charts (WHO under 2 years, CDC after) and read as a percentile or z-score."
-no_reference = "Interpreted as a growth-chart percentile or z-score, not as a fixed interval; no cited numeric reference range is stored."
+description = "Occipital-frontal head circumference, a growth measurement. Microcephaly is defined from age- and sex-specific growth standards (WHO Child Growth Standards z-scores); the ranges below give the term-newborn centimetre equivalents of the WHO -2 SD and -3 SD cut-offs as listed in Pan American Health Organization and WHO case definitions."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 31.9
+when = { sex = "male", age_max = 0.02 }
+population = "Term male newborns aged 0-6 days; PAHO case definition based on the WHO Child Growth Standards (-2 SD)"
+evidence = "guideline"
+note = "Microcephaly: head circumference strictly below -2 SD WHO standard (below 31.9 cm in term males). Cut-off as reported in the PAHO case definition table of the cited paper."
+citations = [
+  { pmid = "29284702", doi = "10.9745/GHSP-D-17-00116", title = "High Background Congenital Microcephaly in Rural Guatemala: Implications for Neonatal Congenital Zika Virus Infection Screening.", url = "https://pubmed.ncbi.nlm.nih.gov/29284702/", locator = "Table 1", quote = "Term: OFC <-2 SD WHO GC for males (<31.9 cm) and females (<31.5 cm)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 31.5
+when = { sex = "female", age_max = 0.02 }
+population = "Term female newborns aged 0-6 days; PAHO case definition based on the WHO Child Growth Standards (-2 SD)"
+evidence = "guideline"
+note = "Microcephaly: head circumference strictly below -2 SD WHO standard (below 31.5 cm in term females). Cut-off as reported in the PAHO case definition table of the cited paper."
+citations = [
+  { pmid = "29284702", doi = "10.9745/GHSP-D-17-00116", title = "High Background Congenital Microcephaly in Rural Guatemala: Implications for Neonatal Congenital Zika Virus Infection Screening.", url = "https://pubmed.ncbi.nlm.nih.gov/29284702/", locator = "Table 1", quote = "Term: OFC <-2 SD WHO GC for males (<31.9 cm) and females (<31.5 cm)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 30.7
+when = { sex = "male", age_max = 0.02, conditions = ["severe-microcephaly"] }
+population = "Newborn males aged 0-6 days, suspected term, unknown gestational age; WHO case definition (-3 SD)"
+evidence = "guideline"
+note = "Severe microcephaly: head circumference strictly below -3 SD WHO standard (below 30.7 cm in males aged 0-6 days)."
+citations = [
+  { pmid = "29284702", doi = "10.9745/GHSP-D-17-00116", title = "High Background Congenital Microcephaly in Rural Guatemala: Implications for Neonatal Congenital Zika Virus Infection Screening.", url = "https://pubmed.ncbi.nlm.nih.gov/29284702/", locator = "Table 1", quote = "OFC <-3 SD WHO GCa 0-6 days: males: <30.7 cm; females: <30.3 cm" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 30.3
+when = { sex = "female", age_max = 0.02, conditions = ["severe-microcephaly"] }
+population = "Newborn females aged 0-6 days, suspected term, unknown gestational age; WHO case definition (-3 SD)"
+evidence = "guideline"
+note = "Severe microcephaly: head circumference strictly below -3 SD WHO standard (below 30.3 cm in females aged 0-6 days)."
+citations = [
+  { pmid = "29284702", doi = "10.9745/GHSP-D-17-00116", title = "High Background Congenital Microcephaly in Rural Guatemala: Implications for Neonatal Congenital Zika Virus Infection Screening.", url = "https://pubmed.ncbi.nlm.nih.gov/29284702/", locator = "Table 1", quote = "OFC <-3 SD WHO GCa 0-6 days: males: <30.7 cm; females: <30.3 cm" },
+]

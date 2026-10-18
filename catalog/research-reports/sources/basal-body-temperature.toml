@@ -1,0 +1,6 @@
+slug = "basal-body-temperature"
+name = "Basal Body Temperature"
+category = "vitals"
+unit = "°C"
+description = "Basal Body Temperature. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

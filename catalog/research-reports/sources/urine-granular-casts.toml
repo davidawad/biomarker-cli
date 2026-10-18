@@ -1,0 +1,7 @@
+slug = "urine-granular-casts"
+name = "Urine Granular Casts"
+loinc = "88974-1"
+category = "urinalysis"
+unit = "/LPF"
+description = "Urine Granular Casts. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

@@ -3,43 +3,5 @@ name = "Lysine"
 loinc = "2585-8"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Essential amino acid measured in plasma as a free amino acid by LC-MS/MS. Lysine is required for protein synthesis, carnitine synthesis and collagen cross-linking."
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 113.0
-high = 255.2
-when = { ethnicity = "japanese" }
-population = "Healthy volunteers living in Japan, Japanese subpopulation (n=31; 16 male, 15 female; mean age 46.5 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma lysine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Lys | 173.1 ± 31.4 (113.0-255.2) | 181.9 ± 28.4 (131.8-249.7) | 181.2 ± 38.1 (102.6-276.7) |" },
-]
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 131.8
-high = 249.7
-when = { ethnicity = "korean" }
-population = "Healthy volunteers living in Japan, Korean subpopulation (n=36; 19 male, 17 female; mean age 37.2 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma lysine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Lys | 173.1 ± 31.4 (113.0-255.2) | 181.9 ± 28.4 (131.8-249.7) | 181.2 ± 38.1 (102.6-276.7) |" },
-]
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 102.6
-high = 276.7
-when = { ethnicity = "chinese" }
-population = "Healthy volunteers living in Japan, Chinese subpopulation (n=28; 13 male, 15 female; mean age 45.1 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma lysine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Lys | 173.1 ± 31.4 (113.0-255.2) | 181.9 ± 28.4 (131.8-249.7) | 181.2 ± 38.1 (102.6-276.7) |" },
-]
+description = "Lysine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

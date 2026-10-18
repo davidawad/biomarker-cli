@@ -1,0 +1,7 @@
+slug = "anti-jo-1"
+name = "Anti-Jo-1 Antibody"
+category = "autoimmune"
+unit = "U/mL"
+loinc = "8076-2"
+description = "Serum autoantibody to histidyl-tRNA synthetase (Jo-1), the most common antisynthetase antibody. Associated with antisynthetase syndrome, myositis and interstitial lung disease. Reported as positive or negative by immunoassay; some assays also report a numeric level. Expected result: negative."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."

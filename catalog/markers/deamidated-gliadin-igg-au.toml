@@ -1,0 +1,18 @@
+slug = "deamidated-gliadin-igg-au"
+name = "Deamidated Gliadin IgG (AU)"
+category = "autoimmune"
+unit = "AU"
+description = "Deamidated Gliadin IgG reported in AU. Results in AU are assay specific and are not interchangeable with Deamidated Gliadin IgG in AU/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 119
+when = { conditions = ["celiac-disease"] }
+population = "Children with biopsy-confirmed celiac disease (n = 92) compared with TGA-negative HLA-DQ2 or DQ8 children (n = 82) (method: tr-ifma)"
+evidence = "cohort"
+citations = [
+  { pmid = "25522308", doi = "10.1097/MPG.0000000000000666", title = "Antibodies to deamidated gliadin peptide in diagnosis of celiac disease in children.", locator = "Abstract (Results)" },
+]
+note = "Optimal ROC cut-off for IgG anti-DGP positivity (time-resolved immunofluorometric assay), single study in children. Sensitivity 97.8%, specificity 97.6% at this cut-off. Source kind: diagnostic. Source band >= 119; stored as the warn high bound 119."

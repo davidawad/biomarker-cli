@@ -1,0 +1,18 @@
+slug = "igg-subclass-4"
+name = "IgG Subclass 4"
+category = "immune"
+unit = "g/L"
+loinc = "2469-5"
+description = "Serum concentration of immunoglobulin G subclass 4, one of the four IgG subclasses that make up total IgG. Tracked when evaluating antibody deficiency. Expected result: within the reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.05
+high = 1.54
+population = "Healthy adults aged 18-85 years (n=636), Chinese, measured by Siemens immunonephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29042863", doi = "10.1186/s13223-017-0216-7", url = "https://pubmed.ncbi.nlm.nih.gov/29042863/", title = "Adult reference intervals for IgG subclasses with Siemens immunonephelometric assays in Chinese population.", locator = "Abstract, Results" },
+]
+note = "Adult reference interval as reported by the authors (2.5th-97.5th percentile). Siemens assay; no significant sex or age difference reported."

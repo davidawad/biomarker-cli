@@ -1,6 +1,6 @@
 # PhenoAge (Levine Phenotypic Age) (`phenoage`)
 
-Biological age estimated by the PhenoAge algorithm from chronological age and nine routine blood markers (albumin, creatinine, glucose, CRP, lymphocyte percent, mean cell volume, red cell distribution width, alkaline phosphatase, white cell count). It is a computed estimate in years, interpreted against chronological age.
+PhenoAge (Levine Phenotypic Age). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range.
 
 | | |
 |---|---|
@@ -12,7 +12,7 @@ Biological age estimated by the PhenoAge algorithm from chronological age and ni
 
 ## Ranges
 
-No clinical reference range: Computed biological age with no population reference interval; compare it with chronological age (see phenoage-acceleration).
+No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
 
 No ranges yet.
 

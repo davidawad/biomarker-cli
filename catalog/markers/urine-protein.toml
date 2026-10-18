@@ -1,0 +1,17 @@
+slug = "urine-protein"
+name = "Urine Protein"
+category = "kidney"
+unit = "mg/dL"
+description = "Total protein concentration in a random urine sample, often reported from a dipstick as negative/trace, 30, 100 or 300 mg/dL. Persistent proteinuria is a marker of kidney damage. The range below is a dipstick finding from one study; guideline thresholds (KDIGO) are expressed as ratios to creatinine or 24-hour excretion and are covered by urine-pcr and urine-protein-24h."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 300
+population = "Adults with dipstick urinalysis in a US health system (11,229 patients, 51 percent hypertensive, 28 percent diabetic) (specimen: urine)"
+evidence = "cohort"
+citations = [
+  { pmid = "38664867", doi = "10.34067/KID.0000000000000452", url = "https://pubmed.ncbi.nlm.nih.gov/38664867/", title = "Specific Gravity Improves Identification of Clinically Significant Quantitative Proteinuria from the Dipstick Urinalysis.", locator = "Abstract, Results" },
+]
+note = "Dipstick protein of 300 mg/dL or more was extremely likely to represent significant (quantitative) proteinuria at any specific gravity. Single observational study; not a guideline threshold. Source band >= 300; stored as the warn high bound 300."

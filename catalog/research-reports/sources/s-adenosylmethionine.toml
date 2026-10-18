@@ -1,0 +1,7 @@
+slug = "s-adenosylmethionine"
+name = "S-Adenosylmethionine (SAMe)"
+loinc = "78966-9"
+category = "methylation"
+unit = "nmol/L"
+description = "S-Adenosylmethionine (SAMe). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

@@ -1,0 +1,32 @@
+slug = "urine-5-hiaa"
+name = "5-Hydroxyindoleacetic Acid (5-HIAA), Urine"
+loinc = "1694-9"
+category = "organic-acid"
+unit = "mg/24h"
+description = "Serotonin metabolite excreted in urine, usually collected over 24 hours; the standard biochemical test for carcinoid syndrome and serotonin-secreting neuroendocrine tumours, also used to monitor treatment. Expected result: at or below the upper limit of normal in the first range below (50 umol/24h); values above it are elevated. Ranges are in the umol/24h unit the source states (companion unit)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 50
+unit = "umol/24h"
+when = {}
+population = "Adults with neuroendocrine tumours (24-hour urine), cut-off as used in the source"
+evidence = "outcome-study"
+note = "Upper limit of normal for 24-hour urinary 5-HIAA, as stated in the source."
+citations = [
+  { pmid = "40314148", doi = "10.1210/clinem/dgaf263", title = "Serum 5-Hydroxyindoleacetic Acid Measurements for the Diagnosis and Follow-up of Carcinoid Syndrome.", locator = "Methods (laboratory analysis)", quote = "The upper limit of normal of 50 umol/24 hours was used as cutoff value for 24-hour urine 5-HIAA" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 50
+unit = "umol/24h"
+when = { conditions = ["carcinoid-syndrome"] }
+population = "Patients with neuroendocrine tumours in a tertiary cohort"
+evidence = "outcome-study"
+note = "Elevated urinary 5-HIAA used in the source's carcinoid syndrome definition: strictly above 50 umol/24h."
+citations = [
+  { pmid = "40314148", doi = "10.1210/clinem/dgaf263", title = "Serum 5-Hydroxyindoleacetic Acid Measurements for the Diagnosis and Follow-up of Carcinoid Syndrome.", locator = "Methods (outcome definition)", quote = "combined with an elevated urinary 5-HIAA level (>50 umol/24 hours)" },
+]

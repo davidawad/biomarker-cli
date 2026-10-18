@@ -1,0 +1,18 @@
+slug = "myeloperoxidase"
+name = "Myeloperoxidase (MPO, inflammatory marker)"
+loinc = "99407-9"
+category = "inflammation"
+unit = "ng/mL"
+description = "Leukocyte-derived heme enzyme measured in serum by immunoassay. Tracked as a marker of neutrophil activation and oxidative inflammation (a separate test from MPO-ANCA autoantibody). Expected result in apparently healthy people: low concentration, below the single-study elevated-risk threshold cited here; no validated clinical reference interval was found."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 728
+unit = "pmol/L"
+population = "Apparently healthy men and women in the EPIC-Norfolk cohort, nested case-control (1,138 cases with incident coronary artery disease, 2,237 matched controls)"
+evidence = "outcome-study"
+note = "Elevated MPO as defined by one observational study (strictly above 728 pmol/L); associated with future coronary artery disease risk. Single-cohort threshold, not a guideline cut-off."
+citations = [
+  { pmid = "17616301", doi = "10.1016/j.jacc.2007.03.033", title = "Serum myeloperoxidase levels are associated with the future risk of coronary artery disease in apparently healthy individuals: the EPIC-Norfolk Prospective Population Study.", locator = "Abstract, Results", quote = "Elevated MPO levels (>728 pmol/l) similarly predicted increased risk of future CAD among participants with either LDL-cholesterol <130 mg/dl" },
+]

@@ -1,0 +1,17 @@
+slug = "hrv-rmssd"
+name = "Heart Rate Variability (RMSSD)"
+category = "wearable"
+unit = "ms"
+description = "Root mean square of successive differences between heartbeats, in ms. A time-domain heart rate variability measure that reflects vagal (parasympathetic) activity. Expected result: no single value; it depends on age, sex and recording method."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 19
+high = 75
+population = "Healthy adults, short-term (about 5 min) recordings; pooled from 15 studies (Nunan et al. 2010)"
+evidence = "cohort"
+citations = [
+  { pmid = "29034226", doi = "10.3389/fpubh.2017.00258", title = "An Overview of Heart Rate Variability Metrics and Norms.", locator = "Table 6 (Nunan et al. short-term norms)" },
+]
+note = "Study-level range (minimum to maximum across 15 study means), not a 95% reference interval. Mean (SD) 42 (15) ms. Source warns that short-term norms are not interchangeable with 24 h norms."

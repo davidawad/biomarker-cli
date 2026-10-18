@@ -1,0 +1,80 @@
+slug = "nse"
+name = "Neuron-Specific Enolase (NSE)"
+loinc = "15060-7"
+category = "tumor-marker"
+unit = "ng/mL"
+description = "Neuron-specific enolase, a glycolytic enzyme measured in serum by immunoassay. Tracked as a tumour marker for small cell lung cancer and neuroendocrine tumours and as a marker of neuronal damage. Expected result in healthy people: at or below the reference upper limit."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 25.4
+when = { age_min = 20, age_max = 80 }
+population = "Healthy Chinese adults aged 20-79 years (n = 10,575), Cobas e602 NSE assay; no difference by sex or age"
+evidence = "reference-interval-study"
+note = "Population upper reference limit (unilateral 95th percentile) stated by the source."
+citations = [
+  { pmid = "30779465", doi = "10.1002/jcla.22863", title = "Distribution of serum neuron-specific enolase and the establishment of a population reference interval in healthy adults.", locator = "Methods and Results", quote = "healthy Chinese adults aged 20-79 years ... the population reference interval for serum NSE was established as upper limit 25.4 ng/mL (90% confidence interval: 24.5-26.2 ng/mL)." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 17.26
+when = { sex = "male" }
+population = "Healthy persons from routine health check-up, Chengdu, China (n = 3,293 for NSE); indirect method; no correlation with age"
+evidence = "reference-interval-study"
+note = "Indirect 95th percentile interval, males. Source states the lower limit as 0."
+citations = [
+  { pmid = "31414742", doi = "10.7754/Clin.Lab.2019.190113", title = "Establishment of Reference Intervals for Serum Cytokeratin-19 Fragment and Neuron Specific Enolase by Indirect Method Using Data Obtained from Healthy Chinese Population in Chengdu.", locator = "Results", quote = "After statistical analysis the indirect RIs were 0.0 - 3.70 ng/mL (Cyfra211) and 0 - 17.26 ng/mL (NSE) in males and 0.0 - 3.35 ng/mL (Cyfra211) and 0.0 - 16.29 ng/mL (NSE) in females." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 16.29
+when = { sex = "female" }
+population = "Healthy persons from routine health check-up, Chengdu, China (n = 3,293 for NSE); indirect method; no correlation with age"
+evidence = "reference-interval-study"
+note = "Indirect 95th percentile interval, females. Source states the lower limit as 0."
+citations = [
+  { pmid = "31414742", doi = "10.7754/Clin.Lab.2019.190113", title = "Establishment of Reference Intervals for Serum Cytokeratin-19 Fragment and Neuron Specific Enolase by Indirect Method Using Data Obtained from Healthy Chinese Population in Chengdu.", locator = "Results", quote = "After statistical analysis the indirect RIs were 0.0 - 3.70 ng/mL (Cyfra211) and 0 - 17.26 ng/mL (NSE) in males and 0.0 - 3.35 ng/mL (Cyfra211) and 0.0 - 16.29 ng/mL (NSE) in females." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 36.9
+unit = "ug/L"
+when = { age_min = 0, age_max = 6 }
+population = "Danish children aged 0.1-17.9 years from residual serum of routine allergy testing (n = 242), Roche Elecsys NSE assay, samples with haemoglobin <10 mg/dL"
+evidence = "reference-interval-study"
+note = "Age-partitioned paediatric upper limit, 95th percentile one-sided, age 0-5 years. Source unit ug/L."
+citations = [
+  { pmid = "41035379", doi = "10.1515/cclm-2025-0582", title = "Serum neuron-specific enolase - reference interval in Danish children and the impact of preanalytical factors.", locator = "Results", quote = "The traditional age-partitioned RI (95th percentile, one-sided) indicated upper limits of 36.9 ug/L and 32.0 ug/L for the age groups 0-5 and 6-17 years of age, based on samples with haemolysis <10 mg/dL haemoglobin." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 32.0
+unit = "ug/L"
+when = { age_min = 6, age_max = 18 }
+population = "Danish children aged 0.1-17.9 years from residual serum of routine allergy testing (n = 242), Roche Elecsys NSE assay, samples with haemoglobin <10 mg/dL"
+evidence = "reference-interval-study"
+note = "Age-partitioned paediatric upper limit, 95th percentile one-sided, age 6-17 years. Source unit ug/L."
+citations = [
+  { pmid = "41035379", doi = "10.1515/cclm-2025-0582", title = "Serum neuron-specific enolase - reference interval in Danish children and the impact of preanalytical factors.", locator = "Results", quote = "The traditional age-partitioned RI (95th percentile, one-sided) indicated upper limits of 36.9 ug/L and 32.0 ug/L for the age groups 0-5 and 6-17 years of age, based on samples with haemolysis <10 mg/dL haemoglobin." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20.5
+when = { conditions = ["non-small-cell-lung-cancer"] }
+population = "Patients with NSCLC in a serum NSE study of 417 lung cancer patients (ROC analysis for SCLC vs NSCLC)"
+evidence = "outcome-study"
+note = "Strictly above 20.5 ng/mL in NSCLC: source says pathological features must be examined for neuroendocrine differentiation."
+citations = [
+  { pmid = "11956631", title = "Cut-off levels of NSE to differentiate SCLC from NSCLC.", locator = "Abstract", quote = "If an NSCLC patient presents with a NSE level >20.5 ng/ml, pathological features must be examined with regard to the neuroendocrine differentiation." },
+]

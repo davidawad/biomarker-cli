@@ -1,0 +1,44 @@
+slug = "urine-8-ohdg"
+name = "8-Hydroxy-2'-Deoxyguanosine (8-OHdG), Urine"
+category = "organic-acid"
+unit = "ng/mg creatinine"
+loinc = "59265-9"
+description = "Urinary 8-hydroxy-2'-deoxyguanosine (8-OHdG; also reported as 8-oxo-7,8-dihydro-2'-deoxyguanosine, 8-oxodG), a marker of oxidative damage to DNA. People track it as a non-invasive marker of oxidative stress. Spot urine results are normalized to creatinine. The expected result is a numeric level; the cited sources give population reference intervals only."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.127
+high = 5.559
+when = { sex = "male" }
+population = "Healthy Serbian adults, males (n=130), spot urine 8-oxodG/creatinine by LC-MS/MS, 2.5th-97.5th percentiles"
+evidence = "cohort"
+citations = [
+  { pmid = "23261837", doi = "10.1016/j.clinbiochem.2012.12.008", title = "Gender-related reference intervals of urinary 8-oxo-7,8-dihydro-2'-deoxyguanosine determined by liquid chromatography-tandem mass spectrometry in Serbian population.", locator = "Abstract, Results" },
+]
+note = "Gender-specific reference interval, males. Values are the source's own units (nmol/mmol creatinine), not converted. Converted from the source's nmol/mmol (0.45-2.22) to ng/mg creatinine using factor 2.504."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.352
+high = 7.787
+when = { sex = "female" }
+population = "Healthy Serbian adults, females (n=99), spot urine 8-oxodG/creatinine by LC-MS/MS, 2.5th-97.5th percentiles"
+evidence = "cohort"
+citations = [
+  { pmid = "23261837", doi = "10.1016/j.clinbiochem.2012.12.008", title = "Gender-related reference intervals of urinary 8-oxo-7,8-dihydro-2'-deoxyguanosine determined by liquid chromatography-tandem mass spectrometry in Serbian population.", locator = "Abstract, Results" },
+]
+note = "Gender-specific reference interval, females. Values are the source's own units (nmol/mmol creatinine), not converted. Converted from the source's nmol/mmol (0.54-3.11) to ng/mg creatinine using factor 2.504."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.753
+high = 10.52
+population = "Healthy Italian adults (n=300; 150 males), spot urine 8-oxodGuo/creatinine by LC-MS/MS, 5th-95th percentiles"
+evidence = "cohort"
+citations = [
+  { pmid = "21075202", doi = "10.1016/j.freeradbiomed.2010.11.009", title = "Reference ranges of urinary biomarkers of oxidized guanine in (2'-deoxy)ribonucleotides and nucleic acids.", locator = "Abstract, Results" },
+]
+note = "Reference range for 8-oxodGuo (8-oxo-7,8-dihydro-2'-deoxyguanosine) from a separate cohort. Values are the source's own units, not converted. Converted from the source's pmol/umol(creat) (0.7-4.2) to ng/mg creatinine using factor 2.504."

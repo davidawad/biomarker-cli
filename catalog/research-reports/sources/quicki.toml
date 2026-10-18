@@ -1,0 +1,19 @@
+slug = "quicki"
+name = "QUICKI (Quantitative Insulin Sensitivity Check Index)"
+category = "glycemic"
+unit = "index"
+description = "Computed insulin sensitivity index from fasting insulin and fasting glucose: 1/[log(fasting insulin) + log(fasting glucose)]. Lower values indicate insulin resistance. Expected result: no single established normal range; interpret against study-specific cut-offs."
+no_reference = "Computed index with no established reference interval; the only range below is a single-study cut-off for metabolic syndrome classification."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.32
+unit = "index"
+when = { conditions = ["metabolic-syndrome"] }
+population = "Southern Indian adults aged 18 to 65 years (75 with metabolic syndrome, 75 controls)"
+evidence = "outcome-study"
+note = "Cut-off for identifying metabolic syndrome (value at or below 0.32 flagged), derived by ROC analysis in one cross-sectional study. Single study; not a general insulin-resistance cut-off."
+citations = [
+  { pmid = "33229629", doi = "10.7570/jomes20071", title = "Cut-off Values and Clinical Utility of Surrogate Markers for Insulin Resistance and Beta-Cell Function to Identify Metabolic Syndrome and Its Components among Southern Indian Adults.", locator = "Discussion (cut-off values)", quote = "with cut-offs of <= 28.2, <= 0.32, and <= 87.12, respectively, to identify MetS patients from southern India." },
+]

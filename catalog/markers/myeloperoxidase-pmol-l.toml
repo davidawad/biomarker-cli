@@ -1,0 +1,17 @@
+slug = "myeloperoxidase-pmol-l"
+name = "Myeloperoxidase (MPO, inflammatory marker) (pmol/L)"
+category = "inflammation"
+unit = "pmol/L"
+description = "Myeloperoxidase (MPO, inflammatory marker) reported in pmol/L. Results in pmol/L are assay specific and are not interchangeable with Myeloperoxidase (MPO, inflammatory marker) in ng/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 728
+population = "Apparently healthy men and women in the EPIC-Norfolk cohort, nested case-control (1,138 cases with incident coronary artery disease, 2,237 matched controls)"
+evidence = "cohort"
+citations = [
+  { pmid = "17616301", doi = "10.1016/j.jacc.2007.03.033", title = "Serum myeloperoxidase levels are associated with the future risk of coronary artery disease in apparently healthy individuals: the EPIC-Norfolk Prospective Population Study.", locator = "Abstract, Results" },
+]
+note = "Elevated MPO as defined by one observational study (strictly above 728 pmol/L); associated with future coronary artery disease risk. Single-cohort threshold, not a guideline cut-off. Source band >= 728; stored as the warn high bound 728."

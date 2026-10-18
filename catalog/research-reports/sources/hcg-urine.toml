@@ -1,0 +1,7 @@
+slug = "hcg-urine"
+name = "hCG, Urine Pregnancy Test"
+loinc = "2106-3"
+category = "pregnancy"
+unit = "qualitative"
+description = "Qualitative detection of human chorionic gonadotropin (hCG) in urine. hCG is produced by the placenta after implantation, so its presence in urine indicates pregnancy. People test to check for pregnancy at home or in clinic. Expected result: negative (not detected) when not pregnant; positive (detected) suggests pregnancy, and a false negative is possible if the test is taken too early."
+no_reference = "Qualitative result (negative or positive); no numeric reference interval applies."

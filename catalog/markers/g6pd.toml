@@ -4,39 +4,7 @@ category = "cbc"
 unit = "U/g Hb"
 loinc = "2357-2"
 description = "Activity of the red-cell enzyme glucose-6-phosphate dehydrogenase, expressed per gram of haemoglobin. Low activity (G6PD deficiency) predisposes to oxidant-induced haemolysis, for example after primaquine or tafenoquine, so the result decides whether these 8-aminoquinoline drugs can be given."
-
-[[range]]
-set = "g6pd-peru-2026"
-kind = "warn"
-low = 4.0
-population = "987 adults and children with Plasmodium vivax in the Peruvian Amazon, semi-quantitative G6PD activity assay in a radical-cure programme"
-evidence = "cohort"
-citations = [
-  { pmid = "42500357", doi = "10.1016/j.lana.2026.101568", title = "Health-care provider compliance with a revised <i>Plasmodium vivax</i> radical cure algorithm incorporating tafenoquine and quantitative G6PD testing in the Peruvian Amazon: a prospective observational study.", locator = "Table 2" },
-]
-note = "Programme cut-off for deficiency (about the 30% activity threshold per the same paper's discussion). Semi-quantitative point-of-care device, not a reference laboratory assay. Source kind: deficient. Source band <= 4.0; stored as the warn low bound 4.0."
-
-[[range]]
-set = "alt-1"
-kind = "warn"
-low = 4.1
-population = "987 adults and children with Plasmodium vivax in the Peruvian Amazon, semi-quantitative G6PD activity assay"
-evidence = "cohort"
-citations = [
-  { pmid = "42500357", doi = "10.1016/j.lana.2026.101568", title = "Health-care provider compliance with a revised <i>Plasmodium vivax</i> radical cure algorithm incorporating tafenoquine and quantitative G6PD testing in the Peruvian Amazon: a prospective observational study.", locator = "Table 2" },
-]
-note = "Intermediate category: described as tafenoquine-ineligible in this algorithm; primaquine is the alternative in the Thai protocol. The Peru paper also discusses a 70% threshold for intermediate females. Source band 4.1-6.0; stored as the warn low bound 4.1. Alternative to the default g6pd-peru-2026 warn range for the same population."
-
-[[range]]
-set = "clinical"
-kind = "reference"
-low = 6.1
-population = "987 adults and children with Plasmodium vivax in the Peruvian Amazon, semi-quantitative G6PD activity assay"
-evidence = "cohort"
-citations = [
-  { pmid = "42500357", doi = "10.1016/j.lana.2026.101568", title = "Health-care provider compliance with a revised <i>Plasmodium vivax</i> radical cure algorithm incorporating tafenoquine and quantitative G6PD testing in the Peruvian Amazon: a prospective observational study.", locator = "Table 2" },
-]
-note = "Normal category in the programme. Activity thresholds are semi-quantitative and assay-specific."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
 set = "g6pd-thailand-2025"
@@ -50,7 +18,7 @@ citations = [
 note = "Eligibility for tafenoquine 300 mg single dose (G6PD normal). Intermediate patients were allocated primaquine in this protocol. The sources do not convert U/g Hb values to percent of normal; the 2026 Peru paper refers to 30% and 70% activity thresholds without stating the U/g Hb equivalents. Source kind: diagnostic. Source band >= 6.1; stored as the warn high bound 6.1."
 
 [[range]]
-set = "alt-2"
+set = "alt-1"
 kind = "warn"
 high = 4.1
 population = "patients with Plasmodium vivax in Thailand receiving radical cure after quantitative G6PD testing (pilot implementation)"

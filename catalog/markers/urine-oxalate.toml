@@ -1,0 +1,71 @@
+slug = "urine-oxalate"
+name = "Oxalate, Urine"
+category = "organic-acid"
+unit = "mmol/mol creatinine"
+loinc = "2700-3"
+description = "Urinary oxalate, the end product of endogenous oxalate metabolism and dietary absorption. Measured to screen for hyperoxaluria, which raises the risk of calcium oxalate kidney stones and oxalate nephropathy, and to diagnose primary hyperoxaluria. Spot results are reported per creatinine; 24-hour results in mmol/d. Expected result: within the age- and sex-specific reference interval; values above the upper limit indicate hyperoxaluria."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 8.499
+high = 54.39
+when = { sex = "male", age = [19.0, 30.0] }
+population = "Healthy adults aged 19 to 29 years undergoing routine physical examination (male)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40410837", doi = "10.1186/s40001-025-02657-6", title = "Establishment of adult reference interval of oxalate in spot urine using real-world data.", locator = "Results" },
+]
+note = "Spot urine oxalate to creatinine (UOA/UCr) reference interval, male 19-29 years, as stated in the source. Units are the source's mmol/mol."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 10.25
+high = 61.29
+when = { sex = "male", age = [30.0, 40.0] }
+population = "Healthy adults aged 30 to 39 years undergoing routine physical examination (male)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40410837", doi = "10.1186/s40001-025-02657-6", title = "Establishment of adult reference interval of oxalate in spot urine using real-world data.", locator = "Results" },
+]
+note = "Spot urine oxalate to creatinine (UOA/UCr) reference interval, male 30-39 years, as stated in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 12.13
+high = 68.69
+when = { sex = "male", age = [40.0, 200] }
+population = "Healthy adults aged 40 to 85 years undergoing routine physical examination (male)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40410837", doi = "10.1186/s40001-025-02657-6", title = "Establishment of adult reference interval of oxalate in spot urine using real-world data.", locator = "Results" },
+]
+note = "Spot urine oxalate to creatinine (UOA/UCr) reference interval, male 40 years and older, as stated in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.03
+high = 64.93
+when = { sex = "female", age = [19.0, 40.0] }
+population = "Healthy adults aged 19 to 39 years undergoing routine physical examination (female)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40410837", doi = "10.1186/s40001-025-02657-6", title = "Establishment of adult reference interval of oxalate in spot urine using real-world data.", locator = "Results" },
+]
+note = "Spot urine oxalate to creatinine (UOA/UCr) reference interval, female 19-39 years, as stated in the source."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.0
+high = 93.84
+when = { sex = "female", age = [40.0, 200] }
+population = "Healthy adults aged 40 to 85 years undergoing routine physical examination (female)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40410837", doi = "10.1186/s40001-025-02657-6", title = "Establishment of adult reference interval of oxalate in spot urine using real-world data.", locator = "Results" },
+]
+note = "Spot urine oxalate to creatinine (UOA/UCr) reference interval, female 40 years and older, as stated in the source."

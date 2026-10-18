@@ -1,0 +1,7 @@
+slug = "hbeag"
+name = "Hepatitis B e Antigen"
+category = "infectious"
+unit = "qualitative"
+loinc = "13954-3"
+description = "Hepatitis B e antigen (HBeAg), a serum marker associated with active hepatitis B viral replication and infectivity. Tracked in people with chronic hepatitis B to guide monitoring and treatment decisions. Expected result: negative in most people without active replication; positive indicates active replication."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

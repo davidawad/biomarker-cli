@@ -1,0 +1,7 @@
+slug = "apoc3"
+name = "Apolipoprotein C-III"
+loinc = "1877-0"
+category = "lipid"
+unit = "mg/dL"
+description = "Apolipoprotein C-III. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

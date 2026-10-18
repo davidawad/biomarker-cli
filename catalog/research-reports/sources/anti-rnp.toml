@@ -1,0 +1,7 @@
+slug = "anti-rnp"
+name = "Anti-RNP Antibody"
+loinc = "29374-6"
+category = "autoimmune"
+unit = "qualitative"
+description = "Serum autoantibody to U1 small nuclear ribonucleoprotein (U1-RNP). Associated with mixed connective tissue disease and seen in systemic lupus erythematosus and other connective-tissue disease. Reported as positive or negative (immunoassay or line blot). Expected result: negative."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval or cut-off was verifiable from the sources retrieved."

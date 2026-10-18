@@ -1,0 +1,43 @@
+slug = "oxygen-desaturation-index"
+name = "Oxygen Desaturation Index"
+category = "sleep"
+unit = "events/h"
+loinc = "90567-9"
+description = "Number of oxygen desaturations of 4 percent or more per hour of recording, from pulse oximetry. Used as a screening and diagnostic index for obstructive sleep apnea (OSA); it is compared against the apnea-hypopnea index (AHI). Cut-offs below are from diagnostic-accuracy studies, not population reference intervals."
+aliases = ["odi", "odi-4"]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 10
+when = { conditions = ["obstructive-sleep-apnea"] }
+population = "Adults with suspected obstructive sleep apnea (8 studies, 1,924 patients)"
+evidence = "cohort"
+citations = [
+  { pmid = "32333683", doi = "10.1002/lary.28663", url = "https://pubmed.ncbi.nlm.nih.gov/32333683/", title = "The Value of Oxygen Desaturation Index for Diagnosing Obstructive Sleep Apnea: A Systematic Review.", locator = "Abstract, Conclusion" },
+]
+note = "Value at which the systematic review recommends further evaluation for OSA (4 percent ODI). Upper bound not stated in the source, so none is given here. Source band >= 10; stored as the warn high bound 10."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 5
+when = { conditions = ["obstructive-sleep-apnea"] }
+population = "Portable monitoring recordings for suspected obstructive sleep apnea (3,413 recordings; 2,281 training, 1,132 test)"
+evidence = "cohort"
+citations = [
+  { pmid = "29564732", doi = "10.1007/s11325-018-1654-2", url = "https://pubmed.ncbi.nlm.nih.gov/29564732/", title = "Validation of the oxygen desaturation index in the diagnostic workup of obstructive sleep apnea.", locator = "Abstract, Conclusion" },
+]
+note = "Rule-out threshold: ODI strictly below 5 predicts AHI strictly below 5 (AHI under 5 events/h). It is a validated cut-off for excluding AHI of 5 or more, not a population reference interval."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 15
+when = { conditions = ["obstructive-sleep-apnea"] }
+population = "Adults with suspected obstructive sleep apnea (8 studies, 1,924 patients)"
+evidence = "cohort"
+citations = [
+  { pmid = "32333683", doi = "10.1002/lary.28663", url = "https://pubmed.ncbi.nlm.nih.gov/32333683/", title = "The Value of Oxygen Desaturation Index for Diagnosing Obstructive Sleep Apnea: A Systematic Review.", locator = "Abstract, Conclusion" },
+]
+note = "Systematic review (no pooled estimate) of 4 percent ODI against AHI. The review states that consideration should be given to diagnosing adult OSA at this value, and that further study is needed before a definitive recommendation. Source kind: diagnostic. Source band >= 15; stored as the warn high bound 15."

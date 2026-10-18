@@ -1,0 +1,41 @@
+slug = "mets-ir"
+name = "METS-IR (Metabolic Score for Insulin Resistance)"
+category = "glycemic"
+unit = "index"
+description = "Computed, non-insulin-based insulin resistance score from fasting glucose, triglycerides, HDL-C and BMI. Tracked as a surrogate for insulin resistance and cardiometabolic risk. Expected result: no established normal range; interpret against study-specific cut-offs."
+no_reference = "Computed score with no established reference interval; the ranges below are single-study or pooled cut-offs for specific outcomes, not normal limits."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 38.644
+when = { pregnant = true, conditions = ["preeclampsia"] }
+population = "Singleton pregnant women delivering at participating hospitals (multicenter cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "41094658", doi = "10.1186/s12944-025-02705-4", title = "Association of metabolic score for insulin resistance and preeclampsia: a multicenter cohort study.", locator = "Abstract (Results)" },
+]
+note = "ROC-optimal cut-off for predicting preeclampsia in one cohort (AUC 0.649). Predictive threshold, not a diagnostic criterion. Source band >= 38.644; stored as the warn high bound 38.644."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 33.33
+when = { conditions = ["diabetes"] }
+population = "Adults with diabetes (cohort study)"
+evidence = "cohort"
+citations = [
+  { pmid = "35647046", doi = "10.3389/fcvm.2022.895609", title = "Association Between a Novel Metabolic Score for Insulin Resistance and Mortality in People With Diabetes.", locator = "Abstract (Results)" },
+]
+note = "Threshold-effect inflection for all-cause and CVD mortality; risk is associated only above this value per the source. Source band >= 33.33; stored as the warn high bound 33.33."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 38.24
+population = "Adults in pooled cohort studies of cardiovascular outcomes"
+evidence = "cohort"
+citations = [
+  { pmid = "41180178", doi = "10.3389/fendo.2025.1699985", title = "Metabolic score for insulin resistance and the incidence of cardiovascular disease: a meta-analysis of cohort studies.", locator = "Results, dose-response analysis (Figure 8C)" },
+]
+note = "Inflection point of the pooled dose-response curve (Figure 8C); risk rises beyond it per the source. Not a diagnostic cut-off. Source band >= 38.24; stored as the warn high bound 38.24."

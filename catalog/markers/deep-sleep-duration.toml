@@ -1,0 +1,7 @@
+slug = "deep-sleep-duration"
+name = "Deep (N3) Sleep Duration"
+category = "sleep"
+unit = "min"
+loinc = "93831-6"
+description = "Time spent in deep (slow-wave, stage N3) sleep per night. Published polysomnography norms express it as a percentage of total sleep time (TST), so the range below is in percent of TST."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."

@@ -1,0 +1,40 @@
+slug = "mumps-igg"
+name = "Mumps IgG"
+category = "infectious"
+unit = "RU/mL"
+loinc = "22415-4"
+description = "Serum IgG antibody against mumps virus, measured by ELISA and reported as an assay-specific index or titer. Tracked to confirm immunity after mumps infection or MMR vaccination, and to check susceptibility before exposure. Expected result: positive (seropositive, immune); negative or equivocal results indicate possible lack of immunity."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 22
+population = "Community-based cross-sectional sample, Vellore, South India, mumps IgG by EUROIMMUN ELISA (method: euroimmun-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "40795852", doi = "10.4269/ajtmh.25-0069", title = "Mumps Seroprevalence in Vellore, South India: A Community-Based Cross-Sectional Study.", locator = "Methods" },
+]
+note = "Seropositive (immune) on EUROIMMUN ELISA, per manufacturer's guidelines as applied in the cited study. Source kind: diagnostic. Source band >= 22; stored as the warn high bound 22."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 16
+high = 22
+population = "Community-based cross-sectional sample, Vellore, South India, mumps IgG by EUROIMMUN ELISA (method: euroimmun-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "40795852", doi = "10.4269/ajtmh.25-0069", title = "Mumps Seroprevalence in Vellore, South India: A Community-Based Cross-Sectional Study.", locator = "Methods" },
+]
+note = "Equivocal mumps IgG on EUROIMMUN ELISA (16 to <22 RU/mL). Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 16
+population = "Community-based cross-sectional sample, Vellore, South India, mumps IgG by EUROIMMUN ELISA (method: euroimmun-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "40795852", doi = "10.4269/ajtmh.25-0069", title = "Mumps Seroprevalence in Vellore, South India: A Community-Based Cross-Sectional Study.", locator = "Methods" },
+]
+note = "Seronegative (no detectable immunity) on EUROIMMUN ELISA (<16 RU/mL). Source kind: diagnostic. Source band <= 16; stored as the warn low bound 16. Alternative to the default diagnostic warn range for the same population."

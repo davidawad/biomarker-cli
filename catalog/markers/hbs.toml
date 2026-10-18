@@ -1,0 +1,19 @@
+slug = "hbs"
+name = "Hemoglobin S"
+category = "hematology"
+unit = "%"
+loinc = "4625-0"
+description = "Share of total haemoglobin present as sickle haemoglobin (HbS), measured by solubility test, electrophoresis, HPLC or capillary methods. Tracked to screen for sickle cell trait and sickle cell disease. Expected result when no sickle variant is present: not detected."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 41
+when = { conditions = ["sickle-cell-trait"] }
+population = "Individuals screened for sickle cell trait under the US Department of Defense regulation; the source reports 397 individuals with sickle cell trait screened by quantitative electrophoresis"
+evidence = "cohort"
+citations = [
+  { pmid = "6695914", doi = "10.1002/ajh.2830160204", title = "Hemoglobin S levels in sickle cell trait individuals.", locator = "Abstract" },
+]
+note = "Upper bound of the sickle cell trait definition quoted by the source (Department of Defense regulation). Single-study report, 1984. Source kind: diagnostic. Source band <= 41; stored as the warn low bound 41."

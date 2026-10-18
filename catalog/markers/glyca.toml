@@ -1,0 +1,18 @@
+slug = "glyca"
+name = "GlycA"
+category = "inflammation"
+unit = "umol/L"
+loinc = "82730-3"
+description = "NMR-measured composite signal from glycan N-acetyl methyl groups on acute-phase glycoproteins; a marker of systemic inflammation."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 387
+population = "Adults without prior cardiovascular disease or cancer (PREVEND cohort, Netherlands; sexes combined)"
+evidence = "cohort"
+citations = [
+  { pmid = "26398105", doi = "10.1371/journal.pone.0139057", title = "GlycA, a Pro-Inflammatory Glycoprotein Biomarker, and Incident Cardiovascular Disease: Relationship with C-Reactive Protein and Renal Function.", locator = "Methods, statistical analysis" },
+]
+note = "Highest-quartile cut point of GlycA in the PREVEND cohort, used there to define the high-GlycA group for incident cardiovascular risk. A cohort quartile cut point, not a guideline threshold or reference interval; strictly above 387. Source band >= 387; stored as the warn high bound 387."

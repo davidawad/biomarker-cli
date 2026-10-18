@@ -1,0 +1,19 @@
+slug = "gamma-globulin"
+name = "Gamma Globulin (SPEP)"
+loinc = "13983-2"
+category = "protein"
+unit = "%"
+description = "Gamma globulin fraction of serum protein electrophoresis (SPEP), reported as percent of total serum protein. It is mostly immunoglobulin (antibodies) and is tracked to assess low or high immunoglobulin levels and as part of the evaluation of plasma cell disorders. Expected result in a healthy adult: a value within the reference interval below, with no monoclonal (M) band on the electrophoresis."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 12.40
+high = 21.66
+when = {}
+population = "Apparently healthy adults in Addis Ababa, Ethiopia; combined interval for males and females (not sex-specific), serum protein electrophoresis, percent of total protein"
+evidence = "reference-interval-study"
+note = "Combined reference interval for gamma globulin (the source reports it as sex-independent). Established by the CLSI EP28A3C non-parametric method, per the abstract."
+citations = [
+  { pmid = "36039308", doi = "10.2147/IJGM.S376450", title = "Establishment of Reference Intervals for Serum Protein Electrophoresis of Apparently Healthy Adults in Addis Ababa, Ethiopia.", locator = "Abstract (Results)", quote = "The combined RIs for beta-2 globulin and gamma globulin were 2.54-4.90% and 12.40-21.66%, respectively." },
+]

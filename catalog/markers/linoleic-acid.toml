@@ -3,15 +3,4 @@ name = "Linoleic acid (LA)"
 category = "fatty-acid"
 unit = "%"
 description = "Linoleic acid (18:2n-6), the main dietary omega-6 polyunsaturated fatty acid, reported as a percent of total fatty acids in the blood lipid fraction measured. It reflects intake of vegetable oils; very low values suggest low essential fatty acid status."
-
-[[range]]
-set = "clinical"
-kind = "reference"
-low = 12.72
-high = 24.54
-population = "Adults in the 1997 New Zealand National Nutrition Survey (n=2416 with serum phospholipid fatty acids), non-fasting samples; 5th-95th percentiles (specimen: serum)"
-evidence = "reference-interval-study"
-citations = [
-  { pmid = "22254080", doi = "10.3390/nu3010152", title = "Serum fatty acid reference ranges: percentiles from a New Zealand national nutrition survey.", locator = "Table 4" },
-]
-note = "Serum phospholipid fraction, mol% of total fatty acids (survey-adjusted). Mean 19.01 (SD 5.22). Not stratified by sex or age in the cited table."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

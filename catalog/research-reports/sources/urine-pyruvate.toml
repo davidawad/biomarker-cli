@@ -1,0 +1,7 @@
+slug = "urine-pyruvate"
+name = "Pyruvate, Urine"
+loinc = "2908-2"
+category = "organic-acid"
+unit = "µmol/L"
+description = "Pyruvate, Urine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

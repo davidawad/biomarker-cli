@@ -1,0 +1,7 @@
+slug = "anti-ssb-la"
+name = "Anti-SSB/La Antibody"
+category = "autoimmune"
+unit = "qualitative"
+loinc = "8094-5"
+description = "Autoantibody to the La/SSB ribonucleoprotein antigen, detected by immunoassay and reported as positive or negative. Associated with Sjogren syndrome and systemic lupus erythematosus, usually found together with anti-SSA/Ro. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

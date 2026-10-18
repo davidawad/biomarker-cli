@@ -1,0 +1,7 @@
+slug = "intrinsic-factor-antibody"
+name = "Intrinsic Factor Blocking Antibody"
+loinc = "31443-5"
+category = "autoimmune"
+unit = "qualitative"
+description = "Serum autoantibody that blocks binding of vitamin B12 to intrinsic factor, measured as a blocking-antibody test. Tracked as a serological marker of autoimmune gastritis and pernicious anemia, usually alongside parietal cell antibodies. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative blocking antibody); no numeric reference interval applies."

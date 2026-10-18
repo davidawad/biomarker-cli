@@ -1,0 +1,7 @@
+slug = "ornithine"
+name = "Ornithine"
+loinc = "2679-9"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Ornithine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

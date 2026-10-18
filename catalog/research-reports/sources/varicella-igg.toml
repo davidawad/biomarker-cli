@@ -1,0 +1,40 @@
+slug = "varicella-igg"
+name = "Varicella Zoster IgG"
+loinc = "19162-7"
+category = "infectious"
+unit = "IU/mL"
+description = "IgG antibody to varicella-zoster virus (VZV), measured by ELISA. Indicates prior varicella infection or vaccination. Reported against an assay cut-off as positive, borderline or negative. Expected result: positive."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 11
+population = "Children and adults tested with EUROIMMUN anti-VZV IgG ELISA (Northern Lebanon cross-sectional study, n = 180, aged 1-18 years)"
+evidence = "outcome-study"
+note = "Positive by the EUROIMMUN ELISA classification (>= 11 IU/mL). Assay-specific manufacturer criterion; not a general clinical cut-off."
+citations = [
+  { pmid = "41295539", doi = "10.3390/vaccines13111166", title = "Seroprevalence and Vaccination Determinants of Varicella Zoster Virus Among Pediatric and Adolescent Populations in Northern Lebanon.", locator = "2.3. Serological Testing", quote = "Results were interpreted according to EUROIMMUN® criteria as positive (>=11 IU/mL), borderline (>=8 and <11 IU/mL), or negative (<8 IU/mL)." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 8
+high = 11
+population = "Children and adults tested with EUROIMMUN anti-VZV IgG ELISA (Northern Lebanon cross-sectional study, n = 180, aged 1-18 years)"
+evidence = "outcome-study"
+note = "Borderline by the EUROIMMUN ELISA classification (>= 8 and strictly below 11 IU/mL). Assay-specific."
+citations = [
+  { pmid = "41295539", doi = "10.3390/vaccines13111166", title = "Seroprevalence and Vaccination Determinants of Varicella Zoster Virus Among Pediatric and Adolescent Populations in Northern Lebanon.", locator = "2.3. Serological Testing", quote = "Results were interpreted according to EUROIMMUN® criteria as positive (>=11 IU/mL), borderline (>=8 and <11 IU/mL), or negative (<8 IU/mL)." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 8
+population = "Children and adults tested with EUROIMMUN anti-VZV IgG ELISA (Northern Lebanon cross-sectional study, n = 180, aged 1-18 years)"
+evidence = "outcome-study"
+note = "Negative by the EUROIMMUN ELISA classification (strictly below 8 IU/mL). Assay-specific."
+citations = [
+  { pmid = "41295539", doi = "10.3390/vaccines13111166", title = "Seroprevalence and Vaccination Determinants of Varicella Zoster Virus Among Pediatric and Adolescent Populations in Northern Lebanon.", locator = "2.3. Serological Testing", quote = "Results were interpreted according to EUROIMMUN® criteria as positive (>=11 IU/mL), borderline (>=8 and <11 IU/mL), or negative (<8 IU/mL)." },
+]

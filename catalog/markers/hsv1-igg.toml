@@ -1,0 +1,7 @@
+slug = "hsv1-igg"
+name = "Herpes Simplex Virus 1 IgG"
+category = "infectious"
+unit = "qualitative"
+loinc = "17850-9"
+description = "IgG antibody to herpes simplex virus type 1 (HSV-1), usually an ELISA reported as negative or positive by assay cut-off. Tracked to establish past HSV-1 infection (oral or genital herpes), which is very common and often asymptomatic. Expected result: positive in many adults, which reflects past infection rather than an active outbreak."
+no_reference = "Qualitative serology (negative or positive by assay cut-off); no numeric reference interval applies and no verifiable HSV-1 cut-off was retrieved."

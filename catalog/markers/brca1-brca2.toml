@@ -1,0 +1,7 @@
+slug = "brca1-brca2"
+name = "BRCA1/BRCA2 Mutation Analysis"
+category = "genetic"
+unit = "qualitative"
+loinc = "59041-4"
+description = "Germline sequencing of the BRCA1 and BRCA2 genes for pathogenic or likely pathogenic variants that confer high lifetime risk of breast, ovarian, prostate and pancreatic cancer. Tracked for hereditary cancer risk and for guiding screening, risk-reducing surgery and family testing. Expected result: no pathogenic or likely pathogenic variant detected (negative)."
+no_reference = "Qualitative genotype result (variant present or absent, classified by pathogenicity); no numeric reference interval applies."

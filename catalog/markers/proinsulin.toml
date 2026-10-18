@@ -1,0 +1,19 @@
+slug = "proinsulin"
+name = "Proinsulin"
+category = "glycemic"
+unit = "pmol/L"
+loinc = "27882-0"
+description = "Precursor of insulin, measured by immunoassay. Raised proinsulin relative to insulin reflects beta-cell stress or dysfunction. Expected result: within the reference interval; the reference interval depends on fasting state."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.7
+high = 14.2
+when = { fasting = true }
+population = "Normoglycaemic non-obese adults (healthy population), fasting"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "21889934", doi = "10.1016/j.clinbiochem.2011.08.1129", title = "Evaluation of an ELISA assay for total proinsulin and establishment of reference values during an oral glucose tolerance test in a healthy population.", locator = "Abstract (Results)" },
+]
+note = "Fasting reference values for the Millipore total proinsulin ELISA. OGTT time-point values (30 and 120 min) omitted: FORMAT has no OGTT time key."

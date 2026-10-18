@@ -1,0 +1,6 @@
+slug = "ldl-hdl-ratio"
+name = "LDL/HDL Ratio"
+category = "lipid"
+unit = "ratio"
+description = "LDL/HDL Ratio. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

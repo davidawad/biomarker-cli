@@ -1,0 +1,18 @@
+slug = "ammonia"
+name = "Ammonia"
+category = "metabolic"
+unit = "umol/L"
+loinc = "16362-6"
+description = "Plasma ammonia, measured when hyperammonaemia is suspected (for example in liver failure, urea cycle disorders or other inborn errors of metabolism). Samples need prompt processing because ammonia rises in vitro. Expected result in newborns under one week: at or below the proposed reference limit of 82 umol/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 82
+when = { conditions = ["newborn"] }
+population = "Hospitalized term and preterm newborns under one week of age (n = 127), plasma ammonia, single draw"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32445380", doi = "10.1093/jalm/jfz001", title = "Proposed Plasma Ammonia Reference Intervals in a Reference Group of Hospitalized Term and Preterm Neonates.", locator = "Abstract (Conclusions)" },
+]
+note = "Upper reference limit proposed by the source for newborns under one week (the source gives an upper limit only). The source excluded infants with inborn errors of metabolism or liver disease."

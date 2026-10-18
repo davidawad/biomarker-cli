@@ -3,15 +3,4 @@ name = "Eicosapentaenoic acid (EPA)"
 category = "fatty-acid"
 unit = "%"
 description = "Eicosapentaenoic acid (20:5n-3), a long-chain omega-3 fatty acid from marine foods, reported as a percent of total fatty acids in the blood lipid fraction measured. Low values indicate low marine omega-3 intake or status."
-
-[[range]]
-set = "clinical"
-kind = "reference"
-low = 0.4
-high = 1.8
-population = "Adults in the 1997 New Zealand National Nutrition Survey (n=2416 with serum phospholipid fatty acids), non-fasting samples; 5th-95th percentiles (specimen: serum)"
-evidence = "reference-interval-study"
-citations = [
-  { pmid = "22254080", doi = "10.3390/nu3010152", title = "Serum fatty acid reference ranges: percentiles from a New Zealand national nutrition survey.", locator = "Table 4" },
-]
-note = "Serum phospholipid fraction, mol% of total fatty acids (survey-adjusted). Mean 1.00 (SD 0.60). Not stratified by sex or age in the cited table."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

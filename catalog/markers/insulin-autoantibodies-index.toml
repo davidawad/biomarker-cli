@@ -1,0 +1,18 @@
+slug = "insulin-autoantibodies-index"
+name = "Insulin Autoantibodies (index)"
+category = "autoimmune"
+unit = "index"
+description = "Insulin Autoantibodies reported in index. Results in index are assay specific and are not interchangeable with Insulin Autoantibodies in U/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.01
+when = { conditions = ["type-1-diabetes"] }
+population = "Individuals newly diagnosed with type 1 diabetes, children and adults, retrospective cohort tested within 1 year of diagnosis (fluid-phase radiobinding assay)"
+evidence = "cohort"
+citations = [
+  { pmid = "41925716", doi = "10.2337/dc25-2660", title = "Differences in Clinical Manifestations and Islet Autoantibodies by Age in Adult-Onset Type 1 Diabetes.", locator = "Methods, islet autoantibody analysis" },
+]
+note = "Positive IAA cut-off stated by the source as an RBA index. The source does not state whether the boundary is >= or >, so low = 0.010 is recorded without a direction. Index-to-U/mL conversion is not stated, so this range stays in index units. Source kind: diagnostic. Source band >= 0.01; stored as the warn high bound 0.01."

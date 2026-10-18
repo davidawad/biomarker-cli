@@ -1,0 +1,35 @@
+slug = "urine-uric-acid-mg-day-1-73-m2"
+name = "Urine Uric Acid (mg/day/1.73 m2)"
+category = "urinalysis"
+unit = "mg/day/1.73 m2"
+description = "Urine Uric Acid reported in mg/day/1.73 m2. Results in mg/day/1.73 m2 are assay specific and are not interchangeable with Urine Uric Acid in mg/day."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 280
+high = 827
+when = { sex = "male", age = [20.0, 66.0] }
+population = "Healthy Japanese men aged 20-65 years, 24-hour collection, BSA-standardized urinary uric acid excretion (Eua)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Results" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods" },
+]
+note = "Central 95% reference interval (2.5th-97.5th percentiles) for the BSA-standardized 24-hour uric acid excretion index Eua. Vendor-style BSA-indexed unit, so it is a companion marker."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 263
+high = 812
+when = { sex = "female", age = [20.0, 66.0] }
+population = "Healthy Japanese women aged 20-65 years, 24-hour collection, BSA-standardized urinary uric acid excretion (Eua)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Results" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods" },
+  { pmid = "42841992", doi = "10.1007/s00394-026-04110-8", title = "Reference intervals of urinary clearance and excretion of uric acid (RICE-U) in Japan.", locator = "Abstract, Methods" },
+]
+note = "Central 95% reference interval (2.5th-97.5th percentiles) for the BSA-standardized 24-hour uric acid excretion index Eua. Vendor-style BSA-indexed unit, so it is a companion marker."

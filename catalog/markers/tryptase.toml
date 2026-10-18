@@ -1,0 +1,63 @@
+slug = "tryptase"
+name = "Tryptase"
+category = "allergy"
+unit = "ng/mL"
+loinc = "21582-2"
+description = "Mast cell protease measured in serum. Basal (resting) tryptase screens for mastocytosis, hereditary alpha-tryptasemia (HaT) and other causes of elevation; acute tryptase during suspected anaphylaxis is compared with baseline. Expected result in healthy people: basal tryptase within the normal range of 1 to 15 ng/mL."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1
+high = 15
+population = "Asymptomatic controls, including HaT-positive persons (literature screen, consensus proposal)"
+evidence = "consensus"
+citations = [
+  { pmid = "37572755", doi = "10.1016/j.jaip.2023.08.008", title = "The Normal Range of Baseline Tryptase Should Be 1 to 15 ng/mL and Covers Healthy Individuals With HαT.", locator = "Abstract" },
+]
+note = "Basal serum tryptase normal range proposed by an expert consensus (ECNM and AIM). Based on 2 SD covering the 95% confidence interval across a literature screen."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 8
+population = "General population for basal serum tryptase (genetic context: HaT)"
+evidence = "consensus"
+citations = [
+  { pmid = "37572755", doi = "10.1016/j.jaip.2023.08.008", title = "The Normal Range of Baseline Tryptase Should Be 1 to 15 ng/mL and Covers Healthy Individuals With HαT.", locator = "Consensus proposal paragraph" },
+]
+note = "Genetically determined normal upper tryptase limit proposed by the consensus; below it the likelihood of HaT is rather low. Source band <= 8; stored as the warn low bound 8."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 15
+when = { conditions = ["systemic-mastocytosis"] }
+population = "Patients with systemic mastocytosis (SM) compared with controls and HaT-positive persons"
+evidence = "consensus"
+citations = [
+  { pmid = "37572755", doi = "10.1016/j.jaip.2023.08.008", title = "The Normal Range of Baseline Tryptase Should Be 1 to 15 ng/mL and Covers Healthy Individuals With HαT.", locator = "Consensus proposal paragraph" },
+]
+note = "Clinically relevant tryptase cut-off proposed by the consensus. Most patients with systemic mastocytosis have tryptase above this value. Source kind: diagnostic. Source band >= 15; stored as the warn high bound 15."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 7.5
+population = "Individuals with basal tryptase of 7.5 ng/mL or greater tested for HaT or with a disorder linked to elevated BST, Military Health System National Capital Region, 2018 to 2021 (retrospective, n=109)"
+evidence = "cohort"
+citations = [
+  { pmid = "35032694", doi = "10.1016/j.jaip.2021.12.031", title = "Elevated Basal Serum Tryptase: Disease Distribution and Variability in a Regional Health System.", locator = "Introduction (study aims)" },
+]
+note = "Study-defined high-normal basal tryptase category used in one retrospective health-system study. Not a guideline cut-off. Source band 7.5-11.5; stored as the warn high bound 7.5. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 11.5
+population = "Individuals with basal tryptase of 7.5 ng/mL or greater tested for HaT or with a disorder linked to elevated BST, Military Health System National Capital Region, 2018 to 2021 (retrospective, n=109)"
+evidence = "cohort"
+citations = [
+  { pmid = "35032694", doi = "10.1016/j.jaip.2021.12.031", title = "Elevated Basal Serum Tryptase: Disease Distribution and Variability in a Regional Health System.", locator = "Introduction" },
+]
+note = "Elevated basal serum tryptase, the clinical definition cited in that study's introduction. The introduction lists HaT, mastocytosis, other myeloid neoplasms and CKD among disorders associated with BST elevation. Source kind: diagnostic. Source band >= 11.5; stored as the warn high bound 11.5."

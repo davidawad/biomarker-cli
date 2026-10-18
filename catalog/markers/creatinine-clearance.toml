@@ -1,0 +1,30 @@
+slug = "creatinine-clearance"
+name = "Creatinine Clearance"
+category = "kidney"
+unit = "mL/min"
+loinc = "2164-2"
+description = "Clearance of creatinine from the blood, in mL/min, used as an estimate of glomerular filtration rate. Measured from a timed (24-hour) urine collection with a paired serum creatinine, or predicted with the Cockcroft-Gault equation. Expected result for a healthy adult: about 66 to 151 mL/min depending on the creatinine method and sex (see ranges). Creatinine clearance is method-dependent; compare results only with the same method."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 66
+high = 143
+population = "Healthy adults aged 18-74 (n=252, median age 27); measured 24-hour urine creatinine clearance (method: enzymatic)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15149882", title = "Determination of reference intervals for serum creatinine, creatinine excretion and creatinine clearance with an enzymatic and a modified Jaffé method.", locator = "Abstract (Results)" },
+]
+note = "Enzymatic creatinine assay (Creatinine Plus). Reference interval for the entire group of healthy subjects, not stratified by sex (the source reports no sex difference)."
+
+[[range]]
+set = "alt-1"
+kind = "reference"
+low = 71
+high = 151
+population = "Healthy adults aged 18-74 (n=252, median age 27); measured 24-hour urine creatinine clearance (method: jaffe-compensated)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15149882", title = "Determination of reference intervals for serum creatinine, creatinine excretion and creatinine clearance with an enzymatic and a modified Jaffé method.", locator = "Abstract (Results)" },
+]
+note = "Modified (compensated) Jaffe creatinine method. Reference interval for the entire group of healthy subjects. Alternative to the default clinical reference range for the same population."

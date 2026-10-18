@@ -1,0 +1,18 @@
+slug = "anti-jo-1-iu-l"
+name = "Anti-Jo-1 Antibody (IU/L)"
+category = "autoimmune"
+unit = "IU/L"
+description = "Anti-Jo-1 Antibody reported in IU/L. Results in IU/L are assay specific and are not interchangeable with Anti-Jo-1 Antibody in U/mL."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 15
+when = { conditions = ["antisynthetase-syndrome"] }
+population = "Patients with antisynthetase syndrome, anti-Jo-1 measured by a commercial ELISA (Inova Diagnostics)"
+evidence = "cohort"
+citations = [
+  { pmid = "38811943", doi = "10.1186/s12931-024-02851-w", title = "Clinical and prognostic associations of anti-Jo-1 antibody levels in patients with antisynthetase syndrome.", locator = "Methods (anti-Jo-1 measurement)" },
+]
+note = "Assay positivity threshold stated by the manufacturer and applied in this cohort: levels strictly above 15 IU/L were called positive. Assay-specific; not a general cut-off. Source kind: diagnostic. Source band >= 15; stored as the warn high bound 15."

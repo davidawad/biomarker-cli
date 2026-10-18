@@ -1,0 +1,18 @@
+slug = "sars-cov-2-spike-igg"
+name = "SARS-CoV-2 Spike IgG Antibody"
+category = "infectious"
+unit = "BAU/mL"
+loinc = "99597-7"
+description = "Serum IgG antibody against the SARS-CoV-2 spike protein, quantified by immunoassay in BAU/mL (WHO international standard) or vendor units. Tracked after infection or vaccination to gauge humoral response; a higher level is associated with neutralizing antibody activity. Expected result: positive after infection or vaccination; negative means no detectable spike antibody by that assay."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 57.9
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021 (method: euroimmun-quantivac-elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Abstract, Results" },
+]
+note = "Anti-spike level above which neutralizing antibodies were positive in one study (sensitivity 90.0%, specificity 91%). Not an infection diagnosis. Source kind: diagnostic. Source band >= 57.9; stored as the warn high bound 57.9."

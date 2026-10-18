@@ -1,0 +1,19 @@
+slug = "nickel"
+name = "Nickel, Serum"
+loinc = "5702-6"
+category = "toxic-metal"
+unit = "µg/L"
+description = "Nickel concentration in serum, reflecting recent nickel exposure from diet, jewellery, coins, dental or metal implants, and occupation. Tracked for exposure assessment and nickel allergy context. Expected result in a non-occupationally exposed person is low."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.226
+high = 1.026
+unit = "ng/mL"
+population = "Italian general population, non-occupationally exposed (sector-field ICP-MS; sample size not stated in the abstract)"
+evidence = "reference-interval-study"
+note = "Labelled a tentative reference value by the source. The abstract gives a central value of 0.466 +/- 0.160 ng/mL and the interval; the sample size and percentile method are not in the abstract, so treat as tentative."
+citations = [
+  { pmid = "17044114", doi = "10.1002/rcm.2731", title = "Nickel quantification in serum by a validated sector-field inductively coupled plasma mass spectrometry method: Assessment of tentative reference values for an Italian population.", locator = "Abstract", quote = "The tentative reference value for serum Ni was 0.466 +/- 0.160 ng mL(-1) with a related interval between 0.226 and 1.026 ng mL(-1)." },
+]

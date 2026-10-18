@@ -1,0 +1,18 @@
+slug = "heart-rate"
+name = "Heart Rate"
+category = "vitals"
+unit = "bpm"
+loinc = "8867-4"
+description = "Heartbeats per minute, usually measured at rest. Tracked for fitness, medication effects and illness. Expected resting result in adults: 60 to 100 bpm."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 60
+high = 100
+population = "Adults at rest"
+evidence = "consensus"
+citations = [
+  { pmid = "31985921", title = "Sinus Tachycardia.", locator = "Abstract" },
+]
+note = "Normal resting heart rate for adults; the source says it varies with fitness level and comorbidities."

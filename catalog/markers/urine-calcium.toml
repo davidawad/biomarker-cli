@@ -1,0 +1,31 @@
+slug = "urine-calcium"
+name = "Urine Calcium"
+category = "mineral"
+unit = "mg/24h"
+loinc = "2004-0"
+description = "Calcium excreted in urine, usually collected over 24 hours to assess calcium stone risk (hypercalciuria), calcium balance and bone metabolism. Expected result: below the sex-specific hypercalciuria cut-offs in the ranges below. Ranges are copied in the units the sources state; the mmol/24h cut-offs are a companion unit."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 275
+when = { sex = "male" }
+population = "Not stated in the quote (traditional definition as reported in the source)"
+evidence = "consensus"
+citations = [
+  { pmid = "28846247", title = "Hypercalciuria.", locator = "Abstract" },
+]
+note = "Traditional hypercalciuria definition in men: daily urinary calcium strictly above 275 mg. Source kind: diagnostic. Source band >= 275; stored as the warn high bound 275."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 250
+when = { sex = "female" }
+population = "Not stated in the quote (traditional definition as reported in the source)"
+evidence = "consensus"
+citations = [
+  { pmid = "28846247", title = "Hypercalciuria.", locator = "Abstract" },
+]
+note = "Traditional hypercalciuria definition in women: daily urinary calcium strictly above 250 mg. Source kind: diagnostic. Source band >= 250; stored as the warn high bound 250."

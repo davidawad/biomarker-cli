@@ -1,0 +1,56 @@
+slug = "chromogranin-a"
+name = "Chromogranin A"
+category = "tumor-marker"
+unit = "ng/mL"
+loinc = "9811-1"
+description = "Neuroendocrine secretory granule protein measured in serum or plasma by immunoassay. Used to screen, diagnose and monitor neuroendocrine neoplasms. Expected result in healthy people: within the reference interval, at or below the upper limit. Levels vary between individuals and assays."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 95
+population = "Healthy volunteers, Chromoa ELISA (serum); age and sex not stated in the abstract (specimen: serum; method: chromoa-elisa)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26554519", doi = "10.1016/j.cca.2015.11.007", title = "A chromogranin A ELISA absent of an apparent high-dose hook effect observed in other chromogranin A ELISAs.", locator = "Abstract, Methods and Results" },
+]
+note = "Upper reference interval limit stated by the source for the Chromoa ELISA."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 32.0
+high = 118.0
+when = { age = [0.0, 4.0] }
+population = "Healthy children aged 0-3 years (familial cancer and allergy screening cohorts; 268 children and adolescents in total), Brahms Kryptor assay, plasma (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37678836", doi = "10.1177/00045632231202652", title = "Paediatric reference ranges for plasma chromogranin A.", locator = "Abstract, Results" },
+]
+note = "Paediatric plasma CgA reference interval, age 0-3 years. Analysed with the R referenceInterval package per the source Methods. Source unit ug/L. Converted from the source's ug/L (32-118) to ng/mL using factor 1.0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 18.0
+high = 85.0
+when = { age = [4.0, 14.0] }
+population = "Healthy children aged 4-13 years (familial cancer and allergy screening cohorts; 268 children and adolescents in total), Brahms Kryptor assay, plasma (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37678836", doi = "10.1177/00045632231202652", title = "Paediatric reference ranges for plasma chromogranin A.", locator = "Abstract, Results" },
+]
+note = "Paediatric plasma CgA reference interval, age 4-13 years. Source unit ug/L. Converted from the source's ug/L (18-85) to ng/mL using factor 1.0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.0
+high = 79.0
+when = { age = [14.0, 20.0] }
+population = "Healthy adolescents aged 14-19 years (familial cancer and allergy screening cohorts; 268 children and adolescents in total), Brahms Kryptor assay, plasma (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37678836", doi = "10.1177/00045632231202652", title = "Paediatric reference ranges for plasma chromogranin A.", locator = "Abstract, Results" },
+]
+note = "Paediatric plasma CgA reference interval, age 14-19 years. Source unit ug/L. Converted from the source's ug/L (6-79) to ng/mL using factor 1.0."

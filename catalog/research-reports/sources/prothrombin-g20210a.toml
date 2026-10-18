@@ -1,0 +1,7 @@
+slug = "prothrombin-g20210a"
+name = "Prothrombin G20210A Mutation"
+loinc = "24475-6"
+category = "genetic"
+unit = "qualitative"
+description = "Genotype at the prothrombin (F2) G20210A variant (genotype calls GG, GA or AA). Requested in thrombophilia genetic panels. Expected result: a genotype call (GG, GA or AA); the result is not a numeric value and no numeric cut-off applies."
+no_reference = "Genotype result (GG, GA or AA); no numeric reference interval applies."

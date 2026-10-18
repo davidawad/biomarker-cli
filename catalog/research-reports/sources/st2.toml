@@ -1,0 +1,150 @@
+slug = "st2"
+name = "Soluble ST2"
+loinc = "90239-5"
+category = "cardiac"
+unit = "ng/mL"
+description = "Soluble isoform of suppression of tumorigenicity 2, released by cardiomyocytes and fibroblasts under mechanical strain; measured as a prognostic marker in heart failure and cardiovascular risk. Expected result in healthy people: within the reference interval, which is lower in females and varies with age in males."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.4
+high = 36.4
+population = "Apparently healthy children and adolescents aged 0-18 years referred to a laboratory (n=412 after outlier removal), all ages and both sexes"
+evidence = "reference-interval-study"
+note = "Whole-population reference interval (central 95 %) from the paediatric study. Sex- and age-specific intervals follow."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Abstract (Results)", quote = "The mean value for the whole population was 15.8 ng/mL (2.4-36.4 ng/mL)." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.4
+high = 34.3
+when = { sex = "female" }
+population = "Apparently healthy females aged 0-18 years (n=212)"
+evidence = "reference-interval-study"
+note = "Reference interval for all females in the paediatric study (Table 1)."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "All females | 212 | 13.3 | 14.4 | 7.7 | 13.3-15.5 | 2.4-34.3" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.4
+high = 41.6
+when = { sex = "male" }
+population = "Apparently healthy males aged 0-18 years (n=200)"
+evidence = "reference-interval-study"
+note = "Reference interval for all males in the paediatric study (Table 1)."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "All males | 200 | 15.7 | 17.2 | 9.5 | 15.9-18.5 | 2.4-41.6" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.4
+high = 33.6
+when = { sex = "female", age_min = 0, age_max = 7 }
+population = "Apparently healthy females aged 0-6 years (n=41)"
+evidence = "reference-interval-study"
+note = "Age and sex band labelled 0-6 y in Table 1 (whole years 0 to 6)."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "Females 0-6 y | 41 | 14.1 | 14.5 | 7.7 | 12.0-16.9 | 3.4-33.6" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.8
+high = 31.7
+when = { sex = "male", age_min = 0, age_max = 7 }
+population = "Apparently healthy males aged 0-6 years (n=38)"
+evidence = "reference-interval-study"
+note = "Age and sex band labelled 0-6 y in Table 1 (whole years 0 to 6)."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "Males 0-6 y | 38 | 11.0 | 11.9 | 7.5 | 9.5-14.4 | 1.8-31.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.4
+high = 35.6
+when = { sex = "female", age_min = 7, age_max = 12 }
+population = "Apparently healthy females aged 7-11 years (n=68)"
+evidence = "reference-interval-study"
+note = "Age and sex band labelled 7-11 y in Table 1 (whole years 7 to 11)."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "Females 7-11 y | 68 | 12.9 | 13.2 | 7.8 | 11.3-15.1 | 2.4-35.6" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.8
+high = 34.2
+when = { sex = "male", age_min = 7, age_max = 12 }
+population = "Apparently healthy males aged 7-11 years (n=74)"
+evidence = "reference-interval-study"
+note = "Age and sex band labelled 7-11 y in Table 1 (whole years 7 to 11)."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "Males 7-11 y | 74 | 13.4 | 14.4 | 8.8 | 12.4-16.5 | 1.8-34.2" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.4
+high = 33.8
+when = { sex = "female", age_min = 12, age_max = 19 }
+population = "Apparently healthy females aged 12-18 years (n=103)"
+evidence = "reference-interval-study"
+note = "Age and sex band labelled 12-18 y in Table 1 (whole years 12 to 18)."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "Females 12-18 y | 103 | 14.1 | 15.2 | 7.7 | 13.8-16.7 | 3.4-33.8" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.3
+high = 40.6
+when = { sex = "male", age_min = 12, age_max = 19 }
+population = "Apparently healthy males aged 12-18 years (n=88)"
+evidence = "reference-interval-study"
+note = "Age and sex band labelled 12-18 y in Table 1 (whole years 12 to 18). Males 12-18 y have the highest mean in the study."
+citations = [
+  { pmid = "36012931", doi = "10.3390/jcm11164693", title = "Soluble Isoform of Suppression of Tumorigenicity 2 (ST2) Biomarker in a Large Cohort of Healthy Pediatric Population: Determination of Reference Intervals.", locator = "Table 1", quote = "Males 12-18 y | 88 | 20.8 | 21.7 | 8.8 | 19.9-23.6 | 6.3-40.6" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.7
+high = 53.5
+unit = "ug/L"
+when = { sex = "male" }
+population = "Healthy community-based adults in the Beijing area, China (n=597 men)"
+evidence = "reference-interval-study"
+note = "95 % nonparametric reference interval for men. Source states the numbers in ug/L (equal to ng/mL). Adult age is not stated in the abstract."
+citations = [
+  { pmid = "26652993", title = "[Reference value and clinical correlates of soluble ST2 in healthy community-based Chinese population].", locator = "Abstract (Results)", quote = "Reference range of sST2 was 5.7-53.5 ug/L for men and 4.4-42.4 ug/L for women (95% nonparametric reference interval)." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.4
+high = 42.4
+unit = "ug/L"
+when = { sex = "female" }
+population = "Healthy community-based adults in the Beijing area, China (n=737 women)"
+evidence = "reference-interval-study"
+note = "95 % nonparametric reference interval for women. Source states the numbers in ug/L (equal to ng/mL). Adult age is not stated in the abstract."
+citations = [
+  { pmid = "26652993", title = "[Reference value and clinical correlates of soluble ST2 in healthy community-based Chinese population].", locator = "Abstract (Results)", quote = "Reference range of sST2 was 5.7-53.5 ug/L for men and 4.4-42.4 ug/L for women (95% nonparametric reference interval)." },
+]

@@ -3,43 +3,5 @@ name = "Methionine"
 loinc = "2622-9"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Essential sulfur-containing amino acid measured in plasma as a free amino acid by LC-MS/MS. Methionine is a precursor of S-adenosylmethionine (methylation) and of cysteine via transsulfuration."
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 18.5
-high = 44.5
-when = { ethnicity = "japanese" }
-population = "Healthy volunteers living in Japan, Japanese subpopulation (n=31; 16 male, 15 female; mean age 46.5 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma methionine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Met | 26.8 ± 5.8 (18.5-44.5) | 27.7 ± 5.9 (18.5-40.6) | 25.0 ± 6.5 (13.6-47.3) |" },
-]
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 18.5
-high = 40.6
-when = { ethnicity = "korean" }
-population = "Healthy volunteers living in Japan, Korean subpopulation (n=36; 19 male, 17 female; mean age 37.2 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma methionine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Met | 26.8 ± 5.8 (18.5-44.5) | 27.7 ± 5.9 (18.5-40.6) | 25.0 ± 6.5 (13.6-47.3) |" },
-]
-
-[[range]]
-set = "reference"
-kind = "reference"
-low = 13.6
-high = 47.3
-when = { ethnicity = "chinese" }
-population = "Healthy volunteers living in Japan, Chinese subpopulation (n=28; 13 male, 15 female; mean age 45.1 years)"
-evidence = "outcome-study"
-note = "Observed min-max range of plasma methionine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
-citations = [
-  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Met | 26.8 ± 5.8 (18.5-44.5) | 27.7 ± 5.9 (18.5-40.6) | 25.0 ± 6.5 (13.6-47.3) |" },
-]
+description = "Methionine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

@@ -1,0 +1,77 @@
+slug = "toxoplasma-igg"
+name = "Toxoplasma IgG"
+category = "infectious"
+unit = "IU/mL"
+loinc = "22580-5"
+description = "Serum IgG antibody against Toxoplasma gondii, reported in IU/mL by immunoassay as negative, equivocal or positive. Tracked to establish past or latent infection, and during pregnancy or immunosuppression to assess risk. Expected result: negative (no prior exposure) or, if previously infected, positive; a positive IgG alone does not date infection, so IgM and IgG avidity testing are used with it."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 4.4
+population = "384 routine-screening sera, Pitie-Salpetriere Hospital, Paris, tested with Platelia Toxo IgG and Western blot (method: platelia-toxo-igg)"
+evidence = "cohort"
+citations = [
+  { pmid = "26187780", doi = "10.1051/parasite/2015022", title = "The impact of lowering the cut-off value on the sensitivity of the Platelia Elisa IgG (Bio-Rad) test for toxoplasmosis diagnosis.", locator = "Abstract" },
+]
+note = "Seropositive (IgG positivity) on Platelia Toxo IgG; cut-off chosen in one study against Western blot, and lower than the manufacturer's cut-off. Source kind: diagnostic. Source band >= 4.4; stored as the warn high bound 4.4."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6
+high = 9
+population = "384 routine-screening sera, Pitie-Salpetriere Hospital, Paris, tested with Platelia Toxo IgG and Western blot (method: platelia-toxo-igg)"
+evidence = "cohort"
+citations = [
+  { pmid = "26187780", doi = "10.1051/parasite/2015022", title = "The impact of lowering the cut-off value on the sensitivity of the Platelia Elisa IgG (Bio-Rad) test for toxoplasmosis diagnosis.", locator = "Abstract" },
+]
+note = "Equivocal IgG on Platelia Toxo IgG (6-9 IU/mL), per the classes used in the cited study. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 6
+population = "384 routine-screening sera, Pitie-Salpetriere Hospital, Paris, tested with Platelia Toxo IgG and Western blot (method: platelia-toxo-igg)"
+evidence = "cohort"
+citations = [
+  { pmid = "26187780", doi = "10.1051/parasite/2015022", title = "The impact of lowering the cut-off value on the sensitivity of the Platelia Elisa IgG (Bio-Rad) test for toxoplasmosis diagnosis.", locator = "Abstract" },
+]
+note = "Negative IgG on Platelia Toxo IgG (<6 IU/mL), per the classes used in the cited study. Source kind: diagnostic. Source band <= 6; stored as the warn low bound 6. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 5.2
+when = { pregnant = true }
+population = "757 pregnant women (843 sera), MEIA classified against Sabin-Feldman dye test and specific IgM (method: meia)"
+evidence = "cohort"
+citations = [
+  { pmid = "7709628", title = "Microparticle enzyme immunoassay (MEIA) for toxoplasma specific immunoglobulin G in comparison to the Sabin-Feldman dye test. A pilot study.", locator = "Abstract" },
+]
+note = "Group 1, no infection, by MEIA IgG band with dye test and IgM. The source states these threshold values need confirmation in a larger prospective study. Source kind: diagnostic. Source band <= 5.2; stored as the warn low bound 5.2."
+
+[[range]]
+set = "toxoplasma-igg-bands-5-3-187-5"
+kind = "reference"
+low = 5.3
+high = 187.5
+when = { pregnant = true }
+population = "757 pregnant women (843 sera), MEIA classified against Sabin-Feldman dye test and specific IgM (method: meia)"
+evidence = "cohort"
+citations = [
+  { pmid = "7709628", title = "Microparticle enzyme immunoassay (MEIA) for toxoplasma specific immunoglobulin G in comparison to the Sabin-Feldman dye test. A pilot study.", locator = "Abstract" },
+]
+note = "Group 2, latent infection, by MEIA IgG band. The source states these threshold values need confirmation in a larger prospective study. Source kind: diagnostic. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 187.6
+when = { pregnant = true }
+population = "757 pregnant women (843 sera), MEIA classified against Sabin-Feldman dye test and specific IgM (method: meia)"
+evidence = "cohort"
+citations = [
+  { pmid = "7709628", title = "Microparticle enzyme immunoassay (MEIA) for toxoplasma specific immunoglobulin G in comparison to the Sabin-Feldman dye test. A pilot study.", locator = "Abstract" },
+]
+note = "Group 3, acute infection, by MEIA IgG band. The source states these threshold values need confirmation in a larger prospective study. Source kind: diagnostic. Source band >= 187.6; stored as the warn high bound 187.6. Alternative to the default diagnostic warn range for the same population."

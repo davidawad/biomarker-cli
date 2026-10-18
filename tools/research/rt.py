@@ -77,7 +77,7 @@ def norm(s):
 
 def key(s):
     """Comparison key: normalised, lowercase, whitespace and spaces around punctuation removed."""
-    s = norm(s).lower()
+    s = norm(s).lower().replace("|", "")  # table cell separators are rendering, not content
     return re.sub(r"\s+", "", s)
 
 
@@ -279,6 +279,7 @@ EVIDENCE = {"guideline", "consensus", "reference-interval-study", "outcome-study
 WHEN_KEYS = {"sex", "age_min", "age_max", "pregnant", "trimester", "postpartum", "menopause", "cycle_phase", "fasting",
              "ethnicity", "conditions", "risk", "markers", "specimen", "method"}
 CATEGORY_RE = re.compile(r"[a-z][a-z0-9]*(-[a-z0-9]+)*")  # any kebab-case category; universe.toml owns the vocabulary
+DERIVED_RE = re.compile(r"derived from (the )?[^.]*(cut-?offs?|thresholds?|bands?)|derived (band|bound|range)|(bound|band|range)s? (is|are) derived|\binferred\b|\bextrapolated\b|\binterpolated\b|computed from the|complement of", re.I)
 NUM = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})+|\d*\.\d+|\d+)(?![\d])")
 
 
@@ -458,8 +459,12 @@ def verify_file(path, stats):
             quote_nums |= numbers_in(q)
             stats["cit_ok" if ok else "cit_fail"] += 1
         for name, v in (("low", lo), ("high", hi)):
-            if isinstance(v, (int, float)) and not has_num(float(v), quote_nums):
+            sf = r.get("source_factor")
+            src_ok = isinstance(v, (int, float)) and isinstance(sf, (int, float)) and sf and any(abs(float(v) / sf - x) <= 1e-3 * max(1.0, abs(x)) for x in quote_nums)
+            if isinstance(v, (int, float)) and not has_num(float(v), quote_nums) and not src_ok:
                 errs.append(f"{tag}: {name}={v} not present in any citation quote")
+        if DERIVED_RE.search(str(r.get("note", "")) + " " + str(r.get("population", ""))):
+            errs.append(f"{tag}: note says the bounds are derived/inferred; every bound must be stated verbatim in the cited source")
         for v in thresholds:
             if not has_num(float(v), quote_nums):
                 errs.append(f"{tag}: when.markers threshold {v} not present in any citation quote")

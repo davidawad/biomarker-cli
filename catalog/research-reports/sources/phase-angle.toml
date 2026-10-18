@@ -1,0 +1,266 @@
+slug = "phase-angle"
+name = "Phase Angle (BIA)"
+loinc = "107160-4"
+category = "body-composition"
+unit = "°"
+description = "Phase angle (PhA, degrees) calculated from body resistance and reactance measured by bioelectrical impedance analysis (BIA). An indicator of cellular integrity and body cell mass, tracked as a body-composition and nutrition marker. Expected result: sex- and age-specific; higher in men than women, peaking in midlife and declining with age. No single cut-off applies across populations."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.8
+high = 8.7
+when = { sex = "male", age_min = 10, age_max = 20 }
+population = "Healthy Colombian males aged 10-19 years (n=533 in the 10-19 y band)"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 10-19 y | 533 | 1.3 | 0.1 | 5.8 | 6.3 | 6.8 | 7.3 | 7.8 | 8.2 | 8.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.2
+high = 8.9
+when = { sex = "male", age_min = 20, age_max = 30 }
+population = "Healthy Colombian males aged 20-29 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 20-29 y | 618 | 1.3 | 0.1 | 6.2 | 6.6 | 7.1 | 7.6 | 8.0 | 8.5 | 8.9" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.3
+high = 9.0
+when = { sex = "male", age_min = 30, age_max = 40 }
+population = "Healthy Colombian males aged 30-39 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 30-39 y | 190 | 1.4 | 0.1 | 6.3 | 6.8 | 7.2 | 7.7 | 8.1 | 8.6 | 9.0" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.1
+high = 8.9
+when = { sex = "male", age_min = 40, age_max = 50 }
+population = "Healthy Colombian males aged 40-49 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 40-49 y | 193 | 1.6 | 0.1 | 6.1 | 6.6 | 7.1 | 7.6 | 8.0 | 8.5 | 8.9" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.7
+high = 8.6
+when = { sex = "male", age_min = 50, age_max = 60 }
+population = "Healthy Colombian males aged 50-59 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 50-59 y | 147 | 1.7 | 0.1 | 5.7 | 6.3 | 6.8 | 7.3 | 7.7 | 8.2 | 8.6" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.3
+high = 8.3
+when = { sex = "male", age_min = 60, age_max = 70 }
+population = "Healthy Colombian males aged 60-69 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 60-69 y | 102 | 1.6 | 0.1 | 5.3 | 5.8 | 6.4 | 6.9 | 7.4 | 7.9 | 8.3" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.6
+high = 7.7
+when = { sex = "male", age_min = 70 }
+population = "Healthy Colombian males aged 70 years and older (source row '>70 y')"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th). Methods state '>=70 years' for this band."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| >70 y | 153 | 1.6 | 0.1 | 4.6 | 5.2 | 5.8 | 6.3 | 6.8 | 7.3 | 7.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.2
+high = 7.7
+when = { sex = "female", age_min = 10, age_max = 20 }
+population = "Healthy Colombian females aged 10-19 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 10-19 y | 868 | 0.1 | 0.1 | 5.2 | 5.6 | 5.9 | 6.3 | 6.8 | 7.2 | 7.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.4
+high = 7.9
+when = { sex = "female", age_min = 20, age_max = 30 }
+population = "Healthy Colombian females aged 20-29 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 20-29 y | 891 | 0.4 | 0.1 | 5.4 | 5.7 | 6.1 | 6.5 | 7.0 | 7.4 | 7.9" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.5
+high = 8.1
+when = { sex = "female", age_min = 30, age_max = 40 }
+population = "Healthy Colombian females aged 30-39 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 30-39 y | 352 | 0.6 | 0.1 | 5.5 | 5.9 | 6.3 | 6.8 | 7.2 | 7.7 | 8.1" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.5
+high = 8.2
+when = { sex = "female", age_min = 40, age_max = 50 }
+population = "Healthy Colombian females aged 40-49 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 40-49 y | 365 | 0.6 | 0.1 | 5.5 | 5.9 | 6.4 | 6.8 | 7.3 | 7.7 | 8.2" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.3
+high = 8.1
+when = { sex = "female", age_min = 50, age_max = 60 }
+population = "Healthy Colombian females aged 50-59 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 50-59 y | 287 | 0.7 | 0.1 | 5.3 | 5.7 | 6.2 | 6.7 | 7.1 | 7.6 | 8.1" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.9
+high = 8.0
+when = { sex = "female", age_min = 60, age_max = 70 }
+population = "Healthy Colombian females aged 60-69 years"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th), tabulated as normative reference values."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| 60-69 y | 223 | 0.8 | 0.1 | 4.9 | 5.4 | 5.9 | 6.4 | 6.9 | 7.4 | 8.0" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.5
+high = 7.7
+when = { sex = "female", age_min = 70 }
+population = "Healthy Colombian females aged 70 years and older (source row '>70 y')"
+evidence = "reference-interval-study"
+note = "Source Table 2 gives P3 to P97 (central 94%, not 2.5th-97.5th). Methods state '>=70 years' for this band."
+citations = [
+  { pmid = "42000911", doi = "10.1038/s41430-026-01744-z", title = "Reference values for bioelectrical impedance-derived phase angle: a cross-sectional study of 5,049 healthy individuals from Colombia.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341315/", locator = "Table 2", quote = "| >70 y | 127 | 0.8 | 0.1 | 4.5 | 5.0 | 5.5 | 6.1 | 6.6 | 7.2 | 7.7" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.33
+high = 7.16
+when = { sex = "male", age_min = 20, age_max = 81, ethnicity = "han-chinese", method = "bia-50khz" }
+population = "Chinese adults aged 20-80 years, Han ethnicity, men (China National Health Survey, BIA at 50 kHz)"
+evidence = "reference-interval-study"
+note ="Source abstract states the 5th to 95th percentile values for the whole 20-80 y sample by ethnicity and sex."
+citations = [
+  { pmid = "41887716", doi = "10.1080/07853890.2026.2649340", title = "Phase angle reference values derived from bioelectrical impedance analysis in chinese multi-ethnic adults.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13023005/", locator = "Abstract (Results)", quote = "The PhA reference values (5th to 95th percentiles) were 5.33-7.16° for Han men, 4.62-6.34° for Han women, 5.53-7.65° for Korean men, 5.04-6.79° for Korean women, 5.15-6.94° for Yao men, and 4.49-6.12° for Yao women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.62
+high = 6.34
+when = { sex = "female", age_min = 20, age_max = 81, ethnicity = "han-chinese", method = "bia-50khz" }
+population = "Chinese adults aged 20-80 years, Han ethnicity, women (China National Health Survey, BIA at 50 kHz)"
+evidence = "reference-interval-study"
+note ="Source abstract states the 5th to 95th percentile values for the whole 20-80 y sample by ethnicity and sex."
+citations = [
+  { pmid = "41887716", doi = "10.1080/07853890.2026.2649340", title = "Phase angle reference values derived from bioelectrical impedance analysis in chinese multi-ethnic adults.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13023005/", locator = "Abstract (Results)", quote = "The PhA reference values (5th to 95th percentiles) were 5.33-7.16° for Han men, 4.62-6.34° for Han women, 5.53-7.65° for Korean men, 5.04-6.79° for Korean women, 5.15-6.94° for Yao men, and 4.49-6.12° for Yao women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.53
+high = 7.65
+when = { sex = "male", age_min = 20, age_max = 81, ethnicity = "korean-chinese", method = "bia-50khz" }
+population = "Chinese adults aged 20-80 years, Korean ethnicity, men (China National Health Survey, BIA at 50 kHz)"
+evidence = "reference-interval-study"
+note ="Source abstract states the 5th to 95th percentile values for the whole 20-80 y sample by ethnicity and sex."
+citations = [
+  { pmid = "41887716", doi = "10.1080/07853890.2026.2649340", title = "Phase angle reference values derived from bioelectrical impedance analysis in chinese multi-ethnic adults.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13023005/", locator = "Abstract (Results)", quote = "The PhA reference values (5th to 95th percentiles) were 5.33-7.16° for Han men, 4.62-6.34° for Han women, 5.53-7.65° for Korean men, 5.04-6.79° for Korean women, 5.15-6.94° for Yao men, and 4.49-6.12° for Yao women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.04
+high = 6.79
+when = { sex = "female", age_min = 20, age_max = 81, ethnicity = "korean-chinese", method = "bia-50khz" }
+population = "Chinese adults aged 20-80 years, Korean ethnicity, women (China National Health Survey, BIA at 50 kHz)"
+evidence = "reference-interval-study"
+note ="Source abstract states the 5th to 95th percentile values for the whole 20-80 y sample by ethnicity and sex."
+citations = [
+  { pmid = "41887716", doi = "10.1080/07853890.2026.2649340", title = "Phase angle reference values derived from bioelectrical impedance analysis in chinese multi-ethnic adults.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13023005/", locator = "Abstract (Results)", quote = "The PhA reference values (5th to 95th percentiles) were 5.33-7.16° for Han men, 4.62-6.34° for Han women, 5.53-7.65° for Korean men, 5.04-6.79° for Korean women, 5.15-6.94° for Yao men, and 4.49-6.12° for Yao women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 5.15
+high = 6.94
+when = { sex = "male", age_min = 20, age_max = 81, ethnicity = "yao-chinese", method = "bia-50khz" }
+population = "Chinese adults aged 20-80 years, Yao ethnicity, men (China National Health Survey, BIA at 50 kHz)"
+evidence = "reference-interval-study"
+note ="Source abstract states the 5th to 95th percentile values for the whole 20-80 y sample by ethnicity and sex."
+citations = [
+  { pmid = "41887716", doi = "10.1080/07853890.2026.2649340", title = "Phase angle reference values derived from bioelectrical impedance analysis in chinese multi-ethnic adults.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13023005/", locator = "Abstract (Results)", quote = "The PhA reference values (5th to 95th percentiles) were 5.33-7.16° for Han men, 4.62-6.34° for Han women, 5.53-7.65° for Korean men, 5.04-6.79° for Korean women, 5.15-6.94° for Yao men, and 4.49-6.12° for Yao women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 4.49
+high = 6.12
+when = { sex = "female", age_min = 20, age_max = 81, ethnicity = "yao-chinese", method = "bia-50khz" }
+population = "Chinese adults aged 20-80 years, Yao ethnicity, women (China National Health Survey, BIA at 50 kHz)"
+evidence = "reference-interval-study"
+note ="Source abstract states the 5th to 95th percentile values for the whole 20-80 y sample by ethnicity and sex."
+citations = [
+  { pmid = "41887716", doi = "10.1080/07853890.2026.2649340", title = "Phase angle reference values derived from bioelectrical impedance analysis in chinese multi-ethnic adults.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13023005/", locator = "Abstract (Results)", quote = "The PhA reference values (5th to 95th percentiles) were 5.33-7.16° for Han men, 4.62-6.34° for Han women, 5.53-7.65° for Korean men, 5.04-6.79° for Korean women, 5.15-6.94° for Yao men, and 4.49-6.12° for Yao women." },
+]

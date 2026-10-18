@@ -1,0 +1,19 @@
+slug = "fecal-fat"
+name = "Fecal Fat"
+category = "stool"
+unit = "g/day"
+loinc = "16853-4"
+description = "Quantity of fat excreted in stool over a collection period, the classic test for fat malabsorption (steatorrhea). Measured on a standardized fat-containing diet. Elevated values point to maldigestion or malabsorption, for example exocrine pancreatic insufficiency."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 7
+when = { conditions = ["pancreatic-exocrine-insufficiency"] }
+population = "Adults assessed for pancreatic exocrine insufficiency (PERT indication); fecal fat measured on a diet containing 100 g of fat per day"
+evidence = "consensus"
+citations = [
+  { pmid = "42116802", doi = "10.5152/tjg.2026.25679", url = "https://pubmed.ncbi.nlm.nih.gov/42116802/", title = "Clinical Practice Update on the Evaluation, Diagnosis, and Management of Pancreatic Exocrine Insufficiency: Expert Review.", locator = "Question 10, Statement 10.2 (full text, PMC13182929)" },
+]
+note = "Definition of steatorrhea used to recommend pancreatic enzyme replacement therapy in pancreatic cancer (Statement 10.2). Upper bound not stated, so none is given. Not a population reference interval; the source does not give a normal range for healthy people. Source kind: diagnostic. Source band >= 7; stored as the warn high bound 7."

@@ -1,0 +1,18 @@
+slug = "urine-f2-isoprostanes"
+name = "F2-Isoprostanes, Urine"
+loinc = "90782-4"
+category = "organic-acid"
+unit = "ng/mg creatinine"
+description = "Urinary F2-isoprostanes, measured as 8-iso-prostaglandin F2alpha and normalised to creatinine, a non-invasive marker of lipid peroxidation (oxidative stress). Expected result: below the upper reference limit in the range below. The only interval found is for children aged 2 months to 18 years; no adult interval was verified."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 0.5
+when = { age_max = 19 }
+population = "Children aged 2 months to 18 years, urinary 8-iso-PGF2alpha normalised to creatinine (n=123)"
+evidence = "reference-interval-study"
+note = "Upper reference limit in children, measured as 8-iso-PGF2alpha (one F2-isoprostane). Age_max 19 is 18 years inclusive; the 2-month lower bound is not encoded."
+citations = [
+  { pmid = "27372210", doi = "10.1016/j.cca.2016.06.034", title = "A sensitive LC-MS/MS method for the quantification of urinary 8-iso-prostaglandin F2α (8-iso-PGF2α) including pediatric reference interval.", locator = "Abstract (Results)", quote = "Reference interval were established to be <0.5ng/mg creatinine in a group of pediatric population (2months-18years, n=123)" },
+]

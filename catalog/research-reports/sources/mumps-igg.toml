@@ -1,0 +1,73 @@
+slug = "mumps-igg"
+name = "Mumps IgG"
+loinc = "22415-4"
+category = "infectious"
+unit = "RU/mL"
+description = "Serum IgG antibody against mumps virus, measured by ELISA and reported as an assay-specific index or titer. Tracked to confirm immunity after mumps infection or MMR vaccination, and to check susceptibility before exposure. Expected result: positive (seropositive, immune); negative or equivocal results indicate possible lack of immunity."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 22
+unit = "RU/mL"
+when = { method = "euroimmun-elisa" }
+population = "Community-based cross-sectional sample, Vellore, South India, mumps IgG by EUROIMMUN ELISA"
+evidence = "outcome-study"
+note = "Seropositive (immune) on EUROIMMUN ELISA, per manufacturer's guidelines as applied in the cited study."
+citations = [
+  { pmid = "40795852", doi = "10.4269/ajtmh.25-0069", title = "Mumps Seroprevalence in Vellore, South India: A Community-Based Cross-Sectional Study.", locator = "Methods", quote = "Mumps IgG serostatus was defined according to the manufacturer's guidelines: >=22 relative units (RU)/mL indicates seropositivity, <16 RU/mL indicates seronegativity, and 16 to <22 RU/mL indicates an equivocal result." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 16
+high = 22
+unit = "RU/mL"
+when = { method = "euroimmun-elisa" }
+population = "Community-based cross-sectional sample, Vellore, South India, mumps IgG by EUROIMMUN ELISA"
+evidence = "outcome-study"
+note = "Equivocal mumps IgG on EUROIMMUN ELISA (16 to <22 RU/mL)."
+citations = [
+  { pmid = "40795852", doi = "10.4269/ajtmh.25-0069", title = "Mumps Seroprevalence in Vellore, South India: A Community-Based Cross-Sectional Study.", locator = "Methods", quote = "Mumps IgG serostatus was defined according to the manufacturer's guidelines: >=22 relative units (RU)/mL indicates seropositivity, <16 RU/mL indicates seronegativity, and 16 to <22 RU/mL indicates an equivocal result." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 16
+unit = "RU/mL"
+when = { method = "euroimmun-elisa" }
+population = "Community-based cross-sectional sample, Vellore, South India, mumps IgG by EUROIMMUN ELISA"
+evidence = "outcome-study"
+note = "Seronegative (no detectable immunity) on EUROIMMUN ELISA (<16 RU/mL)."
+citations = [
+  { pmid = "40795852", doi = "10.4269/ajtmh.25-0069", title = "Mumps Seroprevalence in Vellore, South India: A Community-Based Cross-Sectional Study.", locator = "Methods", quote = "Mumps IgG serostatus was defined according to the manufacturer's guidelines: >=22 relative units (RU)/mL indicates seropositivity, <16 RU/mL indicates seronegativity, and 16 to <22 RU/mL indicates an equivocal result." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 100
+unit = "U/mL"
+when = { method = "serion-elisa" }
+population = "Patients attending selected hospitals in Kenya, mumps IgG by SERION ELISA"
+evidence = "outcome-study"
+note = "Positive mumps IgG on SERION ELISA: strictly greater than 100 U/mL, per the cited study."
+citations = [
+  { pmid = "42064691", doi = "10.24248/eahrj.v9i2.856", title = "Seroprevalence of Mumps among Patients Attending Selected Hospitals in Kenya.", locator = "Methods", quote = "A value greater than 100 U/ml was considered positive, and a value of less than 30 U/ml was considered negative. Serum samples with titers of between 30 U/ml and 100 U/ml were categorized as equivocal." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 30
+high = 100
+unit = "U/mL"
+when = { method = "serion-elisa" }
+population = "Patients attending selected hospitals in Kenya, mumps IgG by SERION ELISA"
+evidence = "outcome-study"
+note = "Equivocal mumps IgG on SERION ELISA (30 to 100 U/mL)."
+citations = [
+  { pmid = "42064691", doi = "10.24248/eahrj.v9i2.856", title = "Seroprevalence of Mumps among Patients Attending Selected Hospitals in Kenya.", locator = "Methods", quote = "A value greater than 100 U/ml was considered positive, and a value of less than 30 U/ml was considered negative. Serum samples with titers of between 30 U/ml and 100 U/ml were categorized as equivocal." },
+]

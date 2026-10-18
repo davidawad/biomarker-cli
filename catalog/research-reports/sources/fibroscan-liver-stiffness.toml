@@ -1,0 +1,30 @@
+slug = "fibroscan-liver-stiffness"
+name = "Liver Stiffness (FibroScan Transient Elastography)"
+loinc = "77615-3"
+category = "liver"
+unit = "kPa"
+description = "Liver stiffness measured by FibroScan transient elastography, in kilopascals (kPa). A non-invasive estimate of liver fibrosis (scarring), staged against biopsy in the source studies. Higher values indicate more fibrosis; below 7.1 kPa is the range below the significant-fibrosis cut-off."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 7.1
+when = { conditions = ["hepatitis-c"] }
+population = "Adults with chronic hepatitis C, biopsy-staged (METAVIR); prospective study. Cut-offs not validated for other etiologies."
+evidence = "outcome-study"
+note = "Below 7.1 kPa: F0-F1 (below the F2-or-higher cut-off). Another hepatitis C study (Hepatology 2005) reports different cut-offs (8.7 and 14.5 kPa)."
+citations = [
+  { pmid = "15685546", doi = "10.1053/j.gastro.2004.11.018", title = "Prospective comparison of transient elastography, Fibrotest, APRI, and liver biopsy for the assessment of fibrosis in chronic hepatitis C.", locator = "Abstract (Results)", quote = "Cut-off values were 7.1 kPa for F > or = 2, 9.5 kPa for F > or = 3, and 12.5 kPa for F = 4." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 12.5
+when = { conditions = ["hepatitis-c"] }
+population = "Adults with chronic hepatitis C, biopsy-staged (METAVIR); prospective study. Cut-offs not validated for other etiologies."
+evidence = "outcome-study"
+note = "12.5 kPa or above: F4 (cirrhosis) by the source's F4 cut-off."
+citations = [
+  { pmid = "15685546", doi = "10.1053/j.gastro.2004.11.018", title = "Prospective comparison of transient elastography, Fibrotest, APRI, and liver biopsy for the assessment of fibrosis in chronic hepatitis C.", locator = "Abstract (Results)", quote = "Cut-off values were 7.1 kPa for F > or = 2, 9.5 kPa for F > or = 3, and 12.5 kPa for F = 4." },
+]

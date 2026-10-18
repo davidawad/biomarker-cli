@@ -1,0 +1,31 @@
+slug = "thallium-urine"
+name = "Thallium, Urine"
+loinc = "5745-5"
+category = "toxic-metal"
+unit = "ug/L"
+description = "Thallium excreted in urine, a toxic metal tracked to monitor exposure in the general and occupationally exposed population. Expected result: at or below the background 95th-percentile level for non-occupationally exposed people (ranges below)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 0.40
+population = "Non-occupationally exposed people (reference background, 95th percentile)"
+evidence = "reference-interval-study"
+note = "Uncorrected urinary thallium; the source defines the reference background as the 95th percentile of a non-occupationally exposed population."
+citations = [
+  { pmid = "23446652", doi = "10.1007/s00420-013-0859-8", title = "Comparison of urinary thallium levels in non-occupationally exposed people and workers.", locator = "Abstract (Methods; Results)", quote = "The reference background urinary thallium level is 0.27 umol/mol creatinine (creatinine-corrected) or 0.40 ug/l (uncorrected)." },
+  { pmid = "23446652", doi = "10.1007/s00420-013-0859-8", title = "Comparison of urinary thallium levels in non-occupationally exposed people and workers.", locator = "Abstract (Methods)", quote = "A reference background level was calculated, defined as the 95th percentile value of a non-occupationally exposed population." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 0.27
+unit = "umol/mol creatinine"
+population = "Non-occupationally exposed people (reference background, 95th percentile)"
+evidence = "reference-interval-study"
+note = "Creatinine-corrected urinary thallium; the source defines the reference background as the 95th percentile of a non-occupationally exposed population."
+citations = [
+  { pmid = "23446652", doi = "10.1007/s00420-013-0859-8", title = "Comparison of urinary thallium levels in non-occupationally exposed people and workers.", locator = "Abstract (Methods; Results)", quote = "The reference background urinary thallium level is 0.27 umol/mol creatinine (creatinine-corrected) or 0.40 ug/l (uncorrected)." },
+  { pmid = "23446652", doi = "10.1007/s00420-013-0859-8", title = "Comparison of urinary thallium levels in non-occupationally exposed people and workers.", locator = "Abstract (Methods)", quote = "A reference background level was calculated, defined as the 95th percentile value of a non-occupationally exposed population." },
+]

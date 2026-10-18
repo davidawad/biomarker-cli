@@ -1,0 +1,64 @@
+slug = "tryptase"
+name = "Tryptase"
+loinc = "21582-2"
+category = "allergy"
+unit = "ng/mL"
+description = "Mast cell protease measured in serum. Basal (resting) tryptase screens for mastocytosis, hereditary alpha-tryptasemia (HaT) and other causes of elevation; acute tryptase during suspected anaphylaxis is compared with baseline. Expected result in healthy people: basal tryptase within the normal range of 1 to 15 ng/mL."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1
+high = 15
+population = "Asymptomatic controls, including HaT-positive persons (literature screen, consensus proposal)"
+evidence = "consensus"
+note = "Basal serum tryptase normal range proposed by an expert consensus (ECNM and AIM). Based on 2 SD covering the 95% confidence interval across a literature screen."
+citations = [
+  { pmid = "37572755", doi = "10.1016/j.jaip.2023.08.008", title = "The Normal Range of Baseline Tryptase Should Be 1 to 15 ng/mL and Covers Healthy Individuals With HαT.", locator = "Abstract", quote = "the normal basal tryptase in asymptomatic controls (HαT-positive persons included) ranges between 1 and 15 ng/mL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 8
+population = "General population for basal serum tryptase (genetic context: HaT)"
+evidence = "consensus"
+note = "Genetically determined normal upper tryptase limit proposed by the consensus; below it the likelihood of HaT is rather low."
+citations = [
+  { pmid = "37572755", doi = "10.1016/j.jaip.2023.08.008", title = "The Normal Range of Baseline Tryptase Should Be 1 to 15 ng/mL and Covers Healthy Individuals With HαT.", locator = "Consensus proposal paragraph", quote = "This proposal includes a genetically determined normal upper tryptase limit of 8 ng/mL below which the likelihood of HαT is rather low." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 7.5
+high = 11.5
+population = "Individuals with basal tryptase of 7.5 ng/mL or greater tested for HaT or with a disorder linked to elevated BST, Military Health System National Capital Region, 2018 to 2021 (retrospective, n=109)"
+evidence = "outcome-study"
+note = "Study-defined high-normal basal tryptase category used in one retrospective health-system study. Not a guideline cut-off."
+citations = [
+  { pmid = "35032694", doi = "10.1016/j.jaip.2021.12.031", title = "Elevated Basal Serum Tryptase: Disease Distribution and Variability in a Regional Health System.", locator = "Introduction (study aims)", quote = "high-normal BST (>=7.5 to <11.5 ng/mL)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 11.5
+population = "Individuals with basal tryptase of 7.5 ng/mL or greater tested for HaT or with a disorder linked to elevated BST, Military Health System National Capital Region, 2018 to 2021 (retrospective, n=109)"
+evidence = "outcome-study"
+note = "Elevated basal serum tryptase, the clinical definition cited in that study's introduction. The introduction lists HaT, mastocytosis, other myeloid neoplasms and CKD among disorders associated with BST elevation."
+citations = [
+  { pmid = "35032694", doi = "10.1016/j.jaip.2021.12.031", title = "Elevated Basal Serum Tryptase: Disease Distribution and Variability in a Regional Health System.", locator = "Introduction", quote = "BST elevation - currently defined clinically as >= 11.5 ng/mL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 15
+when = { conditions = ["systemic-mastocytosis"] }
+population = "Patients with systemic mastocytosis (SM) compared with controls and HaT-positive persons"
+evidence = "consensus"
+note = "Clinically relevant tryptase cut-off proposed by the consensus. Most patients with systemic mastocytosis have tryptase above this value."
+citations = [
+  { pmid = "37572755", doi = "10.1016/j.jaip.2023.08.008", title = "The Normal Range of Baseline Tryptase Should Be 1 to 15 ng/mL and Covers Healthy Individuals With HαT.", locator = "Consensus proposal paragraph", quote = "The clinically relevant cut-off for tryptase is higher (15 ng/mL) in order to include healthy individuals with HαT and all other controls, whereas in most patients with systemic mastocytosis (SM), tryptase levels are higher (>15 ng/mL)." },
+]

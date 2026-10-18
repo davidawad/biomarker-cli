@@ -1,0 +1,19 @@
+slug = "anti-jo-1"
+name = "Anti-Jo-1 Antibody"
+loinc = "8076-2"
+category = "autoimmune"
+unit = "U/mL"
+description = "Serum autoantibody to histidyl-tRNA synthetase (Jo-1), the most common antisynthetase antibody. Associated with antisynthetase syndrome, myositis and interstitial lung disease. Reported as positive or negative by immunoassay; some assays also report a numeric level. Expected result: negative."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 15
+unit = "IU/L"
+when = { conditions = ["antisynthetase-syndrome"] }
+population = "Patients with antisynthetase syndrome, anti-Jo-1 measured by a commercial ELISA (Inova Diagnostics)"
+evidence = "outcome-study"
+note = "Assay positivity threshold stated by the manufacturer and applied in this cohort: levels strictly above 15 IU/L were called positive. Assay-specific; not a general cut-off."
+citations = [
+  { pmid = "38811943", doi = "10.1186/s12931-024-02851-w", title = "Clinical and prognostic associations of anti-Jo-1 antibody levels in patients with antisynthetase syndrome.", locator = "Methods (anti-Jo-1 measurement)", quote = "levels > 15 IU/L were considered positive" },
+]

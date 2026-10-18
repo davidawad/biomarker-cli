@@ -1,0 +1,31 @@
+slug = "arsenic-urine-nmol-l"
+name = "Arsenic, Total Urine (nmol/l)"
+category = "toxic-metal"
+unit = "nmol/l"
+description = "Arsenic, Total Urine reported in nmol/l. Results in nmol/l are assay specific and are not interchangeable with Arsenic, Total Urine in µg/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 21
+high = 475
+when = { sex = "female" }
+population = "Danish women aged 40-70 years, Euro-TERVIHT reference group (n = 189 total), arsenic in urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "9301099", doi = "10.1016/s0048-9697(97)00155-1", title = "Toxic trace element reference levels in blood and urine: influence of gender and lifestyle factors.", locator = "Abstract" },
+]
+note = "Reference interval as 0.05-0.95 fractiles, reported in nmol/l (molar, not mass unit). Sample n = 189 for both sexes combined per the abstract; sex-specific sub-sample sizes not in the abstract."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 36
+high = 541
+when = { sex = "male" }
+population = "Danish men aged 40-70 years, Euro-TERVIHT reference group (n = 189 total), arsenic in urine"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "9301099", doi = "10.1016/s0048-9697(97)00155-1", title = "Toxic trace element reference levels in blood and urine: influence of gender and lifestyle factors.", locator = "Abstract" },
+]
+note = "Reference interval as 0.05-0.95 fractiles, reported in nmol/l (molar, not mass unit). Sample n = 189 for both sexes combined per the abstract; sex-specific sub-sample sizes not in the abstract."

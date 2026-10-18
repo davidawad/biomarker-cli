@@ -1,0 +1,18 @@
+slug = "wake-after-sleep-onset"
+name = "Wake After Sleep Onset"
+category = "sleep"
+unit = "min"
+loinc = "103215-0"
+description = "Total time spent awake between sleep onset and final morning awakening, in minutes (WASO). Tracked to measure sleep continuity and as one of the criteria for insomnia. Expected result for most adults is a short total; a middle-of-the-night wake time of 20 minutes or longer is the research cut-off used to classify primary insomnia, so values under that are below it."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20
+population = "Adults; average middle-of-the-night wake time over 2 weeks of sleep-log data, primary insomnia vs normal sleepers"
+evidence = "cohort"
+citations = [
+  { pmid = "16676781", doi = "10.1093/sleep/29.4.479", title = "Defining insomnia: quantitative criteria for insomnia severity and frequency.", locator = "Abstract, Results" },
+]
+note = "Research classification cut-off for primary insomnia (sensitivity 94.4%, specificity 79.6% in that study); 20 min or longer is the flagged value. Not a population reference interval. Sleep-log measure, not polysomnography. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."

@@ -1,0 +1,1055 @@
+slug = "telomere-length"
+name = "Telomere Length, Leukocyte"
+category = "aging"
+unit = "T/S ratio"
+description = "Average leukocyte telomere length, measured as a relative T/S ratio (telomere signal divided by a single-copy gene signal, by quantitative PCR). Tracked as a marker of cellular aging. Very short telomeres are associated with telomere biology disorders. The expected result is a value within the age-specific reference range for the assay; the source defines extremely short telomeres as below the first percentile for age."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.824
+high = 1.936
+when = { age_min = 1, age_max = 2, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 1 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 1 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "1 0.548 0.668 0.797 0.705 0.824 0.95 1.18 1.301 1.43 1.746 1.936 2.123" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.668
+when = { age_min = 1, age_max = 2, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 1 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "1 0.548 0.668 0.797 0.705 0.824 0.95 1.18 1.301 1.43 1.746 1.936 2.123" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.809
+high = 1.918
+when = { age_min = 2, age_max = 3, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 2 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 2 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "2 0.541 0.654 0.774 0.701 0.809 0.925 1.174 1.284 1.402 1.742 1.918 2.096" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.654
+when = { age_min = 2, age_max = 3, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 2 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "2 0.541 0.654 0.774 0.701 0.809 0.925 1.174 1.284 1.402 1.742 1.918 2.096" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.794
+high = 1.901
+when = { age_min = 3, age_max = 4, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 3 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 3 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "3 0.537 0.64 0.75 0.695 0.794 0.9 1.163 1.267 1.374 1.734 1.901 2.063" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.64
+when = { age_min = 3, age_max = 4, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 3 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "3 0.537 0.64 0.75 0.695 0.794 0.9 1.163 1.267 1.374 1.734 1.901 2.063" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.779
+high = 1.883
+when = { age_min = 4, age_max = 5, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 4 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 4 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "4 0.532 0.626 0.726 0.689 0.779 0.877 1.153 1.25 1.347 1.728 1.883 2.032" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.626
+when = { age_min = 4, age_max = 5, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 4 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "4 0.532 0.626 0.726 0.689 0.779 0.877 1.153 1.25 1.347 1.728 1.883 2.032" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.764
+high = 1.866
+when = { age_min = 5, age_max = 6, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 5 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 5 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "5 0.525 0.612 0.704 0.68 0.764 0.853 1.145 1.233 1.32 1.725 1.866 2.003" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.612
+when = { age_min = 5, age_max = 6, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 5 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "5 0.525 0.612 0.704 0.68 0.764 0.853 1.145 1.233 1.32 1.725 1.866 2.003" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.749
+high = 1.849
+when = { age_min = 6, age_max = 7, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 6 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 6 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "6 0.519 0.599 0.682 0.672 0.749 0.831 1.135 1.217 1.295 1.716 1.849 1.981" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.599
+when = { age_min = 6, age_max = 7, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 6 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "6 0.519 0.599 0.682 0.672 0.749 0.831 1.135 1.217 1.295 1.716 1.849 1.981" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.735
+high = 1.833
+when = { age_min = 7, age_max = 8, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 7 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 7 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "7 0.513 0.586 0.66 0.664 0.735 0.808 1.126 1.201 1.273 1.71 1.833 1.957" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.586
+when = { age_min = 7, age_max = 8, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 7 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "7 0.513 0.586 0.66 0.664 0.735 0.808 1.126 1.201 1.273 1.71 1.833 1.957" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.721
+high = 1.816
+when = { age_min = 8, age_max = 9, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 8 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 8 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "8 0.507 0.573 0.64 0.656 0.721 0.787 1.117 1.185 1.252 1.695 1.816 1.936" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.573
+when = { age_min = 8, age_max = 9, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 8 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "8 0.507 0.573 0.64 0.656 0.721 0.787 1.117 1.185 1.252 1.695 1.816 1.936" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.707
+high = 1.8
+when = { age_min = 9, age_max = 10, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 9 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 9 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "9 0.5 0.56 0.621 0.648 0.707 0.766 1.106 1.169 1.23 1.683 1.8 1.914" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.56
+when = { age_min = 9, age_max = 10, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 9 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "9 0.5 0.56 0.621 0.648 0.707 0.766 1.106 1.169 1.23 1.683 1.8 1.914" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.693
+high = 1.784
+when = { age_min = 10, age_max = 11, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 10 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 10 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "10 0.494 0.547 0.603 0.641 0.693 0.747 1.095 1.154 1.21 1.671 1.784 1.896" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.547
+when = { age_min = 10, age_max = 11, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 10 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "10 0.494 0.547 0.603 0.641 0.693 0.747 1.095 1.154 1.21 1.671 1.784 1.896" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.68
+high = 1.769
+when = { age_min = 11, age_max = 12, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 11 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 11 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "11 0.486 0.535 0.586 0.631 0.68 0.729 1.084 1.138 1.192 1.656 1.769 1.88" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.535
+when = { age_min = 11, age_max = 12, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 11 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "11 0.486 0.535 0.586 0.631 0.68 0.729 1.084 1.138 1.192 1.656 1.769 1.88" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.666
+high = 1.754
+when = { age_min = 12, age_max = 13, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 12 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 12 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "12 0.474 0.522 0.57 0.619 0.666 0.713 1.072 1.123 1.177 1.64 1.754 1.864" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.522
+when = { age_min = 12, age_max = 13, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 12 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "12 0.474 0.522 0.57 0.619 0.666 0.713 1.072 1.123 1.177 1.64 1.754 1.864" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.653
+high = 1.738
+when = { age_min = 13, age_max = 14, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 13 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 13 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "13 0.464 0.51 0.557 0.61 0.653 0.698 1.059 1.108 1.162 1.624 1.738 1.85" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.51
+when = { age_min = 13, age_max = 14, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 13 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "13 0.464 0.51 0.557 0.61 0.653 0.698 1.059 1.108 1.162 1.624 1.738 1.85" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.64
+high = 1.724
+when = { age_min = 14, age_max = 15, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 14 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 14 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "14 0.452 0.499 0.545 0.595 0.64 0.686 1.045 1.093 1.146 1.61 1.724 1.837" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.499
+when = { age_min = 14, age_max = 15, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 14 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "14 0.452 0.499 0.545 0.595 0.64 0.686 1.045 1.093 1.146 1.61 1.724 1.837" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.627
+high = 1.709
+when = { age_min = 15, age_max = 16, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 15 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 15 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "15 0.44 0.487 0.535 0.583 0.627 0.673 1.03 1.079 1.133 1.591 1.709 1.825" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.487
+when = { age_min = 15, age_max = 16, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 15 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "15 0.44 0.487 0.535 0.583 0.627 0.673 1.03 1.079 1.133 1.591 1.709 1.825" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.615
+high = 1.695
+when = { age_min = 16, age_max = 17, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 16 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 16 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "16 0.426 0.475 0.527 0.569 0.615 0.663 1.015 1.064 1.119 1.568 1.695 1.815" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.475
+when = { age_min = 16, age_max = 17, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 16 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "16 0.426 0.475 0.527 0.569 0.615 0.663 1.015 1.064 1.119 1.568 1.695 1.815" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.602
+high = 1.68
+when = { age_min = 17, age_max = 18, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 17 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 17 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "17 0.412 0.464 0.52 0.554 0.602 0.654 0.997 1.05 1.108 1.55 1.68 1.809" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.464
+when = { age_min = 17, age_max = 18, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 17 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "17 0.412 0.464 0.52 0.554 0.602 0.654 0.997 1.05 1.108 1.55 1.68 1.809" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.59
+high = 1.666
+when = { age_min = 18, age_max = 19, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 18 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 18 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "18 0.396 0.453 0.512 0.537 0.59 0.647 0.98 1.036 1.096 1.527 1.666 1.803" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.453
+when = { age_min = 18, age_max = 19, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 18 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "18 0.396 0.453 0.512 0.537 0.59 0.647 0.98 1.036 1.096 1.527 1.666 1.803" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.578
+high = 1.653
+when = { age_min = 19, age_max = 20, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 19 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 19 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "19 0.382 0.442 0.505 0.52 0.578 0.64 0.963 1.022 1.084 1.503 1.653 1.796" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.442
+when = { age_min = 19, age_max = 20, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 19 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "19 0.382 0.442 0.505 0.52 0.578 0.64 0.963 1.022 1.084 1.503 1.653 1.796" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.566
+high = 1.639
+when = { age_min = 20, age_max = 21, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 20 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 20 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "20 0.368 0.432 0.501 0.505 0.566 0.631 0.945 1.009 1.074 1.482 1.639 1.791" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.432
+when = { age_min = 20, age_max = 21, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 20 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "20 0.368 0.432 0.501 0.505 0.566 0.631 0.945 1.009 1.074 1.482 1.639 1.791" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.555
+high = 1.626
+when = { age_min = 21, age_max = 22, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 21 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 21 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "21 0.354 0.421 0.496 0.489 0.555 0.626 0.928 0.995 1.064 1.464 1.626 1.786" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.421
+when = { age_min = 21, age_max = 22, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 21 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "21 0.354 0.421 0.496 0.489 0.555 0.626 0.928 0.995 1.064 1.464 1.626 1.786" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.543
+high = 1.613
+when = { age_min = 22, age_max = 23, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 22 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 22 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "22 0.339 0.411 0.492 0.472 0.543 0.619 0.911 0.982 1.054 1.442 1.613 1.781" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.411
+when = { age_min = 22, age_max = 23, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 22 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "22 0.339 0.411 0.492 0.472 0.543 0.619 0.911 0.982 1.054 1.442 1.613 1.781" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.532
+high = 1.6
+when = { age_min = 23, age_max = 24, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 23 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 23 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "23 0.325 0.401 0.486 0.456 0.532 0.613 0.892 0.969 1.044 1.419 1.6 1.777" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.401
+when = { age_min = 23, age_max = 24, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 23 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "23 0.325 0.401 0.486 0.456 0.532 0.613 0.892 0.969 1.044 1.419 1.6 1.777" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.52
+high = 1.588
+when = { age_min = 24, age_max = 25, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 24 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 24 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "24 0.312 0.391 0.482 0.44 0.52 0.606 0.874 0.955 1.035 1.398 1.588 1.774" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.391
+when = { age_min = 24, age_max = 25, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 24 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "24 0.312 0.391 0.482 0.44 0.52 0.606 0.874 0.955 1.035 1.398 1.588 1.774" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.509
+high = 1.575
+when = { age_min = 25, age_max = 26, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 25 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 25 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "25 0.296 0.381 0.478 0.425 0.509 0.6 0.858 0.943 1.027 1.379 1.575 1.77" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.381
+when = { age_min = 25, age_max = 26, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 25 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "25 0.296 0.381 0.478 0.425 0.509 0.6 0.858 0.943 1.027 1.379 1.575 1.77" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.499
+high = 1.563
+when = { age_min = 26, age_max = 27, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 26 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 26 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "26 0.281 0.371 0.475 0.408 0.499 0.594 0.841 0.93 1.02 1.36 1.563 1.766" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.371
+when = { age_min = 26, age_max = 27, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 26 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "26 0.281 0.371 0.475 0.408 0.499 0.594 0.841 0.93 1.02 1.36 1.563 1.766" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.488
+high = 1.551
+when = { age_min = 27, age_max = 28, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 27 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 27 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "27 0.267 0.362 0.47 0.393 0.488 0.589 0.823 0.917 1.012 1.34 1.551 1.765" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.362
+when = { age_min = 27, age_max = 28, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 27 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "27 0.267 0.362 0.47 0.393 0.488 0.589 0.823 0.917 1.012 1.34 1.551 1.765" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.477
+high = 1.539
+when = { age_min = 28, age_max = 29, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 28 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 28 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "28 0.253 0.353 0.466 0.378 0.477 0.583 0.808 0.905 1.003 1.319 1.539 1.764" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.353
+when = { age_min = 28, age_max = 29, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 28 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "28 0.253 0.353 0.466 0.378 0.477 0.583 0.808 0.905 1.003 1.319 1.539 1.764" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.467
+high = 1.528
+when = { age_min = 29, age_max = 30, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 29 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 29 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "29 0.241 0.343 0.462 0.362 0.467 0.578 0.79 0.893 0.995 1.301 1.528 1.763" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.343
+when = { age_min = 29, age_max = 30, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 29 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "29 0.241 0.343 0.462 0.362 0.467 0.578 0.79 0.893 0.995 1.301 1.528 1.763" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.457
+high = 1.516
+when = { age_min = 30, age_max = 31, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 30 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 30 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "30 0.229 0.335 0.457 0.347 0.457 0.573 0.772 0.88 0.987 1.281 1.516 1.761" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.335
+when = { age_min = 30, age_max = 31, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 30 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "30 0.229 0.335 0.457 0.347 0.457 0.573 0.772 0.88 0.987 1.281 1.516 1.761" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.447
+high = 1.505
+when = { age_min = 31, age_max = 32, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 31 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 31 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "31 0.216 0.326 0.452 0.332 0.447 0.568 0.755 0.868 0.98 1.261 1.505 1.76" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.326
+when = { age_min = 31, age_max = 32, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 31 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "31 0.216 0.326 0.452 0.332 0.447 0.568 0.755 0.868 0.98 1.261 1.505 1.76" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.437
+high = 1.494
+when = { age_min = 32, age_max = 33, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 32 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 32 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "32 0.206 0.317 0.449 0.318 0.437 0.563 0.739 0.857 0.972 1.238 1.494 1.759" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.317
+when = { age_min = 32, age_max = 33, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 32 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "32 0.206 0.317 0.449 0.318 0.437 0.563 0.739 0.857 0.972 1.238 1.494 1.759" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.427
+high = 1.483
+when = { age_min = 33, age_max = 34, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 33 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 33 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "33 0.193 0.309 0.446 0.305 0.427 0.559 0.724 0.845 0.964 1.218 1.483 1.757" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.309
+when = { age_min = 33, age_max = 34, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 33 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "33 0.193 0.309 0.446 0.305 0.427 0.559 0.724 0.845 0.964 1.218 1.483 1.757" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.418
+high = 1.473
+when = { age_min = 34, age_max = 35, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 34 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 34 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "34 0.182 0.301 0.443 0.29 0.418 0.553 0.709 0.833 0.956 1.199 1.473 1.756" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.301
+when = { age_min = 34, age_max = 35, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 34 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "34 0.182 0.301 0.443 0.29 0.418 0.553 0.709 0.833 0.956 1.199 1.473 1.756" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.408
+high = 1.462
+when = { age_min = 35, age_max = 36, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 35 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 35 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "35 0.171 0.293 0.439 0.277 0.408 0.549 0.694 0.822 0.949 1.181 1.462 1.757" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.293
+when = { age_min = 35, age_max = 36, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 35 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "35 0.171 0.293 0.439 0.277 0.408 0.549 0.694 0.822 0.949 1.181 1.462 1.757" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.399
+high = 1.452
+when = { age_min = 36, age_max = 37, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 36 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 36 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "36 0.161 0.285 0.435 0.264 0.399 0.545 0.68 0.811 0.941 1.163 1.452 1.756" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.285
+when = { age_min = 36, age_max = 37, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 36 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "36 0.161 0.285 0.435 0.264 0.399 0.545 0.68 0.811 0.941 1.163 1.452 1.756" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.39
+high = 1.442
+when = { age_min = 37, age_max = 38, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 37 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 37 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "37 0.151 0.277 0.431 0.251 0.39 0.539 0.666 0.799 0.933 1.147 1.442 1.756" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.277
+when = { age_min = 37, age_max = 38, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 37 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "37 0.151 0.277 0.431 0.251 0.39 0.539 0.666 0.799 0.933 1.147 1.442 1.756" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.381
+high = 1.432
+when = { age_min = 38, age_max = 39, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 38 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 38 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "38 0.141 0.269 0.427 0.238 0.381 0.535 0.651 0.788 0.926 1.131 1.432 1.756" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.269
+when = { age_min = 38, age_max = 39, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 38 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "38 0.141 0.269 0.427 0.238 0.381 0.535 0.651 0.788 0.926 1.131 1.432 1.756" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.372
+high = 1.422
+when = { age_min = 39, age_max = 40, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 39 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 39 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "39 0.131 0.262 0.422 0.226 0.372 0.531 0.636 0.777 0.919 1.116 1.422 1.757" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.262
+when = { age_min = 39, age_max = 40, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 39 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "39 0.131 0.262 0.422 0.226 0.372 0.531 0.636 0.777 0.919 1.116 1.422 1.757" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.363
+high = 1.413
+when = { age_min = 40, age_max = 41, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 40 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 40 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "40 0.123 0.255 0.419 0.214 0.363 0.527 0.621 0.767 0.912 1.098 1.413 1.762" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.255
+when = { age_min = 40, age_max = 41, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 40 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "40 0.123 0.255 0.419 0.214 0.363 0.527 0.621 0.767 0.912 1.098 1.413 1.762" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.355
+high = 1.403
+when = { age_min = 41, age_max = 42, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 41 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 41 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "41 0.115 0.248 0.416 0.203 0.355 0.522 0.606 0.756 0.906 1.081 1.403 1.764" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.248
+when = { age_min = 41, age_max = 42, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 41 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "41 0.115 0.248 0.416 0.203 0.355 0.522 0.606 0.756 0.906 1.081 1.403 1.764" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.346
+high = 1.394
+when = { age_min = 42, age_max = 43, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 42 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 42 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "42 0.106 0.241 0.413 0.192 0.346 0.518 0.592 0.745 0.899 1.064 1.394 1.77" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.241
+when = { age_min = 42, age_max = 43, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 42 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "42 0.106 0.241 0.413 0.192 0.346 0.518 0.592 0.745 0.899 1.064 1.394 1.77" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.338
+high = 1.385
+when = { age_min = 43, age_max = 44, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 43 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 43 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "43 0.098 0.234 0.41 0.181 0.338 0.514 0.578 0.735 0.891 1.048 1.385 1.771" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.234
+when = { age_min = 43, age_max = 44, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 43 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "43 0.098 0.234 0.41 0.181 0.338 0.514 0.578 0.735 0.891 1.048 1.385 1.771" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.33
+high = 1.376
+when = { age_min = 44, age_max = 45, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 44 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 44 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "44 0.09 0.227 0.406 0.171 0.33 0.51 0.565 0.725 0.884 1.031 1.376 1.77" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.227
+when = { age_min = 44, age_max = 45, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 44 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "44 0.09 0.227 0.406 0.171 0.33 0.51 0.565 0.725 0.884 1.031 1.376 1.77" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.322
+high = 1.368
+when = { age_min = 45, age_max = 46, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 45 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 45 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "45 0.083 0.221 0.402 0.161 0.322 0.506 0.552 0.714 0.877 1.016 1.368 1.768" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.221
+when = { age_min = 45, age_max = 46, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 45 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "45 0.083 0.221 0.402 0.161 0.322 0.506 0.552 0.714 0.877 1.016 1.368 1.768" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.314
+high = 1.359
+when = { age_min = 46, age_max = 47, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 46 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 46 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "46 0.076 0.215 0.4 0.152 0.314 0.502 0.54 0.704 0.87 1.001 1.359 1.767" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.215
+when = { age_min = 46, age_max = 47, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 46 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "46 0.076 0.215 0.4 0.152 0.314 0.502 0.54 0.704 0.87 1.001 1.359 1.767" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.307
+high = 1.351
+when = { age_min = 47, age_max = 48, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 47 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 47 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "47 0.069 0.209 0.397 0.143 0.307 0.497 0.526 0.694 0.863 0.986 1.351 1.77" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.209
+when = { age_min = 47, age_max = 48, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 47 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "47 0.069 0.209 0.397 0.143 0.307 0.497 0.526 0.694 0.863 0.986 1.351 1.77" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.299
+high = 1.342
+when = { age_min = 48, age_max = 49, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 48 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 48 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "48 0.062 0.203 0.394 0.134 0.299 0.493 0.514 0.684 0.856 0.971 1.342 1.775" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.203
+when = { age_min = 48, age_max = 49, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 48 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "48 0.062 0.203 0.394 0.134 0.299 0.493 0.514 0.684 0.856 0.971 1.342 1.775" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.292
+high = 1.334
+when = { age_min = 49, age_max = 50, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 49 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 49 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "49 0.056 0.197 0.391 0.125 0.292 0.488 0.503 0.675 0.849 0.957 1.334 1.781" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.197
+when = { age_min = 49, age_max = 50, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 49 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "49 0.056 0.197 0.391 0.125 0.292 0.488 0.503 0.675 0.849 0.957 1.334 1.781" } ]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.284
+high = 1.326
+when = { age_min = 50, age_max = 51, specimen = "blood-leukocytes", method = "mmqpcr" }
+population = "Healthy individuals aged 0-50 years, Argentina (n=159), leukocyte telomere length by MMQPCR as T/S ratio; single-age row 50 of Table 2"
+evidence = "reference-interval-study"
+note = "5th and 95th percentile point estimates from Table 2 at age 50 years (lower and upper columns omitted). Age-specific percentile curve generated for the Argentine population; method-specific."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "50 0.051 0.191 0.389 0.117 0.284 0.484 0.492 0.665 0.842 0.942 1.326 1.787" } ]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.191
+when = { age_min = 50, age_max = 51, specimen = "blood-leukocytes", method = "mmqpcr", conditions = ["telomere-biology-disorder"] }
+population = "Individuals aged 0-50 years, Argentina, with clinical or molecular diagnosis of telomere biology disorder; percentiles from healthy reference population (n=159)"
+evidence = "outcome-study"
+note = "1st percentile point estimate at age 50 years (Table 2); the source defines extremely short telomeres as below the first percentile for age in telomere biology disorders."
+citations = [ { doi = "10.5546/aap.2025-10818.eng", url = "https://doi.org/10.5546/aap.2025-10818.eng", title = "Age-specific telomere length percentiles in the Argentine population: a diagnostic tool for telomere biology disorders.", locator = "Table 2", quote = "50 0.051 0.191 0.389 0.117 0.284 0.484 0.492 0.665 0.842 0.942 1.326 1.787" } ]

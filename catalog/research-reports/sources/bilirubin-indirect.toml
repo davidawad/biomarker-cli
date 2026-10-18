@@ -1,0 +1,18 @@
+slug = "bilirubin-indirect"
+name = "Bilirubin, Indirect"
+loinc = "1971-1"
+category = "liver"
+unit = "mg/dL"
+description = "Indirect (unconjugated) bilirubin, the fraction of bilirubin not conjugated in the liver. Usually calculated as total bilirubin minus direct bilirubin. Expected result in a healthy adult is about 0.10 to 1.00 mg/dL."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.10
+high = 1.00
+population = "Healthy adults, Gandaki Province, Nepal (combined sexes); source measured unconjugated bilirubin"
+evidence = "reference-interval-study"
+note = "Source reports unconjugated bilirubin, the indirect fraction. Single study; no sex-specific interval in the abstract."
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Abstract", quote = "unconjugated bilirubin: 1.71-17.10umol/L (0.10-1.00mg/dl)" },
+]

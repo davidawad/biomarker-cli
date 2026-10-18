@@ -1,0 +1,40 @@
+slug = "alpha-1-antitrypsin"
+name = "Alpha-1 Antitrypsin"
+category = "liver"
+unit = "g/L"
+loinc = "1825-9"
+description = "Serum alpha-1 antitrypsin (AAT), the main circulating inhibitor of neutrophil elastase. Measured first when screening for alpha-1 antitrypsin deficiency (AATD). AAT is an acute-phase protein, so levels can rise during inflammation. Expected result: above 1.1 g/L (levels below 1.1 g/L prompt confirmatory testing; levels at or below 0.57 g/L indicate severe deficiency)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.1
+population = "Adults undergoing initial screening for alpha-1 antitrypsin deficiency"
+evidence = "consensus"
+citations = [
+  { pmid = "42075511", doi = "10.3390/medicina62040639", title = "Alpha-1 Antitrypsin Deficiency-Associated Chronic Obstructive Pulmonary Disease.", locator = "Diagnosis section, paragraph after the CRP/acute-phase discussion" },
+]
+note = "Confirmatory-testing threshold, as stated in the same 2026 narrative review, which also says these thresholds are not absolute biological cut-offs. Source band <= 1.1; stored as the warn low bound 1.1."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 0.57
+population = "Adults undergoing initial screening for alpha-1 antitrypsin deficiency"
+evidence = "consensus"
+citations = [
+  { pmid = "42075511", doi = "10.3390/medicina62040639", title = "Alpha-1 Antitrypsin Deficiency-Associated Chronic Obstructive Pulmonary Disease.", locator = "Diagnosis section, initial screening paragraph" },
+]
+note = "Severe AAT deficiency, as stated in a 2026 narrative review (the review's reference [19] was not retrieved). Upper bound is inclusive (<=). Source kind: diagnostic. Source band <= 0.57; stored as the warn low bound 0.57."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.57
+high = 1.1
+population = "Adults undergoing initial screening for alpha-1 antitrypsin deficiency"
+evidence = "consensus"
+citations = [
+  { pmid = "42075511", doi = "10.3390/medicina62040639", title = "Alpha-1 Antitrypsin Deficiency-Associated Chronic Obstructive Pulmonary Disease.", locator = "Diagnosis section, initial screening paragraph" },
+]
+note = "Milder AAT deficiency band, as stated in the same 2026 narrative review: strictly above 0.57 g/L and strictly below 1.1 g/L. Source kind: diagnostic. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."

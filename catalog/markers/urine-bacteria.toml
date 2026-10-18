@@ -1,0 +1,19 @@
+slug = "urine-bacteria"
+name = "Urine Bacteria (microscopy)"
+category = "urinalysis"
+unit = "/uL"
+loinc = "105051-7"
+description = "Bacteria counted in unspun urine sediment, reported per microlitre by automated sediment analysers (or per high-power field by manual microscopy). Tracked as a marker of bacteriuria and of urine contamination. Expected result: low or absent bacteria in a clean-catch specimen; the only verified numeric interval found is the pregnancy interval from an automated analyser."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0
+high = 698
+when = { pregnant = true }
+population = "Healthy pregnant women aged 22 to 46 (612 subjects); urine sediment on Sysmex UF-1000i with manual correction"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31532100", doi = "10.7754/Clin.Lab.2019.181234", url = "https://pubmed.ncbi.nlm.nih.gov/31532100/", title = "Reference Intervals for Urine Sediment Analysis of Healthy Pregnant Women.", locator = "Abstract, Results" },
+]
+note = "Pregnancy reference interval for bacteria (BACT) counted by automated flow analyser, per microlitre. Automated count, not bright-field microscopy per high-power field. Applies only to pregnant women per this study."

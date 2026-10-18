@@ -1,0 +1,30 @@
+slug = "il-8"
+name = "Interleukin-8"
+loinc = "33211-4"
+category = "inflammation"
+unit = "pg/mL"
+description = "Chemokine (CXCL8) measured in serum by immunoassay or flow cytometry. Tracked as a marker of neutrophil-recruiting inflammatory activity. Expected result in healthy adults: at or below the sex-specific upper reference limit (values in the single- to low double-digit pg/mL range); the reference values are method-specific."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 23.42
+when = { sex = "female" }
+population = "Healthy Chinese adults from East China (n = 299, selected by predetermined inclusion and exclusion criteria), women"
+evidence = "reference-interval-study"
+note = "Upper limit of the 95th-percentile reference interval, women, serum by flow cytometry. Source states the limit as <=; no lower limit is reported."
+citations = [
+  { pmid = "41512996", doi = "10.1016/j.jim.2026.114034", title = "Establishment of reference intervals for serum TNF-α, IFN-α, IL-1β, IL-2, IL-4, IL-5, IL-6, IL-8, IL-10, IL-12p70, IL-17 and IFN-γ in healthy Chinese adults using flow cytometry.", locator = "Abstract, Methods and Results", quote = "reference intervals were set using the 95th percentile method following EP28-A3c and WS/T 402-2012 guidelines. ... For women, these were: TNF-α <=2.94 pg/mL, IFN-α <=7.69 pg/mL, IL-1β <=2.40 pg/mL, IL-2 <= 2.40 pg/mL, IL-4 <= 3.93 pg/mL, IL-5 <= 2.42 pg/mL, IL-6 <= 15.96 pg/mL, IL-8 <= 23.42 pg/mL, IL-10 <= 7.10 pg/mL, IL-12p70 <= 7.36 pg/mL, IL-17 <= 4.14 pg/mL, IFN-γ <=4.29 pg/mL." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 15.88
+when = { sex = "male" }
+population = "Healthy Chinese adults from East China (n = 299, selected by predetermined inclusion and exclusion criteria), men"
+evidence = "reference-interval-study"
+note = "Upper limit of the 95th-percentile reference interval, men, serum by flow cytometry. Source states the limit as <=; no lower limit is reported."
+citations = [
+  { pmid = "41512996", doi = "10.1016/j.jim.2026.114034", title = "Establishment of reference intervals for serum TNF-α, IFN-α, IL-1β, IL-2, IL-4, IL-5, IL-6, IL-8, IL-10, IL-12p70, IL-17 and IFN-γ in healthy Chinese adults using flow cytometry.", locator = "Abstract, Methods and Results", quote = "reference intervals were set using the 95th percentile method following EP28-A3c and WS/T 402-2012 guidelines. ... For men: TNF-α <= 2.65 pg/mL, IFN-α <= 7.50 pg/mL, IL-1β <=2.40 pg/mL, IL-2 <= 2.52 pg/mL, IL-4 <= 4.58 pg/mL, IL-5 <= 2.40 pg/mL, IL-6 <= 14.61 pg/mL, IL-8 <= 15.88 pg/mL, IL-10 <= 3.94 pg/mL, IL-12p70 <= 7.18 pg/mL, IL-17 <= 3.63 pg/mL, IFN-γ <=4.18 pg/mL." },
+]

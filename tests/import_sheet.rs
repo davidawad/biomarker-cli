@@ -141,13 +141,14 @@ fn transposed_dashboard_report() {
         ("White Blood Cell Count (WBC)", "wbc"),
         ("Apolipoprotein B (ApoB)", "apob"),
         ("Thyroid Stimulating Hormone (TSH)", "tsh"),
+        ("Urine Protein", "urine-protein"),
     ] {
         assert!(matched.contains(&(src.into(), slug.into())), "{src} -> {slug} missing from {matched:?}");
     }
     // unknown tests are reported and skipped, not invalid
     assert_eq!(
         sources(&v, "unmatched"),
-        ["Lipoprotein Particle Score", "Urine Protein", "Urine Appearance", "WBC, Urine", "Control Sample"]
+        ["Lipoprotein Particle Score", "Urine Appearance", "WBC, Urine", "Control Sample"]
     );
     // header dates: formatted serial, bare serial, ISO text, US text
     assert_eq!(
@@ -202,18 +203,18 @@ fn created_markers_take_their_section_category() {
     let e = Env::new();
     let v = e.json(&["import", &e.workbook(), "-p", "alex", "--create-markers", "--qualitative", "store"]);
     let created = v["data"]["markers_created"].as_array().unwrap();
-    assert_eq!(created.len(), 5, "{v}");
+    assert_eq!(created.len(), 4, "{v}");
     let show = |m: &str| e.json(&["marker", "show", m])["data"].clone();
     assert_eq!(show("lipoprotein-particle-score")["category"], "lipid");
     assert_eq!(show("lipoprotein-particle-score")["unit"], "score");
-    assert_eq!(show("urine-protein")["category"], "urinalysis");
+    assert_eq!(show("urine-appearance")["category"], "urinalysis");
     assert_eq!(show("wbc-urine")["name"], "WBC, Urine");
     assert_eq!(v["data"]["qualitative"], 11);
     assert_eq!(v["data"]["observations"]["inserted"], 11);
     // without sections the category falls back to "other"
     let e2 = Env::new();
     e2.run(&["import", &e2.workbook(), "-p", "alex", "--create-markers", "--sections-as-category", "false"]);
-    assert_eq!(e2.json(&["marker", "show", "urine-protein"])["data"]["category"], "other");
+    assert_eq!(e2.json(&["marker", "show", "urine-appearance"])["data"]["category"], "other");
 }
 
 #[test]
@@ -221,8 +222,8 @@ fn qualitative_values_are_counted_or_stored() {
     let e = Env::new();
     let book = e.workbook();
     let map = e.path("q.toml");
+    // "Urine Protein" matches the catalog's urine-protein; the rename pins it explicitly
     std::fs::write(&map, "[rename]\n\"Urine Protein\" = \"urine-protein\"\n").unwrap();
-    e.run(&["marker", "add", "urine-protein", "--name", "Urine Protein", "--unit", "ratio", "--category", "urine"]);
     let v = e.json(&["import", &book, "-p", "alex", "--mapping", map.to_str().unwrap(), "--dry-run"]);
     assert_eq!(v["data"]["qualitative"], 4);
     assert_eq!(v["data"]["qualitative_values"][2]["text"], "1+ Abnormal");
@@ -296,10 +297,10 @@ fn mapping_renames_dates_and_skip() {
     assert_eq!(d["inserted"], 43, "{v}");
     assert_eq!(d["skipped_names"], serde_json::json!(["Lipoprotein Particle Score", "Control Sample"]));
     // "WBC, Urine" matches the catalog's urine-wbc
-    assert_eq!(d["markers_created"], serde_json::json!(["urine-protein", "urine-appearance"]));
+    assert_eq!(d["markers_created"], serde_json::json!(["urine-appearance"]));
     assert_eq!(d["date_corrections"], serde_json::json!([{"from": "2024-12-02", "to": "2024-12-04", "cells": 13}]));
     assert!(d["cells_per_date"].get("2024-12-02").is_none());
-    assert_eq!(e.json(&["marker", "show", "urine-protein"])["data"]["category"], "urine");
+    assert_eq!(e.json(&["marker", "show", "urine-appearance"])["data"]["category"], "urine");
     assert_eq!(e.query("ldl-c")[2]["taken_at"], "2024-12-04");
     // "6-10 Abnormal" keeps its range on the observation
     let obs = e.json(&["observations", "-m", "urine-wbc", "--flagged"]);

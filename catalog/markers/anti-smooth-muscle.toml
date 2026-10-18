@@ -1,0 +1,19 @@
+slug = "anti-smooth-muscle"
+name = "Anti-Smooth Muscle Antibody"
+category = "autoimmune"
+unit = "titer"
+loinc = "31629-9"
+description = "Autoantibody to smooth muscle and cytoskeletal antigens (mainly filamentous actin), detected by immunofluorescence and reported as a titer (dilution). Used with ANA and other liver autoantibodies in the workup of suspected type 1 autoimmune hepatitis. Expected result in people without autoimmune hepatitis: not detected, or a titer at or below 1:40."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 40
+when = { conditions = ["autoimmune-hepatitis"] }
+population = "Adults and children evaluated for autoimmune hepatitis"
+evidence = "guideline"
+citations = [
+  { pmid = "40169244", doi = "10.1136/gutjnl-2024-333171", title = "British Society of Gastroenterology guidelines for diagnosis and management of autoimmune hepatitis.", locator = "Table 6" },
+]
+note = "Simplified autoimmune hepatitis criteria (adapted from Hennes): ANA or ASMA positive at a titre strictly above 1:40 scores +1 point. Number is the dilution denominator (titer). A score component, not a standalone diagnosis; the same row covers ANA. Source kind: diagnostic. Source band >= 40; stored as the warn high bound 40."

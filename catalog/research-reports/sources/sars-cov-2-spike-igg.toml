@@ -1,0 +1,72 @@
+slug = "sars-cov-2-spike-igg"
+name = "SARS-CoV-2 Spike IgG Antibody"
+loinc = "99597-7"
+category = "infectious"
+unit = "BAU/mL"
+description = "Serum IgG antibody against the SARS-CoV-2 spike protein, quantified by immunoassay in BAU/mL (WHO international standard) or vendor units. Tracked after infection or vaccination to gauge humoral response; a higher level is associated with neutralizing antibody activity. Expected result: positive after infection or vaccination; negative means no detectable spike antibody by that assay."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 57.9
+unit = "BAU/mL"
+when = { method = "euroimmun-quantivac-elisa" }
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021"
+evidence = "outcome-study"
+note = "Anti-spike level above which neutralizing antibodies were positive in one study (sensitivity 90.0%, specificity 91%). Not an infection diagnosis."
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Abstract, Results", quote = "When the anti-S titer was greater than 18.1 RU/mL (57.9 BAU/mL), nAbs were positive, with a sensitivity of 90.0% and specificity of 91%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 8
+unit = "RU/mL"
+when = { method = "euroimmun-quantivac-elisa" }
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021"
+evidence = "outcome-study"
+note = "Negative on EUROIMMUN QuantiVac ELISA (IgG), per manufacturer categories as reported in the cited study."
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Methods", quote = "The results of anti-S are expressed in relative unit/mL (RU/mL) and were categorized as follows: negative (<8 RU/mL), borderline (titer: 8-<11 RU/mL), and positive (titers >=11 RU/mL)." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 8
+high = 11
+unit = "RU/mL"
+when = { method = "euroimmun-quantivac-elisa" }
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021"
+evidence = "outcome-study"
+note = "Borderline on EUROIMMUN QuantiVac ELISA (IgG); the cited study counted borderline as positive."
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Methods", quote = "The results of anti-S are expressed in relative unit/mL (RU/mL) and were categorized as follows: negative (<8 RU/mL), borderline (titer: 8-<11 RU/mL), and positive (titers >=11 RU/mL)." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 11
+unit = "RU/mL"
+when = { method = "euroimmun-quantivac-elisa" }
+population = "Egyptian community sera (n = 650), cross-sectional, January-June 2021"
+evidence = "outcome-study"
+note = "Positive on EUROIMMUN QuantiVac ELISA (IgG), per manufacturer categories as reported in the cited study."
+citations = [
+  { pmid = "36423048", doi = "10.3390/vaccines10111952", title = "Determining the SARS-CoV-2 Anti-Spike Cutoff Level Denoting Neutralizing Activity Using Two Commercial Kits.", locator = "Methods", quote = "The results of anti-S are expressed in relative unit/mL (RU/mL) and were categorized as follows: negative (<8 RU/mL), borderline (titer: 8-<11 RU/mL), and positive (titers >=11 RU/mL)." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 50.0
+unit = "AU/mL"
+when = { method = "abbott-sars-cov-2-igg-ii-quant" }
+population = "Healthcare workers after two doses of CoronaVac, Turkey"
+evidence = "outcome-study"
+note = "Positive on Abbott SARS-CoV-2 IgG II Quant, per the manufacturer cut-off as used in the cited study."
+citations = [
+  { pmid = "34019704", doi = "10.1002/jmv.27098", title = "Quantitation of antibodies against SARS-CoV-2 spike protein after two doses of CoronaVac in healthcare workers.", locator = "Abstract, Methods", quote = "Results greater than or equal to the cutoff value 50.0 AU/ml were reported as positive." },
+]

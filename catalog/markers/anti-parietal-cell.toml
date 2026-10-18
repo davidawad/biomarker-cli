@@ -1,0 +1,19 @@
+slug = "anti-parietal-cell"
+name = "Anti-Parietal Cell Antibody"
+category = "autoimmune"
+unit = "titer"
+loinc = "8087-9"
+description = "Serum autoantibody against the gastric parietal cell H+/K+ ATPase, detected by indirect immunofluorescence (IIF, reported as a titer) or by immunodot or ELISA (reported as positive or negative). Used to screen for autoimmune atrophic gastritis and pernicious anemia. Positive results are non-specific: they also occur in other autoimmune disease and in a minority of healthy people. Expected result: negative."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 80
+when = { conditions = ["pernicious-anemia"] }
+population = "Adults with vitamin B12 deficiency and anti-parietal cell antibody positivity without anti-intrinsic factor antibodies"
+evidence = "cohort"
+citations = [
+  { pmid = "40955495", doi = "10.1515/cclm-2025-0671", title = "Not all anti-parietal cell antibody tests are equal for diagnosing pernicious anemia.", locator = "Abstract (Results)" },
+]
+note = "Single study, IIF method: titer 1:80 or higher further improved specificity for pernicious anemia to 96%. Source kind: diagnostic. Source band >= 80; stored as the warn high bound 80."

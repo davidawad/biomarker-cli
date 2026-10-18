@@ -1,0 +1,19 @@
+slug = "achr-antibody"
+name = "Acetylcholine Receptor Binding Antibody"
+category = "autoimmune"
+unit = "nmol/L"
+loinc = "11560-0"
+description = "Serum autoantibody to the acetylcholine receptor (AChR-Bi, binding assay), used to support the diagnosis of myasthenia gravis. Expected result in people without myasthenia gravis: negative (not detected). A positive result supports, but does not alone confirm, myasthenia gravis; interpret with clinical and electrodiagnostic findings."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.02
+when = { conditions = ["myasthenia-gravis"] }
+population = "Patients tested for myasthenia gravis (confirmed or refuted by clinical-electrodiagnostic testing)"
+evidence = "cohort"
+citations = [
+  { pmid = "32938782", doi = "10.1212/WNL.0000000000010910", url = "https://pubmed.ncbi.nlm.nih.gov/32938782/", title = "Improving accuracy of myasthenia gravis autoantibody testing by reflex algorithm.", locator = "Abstract, Results" },
+]
+note = "Positive (above) cut-off for AChR-Bi giving the best sensitivity (90%) in this single observational study; strictly above 0.02 nmol/L. Not a guideline threshold. Source kind: diagnostic. Source band >= 0.02; stored as the warn high bound 0.02."

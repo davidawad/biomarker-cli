@@ -1,0 +1,7 @@
+slug = "ebv-ebna"
+name = "Epstein-Barr Virus Nuclear Antigen (EBNA) IgG"
+loinc = "7883-2"
+category = "infectious"
+unit = "qualitative"
+description = "IgG antibody to Epstein-Barr virus nuclear antigen 1 (EBNA-1). Usually appears after recovery from primary EBV infection and so indicates past infection; it is interpreted together with VCA IgM and VCA IgG to tell acute from past infection. Expected result: negative in people without past EBV infection; positive in people with past infection."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

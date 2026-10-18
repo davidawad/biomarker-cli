@@ -1,0 +1,7 @@
+slug = "t3-uptake"
+name = "T3 Resin Uptake (T3RU)"
+loinc = "3050-2"
+category = "thyroid"
+unit = "%"
+description = "T3 Resin Uptake (T3RU). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

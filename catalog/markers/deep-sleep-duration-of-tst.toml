@@ -1,0 +1,17 @@
+slug = "deep-sleep-duration-of-tst"
+name = "Deep (N3) Sleep Duration (% of TST)"
+category = "sleep"
+unit = "% of TST"
+description = "Deep (N3) Sleep Duration reported in % of TST. Results in % of TST are assay specific and are not interchangeable with Deep (N3) Sleep Duration in min."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.7
+high = 35.4
+population = "Sleep Heart Health Study adults (n = 1517) with no obstructive sleep apnea and no insomnia, one night of home polysomnography; 5th-95th percentile"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35272350", doi = "10.1093/sleep/zsac059", title = "Sleep architecture based on sleep depth and propensity: patterns in different demographics and sleep disorders and association with health outcomes.", locator = "Table 2" },
+]
+note = "N3 as percent of total sleep time, 5th to 95th percentile of the no-OSA/no-insomnia group; not converted to minutes. Wide because N3 is near zero in many older adults."

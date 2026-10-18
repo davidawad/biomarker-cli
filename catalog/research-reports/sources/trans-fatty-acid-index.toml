@@ -1,0 +1,6 @@
+slug = "trans-fatty-acid-index"
+name = "Trans Fatty Acid Index"
+category = "fatty-acid"
+unit = "index"
+description = "Trans Fatty Acid Index. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

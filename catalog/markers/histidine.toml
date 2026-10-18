@@ -1,0 +1,7 @@
+slug = "histidine"
+name = "Histidine"
+category = "amino-acid"
+unit = "µmol/L"
+loinc = "2420-8"
+description = "Histidine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
+no_reference = "pending: no verified range yet (see UNCOVERED.md)"

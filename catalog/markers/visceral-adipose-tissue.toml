@@ -1,0 +1,32 @@
+slug = "visceral-adipose-tissue"
+name = "Visceral Adipose Tissue"
+category = "body-composition"
+unit = "g"
+loinc = "73707-2"
+description = "Visceral adipose tissue (VAT) mass, the fat stored in the abdominal cavity around organs, estimated by whole-body DXA. People track it as a cardiometabolic risk marker; VAT is associated with blood pressure, triglycerides, LDL-cholesterol, glucose and insulin resistance. Expected result: sex-specific; roughly twice as high in men as in women in young adults. Reference values below come from one healthy 20-30 year-old sample; no clinical cut-off for DXA-derived VAT is established here."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 103.4
+high = 1259.4
+when = { sex = "male", age = [20.0, 31.0] }
+population = "Healthy European men aged 20-30 years (n=207), GE Healthcare Prodigy DXA with CoreScan (method: dxa-ge-prodigy-corescan)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28683146", doi = "10.1371/journal.pone.0180614", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5500349/", title = "Visceral fat reference values derived from healthy European men and women aged 20-30 years using GE Healthcare dual-energy x-ray absorptiometry.", locator = "Table 2" },
+]
+note = "Source Table 2 gives the 10th and 90th percentiles (central 80%, not 2.5th-97.5th). The source calls its percentile tables reference values."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 20.0
+high = 515.0
+when = { sex = "female", age = [20.0, 31.0] }
+population = "Healthy European women aged 20-30 years (n=214), GE Healthcare Prodigy DXA with CoreScan (method: dxa-ge-prodigy-corescan)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28683146", doi = "10.1371/journal.pone.0180614", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5500349/", title = "Visceral fat reference values derived from healthy European men and women aged 20-30 years using GE Healthcare dual-energy x-ray absorptiometry.", locator = "Table 2" },
+]
+note = "Source Table 2 gives the 10th and 90th percentiles (central 80%, not 2.5th-97.5th). The source calls its percentile tables reference values."

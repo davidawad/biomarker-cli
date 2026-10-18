@@ -1,0 +1,19 @@
+slug = "anti-gbm"
+name = "Anti-Glomerular Basement Membrane Antibody"
+category = "autoimmune"
+unit = "CU"
+loinc = "59394-7"
+description = "IgG autoantibody against the glomerular basement membrane (anti-GBM, collagen IV alpha-3 NC1 domain), measured by a chemiluminescence immunoassay and reported in vendor chemiluminescence units (CU), which are not interchangeable with U/mL from other assays. Diagnostic for Goodpasture syndrome (anti-GBM disease). Expected result: negative (not detected)."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20
+when = { conditions = ["goodpasture-syndrome"] }
+population = "Patients with Goodpasture syndrome and disease and healthy controls, multicentre evaluation of the QUANTA Flash GBM chemiluminescence immunoassay"
+evidence = "cohort"
+citations = [
+  { pmid = "21562146", doi = "10.1093/ndt/gfr203", title = "Performance evaluation of a novel chemiluminescence assay for detection of anti-GBM antibodies: an international multicenter study.", locator = "Abstract, Results" },
+]
+note = "Assay cutoff stated by the source for the QUANTA Flash GBM chemiluminescence immunoassay; source unit CU. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."

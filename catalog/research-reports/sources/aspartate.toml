@@ -1,0 +1,19 @@
+slug = "aspartate"
+name = "Aspartate"
+loinc = "1913-3"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Non-essential amino acid and excitatory neurotransmitter, measured in plasma by LC-MS/MS. Used in amino acid profiling. Expected result: within the reference interval for the population studied."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 27.51
+high = 92.38
+when = { ethnicity = "chinese" }
+population = "Chinese adult population (LC-MS/MS with dansyl chloride derivatization)"
+evidence = "reference-interval-study"
+note = "Reference interval for plasma aspartate as reported by one LC-MS/MS method study in Chinese adults. The abstract does not state the percentile limits used."
+citations = [
+  { pmid = "37956824", doi = "10.1016/j.cca.2023.117650", title = "Simultaneous determination of human plasma 5 amino acid neurotransmitters using liquid chromatography-tandem mass spectrometry: Establishment of reference intervals in Chinese adult population and application to patients with schizophrenia.", locator = "Abstract, Results", quote = "The reference interval for Glu, Asp, Gly, Tau, and GABA were 55.51-189.06, 27.51-92.38, 204.01-574.55, 107.50-227.65, and <1 umol/L, respectively." },
+]
