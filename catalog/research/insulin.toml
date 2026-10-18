@@ -1,0 +1,45 @@
+slug = "insulin"
+name = "Insulin (fasting)"
+loinc = "20448-7"
+category = "glycemic"
+unit = "µIU/mL"
+description = "Fasting serum insulin. Reference intervals from healthy adult populations; elevated fasting insulin is a surrogate marker of insulin resistance."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.61
+high = 11.37
+when = { sex = "male", fasting = true }
+population = "Healthy non-obese Iranian men aged 24-83 years (Tehran Lipid and Glucose Study, n=309 men and women)"
+evidence = "reference-interval-study"
+note = "Central 95% reference interval for fasting insulin in men (source unit uU/mL, identical to uIU/mL)."
+citations = [
+  { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results", quote = "Overall 95% reference values for fasting insulin were 1.61-11.37, 2.34-11.98, and 2.11-12.49 uU/mL in men, women, and total population respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.34
+high = 11.98
+when = { sex = "female", fasting = true }
+population = "Healthy non-obese Iranian women aged 24-83 years (Tehran Lipid and Glucose Study, n=309 men and women)"
+evidence = "reference-interval-study"
+note = "Central 95% reference interval for fasting insulin in women (source unit uU/mL, identical to uIU/mL)."
+citations = [
+  { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results", quote = "Overall 95% reference values for fasting insulin were 1.61-11.37, 2.34-11.98, and 2.11-12.49 uU/mL in men, women, and total population respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.63
+high = 14.56
+when = { fasting = true, age_min = 20, age_max = 70 }
+population = "Healthy Nepalese adults aged 20-69 years with BMI 18.5-24.9 kg/m2 (Gandaki Province, n=135)"
+evidence = "reference-interval-study"
+note = "Non-parametric 2.5th-97.5th percentile reference interval, Nepal; sex not reported separately."
+citations = [
+  { pmid = "41857869", doi = "10.1136/bmjopen-2025-109523", title = "Reference intervals for fasting insulin and insulin-related indices in healthy adults: a cross-sectional study in Gandaki Province, Nepal.", locator = "Abstract, Results", quote = "The RI for fasting insulin was 2.63-14.56 uIU/mL (median 7.69 uIU/mL)." },
+]

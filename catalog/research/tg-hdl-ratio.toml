@@ -1,0 +1,29 @@
+slug = "tg-hdl-ratio"
+name = "Triglyceride/HDL-C Ratio"
+category = "lipid"
+unit = "ratio"
+description = "Ratio of fasting triglycerides to HDL cholesterol, used as a simple surrogate marker of insulin resistance and atherogenic dyslipidaemia. The numeric cut-off depends on the units of the two inputs (mg/dL-based or mmol/L-based ratios differ)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 3.0
+when = { method = "mg/dL-based" }
+population = "Nondiabetic overweight adults (BMI 25 kg/m2 or greater) in a general clinical research center cohort"
+evidence = "outcome-study"
+note = "Optimal cut-point for identifying insulin resistance (top tertile of insulin-mediated glucose disposal), mg/dL-based ratio. Derived from a cross-sectional ROC analysis, not an outcome study. Equivalent to 1.8 in SI units (mmol/L-based)."
+citations = [
+  { pmid = "14623617", doi = "10.7326/0003-4819-139-10-200311180-00007", title = "Use of metabolic markers to identify overweight individuals who are insulin resistant.", locator = "Abstract (Results)", quote = "1.8 in SI units (3.0 in traditional units) for the triglyceride-high-density lipoprotein cholesterol ratio" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.89
+when = { method = "mmol/L-based", age_min = 13, age_max = 17, conditions = ["obesity"] }
+population = "Adolescents aged 13-16 years with obesity"
+evidence = "outcome-study"
+note = "Youden-optimal cut-off for insulin resistance (HOMA-IR >= 4.0) in adolescents with obesity, mmol/L-based ratio. Cross-sectional ROC analysis in a single small sample (n = 215); not validated against outcomes and not a guideline threshold."
+citations = [
+  { pmid = "42650436", doi = "10.3390/children13081098", title = "Ratio That Reveals Risk: Defining TG:HDL-C Ratio Cutoff for Insulin Resistance in Adolescents with Obesity.", locator = "Abstract", quote = "The optimal TG:HDL-C ratio cutoff identified using the maximum Youden index was 0.89, with 62% sensitivity and 75% specificity." },
+]

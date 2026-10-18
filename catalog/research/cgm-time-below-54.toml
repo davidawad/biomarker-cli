@@ -1,0 +1,29 @@
+slug = "cgm-time-below-54"
+name = "CGM time below range (<54 mg/dL)"
+category = "glycemic"
+unit = "%"
+description = "Percentage of CGM glucose readings (or minutes per day) below 54 mg/dL (3.0 mmol/L), the level-2 hypoglycemia threshold. Maximum targets from the International Consensus on Time in Range."
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 1
+when = { conditions = ["diabetes"] }
+population = "Adults and children with type 1 or type 2 diabetes"
+evidence = "consensus"
+note = "Time below 54 mg/dL (3.0 mmol/L), less than 1 percent (less than 15 min per day)."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 3", quote = "<1%; <15 min | <54 mg/dL (<3.0 mmol/L)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 1
+when = { conditions = ["type-1-diabetes"], pregnant = true }
+population = "Pregnant women with type 1 diabetes"
+evidence = "consensus"
+note = "Pregnancy target for time below 54 mg/dL (3.0 mmol/L), less than 1 percent."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 4", quote = "<1%; <15 min | <54 mg/dL (<3.0 mmol/L)" },
+]

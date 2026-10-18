@@ -1,0 +1,147 @@
+slug = "egfr"
+name = "eGFR"
+loinc = "98979-8"
+category = "kidney"
+unit = "mL/min/1.73m²"
+description = "Estimated glomerular filtration rate from a creatinine- and/or cystatin C-based equation. Used to classify GFR categories G1-G5 and to define chronic kidney disease (CKD) together with albuminuria."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 90
+when = {}
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+note = "GFR category G1 (normal or high). CKD requires markers of kidney damage in addition to GFR category."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G1 Normal or high >=90" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 60
+high = 90
+when = {}
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+note = "GFR category G2 (mildly decreased), 60 to strictly below 90. CKD is diagnosed only with markers of kidney damage or GFR below 60 for more than 3 months."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G2 Mildly decreased 60-89 ... G1 Normal or high >=90" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 45
+high = 60
+when = {}
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+note = "GFR category G3a (mildly to moderately decreased), 45 to strictly below 60. CKD category when GFR is below 60 for more than 3 months."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G3a 45-59 ... G2 Mildly decreased 60-89" },
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Chapter 1 (Definition and classification of CKD)", quote = "the threshold GFR <60 ml/min per 1.73 m2 (GFR ... categories G3a-G5) for >3 months to indicate a diagnosis" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 30
+high = 45
+when = {}
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+note = "GFR category G3b (moderately to severely decreased), 30 to strictly below 45."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G3b severely decreased 30-44 ... G3a 45-59" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 15
+high = 30
+when = {}
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+note = "GFR category G4 (severely decreased), 15 to strictly below 30."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G4 Severely decreased 15-29 ... G3b severely decreased 30-44" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 15
+when = {}
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+note = "GFR category G5 (kidney failure), strictly below 15. Kidney failure category."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)", quote = "G5 Kidney failure <15 ... G4 Severely decreased 15-29" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 90
+when = { age_min = 2, method = "creatinine" }
+population = "Children and adolescents over 2 years of age, eGFR based on creatinine (eGFRcr)"
+evidence = "guideline"
+note = "Pediatric practice point: an eGFRcr below 90 can be flagged as low in children and adolescents over 2 years."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Practice Point 1.2.3.5", quote = "An eGFRcr level <90 ml/min per 1.73 m2 can be flagged as ... over the age of 2 years" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 79
+high = 144
+when = { sex = "male", age_max = 45 }
+population = "Apparently healthy males younger than 45 years, Egypt (IFCC C-RIDL protocol; n = 174; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (males, under 45 y). The source partitions age at 45 years (under 45 vs 45 and over). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 58
+high = 113
+when = { sex = "male", age_min = 45 }
+population = "Apparently healthy males aged 45 years and older, Egypt (IFCC C-RIDL protocol; n = 141; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (males, 45 y and older). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144 ... | (-) | M | 45~ | 141 | 52 | 63 | 58 | 89 | 113 | 108 | 119 | 58 | 89 | 113" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 87
+high = 123
+when = { sex = "female", age_max = 45 }
+population = "Apparently healthy females younger than 45 years, Egypt (IFCC C-RIDL protocol; n = 196; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (females, under 45 y). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144 ... | (-) | F | ~45 | 196 | 84 | 90 | 87 | 107 | 123 | 121 | 125 | 87 | 107 | 123" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 61
+high = 105
+when = { sex = "female", age_min = 45 }
+population = "Apparently healthy females aged 45 years and older, Egypt (IFCC C-RIDL protocol; n = 163; eGFR computed with the study's equation)"
+evidence = "reference-interval-study"
+note = "Sex- and age-partitioned reference interval (females, 45 y and older). Central 95 percent limits."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| eGFR | ml/min/ 1.73m2 | (-) | M | ~45 | 174 | 73 | 85 | 79 | 113 | 144 | 139 | 150 | ml/min/ 1.73m2 | 79 | 113 | 144 ... | (-) | F | 45~ | 163 | 55 | 68 | 61 | 90 | 105 | 104 | 107 | 61 | 90 | 105" },
+]

@@ -1,0 +1,93 @@
+slug = "upcr"
+name = "Urine Protein/Creatinine Ratio"
+category = "kidney"
+unit = "mg/g"
+description = "Urinary protein-to-creatinine ratio on a spot urine sample. Quantifies proteinuria in kidney disease and is used to assess significant proteinuria in pregnancy. Adult PCR staging categories are not stated in the sources reviewed here, so only the thresholds below are included."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 500
+when = { specimen = "spot-urine", age_max = 2 }
+population = "Infants aged 6 months to 2 years"
+evidence = "guideline"
+note = "Spot PCR usually considered normal in infants 6 months to 2 years, strictly below 500 mg/g."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Pediatric CKD text (proteinuria in infants and children)", quote = "a PCR of <500 mg/g (<50 mg/mmol) ... is considered normal for infants aged" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 200
+when = { specimen = "spot-urine", age_min = 2 }
+population = "Children over 2 years of age"
+evidence = "guideline"
+note = "Spot PCR usually considered normal in children over 2 years, strictly below 200 mg/g."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Pediatric CKD text (proteinuria in infants and children)", quote = "urine PCR of <200 mg/g (<20 mg/mmol) protein" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 20
+unit = "mg/mmol"
+when = { specimen = "spot-urine", age_min = 2 }
+population = "Children over 2 years of age"
+evidence = "guideline"
+note = "Spot PCR usually considered normal in children over 2 years, strictly below 20 mg/mmol (the same threshold as below 200 mg/g)."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Pediatric CKD text (proteinuria in infants and children)", quote = "urine PCR of <200 mg/g (<20 mg/mmol) protein" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 500
+when = { specimen = "spot-urine" }
+population = "Adults with suspected or confirmed CKD"
+evidence = "guideline"
+note = "PCR of 500 mg/g or more, approximately equivalent to ACR of 300 mg/g or more (A3 albuminuria). Part of the KDIGO criteria for diagnosing CKD with albuminuria."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Figure box 'Diagnosis of CKD' (Chapter 3 algorithm)", quote = "approximately equivalent to PCR >=500 mg/g [>=50 mg/mmol]" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 50
+unit = "mg/mmol"
+when = { specimen = "spot-urine" }
+population = "Adults with suspected or confirmed CKD"
+evidence = "guideline"
+note = "PCR of 50 mg/mmol or more (the same threshold as 500 mg/g), approximately equivalent to ACR of 30 mg/mmol or more."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Figure box 'Diagnosis of CKD' (Chapter 3 algorithm)", quote = "approximately equivalent to PCR >=500 mg/g [>=50 mg/mmol]" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 0.3
+unit = "mg/mg"
+when = { specimen = "spot-urine", pregnant = true }
+population = "Pregnant women with new-onset hypertension, evaluation for significant proteinuria / preeclampsia"
+evidence = "outcome-study"
+note = "Spot PCR cut-off of 0.3 mg/mg (equivalent to 300 mg/g or 30 mg/mmol) used to indicate significant proteinuria in pregnancy. The cut-off is quoted from the introduction of this cohort study, which cites its own sources; the ACOG and ISSHP texts were not retrieved, so they are not cited here."
+citations = [
+  { pmid = "41517598", doi = "10.3390/jcm15010345", title = "The Prognostic Significance of Proteinuria Severity in Pregnancy: A Retrospective Cohort Study of Maternal and Neonatal Outcomes", locator = "Introduction", quote = "with a cut-off value of >=0.3 to indicate significant proteinuria" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 30
+unit = "mg/mmol"
+when = { specimen = "spot-urine", pregnant = true }
+population = "Pregnant women with normal pregnancy (values as tabulated in a review)"
+evidence = "consensus"
+note = "Normal spot protein:creatinine ratio in pregnancy, strictly below 30 mg/mmol (source units kept). The nonpregnant value in the same table is below 20 mg/mmol."
+citations = [
+  { pmid = "42731065", doi = "10.1152/function.044.2026", title = "Maternal kidney adaptation and function in pregnancy: review and perspectives.", locator = "Table 1", quote = "Nonpregnant Normal Value | Pregnant Normal Value ... Protein:creatinine, mg/mmol | <20 (76) | <30 (76)" },
+]

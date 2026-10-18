@@ -1,0 +1,17 @@
+slug = "ldl-p"
+name = "LDL Particle Number (LDL-P)"
+category = "lipid"
+unit = "nmol/L"
+description = "Number of LDL particles per volume, measured by NMR lipoprotein profiling. Each atherogenic particle carries one apoB molecule; LDL-P is an alternative to LDL-C for judging particle burden."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1300
+when = { method = "nmr" }
+population = "Adults with normal fasting glucose in the Multi-Ethnic Study of Atherosclerosis (MESA); cut-point as used in that analysis"
+evidence = "consensus"
+note = "Elevated LDL-P at or above 1300 nmol/L. This is the company-recommended NMR cut-point the MESA analysis used as a clinical cut-point; the paper did not derive it from a population percentile. Not a reference interval."
+citations = [
+  { pmid = "36545388", doi = "10.1016/j.ajpc.2022.100436", title = "Small dense low-density lipoprotein cholesterol compared to other lipoprotein biomarkers for predicting coronary heart disease among individuals with normal fasting glucose: The Multi-Ethnic Study of Atherosclerosis.", locator = "Methods (statistical analysis, cut-points)", quote = "and LDL-P = 1300 nmol/L with sdLDL-C and LDL-P cut-points based on company recommended cut-points" },
+]

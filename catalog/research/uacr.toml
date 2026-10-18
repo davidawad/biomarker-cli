@@ -1,0 +1,120 @@
+slug = "uacr"
+name = "Urine Albumin/Creatinine Ratio"
+category = "kidney"
+unit = "mg/g"
+description = "Urinary albumin-to-creatinine ratio on a spot urine sample. Staging marker for albuminuria (categories A1-A3) in chronic kidney disease, and a continuous marker of kidney and cardiovascular risk."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 30
+when = { specimen = "spot-urine" }
+population = "Adults and children with or at risk of CKD (persistent albuminuria categories)"
+evidence = "guideline"
+note = "KDIGO albuminuria category A1 (normal to mildly increased), strictly below 30 mg/g."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A1 <30 <3 <30 Normal to mildly increased" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 30
+high = 300
+when = { specimen = "spot-urine" }
+population = "Adults and children with or at risk of CKD (persistent albuminuria categories)"
+evidence = "guideline"
+note = "KDIGO albuminuria category A2 (moderately increased), 30 to 300 mg/g inclusive. A3 starts strictly above 300 mg/g."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A2 30-300 3-30 30-300 Moderately increased" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 300
+when = { specimen = "spot-urine" }
+population = "Adults and children with or at risk of CKD (persistent albuminuria categories)"
+evidence = "guideline"
+note = "KDIGO albuminuria category A3 (severely increased), strictly above 300 mg/g."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A3 >300 >30 >300 Severely increased" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 3
+unit = "mg/mmol"
+when = { specimen = "spot-urine" }
+population = "Adults and children with or at risk of CKD (persistent albuminuria categories)"
+evidence = "guideline"
+note = "KDIGO albuminuria category A1 (normal to mildly increased), strictly below 3 mg/mmol (the same category as below 30 mg/g)."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A1 <30 <3 <30 Normal to mildly increased" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 3
+high = 30
+unit = "mg/mmol"
+when = { specimen = "spot-urine" }
+population = "Adults and children with or at risk of CKD (persistent albuminuria categories)"
+evidence = "guideline"
+note = "KDIGO albuminuria category A2 (moderately increased), 3 to 30 mg/mmol inclusive. A3 starts strictly above 30 mg/mmol."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A2 30-300 3-30 30-300 Moderately increased" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 30
+unit = "mg/mmol"
+when = { specimen = "spot-urine" }
+population = "Adults and children with or at risk of CKD (persistent albuminuria categories)"
+evidence = "guideline"
+note = "KDIGO albuminuria category A3 (severely increased), strictly above 30 mg/mmol."
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease", quote = "A3 >300 >30 >300 Severely increased" },
+]
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 10
+when = { specimen = "spot-urine" }
+population = "Adults in a general population cohort (China Cardiometabolic Disease and Cancer Cohort, 82,509 participants, median follow-up 3.0 years)"
+evidence = "outcome-study"
+note = "Below 10 mg/g, the lowest-risk region of a J-shaped association with cardiorenal outcomes; risk already rises from 10 mg/g in this cohort. Not a guideline threshold: a single cohort, and the guideline cut-offs remain 30 and 300 mg/g."
+citations = [
+  { pmid = "42584389", doi = "10.1016/j.jacasi.2026.06.032", title = "Lifestyle and Metabolic Health, Low-Grade to Clinically Elevated Albuminuria, and Cardiovascular-Renal Diseases.", locator = "Abstract, Results", quote = "participants with mildly elevated UACR (>=10 to <30 mg/g) had a 39% higher risk of composite cardiorenal outcomes ... with UACR >=10 mg/g already conferring risks" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 30.9
+unit = "mg/g"
+when = { specimen = "spot-urine", sex = "female" }
+population = "Women; historical sex-specific ACR criterion (superseded by a unified 30 mg/g threshold in KDIGO 2012)"
+evidence = "guideline"
+note = "Historical sex-specific abnormal ACR cut-off for women (about 3.5 mg/mmol). Superseded; kept only to document the sex-specific partition. Do not use as a current diagnostic threshold."
+citations = [
+  { pmid = "40143452", doi = "10.1111/dom.16359", title = "Developments in albuminuria testing: A key biomarker for detection, prognosis and surveillance of kidney and cardiovascular disease-A practical update for clinicians.", locator = "Sex-specific ACR cut-offs (text)", quote = "In these guidelines, a higher cut-off for defining abnormal ACR was set for women (3.5 mg/mmol or approximately 30.9 mg/g) compared to men (2.5 mg/mmol or approximately 22.1 mg/g)." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 22.1
+unit = "mg/g"
+when = { specimen = "spot-urine", sex = "male" }
+population = "Men; historical sex-specific ACR criterion (superseded by a unified 30 mg/g threshold in KDIGO 2012)"
+evidence = "guideline"
+note = "Historical sex-specific abnormal ACR cut-off for men (about 2.5 mg/mmol). Superseded; kept only to document the sex-specific partition. Do not use as a current diagnostic threshold."
+citations = [
+  { pmid = "40143452", doi = "10.1111/dom.16359", title = "Developments in albuminuria testing: A key biomarker for detection, prognosis and surveillance of kidney and cardiovascular disease-A practical update for clinicians.", locator = "Sex-specific ACR cut-offs (text)", quote = "In these guidelines, a higher cut-off for defining abnormal ACR was set for women (3.5 mg/mmol or approximately 30.9 mg/g) compared to men (2.5 mg/mmol or approximately 22.1 mg/g)." },
+]

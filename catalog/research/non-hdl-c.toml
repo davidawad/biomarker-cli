@@ -1,0 +1,155 @@
+slug = "non-hdl-c"
+name = "Non-HDL Cholesterol"
+loinc = "43396-1"
+category = "lipid"
+unit = "mg/dL"
+description = "Total cholesterol minus HDL-C, capturing all atherogenic apolipoprotein B particles. Used as a secondary target when triglycerides are elevated (ATP III: goal set 30 mg/dL above the LDL-C goal), with the NICE secondary-prevention target, pediatric NHLBI cut-points and the EAS/EFLM non-fasting and fasting flags."
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 130
+when = { risk = "chd-or-risk-equivalent" }
+population = "Adults with coronary heart disease or CHD risk equivalents"
+evidence = "guideline"
+note = "ATP III non-HDL-C goal (<130 mg/dL), set 30 mg/dL above the LDL-C goal of <100. ATP III (2001) is superseded; the 2018 AHA/ACC text was not retrievable here."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 9", quote = "Risk Category LDL Goal (mg/dL) Non-HDL-C Goal (mg/dL) CHD and CHD Risk Equivalent <100 <130 (10-year risk for CHD >20%) Multiple (2+) Risk Factors and <130 <160 10-year risk <=20% 0-1 Risk Factor <160 <190" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 160
+when = { risk = "two-or-more-risk-factors" }
+population = "Adults with two or more risk factors and 10-year CHD risk of 20% or less"
+evidence = "guideline"
+note = "ATP III non-HDL-C goal (<160 mg/dL) for multiple (2+) risk factors."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 9", quote = "Risk Category LDL Goal (mg/dL) Non-HDL-C Goal (mg/dL) CHD and CHD Risk Equivalent <100 <130 (10-year risk for CHD >20%) Multiple (2+) Risk Factors and <130 <160 10-year risk <=20% 0-1 Risk Factor <160 <190" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 190
+when = { risk = "zero-to-one-risk-factor" }
+population = "Adults with zero to one risk factor"
+evidence = "guideline"
+note = "ATP III non-HDL-C goal (<190 mg/dL) for zero to one risk factor."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 9", quote = "Risk Category LDL Goal (mg/dL) Non-HDL-C Goal (mg/dL) CHD and CHD Risk Equivalent <100 <130 (10-year risk for CHD >20%) Multiple (2+) Risk Factors and <130 <160 10-year risk <=20% 0-1 Risk Factor <160 <190" },
+]
+
+[[range]]
+set = "clinical"
+kind = "target"
+unit = "mmol/L"
+high = 2.6
+when = { conditions = ["established-cvd"] }
+population = "Adults with established cardiovascular disease (secondary prevention)"
+evidence = "guideline"
+note = "NICE NG238 secondary-prevention non-HDL-C target, stated in mmol/L; numbers kept as the source states them."
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng238/chapter/recommendations", locator = "Recommendation 1.7.1", quote = "For secondary prevention of CVD, aim for LDL cholesterol levels of 2.0 mmol per litre or less, or non-HDL cholesterol levels of 2.6 mmol per litre or less." },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 120
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Acceptable pediatric non-HDL-C: strictly below 120 mg/dL."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "Non-HDL-C < 120 120-144 >= 145" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 120
+high = 144
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric borderline-high non-HDL-C."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "Non-HDL-C < 120 120-144 >= 145" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 145
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric high non-HDL-C (>= 145 mg/dL)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "Non-HDL-C < 120 120-144 >= 145" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 150
+when = { fasting = false }
+population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+note = "Laboratory flag for abnormal non-fasting non-HDL-C. The consensus full text gives 3.9 mmol/L (155 mg/dL) in one place and 3.9 mmol/L (150 mg/dL) in the abstract; the abstract value is used here."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract", quote = "calculated non-HDL cholesterol >=3.9 mmol/L (150 mg/dL)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 145
+when = { fasting = true }
+population = "Fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+note = "Laboratory flag for abnormal fasting non-HDL-C."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Results / flagging section (full text)", quote = "non-HDL cholesterol >=3.8 mmol/L (145 mg/dL)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 73
+high = 220
+when = { sex = "male", age_min = 18, age_max = 66 }
+population = "Apparently healthy Egyptian men aged 18-65 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 1.88-5.69 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| nonHDL | mmol/L | (-) | M | 18~65 | 290 | 1.69 | 2.07 | 1.88 | 3.58 | 5.69 | 5.43 | 5.95 | mg/dL | 73 | 139 | 220" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 71
+high = 187
+when = { sex = "female", age_min = 18, age_max = 45 }
+population = "Apparently healthy Egyptian women aged 18 to under 45 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 1.83-4.84 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| nonHDL | mmol/L | (-) | M | 18~65 | 290 ... 220 | (-) | F | ~45 | 195 | 1.56 | 2.09 | 1.83 | 3.17 | 4.84 | 4.59 | 5.09 | 71 | 123 | 187" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 89
+high = 226
+when = { sex = "female", age_min = 45 }
+population = "Apparently healthy Egyptian women aged 45 and over (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 2.31-5.85 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| nonHDL | mmol/L ... | (-) | F | 45~ | 167 | 2.09 | 2.53 | 2.31 | 3.85 | 5.85 | 5.60 | 6.10 | 89 | 149 | 226" },
+]

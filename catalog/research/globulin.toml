@@ -1,0 +1,64 @@
+slug = "globulin"
+name = "Globulin (calculated)"
+category = "liver"
+unit = "g/dL"
+description = "Calculated globulin (total protein minus albumin). Raised globulin reflects immunoglobulin and acute-phase protein levels and is associated with higher mortality in dialysis patients."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.6
+high = 4.1
+when = { age_min = 18, sex = "male" }
+population = "Healthy adult males (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (sex-specific 95% RIs)", quote = "globulin: 2.6-4.1g/dL and 2.7-4.0g/dL" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.7
+high = 4.0
+when = { age_min = 18, sex = "female" }
+population = "Healthy adult females (Gandaki Province, Nepal; dry-chemistry method)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (sex-specific 95% RIs)", quote = "globulin: 2.6-4.1g/dL and 2.7-4.0g/dL" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.7
+high = 4.2
+when = { age_min = 18 }
+population = "Healthy adults (Gandaki Province, Nepal; dry-chemistry method), sexes combined"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", locator = "Results (combined 95% RIs)", quote = "total protein: 6.8-8.9g/dL; albumin: 3.9-5.2 g/dL; globulin: 2.7-4.2g/dL; A/G ratio: 1.0-1.8" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 3.8
+when = { conditions = ["hemodialysis"] }
+population = "Incident hemodialysis patients (retrospective cohort, 2007-2011)"
+evidence = "outcome-study"
+note = "Globulin above 3.8 g/dL was associated with higher all-cause and infection-related mortality (fully adjusted HR 1.11 for all-cause) versus the 3.0 to <3.2 g/dL reference group. Association only; not a treatment target."
+citations = [
+  { pmid = "34617572", doi = "10.1093/ndt/gfab292", title = "Association of serum globulin with all-cause mortality in incident hemodialysis patients.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9494081/", locator = "Abstract (Results)", quote = "Patients with a globulin concentration >3.8 g/dL had a higher all-cause and infection-related mortality risk" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.0
+high = 3.7
+when = { age_min = 18, age_max = 66 }
+population = "Adults aged 18 to 65 years, apparently healthy Egyptian volunteers (IFCC C-RIDL protocol); sexes combined"
+evidence = "reference-interval-study"
+note = "Sex-combined adult 95% reference interval (calculated analyte in the source). The conventional-unit block is labelled g/L, but the values are g/dL (the SI block is 20-37 g/L); used as g/dL, not converted."
+citations = [ { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", locator = "Table 3", quote = "| Glb | g/L | (-) | MF | 18~65 | 619 | 18.9 | 20.1 | 20 | 27 | 37 | 35.9 | 38.0 | g/L | 2.0 | 2.7 | 3.7" } ]

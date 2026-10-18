@@ -1,0 +1,32 @@
+slug = "osmolality"
+name = "Osmolality, Serum"
+loinc = "2692-2"
+category = "electrolyte"
+unit = "mOsm/kg"
+description = "Serum osmolality measures the concentration of osmotically active solutes. No verifiable source for a measured serum osmolality reference interval (commonly quoted 275-295) was found; ranges here are dehydration thresholds in older adults. The osmolal gap is in osmolal-gap.toml."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 300
+when = { age_min = 65 }
+population = "Hospitalised adults aged 65 years and over (low-intake dehydration; directly measured serum or plasma osmolality)"
+evidence = "meta-analysis"
+note = "Low-intake dehydration threshold: measured osmolality strictly above 300 mOsm/kg (low = 300 means strictly greater than 300). Threshold as used by the 19 included studies."
+citations = [
+  { pmid = "42158549", doi = "10.1136/bmjph-2025-002985", title = "Prevalence of low-intake dehydration in hospitalised older adults: systematic review and meta-analysis.", locator = "Abstract (Results)", quote = "directly measured osmolality >300 mOsm/kg, calculated osmolarity using Khajuria Krahn equation >300 mmol/L" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 295
+high = 300
+when = { age_min = 65 }
+population = "Older people aged 65 years and over in five cohorts (community and hospital; directly measured serum/plasma osmolality)"
+evidence = "outcome-study"
+note = "Impending dehydration band: osmolality at or above 295 mOsm/kg up to the 300 mOsm/kg current-dehydration threshold (the source gives >=295 and >300 separately; high = 300 marks where the current-dehydration cut-off starts)."
+citations = [
+  { pmid = "26490100", doi = "10.1136/bmjopen-2015-008846", title = "Diagnostic accuracy of calculated serum osmolarity to predict dehydration in older people: adding value to pathology laboratory reports.", locator = "Abstract", quote = "current dehydration (serum osmolality>300 mOsm/kg), impending/current dehydration (>=295 mOsm/kg)" },
+]
+

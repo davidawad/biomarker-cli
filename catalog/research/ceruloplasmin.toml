@@ -1,0 +1,68 @@
+slug = "ceruloplasmin"
+name = "Ceruloplasmin"
+category = "mineral"
+unit = "mg/dL"
+description = "Serum ceruloplasmin, the main copper-carrying protein. It is the first-line biochemical marker for Wilson disease, and it is also an acute-phase reactant that rises in inflammation and pregnancy and falls in liver disease. Interpret with copper, urinary copper and clinical findings, not alone."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 20
+high = 40
+population = "Adults (general, unspecified)"
+evidence = "textbook"
+note = "Normal serum ceruloplasmin as stated in a narrative review of Wilson disease diagnosis. Assay-dependent; not a measured reference-interval study. A value of 20-40 mg/dL does not exclude Wilson disease."
+citations = [
+  { pmid = "37970614", doi = "10.4254/wjh.v15.i10.1109", title = "Challenges and dilemmas in pediatric hepatic Wilson's disease.", locator = "Diagnosis section (text)", quote = "The normal value of ceruloplasmin ranges between 20-40 mg/dL." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 10
+when = { conditions = ["suspected-wilson-disease"] }
+population = "Patients with suspected Wilson disease"
+evidence = "textbook"
+note = "Strong evidence for Wilson disease: strictly below 10 mg/dL in the cited review's diagnostic table."
+citations = [
+  { pmid = "37970614", doi = "10.4254/wjh.v15.i10.1109", title = "Challenges and dilemmas in pediatric hepatic Wilson's disease.", locator = "Table (diagnostic tests, cut-off values)", quote = "< 10 mg/dL (strong evidence), 10-20 mg/dL (needs further evaluation), 20-40 mg/dL (normal value, but does not exclude diagnosis)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 10
+high = 20
+when = { conditions = ["suspected-wilson-disease"] }
+population = "Patients with suspected Wilson disease"
+evidence = "textbook"
+note = "Intermediate zone: 10 to under 20 mg/dL needs further evaluation (cited review's diagnostic table)."
+citations = [
+  { pmid = "37970614", doi = "10.4254/wjh.v15.i10.1109", title = "Challenges and dilemmas in pediatric hepatic Wilson's disease.", locator = "Table (diagnostic tests, cut-off values)", quote = "10-20 mg/dL (needs further evaluation)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 20
+when = { conditions = ["suspected-wilson-disease"] }
+population = "Patients with suspected Wilson disease"
+evidence = "textbook"
+note = "Strictly below 20 mg/dL is considered diagnostic of Wilson disease in the cited narrative review; the second source says below 20 mg/dL with a Kayser-Fleischer ring is consistent with Wilson disease. Laboratory-dependent cut-off."
+citations = [
+  { pmid = "34733946", doi = "10.21037/atm-21-2264", title = "Wilson disease and the differential diagnosis of its hepatic manifestations: a narrative review of clinical, laboratory, and liver histological features.", locator = "Serum ceruloplasmin levels (text)", quote = "Traditionally, total ceruloplasmin levels are considered diagnostic of WD when below 20 mg/dL." },
+  { pmid = "37970614", doi = "10.4254/wjh.v15.i10.1109", title = "Challenges and dilemmas in pediatric hepatic Wilson's disease.", locator = "Diagnosis section (text)", quote = "Ceruloplasmin level < 20 mg/dL with the presence of Kayser Fleischer (KF) ring is considered consistent with WD" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 0.1
+unit = "g/L"
+when = { conditions = ["wilson-disease"] }
+population = "Patients with Wilson disease (on average, compared with healthy subjects and other liver disease)"
+evidence = "textbook"
+note = "Source states the mean ceruloplasmin in Wilson disease is significantly lower than 0.1 g/L (1 mg/dL is 0.01 g/L; 0.1 g/L = 10 mg/dL). This is a group average with overlap with other liver conditions, not a guideline cut-off. Source unit is g/L, kept as stated."
+citations = [
+  { pmid = "34733946", doi = "10.21037/atm-21-2264", title = "Wilson disease and the differential diagnosis of its hepatic manifestations: a narrative review of clinical, laboratory, and liver histological features.", locator = "Serum ceruloplasmin levels (text)", quote = "Serum ceruloplasmin levels of WD patients are, on average, significantly lower (<0.1 g/L) than those of healthy subjects and patients with other liver diseases" },
+]

@@ -1,0 +1,149 @@
+slug = "urine-iodine"
+name = "Iodine, Urine (median, population)"
+category = "mineral"
+unit = "µg/L"
+description = "Median urinary iodine concentration in a population sample, the WHO/UNICEF/ICCIDD indicator of population iodine intake. These criteria apply to population medians, not to an individual's urinary iodine, which varies day to day."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 20
+population = "Population median, school-age children and non-pregnant adults (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Severe iodine deficiency: population median strictly below 20 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "below 20 ug/L denotes severe iodine deficiency, between 20-49 moderate, between 50-99 mild iodine deficiency, UlC between 100-199 is adequate iodine intake, UlC between 200-299 more than adequate, and UlC more than 300 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+high = 49
+population = "Population median, school-age children and non-pregnant adults (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Moderate iodine deficiency: population median 20-49 ug/L (the next band starts at 50). Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "below 20 ug/L denotes severe iodine deficiency, between 20-49 moderate, between 50-99 mild iodine deficiency, UlC between 100-199 is adequate iodine intake, UlC between 200-299 more than adequate, and UlC more than 300 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 50
+high = 99
+population = "Population median, school-age children and non-pregnant adults (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Mild iodine deficiency: population median 50-99 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "below 20 ug/L denotes severe iodine deficiency, between 20-49 moderate, between 50-99 mild iodine deficiency, UlC between 100-199 is adequate iodine intake, UlC between 200-299 more than adequate, and UlC more than 300 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 100
+high = 199
+population = "Population median, school-age children and non-pregnant adults (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Adequate iodine intake at population level: median 100-199 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "below 20 ug/L denotes severe iodine deficiency, between 20-49 moderate, between 50-99 mild iodine deficiency, UlC between 100-199 is adequate iodine intake, UlC between 200-299 more than adequate, and UlC more than 300 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 200
+high = 299
+population = "Population median, school-age children and non-pregnant adults (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "More than adequate (above the adequacy band, approaching excess): population median 200-299 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "below 20 ug/L denotes severe iodine deficiency, between 20-49 moderate, between 50-99 mild iodine deficiency, UlC between 100-199 is adequate iodine intake, UlC between 200-299 more than adequate, and UlC more than 300 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 300
+population = "Population median, school-age children and non-pregnant adults (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Excessive iodine intake at population level: median of 300 ug/L or more. The quoted source wording is 'more than 300 ug/L'; the lower bound is written as 300 per the WHO band. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "below 20 ug/L denotes severe iodine deficiency, between 20-49 moderate, between 50-99 mild iodine deficiency, UlC between 100-199 is adequate iodine intake, UlC between 200-299 more than adequate, and UlC more than 300 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 150
+when = { pregnant = true }
+population = "Pregnant women, population median (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Insufficient iodine intake in pregnancy: population median strictly below 150 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "UlC of pregnant women under 150 ug/L indicates an insufficient iodine intake, between 150-249 is adequate, between 250-499 is above the required level, and over 500 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 150
+high = 249
+when = { pregnant = true }
+population = "Pregnant women, population median (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Adequate iodine intake in pregnancy: population median 150-249 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "UlC of pregnant women under 150 ug/L indicates an insufficient iodine intake, between 150-249 is adequate, between 250-499 is above the required level, and over 500 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 250
+high = 499
+when = { pregnant = true }
+population = "Pregnant women, population median (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Above the required level in pregnancy: population median 250-499 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "UlC of pregnant women under 150 ug/L indicates an insufficient iodine intake, between 150-249 is adequate, between 250-499 is above the required level, and over 500 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 500
+when = { pregnant = true }
+population = "Pregnant women, population median (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Excessive iodine intake in pregnancy: population median above 500 ug/L (source wording 'over 500'; written as low = 500). Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "UlC of pregnant women under 150 ug/L indicates an insufficient iodine intake, between 150-249 is adequate, between 250-499 is above the required level, and over 500 ug/L is excessive iodine intake" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 100
+when = { postpartum = true }
+population = "Lactating women, population median (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Adequate iodine intake in lactating women: population median at or above 100 ug/L. Encoded with postpartum = true as the nearest available condition key; it means lactating women. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "Median UIC equal to or exceeding 100 ug I/L is an adequate iodine intake for lactating women and children below 2 years of age" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 100
+when = { age_max = 2 }
+population = "Children under 2 years, population median (WHO/UNICEF/ICCIDD criteria as quoted in the cited paper)"
+evidence = "consensus"
+note = "Adequate iodine intake in children under 2 years: population median at or above 100 ug/L. Applies to population medians, not individuals."
+citations = [
+  { pmid = "40432435", title = "Iodine Intake and Iodine Status in the Czech Republic - Past, Present, Future.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12148121/", locator = "Background (iodine status paragraph)", quote = "Median UIC equal to or exceeding 100 ug I/L is an adequate iodine intake for lactating women and children below 2 years of age" },
+]

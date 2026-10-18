@@ -1,0 +1,44 @@
+slug = "anion-gap"
+name = "Anion Gap"
+loinc = "33037-3"
+category = "electrolyte"
+unit = "mmol/L"
+description = "The anion gap is calculated from serum sodium, chloride and bicarbonate (and sometimes potassium) and is used to classify metabolic acidoses. Its reference interval depends on the formula and assay used, so the laboratory's own interval should be applied."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 7
+high = 18
+population = "Healthy adults (Yale-New Haven Hospital reference population; no significant sex or age differences)"
+evidence = "reference-interval-study"
+note = "Derived from 17,137 patients (healthy adults, ED and ICU). The abstract does not state the formula or method (with or without potassium), so no method condition is set. The previous laboratory interval was 6-16 mmol/L."
+citations = [
+  { pmid = "32445342", doi = "10.1373/jalm.2019.029496", title = "Interpreting Anion Gap Values in Adult and Pediatric Patients: Examining the Reference Interval.", locator = "Abstract, Results", quote = "We derived a new reference interval of 7 to 18 mmol/L with a median of 13 mmol/L in healthy adults" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 10
+high = 16
+when = { method = "with-potassium", specimen = "arterial" }
+population = "Healthy medical students (aged 20-32) and health professionals (aged 21-76), arterial blood gas analyser samples (Radiometer ABL)"
+evidence = "reference-interval-study"
+note = "Anion gap with potassium included in the calculation (formula not stated in the abstract). Arterial blood gas samples; not a serum interval."
+citations = [
+  { pmid = "21619466", doi = "10.1515/CCLM.2011.603", title = "Reference intervals and age and gender dependency for arterial blood gases and electrolytes in adults.", locator = "Abstract", quote = "anion gap (10-16 mmol/L, with potassium included or 6-12 mmol/L without potassium)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6
+high = 12
+when = { method = "without-potassium", specimen = "arterial" }
+population = "Healthy medical students (aged 20-32) and health professionals (aged 21-76), arterial blood gas analyser samples (Radiometer ABL)"
+evidence = "reference-interval-study"
+note = "Anion gap calculated without potassium (formula not stated in the abstract). Arterial blood gas samples; not a serum interval."
+citations = [
+  { pmid = "21619466", doi = "10.1515/CCLM.2011.603", title = "Reference intervals and age and gender dependency for arterial blood gases and electrolytes in adults.", locator = "Abstract", quote = "anion gap (10-16 mmol/L, with potassium included or 6-12 mmol/L without potassium)" },
+]

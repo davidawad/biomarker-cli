@@ -1,0 +1,17 @@
+slug = "lipase"
+name = "Lipase"
+category = "chemistry"
+unit = "U/L"
+description = "Serum lipase is a pancreatic enzyme marker and is more specific for pancreatic injury than amylase. Reference limits are assay-specific and are not sex-dependent in the adult study cited here."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 15.4
+high = 68.3
+population = "Adults, Turkish population (n = 973, sex-independent), indirect reference interval from routine laboratory data (reflimR); Roche Cobas 8000 enzymatic method"
+evidence = "reference-interval-study"
+note = "Indirect reflimR interval, sex-independent. The same source's refineR estimate was 14.9-55.4 U/L and the manufacturer's instructions for use gave 13-60 U/L; the reflimR upper limit is higher than the manufacturer's. Age-specific intervals were not estimated."
+citations = [
+  { pmid = "41710253", doi = "10.11613/BM.2026.010706", title = "Indirect estimation of serum enzymes reference intervals in adults using the reflimR and refineR algorithms.", locator = "Table 2", quote = "Reference intervals for enzymes with unified partitioning... | Lipase | 973 | 15.4 (14.4-17.2) | 68.3 (61.3-73.2)" },
+]

@@ -1,0 +1,297 @@
+slug = "triglycerides"
+name = "Triglycerides"
+loinc = "2571-8"
+category = "lipid"
+unit = "mg/dL"
+description = "Triglyceride concentration, interpreted by ATP III categories, the fasting/non-fasting distinction, pediatric NHLBI age bands, the 2018 AHA/ACC non-fasting risk enhancer, and pregnancy reference intervals. Life-threatening concentrations are flagged for pancreatitis risk."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 150
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Normal: strictly below 150 mg/dL (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Triglyceride classification", quote = "Normal triglycerides: <150 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 150
+high = 199
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Borderline-high triglycerides (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Triglyceride classification", quote = "Borderline-high triglycerides: 150-199 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 200
+high = 499
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "High triglycerides (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Triglyceride classification", quote = "High triglycerides: 200-499 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 500
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Very high triglycerides (ATP III); ATP III aims first to prevent acute pancreatitis."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Triglyceride classification", quote = "Very high triglycerides: >=500 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "critical"
+low = 880
+population = "Adults, non-fasting or fasting samples"
+evidence = "consensus"
+note = "Life-threatening concentration: separate referral is required for pancreatitis risk. The source gives 10 mmol/L and 880 mg/dL."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract", quote = "Life-threatening concentrations require separate referral when triglycerides >10 mmol/L (880 mg/dL) for the risk of pancreatitis" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 175
+when = { fasting = false }
+population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+note = "Laboratory flag for abnormal non-fasting triglycerides."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract", quote = "For non-fasting samples, laboratory reports should flag abnormal concentrations as triglycerides >=2 mmol/L (175 mg/dL)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 150
+when = { fasting = true }
+population = "Fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+note = "Laboratory flag for abnormal fasting triglycerides."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Results / flagging section (full text)", quote = "for fasting samples, abnormal concentrations should be triglycerides >=1.7 mmol/L (150 mg/dL)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 175
+when = { fasting = false }
+population = "Adults with persistently elevated primary hypertriglyceridemia (non-fasting)"
+evidence = "guideline"
+note = "Risk-enhancing factor in the 2018 AHA/ACC framework, as listed in the cited review."
+citations = [
+  { pmid = "42211141", doi = "10.12997/jla.2026.15.2.216", title = "Statins, LDL-C and Beyond: A Contemporary Review of Atherosclerotic Cardiovascular Risk Assessment and Management.", locator = "Risk-enhancing factors table", quote = "Persistently elevated primary hypertriglyceridemia | >=175 mg/dL (nonfasting)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 150
+population = "Adults, metabolic syndrome criteria"
+evidence = "guideline"
+note = "Metabolic syndrome component: triglycerides at or above 150 mg/dL (ATP III criteria)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Metabolic syndrome criteria table", quote = "Triglycerides >=150 mg/dL HDL cholesterol Men <40 mg/dL Women <50 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 75
+when = { age_min = 0, age_max = 10 }
+population = "Children aged 0-9 years (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Acceptable pediatric triglycerides, ages 0-9 years: strictly below 75 mg/dL."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "0-9 years < 75 75-99 >= 100" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 75
+high = 99
+when = { age_min = 0, age_max = 10 }
+population = "Children aged 0-9 years (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Borderline-high pediatric triglycerides, ages 0-9 years."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "0-9 years < 75 75-99 >= 100" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 100
+when = { age_min = 0, age_max = 10 }
+population = "Children aged 0-9 years (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "High pediatric triglycerides, ages 0-9 years (>= 100 mg/dL)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "0-9 years < 75 75-99 >= 100" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 90
+when = { age_min = 10, age_max = 20 }
+population = "Adolescents aged 10-19 years (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Acceptable pediatric triglycerides, ages 10-19 years: strictly below 90 mg/dL."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "10-19 years < 90 90-129 >= 130" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 90
+high = 129
+when = { age_min = 10, age_max = 20 }
+population = "Adolescents aged 10-19 years (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Borderline-high pediatric triglycerides, ages 10-19 years."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "10-19 years < 90 90-129 >= 130" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 130
+when = { age_min = 10, age_max = 20 }
+population = "Adolescents aged 10-19 years (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "High pediatric triglycerides, ages 10-19 years (>= 130 mg/dL)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "10-19 years < 90 90-129 >= 130" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 0.54
+high = 2.33
+when = { pregnant = true, trimester = 1 }
+population = "Healthy singleton pregnant women, first trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| TG | 0.54-2.33 | 0.48-2.20 | 12.50-5.91 | 1.68-5.67 | 1.53-5.52 | 9.80-2.72 | 20.79" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 1.68
+high = 5.67
+when = { pregnant = true, trimester = 3 }
+population = "Healthy singleton pregnant women, third trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| TG | 0.54-2.33 | 0.48-2.20 | 12.50-5.91 | 1.68-5.67 | 1.53-5.52 | 9.80-2.72 | 20.79" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 44
+high = 359
+when = { sex = "male", age_min = 18, age_max = 66 }
+population = "Apparently healthy Egyptian men aged 18-65 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 0.50-4.06 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TG | mmol/L | (-) | M | 18~65 | 286 | 0.43 | 0.56 | 0.50 | 1.27 | 4.06 | 3.63 | 4.48 | mg/dL | 44 | 112 | 359" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 36
+high = 240
+when = { sex = "female", age_min = 18, age_max = 45 }
+population = "Apparently healthy Egyptian women aged 18 to under 45 years (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 0.40-2.72 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TG | mmol/L | (-) | M | 18~65 | 286 ... 359 | (-) | F | ~45 | 197 | 0.36 | 0.44 | 0.40 | 0.92 | 2.72 | 2.40 | 3.03 | 36 | 82 | 240" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 51
+high = 311
+when = { sex = "female", age_min = 45 }
+population = "Apparently healthy Egyptian women aged 45 and over (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 0.57-3.52 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TG | mmol/L ... | (+) | F | 45~ | 125 | 0.45 | 0.70 | 0.57 | 1.28 | 3.52 | 2.87 | 4.17 | 51 | 113 | 311" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.44
+high = 2.54
+unit = "mmol/L"
+when = { age_min = 0, age_max = 2 }
+population = "Apparently healthy check-up children in Shenzhen, China, 28 days to under 2 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TG | mmol/L | 28 days-<2 years | 681 | 1.22 | 1.09 | 0.44 | 2.54 | 0.41-0.47 | 2.43-2.71" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.31
+high = 2.08
+unit = "mmol/L"
+when = { age_min = 2, age_max = 10 }
+population = "Apparently healthy check-up children in Shenzhen, China, 2 to under 10 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TG | mmol/L ... | 2-<10 years | 727 | 0.84 | 0.73 | 0.31 | 2.08 | 0.29-0.34 | 1.85-2.23" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.35
+high = 1.85
+unit = "mmol/L"
+when = { age_min = 10, age_max = 18 }
+population = "Apparently healthy check-up children in Shenzhen, China, 10 to under 18 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TG | mmol/L ... | 10-<18 years | 260 | 0.89 | 0.79 | 0.35 | 1.85 | 0.32-0.41 | 1.66-2.02" },
+]

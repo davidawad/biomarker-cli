@@ -1,0 +1,53 @@
+slug = "tc-hdl-ratio"
+name = "Total Cholesterol/HDL Ratio"
+category = "lipid"
+unit = "ratio"
+description = "Total cholesterol divided by HDL cholesterol (Castelli risk index I). Higher values indicate a more atherogenic lipid profile."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 5
+when = { sex = "male" }
+population = "Adults; Spanish elderly workers cohort (cut-off as stated in the source)"
+evidence = "consensus"
+note = "Atherogenic ratio considered high in men when strictly above 5.0 (Castelli index), as stated by the cited study."
+citations = [
+  { pmid = "36384458", doi = "10.1186/s12877-022-03547-w", title = "Cardiometabolic profile of 15057 elderly Spanish workers: association of sociodemographic variables and tobacco consumption.", locator = "Methods (atherogenic indexes)", quote = "Cholesterol/HDL (Castelli index) (considered high when > 5 in men and > 4.5 in women)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 4.5
+when = { sex = "female" }
+population = "Adults; Spanish elderly workers cohort (cut-off as stated in the source)"
+evidence = "consensus"
+note = "Atherogenic ratio considered high in women when strictly above 4.5 (Castelli index), as stated by the cited study."
+citations = [
+  { pmid = "36384458", doi = "10.1186/s12877-022-03547-w", title = "Cardiometabolic profile of 15057 elderly Spanish workers: association of sociodemographic variables and tobacco consumption.", locator = "Methods (atherogenic indexes)", quote = "Cholesterol/HDL (Castelli index) (considered high when > 5 in men and > 4.5 in women)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 5
+when = { sex = "male" }
+population = "Adults; Trujillo (Peru) population study (cut-off as stated in the source)"
+evidence = "consensus"
+note = "Elevated TC/HDL (Castelli risk index I) in men at or above 5, per the cited study's stated threshold (inclusive, unlike the Spanish source)."
+citations = [
+  { pmid = "39683532", doi = "10.3390/nu16234138", title = "Predictive Models of Atherogenic Risk in Citizens of Trujillo (Peru) Based on Associated Factors.", locator = "Section 2.4 (Evaluation of Atherogenic Indicators)", quote = "TC/HDL (Castelli Risk Index I), considering a value >= 4.5 for women and >=5 for men as indicative of risk" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 4.5
+when = { sex = "female" }
+population = "Adults; Trujillo (Peru) population study (cut-off as stated in the source)"
+evidence = "consensus"
+note = "Elevated TC/HDL (Castelli risk index I) in women at or above 4.5, per the cited study's stated threshold (inclusive)."
+citations = [
+  { pmid = "39683532", doi = "10.3390/nu16234138", title = "Predictive Models of Atherogenic Risk in Citizens of Trujillo (Peru) Based on Associated Factors.", locator = "Section 2.4 (Evaluation of Atherogenic Indicators)", quote = "TC/HDL (Castelli Risk Index I), considering a value >= 4.5 for women and >=5 for men as indicative of risk" },
+]

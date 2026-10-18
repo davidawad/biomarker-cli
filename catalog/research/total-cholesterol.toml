@@ -1,0 +1,188 @@
+slug = "total-cholesterol"
+name = "Total Cholesterol"
+loinc = "2093-3"
+category = "lipid"
+unit = "mg/dL"
+description = "Cholesterol carried in all apolipoprotein B and HDL particles. Interpreted with LDL-C, HDL-C and triglycerides in the lipid profile; adult ATP III cut-points, pediatric NHLBI cut-points, non-fasting flags and pregnancy reference intervals."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 200
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Desirable: strictly below 200 mg/dL (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "Total Cholesterol <200 Desirable 200-239 Borderline high >=240 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 200
+high = 239
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "Borderline high total cholesterol (ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "Total Cholesterol <200 Desirable 200-239 Borderline high >=240 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 240
+when = { age_min = 20 }
+population = "Adults aged 20 years or older"
+evidence = "guideline"
+note = "High total cholesterol (>= 240 mg/dL, ATP III)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2", quote = "Total Cholesterol <200 Desirable 200-239 Borderline high >=240 High" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 170
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Acceptable pediatric total cholesterol: strictly below 170 mg/dL."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "TC < 170 170-199 >= 200" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 170
+high = 199
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric borderline-high total cholesterol."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "TC < 170 170-199 >= 200" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 200
+when = { age_min = 0, age_max = 20 }
+population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
+evidence = "guideline"
+note = "Pediatric high total cholesterol (>= 200 mg/dL)."
+citations = [
+  { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1", quote = "TC < 170 170-199 >= 200" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 190
+when = { fasting = false }
+population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
+evidence = "consensus"
+note = "Laboratory flag for abnormal non-fasting total cholesterol. The consensus states the same cut-points apply to fasting samples."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract", quote = "For non-fasting samples, laboratory reports should flag abnormal concentrations as triglycerides >=2 mmol/L (175 mg/dL), total cholesterol >=5 mmol/L (190 mg/dL)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 3.11
+high = 6.11
+when = { pregnant = true, trimester = 1 }
+population = "Healthy singleton pregnant women, first trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| TC | 3.11-6.11 | 3.07-5.82 | 1.30-4.98 | 4.56-9.31 | 4.50-9.02 | 1.33-3.22 | 10.31" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+unit = "mmol/L"
+low = 4.56
+high = 9.31
+when = { pregnant = true, trimester = 3 }
+population = "Healthy singleton pregnant women, third trimester (population-based prospective study)"
+evidence = "reference-interval-study"
+note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them."
+citations = [
+  { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1", quote = "| TC | 3.11-6.11 | 3.07-5.82 | 1.30-4.98 | 4.56-9.31 | 4.50-9.02 | 1.33-3.22 | 10.31" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 135
+high = 243
+when = { age_min = 18, age_max = 45 }
+population = "Apparently healthy Egyptian adults aged 18 to under 45 years, both sexes combined (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egypt, under 45 years. Conventional mg/dL values from Table 3 (SI 3.48-6.28 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TC | mmol/L | (+) | MF | ~45 | 276 | 3.41 | 3.55 | 3.48 | 4.61 | 6.28 | 6.11 | 6.46 | mg/dL | 135 | 178 | 243 ... | (+) | MF | 45~ | 250 | 3.27 | 3.57 | 3.42 | 5.10 | 6.99 | 6.77 | 7.21 | 132 | 197 | 271" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 132
+high = 271
+when = { age_min = 45 }
+population = "Apparently healthy Egyptian adults aged 45 and over (study sample aged 18-65 plus some older participants), both sexes combined (IFCC C-RIDL protocol, serum)"
+evidence = "reference-interval-study"
+note = "95% reference interval, Egypt, 45 years and over. Conventional mg/dL values from Table 3 (SI 3.42-7.21 mmol/L)."
+citations = [
+  { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3", quote = "| TC | mmol/L | (+) | MF | ~45 | 276 | 3.41 | 3.55 | 3.48 | 4.61 | 6.28 | 6.11 | 6.46 | mg/dL | 135 | 178 | 243 ... | (+) | MF | 45~ | 250 | 3.27 | 3.57 | 3.42 | 5.10 | 6.99 | 6.77 | 7.21 | 132 | 197 | 271" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.30
+high = 5.58
+unit = "mmol/L"
+when = { age_min = 0, age_max = 2 }
+population = "Apparently healthy check-up children in Shenzhen, China, 28 days to under 2 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TC | mmol/L | 28 days-<2 years | 658 | 3.73 | 3.62 | 2.30 | 5.58 | 2.16-2.42 | 5.36-5.80" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.63
+high = 5.78
+unit = "mmol/L"
+when = { age_min = 2, age_max = 10 }
+population = "Apparently healthy check-up children in Shenzhen, China, 2 to under 10 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TC | mmol/L | 28 days-<2 years | 658 | 3.73 | 3.62 | 2.30 | 5.58 | 2.16-2.42 | 5.36-5.80 ... | 2-<10 years | 664 | 4.11 | 4.07 | 2.63 | 5.78 | 2.43-2.69 | 5.59-6.14" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.49
+high = 5.16
+unit = "mmol/L"
+when = { age_min = 10, age_max = 18 }
+population = "Apparently healthy check-up children in Shenzhen, China, 10 to under 18 years (sexes not partitioned in this table)"
+evidence = "reference-interval-study"
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only)."
+citations = [
+  { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1", quote = "| TC | mmol/L ... | 10-<18 years | 263 | 3.79 | 3.79 | 2.49 | 5.16 | 2.42-2.71 | 4.87-5.69" },
+]

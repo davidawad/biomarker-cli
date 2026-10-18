@@ -1,0 +1,30 @@
+slug = "cgm-glucose-cv"
+name = "CGM glucose coefficient of variation"
+category = "glycemic"
+unit = "%"
+description = "Within-person coefficient of variation (CV, standard deviation divided by mean glucose) of CGM glucose, a measure of glycemic variability. Consensus target for people with diabetes; reference values from healthy participants."
+
+[[range]]
+set = "clinical"
+kind = "target"
+high = 36
+when = { conditions = ["diabetes"] }
+population = "Adults and children with type 1 or type 2 diabetes"
+evidence = "consensus"
+note = "Glycemic variability target: CV at or below 36 percent."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table listing CGM metrics for clinical care", quote = "Glycemic variability (%CV) target <=36%" },
+]
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+high = 33
+when = { conditions = ["diabetes"] }
+population = "Adults and children with diabetes receiving insulin or sulfonylureas"
+evidence = "consensus"
+note = "For people with diabetes receiving insulin or sulfonylureas: lower CV target (below 33 percent) suggested by some studies to give additional protection against hypoglycemia; footnote to the consensus table, not a consensus target."
+citations = [
+  { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table listing CGM metrics for clinical care, footnote", quote = "Some studies suggest that lower %CV targets (<33%) provide additional protection against hypoglycemia for those receiving insulin or sulfonylureas" },
+]
+

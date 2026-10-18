@@ -1,0 +1,17 @@
+slug = "cgm-mean-glucose"
+name = "CGM Mean Glucose (24-hour)"
+category = "glycemic"
+unit = "mg/dL"
+description = "Average interstitial (CGM) glucose over 24 hours. Used alongside time-in-range metrics to describe overall glycaemia; it is a descriptive metric, not a diagnostic test."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 119
+when = { }
+population = "Healthy Chinese adults with normal glucose regulation (434 people, 3-day CGM recording)"
+evidence = "reference-interval-study"
+note = "One-sided reference limit: the 95th percentile of 24-hour mean glucose in healthy people, recommended as the upper normal limit. The source gives no lower bound."
+citations = [
+  { pmid = "19389816", doi = "10.2337/dc09-0076", title = "Reference values for continuous glucose monitoring in Chinese subjects.", locator = "Abstract (Conclusions)", quote = "We recommend a 24-h MBG value <119 mg/dl, PT140 <17% (4 h), and PT70 <12% (3 h) as normal ranges for the Chinese population" },
+]

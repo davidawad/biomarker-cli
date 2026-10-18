@@ -1,0 +1,87 @@
+slug = "lpa"
+name = "Lipoprotein(a)"
+loinc = "43583-4"
+category = "lipid"
+unit = "nmol/L"
+description = "Lipoprotein(a), an LDL-like particle with an apolipoprotein(a) component. Concentration is largely genetically determined and is an independent cardiovascular risk factor. Measure at least once in adulthood."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 75
+population = "Adults (EAS 2022 consensus on Lp(a) in ASCVD and aortic stenosis)"
+evidence = "consensus"
+note = "EAS 2022 'rule-out' cut-off: below 75 nmol/L (below 30 mg/dL)."
+citations = [
+  { pmid = "36036785", doi = "10.1093/eurheartj/ehac361", title = "Lipoprotein(a) in atherosclerotic cardiovascular disease and aortic stenosis: a European Atherosclerosis Society consensus statement.", locator = "Consensus statement, section on Lp(a) cut-offs for rule-out and rule-in", quote = "with Lp(a) cut-offs to 'rule out' (<30 mg/dL or <75 nmol/L) or 'rule-in' (>50 mg/dL or >125 nmol/L) risk" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 75
+high = 125
+population = "Adults (EAS 2022 consensus on Lp(a) in ASCVD and aortic stenosis)"
+evidence = "consensus"
+note = "EAS 2022 grey zone (30-50 mg/dL): relevant when weighing Lp(a)-attributable risk together with other risk factors."
+citations = [
+  { pmid = "36036785", doi = "10.1093/eurheartj/ehac361", title = "Lipoprotein(a) in atherosclerotic cardiovascular disease and aortic stenosis: a European Atherosclerosis Society consensus statement.", locator = "Consensus statement, section on Lp(a) cut-offs for rule-out and rule-in", quote = "The interim grey zone (i.e. 30-50 mg/dL; 75-125 nmol/l) is relevant when considering Lp(a)-attributable risk" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 125
+population = "Adults (EAS 2022 consensus on Lp(a) in ASCVD and aortic stenosis)"
+evidence = "consensus"
+note = "EAS 2022 'rule-in' category: above 125 nmol/L (above 50 mg/dL) indicates elevated Lp(a)-associated risk."
+citations = [
+  { pmid = "36036785", doi = "10.1093/eurheartj/ehac361", title = "Lipoprotein(a) in atherosclerotic cardiovascular disease and aortic stenosis: a European Atherosclerosis Society consensus statement.", locator = "Consensus statement, section on Lp(a) cut-offs for rule-out and rule-in", quote = "with Lp(a) cut-offs to 'rule out' (<30 mg/dL or <75 nmol/L) or 'rule-in' (>50 mg/dL or >125 nmol/L) risk" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 100
+population = "Adults"
+evidence = "guideline"
+note = "NLA 2024 focused update: Lp(a) above 50 mg/dL or 100-125 nmol/L is a risk-enhancing factor (risk modifier). Lower bound of the band shown as 100 nmol/L."
+citations = [
+  { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Section on the 2024 NLA focused update (secondary review of the guideline text)", quote = "Lp(a) levels > 50 mg/dL or 100-125 nmol/L are considered a risk-enhancing factor (risk modifier)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 50
+unit = "mg/dL"
+population = "Adults; laboratory flagging of lipid results"
+evidence = "consensus"
+note = "EAS/EFLM 2016 laboratory flag: Lp(a) at or above 50 mg/dL (80th percentile)."
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract (laboratory flagging recommendation)", quote = "lipoprotein(a) >=50 mg/dL (80th percentile)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 125
+unit = "nmol/L"
+population = "Adults; 2026 US multi-society (ACC/AHA) dyslipidemia guideline as summarised in the cited review"
+evidence = "guideline"
+note = "2026 ACC/AHA: Lp(a) >= 125 nmol/L (about 50 mg/dL) is a risk-enhancing factor. Quoted in nmol/L as the source states it; the review notes mg/dL and nmol/L are not interchangeable."
+citations = [
+  { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Introduction / risk stratification", quote = "The 2026 U.S. multi-society guideline classifies Lp(a) >= 125 nmol/L as a risk-enhancing factor and >=250 nmol/L as a major risk enhancer." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 250
+unit = "nmol/L"
+population = "Adults; 2026 US multi-society (ACC/AHA) dyslipidemia guideline as summarised in the cited review"
+evidence = "guideline"
+note = "2026 ACC/AHA: Lp(a) >= 250 nmol/L is a major risk enhancer. Quoted in nmol/L as the source states it."
+citations = [
+  { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Introduction / risk stratification", quote = "The 2026 U.S. multi-society guideline classifies Lp(a) >= 125 nmol/L as a risk-enhancing factor and >=250 nmol/L as a major risk enhancer." },
+]
