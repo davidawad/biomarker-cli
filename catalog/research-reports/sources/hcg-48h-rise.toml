@@ -1,0 +1,41 @@
+slug = "hcg-48h-rise"
+name = "hCG 48-Hour Percentage Rise"
+category = "pregnancy"
+unit = "%"
+description = "Percentage increase in serum hCG over 48 hours in early pregnancy, used to judge whether a pregnancy of unknown location is behaving like a viable intrauterine pregnancy."
+
+[[range]]
+set = "hcg-48h-rise-case-series-2021"
+kind = "diagnostic"
+low = 49
+when = { pregnancy = true, trimester = 1, markers = [ { slug = "hcg-quantitative", op = "<", value = 1500, unit = "mIU/mL" } ] }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "review"
+note = "Lowest 48-hour percentage rise expected in a viable intrauterine pregnancy when the initial hCG is below 1,500 mIU/mL. A rise below this level warrants closer evaluation for ectopic or non-viable pregnancy. The figure is quoted by the source from earlier work, not derived by the source."
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", locator = "Discussion", quote = "These values depended on the initial hCG level; 49% for hCG <1,500 mIU/mL, 40% for hCG 1,500–3,000 mIU/mL, and 33% for hCG >3,000 mIU/mL" },
+]
+
+[[range]]
+set = "hcg-48h-rise-case-series-2021"
+kind = "diagnostic"
+low = 40
+when = { pregnancy = true, trimester = 1, markers = [ { slug = "hcg-quantitative", op = ">=", value = 1500, unit = "mIU/mL" }, { slug = "hcg-quantitative", op = "<=", value = 3000, unit = "mIU/mL" } ] }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "review"
+note = "Lowest expected 48-hour percentage rise in a viable intrauterine pregnancy when the initial hCG is 1,500 to 3,000 mIU/mL. Quoted by the source from earlier work."
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", locator = "Discussion", quote = "These values depended on the initial hCG level; 49% for hCG <1,500 mIU/mL, 40% for hCG 1,500–3,000 mIU/mL, and 33% for hCG >3,000 mIU/mL" },
+]
+
+[[range]]
+set = "hcg-48h-rise-case-series-2021"
+kind = "diagnostic"
+low = 33
+when = { pregnancy = true, trimester = 1, markers = [ { slug = "hcg-quantitative", op = ">", value = 3000, unit = "mIU/mL" } ] }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "review"
+note = "Lowest expected 48-hour percentage rise in a viable intrauterine pregnancy when the initial hCG is above 3,000 mIU/mL. Quoted by the source from earlier work."
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", locator = "Discussion", quote = "These values depended on the initial hCG level; 49% for hCG <1,500 mIU/mL, 40% for hCG 1,500–3,000 mIU/mL, and 33% for hCG >3,000 mIU/mL" },
+]

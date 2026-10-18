@@ -1,0 +1,19 @@
+slug = "pth-intact-uln-multiple"
+name = "Parathyroid Hormone, Intact (multiple of upper limit of normal)"
+category = "bone"
+unit = "x ULN"
+description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "kdigo-ckd-mbd-2017"
+kind = "optimal"
+low = 2
+high = 9
+when = { conditions = ["ckd-g5d"] }
+population = "Adults with CKD G5D (on dialysis)"
+evidence = "guideline"
+citations = [
+  { pmid = "30675420", doi = "10.1016/j.kisu.2017.04.001", url = "https://pubmed.ncbi.nlm.nih.gov/30675420/", title = "KDIGO 2017 Clinical Practice Guideline Update for the Diagnosis, Evaluation, Prevention, and Treatment of Chronic Kidney Disease-Mineral and Bone Disorder (CKD-MBD).", locator = "Recommendation 4.2.3" },
+]
+note = "Suggested target for intact PTH in dialysis patients: about 2 to 9 times the upper normal limit of the assay. Expressed as a multiple of the assay ULN, not as an absolute pg/mL range. Source kind: target."

@@ -37,14 +37,38 @@ pub enum Format {
     Html,
     /// Org-mode table
     Org,
+    /// FHIR R4 Bundle (export only)
+    Fhir,
+    /// FHIR R4 resources, one per line (export only)
+    FhirNdjson,
 }
 
 impl Format {
     /// Every accepted name (canonical spellings, then aliases), for config validation.
     pub const NAMES: &'static [&'static str] = &[
-        "table", "json", "jsonl", "csv", "tsv", "yaml", "toon", "markdown", "html", "org", "text", "plain", "ndjson",
-        "yml", "md",
+        "table",
+        "json",
+        "jsonl",
+        "csv",
+        "tsv",
+        "yaml",
+        "toon",
+        "markdown",
+        "html",
+        "org",
+        "text",
+        "plain",
+        "ndjson",
+        "yml",
+        "md",
+        "fhir",
+        "fhir-ndjson",
     ];
+
+    /// Canonical CLI/config spelling (e.g. `fhir-ndjson`), which round-trips through [`Format::parse`].
+    pub fn name(self) -> String {
+        clap::ValueEnum::to_possible_value(&self).map_or_else(String::new, |v| v.get_name().to_string())
+    }
 
     pub fn parse(s: &str) -> Result<Self> {
         <Self as clap::ValueEnum>::from_str(s, true).map_err(|_| AppError::usage(format!("unknown format '{s}'")))
@@ -403,6 +427,11 @@ pub fn render(r: &Report, o: &OutputOpts) -> Result<String> {
         Format::Markdown => Ok(render_markdown(r, o)),
         Format::Html => Ok(render_html(r, o)),
         Format::Org => Ok(render_org(r, o)),
+        Format::Fhir | Format::FhirNdjson if r.kind != "fhir" => {
+            Err(AppError::usage("--format fhir and fhir-ndjson are only for `biomarker export`"))
+        }
+        Format::Fhir => Ok(serde_json::to_string_pretty(r.json_data.as_ref().unwrap_or(&Value::Null))? + "\n"),
+        Format::FhirNdjson => Ok(render_jsonl(r)),
     }
 }
 
@@ -499,6 +528,11 @@ mod tests {
             <Format as clap::ValueEnum>::value_variants().iter().copied().filter(|f| f.is_envelope()).collect();
         assert_eq!(structured, [Format::Json, Format::Yaml, Format::Toon]);
         assert!(Format::NAMES.iter().all(|n| Format::parse(n).is_ok()));
+        for f in <Format as clap::ValueEnum>::value_variants() {
+            assert!(Format::NAMES.contains(&f.name().as_str()), "{f:?}");
+            assert_eq!(Format::parse(&f.name()).unwrap(), *f);
+            crate::config::normalize("format", &f.name()).unwrap();
+        }
     }
 
     #[test]

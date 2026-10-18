@@ -1,0 +1,172 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:11111111-1111-4111-8111-111111111111",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat1",
+        "gender": "male",
+        "birthDate": "1984-06-01",
+        "name": [{"family": "Example", "given": ["Synthetic"]}]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:22222222-2222-4222-8222-222222222222",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "spec1",
+        "type": {"text": "Serum"},
+        "collection": {
+          "collectedDateTime": "2024-03-05T08:30:00Z",
+          "fastingStatusCodeableConcept": {
+            "coding": [{"system": "http://terminology.hl7.org/CodeSystem/v2-0916", "code": "F"}]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:33333333-3333-4333-8333-333333333333",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org1",
+        "name": "Example Reference Lab"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "glu1",
+        "identifier": [{"system": "urn:example:lab-accession", "value": "ACC-1001-GLU"}],
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "2345-7", "display": "Glucose [Mass/volume] in Serum or Plasma"}], "text": "Glucose"},
+        "effectiveDateTime": "2024-03-05T08:30:00Z",
+        "performer": [{"reference": "Organization/org1"}],
+        "specimen": {"reference": "Specimen/spec1"},
+        "valueQuantity": {"value": 92, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"},
+        "interpretation": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation", "code": "N"}]}],
+        "referenceRange": [{
+          "low": {"value": 70, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"},
+          "high": {"value": 99, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"}
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "glu2",
+        "identifier": [{"system": "urn:example:lab-accession", "value": "ACC-2002-GLU"}],
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "2345-7"}], "text": "Glucose"},
+        "effectiveDateTime": "2024-09-10",
+        "valueQuantity": {"value": 5.5, "unit": "mmol/L", "system": "http://unitsofmeasure.org", "code": "mmol/L"},
+        "interpretation": [{"coding": [{"code": "H"}]}],
+        "referenceRange": [{
+          "low": {"value": 3.9, "unit": "mmol/L", "system": "http://unitsofmeasure.org", "code": "mmol/L"},
+          "high": {"value": 5.5, "unit": "mmol/L", "system": "http://unitsofmeasure.org", "code": "mmol/L"}
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ldl1",
+        "identifier": [{"system": "urn:example:lab-accession", "value": "ACC-1001-LDL"}],
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "13457-7"}], "text": "LDL Cholesterol (calculated)"},
+        "effectiveDateTime": "2024-03-05T08:30:00Z",
+        "valueQuantity": {"value": 148, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"},
+        "interpretation": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation", "code": "H"}]}],
+        "referenceRange": [{"high": {"value": 99, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"}, "text": "<100 optimal"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "tsh1",
+        "identifier": [{"system": "urn:example:lab-accession", "value": "ACC-1001-TSH"}],
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "3016-3"}], "text": "TSH"},
+        "effectiveDateTime": "2024-03-05T08:30:00Z",
+        "valueQuantity": {"value": 0.01, "comparator": "<", "unit": "mIU/L", "system": "http://unitsofmeasure.org", "code": "m[IU]/L"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "bp1",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]},
+        "effectiveDateTime": "2024-03-05T09:00:00Z",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8480-6"}]}, "valueQuantity": {"value": 118, "unit": "mmHg", "system": "http://unitsofmeasure.org", "code": "mm[Hg]"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "8462-4"}]}, "valueQuantity": {"value": 76, "unit": "mmHg", "system": "http://unitsofmeasure.org", "code": "mm[Hg]"}}
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mystery1",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "99999-9", "display": "Synthetic mystery analyte"}]},
+        "effectiveDateTime": "2024-03-05T08:30:00Z",
+        "valueQuantity": {"value": 3.2, "unit": "U/L", "system": "http://unitsofmeasure.org", "code": "U/L"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "badunit1",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "2160-0"}], "text": "Creatinine"},
+        "effectiveDateTime": "2024-03-05T08:30:00Z",
+        "valueQuantity": {"value": 7, "unit": "bananas"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "prelim1",
+        "status": "preliminary",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "2085-9"}], "text": "HDL Cholesterol"},
+        "effectiveDateTime": "2024-03-05T08:30:00Z",
+        "valueQuantity": {"value": 41, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "smoker1",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "social-history"}]}],
+        "code": {"text": "Tobacco smoking status"},
+        "effectiveDateTime": "2024-03-05",
+        "valueCodeableConcept": {"text": "Never smoker"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "wrong1",
+        "status": "entered-in-error",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "2093-3"}]},
+        "effectiveDateTime": "2024-03-05T08:30:00Z",
+        "valueQuantity": {"value": 999, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"}
+      }
+    },
+    {
+      "resource": {"resourceType": "Practitioner", "id": "dr1", "name": [{"family": "Example"}]}
+    }
+  ]
+}

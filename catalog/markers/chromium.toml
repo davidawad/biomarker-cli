@@ -1,0 +1,19 @@
+slug = "chromium"
+name = "Chromium, whole blood"
+category = "toxic-metal"
+unit = "µg/L"
+aliases = ["chromium-blood"]
+description = "Chromium concentration in whole blood. Background levels are low; chromium released from metal-on-metal hip implants (chrome-cobalt bearings) raises it, and high values can indicate implant wear."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "mhra-mom-cutoff"
+kind = "warn"
+high = 7
+when = { conditions = ["metal-on-metal-hip"] }
+population = "Patients with a unilateral metal-on-metal (chrome-cobalt) hip replacement, case-control study of failed vs well-functioning hips (specimen: whole-blood)"
+evidence = "guideline"
+citations = [
+  { pmid = "21969427", doi = "10.1302/0301-620X.93B10.26249", title = "Sensitivity and specificity of blood cobalt and chromium metal ions for predicting failure of metal-on-metal hip replacement.", locator = "Abstract" },
+]
+note = "MHRA cut-off applies to the higher of blood cobalt or chromium, not to chromium alone. Chromium-only threshold is not separately stated in the retrieved text. In the cited study the 7 ppb cut-off had specificity 89% and sensitivity 52% for unexplained failure. Source band >= 7; stored as the warn high bound 7."

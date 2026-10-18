@@ -1,0 +1,32 @@
+slug = "b2gp1-igg"
+name = "Anti-Beta2-Glycoprotein I IgG"
+loinc = "44448-9"
+category = "autoimmune"
+unit = "U/mL"
+description = "IgG antibodies against beta2-glycoprotein I, a plasma protein that binds phospholipids. Persistent medium or high titres are antiphospholipid syndrome criteria and are linked to thrombosis risk."
+aliases = ["anti-beta2GPI IgG", "anti-β2GPI IgG", "anti-beta2-glycoprotein I IgG"]
+
+[[range]]
+set = "acr-eular-2023-aps"
+kind = "decision"
+low = 40
+high = 79
+unit = "U/mL"
+population = "Patients in a Turkish cohort used to validate the 2023 ACR/EULAR APS classification criteria"
+evidence = "validation-study"
+note = "2023 ACR/EULAR APS criteria: moderate aPL positivity, applied to anti-beta2GPI as well as anticardiolipin. The source reports the titre in 'units' and does not state U/mL explicitly; treat the equivalence as unverified. Sydney 2006 uses a >99th percentile cut-off that is not expressed numerically in the retrieved text."
+citations = [
+  { pmid = "39410609", doi = "10.3390/diagnostics14192205", title = "The Validation of the 2023 ACR/EULAR Antiphospholipid Syndrome Classification Criteria in a Cohort from Turkey.", url = "https://pubmed.ncbi.nlm.nih.gov/39410609/", locator = "Methods, aPL antibody positivity definition", quote = "A moderate positivity of aPL antibodies required a titre of 40–79 units" },
+]
+
+[[range]]
+set = "acr-eular-2023-aps"
+kind = "decision"
+low = 80
+unit = "U/mL"
+population = "Patients in a Turkish cohort used to validate the 2023 ACR/EULAR APS classification criteria"
+evidence = "validation-study"
+note = "2023 ACR/EULAR APS criteria: high aPL positivity (>=80), applied to anti-beta2GPI as well as anticardiolipin. The source reports the titre in 'units' and does not state U/mL explicitly; treat the equivalence as unverified."
+citations = [
+  { pmid = "39410609", doi = "10.3390/diagnostics14192205", title = "The Validation of the 2023 ACR/EULAR Antiphospholipid Syndrome Classification Criteria in a Cohort from Turkey.", url = "https://pubmed.ncbi.nlm.nih.gov/39410609/", locator = "Methods, aPL antibody positivity definition", quote = "a high positivity required a titre of ≥80 units" },
+]

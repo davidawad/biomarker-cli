@@ -1,0 +1,7 @@
+slug = "gonorrhea-naat"
+name = "Neisseria gonorrhoeae NAAT"
+loinc = "24111-7"
+category = "infectious"
+unit = "qualitative"
+description = "Nucleic acid amplification test that detects Neisseria gonorrhoeae DNA (or RNA) in urine, urethral, vaginal, cervical, rectal or pharyngeal swab specimens. Used to diagnose gonorrhea infection and to test people with symptoms or sexual exposure. Expected result: not detected (negative)."
+no_reference = "Qualitative result (detected or not detected); no numeric reference interval applies."

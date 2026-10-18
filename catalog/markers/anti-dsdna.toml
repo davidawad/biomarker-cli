@@ -5,7 +5,6 @@ unit = "IU/mL"
 loinc = "5130-0"
 description = "Autoantibodies against double-stranded DNA, found largely in systemic lupus erythematosus. Positive results support an SLE diagnosis and are used to follow disease activity, especially lupus nephritis."
 aliases = ["anti-dna", "dsdna antibody"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
 set = "anti-dna-review-manufacturer-table"
@@ -17,3 +16,15 @@ citations = [
   { pmid = "37362416", doi = "10.1515/almed-2021-0008", url = "https://pubmed.ncbi.nlm.nih.gov/37362416/", title = "Update and clinical management of anti-DNA auto-antibodies.", locator = "Full text, table of manufacturer reference values" },
 ]
 note = "One manufacturer-specific row from a review table: >45 IU/mL is positive. Cut-offs are assay-specific and the method for this row is not identified in the retrieved text. Use the laboratory's own reference value and do not transfer it between methods. Boundary is > 45 for positive. Source kind: decision. Source band >= 45; stored as the warn high bound 45."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 35
+high = 45
+population = "Patients with suspected or established SLE; assay-specific reference values from a manufacturer table"
+evidence = "consensus"
+citations = [
+  { pmid = "37362416", doi = "10.1515/almed-2021-0008", url = "https://pubmed.ncbi.nlm.nih.gov/37362416/", title = "Update and clinical management of anti-DNA auto-antibodies.", locator = "Full text, table of manufacturer reference values" },
+]
+note = "Ambiguous (equivocal) band in the same manufacturer table row: 35-45 IU/mL. Assay-specific; repeat or use the laboratory's own cut-off. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."

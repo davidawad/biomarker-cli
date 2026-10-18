@@ -1,0 +1,42 @@
+slug = "hcg-48h-rise"
+name = "hCG 48-Hour Percentage Rise"
+category = "pregnancy"
+unit = "%"
+description = "Percentage increase in serum hCG over 48 hours in early pregnancy, used to judge whether a pregnancy of unknown location is behaving like a viable intrauterine pregnancy."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "hcg-48h-rise-case-series-2021"
+kind = "warn"
+high = 49
+when = { pregnant = true, trimester = 1 }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "consensus"
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", locator = "Discussion" },
+]
+note = "Lowest 48-hour percentage rise expected in a viable intrauterine pregnancy when the initial hCG is below 1,500 mIU/mL. A rise below this level warrants closer evaluation for ectopic or non-viable pregnancy. The figure is quoted by the source from earlier work, not derived by the source. Applies only to: markers=[{\"slug\": \"hcg-quantitative\", \"op\": \"<\", \"value\": 1500, \"unit\": \"mIU/mL\"}]. Source kind: diagnostic. Source band >= 49; stored as the warn high bound 49."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 40
+when = { pregnant = true, trimester = 1 }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "consensus"
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", locator = "Discussion" },
+]
+note = "Lowest expected 48-hour percentage rise in a viable intrauterine pregnancy when the initial hCG is 1,500 to 3,000 mIU/mL. Quoted by the source from earlier work. Applies only to: markers=[{\"slug\": \"hcg-quantitative\", \"op\": \">=\", \"value\": 1500, \"unit\": \"mIU/mL\"}, {\"slug\": \"hcg-quantitative\", \"op\": \"<=\", \"value\": 3000, \"unit\": \"mIU/mL\"}]. Source kind: diagnostic. Source band >= 40; stored as the warn high bound 40. Alternative to the default hcg-48h-rise-case-series-2021 warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+high = 33
+when = { pregnant = true, trimester = 1 }
+population = "Viable intrauterine pregnancies after assisted conception; minimum 48-hour hCG rise quoted from prior literature"
+evidence = "consensus"
+citations = [
+  { pmid = "34223284", doi = "10.1016/j.xfre.2020.11.006", url = "https://pubmed.ncbi.nlm.nih.gov/34223284/", title = "Abnormal rate of human chorionic gonadotropin rise: a case series of patients with viable intrauterine pregnancies after embryo transfer.", locator = "Discussion" },
+]
+note = "Lowest expected 48-hour percentage rise in a viable intrauterine pregnancy when the initial hCG is above 3,000 mIU/mL. Quoted by the source from earlier work. Applies only to: markers=[{\"slug\": \"hcg-quantitative\", \"op\": \">\", \"value\": 3000, \"unit\": \"mIU/mL\"}]. Source kind: diagnostic. Source band >= 33; stored as the warn high bound 33. Alternative to the default hcg-48h-rise-case-series-2021 warn range for the same population."

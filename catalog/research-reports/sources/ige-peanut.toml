@@ -1,0 +1,17 @@
+slug = "ige-peanut"
+name = "Specific IgE, Peanut"
+loinc = "6206-7"
+category = "allergy"
+unit = "kUA/L"
+description = "Serum IgE specific to peanut (ImmunoCAP). Concentration predicts clinical peanut allergy with limited accuracy; the decision point below is the 95%-certainty level derived in highly atopic children."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 15
+population = "Children and adolescents referred for food allergy evaluation, all with atopic dermatitis (highly atopic study population)"
+evidence = "outcome-study"
+note = "Level at which peanut-specific IgE predicted clinical reactivity on food challenge with greater than 95% certainty (ImmunoCAP FEIA, 1997 study). Source gives 'peanut, 15 kU(A)/L'."
+citations = [
+  { pmid = "9338535", doi = "10.1016/s0091-6749(97)70133-7", title = "Relationship between food-specific IgE concentrations and the risk of positive food challenges in children and adolescents.", locator = "Abstract, Results", quote = "egg, 6 kilounits of allergen-specific IgE per liter (kU[A]/L); milk, 32 kU(A)/L; peanut, 15 kU(A)/L; and fish, 20 kU(A)/L" },
+]

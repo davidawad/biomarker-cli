@@ -3,7 +3,6 @@ name = "Fetal Fibronectin, Cervicovaginal"
 category = "pregnancy"
 unit = "ng/mL"
 description = "Glycoprotein that acts as glue between decidua and fetal membranes; detected in cervicovaginal secretions. A positive test in women with symptoms or a high-risk history signals increased short-term risk of preterm birth or impending labour."
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
 set = "fibronectin-meta-2020"
@@ -28,6 +27,19 @@ citations = [
   { pmid = "23164760", doi = "10.1016/j.ajog.2012.10.890", url = "https://pubmed.ncbi.nlm.nih.gov/23164760/", title = "Evaluation of a quantitative fetal fibronectin test for spontaneous preterm birth in symptomatic women.", locator = "Abstract, Conclusion" },
 ]
 note = "Below 10 ng/mL: very low risk of spontaneous preterm birth (negative predictive threshold). Source kind: diagnostic. Source band <= 10; stored as the warn low bound 10."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 10
+high = 200
+when = { pregnant = true, conditions = ["symptomatic-preterm-labour"] }
+population = "Symptomatic women with threatened preterm labour (quantitative fFN test) (specimen: cervicovaginal)"
+evidence = "cohort"
+citations = [
+  { pmid = "23164760", doi = "10.1016/j.ajog.2012.10.890", url = "https://pubmed.ncbi.nlm.nih.gov/23164760/", title = "Evaluation of a quantitative fetal fibronectin test for spontaneous preterm birth in symptomatic women.", locator = "Abstract, Conclusion" },
+]
+note = "Intermediate band (10 to below 200 ng/mL) between the low-risk and high-risk thresholds. The qualitative positive cut-off is 50 ng/mL. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "fibronectin-symptomatic-2013"

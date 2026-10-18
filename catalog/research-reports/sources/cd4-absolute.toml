@@ -1,0 +1,56 @@
+slug = "cd4-absolute"
+name = "CD4+ T-cell Count"
+loinc = "24467-3"
+category = "infectious"
+unit = "cells/µL"
+description = "Number of CD4-positive T lymphocytes per microlitre of blood. It is the main marker of immune function in HIV, used to stage disease and guide opportunistic infection prophylaxis."
+aliases = ["CD4 count", "CD4+ T-lymphocyte count", "CD4 T-cell count"]
+
+[[range]]
+set = "cdc-1992-hiv-classification"
+kind = "decision"
+high = 200
+population = "HIV-infected adults and adolescents, CDC clinical classification system"
+evidence = "guideline"
+when = { conditions = ["hiv"] }
+note = "CDC category 3 (AIDS threshold): CD4 count below 200 cells/µL (boundary <200). Category 3 is the threshold that also defines the AIDS case definition."
+citations = [
+  { url = "https://www.cdc.gov/mmwr/preview/mmwrhtml/00018871.htm", locator = "Section: CD4+ T-Lymphocyte Categories", quote = "Category 3: less than 200 cells/uL" },
+]
+
+[[range]]
+set = "cdc-1992-hiv-classification"
+kind = "decision"
+low = 200
+high = 499
+population = "HIV-infected adults and adolescents, CDC clinical classification system"
+evidence = "guideline"
+when = { conditions = ["hiv"] }
+note = "CDC category 2: CD4 count 200 to 499 cells/µL."
+citations = [
+  { url = "https://www.cdc.gov/mmwr/preview/mmwrhtml/00018871.htm", locator = "Section: CD4+ T-Lymphocyte Categories", quote = "Category 2: 200-499 cells/uL" },
+]
+
+[[range]]
+set = "cdc-1992-hiv-classification"
+kind = "decision"
+low = 500
+population = "HIV-infected adults and adolescents, CDC clinical classification system"
+evidence = "guideline"
+when = { conditions = ["hiv"] }
+note = "CDC category 1: CD4 count of 500 cells/µL or more (boundary >=500). The source text prints the unit as cells/mL in this category label; the threshold itself is the cells/µL figure used in the category table."
+citations = [
+  { url = "https://www.cdc.gov/mmwr/preview/mmwrhtml/00018871.htm", locator = "Section: CD4+ T-Lymphocyte Categories", quote = "Category 1: greater than or equal to 500 cells/mL" },
+]
+
+[[range]]
+set = "elsa-brasil-2025-lymphocyte-subsets"
+kind = "reference"
+low = 421.4
+high = 1523.8
+population = "351 healthy Brazilian adults in ELSA-Brasil; reference intervals from the 2.5th and 97.5th percentiles (age and sex differences were reported but are not split in the abstract)"
+evidence = "reference-interval-study"
+note = "Absolute CD4+ T-cell reference interval in healthy adults (2.5th to 97.5th percentile), flow cytometry. Population-specific to this Brazilian cohort; interval boundaries are inclusive."
+citations = [
+  { pmid = "41124450", doi = "10.1590/1414-431X2025e14956", title = "Establishing the reference intervals for subpopulations of T lymphocytes, B lymphocytes, and natural killer cells: insight from the Brazilian Longitudinal Study of Adult Health (ELSA-Brasil).", url = "https://pubmed.ncbi.nlm.nih.gov/41124450/", locator = "Abstract, Results", quote = "CD4+: 421.4-1523.8 cells/μL, 32.5-61.6%" },
+]

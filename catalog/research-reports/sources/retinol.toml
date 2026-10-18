@@ -1,0 +1,59 @@
+slug = "retinol"
+name = "Retinol (vitamin A)"
+category = "vitamin"
+unit = "µg/dL"
+description = "Serum retinol, the circulating form of vitamin A, which reflects liver vitamin A stores when inflammation is absent. Low values indicate vitamin A deficiency, which causes night blindness and xerophthalmia and raises infection risk."
+
+[[range]]
+set = "who"
+kind = "deficient"
+high = 20.06
+source_unit = "µmol/L"
+source_factor = 28.65
+population = "Preschool children and general population, as the WHO cut-off for biochemical vitamin A deficiency (VAD), as quoted in a 2018 review"
+evidence = "review"
+note = "WHO cut-off 0.70 µmol/L converted to µg/dL with factor 28.65. Value is 'below' the cut-off. Inflammation can lower retinol; retinol-binding protein is an alternative marker."
+citations = [
+  { pmid = "30134568", doi = "10.3390/nu10091132", title = "Vitamin A Deficiency and the Lung.", locator = "Introduction, para 1", quote = "A value below a cut-off of 0.70 µmol/L of serum retinol concentrations represents biochemical VAD" },
+]
+
+[[range]]
+set = "who"
+kind = "critical"
+high = 10.03
+source_unit = "µmol/L"
+source_factor = 28.65
+population = "General population; WHO severe vitamin A deficiency cut-off, as quoted in a 2018 review"
+evidence = "review"
+note = "Severe deficiency cut-off 0.35 µmol/L converted to µg/dL with factor 28.65. Associated with marked increases in risk of clinical manifestations such as xerophthalmia and nyctalopia."
+citations = [
+  { pmid = "30134568", doi = "10.3390/nu10091132", title = "Vitamin A Deficiency and the Lung.", locator = "Introduction, para 1", quote = "Serum retinol concentrations lower than 0.35 μmol/L are indicative of severe deficiency" },
+]
+
+[[range]]
+set = "who"
+kind = "deficient"
+high = 20.06
+source_unit = "µmol/L"
+source_factor = 28.65
+when = { pregnant = true }
+population = "Pregnant women; WHO definition of VAD in pregnancy, as quoted in a 2019 narrative review"
+evidence = "review"
+note = "Same 0.70 µmol/L cut-off as for the general population, converted with factor 28.65."
+citations = [
+  { pmid = "30909386", doi = "10.3390/nu11030681", title = "Vitamin A and Pregnancy: A Narrative Review.", locator = "Text on vitamin A deficiency in pregnancy", quote = "The WHO defines VAD in pregnancy as serum retinol levels of <0.70 µmol/L" },
+]
+
+[[range]]
+set = "fortification-meta-2019"
+kind = "deficient"
+high = 30.08
+source_unit = "µmol/L"
+source_factor = 28.65
+when = { lactating = true }
+population = "Lactating mothers, as a vitamin A deficiency outcome definition in a 2019 meta-analysis of LMIC fortification studies"
+evidence = "review"
+note = "Outcome definition used by the meta-analysis (1.05 µmol/L converted with factor 28.65). Outcome definition used by the meta-analysis; not presented as a general clinical threshold."
+citations = [
+  { pmid = "30997493", doi = "10.1093/ajcn/nqz023", title = "Improved micronutrient status and health outcomes in low- and middle-income countries following large-scale fortification: evidence from a systematic review and meta-analysis.", locator = "Table 2, Definitions of outcomes", quote = "Lactating mothers: serum retinol level <1.05 μmol/L" },
+]

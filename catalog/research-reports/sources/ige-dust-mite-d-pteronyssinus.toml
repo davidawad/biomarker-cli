@@ -1,0 +1,17 @@
+slug = "ige-dust-mite-d-pteronyssinus"
+name = "Specific IgE, Dust Mite (D. pteronyssinus)"
+loinc = "6096-2"
+category = "allergy"
+unit = "kUA/L"
+description = "Serum IgE specific to Dermatophagoides pteronyssinus (ImmunoCAP). Values below the cut-off below identify patients who are also negative for Der p 1 and Der p 2 specific IgE; this does not by itself diagnose dust mite allergy."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 2.18
+population = "Adults and children over 5 years with house dust mite rhinitis and/or asthma, sensitised by skin test and specific IgE (cross-sectional, n=240)"
+evidence = "outcome-study"
+note = "ROC cut-off: D. pteronyssinus sIgE below 2.18 kUA/L identified patients double negative for Der p 1 and Der p 2 specific IgE (sensitivity 0.882, specificity 0.985). Single cross-sectional study; not a validated allergy diagnosis threshold."
+citations = [
+  { pmid = "34880341", doi = "10.1038/s41598-021-03005-4", title = "Cut-off value of D. pteronyssinus specific IgE in double negative patients Der p 1 and Der p 2 and its clinical repercussion.", locator = "Abstract, Results", quote = "value less than 2.18 KUA/L for D. pteronyssinus sIgE gave us a sensitivity and specificity of 0.882 and 0.985, respectively" },
+]

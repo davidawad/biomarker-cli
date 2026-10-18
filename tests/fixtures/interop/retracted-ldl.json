@@ -1,0 +1,10 @@
+{
+  "resourceType": "Observation",
+  "id": "another-server-id",
+  "identifier": [{"system": "urn:example:lab-accession", "value": "ACC-1001-LDL"}],
+  "status": "entered-in-error",
+  "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+  "code": {"coding": [{"system": "http://loinc.org", "code": "13457-7"}]},
+  "effectiveDateTime": "2024-03-05T08:30:00Z",
+  "valueQuantity": {"value": 148, "unit": "mg/dL", "system": "http://unitsofmeasure.org", "code": "mg/dL"}
+}

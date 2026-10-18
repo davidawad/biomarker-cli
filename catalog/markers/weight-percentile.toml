@@ -1,0 +1,55 @@
+slug = "weight-percentile"
+name = "Body Weight Percentile for Age"
+category = "pediatric"
+unit = "percentile"
+loinc = "8336-0"
+description = "Body weight expressed as a percentile for the child's age. Low values flag underweight; high values flag overweight or obesity. Category cut-offs are those operationally defined in the cited cohort."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5
+high = 85
+when = { age = [0.0, 18.0] }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "cohort"
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions" },
+]
+note = "Normal category: weight-for-age percentile from the 5th to the 85th. Cut-off as operationally defined in the cited retrospective cohort."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 95
+when = { age = [0.0, 18.0] }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "cohort"
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions" },
+]
+note = "Overweight category: weight-for-age percentile from the 85th to below the 95th. Cut-off as operationally defined in the cited retrospective cohort. Source band 85-95; stored as the warn high bound 95."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 5
+when = { age = [0.0, 18.0] }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "cohort"
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions" },
+]
+note = "Underweight category: weight-for-age percentile less than the 5th. Cut-off as operationally defined in the cited retrospective cohort. Source kind: diagnostic. Source band <= 5; stored as the warn low bound 5."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 95
+when = { age = [0.0, 18.0] }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "cohort"
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions" },
+]
+note = "Obese category: weight-for-age percentile greater than the 95th. Cut-off as operationally defined in the cited retrospective cohort. Source kind: diagnostic. Source band >= 95; stored as the warn high bound 95. Alternative to the default diagnostic warn range for the same population."

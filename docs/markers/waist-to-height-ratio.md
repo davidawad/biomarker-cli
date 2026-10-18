@@ -12,12 +12,11 @@ Waist circumference divided by height, both in the same unit. It is a simple ind
 
 ## Ranges
 
-No clinical reference range: No general clinical reference interval is cited; see the diagnostic, target and alternative ranges.
-
 Bounds in ratio. The most specific matching range of each set applies.
 
 | Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
 |---|---|---|---|---|---|---|---|---|
+| clinical | reference | all | 0.5 | 0.59 | guideline | Adults (NICE guidance for England, based on the committee's review of the evidence) | [Overweight and obesity management](https://www.nice.org.uk/guidance/ng246/chapter/rationale-and-impact), Rationale and impact, waist-to-height ratio section | Increased health risk band per NICE. Lower bound 0.5 inclusive, upper bound 0.59 inclusive as written in the quote ('0.5 to 0.59'). Applied in conjunction with BMI for adults with BMI under 35 kg/m2, per the same rationale section. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point. |
 | ashwell-hsieh-2005 | warn | all | - | 0.5 | consensus | Adults of both sexes and different ethnic groups (proposed universal boundary) | [Six reasons why the waist-to-height ratio is a rapid and effective global indicator for health risks of obesity and how its use could simplify the international public health message on obesity.](https://pubmed.ncbi.nlm.nih.gov/16236591/), Abstract | Proposed boundary for increased health risk in men and women. Source is a review and position paper, not a guideline. The quote gives WHtR = 0.5 as the boundary. Source kind: decision. Source band >= 0.5; stored as the warn high bound 0.5. |
 | nice-ng246-2022 | warn | all | - | 0.6 | guideline | Adults (NICE guidance for England, based on the committee's review of the evidence) | [Overweight and obesity management](https://www.nice.org.uk/guidance/ng246/chapter/rationale-and-impact), Rationale and impact, waist-to-height ratio section | NICE rationale: a value of 0.6 or more indicates a further increase in risk. The NICE text uses 'further increase in risk' rather than the word 'high', so this is the top band by wording. NICE also notes that WHtR may add little for people with BMI over 35 kg/m2, who are likely to have a high ratio anyway. Source kind: decision. Source band >= 0.6; stored as the warn high bound 0.6. |
 

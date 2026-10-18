@@ -1,0 +1,52 @@
+slug = "normetanephrine"
+name = "Normetanephrine, Plasma Free"
+category = "adrenal"
+unit = "pg/mL"
+aliases = ["normetanephrine-plasma-free"]
+description = "Free normetanephrine, the O-methylated metabolite of norepinephrine, measured in plasma. Elevated values support a diagnosis of pheochromocytoma or paraganglioma; it is also the most sensitive plasma marker for many of these tumours."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 180
+population = "Adults (>=18 y) tested for catecholamine metabolites at Ankara Bilkent City Hospital, Feb 2019 to May 2023; local laboratory reference limit in force after Feb 2022"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41750736", doi = "10.3390/diagnostics16040588", url = "https://pubmed.ncbi.nlm.nih.gov/41750736/", title = "Seasonal and Climatic Influences on Catecholamine Metabolite Levels in Patients With and Without Pheochromocytoma-Paraganglioma.", locator = "Results (reference limits)" },
+]
+note = "Upper limit in force after February 2022 as stated by the reporting laboratory (the limit before then was <200 pg/mL). Single-centre limit, not age-specific; age-specific paediatric and adult intervals exist in the literature but were not verifiable here."
+
+[[range]]
+set = "age-adjusted-plasma-nmn-2013"
+kind = "reference"
+high = 86.1
+when = { age = [0.0, 17.0] }
+population = "Children in a 2013 supine plasma free metanephrine reference study (1226 subjects aged 5-84 y, including 116 children)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "23065528", doi = "10.1258/acb.2012.012066", url = "https://pubmed.ncbi.nlm.nih.gov/23065528/", title = "Reference intervals for plasma free metanephrines with an age adjustment for normetanephrine for optimized laboratory testing of phaeochromocytoma.", locator = "Abstract, Results" },
+]
+note = "Age-adjusted upper reference limit for plasma normetanephrine in children, nmol/L. The age cut-off for 'children' is not restated in the quote (under 18 assumed). Supine sampling; not converted to pg/mL. Converted from the source's nmol/L (0.47) to pg/mL using factor 183.2."
+
+[[range]]
+set = "age-adjusted-plasma-nmn-2013"
+kind = "reference"
+high = 192.4
+when = { age = [60.0, 200] }
+population = "Adults over 60 years in a 2013 supine plasma free metanephrine reference study (1226 subjects aged 5-84 y)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "23065528", doi = "10.1258/acb.2012.012066", url = "https://pubmed.ncbi.nlm.nih.gov/23065528/", title = "Reference intervals for plasma free metanephrines with an age adjustment for normetanephrine for optimized laboratory testing of phaeochromocytoma.", locator = "Abstract, Results" },
+]
+note = "Age-adjusted upper reference limit for plasma normetanephrine in subjects over 60 years, nmol/L (source wording 'over 60 y'; age_min set to 60). Supine sampling; not converted to pg/mL. Converted from the source's nmol/L (1.05) to pg/mL using factor 183.2."
+
+[[range]]
+set = "seated-lcms-urls-2016"
+kind = "reference"
+high = 216.2
+population = "Subjects (n=113) sampled in the seated position in whom pheochromocytoma/paraganglioma had been excluded, as restated from the laboratory's earlier method publication (method: lc-ms/ms; specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "28856203", doi = "10.1016/j.plabm.2016.05.001", url = "https://pubmed.ncbi.nlm.nih.gov/28856203/", title = "Evaluating the optimum rest period prior to blood collection for fractionated plasma free metanephrines analysis.", locator = "Introduction (full text)" },
+]
+note = "Seated-sampling upper reference limit for plasma normetanephrine by LC-MS/MS as stated by the authors. Seated values differ from supine intervals; the limit is from a single laboratory. Converted from the source's pmol/L (1180) to pg/mL using factor 0.1832."

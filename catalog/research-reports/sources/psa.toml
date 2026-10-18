@@ -138,16 +138,3 @@ note = "PCRMP referral threshold of 3.0 ng/mL for asymptomatic men aged 50-69 (b
 citations = [
   { pmid = "39038964", doi = "10.3399/BJGP.2023.0586", title = "Optimising the use of the prostate-specific antigen blood test in asymptomatic men for early prostate cancer detection in primary care: report from a UK clinical consensus.", url = "https://pubmed.ncbi.nlm.nih.gov/39038964/", locator = "Full text, Results", quote = "the current threshold of ≥3.0 ng/mL for asymptomatic patients aged 50–69 years" },
 ]
-
-[[range]]
-set = "psa-density-2026"
-kind = "decision"
-low = 0.15
-unit = "ng/mL/cm3"
-when = { sex = "male" }
-population = "Men with suspected prostate cancer who had MRI-derived prostate volume (single-centre retrospective cohort)"
-evidence = "cohort-study"
-note = "PSA density (PSA divided by prostate volume) threshold of 0.15 ng/mL/cm3 used in current practice for clinically significant cancer. The study evaluated its performance across volumes and ages; boundary not stated in the quoted sentence. Not a PSA mass-concentration threshold; the unit is ng/mL per cm3."
-citations = [
-  { pmid = "42599322", doi = "10.1007/s00345-026-06613-9", title = "PSA density for clinically significant prostate cancer detection: a retrospective cohort study on the influence of age and prostate volume.", url = "https://pubmed.ncbi.nlm.nih.gov/42599322/", locator = "Abstract, Purpose", quote = "Current practice applies a uniform PSAD threshold of 0.15 ng/ml/cm³" },
-]

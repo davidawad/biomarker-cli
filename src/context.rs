@@ -36,7 +36,7 @@ pub fn flag_layer(g: &GlobalOpts) -> Layer {
     let s = |k: &str, v: &Option<String>| v.as_ref().map(|v| (k.to_string(), v.clone()));
     [
         g.db.as_ref().map(|p| ("db_path".to_string(), p.to_string_lossy().into_owned())),
-        g.format.map(|f| ("format".to_string(), format!("{f:?}").to_lowercase())),
+        g.format.map(|f| ("format".to_string(), f.name())),
         s("unit_system", &g.units),
         s("precision", &g.precision),
         s("date_format", &g.date_format),

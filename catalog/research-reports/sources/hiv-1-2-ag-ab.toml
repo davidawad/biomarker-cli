@@ -1,0 +1,7 @@
+slug = "hiv-1-2-ag-ab"
+name = "HIV-1/2 Antigen/Antibody Combination"
+loinc = "105080-6"
+category = "infectious"
+unit = "qualitative"
+description = "Combined fourth-generation screening assay that detects HIV-1/2 p24 antigen and HIV-1/2 antibodies in serum or plasma, reported as reactive or nonreactive. Expected result: nonreactive (negative)."
+no_reference = "Qualitative result (reactive or nonreactive); no numeric reference interval applies."

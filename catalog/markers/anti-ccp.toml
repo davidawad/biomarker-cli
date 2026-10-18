@@ -5,4 +5,15 @@ unit = "U/mL"
 loinc = "53027-9"
 description = "Antibodies against citrullinated protein antigens (ACPA). They are highly specific for rheumatoid arthritis and are used in diagnosis and classification, often together with rheumatoid factor."
 aliases = ["acpa", "ccp antibodies"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 10
+high = 30
+population = "RA and control patients in a review of autoimmune serology (Thermo Fisher assay) (method: thermo-fisher)"
+evidence = "consensus"
+citations = [
+  { pmid = "35036891", doi = "10.1016/j.jtauto.2022.100142", url = "https://pubmed.ncbi.nlm.nih.gov/35036891/", title = "Impact of autoimmune serology test results on RA classification and diagnosis.", locator = "Full text, Figure 3 legend" },
+]
+note = "Manufacturer-based low-positive band for this assay: above the 10 U/mL cut-off up to 30 U/mL; above 30 U/mL is high positive. Assay-specific and not transferable to other ACPA methods. Source kind: decision. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."

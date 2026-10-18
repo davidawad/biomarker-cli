@@ -1,0 +1,43 @@
+slug = "glucose-challenge-1h"
+name = "Glucose Challenge Test, 1 Hour (50 g)"
+loinc = "1504-0"
+category = "pregnancy"
+unit = "mg/dL"
+description = "Plasma glucose one hour after a 50 g oral glucose load in pregnancy. A screening test: a positive result is followed by a diagnostic oral glucose tolerance test, not a diagnosis of gestational diabetes by itself."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 140
+when = { pregnant = true }
+population = "Pregnant women undergoing the 50 g glucose challenge test for gestational diabetes screening"
+evidence = "meta-analysis"
+note = "Screen-positive at the 140 mg/dL threshold (less sensitive, more specific cut-off)."
+citations = [
+  { pmid = "24423035", title = "Screening and diagnosing gestational diabetes mellitus.", locator = "Abstract", quote = "The 50 g oral glucose challenge test with a glucose threshold of 130 mg/dL versus 140 mg/dL improves sensitivity and reduces specificity." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 130
+high = 140
+when = { pregnant = true }
+population = "Pregnant women undergoing the 50 g glucose challenge test for gestational diabetes screening"
+evidence = "meta-analysis"
+note = "Screen-positive only at the more sensitive 130 mg/dL threshold (values from 130 to strictly below 140 mg/dL)."
+citations = [
+  { pmid = "24423035", title = "Screening and diagnosing gestational diabetes mellitus.", locator = "Abstract", quote = "The 50 g oral glucose challenge test with a glucose threshold of 130 mg/dL versus 140 mg/dL improves sensitivity and reduces specificity." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 135
+when = { pregnant = true }
+population = "Women with twin pregnancy at 24-28 weeks undergoing the 1-hour 50 g glucose challenge test (single maternal-fetal medicine practice, 475 patients)"
+evidence = "outcome-study"
+note = "Optimal screen-positive cut-off in twin pregnancies (single-centre historical cohort): sensitivity 100 percent at 135 mg/dL, specificity 76.4 percent."
+citations = [
+  { pmid = "25439813", title = "Screening approach for gestational diabetes in twin pregnancies.", locator = "Abstract, Conclusion", quote = "In twin pregnancies, the optimal 1-hour, 50-g GCT screening cutoff appears to be >=135 mg/dL." },
+]

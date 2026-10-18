@@ -1,0 +1,7 @@
+slug = "urine-clarity"
+name = "Urine Appearance / Clarity"
+category = "urinalysis"
+unit = "qualitative"
+loinc = "5767-9"
+description = "Visual appearance of a fresh urine specimen. The expected result is clear; cloudiness can come from cells, crystals, bacteria, mucus or lipids and is followed up by microscopy."
+no_reference = "Qualitative visual grade (clear, hazy, cloudy, turbid); no numeric reference interval applies."

@@ -1,0 +1,17 @@
+slug = "lpa-mass"
+name = "Lipoprotein(a) Mass"
+category = "lipid"
+unit = "mg/dL"
+description = "Lipoprotein(a) reported as mass concentration in mg/dL. Lp(a) is a genetically determined LDL-like particle and a causal cardiovascular risk factor; mass and molar (nmol/L) results are not reliably interconvertible."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 50
+population = "Adults; laboratory flagging of lipid results"
+evidence = "consensus"
+citations = [
+  { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract (laboratory flagging recommendation)" },
+]
+note = "EAS/EFLM 2016 laboratory flag: Lp(a) at or above 50 mg/dL (80th percentile). Source band >= 50; stored as the warn high bound 50."

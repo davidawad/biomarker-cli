@@ -292,6 +292,29 @@ pub enum MarkerCmd {
     },
     /// List marker categories
     Categories,
+    /// LOINC codes that map to a marker (used by FHIR and HL7 v2 import)
+    Loinc {
+        #[command(subcommand)]
+        cmd: LoincCmd,
+    },
+}
+
+#[derive(Debug, Subcommand)]
+pub enum LoincCmd {
+    /// Map another LOINC code to a marker
+    Add {
+        marker: String,
+        code: String,
+        /// `exact` for the same analyte, `variant` for a related measurement (calculated vs direct)
+        #[arg(long, default_value = "exact", value_parser = ["exact", "variant"])]
+        relation: String,
+    },
+    /// Remove a mapping added with `add`
+    #[command(name = "remove", alias = "rm")]
+    Remove { marker: String, code: String },
+    /// List mappings (all markers, or one)
+    #[command(alias = "ls")]
+    List { marker: Option<String> },
 }
 
 #[derive(Debug, Args)]
@@ -534,6 +557,12 @@ pub enum InputFormat {
     Jsonl,
     /// xlsx, xlsm, xlsb, xls or ods (detected from the extension)
     Spreadsheet,
+    /// FHIR R4 JSON: a resource, a Bundle, or a directory of them
+    Fhir,
+    /// FHIR R4 NDJSON: one resource per line
+    FhirNdjson,
+    /// HL7 v2 ORU^R01 messages
+    Hl7v2,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
@@ -652,6 +681,25 @@ pub struct ImportArgs {
     /// Reference ranges from the sheet (default: catalog; mapping `ranges = "sheet"`)
     #[arg(long, value_enum)]
     pub ranges: Option<RangesArg>,
+    /// FHIR: observation categories to import (default: laboratory,vital-signs)
+    #[arg(long, value_delimiter = ',', value_name = "CATEGORY")]
+    pub categories: Vec<String>,
+    /// FHIR / HL7 v2: also import preliminary and registered results (tagged `preliminary`)
+    #[arg(long)]
+    pub include_preliminary: bool,
+    /// FHIR / HL7 v2: results nothing maps to: report (default), skip, or create a marker
+    #[arg(long, value_enum)]
+    pub unmapped: Option<crate::interop::pipeline::Unmapped>,
+    /// FHIR / HL7 v2: when a result already exists (duplicate policy skip), still link it to its
+    /// source so later amendments apply
+    #[arg(long)]
+    pub link_existing: bool,
+    /// FHIR / HL7 v2: delete results the source later retracted (entered-in-error)
+    #[arg(long)]
+    pub apply_retractions: bool,
+    /// FHIR / HL7 v2: import although the file's Patient does not match the person
+    #[arg(long)]
+    pub force_person: bool,
 }
 
 #[derive(Debug, Args, Clone, Default)]
@@ -733,6 +781,36 @@ pub struct ExportArgs {
     /// Include id and import batch columns
     #[arg(long)]
     pub with_ids: bool,
+    /// FHIR (--format fhir | fhir-ndjson): reference ranges to write: the lab's own (default),
+    /// those plus the cited catalog range labelled as ours, or none
+    #[arg(long, value_enum, default_value = "lab")]
+    pub ranges: FhirRanges,
+    /// FHIR: also write an interpretation computed from the catalog range
+    #[arg(long, value_enum)]
+    pub interpret: Option<InterpretArg>,
+    /// FHIR: put the person's name on the Patient resource
+    #[arg(long)]
+    pub include_name: bool,
+    /// FHIR: wrap results sharing lab, date and import batch in a DiagnosticReport
+    #[arg(long)]
+    pub group_reports: bool,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+pub enum FhirRanges {
+    /// The reference range the lab reported with each result
+    Lab,
+    /// The lab's, plus the catalog's cited range labelled "biomarker-cli catalog"
+    Catalog,
+    /// No reference ranges
+    #[value(name = "none")]
+    Omit,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+pub enum InterpretArg {
+    /// Flag each result against the catalog range (H, L, N), marked as ours
+    Catalog,
 }
 
 #[derive(Debug, Args)]

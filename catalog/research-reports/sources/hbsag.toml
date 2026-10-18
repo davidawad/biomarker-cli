@@ -1,0 +1,7 @@
+slug = "hbsag"
+name = "Hepatitis B Surface Antigen"
+loinc = "5195-3"
+category = "infectious"
+unit = "qualitative"
+description = "Antigen from the hepatitis B virus surface, detected in serum or plasma and reported as reactive or non-reactive. A reactive result indicates current hepatitis B infection (acute or chronic), and is used in screening, diagnosis and monitoring of carriers. Expected result: non-reactive (negative). Quantitative HBsAg (IU/mL) is a separate test."
+no_reference = "Qualitative result (reactive or non-reactive); no numeric reference interval applies."

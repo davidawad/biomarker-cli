@@ -328,3 +328,15 @@ name = "Vitamin d replete"
 [[condition]]
 slug = "wilson-disease"
 name = "Wilson disease"
+
+[[condition]]
+slug = "ckd-g5d"
+name = "Ckd g5d"
+
+[[condition]]
+slug = "statin-therapy"
+name = "Statin therapy"
+
+[[condition]]
+slug = "short-bowel-syndrome"
+name = "Short bowel syndrome"

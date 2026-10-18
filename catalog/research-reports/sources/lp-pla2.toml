@@ -18,31 +18,3 @@ note = "Manufacturer-declared enzyme activity cut-off of the PLAC Test that iden
 citations = [
   { pmid = "34336025", doi = "10.5114/aoms.2020.98195", title = "On the present and future role of Lp-PLA(2) in atherosclerosis-related cardiovascular risk prediction and management.", url = "https://pubmed.ncbi.nlm.nih.gov/34336025/", locator = "Full text, Lp-PLA2 measurement section", quote = "declares an enzyme activity cut-off point at 225 nmol/min/ml that identifies high cardiovascular risk patients" },
 ]
-
-[[range]]
-set = "dimension-vista-2017"
-kind = "reference"
-low = 107
-high = 265
-unit = "U/L"
-when = { sex = "male", method = "dimension-vista" }
-population = "Healthy Italian adult males, Dimension Vista Lp-PLA2 activity assay"
-evidence = "reference-interval-study"
-note = "Reference interval for Lp-PLA2 activity in males on the Siemens Dimension Vista analyser, reported in U/L by the study. Activity units are assay specific; do not treat this as directly interchangeable with the PLAC nmol/min/mL cut-off."
-citations = [
-  { pmid = "28900364", doi = "10.11613/BM.2017.030701", title = "Performance characteristics of lipoprotein-associated phospholipase A2 activity assay on the Dimension Vista analyser and preliminary study of a healthy Italian population.", url = "https://pubmed.ncbi.nlm.nih.gov/28900364/", locator = "Abstract, Results", quote = "RIs were 107 - 265 U/L for males and 84 - 225 U/L for females." },
-]
-
-[[range]]
-set = "dimension-vista-2017"
-kind = "reference"
-low = 84
-high = 225
-unit = "U/L"
-when = { sex = "female", method = "dimension-vista" }
-population = "Healthy Italian adult females, Dimension Vista Lp-PLA2 activity assay"
-evidence = "reference-interval-study"
-note = "Reference interval for Lp-PLA2 activity in females on the Dimension Vista analyser, reported in U/L by the study. Activity units are assay specific."
-citations = [
-  { pmid = "28900364", doi = "10.11613/BM.2017.030701", title = "Performance characteristics of lipoprotein-associated phospholipase A2 activity assay on the Dimension Vista analyser and preliminary study of a healthy Italian population.", url = "https://pubmed.ncbi.nlm.nih.gov/28900364/", locator = "Abstract, Results", quote = "RIs were 107 - 265 U/L for males and 84 - 225 U/L for females." },
-]

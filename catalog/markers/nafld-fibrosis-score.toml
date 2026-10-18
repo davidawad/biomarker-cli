@@ -4,7 +4,19 @@ category = "derived"
 unit = "score"
 description = "Composite score from age, BMI, impaired glucose status, platelet count, albumin and AST/ALT ratio that estimates advanced fibrosis in NAFLD. Scores below the low cut-off exclude advanced fibrosis and scores above the high cut-off suggest it."
 aliases = ["nfs", "nafld-fs"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = -1.455
+high = 0.676
+population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
+evidence = "cohort"
+citations = [
+  { pmid = "17393509", doi = "10.1002/hep.21496", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", locator = "Abstract, Results" },
+  { pmid = "17393509", doi = "10.1002/hep.21496", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", locator = "Abstract, Results" },
+]
+note = "Indeterminate band between the low cut-off -1.455 and the high cut-off 0.676. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "mcpherson-2017"

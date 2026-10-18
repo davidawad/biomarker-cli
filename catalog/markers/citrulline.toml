@@ -1,0 +1,44 @@
+slug = "citrulline"
+name = "Citrulline"
+category = "amino-acid"
+unit = "µmol/L"
+loinc = "2130-3"
+description = "Plasma concentration of citrulline, a non-protein amino acid made mainly by small-bowel enterocytes. It is used as a marker of absorptive enterocyte mass; low values track with reduced small-bowel length and intestinal failure."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 13.31
+high = 69.05
+when = { age = [0.0, 20.0] }
+population = "Healthy children aged 1 month to 20 years (n=151), plasma, LC-MS/MS; no significant influence of age or sex on plasma citrulline in this study. No adult plasma interval was found. (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "21129371", doi = "10.1016/j.cca.2010.11.021", url = "https://pubmed.ncbi.nlm.nih.gov/21129371/", title = "Citrulline levels in a paediatric age group: does measurement on dried blood spots have additional value?", locator = "Abstract, Results" },
+]
+note = "2.5th and 97.5th percentiles (CLSI/IFCC-based calculation) for plasma citrulline in children."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 10.6
+high = 39.0
+when = { age = [1.0, 5.0] }
+population = "Kazakhstani paediatric population, age stratum 1-4 years (n=896), dried blood spots, FIA-MS/MS, indirect data-mining study (specimen: dried-blood-spot)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42739196", doi = "10.3390/diagnostics16172766", url = "https://pubmed.ncbi.nlm.nih.gov/42739196/", title = "Age- and Sex-Specific Reference Intervals for Amino Acids and Acylcarnitines by Tandem Mass Spectrometry in a Kazakhstani Paediatric Population: An Indirect Data-Mining Study.", locator = "Table 2" },
+]
+note = "2.5th and 97.5th percentiles from CLSI EP28 computation on routine laboratory results. Source stratum is 1-4 y; encoded as age 1 to under 5 years. Dried-blood-spot specimen, not plasma."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 20
+when = { conditions = ["short-bowel-syndrome"] }
+population = "Adult patients with short-bowel syndrome (n=57), postabsorptive plasma citrulline, at least 2 years after final digestive circuit modification; comparison with controls (n=51) (specimen: plasma)"
+evidence = "cohort"
+citations = [
+  { pmid = "11113071", doi = "10.1053/gast.2000.20227", url = "https://pubmed.ncbi.nlm.nih.gov/11113071/", title = "Postabsorptive plasma citrulline concentration is a marker of absorptive enterocyte mass and intestinal failure in humans.", locator = "Abstract, Results" },
+]
+note = "Threshold classifying permanent intestinal failure in adult short-bowel syndrome (values strictly below 20 umol/L classify as permanent). Single observational study with a 20 umol/L cut-off; not a general reference or guideline cut-off. Source kind: diagnostic. Source band <= 20; stored as the warn low bound 20."

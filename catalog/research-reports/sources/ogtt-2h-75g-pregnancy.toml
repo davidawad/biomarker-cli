@@ -1,0 +1,30 @@
+slug = "ogtt-2h-75g-pregnancy"
+name = "Oral Glucose Tolerance Test, 2 Hour (75 g), Pregnancy"
+loinc = "1518-0"
+category = "pregnancy"
+unit = "mg/dL"
+description = "Plasma glucose two hours after a 75 g oral glucose load, performed after an overnight fast at 24-28 weeks in women without previously diagnosed diabetes. Used to classify gestational diabetes."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 153
+when = { pregnant = true }
+population = "Pregnant women without diabetes diagnosed before pregnancy, 75 g OGTT after overnight fast"
+evidence = "guideline"
+note = "IADPSG consensus: gestational diabetes if one or more OGTT values equal or exceed the thresholds (fasting 92, 1-h 180, 2-h 153 mg/dL). This shard covers the 2-h value only."
+citations = [
+  { pmid = "20190296", doi = "10.2337/dc09-1848", title = "International association of diabetes and pregnancy study groups recommendations on the diagnosis and classification of hyperglycemia in pregnancy.", locator = "Table 1", quote = "| 2-h plasma glucose | 8.5 | 153 | 16.1†" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 153
+when = { pregnant = true }
+population = "Pregnant women without diabetes diagnosed before pregnancy, 75 g OGTT after overnight fast"
+evidence = "guideline"
+note = "Normal 2-h value under the IADPSG consensus: strictly below 153 mg/dL. Applies only if the fasting and 1-h values are also below their thresholds."
+citations = [
+  { pmid = "20190296", doi = "10.2337/dc09-1848", title = "International association of diabetes and pregnancy study groups recommendations on the diagnosis and classification of hyperglycemia in pregnancy.", locator = "Table 1", quote = "| 2-h plasma glucose | 8.5 | 153 | 16.1†" },
+]

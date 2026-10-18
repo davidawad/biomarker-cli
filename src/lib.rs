@@ -17,6 +17,7 @@ pub mod crypto;
 pub mod db;
 pub mod enc_config;
 pub mod error;
+pub mod interop;
 pub mod interventions;
 pub mod keyfile;
 pub mod keys;

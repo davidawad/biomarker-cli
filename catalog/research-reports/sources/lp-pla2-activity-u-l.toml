@@ -1,0 +1,31 @@
+slug = "lp-pla2-activity-u-l"
+name = "Lp-PLA2 Activity (U/L)"
+category = "cardiac"
+unit = "U/L"
+description = "Lipoprotein-associated phospholipase A2 activity reported in U/L on an automated analyser. Activity units are assay specific and are not interchangeable with nmol/min/mL."
+
+[[range]]
+set = "dimension-vista-2017"
+kind = "reference"
+low = 107
+high = 265
+when = { sex = "male", method = "dimension-vista" }
+population = "Healthy Italian adult males, Dimension Vista Lp-PLA2 activity assay"
+evidence = "reference-interval-study"
+note = "Reference interval for Lp-PLA2 activity in males on the Siemens Dimension Vista analyser, reported in U/L by the study. Activity units are assay specific; do not treat this as directly interchangeable with the PLAC nmol/min/mL cut-off."
+citations = [
+  { pmid = "28900364", doi = "10.11613/BM.2017.030701", title = "Performance characteristics of lipoprotein-associated phospholipase A2 activity assay on the Dimension Vista analyser and preliminary study of a healthy Italian population.", url = "https://pubmed.ncbi.nlm.nih.gov/28900364/", locator = "Abstract, Results", quote = "RIs were 107 - 265 U/L for males and 84 - 225 U/L for females." },
+]
+
+[[range]]
+set = "dimension-vista-2017"
+kind = "reference"
+low = 84
+high = 225
+when = { sex = "female", method = "dimension-vista" }
+population = "Healthy Italian adult females, Dimension Vista Lp-PLA2 activity assay"
+evidence = "reference-interval-study"
+note = "Reference interval for Lp-PLA2 activity in females on the Dimension Vista analyser, reported in U/L by the study. Activity units are assay specific."
+citations = [
+  { pmid = "28900364", doi = "10.11613/BM.2017.030701", title = "Performance characteristics of lipoprotein-associated phospholipase A2 activity assay on the Dimension Vista analyser and preliminary study of a healthy Italian population.", url = "https://pubmed.ncbi.nlm.nih.gov/28900364/", locator = "Abstract, Results", quote = "RIs were 107 - 265 U/L for males and 84 - 225 U/L for females." },
+]

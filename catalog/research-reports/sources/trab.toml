@@ -148,16 +148,3 @@ note = "Restates the ATA pregnancy advice (secondary source, not checked against
 citations = [
   { pmid = "36676660", doi = "10.3390/medicina59010036", title = "Diagnosis and Management of Fetal and Neonatal Thyrotoxicosis.", url = "https://pubmed.ncbi.nlm.nih.gov/36676660/", locator = "Full text", quote = "If a high TRAb serum concentration is detected (more than three times the upper normal maternal limit or more than 5 IU/L), according to ATA" },
 ]
-
-[[range]]
-set = "ata-2017"
-kind = "diagnostic"
-low = 3
-unit = "x ULN"
-when = { pregnancy = true, conditions = ["graves-disease"] }
-population = "Pregnant women with Graves disease or a high TRAb, as summarised in a 2022 review of fetal and neonatal thyrotoxicosis"
-evidence = "review"
-note = "ATA pregnancy guidance as restated: TRAb more than three times the upper limit of normal for the maternal assay counts as high and calls for fetal/neonatal monitoring. Expressed as a multiple of the assay upper limit; the alternative absolute form (>5 IU/L) is a separate range."
-citations = [
-  { pmid = "36676660", doi = "10.3390/medicina59010036", title = "Diagnosis and Management of Fetal and Neonatal Thyrotoxicosis.", url = "https://pubmed.ncbi.nlm.nih.gov/36676660/", locator = "Full text", quote = "If a high TRAb serum concentration is detected (more than three times the upper normal maternal limit or more than 5 IU/L), according to ATA" },
-]

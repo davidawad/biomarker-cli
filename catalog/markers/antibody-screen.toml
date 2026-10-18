@@ -1,0 +1,7 @@
+slug = "antibody-screen"
+name = "Red Cell Antibody Screen"
+category = "pregnancy"
+unit = "qualitative"
+loinc = "890-4"
+description = "Indirect antiglobulin test that screens maternal or recipient plasma for clinically significant red cell alloantibodies. The expected result is negative; a positive screen is followed by antibody identification and titration."
+no_reference = "Qualitative result (negative or positive); no numeric reference interval applies."

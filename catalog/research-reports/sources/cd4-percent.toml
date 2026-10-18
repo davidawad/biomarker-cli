@@ -1,0 +1,17 @@
+slug = "cd4-percent"
+name = "CD4+ T Cells (Percent of Lymphocytes)"
+category = "infectious"
+unit = "%"
+description = "Percentage of lymphocytes that are CD4-positive T cells, reported alongside the absolute CD4 count in HIV monitoring and lymphocyte subset panels."
+
+[[range]]
+set = "elsa-brasil-2025-lymphocyte-subsets"
+kind = "reference"
+low = 32.5
+high = 61.6
+population = "351 healthy Brazilian adults in ELSA-Brasil; reference intervals from the 2.5th and 97.5th percentiles"
+evidence = "reference-interval-study"
+note = "Relative CD4+ share of lymphocytes in the same reference cohort (2.5th to 97.5th percentile). Given as a percentage, not cells/µL."
+citations = [
+  { pmid = "41124450", doi = "10.1590/1414-431X2025e14956", title = "Establishing the reference intervals for subpopulations of T lymphocytes, B lymphocytes, and natural killer cells: insight from the Brazilian Longitudinal Study of Adult Health (ELSA-Brasil).", url = "https://pubmed.ncbi.nlm.nih.gov/41124450/", locator = "Abstract, Results", quote = "CD4+: 421.4-1523.8 cells/μL, 32.5-61.6%" },
+]

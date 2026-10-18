@@ -4,7 +4,31 @@ category = "composite"
 unit = "%"
 description = "Estimated 10-year risk of a first atherosclerotic cardiovascular event (heart attack, coronary death, or stroke), calculated from the Pooled Cohort Equations using age, sex, race, cholesterol, blood pressure, diabetes, smoking and treatment. It guides primary-prevention decisions such as statin therapy."
 aliases = ["pce 10-year risk", "pooled cohort equations risk", "10-year ascvd risk"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5
+high = 7.5
+population = "US adults 40 to 75 years of age evaluated for primary ASCVD prevention, without diabetes"
+evidence = "guideline"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", url = "https://pubmed.ncbi.nlm.nih.gov/30586774/", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Full text, Recommendations" },
+]
+note = "Borderline risk, 5% to <7.5% 10-year ASCVD risk. Risk-enhancing factors may favour statin therapy in this band. Boundary semantics: >=5 and <7.5. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "acc-aha-2018-cholesterol-7-5-19-9"
+kind = "reference"
+low = 7.5
+high = 19.9
+when = { age = [40.0, 76.0] }
+population = "US adults 40 to 75 years of age without diabetes mellitus, primary prevention"
+evidence = "guideline"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", url = "https://pubmed.ncbi.nlm.nih.gov/30586774/", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Full text, Recommendations" },
+]
+note = "Intermediate risk, 7.5% to <20% 10-year ASCVD risk. Risk-enhancing factors favour statin initiation; if uncertain, CAC may be measured. Boundary semantics: >=7.5 and <20 (19.9 stated as the upper limit of the band). Source kind: decision. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "acc-aha-2019-primary-prevention"

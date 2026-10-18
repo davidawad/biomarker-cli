@@ -3,7 +3,6 @@ name = "Beta-Hydroxybutyrate (Ketones, Blood)"
 category = "chemistry"
 unit = "mmol/L"
 description = "Blood beta-hydroxybutyrate is the main ketone body and the preferred measure of ketonaemia. Measured directly (capillary or venous) it is more specific for diabetic ketoacidosis (DKA) than urine or acetoacetate tests."
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
 set = "diagnostic"
@@ -16,6 +15,32 @@ citations = [
   { pmid = "38907161", doi = "10.1007/s00125-024-06183-8", title = "Hyperglycaemic crises in adults with diabetes: a consensus report.", locator = "Full text, diagnosis of DKA" },
 ]
 note = "Blood beta-hydroxybutyrate of 3.0 mmol/L or higher supports a diagnosis of DKA (with hyperglycaemia and acidosis), per the 2024 ADA/EASD/JBDS/AACE/DTS consensus. Source kind: diagnostic. Source band >= 3.0; stored as the warn high bound 3.0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.6
+high = 1.5
+when = { conditions = ["diabetes"] }
+population = "People with diabetes on sick-day rules (euglycaemic DKA prevention, medication stopped during illness)"
+evidence = "consensus"
+citations = [
+  { pmid = "40900206", doi = "10.1007/s11892-025-01604-3", title = "Developing a Protocol for Management of Euglycemic Diabetic Ketoacidosis.", locator = "Management, sick day rules paragraph" },
+]
+note = "Trace/small ketones or blood ketones 0.6-1.5 mmol/L during illness: take carbohydrate, correction insulin, fluids and recheck ketones every 3-4 hours, per the sick-day advice in the source review. This is a home-monitoring action level, not a diagnosis. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "beta-hydroxybutyrate-bands-1-6-3-0"
+kind = "reference"
+low = 1.6
+high = 3.0
+when = { conditions = ["diabetes"] }
+population = "People with diabetes on sick-day rules (euglycaemic DKA prevention)"
+evidence = "consensus"
+citations = [
+  { pmid = "40900206", doi = "10.1007/s11892-025-01604-3", title = "Developing a Protocol for Management of Euglycemic Diabetic Ketoacidosis.", locator = "Management, sick day rules paragraph" },
+]
+note = "Moderate ketones: the source says the same advice can be followed, but medical attention is recommended. Above 3.0 mmol/L the source advises immediate action (wording is cut off in the retrieved text); the DKA threshold of 3.0 mmol/L is in the diagnostic range above. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "target"

@@ -1,0 +1,32 @@
+slug = "pth-intact"
+name = "Parathyroid Hormone, Intact"
+category = "bone"
+unit = "pg/mL"
+aliases = ["pth"]
+description = "Hormone from the parathyroid glands that raises blood calcium and controls phosphate handling. In chronic kidney disease, the KDIGO CKD-MBD guideline gives a target range for PTH in dialysis patients."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 9.4
+high = 28.9
+when = { conditions = ["vitamin-d-replete"] }
+population = "Healthy French adults with normal renal function and 25OHD >= 30 ng/mL (183 of 898 healthy subjects), third-generation PTH assay on the LIAISON XL platform"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26628583", doi = "10.1530/EJE-15-0595", url = "https://pubmed.ncbi.nlm.nih.gov/26628583/", title = "Serum PTH reference values established by an automated third-generation assay in vitamin D-replete subjects with normal renal function: consequences of diagnosing primary hyperparathyroidism and the classification of dialysis patients.", locator = "Abstract, Results" },
+]
+note = "Reference interval for intact PTH restricted to vitamin D-replete adults (25OHD >= 30 ng/mL); the source adopts its 95% interval. ng/L is numerically equal to pg/mL. Assay-specific (LIAISON XL); the source notes subjects aged 60 and over had higher PTH, so this interval is for the whole replete group. Converted from the source's ng/L (9.4-28.9) to pg/mL using factor 1."
+
+[[range]]
+set = "usa-elecsys-vitd-2019"
+kind = "reference"
+low = 17.9
+high = 58.6
+when = { conditions = ["vitamin-d-replete"] }
+population = "Apparently healthy, normocalcemic, normophosphatemic US adults (n=653), classified as vitamin D sufficient (25(OH)D >= 30 ng/mL)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31273631", doi = "10.1007/s40618-019-01075-w", url = "https://pubmed.ncbi.nlm.nih.gov/31273631/", title = "Parathyroid hormone reference ranges in healthy individuals classified by vitamin D status.", locator = "Abstract, Results" },
+]
+note = "2.5th-97.5th percentile of intact PTH in vitamin D-sufficient adults on the Elecsys PTH assay (cobas e 601); the source reports the median as 31.9 pg/mL in this group. Assay-specific."

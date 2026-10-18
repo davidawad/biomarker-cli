@@ -242,6 +242,16 @@ change, change_pct, from_flag, to_flag}`. By default each side is the latest
 measurement on or before the date. With `--exact`, it must be on that date.
 Missing sides are `null`.
 
+### Lab fields on a Measurement (FHIR / HL7 v2 imports)
+
+When the database holds at least one result imported from FHIR or HL7 v2,
+every Measurement record also carries `lab_ref_low`, `lab_ref_high` (the lab's
+own range for that result, in the display unit), `lab_ref_text`,
+`lab_interpretation` (the lab's codes, comma separated: `N L H LL HH A AA < >`)
+and `lab_flag_agrees` (`true`/`false`, or `null` when either side has no flag).
+They are `null` for rows without lab data. Databases with no imported result
+omit these fields entirely. See [fhir-hl7.md](fhir-hl7.md).
+
 ### Export row
 
 `{person, marker, date, qualifier, value, unit, lab, fasting, note, tags}`.
@@ -283,6 +293,18 @@ report fields, which are mostly filled by spreadsheet imports:
 (`{date: values}`), `ranges_set` (`[{marker, person, low, high, unit}]` with
 `ranges = "sheet"`) and `warnings`. Spreadsheet imports add `sheet` and
 `header_row` (1-based).
+
+FHIR and HL7 v2 imports (`format` `fhir`, `fhir-ndjson` or `hl7v2`) print a
+different summary: `batch`, `source`, `format`, `dry_run`, `person`, `dedupe`,
+the counts `results`, `inserted`, `replaced`, `skipped`, `retracted`,
+`retractions_applied`, `conflicts`, `unmapped`, `unconvertible`, `invalid`,
+`observations` (`{inserted, replaced, skipped}`), `ignored` (resource type ->
+count) with `ignored_resources`, `skipped_category`, `skipped_status`,
+`panel_headers`, `no_value`, `unsupported_value`, `markers_created`, and the
+lists `unmapped_results`, `unconvertible_results`, `conflict_results`,
+`skipped_names`, `warnings`, `errors`. `export --format fhir` prints a FHIR
+Bundle and `--format fhir-ndjson` FHIR resources, one per line, instead of the
+envelope. See [fhir-hl7.md](fhir-hl7.md).
 
 ### Person / Marker / Range
 

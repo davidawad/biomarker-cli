@@ -292,14 +292,15 @@ key somewhere else: lose them all and the data cannot be recovered.
 |---------|---------|
 | `person add/list/show/edit/rm` | manage people (`--sex`, `--dob`, `--notes`, `--tag`, `--attr pregnant=true` and other [attributes](#the-built-in-catalog)) |
 | `marker add/list/show/edit/rm/alias/categories` | manage the catalog. `edit --unit` rescales stored values and ranges |
+| `marker loinc add/remove/list` | LOINC codes that map to a marker, for [FHIR and HL7 v2 import](docs/fhir-hl7.md) |
 | `range set/list/rm` | reference/optimal/warn (near-limit)/critical ranges by `--sex` and `--age-min/--age-max`, or for one `--person`. `--unit` converts the bounds. `list` adds the catalog ranges of the active sets (`--set`, `--all-sets`) |
 | `catalog lint/docs/schema/sets/conditions` | the [built-in catalog](#the-built-in-catalog): check it, generate docs/markers, print the marker-file JSON Schema |
 | `unit list [--symbols]`, `unit add-conversion`, `unit convert` | conversion table (`to = from * factor + offset`) |
 | `add MARKER VALUE [UNIT]` | record one measurement (`--person --date --lab --fasting --note --tag --dedupe`) |
 | `rm ID...` | delete measurements |
-| `import FILE` | CSV/TSV/JSON/JSONL and xlsx/xls/ods import (see below) |
+| `import FILE` | CSV/TSV/JSON/JSONL and xlsx/xls/ods import (see below); FHIR R4 and HL7 v2 ORU files and directories ([docs/fhir-hl7.md](docs/fhir-hl7.md)) |
 | `observations` / `obs` | qualitative results (`--flagged` for abnormal ones). Accepts the same filters as `query` |
-| `export` | re-importable CSV (default), JSON or JSONL. Accepts the same filters as `query`. JSON also carries `observations` |
+| `export` | re-importable CSV (default), JSON or JSONL; `--format fhir` / `fhir-ndjson` writes FHIR R4. Accepts the same filters as `query`. JSON also carries `observations` |
 | `query` / `list` | filters: `-p/--person` (repeatable), `--all-people`, `-m/--marker`, `-c/--category`, `--from/--to`, `--last 90d`, `--lab`, `--tag`, `--batch`, `--flagged`, `--latest`, `--sort date\|person\|marker\|category\|value`, `-r`, `-n` |
 | `latest` | latest value per person × marker |
 | `trend` / `stats` | per-series statistics and `--windows` % change. JSON includes the points |
@@ -528,6 +529,24 @@ TAKEN_AT    MARKER  VALUE  UNIT
 * `--dry-run` prints the full report and writes nothing. A real import
   prints the same report. Re-importing the same sheet skips what is already
   there.
+
+## FHIR and HL7 v2
+
+Results from a patient portal ("download my record"), Synthea or a lab
+interface import directly, with the lab's own reference range and flag kept
+beside each result and never mixed into the catalog's cited ranges:
+
+```console
+$ biomarker import record.json --person alex --dry-run   # FHIR R4: Bundle, resource, NDJSON, or a directory
+$ biomarker import results.hl7 --person alex             # HL7 v2 ORU^R01
+$ biomarker marker loinc add MARKER CODE --relation variant   # another LOINC code for a marker
+$ biomarker export --person alex --format fhir -o labs.fhir.json
+```
+
+Markers are matched by LOINC code first, then by name; units are converted
+from UCUM; a re-import of the same file adds nothing, a corrected result
+updates its row, and what could not be mapped or converted is listed rather
+than dropped. Details, flags and limits: [docs/fhir-hl7.md](docs/fhir-hl7.md).
 
 ## Configuration
 

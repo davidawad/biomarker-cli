@@ -162,3 +162,36 @@ citations = [
   { pmid = "26455884", doi = "10.1016/j.mayocp.2015.07.026", url = "https://pubmed.ncbi.nlm.nih.gov/26455884/", title = "Reference Standards for Cardiorespiratory Fitness Measured With Cardiopulmonary Exercise Testing: Data From the Fitness Registry and the Importance of Exercise National Database.", locator = "Table 3, Sex-Specific Percentiles, FRIEND women row 70–79" },
 ]
 note = "Measured treadmill VO2max, 5th to 95th percentile (central 90% of the FRIEND distribution for this sex and age decade). Registry of tested adults, not a random population sample; values are mL/kg/min."
+
+[[range]]
+set = "kodama-2009-crf-mets"
+kind = "warn"
+low = 27.65
+population = "Healthy men and women pooled from observational cohorts (meta-analysis of 33 studies)"
+evidence = "cohort"
+citations = [
+  { pmid = "19454641", doi = "10.1001/jama.2009.681", url = "https://pubmed.ncbi.nlm.nih.gov/19454641/", title = "Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis.", locator = "Abstract, Data Extraction" },
+]
+note = "Low cardiorespiratory fitness band, maximal aerobic capacity below 7.9 METs (published as '< 7.9 METs'). Low CRF carried about 1.70 times the all-cause mortality of high CRF. Converted from the source's METs (7.9) to mL/kg/min using factor 3.5. Source kind: decision. Source band <= 27.65; stored as the warn low bound 27.65."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 37.8
+population = "Healthy men and women pooled from observational cohorts (meta-analysis of 33 studies)"
+evidence = "cohort"
+citations = [
+  { pmid = "19454641", doi = "10.1001/jama.2009.681", url = "https://pubmed.ncbi.nlm.nih.gov/19454641/", title = "Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis.", locator = "Abstract, Data Extraction" },
+]
+note = "Intermediate cardiorespiratory fitness band, 7.9-10.8 METs (published boundaries). Converted from the source's METs (7.9-10.8) to mL/kg/min using factor 3.5. Source kind: decision. Source band 27.65-37.8; stored as the warn low bound 37.8. Alternative to the default kodama-2009-crf-mets warn range for the same population."
+
+[[range]]
+set = "kodama-2009-crf-mets"
+kind = "optimal"
+low = 38.15
+population = "Healthy men and women pooled from observational cohorts (meta-analysis of 33 studies)"
+evidence = "cohort"
+citations = [
+  { pmid = "19454641", doi = "10.1001/jama.2009.681", url = "https://pubmed.ncbi.nlm.nih.gov/19454641/", title = "Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis.", locator = "Abstract, Data Extraction" },
+]
+note = "High cardiorespiratory fitness band, 10.9 METs or more (published as '> or = 10.9 METs'). Reference group with the lowest all-cause mortality in this meta-analysis. Converted from the source's METs (10.9) to mL/kg/min using factor 3.5."

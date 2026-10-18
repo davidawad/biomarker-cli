@@ -1,0 +1,7 @@
+slug = "hbcab"
+name = "Hepatitis B Core Antibody, Total"
+category = "infectious"
+unit = "qualitative"
+loinc = "16933-4"
+description = "Antibody (IgG and IgM) to the hepatitis B core antigen, reported as reactive or non-reactive, and as a signal-to-cutoff index by some assays. A reactive result shows past or current exposure to hepatitis B virus; it does not by itself separate resolved infection from chronic infection, which needs HBsAg and IgM anti-HBc testing. Expected result: non-reactive (negative) in people never exposed to hepatitis B. Hepatitis B vaccination alone does not produce anti-HBc."
+no_reference = "Qualitative result (reactive or non-reactive); no numeric reference interval applies."

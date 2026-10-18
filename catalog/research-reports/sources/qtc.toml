@@ -1,0 +1,78 @@
+slug = "qtc"
+name = "QTc Interval"
+loinc = "8636-3"
+category = "cardiac"
+unit = "ms"
+description = "Heart-rate-corrected QT interval from a 12-lead ECG. Used to screen for QT prolongation, which raises risk of torsades de pointes with some drugs and electrolyte disturbances. Ranges are age- and sex-specific upper limits; values above the limit indicate prolonged QTc."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 430
+when = { sex = "male", age_max = 40 }
+population = "Healthy adults and adolescents aged 5-89 years (study of 57,595 persons); men under 40 years"
+evidence = "outcome-study"
+note = "Upper normal limit for QTc (criterion for prolonged QTc in men under 40). Study used rate formulas QTcMod / QTcLogLin."
+citations = [
+  { pmid = "24825030", doi = "10.1016/j.ijcard.2014.04.133", title = "New age- and sex-specific criteria for QT prolongation based on rate correction formulas that minimize bias at the upper normal limits.", locator = "Abstract (Results/Conclusions)", quote = "The criteria established for prolonged QTc were: Age < 40 years, men 430 ms, women 440 ms; Age 40 to 69, men 440 ms, women 450 ms; Age >= 70 years, men 455 ms, and women 460 ms." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 440
+when = { sex = "female", age_max = 40 }
+population = "Healthy adults and adolescents aged 5-89 years (study of 57,595 persons); women under 40 years"
+evidence = "outcome-study"
+note = "Upper normal limit for QTc (criterion for prolonged QTc in women under 40). Study used rate formulas QTcMod / QTcLogLin."
+citations = [
+  { pmid = "24825030", doi = "10.1016/j.ijcard.2014.04.133", title = "New age- and sex-specific criteria for QT prolongation based on rate correction formulas that minimize bias at the upper normal limits.", locator = "Abstract (Results/Conclusions)", quote = "The criteria established for prolonged QTc were: Age < 40 years, men 430 ms, women 440 ms; Age 40 to 69, men 440 ms, women 450 ms; Age >= 70 years, men 455 ms, and women 460 ms." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 440
+when = { sex = "male", age_min = 40, age_max = 70 }
+population = "Healthy adults and adolescents aged 5-89 years (study of 57,595 persons); men aged 40-69 years"
+evidence = "outcome-study"
+note = "Upper normal limit for QTc (criterion for prolonged QTc in men aged 40 to 69). Study used rate formulas QTcMod / QTcLogLin."
+citations = [
+  { pmid = "24825030", doi = "10.1016/j.ijcard.2014.04.133", title = "New age- and sex-specific criteria for QT prolongation based on rate correction formulas that minimize bias at the upper normal limits.", locator = "Abstract (Results/Conclusions)", quote = "The criteria established for prolonged QTc were: Age < 40 years, men 430 ms, women 440 ms; Age 40 to 69, men 440 ms, women 450 ms; Age >= 70 years, men 455 ms, and women 460 ms." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 450
+when = { sex = "female", age_min = 40, age_max = 70 }
+population = "Healthy adults and adolescents aged 5-89 years (study of 57,595 persons); women aged 40-69 years"
+evidence = "outcome-study"
+note = "Upper normal limit for QTc (criterion for prolonged QTc in women aged 40 to 69). Study used rate formulas QTcMod / QTcLogLin."
+citations = [
+  { pmid = "24825030", doi = "10.1016/j.ijcard.2014.04.133", title = "New age- and sex-specific criteria for QT prolongation based on rate correction formulas that minimize bias at the upper normal limits.", locator = "Abstract (Results/Conclusions)", quote = "The criteria established for prolonged QTc were: Age < 40 years, men 430 ms, women 440 ms; Age 40 to 69, men 440 ms, women 450 ms; Age >= 70 years, men 455 ms, and women 460 ms." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 455
+when = { sex = "male", age_min = 70 }
+population = "Healthy adults and adolescents aged 5-89 years (study of 57,595 persons); men aged 70 years and older"
+evidence = "outcome-study"
+note = "Upper normal limit for QTc (criterion for prolonged QTc in men aged 70 and older). Study used rate formulas QTcMod / QTcLogLin."
+citations = [
+  { pmid = "24825030", doi = "10.1016/j.ijcard.2014.04.133", title = "New age- and sex-specific criteria for QT prolongation based on rate correction formulas that minimize bias at the upper normal limits.", locator = "Abstract (Results/Conclusions)", quote = "The criteria established for prolonged QTc were: Age < 40 years, men 430 ms, women 440 ms; Age 40 to 69, men 440 ms, women 450 ms; Age >= 70 years, men 455 ms, and women 460 ms." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 460
+when = { sex = "female", age_min = 70 }
+population = "Healthy adults and adolescents aged 5-89 years (study of 57,595 persons); women aged 70 years and older"
+evidence = "outcome-study"
+note = "Upper normal limit for QTc (criterion for prolonged QTc in women aged 70 and older). Study used rate formulas QTcMod / QTcLogLin."
+citations = [
+  { pmid = "24825030", doi = "10.1016/j.ijcard.2014.04.133", title = "New age- and sex-specific criteria for QT prolongation based on rate correction formulas that minimize bias at the upper normal limits.", locator = "Abstract (Results/Conclusions)", quote = "The criteria established for prolonged QTc were: Age < 40 years, men 430 ms, women 440 ms; Age 40 to 69, men 440 ms, women 450 ms; Age >= 70 years, men 455 ms, and women 460 ms." },
+]

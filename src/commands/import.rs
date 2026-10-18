@@ -75,6 +75,9 @@ pub struct MappingFile {
     /// Source unit -> unit spelling to use.
     #[serde(default)]
     pub units: BTreeMap<String, String>,
+    /// FHIR / HL7 v2: LOINC code -> marker slug (beats the catalog's own mapping).
+    #[serde(default)]
+    pub loinc: BTreeMap<String, String>,
     /// Source date -> corrected date (e.g. a sheet column dated off from the lab report).
     #[serde(default)]
     pub dates: BTreeMap<String, String>,
@@ -133,6 +136,8 @@ pub struct Mapping {
     pub value_columns: Vec<ValueColumn>,
     /// Lowercased source unit -> spelling.
     pub units: HashMap<String, String>,
+    /// LOINC code -> marker slug, for FHIR / HL7 v2 imports.
+    pub loinc: HashMap<String, String>,
     pub dates: BTreeMap<String, String>,
     /// [`name_key`]s of names to ignore.
     pub skip: HashSet<String>,
@@ -261,6 +266,7 @@ pub fn load_mapping(a: &ImportArgs) -> Result<(Mapping, Option<String>)> {
             date_format: a.input_date_format.clone().or(file.date_format),
             value_columns,
             units: file.units.into_iter().map(|(k, v)| (k.trim().to_lowercase(), v)).collect(),
+            loinc: file.loinc.into_iter().map(|(k, v)| (k.trim().to_string(), v)).collect(),
             dates: file.dates,
             skip: skip.iter().map(|n| name_key(n)).collect(),
             category: file.category.into_iter().map(|(k, v)| (name_key(&k), v)).collect(),
@@ -357,6 +363,9 @@ pub fn parse_rows(text: &str, fmt: InputFormat, delimiter: u8) -> Result<Vec<(us
             })
             .collect(),
         InputFormat::Spreadsheet => Err(AppError::invalid("spreadsheets are read with the sheet reader, not as text")),
+        InputFormat::Fhir | InputFormat::FhirNdjson | InputFormat::Hl7v2 => {
+            Err(AppError::invalid("FHIR and HL7 v2 are read by the interchange reader, not as rows"))
+        }
     }
 }
 
@@ -753,7 +762,7 @@ fn observation_parts(text: &str) -> (Option<String>, Option<f64>, Option<f64>, O
 
 /// A unit that converts 1:1 into the marker's canonical unit is stored as that
 /// unit (`IU/L` -> `U/L`, `uIU/mL` -> `mIU/L` for TSH).
-fn collapse_unit(cat: &Catalog, m: &Marker, unit: String) -> String {
+pub fn collapse_unit(cat: &Catalog, m: &Marker, unit: String) -> String {
     let identity =
         |u: &str| [1.0, 1000.0].iter().all(|v| cat.to_canonical(m, *v, u).is_ok_and(|x| (x - v).abs() < 1e-9));
     if !m.unit.is_empty() && !same_unit(&unit, &m.unit) && identity(&unit) {
@@ -880,6 +889,9 @@ fn list_sheets(ctx: &Ctx, path: &Path) -> Result<()> {
 pub fn run(ctx: &Ctx, a: ImportArgs) -> Result<()> {
     if a.list_sheets {
         return list_sheets(ctx, &a.file);
+    }
+    if let Some(source) = crate::interop::import::detect(&a)? {
+        return crate::interop::import::run(ctx, a, source);
     }
     let (mapping, file_delim) = load_mapping(&a)?;
     let plan = plan(ctx, &a, &mapping, file_delim)?;

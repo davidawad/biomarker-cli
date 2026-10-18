@@ -39,7 +39,7 @@ evidence = "consensus"
 citations = [
   { pmid = "42751802", doi = "10.1161/HYPERTENSIONAHA.126.27634", url = "https://pubmed.ncbi.nlm.nih.gov/42751802/", title = "Evaluation of Current Screening Thresholds for the Detection of Primary Aldosteronism.", locator = "Abstract, Background" },
 ]
-note = "Endocrine Society 2025 screening criterion: PAC at or above 7.5 ng/dL (LC-MS/MS) together with PRA at or below 1 ng/mL/h and ARR above 15. Cited via the Hypertension 2026 analysis of these thresholds, not the guideline full text. Applies only to: markers=[{\"slug\": \"renin-activity\", \"op\": \"<=\", \"value\": 1, \"unit\": \"ng/mL/h\"}]. Source kind: diagnostic. Source band >= 7.5; stored as the warn high bound 7.5."
+note = "Endocrine Society 2025 screening criterion: PAC at or above 7.5 ng/dL (LC-MS/MS) together with PRA at or below 1 ng/mL/h and ARR above 15. Cited via the Hypertension 2026 analysis of these thresholds, not the guideline full text. Applies only to: markers=[{\"slug\": \"plasma-renin-activity\", \"op\": \"<=\", \"value\": 1, \"unit\": \"ng/mL/h\"}]. Source kind: diagnostic. Source band >= 7.5; stored as the warn high bound 7.5."
 
 [[range]]
 set = "endocrine-society-2025"

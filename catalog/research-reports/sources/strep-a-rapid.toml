@@ -1,0 +1,7 @@
+slug = "strep-a-rapid"
+name = "Group A Streptococcus Antigen (Rapid)"
+loinc = "18481-2"
+category = "infectious"
+unit = "qualitative"
+description = "Rapid immunoassay on a throat swab that detects Group A Streptococcus (Streptococcus pyogenes) carbohydrate antigen, reported as positive or negative within minutes. It is used to diagnose streptococcal pharyngitis. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative); no numeric reference interval applies."

@@ -7,18 +7,6 @@ description = "Autoantibody (mostly IgM) against the Fc portion of IgG. Positive
 aliases = ["RF", "IgM RF"]
 
 [[range]]
-set = "acr-eular-2010-ra"
-kind = "decision"
-low = 3
-unit = "x ULN"
-population = "Adults with synovitis not better explained by another disease (2010 ACR/EULAR RA classification)"
-evidence = "consensus"
-note = "High-positive RF is above 3 times the laboratory upper limit of normal (ULN), scoring 3 points. Low-positive RF (above ULN up to and including 3x ULN) scores 2 points. ULN is laboratory-specific. Thresholds are taken from a 2026 analysis that quotes the 2010 criteria; the primary paper's text was not retrievable."
-citations = [
-  { pmid = "42476632", doi = "10.1136/rmdopen-2026-007007", title = "Refining serological scores in rheumatoid arthritis classification: an international study.", url = "https://pubmed.ncbi.nlm.nih.gov/42476632/", locator = "Full text, Introduction (ACR/EULAR 2010 serological scoring)", quote = "a high-positive RF or ACPA (>3 times the ULN) contributes three points" },
-]
-
-[[range]]
 set = "thermo-fisher-rf-cutoff"
 kind = "decision"
 low = 5

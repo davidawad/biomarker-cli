@@ -1,0 +1,18 @@
+slug = "ana-screen"
+name = "Antinuclear Antibody (ANA) Screen"
+category = "autoimmune"
+unit = "titer"
+loinc = "8061-4"
+description = "Screen for antinuclear antibodies by indirect immunofluorescence on HEp-2 cells (or an immunoassay), reported as positive or negative and, when positive, as a serum titer (dilution). Tracked as an autoimmune screening test; a positive result is non-specific and must be interpreted with clinical findings. Expected result: negative. Low-titer positives occur in a minority of healthy people."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 160
+population = "Serum from healthy individuals and patients with SLE, systemic sclerosis, Sjogren's syndrome, RA or soft tissue rheumatism, tested by indirect immunofluorescence on HEp-2 cells at dilutions 1:40 to 1:320"
+evidence = "cohort"
+citations = [
+  { pmid = "9324014", title = "Range of antinuclear antibodies in \"healthy\" individuals.", locator = "Abstract (Results and Conclusion)" },
+]
+note = "Titer at or above which the multi-laboratory study proposed a high-specificity positive cut-off to confirm disease (excludes about 95% of healthy individuals). Not a guideline cut-off. Source kind: diagnostic. Source band >= 160; stored as the warn high bound 160."

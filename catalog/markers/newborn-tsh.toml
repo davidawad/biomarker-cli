@@ -1,0 +1,44 @@
+slug = "newborn-tsh"
+name = "Newborn Screen TSH (Dried Blood Spot)"
+category = "pediatric"
+unit = "mIU/L"
+loinc = "29575-8"
+description = "Thyroid-stimulating hormone measured in a heel-prick dried blood spot on the newborn screening card (congenital hypothyroidism screen). Dried blood spot values run lower than serum TSH, so serum reference intervals do not apply."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.4
+high = 4.1
+when = { age = [0.0, 0.0833] }
+population = "Neonates sampled on days 5-8 of life, newborn screening dried blood spots (PerkinElmer neonatal hTSH kit, GSP analyser)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35751155", doi = "10.1177/00045632221112654", title = "Adult and neonate TSH blood spot reference intervals.", locator = "Abstract (Results)" },
+]
+note = "Age upper bound (first month) is applied here; the source specifies day 5-8 screening samples. Source states mU/L, which is numerically the same unit as the canonical mIU/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.49
+high = 3.07
+when = { age = [18.0, 200] }
+population = "Euthyroid adults not on thyroid medication with normal haematocrit, dried blood spot TSH (PerkinElmer neonatal hTSH kit, GSP analyser); comparator for the dried blood spot method"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "35751155", doi = "10.1177/00045632221112654", title = "Adult and neonate TSH blood spot reference intervals.", locator = "Abstract (Results)" },
+]
+note = "Adult comparator for the same dried blood spot method, not a newborn screening range. Source states mU/L."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 20
+when = { age = [0.0, 0.0833] }
+population = "Neonates screened beyond 24 hours of life, capillary (dried blood spot) TSH, Delhi pilot programme (India)"
+evidence = "cohort"
+citations = [
+  { pmid = "31064895", title = "An Optimal Capillary Screen Cut-off of Thyroid Stimulating Hormone for Diagnosing Congenital Hypothyroidism: Data from a Pilot Newborn Screening Program in Delhi.", locator = "Abstract (Conclusions)" },
+]
+note = "Screen-positive recall threshold from a diagnostic accuracy pilot (102 confirmed cases of 174 referrals). Not a guideline cut-off; population-specific. Source band >= 20; stored as the warn high bound 20."

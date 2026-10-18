@@ -4,7 +4,7 @@ category = "inflammation"
 unit = "mg/L"
 description = "High-sensitivity C-reactive protein, an acute-phase protein made by the liver. Measured with a high-sensitivity assay it indicates low-grade systemic inflammation and is used as a cardiovascular risk enhancer."
 loinc = "30522-7"
-aliases = ["crp", "c-reactive protein", "hs crp", "high sensitivity crp", "c-reactive protein, cardiac"]
+aliases = ["c-reactive protein", "hs crp", "high sensitivity crp", "c-reactive protein, cardiac"]
 
 [[range]]
 set = "clinical"

@@ -1,0 +1,45 @@
+slug = "isoleucine"
+name = "Isoleucine"
+loinc = "2508-0"
+category = "amino-acid"
+unit = "µmol/L"
+description = "Essential branched-chain amino acid measured in plasma as a free amino acid by LC-MS/MS. Isoleucine is a glucogenic and ketogenic substrate and is required for protein synthesis."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 38.0
+high = 115.3
+when = { ethnicity = "japanese" }
+population = "Healthy volunteers living in Japan, Japanese subpopulation (n=31; 16 male, 15 female; mean age 46.5 years)"
+evidence = "outcome-study"
+note = "Observed min-max range of plasma isoleucine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
+citations = [
+  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Ile | 61.1 ± 19.4 (38.0-115.3) | 61.7 ± 14.9 (33.6-104.2) | 63.6 ± 15.2 (42.8-96.7) |" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 33.6
+high = 104.2
+when = { ethnicity = "korean" }
+population = "Healthy volunteers living in Japan, Korean subpopulation (n=36; 19 male, 17 female; mean age 37.2 years)"
+evidence = "outcome-study"
+note = "Observed min-max range of plasma isoleucine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
+citations = [
+  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Ile | 61.1 ± 19.4 (38.0-115.3) | 61.7 ± 14.9 (33.6-104.2) | 63.6 ± 15.2 (42.8-96.7) |" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 42.8
+high = 96.7
+when = { ethnicity = "chinese" }
+population = "Healthy volunteers living in Japan, Chinese subpopulation (n=28; 13 male, 15 female; mean age 45.1 years)"
+evidence = "outcome-study"
+note = "Observed min-max range of plasma isoleucine in one cross-sectional sample of 95 healthy volunteers (not a 2.5th-97.5th percentile reference interval)."
+citations = [
+  { pmid = "26407660", doi = "10.1002/ajhb.22787", title = "Plasma amino acid profiles in healthy East Asian subpopulations living in Japan.", locator = "Table 1", quote = "| Ile | 61.1 ± 19.4 (38.0-115.3) | 61.7 ± 14.9 (33.6-104.2) | 63.6 ± 15.2 (42.8-96.7) |" },
+]

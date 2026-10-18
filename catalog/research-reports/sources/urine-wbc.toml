@@ -57,29 +57,3 @@ note = "Commonly accepted pyuria cut-off of 5 to 10 leukocytes per high-power fi
 citations = [
   { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Introduction (full text)", quote = "commonly accepted cutoffs include 10 leukocytes/µL and 5–10 leukocytes per high-power field (hpf)" },
 ]
-
-[[range]]
-set = "pyuria-cutoffs-older-women-2023"
-kind = "decision"
-low = 10
-unit = "/µL"
-population = "Adults: commonly used pyuria cut-off (urine leukocytes by automated microscopy or flow cytometry)"
-evidence = "consensus"
-note = "Commonly used pyuria cut-off of 10 leukocytes/µL. In women aged 65 and over with lower urinary tract symptoms, this cut-off had sensitivity 100% but specificity only 36% for UTI, which the authors use to argue for higher thresholds."
-citations = [
-  { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Abstract, Results", quote = "The commonly used cutoff of 10 leukocytes/µL had a poor specificity (36%) and a sensitivity of 100%." },
-]
-
-[[range]]
-set = "pyuria-cutoffs-older-women-2023"
-kind = "decision"
-low = 264
-unit = "/µL"
-when = { sex = "female", age_min = 65 }
-population = "Women aged 65 and over with new lower urinary tract symptoms, UTI versus asymptomatic bacteriuria and controls (164 participants)"
-evidence = "validation-study"
-note = "Microscopy cut-off derived for UTI in older women (sensitivity 88%, positive likelihood ratio 7.2). It is a single-study result in a selected population, not a general adult pyuria threshold."
-citations = [
-  { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Abstract, Results", quote = "At a cutoff of 264 leukocytes/µL, sensitivity and specificity of microscopy were 88%" },
-  { pmid = "36806580", doi = "10.1093/cid/ciad099", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", locator = "Abstract, Methods", quote = "Women ≥65 years with ≥2 new-onset LUTS" },
-]

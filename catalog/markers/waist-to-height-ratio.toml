@@ -4,7 +4,18 @@ category = "body"
 unit = "ratio"
 description = "Waist circumference divided by height, both in the same unit. It is a simple index of central adiposity and cardiometabolic risk that does not need sex- or ethnicity-specific cut-offs. A value of 0.5 is the commonly used boundary."
 aliases = ["whtr", "waist-to-height", "waist to height ratio"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.5
+high = 0.59
+population = "Adults (NICE guidance for England, based on the committee's review of the evidence)"
+evidence = "guideline"
+citations = [
+  { url = "https://www.nice.org.uk/guidance/ng246/chapter/rationale-and-impact", title = "Overweight and obesity management", locator = "Rationale and impact, waist-to-height ratio section" },
+]
+note = "Increased health risk band per NICE. Lower bound 0.5 inclusive, upper bound 0.59 inclusive as written in the quote ('0.5 to 0.59'). Applied in conjunction with BMI for adults with BMI under 35 kg/m2, per the same rationale section. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "nice-ng246-2022"

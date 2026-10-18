@@ -1,0 +1,40 @@
+slug = "ck-uln-multiple"
+name = "Creatine Kinase (multiple of upper limit of normal)"
+category = "chemistry"
+unit = "x ULN"
+description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "warn"
+low = 4
+high = 10
+population = "Adults with asymptomatic or oligosymptomatic hyperCKemia, as grouped in large-scale statin risk studies cited by the EAN 2024 guideline"
+evidence = "guideline"
+note = "Statin-risk grouping of hyperCKemia by multiples of the upper limit of normal: up to 3x ULN, between 4x and 10x ULN, and higher values. The 4x to 10x band is the middle group. Multiples are relative to each laboratory's ULN, not absolute U/L values."
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", locator = "Full text, statin risk discussion", quote = "between 4× and 10× the ULN, and higher values" },
+]
+
+[[range]]
+set = "ean-2024-hyperckemia"
+kind = "decision"
+high = 10
+when = { conditions = ["statin-therapy"] }
+population = "Adults with asymptomatic or oligosymptomatic hyperCKemia who are indicated for statin therapy"
+evidence = "guideline"
+note = "Guideline recommendation: statins should not be avoided when indicated in people with CK up to 10x ULN, with close follow-up. Boundary inclusive at 10x, following the wording 'up to 10x'."
+citations = [
+  { pmid = "41619221", doi = "10.1111/ene.70493", title = "EAN 2024 Guideline on the Diagnostic Approach to Oligo/Asymptomatic HyperCKemia.", url = "https://pubmed.ncbi.nlm.nih.gov/41619221/", locator = "Full text, statin risk discussion", quote = "the prescription of statins in subjects with CK values of up to 10× the ULN should not be avoided when indicated" },
+]
+
+[[range]]
+set = "chest-2026-rhabdo-review"
+kind = "critical"
+low = 5
+population = "Adults with suspected rhabdomyolysis (clinically oriented narrative review)"
+evidence = "consensus"
+note = "Commonly used rhabdomyolysis CK cut-off: above 5x the upper limit of normal, or above 1,000 U/L (the review states that no formal consensus definition exists). Boundary is strict (>5x ULN)."
+citations = [
+  { pmid = "41619932", doi = "10.1016/j.chest.2025.12.048", title = "Updates on Rhabdomyolysis: A Clinically Oriented Narrative Review.", url = "https://pubmed.ncbi.nlm.nih.gov/41619932/", locator = "Definition and diagnosis", quote = "a CK cutoff (most commonly, either > 5 times the upper limit of normal or > 1,000 U/L)" },
+]

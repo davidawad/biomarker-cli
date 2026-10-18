@@ -1,0 +1,56 @@
+slug = "weight-percentile"
+name = "Body Weight Percentile for Age"
+loinc = "8336-0"
+category = "pediatric"
+unit = "percentile"
+description = "Body weight expressed as a percentile for the child's age. Low values flag underweight; high values flag overweight or obesity. Category cut-offs are those operationally defined in the cited cohort."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 5
+when = { age_max = 18 }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "outcome-study"
+note = "Underweight category: weight-for-age percentile less than the 5th. Cut-off as operationally defined in the cited retrospective cohort."
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions", quote = "underweight, less than the 5th percentile; normal, between the 5th and 85th percentile; overweight, between the 85th and 95th percentile; and obese, greater than the 95th percentile" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5
+high = 85
+when = { age_max = 18 }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "outcome-study"
+note = "Normal category: weight-for-age percentile from the 5th to the 85th. Cut-off as operationally defined in the cited retrospective cohort."
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions", quote = "underweight, less than the 5th percentile; normal, between the 5th and 85th percentile; overweight, between the 85th and 95th percentile; and obese, greater than the 95th percentile" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 85
+high = 95
+when = { age_max = 18 }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "outcome-study"
+note = "Overweight category: weight-for-age percentile from the 85th to below the 95th. Cut-off as operationally defined in the cited retrospective cohort."
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions", quote = "underweight, less than the 5th percentile; normal, between the 5th and 85th percentile; overweight, between the 85th and 95th percentile; and obese, greater than the 95th percentile" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 95
+when = { age_max = 18 }
+population = "Children under 18 years, emergency department cohort (1432 patients, tertiary children's hospital)"
+evidence = "outcome-study"
+note = "Obese category: weight-for-age percentile greater than the 95th. Cut-off as operationally defined in the cited retrospective cohort."
+citations = [
+  { pmid = "31598543", doi = "10.1177/2333794X19877037", title = "Weight-for-Age Percentile as a Pediatric Predictor of Emergency Department Outcome.", locator = "Methods, Group Assignments and Operational Definitions", quote = "underweight, less than the 5th percentile; normal, between the 5th and 85th percentile; overweight, between the 85th and 95th percentile; and obese, greater than the 95th percentile" },
+]

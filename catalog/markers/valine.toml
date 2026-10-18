@@ -1,0 +1,19 @@
+slug = "valine"
+name = "Valine"
+category = "amino-acid"
+unit = "umol/L"
+loinc = "3118-7"
+description = "Valine is a branched-chain essential amino acid measured in serum or plasma by LC-MS/MS or HPLC. It is tracked as a nutritional and metabolic marker, and as part of amino acid profiles in inborn errors of metabolism. Expected result in healthy people: within the age-specific reference interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 109.1
+high = 272.8
+when = { age = [0.0, 7.0] }
+population = "Clinically healthy non-IEM children aged 0-6 years (serum, LC-MS/MS) (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41897644", doi = "10.3390/diagnostics16060911", title = "Fully Automated Serum LC-MS/MS Platform and Pediatric Reference Intervals for Organic Acids, Amino Acids, and Acylcarnitines in Children (Ages 0-6 Years): Toward Quantitative Diagnosis of Inborn Errors of Metabolism.", locator = "Table 3" },
+]
+note = "Central 95% pediatric serum reference interval (Box-Cox/Gaussian method, IFCC C-RIDL protocol)."

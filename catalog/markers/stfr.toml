@@ -1,0 +1,46 @@
+slug = "stfr"
+name = "Soluble transferrin receptor"
+category = "iron"
+unit = "mg/L"
+aliases = ["soluble-transferrin-receptor"]
+loinc = "30248-9"
+description = "Circulating fragment of the transferrin receptor that rises as tissue iron supply falls and erythropoietic activity increases. It is less affected by inflammation than ferritin, but values depend on the assay and are not standardised between manufacturers."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.2
+high = 5.0
+when = { sex = "male" }
+population = "Healthy adults, multicentre evaluation of the Roche Tina-quant sTfR immunoturbidimetric assay (Hitachi and cobas integra analysers)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "12113300", doi = "10.1515/cclm.2002.091", title = "Multicenter evaluation of a fully mechanized soluble transferrin receptor assay on the Hitachi and cobas integra analyzers. the determination of reference ranges.", locator = "Abstract, Results" },
+]
+note = "Assay-specific 95% range from the manufacturer-linked multicentre study; the authors note results differed up to 2.5-fold between methods, so verify locally."
+
+[[range]]
+set = "roche-tina-quant-multicentre"
+kind = "reference"
+low = 1.9
+high = 4.4
+when = { sex = "female", menopause = "pre" }
+population = "Healthy premenopausal women, multicentre evaluation of the Roche Tina-quant sTfR assay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "12113300", doi = "10.1515/cclm.2002.091", title = "Multicenter evaluation of a fully mechanized soluble transferrin receptor assay on the Hitachi and cobas integra analyzers. the determination of reference ranges.", locator = "Abstract, Results" },
+]
+note = "Assay-specific 95% range. Same caveat about inter-method differences as the male range."
+
+[[range]]
+set = "roche-tina-quant-multicentre"
+kind = "reference"
+low = 1.9
+high = 4.4
+when = { sex = "female", menopause = "post" }
+population = "Healthy postmenopausal women, multicentre evaluation of the Roche Tina-quant sTfR assay (small group, n=45)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "12113300", doi = "10.1515/cclm.2002.091", title = "Multicenter evaluation of a fully mechanized soluble transferrin receptor assay on the Hitachi and cobas integra analyzers. the determination of reference ranges.", locator = "Abstract, Results" },
+]
+note = "Assay-specific 95% range; postmenopausal subgroup was small (n=45)."

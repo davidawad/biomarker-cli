@@ -1,0 +1,113 @@
+slug = "bsap"
+name = "Bone-Specific Alkaline Phosphatase"
+category = "bone"
+unit = "µg/L"
+aliases = ["bone-alp"]
+description = "Enzyme made by osteoblasts and a marker of bone formation. Used alongside other bone turnover markers, and is one of the reference markers for chronic kidney disease-associated osteoporosis."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.0
+high = 13.6
+when = { sex = "female", menopause = "pre", fasting = true, age = [35.0, 45.0] }
+population = "Healthy premenopausal Spanish women aged 35-45 from 13 centres in Catalonia (specimen: serum; method: elisa)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26088062", doi = "10.1515/cclm-2015-0162", url = "https://pubmed.ncbi.nlm.nih.gov/26088062/", title = "Reference intervals for bone turnover markers in Spanish premenopausal women.", locator = "Abstract, Results" },
+  { pmid = "26088062", doi = "10.1515/cclm-2015-0162", url = "https://pubmed.ncbi.nlm.nih.gov/26088062/", title = "Reference intervals for bone turnover markers in Spanish premenopausal women.", locator = "Abstract, Methods" },
+  { pmid = "26088062", doi = "10.1515/cclm-2015-0162", url = "https://pubmed.ncbi.nlm.nih.gov/26088062/", title = "Reference intervals for bone turnover markers in Spanish premenopausal women.", locator = "Abstract, Methods" },
+]
+note = "Reference interval for bone ALP by ELISA, from blood drawn 8-10 a.m. after an overnight fast. Applies only to: time_of_day=morning."
+
+[[range]]
+set = "bone-turnover-premenopausal-europe-2012"
+kind = "reference"
+low = 5.8
+high = 17.5
+when = { sex = "female", menopause = "pre", age = [35.0, 39.0] }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark) (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Results" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range for bone ALP on the Ostase/Access immunoassay. Assay-specific. Converted from the source's ng/mL (5.8-17.5) to µg/L using factor 1."
+
+[[range]]
+set = "pediatric-bts-2024"
+kind = "reference"
+low = 12.69
+when = { sex = "female", age = [1.0, 18.0] }
+population = "Apparently healthy children and adolescents aged 1-18 years (female subgroup) (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39857618", doi = "10.3390/biomedicines13010034", url = "https://pubmed.ncbi.nlm.nih.gov/39857618/", title = "Reference Intervals (RIs) of the Bone Turnover Markers (BTMs) in Children and Adolescents: A Proposal for Effective Use.", locator = "Abstract, Methods" },
+  { pmid = "39857618", doi = "10.3390/biomedicines13010034", url = "https://pubmed.ncbi.nlm.nih.gov/39857618/", title = "Reference Intervals (RIs) of the Bone Turnover Markers (BTMs) in Children and Adolescents: A Proposal for Effective Use.", locator = "Results" },
+]
+note = "Lower limit only (the upper limit was not extracted from the source). Percentile and method details are not given in the extracted text, so verify against the full paper before use."
+
+[[range]]
+set = "pediatric-bts-2024"
+kind = "reference"
+low = 15.84
+when = { sex = "male", age = [1.0, 18.0] }
+population = "Apparently healthy children and adolescents aged 1-18 years (male subgroup) (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39857618", doi = "10.3390/biomedicines13010034", url = "https://pubmed.ncbi.nlm.nih.gov/39857618/", title = "Reference Intervals (RIs) of the Bone Turnover Markers (BTMs) in Children and Adolescents: A Proposal for Effective Use.", locator = "Abstract, Methods" },
+  { pmid = "39857618", doi = "10.3390/biomedicines13010034", url = "https://pubmed.ncbi.nlm.nih.gov/39857618/", title = "Reference Intervals (RIs) of the Bone Turnover Markers (BTMs) in Children and Adolescents: A Proposal for Effective Use.", locator = "Results" },
+]
+note = "Lower limit only (the upper limit was not extracted from the source). Percentile and method details are not given in the extracted text, so verify against the full paper before use."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 7.4
+high = 27.7
+when = { sex = "male", age = [25.0, 29.0] }
+population = "Healthy men aged 25-29 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range for BAP on the IDS-iSYS automated system. Male BAP does not change significantly with age."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 7.6
+high = 24.4
+when = { sex = "male", age = [75.0, 79.0] }
+population = "Healthy men aged 75-79 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range for BAP on the IDS-iSYS automated system."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 6.0
+high = 22.7
+when = { sex = "female", menopause = "pre", age = [30.0, 54.0] }
+population = "Healthy premenopausal women aged 30-54 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range for BAP on the IDS-iSYS automated system."
+
+[[range]]
+set = "ship-2013"
+kind = "reference"
+low = 8.1
+high = 31.6
+when = { sex = "female", menopause = "post", age = [50.0, 79.0] }
+population = "Healthy postmenopausal women aged 50-79 from the Study of Health in Pomerania (SHIP) follow-up (specimen: serum; method: immunoassay)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "24076251", doi = "10.1016/j.bone.2013.09.010", url = "https://pubmed.ncbi.nlm.nih.gov/24076251/", title = "Reference intervals for serum concentrations of three bone turnover markers for men and women.", locator = "Abstract, Results" },
+]
+note = "Central 95% range for BAP on the IDS-iSYS automated system."

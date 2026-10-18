@@ -1,0 +1,18 @@
+slug = "ige-timothy-grass"
+name = "Specific IgE, Timothy Grass"
+category = "allergy"
+unit = "kUA/L"
+loinc = "6265-3"
+description = "Serum IgE antibodies specific to Timothy grass (Phleum pratense) pollen extract, measured by ImmunoCAP. Positive results indicate sensitisation to grass pollen and support a diagnosis of grass pollen allergy when they match the clinical history."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.35
+population = "Patients with pollinosis at an outpatient allergy department in Beijing, China (retrospective, n=547), ImmunoCAP assay"
+evidence = "cohort"
+citations = [
+  { pmid = "35079319", doi = "10.1016/j.waojou.2021.100624", url = "https://pubmed.ncbi.nlm.nih.gov/35079319/", title = "Serum IgE profiles in Chinese pollinosis patients with grass pollen sensitisation.", locator = "Abstract, Methods" },
+]
+note = "Positivity threshold for sIgE to grass pollen (Bermuda and Timothy) as used in this single retrospective study. It is a study threshold, not a guideline cut-off. Source kind: diagnostic. Source band >= 0.35; stored as the warn high bound 0.35."

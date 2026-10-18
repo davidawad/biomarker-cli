@@ -1,0 +1,40 @@
+slug = "tetanus-antitoxin-igg"
+name = "Tetanus Antitoxin IgG"
+category = "infectious"
+unit = "IU/mL"
+description = "Serum IgG antibody to tetanus toxin (tetanus antitoxin), measured against WHO international standards. It indicates protection against tetanus; levels fall with time after vaccination, so adults often have low or undetectable titres."
+aliases = ["tetanus igg", "anti-tetanus toxoid igg", "tetanus toxin antibody", "tetanus antibody", "tetanus-antitoxin"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "zhejiang-2026-tetanus-waning"
+kind = "warn"
+high = 0.01
+population = "Healthy individuals in Zhejiang, China (cross-sectional study of 3,659 people in 2024) (method: elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "42266706", doi = "10.3389/fimmu.2026.1824381", url = "https://pubmed.ncbi.nlm.nih.gov/42266706/", title = "Population waning trajectories of vaccine-induced tetanus immunity in Zhejiang, China.", locator = "Abstract, Methods" },
+]
+note = "Seropositivity: IgG at or above 0.01 IU/mL by ELISA (boundary >= 0.01). Indicates detectable antibody only; the WHO position paper threshold could not be retrieved as text, so this is taken from the population study that adopted it. Source kind: decision. Source band >= 0.01; stored as the warn high bound 0.01."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 0.1
+population = "Healthy individuals in Zhejiang, China (cross-sectional study of 3,659 people in 2024) (method: elisa)"
+evidence = "cohort"
+citations = [
+  { pmid = "42266706", doi = "10.3389/fimmu.2026.1824381", url = "https://pubmed.ncbi.nlm.nih.gov/42266706/", title = "Population waning trajectories of vaccine-induced tetanus immunity in Zhejiang, China.", locator = "Abstract, Methods" },
+]
+note = "Seroprotection: IgG at or above 0.1 IU/mL by ELISA (boundary >= 0.1). Source kind: decision. Source band >= 0.1; stored as the warn high bound 0.1. Alternative to the default zhejiang-2026-tetanus-waning warn range for the same population."
+
+[[range]]
+set = "tetanus-vaccine-phase-iii-2025"
+kind = "warn"
+high = 1.0
+population = "Healthy adults aged 18-44 years in a randomised phase I/III single-dose tetanus vaccine trial"
+evidence = "cohort"
+citations = [
+  { pmid = "41012175", doi = "10.3390/vaccines13090972", url = "https://pubmed.ncbi.nlm.nih.gov/41012175/", title = "Safety and Immunogenicity of Single-Dose of Adsorbed Tetanus Vaccine in Adults Aged 18-44 Years: Randomized, Double-Blind, Positive-Controlled Phase I/III Clinical Trial.", locator = "Methods, immunogenicity endpoints" },
+]
+note = "Long-term seroprotection: IgG at or above 1.0 IU/mL (boundary >= 1.0), as defined by the trial authors (cited to a separate reference in the source). Source kind: decision. Source band >= 1.0; stored as the warn high bound 1.0."

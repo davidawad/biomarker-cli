@@ -5174,3 +5174,296 @@ loinc = "24475-6"
 category = "genetic"
 priority = "specialist"
 derived = false
+
+[[marker]]
+slug = "aptt-ratio"
+name = "aPTT Ratio"
+loinc = ""
+loinc_note = "no LOINC code for a plain patient/normal aPTT ratio"
+category = "coagulation"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-coefficient-of-variation"
+name = "Glucose Coefficient of Variation (CGM)"
+loinc = ""
+loinc_note = "no LOINC code for glucose coefficient of variation"
+category = "wearable"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-time-above-180"
+name = "CGM time above range (>180 mg/dL)"
+loinc = "104640-8"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-time-above-250"
+name = "CGM time well above range (>250 mg/dL)"
+loinc = "104639-0"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-time-below-54"
+name = "CGM time below range (<54 mg/dL)"
+loinc = "104642-4"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-time-below-70"
+name = "CGM time below range (<70 mg/dL)"
+loinc = "104641-6"
+category = "glycemic"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "cgm-time-in-tight-range"
+name = "CGM Time in Tight Range (70-140 mg/dL)"
+loinc = ""
+loinc_note = "no LOINC code for time in tight range (70-140 mg/dL)"
+category = "glycemic"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "egrac"
+name = "Erythrocyte glutathione reductase activation coefficient (EGRAC)"
+loinc = ""
+loinc_note = "no LOINC code for the erythrocyte glutathione reductase activation coefficient"
+category = "vitamin"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "free-beta-hcg"
+name = "Free β-hCG, Maternal Serum"
+loinc = ""
+loinc_note = "no maternal-serum free beta-hCG code verified"
+category = "pregnancy"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "glucose-ogtt-1h"
+name = "Glucose, 1-hour OGTT (75 g)"
+loinc = "1507-3"
+category = "glycemic"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "grimage-acceleration"
+name = "GrimAge Acceleration"
+loinc = ""
+loinc_note = "epigenetic clock outputs have no LOINC code"
+category = "aging"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "immature-reticulocyte-fraction"
+name = "Immature reticulocyte fraction (IRF)"
+loinc = "33516-6"
+category = "cbc"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "immunoreactive-trypsinogen"
+name = "Immunoreactive Trypsinogen (newborn screen)"
+loinc = "48633-2"
+category = "pediatric"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "iodine-urine"
+name = "Urinary iodine concentration"
+loinc = "2495-0"
+category = "trace-element"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "lifes-essential-8"
+name = "Life's Essential 8 Cardiovascular Health Score"
+loinc = ""
+loinc_note = "composite score with no LOINC code"
+category = "composite"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "pthrp"
+name = "Parathyroid Hormone-Related Protein"
+loinc = "2729-2"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "sweat-chloride"
+name = "Sweat Chloride"
+loinc = "2077-6"
+category = "pediatric"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "tbg"
+name = "Thyroxine-Binding Globulin"
+loinc = "35227-8"
+category = "thyroid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-acr"
+name = "Urine Albumin-to-Creatinine Ratio"
+loinc = "9318-7"
+category = "urinalysis"
+priority = "core"
+derived = true
+
+[[marker]]
+slug = "urine-pcr"
+name = "Urine Protein-to-Creatinine Ratio"
+loinc = "2890-2"
+category = "urinalysis"
+priority = "common"
+derived = true
+
+[[marker]]
+slug = "arr-direct-renin"
+name = "Aldosterone/Renin Ratio (direct renin concentration)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "adrenal"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "cd4-percent"
+name = "CD4+ T Cells (Percent of Lymphocytes)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "infectious"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "hcg-48h-rise"
+name = "hCG 48-Hour Percentage Rise"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "pregnancy"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "bsap-activity"
+name = "Bone-Specific Alkaline Phosphatase (activity)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "lp-pla2-activity-u-l"
+name = "Lp-PLA2 Activity (U/L)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "cardiac"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "psa-density"
+name = "PSA Density"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "tumour"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "urine-wbc-count"
+name = "Urine White Blood Cells (per microlitre)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "anti-ccp-uln-multiple"
+name = "Anti-Cyclic Citrullinated Peptide Antibodies (multiple of upper limit of normal)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "autoimmune"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "ck-uln-multiple"
+name = "Creatine Kinase (multiple of upper limit of normal)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "chemistry"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "igf-1-uln-multiple"
+name = "Insulin-like Growth Factor 1 (multiple of upper limit of normal)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "growth"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "rheumatoid-factor-uln-multiple"
+name = "Rheumatoid Factor (multiple of upper limit of normal)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "autoimmune"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "trab-uln-multiple"
+name = "TSH Receptor Antibodies (multiple of upper limit of normal)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "thyroid"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "tissue-transglutaminase-iga-uln-multiple"
+name = "Tissue Transglutaminase IgA (multiple of upper limit of normal)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "autoimmune"
+priority = "specialist"
+derived = true
+
+[[marker]]
+slug = "pth-intact-uln-multiple"
+name = "Parathyroid Hormone, Intact (multiple of upper limit of normal)"
+loinc = ""
+loinc_note = "no single LOINC code verified for this unit or derived form"
+category = "bone"
+priority = "specialist"
+derived = true

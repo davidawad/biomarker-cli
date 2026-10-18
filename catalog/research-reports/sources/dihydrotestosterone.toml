@@ -1,0 +1,33 @@
+slug = "dihydrotestosterone"
+name = "Dihydrotestosterone"
+category = "hormone"
+unit = "ng/dL"
+description = "Potent androgen made from testosterone by 5-alpha-reductase in target tissues such as skin, prostate and hair follicles. Measured by LC-MS/MS; immunoassays overestimate it because of cross-reactivity, so do not compare LC-MS/MS values with older immunoassay ranges."
+
+[[range]]
+set = "lcms-dht-2008"
+kind = "reference"
+low = 0.47
+high = 2.65
+unit = "nmol/L"
+when = { sex = "male", method = "lc-ms/ms" }
+population = "113 healthy adult men, LC-MS/MS (Clinical Chemistry 2008 method)"
+evidence = "reference-interval"
+note = "Mean +/- 2 SD (approximately 2.5th-97.5th) in nmol/L as printed; not converted to ng/dL. Assay-specific: LC-MS/MS values are much lower than RIA values."
+citations = [
+  { pmid = "18801940", doi = "10.1373/clinchem.2008.103846", title = "Simultaneous measurement of serum testosterone and dihydrotestosterone by liquid chromatography-tandem mass spectrometry.", url = "https://pubmed.ncbi.nlm.nih.gov/18801940/", locator = "Abstract, Results", quote = "The reference intervals (mean +/- 2 SDs) determined for T and DHT were 9.2-33.7 nmol/L and 0.47-2.65 nmol/L, respectively, for 113 healthy adult men and 0.33-2.02 nmol/L and 0.09-0.91 nmol/L, respectively, for 133 healthy premenopausal women." },
+]
+
+[[range]]
+set = "lcms-dht-2008"
+kind = "reference"
+low = 0.09
+high = 0.91
+unit = "nmol/L"
+when = { sex = "female", menopause = "pre", method = "lc-ms/ms" }
+population = "133 healthy premenopausal women, LC-MS/MS (Clinical Chemistry 2008 method)"
+evidence = "reference-interval"
+note = "Mean +/- 2 SD (approximately 2.5th-97.5th) in nmol/L as printed; not converted to ng/dL. Premenopausal only; no postmenopausal interval in this source."
+citations = [
+  { pmid = "18801940", doi = "10.1373/clinchem.2008.103846", title = "Simultaneous measurement of serum testosterone and dihydrotestosterone by liquid chromatography-tandem mass spectrometry.", url = "https://pubmed.ncbi.nlm.nih.gov/18801940/", locator = "Abstract, Results", quote = "The reference intervals (mean +/- 2 SDs) determined for T and DHT were 9.2-33.7 nmol/L and 0.47-2.65 nmol/L, respectively, for 113 healthy adult men and 0.33-2.02 nmol/L and 0.09-0.91 nmol/L, respectively, for 133 healthy premenopausal women." },
+]

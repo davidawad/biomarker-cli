@@ -1,0 +1,43 @@
+slug = "glucose-challenge-1h"
+name = "Glucose Challenge Test, 1 Hour (50 g)"
+category = "pregnancy"
+unit = "mg/dL"
+loinc = "1504-0"
+description = "Plasma glucose one hour after a 50 g oral glucose load in pregnancy. A screening test: a positive result is followed by a diagnostic oral glucose tolerance test, not a diagnosis of gestational diabetes by itself."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 140
+when = { pregnant = true }
+population = "Pregnant women undergoing the 50 g glucose challenge test for gestational diabetes screening"
+evidence = "cohort"
+citations = [
+  { pmid = "24423035", title = "Screening and diagnosing gestational diabetes mellitus.", locator = "Abstract" },
+]
+note = "Screen-positive at the 140 mg/dL threshold (less sensitive, more specific cut-off). Source band >= 140; stored as the warn high bound 140."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 135
+when = { pregnant = true }
+population = "Women with twin pregnancy at 24-28 weeks undergoing the 1-hour 50 g glucose challenge test (single maternal-fetal medicine practice, 475 patients)"
+evidence = "cohort"
+citations = [
+  { pmid = "25439813", title = "Screening approach for gestational diabetes in twin pregnancies.", locator = "Abstract, Conclusion" },
+]
+note = "Optimal screen-positive cut-off in twin pregnancies (single-centre historical cohort): sensitivity 100 percent at 135 mg/dL, specificity 76.4 percent. Source band >= 135; stored as the warn high bound 135. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 130
+high = 140
+when = { pregnant = true }
+population = "Pregnant women undergoing the 50 g glucose challenge test for gestational diabetes screening"
+evidence = "cohort"
+citations = [
+  { pmid = "24423035", title = "Screening and diagnosing gestational diabetes mellitus.", locator = "Abstract" },
+]
+note = "Screen-positive only at the more sensitive 130 mg/dL threshold (values from 130 to strictly below 140 mg/dL). Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."

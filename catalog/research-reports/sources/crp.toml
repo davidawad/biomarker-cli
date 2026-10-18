@@ -1,0 +1,77 @@
+slug = "crp"
+name = "C-Reactive Protein (standard assay)"
+loinc = "1988-5"
+category = "inflammation"
+unit = "mg/L"
+description = "Conventional (standard-sensitivity) C-reactive protein, an acute-phase protein made by the liver. Higher values indicate acute inflammation, most often from infection or tissue injury. Distinct from the high-sensitivity assay used for cardiovascular risk."
+aliases = ["CRP", "C-reactive protein", "standard CRP"]
+
+[[range]]
+set = "ijid-bmc-2021-crp-viral-bacterial"
+kind = "decision"
+high = 10
+population = "Patients aged 5 years and over with non-malaria acute undifferentiated fever in tropical areas (individual patient data)"
+evidence = "meta-analysis"
+note = "CRP below 10 mg/L favours a viral aetiology (52% sensitivity, 95% specificity for viral infection in this study). Boundary is strictly less than 10 mg/L. Not a stand-alone diagnosis."
+when = { age_min = 5 }
+citations = [
+  { pmid = "33644814", doi = "10.1093/trstmh/traa186", title = "Value of C-reactive protein in differentiating viral from bacterial aetiologies in patients with non-malaria acute undifferentiated fever in tropical areas: a meta-analysis and individual patient data study.", url = "https://pubmed.ncbi.nlm.nih.gov/33644814/", locator = "Abstract, Results", quote = "IPD analysis of 1059 NMUF patients ≥5 y of age showed CRP <10 mg/l had 52% sensitivity (95% confidence interval [CI] 48 to 56) and 95% specificity (95% CI 93 to 97) to detect viral infections." },
+]
+
+[[range]]
+set = "ijid-bmc-2021-crp-viral-bacterial"
+kind = "decision"
+low = 40
+population = "Patients aged 5 years and over with non-malaria acute undifferentiated fever in tropical areas (individual patient data)"
+evidence = "meta-analysis"
+note = "CRP above 40 mg/L favours a bacterial aetiology (74% sensitivity, 84% specificity for bacterial infection in this study). Boundary is strictly greater than 40 mg/L."
+citations = [
+  { pmid = "33644814", doi = "10.1093/trstmh/traa186", title = "Value of C-reactive protein in differentiating viral from bacterial aetiologies in patients with non-malaria acute undifferentiated fever in tropical areas: a meta-analysis and individual patient data study.", url = "https://pubmed.ncbi.nlm.nih.gov/33644814/", locator = "Abstract, Results", quote = "CRP >40 mg/l had 74% sensitivity (95% CI 70 to 77) and 84% specificity (95% CI 81 to 87) to identify bacterial infections." },
+]
+
+[[range]]
+set = "pediatr-2026-crp-fever-without-source"
+kind = "decision"
+low = 10
+high = 20
+population = "Children aged 36 months or younger with fever without source (systematic review and meta-analysis)"
+evidence = "meta-analysis"
+note = "Best-performing CRP cut-off band for serious bacterial infection in this group (10 to 20 mg/L). The source reports the band as the optimum, not a single threshold."
+citations = [
+  { pmid = "41837198", doi = "10.3389/fped.2026.1697210", title = "Identifying the thresholds of C-reactive protein, procalcitonin, and interleukin-6 among children ≤36 months' old with fever without source at risk of serious bacterial infections: a systematic review and meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/41837198/", locator = "Abstract, Conclusion", quote = "a CRP cut-off of 10-20 mg/L display the best performance in identifying SBIs in children ≤36 months of age with fever without source" },
+]
+
+[[range]]
+set = "emej-2025-sepsis-crp"
+kind = "decision"
+low = 48
+population = "Patients in diagnostic studies of sepsis (44 studies, 10 755 patients), Sepsis-2 and Sepsis-3 definitions"
+evidence = "meta-analysis"
+note = "Optimal (sensitivity-weighted) CRP cut-off for sepsis, 48 mg/L with 72% sensitivity and 55% specificity. Pooled AUC for CRP was 0.67, so discrimination is limited; this is not a rule-in threshold on its own."
+when = { setting = "suspected-sepsis" }
+citations = [
+  { pmid = "40214293", doi = "10.1097/MEJ.0000000000001235", title = "Diagnostic performances of procalcitonin and C-reactive protein for sepsis: a systematic review and meta-analysis.", url = "https://pubmed.ncbi.nlm.nih.gov/40214293/", locator = "Abstract, Results", quote = "48 mg/L (sensitivity: 0.72; specificity: 0.55)" },
+]
+
+[[range]]
+set = "hemster-2021-crp-ri"
+kind = "reference"
+high = 5.0
+population = "Women in sports (HemSter study); the 5.0 mg/L value is the proposed healthy-population cut-off cited by the authors, alongside their own calculated interval (<2.9 mg/L)"
+evidence = "reference-interval-study"
+note = "Conventional CRP upper reference limit of 5.0 mg/L (boundary < 5.0 mg/L) for a healthy population, as proposed in the source. The study's own calculated interval was lower (<2.9 mg/L) in a female sports cohort, so the value is not a sex-neutral or universal limit."
+citations = [
+  { pmid = "33380889", doi = "10.11613/BM.2021.010702", title = "Women in sports: the applicability of common national reference intervals for inflammatory and coagulation biomarkers (HemSter Study).", url = "https://pubmed.ncbi.nlm.nih.gov/33380889/", locator = "Abstract, Results", quote = "than the proposed cut-off for a healthy population (< 5.0 mg/L)" },
+]
+
+[[range]]
+set = "pregnancy-crp-ri-2021"
+kind = "reference"
+high = 19
+population = "Healthy pregnant women (n=322) in a longitudinal study; pregnancy-specific upper reference limit, similar across trimesters"
+evidence = "reference-interval-study"
+when = { pregnancy = true }
+note = "Pregnancy-specific upper reference limit for CRP of 19 mg/L (boundary above 19 mg/L). CRP rises in pregnancy and also increases with body mass index, so the general-population limits do not apply."
+citations = [
+  { pmid = "33647266", doi = "10.1016/j.cca.2021.02.015", title = "Pregnancy-specific reference intervals for C-reactive protein improve diagnostic accuracy for infection: A longitudinal study.", url = "https://pubmed.ncbi.nlm.nih.gov/33647266/", locator = "Abstract, Results", quote = "with an upper reference limit of 19 mg/L" },
+]

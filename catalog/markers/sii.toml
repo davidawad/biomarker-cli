@@ -1,0 +1,54 @@
+slug = "sii"
+name = "Systemic Immune-Inflammation Index"
+category = "hematology"
+unit = "10^9/L"
+description = "Systemic immune-inflammation index (SII) is platelet count multiplied by neutrophil count divided by lymphocyte count, a computed index from a complete blood count. It is studied as a prognostic marker of inflammation in cancer, cardiovascular disease and mortality. No established clinical cut-off exists. Expected result in healthy people: within the reference interval, which varies by study, sex and analyser."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 162
+high = 811
+when = { sex = "male" }
+population = "Healthy adults, Jiangsu region, Eastern China (males, all ages), Sysmex platform"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37145057", doi = "10.7754/Clin.Lab.2022.220837", title = "Establishment of Reference Intervals for SII, NLR, PLR, and LMR in Healthy Adults in Jiangsu Region in Eastern China.", locator = "Results" },
+]
+note = "Non-parametric 2.5th-97.5th percentile interval, males; the study reports no significant age differences. Analyser-specific."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 165
+high = 792
+when = { sex = "female" }
+population = "Healthy adults, Jiangsu region, Eastern China (females, all ages), Sysmex platform"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37145057", doi = "10.7754/Clin.Lab.2022.220837", title = "Establishment of Reference Intervals for SII, NLR, PLR, and LMR in Healthy Adults in Jiangsu Region in Eastern China.", locator = "Results" },
+]
+note = "Non-parametric 2.5th-97.5th percentile interval, females; the study reports no significant age differences. Analyser-specific."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 142
+high = 804
+population = "Healthy Han Chinese adults aged 18-79, western China, sexes pooled (CLSI method, multi-centre)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "30868857", doi = "10.7754/Clin.Lab.2018.180715", title = "Normal Reference Intervals of Neutrophil-To-Lymphocyte Ratio, Platelet-To-Lymphocyte Ratio, Lymphocyte-To-Monocyte Ratio, and Systemic Immune Inflammation Index in Healthy Adults: a Large Multi-Center Study from Western China.", locator = "Abstract (Results)" },
+]
+note = "Pooled-sex interval as reported by the study. The same study reports sex-related differences in SII, so the sex-specific range above may be preferred."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 655.56
+population = "US adults free of pregnancy, cardiovascular disease and cancer, NHANES 1999-2018 (n = 42,875)"
+evidence = "cohort"
+citations = [
+  { pmid = "36769776", doi = "10.3390/jcm12031128", title = "Systemic Immune Inflammation Index (SII), System Inflammation Response Index (SIRI) and Risk of All-Cause Mortality and Cardiovascular Mortality: A 20-Year Follow-Up Cohort Study of 42,875 US Adults.", locator = "Abstract (Results)" },
+]
+note = "Single observational NHANES cohort: SII above 655.56 compared with below 335.36 was associated with higher all-cause mortality (HR 1.29). Not an established clinical cut-off. Source band >= 655.56; stored as the warn high bound 655.56."

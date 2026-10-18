@@ -1,0 +1,54 @@
+slug = "ogtt-2h-glucose"
+name = "Glucose, 2-hour OGTT (75 g)"
+category = "glycemic"
+unit = "mg/dL"
+description = "Plasma glucose 2 hours after a 75 g oral glucose load. Used to classify impaired glucose tolerance and diabetes in adults, and gestational diabetes in pregnancy (IADPSG thresholds)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 140
+when = { }
+population = "Adults without a previous diabetes diagnosis"
+evidence = "guideline"
+note = "Normal glucose tolerance: 2-hour glucose strictly below 140 mg/dL."
+citations = [
+  { pmid = "41928882", doi = "10.3389/fendo.2026.1789777", title = "The impact of glucose and metabolic disturbances on white matter hyperintensity volume in apparently healthy adults.", locator = "Table 1", quote = "fasting glucose between 100 and 125 mg/dL and 2 h post glucose load < 140 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 140
+high = 200
+when = { }
+population = "Adults without a previous diabetes diagnosis"
+evidence = "guideline"
+note = "Impaired glucose tolerance (prediabetes) by ADA criteria."
+citations = [
+  { pmid = "41928882", doi = "10.3389/fendo.2026.1789777", title = "The impact of glucose and metabolic disturbances on white matter hyperintensity volume in apparently healthy adults.", locator = "Table 1", quote = "2 h post glucose load between 140 and 199 mg/dL or glycated hemoglobin between 5.7% and 6.4% ... Fasting glucose >= 126 mg/dL in two measurements in two different days * or 2 h post glucose load >= 200 mg/dL" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 200
+when = { }
+population = "Adults, 75 g OGTT"
+evidence = "guideline"
+note = "Diabetes by 2-hour glucose during a 75 g OGTT (ADA)."
+citations = [
+  { pmid = "41928882", doi = "10.3389/fendo.2026.1789777", title = "The impact of glucose and metabolic disturbances on white matter hyperintensity volume in apparently healthy adults.", locator = "Table 1", quote = "Fasting glucose >= 126 mg/dL in two measurements in two different days * or 2 h post glucose load >= 200 mg/dL or glycated hemoglobin >= 6.5%" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 153
+when = { pregnant = true }
+population = "Pregnant women, 75 g OGTT (IADPSG criteria)"
+evidence = "consensus"
+note = "Gestational diabetes if any one 75 g OGTT value meets or exceeds the threshold (IADPSG 2010)."
+citations = [
+  { pmid = "20190296", doi = "10.2337/dc09-1848", title = "International association of diabetes and pregnancy study groups recommendations on the diagnosis and classification of hyperglycemia in pregnancy.", locator = "Threshold table (consensus thresholds)", quote = "| 2-h plasma glucose | 8.5 | 153" },
+]

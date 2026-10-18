@@ -1,0 +1,7 @@
+slug = "sars-cov-2-pcr"
+name = "SARS-CoV-2 RNA (PCR)"
+category = "infectious"
+unit = "qualitative"
+loinc = "94531-1"
+description = "Molecular (RT-PCR or other nucleic acid amplification) test on a respiratory swab that detects SARS-CoV-2 viral RNA, reported as detected or not detected. It is used to diagnose current COVID-19 infection and to inform isolation decisions. Expected result: not detected (negative)."
+no_reference = "Qualitative result (detected or not detected); no numeric reference interval applies."

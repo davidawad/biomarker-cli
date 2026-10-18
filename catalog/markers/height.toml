@@ -1,0 +1,32 @@
+slug = "height"
+name = "Height / Length"
+category = "body-composition"
+unit = "cm"
+loinc = "8302-2"
+description = "Standing height (or recumbent length in infants). Interpreted against age- and sex-specific population percentiles; adult values are reference ranges only and carry no disease threshold."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 162.8
+high = 187.4
+when = { sex = "male", age = [20.0, 200] }
+population = "US adult males aged 20 and over, NHANES 2015-2018, all race and Hispanic-origin groups (measured standing height)"
+evidence = "reference-interval-study"
+citations = [
+  { url = "https://www.cdc.gov/nchs/data/series/sr_03/sr03-046-508.pdf", locator = "Table 11 (adult males 20 and over, all race and Hispanic-origin groups)" },
+]
+note = "5th to 95th percentile (central 90 percent of the sampled population), not a 95 percent interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 149.8
+high = 172.5
+when = { sex = "female", age = [20.0, 200] }
+population = "US adult females aged 20 and over, NHANES 2015-2018, all race and Hispanic-origin groups (measured standing height)"
+evidence = "reference-interval-study"
+citations = [
+  { url = "https://www.cdc.gov/nchs/data/series/sr_03/sr03-046-508.pdf", locator = "Table 9 (adult females 20 and over, all race and Hispanic-origin groups)" },
+]
+note = "5th to 95th percentile (central 90 percent of the sampled population), not a 95 percent interval."

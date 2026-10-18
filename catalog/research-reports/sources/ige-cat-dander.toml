@@ -1,0 +1,28 @@
+slug = "ige-cat-dander"
+name = "Specific IgE, Cat Dander"
+loinc = "6833-8"
+category = "allergy"
+unit = "kU/L"
+description = "Serum IgE specific to cat dander allergen, used to support the diagnosis of IgE-mediated cat allergy. Interpret with symptoms and skin testing, since a positive level does not by itself prove clinical allergy."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 7.4
+population = "Schoolchildren (Norway) with allergic rhinoconjunctivitis, serum sIgE on the Siemens IMMULITE 2000"
+evidence = "outcome-study"
+note = "Diagnostic cut-off giving 90% specificity for allergic rhinoconjunctivitis to cat dander (sensitivity 69.7%, specificity 90.1%). Single observational study with a cross-sectional diagnostic design; not a guideline threshold."
+citations = [
+  { pmid = "24628428", doi = "10.1111/apa.12631", title = "Establishing IMMULITE® 2000 cut-off values for serum allergen-specific immunoglobulin and exploring their relationship to exhaled nitric oxide.", url = "https://pubmed.ncbi.nlm.nih.gov/24628428/", locator = "Table 3", quote = "| Cat dander | Diagnostic | 7.4 | 69.7 (59.0-79.0) | 90.1 (84.1-94.3) | 7.0 | 0.34" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.3
+population = "Schoolchildren (Norway) with allergic rhinoconjunctivitis, serum sIgE on the Siemens IMMULITE 2000"
+evidence = "outcome-study"
+note = "Screening cut-off giving 90% sensitivity for allergic rhinoconjunctivitis to cat dander (sensitivity 91.0%, specificity 85.4%). Values below this argue against the diagnosis; values at or above it warrant further testing. Single observational study."
+citations = [
+  { pmid = "24628428", doi = "10.1111/apa.12631", title = "Establishing IMMULITE® 2000 cut-off values for serum allergen-specific immunoglobulin and exploring their relationship to exhaled nitric oxide.", url = "https://pubmed.ncbi.nlm.nih.gov/24628428/", locator = "Table 3", quote = "| Screening | 1.3 | 91.0 (83.1-96.0) | 85.4 (78.8-90.6) | 6.3 | 0.11" },
+]

@@ -22,6 +22,8 @@ SOFT = {"method", "specimen", "setting", "test", "region"}
 
 
 def norm_unit(u):
+    # kUA/L (allergen units) equal kU/L; mU/L equals mIU/L (international units)
+    u = u.replace("kUA/L", "kU/L").replace("mU/L", "mIU/L")
     return u.replace("μ", "µ").replace("mIU/l", "mIU/L").replace("/ml", "/mL").strip()
 
 
@@ -46,29 +48,38 @@ CONV = dict([
     T("alt", "IU/L", "U/L", 1), T("ck", "IU/L", "U/L", 1),
     T("cortisol", "nmol/L", "µg/dL", 0.03625), T("estradiol", "pmol/L", "pg/mL", 0.2724),
     T("estrone", "pmol/L", "pg/mL", 0.2703), T("free-t3", "pmol/L", "pg/mL", 0.651),
-    T("free-t4", "pmol/L", "ng/dL", 0.0777), T("total-t3", "nmol/L", "ng/dL", 65.1),
+    T("free-t4", "pmol/L", "ng/dL", 0.0777), T("t3-total", "nmol/L", "ng/dL", 65.1),
     T("testosterone-total", "nmol/L", "ng/dL", 28.84), T("testosterone-total", "ng/mL", "ng/dL", 100),
     T("testosterone-free", "pmol/L", "pg/mL", 0.2884),
     T("dhea-s", "µmol/L", "µg/dL", 36.85), T("dhea-s", "nmol/L", "µg/dL", 0.03685), T("dhea", "nmol/L", "ng/dL", 28.84),
-    T("dht", "nmol/L", "ng/dL", 29.0), T("progesterone", "nmol/L", "ng/mL", 0.3145),
-    T("17-oh-progesterone", "nmol/L", "ng/dL", 33.05), T("17-oh-progesterone", "ng/mL", "ng/dL", 100),
+    T("dihydrotestosterone", "nmol/L", "ng/dL", 29.0), T("progesterone", "nmol/L", "ng/mL", 0.3145),
+    T("17-ohp", "nmol/L", "ng/dL", 33.05), T("17-ohp", "ng/mL", "ng/dL", 100),
     T("androstenedione", "nmol/L", "ng/dL", 28.64), T("pregnenolone", "nmol/L", "ng/dL", 31.6),
     T("c-peptide", "nmol/L", "ng/mL", 3.02), T("ctx", "ng/L", "ng/mL", 0.001), T("nt-probnp", "ng/L", "pg/mL", 1),
     T("procalcitonin", "µg/L", "ng/mL", 1), T("osteocalcin", "µg/L", "ng/mL", 1), T("p1np", "µg/L", "ng/mL", 1),
-    T("igfbp-3", "ng/mL", "mg/L", 0.001), T("igfbp-3", "µg/mL", "mg/L", 1), T("growth-hormone", "µg/L", "ng/mL", 1),
+    T("igfbp-3", "ng/mL", "mg/L", 0.001), T("igfbp-3", "µg/mL", "mg/L", 1), T("gh", "µg/L", "ng/mL", 1),
     T("prolactin", "mIU/L", "ng/mL", 0.04717), T("prolactin", "µIU/mL", "ng/mL", 0.04717),
     T("lh", "IU/L", "mIU/mL", 1), T("lh", "U/L", "mIU/mL", 1), T("fsh", "IU/L", "mIU/mL", 1),
-    T("hcg", "IU/L", "mIU/mL", 1), T("ca-19-9", "IU/mL", "U/mL", 1), T("ige-total", "IU/mL", "kU/L", 1),
+    T("hcg-quantitative", "IU/L", "mIU/mL", 1), T("ca-19-9", "IU/mL", "U/mL", 1), T("ige-total", "IU/mL", "kU/L", 1),
     T("acth", "ng/L", "pg/mL", 1), T("aldosterone", "ng/L", "ng/dL", 0.1), T("aldosterone", "pmol/L", "ng/dL", 0.0361),
     T("amh", "pmol/L", "ng/mL", 0.14),
-    T("metanephrine-plasma-free", "nmol/L", "pg/mL", 197.2), T("metanephrine-plasma-free", "pmol/L", "pg/mL", 0.1972),
-    T("normetanephrine-plasma-free", "nmol/L", "pg/mL", 183.2), T("normetanephrine-plasma-free", "pmol/L", "pg/mL", 0.1832),
-    T("tbg", "nmol/L", "mg/L", 0.054), T("bone-alp", "ng/mL", "µg/L", 1),
-    T("cortisol-salivary-late-night", "nmol/L", "ng/dL", 3.625), T("cortisol-salivary-late-night", "µg/L", "ng/dL", 100),
-    T("cortisol-urine-free-24h", "nmol/24 h", "µg/24 h", 0.3625), T("cortisol-urine-free-24h", "µg/day", "µg/24 h", 1),
+    T("metanephrine-free", "nmol/L", "pg/mL", 197.2), T("metanephrine-free", "pmol/L", "pg/mL", 0.1972),
+    T("normetanephrine", "nmol/L", "pg/mL", 183.2), T("normetanephrine", "pmol/L", "pg/mL", 0.1832),
+    T("tbg", "nmol/L", "mg/L", 0.054), T("bsap", "ng/mL", "µg/L", 1),
+    T("salivary-cortisol", "nmol/L", "ng/dL", 3.625), T("salivary-cortisol", "µg/L", "ng/dL", 100),
+    T("urine-free-cortisol", "nmol/24 h", "µg/24 h", 0.3625), T("urine-free-cortisol", "µg/day", "µg/24 h", 1),
     T("uacr", "mg/mmol", "mg/g", 8.84), T("upcr", "mg/mmol", "mg/g", 8.84), T("urine-acr", "mg/mmol", "mg/g", 8.84),
     T("upcr", "mg/mg", "mg/g", 1000), T("urine-pcr", "mg/mg", "mg/g", 1000),
     T("urine-osmolality", "mmol/kg", "mOsm/kg", 1),
+    # ng/L per mU/L to ng/dL per mIU/L: 1 ng/L = 0.1 ng/dL; mU/L and mIU/L are the same unit
+    T("arr-direct-renin", "ng/L/mU/L", "ng/dL per mIU/L", 0.1),
+    # 1 MET = 3.5 mL O2/kg/min by definition
+    T("vo2max", "METs", "mL/kg/min", 3.5),
+    T("corrected-calcium", "mmol/L", "mg/dL", 4.008),
+    # ng/L and pg/mL are numerically equal
+    T("pth-intact", "ng/L", "pg/mL", 1),
+    # total T4 MW 776.87: 1 nmol/L = 0.0777 ug/dL
+    T("t4-total", "nmol/L", "µg/dL", 0.0777),
 ])
 CONV = {(s, norm_unit(u)): v for (s, u), v in CONV.items()}
 
@@ -274,7 +285,7 @@ def build():
         dest_unit = e["unit"] if e else rd["unit"]
         file_unit = rd["unit"]
         cands = []
-        for r in rd["range"]:
+        for r in rd.get("range", []):
             stats["ranges_in"] += 1
 
             def drop(why, r=r):
@@ -382,9 +393,13 @@ def build():
                 continue
             cut = to_cut_points(c, refs)
             if cut is None:
-                cands.remove(c)
-                dropped["two-sided band without a reference range to orient it"] += 1
-                drop_log.append((slug, "two-sided band without a reference range to orient it", c.get("low"), c.get("high")))
+                # A two-sided band that cannot be oriented against a reference range is kept as a
+                # reference range in a set of its own (the set name carries the source and the bounds).
+                base = slugify(c["_src"]) if c["_src"] not in ("clinical", "reference", "optimal") else f"{slug}-bands"
+                c["kind"] = "reference"
+                c["set"] = slugify(f"{base}-{c.get('low')}-{c.get('high')}")
+                c["note"] = (c.get("note", "") + " Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point.").strip()
+                stats["bands_kept"] = stats.get("bands_kept", 0) + 1
                 continue
             c.pop("low", None)
             c.pop("high", None)
@@ -465,7 +480,7 @@ def build():
             if al:
                 hdr.append(f"aliases = {tv(al)}")
             if not any(r["set"] == "clinical" and r["kind"] == "reference" for r in final):
-                hdr.append(f"no_reference = {tv(NO_REF)}")
+                hdr.append(f"no_reference = {tv(rd.get('no_reference', NO_REF))}")
             body = "\n".join(hdr) + "\n\n" + "\n".join(lines)
             stats["markers_new"] += 1
         out_files[slug] = body.rstrip() + "\n"

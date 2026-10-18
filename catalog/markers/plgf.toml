@@ -3,7 +3,6 @@ name = "Placental Growth Factor"
 category = "pregnancy"
 unit = "pg/mL"
 description = "Angiogenic protein produced by the placenta. Low circulating PlGF in suspected pre-eclampsia reflects placental dysfunction and is used to rule pre-eclampsia in or out, in addition to blood pressure and proteinuria."
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
 set = "mapple-2018"
@@ -16,6 +15,19 @@ citations = [
   { pmid = "29627351", doi = "10.1016/j.preghy.2018.03.013", url = "https://pubmed.ncbi.nlm.nih.gov/29627351/", title = "Placental Growth Factor informed management of suspected pre-eclampsia or fetal growth restriction: The MAPPLE cohort study.", locator = "Results" },
 ]
 note = "Very low PlGF category (below 12 pg/mL). Assay-dependent; values are not directly comparable across PlGF platforms. Source band <= 12; stored as the critical low bound 12."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 12
+high = 100
+when = { pregnant = true, conditions = ["suspected-preeclampsia"] }
+population = "Women with suspected pre-eclampsia or fetal growth restriction (MAPPLE cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "29627351", doi = "10.1016/j.preghy.2018.03.013", url = "https://pubmed.ncbi.nlm.nih.gov/29627351/", title = "Placental Growth Factor informed management of suspected pre-eclampsia or fetal growth restriction: The MAPPLE cohort study.", locator = "Results" },
+]
+note = "Low PlGF category (12 to 100 pg/mL), a borderline zone between the very low and normal categories. Assay-dependent. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "pelican-stepped-wedge-2019"

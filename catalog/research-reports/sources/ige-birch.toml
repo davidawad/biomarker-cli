@@ -1,0 +1,40 @@
+slug = "ige-birch"
+name = "Specific IgE, Birch (White Birch)"
+loinc = "41874-9"
+category = "allergy"
+unit = "kU/L"
+description = "Serum IgE specific to birch pollen allergen, used to support the diagnosis of IgE-mediated birch pollen allergy. Interpret with symptoms and skin testing; a positive level does not by itself prove clinical allergy."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 2.8
+population = "Schoolchildren (Norway) with allergic rhinoconjunctivitis, serum sIgE on the Siemens IMMULITE 2000"
+evidence = "outcome-study"
+note = "Diagnostic cut-off giving 90% specificity for allergic rhinoconjunctivitis to birch pollen (sensitivity 80.2%, specificity 90.2%). Single observational study; not a guideline threshold."
+citations = [
+  { pmid = "24628428", doi = "10.1111/apa.12631", title = "Establishing IMMULITE® 2000 cut-off values for serum allergen-specific immunoglobulin and exploring their relationship to exhaled nitric oxide.", url = "https://pubmed.ncbi.nlm.nih.gov/24628428/", locator = "Table 3", quote = "| Birch | Diagnostic | 2.8 | 80.2 (69.1-88.6) | 90.2 (84.6-94.3) | 8.2 | 0.22" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 1.0
+population = "Schoolchildren (Norway) with allergic rhinoconjunctivitis, serum sIgE on the Siemens IMMULITE 2000"
+evidence = "outcome-study"
+note = "Screening cut-off giving 90% sensitivity for allergic rhinoconjunctivitis to birch pollen (sensitivity 90.4%, specificity 85.1%). Values below this argue against the diagnosis; values at or above it warrant further testing. Single observational study."
+citations = [
+  { pmid = "24628428", doi = "10.1111/apa.12631", title = "Establishing IMMULITE® 2000 cut-off values for serum allergen-specific immunoglobulin and exploring their relationship to exhaled nitric oxide.", url = "https://pubmed.ncbi.nlm.nih.gov/24628428/", locator = "Table 3", quote = "| Screening | 1.0 | 90.4 (81.2-96.1) | 85.1 (78.8-90.1) | 6.1 | 0.11" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 6.77
+unit = "kUA/L"
+population = "Children aged 2-18 years with atopic dermatitis and birch sensitization (Korea), ImmunoCAP"
+evidence = "outcome-study"
+note = "Cut-off associated with oral allergy syndrome (OAS) in birch-sensitized children with atopic dermatitis (sensitivity 55.6%, specificity 79.0%, AUC 0.653). Weak discrimination; this is an OAS association, not a birch allergy diagnostic threshold. Unit as stated by the source (kUA/L)."
+citations = [
+  { pmid = "30636944", doi = "10.3346/jkms.2019.34.e11", title = "Clinical Characteristics of Oral Allergy Syndrome in Children with Atopic Dermatitis and Birch Sensitization: a Single Center Study.", url = "https://pubmed.ncbi.nlm.nih.gov/30636944/", locator = "Abstract, Results", quote = "The cut-off value was 6.77 kUA/L with 55.6% sensitivity and 79.0% specificity (area under the curve 0.653)." },
+]

@@ -1,0 +1,7 @@
+slug = "urine-color"
+name = "Urine Color"
+category = "urinalysis"
+unit = "qualitative"
+loinc = "5778-6"
+description = "Visual color of urine, from pale yellow to amber in healthy people depending on hydration. Red, brown, orange or green colors can reflect blood, bilirubin, medicines or foods."
+no_reference = "Qualitative visual result; no numeric reference interval applies."

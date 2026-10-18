@@ -1,0 +1,195 @@
+slug = "frax-10y"
+name = "FRAX 10-Year Fracture Risk"
+category = "bone"
+unit = "%"
+description = "FRAX 10-year probability of major osteoporotic fracture (MOF: clinical spine, hip, forearm or humerus), computed from clinical risk factors with or without femoral neck BMD. Used to choose between lifestyle advice, BMD testing and drug treatment. Shard encodes the MOF probability only; the hip-fracture probability has separate thresholds that the single-slug schema cannot distinguish."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 3.4
+high = 8.8
+when = { age_min = 50, age_max = 55 }
+population = "Men and women aged 50-54 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Intermediate risk between lower (LAT) and upper (UAT) assessment thresholds: BMD indicated."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 50 | 3.4 | 7.3 | 8.8 | 11.7" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 7.3
+high = 11.7
+when = { age_min = 50, age_max = 55 }
+population = "Men and women aged 50-54 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "High fracture risk: above intervention threshold (IT) and below very high-risk threshold (VHRT)."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 50 | 3.4 | 7.3 | 8.8 | 11.7" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 11.7
+when = { age_min = 50, age_max = 55 }
+population = "Men and women aged 50-54 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Very high fracture risk (VHRT): specialist referral should be considered."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 50 | 3.4 | 7.3 | 8.8 | 11.7" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 4.5
+high = 11.4
+when = { age_min = 55, age_max = 60 }
+population = "Men and women aged 55-59 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Intermediate risk between lower (LAT) and upper (UAT) assessment thresholds: BMD indicated."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 55 | 4.5 | 9.5 | 11.4 | 15.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 9.5
+high = 15.2
+when = { age_min = 55, age_max = 60 }
+population = "Men and women aged 55-59 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "High fracture risk: above intervention threshold (IT) and below very high-risk threshold (VHRT)."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 55 | 4.5 | 9.5 | 11.4 | 15.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 15.2
+when = { age_min = 55, age_max = 60 }
+population = "Men and women aged 55-59 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Very high fracture risk (VHRT): specialist referral should be considered."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 55 | 4.5 | 9.5 | 11.4 | 15.2" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 6.0
+high = 14.6
+when = { age_min = 60, age_max = 65 }
+population = "Men and women aged 60-64 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Intermediate risk between lower (LAT) and upper (UAT) assessment thresholds: BMD indicated."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 60 | 6.0 | 12.2 | 14.6 | 19.4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 12.2
+high = 19.4
+when = { age_min = 60, age_max = 65 }
+population = "Men and women aged 60-64 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "High fracture risk: above intervention threshold (IT) and below very high-risk threshold (VHRT)."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 60 | 6.0 | 12.2 | 14.6 | 19.4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 19.4
+when = { age_min = 60, age_max = 65 }
+population = "Men and women aged 60-64 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Very high fracture risk (VHRT): specialist referral should be considered."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 60 | 6.0 | 12.2 | 14.6 | 19.4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 8.6
+high = 19.8
+when = { age_min = 65, age_max = 70 }
+population = "Men and women aged 65-69 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Intermediate risk between lower (LAT) and upper (UAT) assessment thresholds: BMD indicated."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 65 | 8.6 | 16.5 | 19.8 | 26.4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 16.5
+high = 26.4
+when = { age_min = 65, age_max = 70 }
+population = "Men and women aged 65-69 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "High fracture risk: above intervention threshold (IT) and below very high-risk threshold (VHRT)."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 65 | 8.6 | 16.5 | 19.8 | 26.4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 26.4
+when = { age_min = 65, age_max = 70 }
+population = "Men and women aged 65-69 years assessed with UK FRAX (NOGG thresholds)"
+evidence = "guideline"
+note = "Very high fracture risk (VHRT): specialist referral should be considered."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 65 | 8.6 | 16.5 | 19.8 | 26.4" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 11.1
+high = 24.4
+when = { age_min = 70 }
+population = "Men and women in the table's 70-years row, assessed with UK FRAX (NOGG thresholds); table gives no upper age bound"
+evidence = "guideline"
+note = "Intermediate risk between lower (LAT) and upper (UAT) assessment thresholds: BMD indicated."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 70 | 11.1 | 20.3 | 24.4 | 32.5" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20.3
+high = 32.5
+when = { age_min = 70 }
+population = "Men and women in the table's 70-years row, assessed with UK FRAX (NOGG thresholds); table gives no upper age bound"
+evidence = "guideline"
+note = "High fracture risk: above intervention threshold (IT) and below very high-risk threshold (VHRT)."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 70 | 11.1 | 20.3 | 24.4 | 32.5" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 32.5
+when = { age_min = 70 }
+population = "Men and women in the table's 70-years row, assessed with UK FRAX (NOGG thresholds); table gives no upper age bound"
+evidence = "guideline"
+note = "Very high fracture risk (VHRT): specialist referral should be considered."
+citations = [
+  { pmid = "40921943", doi = "10.1007/s11657-025-01588-3", title = "The 2024 UK clinical guideline for the prevention and treatment of osteoporosis.", locator = "Table 4", quote = "| 70 | 11.1 | 20.3 | 24.4 | 32.5" },
+]

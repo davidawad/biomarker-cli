@@ -1,0 +1,46 @@
+slug = "t4-total"
+name = "Total T4 (Thyroxine)"
+category = "thyroid"
+unit = "µg/dL"
+aliases = ["total-t4"]
+loinc = "3026-2"
+description = "Total serum thyroxine, bound plus free. Levels follow binding protein concentrations, so it rises in pregnancy and with oestrogen exposure; free T4 is usually preferred for diagnosis."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.9
+high = 13.67
+when = { pregnant = true, trimester = 2 }
+population = "Pregnant women in the US (Asian, Black, Hispanic and White), antibody-negative with normal TSH, ARCHITECT immunoassay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "17712003", doi = "10.1373/clinchem.2007.089680", url = "https://pubmed.ncbi.nlm.nih.gov/17712003/", title = "Second-trimester reference intervals for thyroid tests: the role of ethnicity.", locator = "Abstract, Results" },
+]
+note = "Nonparametric 2.5th-97.5th percentile for all participants, in ug/dL as printed. Source also gives 89.0-176.3 nmol/L."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 4.608
+high = 11.71
+when = { sex = "male", age = [9.0, 12.0] }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Results" },
+]
+note = "Age 9 to under 12 years, male. The results sentence prints pmol/L, but the same paper's abstract reports total T4 in nmol/L (72.33-171.60 nmol/L); the magnitude matches nmol/L, so the range is read as nmol/L and converted to µg/dL. Converted from the source's nmol/L (59.31-150.72) to µg/dL using factor 0.0777."
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 4.918
+high = 11.42
+when = { sex = "female", age = [9.0, 12.0] }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", locator = "Results" },
+]
+note = "Age 9 to under 12 years, female. Printed as pmol/L in the results sentence; read as nmol/L (the abstract reports total T4 in nmol/L) and converted to µg/dL. Converted from the source's nmol/L (63.29-146.94) to µg/dL using factor 0.0777."

@@ -1,0 +1,31 @@
+slug = "free-lambda"
+name = "Lambda Free Light Chains"
+category = "immune"
+unit = "mg/L"
+loinc = "33944-0"
+description = "Free lambda light chains are the unbound light-chain fragments of antibodies, made in excess by plasma cells. Raised or abnormal levels are used in screening for monoclonal plasma-cell disorders and light-chain disease."
+aliases = ["lambda flc", "free lambda light chains", "sflc lambda", "lambda-free-light-chain"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5.7
+high = 26.3
+population = "Reference serum samples as cited in a 2020 renal free light chain study"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32234026", doi = "10.1186/s12882-020-01771-3", url = "https://pubmed.ncbi.nlm.nih.gov/32234026/", title = "The renal range of the κ/λ sFLC ratio: best strategy to evaluate multiple myeloma in patients with chronic kidney disease.", locator = "Full text, Methods" },
+]
+note = "Reference interval for serum free lambda as used in a 2020 study, which attributes it to a previous report (reference 7, Katzmann et al. 2002); the primary paper was not retrieved."
+
+[[range]]
+set = "afr-descent-2025"
+kind = "reference"
+low = 6.2
+high = 49.2
+population = "Individuals of African descent with normal renal function (Blood 2025 multi-population study)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "39571144", doi = "10.1182/blood.2024026078", url = "https://pubmed.ncbi.nlm.nih.gov/39571144/", title = "Serum free light chains in a racially diverse population including African Americans and populations from South Africa.", locator = "Abstract, Results" },
+]
+note = "Proposed free lambda range for people of African descent with normal kidney function. A proposal from one study rather than a guideline. Applies only to: ethnicity=black."

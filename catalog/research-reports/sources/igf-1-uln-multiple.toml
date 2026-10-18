@@ -1,0 +1,17 @@
+slug = "igf-1-uln-multiple"
+name = "Insulin-like Growth Factor 1 (multiple of upper limit of normal)"
+category = "growth"
+unit = "x ULN"
+description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
+
+[[range]]
+set = "acromegaly-octreotide-switch-2021"
+kind = "target"
+high = 1.0
+when = { on_treatment = "stable injectable octreotide or lanreotide, switching to oral octreotide" }
+population = "Acromegaly patients biochemically controlled on stable injectable somatostatin analogues (OPTIMAL trial, as summarized in the Pituitary Society update)"
+evidence = "consensus"
+note = "IGF-1 as a multiple of the age- and sex-adjusted upper limit of normal (ULN). Treatment-response threshold for switching, not a diagnostic cut-off."
+citations = [
+  { pmid = "33079318", doi = "10.1007/s11102-020-01091-7", title = "A Pituitary Society update to acromegaly management guidelines.", url = "https://pubmed.ncbi.nlm.nih.gov/33079318/", locator = "Full text, Oral octreotide section", quote = "biochemically controlled patients (IGF-I ≤ 1.0 × ULN) on stable doses of injectable octreotide or lanreotide maintain response to OOC" },
+]

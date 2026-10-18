@@ -1,0 +1,7 @@
+slug = "urine-leukocyte-esterase"
+name = "Urine Leukocyte Esterase (dipstick)"
+category = "urinalysis"
+unit = "qualitative"
+loinc = "5799-2"
+description = "Dipstick test for leukocyte esterase, an enzyme released by white blood cells. The expected result is negative; a positive result suggests pyuria and is read together with nitrite and urine culture when a urinary tract infection is suspected."
+no_reference = "Qualitative dipstick result (negative, trace, 1+ to 3+); no numeric reference interval applies."

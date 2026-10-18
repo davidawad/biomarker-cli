@@ -1,0 +1,17 @@
+slug = "anti-ccp-uln-multiple"
+name = "Anti-Cyclic Citrullinated Peptide Antibodies (multiple of upper limit of normal)"
+category = "autoimmune"
+unit = "x ULN"
+description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "acr-eular-2010-ra"
+kind = "warn"
+high = 3
+population = "Adults with synovitis not better explained by another disease (2010 ACR/EULAR RA classification)"
+evidence = "consensus"
+citations = [
+  { pmid = "42476632", doi = "10.1136/rmdopen-2026-007007", url = "https://pubmed.ncbi.nlm.nih.gov/42476632/", title = "Refining serological scores in rheumatoid arthritis classification: an international study.", locator = "Full text, Introduction (ACR/EULAR 2010 serological scoring)" },
+]
+note = "High-positive ACPA is above 3 times the laboratory upper limit of normal (ULN), scoring 3 points. Low-positive ACPA (above ULN up to and including 3x ULN) scores 2 points. ULN is laboratory-specific. Thresholds are taken from a 2026 analysis that quotes the 2010 criteria; the primary paper's text was not retrievable. Source kind: decision. Source band >= 3; stored as the warn high bound 3."

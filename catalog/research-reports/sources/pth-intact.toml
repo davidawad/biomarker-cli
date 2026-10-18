@@ -1,0 +1,32 @@
+slug = "pth-intact"
+name = "Parathyroid Hormone, Intact"
+category = "bone"
+unit = "pg/mL"
+description = "Hormone from the parathyroid glands that raises blood calcium and controls phosphate handling. In chronic kidney disease, the KDIGO CKD-MBD guideline gives a target range for PTH in dialysis patients."
+
+[[range]]
+set = "french-vitd-replete-2016"
+kind = "reference"
+low = 9.4
+high = 28.9
+unit = "ng/L"
+when = { conditions = ["vitamin-d-replete"] }
+population = "Healthy French adults with normal renal function and 25OHD >= 30 ng/mL (183 of 898 healthy subjects), third-generation PTH assay on the LIAISON XL platform"
+evidence = "reference-interval"
+note = "Reference interval for intact PTH restricted to vitamin D-replete adults (25OHD >= 30 ng/mL); the source adopts its 95% interval. ng/L is numerically equal to pg/mL. Assay-specific (LIAISON XL); the source notes subjects aged 60 and over had higher PTH, so this interval is for the whole replete group."
+citations = [
+  { pmid = "26628583", doi = "10.1530/EJE-15-0595", title = "Serum PTH reference values established by an automated third-generation assay in vitamin D-replete subjects with normal renal function: consequences of diagnosing primary hyperparathyroidism and the classification of dialysis patients.", url = "https://pubmed.ncbi.nlm.nih.gov/26628583/", locator = "Abstract, Results", quote = "we adopted the 95% CI of PTH values for the entire group of 183 vitamin D-replete subjects (9.4-28.9 ng/l) as our reference values." },
+]
+
+[[range]]
+set = "usa-elecsys-vitd-2019"
+kind = "reference"
+low = 17.9
+high = 58.6
+when = { conditions = ["vitamin-d-replete"] }
+population = "Apparently healthy, normocalcemic, normophosphatemic US adults (n=653), classified as vitamin D sufficient (25(OH)D >= 30 ng/mL)"
+evidence = "reference-interval"
+note = "2.5th-97.5th percentile of intact PTH in vitamin D-sufficient adults on the Elecsys PTH assay (cobas e 601); the source reports the median as 31.9 pg/mL in this group. Assay-specific."
+citations = [
+  { pmid = "31273631", doi = "10.1007/s40618-019-01075-w", title = "Parathyroid hormone reference ranges in healthy individuals classified by vitamin D status.", url = "https://pubmed.ncbi.nlm.nih.gov/31273631/", locator = "Abstract, Results", quote = "In vitamin D sufficiency, median PTH was 31.9 pg/mL [range (2.5th–97.5th percentile) 17.9–58.6]" },
+]

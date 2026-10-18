@@ -1,0 +1,7 @@
+slug = "influenza-a-b-pcr"
+name = "Influenza A and B RNA (PCR)"
+category = "infectious"
+unit = "qualitative"
+loinc = "92882-0"
+description = "Molecular (RT-PCR) test on a respiratory swab that detects influenza A and influenza B viral RNA, reported separately for each type as detected or not detected. It is used to diagnose acute influenza and guide antiviral treatment. Expected result: not detected (negative)."
+no_reference = "Qualitative result (detected or not detected for each influenza type); no numeric reference interval applies."

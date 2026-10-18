@@ -1,0 +1,52 @@
+slug = "prevent-risk"
+name = "AHA PREVENT 10-year CVD Risk"
+category = "composite"
+unit = "%"
+description = "Estimated 10-year risk of cardiovascular disease (ASCVD and heart failure) from the American Heart Association PREVENT equations, which use age, sex, lipids, blood pressure, diabetes, smoking, BMI, eGFR and treatments, without race. It is an alternative to the Pooled Cohort Equations for primary-prevention risk estimation."
+aliases = ["PREVENT", "PREVENT CVD risk", "AHA PREVENT 10-year risk"]
+
+[[range]]
+set = "acc-aha-2026-dyslipidemia"
+kind = "decision"
+high = 3
+population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
+evidence = "guideline"
+note = "Low risk, <3% 10-year PREVENT risk. Categories as stated in the cited paper, which attributes them to the 2026 multisociety dyslipidemia guideline; the quote does not name the risk outcome, the paper applies them to PREVENT-ASCVD. Upper limit is exclusive."
+citations = [
+  { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", locator = "Methods, risk category definitions (full text)", quote = "Risk categories were defined according to 2026 multisociety dyslipidemia guidelines as: low (<3%), borderline (3 to <5%), intermediate (5 to <10%), and high (≥10%) risk." },
+]
+
+[[range]]
+set = "acc-aha-2026-dyslipidemia"
+kind = "warn"
+low = 3
+high = 5
+population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
+evidence = "guideline"
+note = "Borderline risk, 3 to <5% 10-year PREVENT risk. Boundary semantics: >=3 and <5. Categories as reported in the cited paper (see the low-risk range note)."
+citations = [
+  { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", locator = "Methods, risk category definitions (full text)", quote = "Risk categories were defined according to 2026 multisociety dyslipidemia guidelines as: low (<3%), borderline (3 to <5%), intermediate (5 to <10%), and high (≥10%) risk." },
+]
+
+[[range]]
+set = "acc-aha-2026-dyslipidemia"
+kind = "decision"
+low = 5
+high = 10
+population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
+evidence = "guideline"
+note = "Intermediate risk, 5 to <10% 10-year PREVENT risk. The same paper reports this as the 'intermediate-or-higher' threshold for lipid-lowering therapy consideration (>=5%). Boundary semantics: >=5 and <10."
+citations = [
+  { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", locator = "Methods, risk category definitions (full text)", quote = "Risk categories were defined according to 2026 multisociety dyslipidemia guidelines as: low (<3%), borderline (3 to <5%), intermediate (5 to <10%), and high (≥10%) risk." },
+]
+
+[[range]]
+set = "acc-aha-2026-dyslipidemia"
+kind = "decision"
+low = 10
+population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
+evidence = "guideline"
+note = "High risk, >=10% 10-year PREVENT risk. Lower bound only (open above)."
+citations = [
+  { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", locator = "Methods, risk category definitions (full text)", quote = "Risk categories were defined according to 2026 multisociety dyslipidemia guidelines as: low (<3%), borderline (3 to <5%), intermediate (5 to <10%), and high (≥10%) risk." },
+]

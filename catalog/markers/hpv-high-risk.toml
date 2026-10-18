@@ -1,0 +1,7 @@
+slug = "hpv-high-risk"
+name = "HPV High-Risk Genotypes DNA (Cervical)"
+category = "infectious"
+unit = "qualitative"
+loinc = "95532-8"
+description = "Nucleic acid test that detects DNA of high-risk human papillomavirus genotypes in a cervical specimen, reported as positive or negative for high-risk HPV, and often with separate results for genotype 16 and 18. It is used in cervical cancer screening and for triage of abnormal cytology. Expected result: negative (not detected)."
+no_reference = "Qualitative result (positive or negative for high-risk HPV DNA); no numeric reference interval applies."

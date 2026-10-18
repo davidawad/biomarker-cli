@@ -1,0 +1,58 @@
+slug = "bmi-percentile"
+name = "BMI Percentile for Age and Sex"
+loinc = "59576-9"
+category = "pediatric"
+unit = "percentile"
+description = "BMI-for-age percentile for children and teens aged 2 to 19 years, compared with the sex- and age-specific CDC reference population. Interpreted as underweight, healthy weight, overweight or obesity; not applicable to adults."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 5
+when = { age_min = 2, age_max = 20 }
+population = "US children and teens aged 2 through 19 years, sex-specific BMI-for-age percentile"
+evidence = "guideline"
+note = "Underweight category: BMI-for-age less than the 5th percentile."
+citations = [
+  { url = "https://www.cdc.gov/bmi/child-teen-calculator/index.html", locator = "BMI Category Percentile Ranges Table", quote = "Less than the 5th percentile" },
+]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5
+high = 85
+when = { age_min = 2, age_max = 20 }
+population = "US children and teens aged 2 through 19 years, sex-specific BMI-for-age percentile"
+evidence = "guideline"
+note = "Healthy weight category."
+citations = [
+  { url = "https://www.cdc.gov/bmi/child-teen-calculator/index.html", locator = "BMI Category Percentile Ranges Table", quote = "5th percentile to less than the 85th percentile" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 85
+high = 95
+when = { age_min = 2, age_max = 20 }
+population = "US children and teens aged 2 through 19 years, sex-specific BMI-for-age percentile"
+evidence = "guideline"
+note = "Overweight category (at risk for overweight in the 2004 source's terminology)."
+citations = [
+  { url = "https://www.cdc.gov/bmi/child-teen-calculator/index.html", locator = "BMI Category Percentile Ranges Table", quote = "85th percentile to less than the 95th percentile" },
+  { pmid = "15495854", title = "Defining overweight in children using growth charts.", locator = "Abstract", quote = "overweight is defined as a BMI-for-age > or = 95th percentile and atrisk for overweight is defined as a BMI-for-age between the 85th and 95th percentiles" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 95
+when = { age_min = 2, age_max = 20 }
+population = "US children and teens aged 2 through 19 years, sex-specific BMI-for-age percentile"
+evidence = "guideline"
+note = "Obesity category. Severe obesity (120 percent of the 95th percentile or greater, or BMI of 35 or greater) is not written as a percentile range."
+citations = [
+  { url = "https://www.cdc.gov/bmi/child-teen-calculator/index.html", locator = "BMI Category Percentile Ranges Table", quote = "95th percentile or greater" },
+  { pmid = "15495854", title = "Defining overweight in children using growth charts.", locator = "Abstract", quote = "overweight is defined as a BMI-for-age > or = 95th percentile" },
+]

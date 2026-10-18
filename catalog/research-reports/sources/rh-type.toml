@@ -1,0 +1,7 @@
+slug = "rh-type"
+name = "ABO and Rh Blood Group"
+loinc = "882-1"
+category = "pregnancy"
+unit = "qualitative"
+description = "Blood group Rh(D) status, reported as Rh positive or Rh negative. Rh typing is done once in pregnancy and before transfusion; it has no reference range because it is a fixed inherited type."
+no_reference = "Categorical result (Rh positive or Rh negative); no numeric reference interval applies."

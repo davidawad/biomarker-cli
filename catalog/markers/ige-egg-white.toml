@@ -1,0 +1,30 @@
+slug = "ige-egg-white"
+name = "Specific IgE, Egg White"
+category = "allergy"
+unit = "kUA/L"
+loinc = "6106-9"
+description = "Serum IgE specific to egg white (ImmunoCAP). Higher concentrations predict clinical egg allergy; the decision points below come from paediatric cohorts and differ by age."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 6
+population = "Children and adolescents referred for food allergy evaluation, all with atopic dermatitis (highly atopic study population)"
+evidence = "cohort"
+citations = [
+  { pmid = "9338535", doi = "10.1016/s0091-6749(97)70133-7", title = "Relationship between food-specific IgE concentrations and the risk of positive food challenges in children and adolescents.", locator = "Abstract, Results" },
+]
+note = "Level at which food-specific IgE predicted clinical reactivity to egg with greater than 95% certainty (ImmunoCAP FEIA, 1997 study). The source reports 'egg' without naming the egg component; the abstract does not confirm egg white specifically. Source kind: diagnostic. Source band >= 6; stored as the warn high bound 6."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.35
+when = { age = [0.0, 2.0] }
+population = "Children under 2 years with suspected egg allergy and immediate reaction after egg ingestion (n=81; 79% had egg allergy on challenge)"
+evidence = "cohort"
+citations = [
+  { pmid = "11591198", doi = "10.1046/j.1365-2222.2001.01175.x", title = "Validity of specific IgE antibodies in children with egg allergy.", locator = "Abstract, Results" },
+]
+note = "Egg white sIgE at or above 0.35 kUA/L predicted a reaction on challenge in 94% of cases (positive predictive value). Single prospective study in children under 2; the abstract states the level as 'KU(A)/L'. Source kind: diagnostic. Source band >= 0.35; stored as the warn high bound 0.35."

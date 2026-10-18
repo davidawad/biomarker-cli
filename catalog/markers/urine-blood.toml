@@ -1,0 +1,7 @@
+slug = "urine-blood"
+name = "Urine Blood / Hemoglobin (dipstick)"
+category = "urinalysis"
+unit = "qualitative"
+loinc = "5794-3"
+description = "Dipstick test for hemoglobin or intact red cells in urine. The expected result is negative; a positive result is confirmed by microscopy and prompts evaluation for hematuria."
+no_reference = "Qualitative dipstick result (negative, trace, 1+ to 3+); no numeric reference interval applies."

@@ -1,0 +1,28 @@
+slug = "tissue-transglutaminase-iga-uln-multiple"
+name = "Tissue Transglutaminase IgA (multiple of upper limit of normal)"
+category = "autoimmune"
+unit = "x ULN"
+description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "espghan-2020-coeliac"
+kind = "warn"
+high = 10
+population = "Children and adolescents with symptoms suspicious of coeliac disease"
+evidence = "guideline"
+citations = [
+  { pmid = "31568151", doi = "10.1097/MPG.0000000000002497", url = "https://pubmed.ncbi.nlm.nih.gov/31568151/", title = "European Society Paediatric Gastroenterology, Hepatology and Nutrition Guidelines for Diagnosing Coeliac Disease 2020.", locator = "Abstract, Recommendations" },
+]
+note = "Biopsy-free diagnosis may be applied if TGA-IgA is >=10x ULN, endomysial antibodies (EMA-IgA) are positive in a second blood sample and the family agrees. Total serum IgA should be measured with TGA-IgA; an IgG-based test is needed only if total IgA is low or undetectable. No numeric total-IgA cut-off was retrieved. Source kind: decision. Source band >= 10; stored as the warn high bound 10."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 10
+population = "Children and adolescents with symptoms suspicious of coeliac disease"
+evidence = "guideline"
+citations = [
+  { pmid = "31568151", doi = "10.1097/MPG.0000000000002497", url = "https://pubmed.ncbi.nlm.nih.gov/31568151/", title = "European Society Paediatric Gastroenterology, Hepatology and Nutrition Guidelines for Diagnosing Coeliac Disease 2020.", locator = "Abstract, Recommendations" },
+]
+note = "Below 10x ULN the no-biopsy route does not apply: at least 4 biopsies from the distal duodenum and at least 1 from the bulb are required. Upper boundary is exclusive (<10x ULN). Source kind: decision. Source band <= 10; stored as the warn low bound 10. Alternative to the default espghan-2020-coeliac warn range for the same population."

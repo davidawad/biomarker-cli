@@ -1,0 +1,19 @@
+slug = "aa-epa-ratio"
+name = "EPA/arachidonic acid ratio"
+category = "fatty-acid"
+unit = "ratio"
+aliases = ["epa-aa-ratio"]
+description = "Ratio of serum eicosapentaenoic acid to arachidonic acid, an index of the balance between omega-3 and omega-6 eicosanoid precursors. Low values indicate a relative excess of arachidonic acid over EPA."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "epa-aa-cad-2025"
+kind = "warn"
+low = 0.3
+when = { conditions = ["coronary-artery-disease"] }
+population = "Patients with coronary artery disease receiving statin therapy (n=150 consecutive patients); threshold used to select patients for EPA therapy (specimen: serum)"
+evidence = "cohort"
+citations = [
+  { pmid = "39997494", doi = "10.3390/jcdd12020060", title = "Clinical Significance of Serum Omega-3 Fatty Acids on Endothelial Function in Patients with Coronary Artery Disease Under Statin Therapy.", locator = "Abstract, Methods" },
+]
+note = "Operational low-ratio threshold from a single small study (impaired FMD and low EPA/AA); not a validated population reference interval. Serum fatty acids. Source band <= 0.3; stored as the warn low bound 0.3."

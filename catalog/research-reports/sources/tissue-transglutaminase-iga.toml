@@ -1,0 +1,7 @@
+slug = "tissue-transglutaminase-iga"
+name = "Tissue Transglutaminase IgA"
+loinc = "31017-7"
+category = "autoimmune"
+unit = "U/mL"
+description = "IgA antibodies against tissue transglutaminase 2, the first-line serological test for coeliac disease. A high titre, with total IgA normal, can allow diagnosis without duodenal biopsy in children."
+aliases = ["tTG-IgA", "TGA-IgA", "anti-tTG IgA"]

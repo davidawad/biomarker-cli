@@ -1,0 +1,55 @@
+slug = "ige-cow-milk"
+name = "Specific IgE, Cow Milk"
+category = "allergy"
+unit = "kU/L"
+loinc = "7258-7"
+description = "Serum IgE specific to cow's milk protein, used to support the diagnosis of immediate-type cow's milk allergy. Interpret with history and, where needed, an oral food challenge; a positive level does not by itself prove allergy."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.59
+when = { age = [1.0, 2.0] }
+population = "Korean children aged 12-24 months with suspected cow's milk allergy, diagnosed by open oral food challenge or convincing history"
+evidence = "cohort"
+citations = [
+  { pmid = "25749781", doi = "10.4168/aair.2015.7.4.332", url = "https://pubmed.ncbi.nlm.nih.gov/25749781/", title = "Diagnostic Decision Points of Specific IgE Concentrations in Korean Children With Egg and Cow's Milk Allergies.", locator = "Abstract, Results" },
+]
+note = "Rule-out threshold: at or below this concentration the negative predictive value was 100%, so immediate cow's milk allergy was not found in this cohort. Not a normal range. Single observational study. Source band <= 0.59; stored as the warn low bound 0.59."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 0.94
+when = { age = [2.0, 200] }
+population = "Korean children aged 24 months and older with suspected cow's milk allergy, diagnosed by open oral food challenge or convincing history"
+evidence = "cohort"
+citations = [
+  { pmid = "25749781", doi = "10.4168/aair.2015.7.4.332", url = "https://pubmed.ncbi.nlm.nih.gov/25749781/", title = "Diagnostic Decision Points of Specific IgE Concentrations in Korean Children With Egg and Cow's Milk Allergies.", locator = "Abstract, Results" },
+]
+note = "Rule-out threshold: at or below this concentration the negative predictive value was 96.9%. Not a normal range. Single observational study. Source band <= 0.94; stored as the warn low bound 0.94."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 31.4
+when = { age = [1.0, 2.0] }
+population = "Korean children aged 12-24 months with suspected cow's milk allergy, diagnosed by open oral food challenge or convincing history"
+evidence = "cohort"
+citations = [
+  { pmid = "25749781", doi = "10.4168/aair.2015.7.4.332", url = "https://pubmed.ncbi.nlm.nih.gov/25749781/", title = "Diagnostic Decision Points of Specific IgE Concentrations in Korean Children With Egg and Cow's Milk Allergies.", locator = "Abstract, Results" },
+]
+note = "Concentration with positive predictive value above 90% for immediate-type cow's milk allergy, children under 24 months. Single observational study; not a guideline threshold. Source kind: diagnostic. Source band >= 31.4; stored as the warn high bound 31.4."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 10.1
+when = { age = [2.0, 200] }
+population = "Korean children aged 24 months and older with suspected cow's milk allergy, diagnosed by open oral food challenge or convincing history"
+evidence = "cohort"
+citations = [
+  { pmid = "25749781", doi = "10.4168/aair.2015.7.4.332", url = "https://pubmed.ncbi.nlm.nih.gov/25749781/", title = "Diagnostic Decision Points of Specific IgE Concentrations in Korean Children With Egg and Cow's Milk Allergies.", locator = "Abstract, Results" },
+]
+note = "Concentration with positive predictive value above 90% for immediate-type cow's milk allergy, children 24 months and older. Single observational study; not a guideline threshold. Source kind: diagnostic. Source band >= 10.1; stored as the warn high bound 10.1."

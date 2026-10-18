@@ -4,7 +4,30 @@ category = "composite"
 unit = "score"
 description = "Overall cardiovascular health score from 0 to 100 built from eight metrics: diet, physical activity, nicotine exposure, sleep, body mass index, blood lipids, blood glucose and blood pressure. Higher scores indicate better cardiovascular health."
 aliases = ["le8", "life's essential 8", "cvh score"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 80
+high = 100
+population = "US and general adult populations; overall Life's Essential 8 cardiovascular health score"
+evidence = "consensus"
+citations = [
+  { pmid = "35766027", doi = "10.1161/CIR.0000000000001078", url = "https://pubmed.ncbi.nlm.nih.gov/35766027/", title = "Life's Essential 8: Updating and Enhancing the American Heart Association's Construct of Cardiovascular Health: A Presidential Advisory From the American Heart Association.", locator = "Full text, Overall CVH score section" },
+]
+note = "High cardiovascular health, score 80-100. Category cut-offs recommended by the writing group; the score is 0-100 points. Source kind: decision. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "aha-life-essential-8-2022-50-79"
+kind = "reference"
+low = 50
+high = 79
+population = "US and general adult populations; overall Life's Essential 8 cardiovascular health score"
+evidence = "consensus"
+citations = [
+  { pmid = "35766027", doi = "10.1161/CIR.0000000000001078", url = "https://pubmed.ncbi.nlm.nih.gov/35766027/", title = "Life's Essential 8: Updating and Enhancing the American Heart Association's Construct of Cardiovascular Health: A Presidential Advisory From the American Heart Association.", locator = "Full text, Overall CVH score section" },
+]
+note = "Moderate cardiovascular health, score 50-79. Boundary semantics: >=50 and <=79 as written in the source. Source kind: decision. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "aha-life-essential-8-2022"

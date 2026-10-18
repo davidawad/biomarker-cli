@@ -1,0 +1,20 @@
+slug = "afp-maternal-serum"
+name = "Alpha-Fetoprotein, Maternal Serum"
+category = "pregnancy"
+unit = "MoM"
+aliases = ["afp-maternal"]
+description = "Fetal protein that crosses into maternal serum, measured in the second trimester as a multiple of the median (MoM). Raised values flag possible open neural tube defects and abdominal wall defects, and also raise the risk of some pregnancy complications; low values are part of the Down syndrome screen."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "ontd-msafp-2-5-mom"
+kind = "warn"
+high = 2.5
+when = { pregnant = true, trimester = 2 }
+population = "Singleton second-trimester pregnancies screened for open neural tube defects (NTD) with maternal serum AFP"
+evidence = "consensus"
+citations = [
+  { pmid = "36575050", doi = "10.5468/ogs.22263", url = "https://pubmed.ncbi.nlm.nih.gov/36575050/", title = "Prenatal screening for neural tube defects: from maternal serum alpha-fetoprotein to ultrasonography.", locator = "Introduction" },
+  { pmid = "35414638", doi = "10.12659/MSM.935573", url = "https://pubmed.ncbi.nlm.nih.gov/35414638/", title = "External Quality Assessment of Maternal Serum Levels of Alpha-Fetoprotein, Free Beta-Human Chorionic Gonadotropin, and Unconjugated Estriol in Detecting Down Syndrome and Neural Tube Defects in the Second Trimester of 87 Maternal Serum Samples, Based on 105-139 Days.", locator = "Methods" },
+]
+note = "Widely used screen-positive threshold for open neural tube defects. Values at or above this bound are elevated and should prompt ultrasound and further assessment. Assay- and laboratory-dependent; the threshold is applied after MoM adjustment for gestational age and maternal weight. Source kind: diagnostic. Source band >= 2.5; stored as the warn high bound 2.5."

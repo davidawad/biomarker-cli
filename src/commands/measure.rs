@@ -155,8 +155,44 @@ pub fn select(ctx: &Ctx, q: &QueryArgs) -> Result<(Catalog, Vec<Evaluated>)> {
     Ok((cat, limited))
 }
 
-fn records(ctx: &Ctx, cat: &Catalog, rows: &[Evaluated]) -> Vec<Record> {
-    rows.iter().map(|e| e.record(cat, ctx.range_flavor())).collect()
+fn records(ctx: &Ctx, cat: &Catalog, rows: &[Evaluated]) -> Result<Vec<Record>> {
+    let mut recs: Vec<Record> = rows.iter().map(|e| e.record(cat, ctx.range_flavor())).collect();
+    lab_fields(ctx, cat, rows, &mut recs)?;
+    Ok(recs)
+}
+
+/// The lab's own range and flag beside the catalog's, for results imported
+/// from FHIR / HL7 v2. Added only when the database holds any such result, so
+/// output for every other database is unchanged.
+fn lab_fields(ctx: &Ctx, cat: &Catalog, rows: &[Evaluated], recs: &mut [Record]) -> Result<()> {
+    use crate::db::RowExt;
+    let db = ctx.db()?;
+    if db.query_opt("SELECT 1 FROM lab_result_meta LIMIT 1", &[])?.is_none() {
+        return Ok(());
+    }
+    type LabMeta = (Option<f64>, Option<f64>, Option<String>, Option<String>);
+    let meta: std::collections::HashMap<i64, LabMeta> = db
+        .query("SELECT measurement_id, ref_low, ref_high, ref_text, interpretation FROM lab_result_meta", &[])?
+        .iter()
+        .filter_map(|r| Some((r.i(0)?, (r.f(1), r.f(2), r.s(3), r.s(4)))))
+        .collect();
+    for (e, rec) in rows.iter().zip(recs.iter_mut()) {
+        let m = meta.get(&e.row.id);
+        let shown = |v: Option<f64>| {
+            v.map(|x| cat.conversions.convert(e.marker.id, x, &e.marker.unit, &e.display_unit).unwrap_or(x))
+        };
+        let codes: Vec<String> =
+            m.and_then(|m| m.3.as_deref()).map(|i| i.split(',').map(str::to_string).collect()).unwrap_or_default();
+        rec.insert("lab_ref_low".into(), json!(m.and_then(|m| shown(m.0))));
+        rec.insert("lab_ref_high".into(), json!(m.and_then(|m| shown(m.1))));
+        rec.insert("lab_ref_text".into(), json!(m.and_then(|m| m.2.clone())));
+        rec.insert("lab_interpretation".into(), json!(m.and_then(|m| m.3.clone())));
+        rec.insert(
+            "lab_flag_agrees".into(),
+            json!(crate::interop::candidate::flag_agrees(&codes, rec.get("flag").and_then(|f| f.as_str()))),
+        );
+    }
+    Ok(())
 }
 
 /// Add the regimens taken on each measurement's day and the lab interferences among them.
@@ -173,7 +209,7 @@ fn with_regimens(ctx: &Ctx, cat: &Catalog, rows: &[Evaluated], recs: &mut [Recor
 pub fn query(ctx: &Ctx, q: QueryArgs) -> Result<()> {
     let (cat, rows) = select(ctx, &q)?;
     let kind = if q.latest { "latest" } else { "measurements" };
-    let mut recs = records(ctx, &cat, &rows);
+    let mut recs = records(ctx, &cat, &rows)?;
     if q.with_regimens {
         with_regimens(ctx, &cat, &rows, &mut recs)?;
     }
@@ -207,7 +243,7 @@ pub fn flag(ctx: &Ctx, a: FlagArgs) -> Result<Status> {
             (false, l) => e.is_flagged(flavor) || l.is_some_and(|l| l.severity() >= 1),
         })
         .collect();
-    let report = Report::list("flags", records(ctx, &cat, &rows))
+    let report = Report::list("flags", records(ctx, &cat, &rows)?)
         .table_columns(&[
             "id",
             "person",
@@ -255,10 +291,19 @@ fn export_record(e: &Evaluated, with_ids: bool) -> Record {
     rec
 }
 
-pub fn export(ctx: &Ctx, a: ExportArgs) -> Result<()> {
+pub fn export(ctx: &Ctx, mut a: ExportArgs) -> Result<()> {
+    let fhir = matches!(ctx.out.format, crate::output::Format::Fhir | crate::output::Format::FhirNdjson);
+    if fhir {
+        // one Patient per bundle: exactly one person
+        if a.filter.persons.len() > 1 {
+            return Err(AppError::usage("FHIR export takes one --person"));
+        }
+        a.filter.persons = vec![person_slug(ctx, a.filter.persons.first().map(String::as_str))?];
+        a.filter.all_people = false;
+    }
     let filter_args = a.filter.clone();
     let q = QueryArgs {
-        filter: a.filter,
+        filter: filter_args.clone(),
         flagged: false,
         latest: false,
         sort: SortKey::Date,
@@ -267,6 +312,9 @@ pub fn export(ctx: &Ctx, a: ExportArgs) -> Result<()> {
         with_regimens: false,
     };
     let (_, rows) = select(ctx, &q)?;
+    if fhir {
+        return crate::interop::export::run(ctx, &a, &rows);
+    }
     let mut out = ctx.out.clone();
     if out.format == crate::output::Format::Table {
         out.format = crate::output::Format::Csv;

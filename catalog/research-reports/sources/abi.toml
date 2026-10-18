@@ -1,0 +1,52 @@
+slug = "abi"
+name = "Ankle-Brachial Index"
+category = "vitals"
+unit = "ratio"
+description = "Ratio of the systolic pressure at the ankle to the systolic brachial pressure, measured with a cuff and Doppler. It is the first-line physiological test for peripheral artery disease (PAD)."
+aliases = ["ABI", "ankle brachial pressure index", "ankle-brachial pressure index"]
+
+[[range]]
+set = "acc-aha-2024-pad"
+kind = "decision"
+high = 0.90
+population = "Adults with suspected or known lower extremity peripheral artery disease, resting ABI in each leg"
+evidence = "guideline"
+note = "Abnormal resting ABI (<=0.90, boundary inclusive); PAD is suspected at this level. Sensitivity is reduced in diabetes."
+citations = [
+  { pmid = "38752899", doi = "10.1016/j.jacc.2024.02.013", title = "2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.", url = "https://pubmed.ncbi.nlm.nih.gov/38752899/", locator = "Full text, Diagnosis: resting ABI reporting statement", quote = "The resting ABI should be reported as abnormal (ABI ≤0.90), borderline (ABI 0.91–0.99), normal (ABI 1.00–1.40), or noncompressible (ABI >1.40)." },
+]
+
+[[range]]
+set = "acc-aha-2024-pad"
+kind = "warn"
+low = 0.91
+high = 0.99
+population = "Adults with suspected or known lower extremity peripheral artery disease, resting ABI in each leg"
+evidence = "guideline"
+note = "Borderline resting ABI (0.91 to 0.99). Exercise treadmill ABI is suggested for suspected chronic symptomatic PAD in this band and in the normal band."
+citations = [
+  { pmid = "38752899", doi = "10.1016/j.jacc.2024.02.013", title = "2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.", url = "https://pubmed.ncbi.nlm.nih.gov/38752899/", locator = "Full text, Diagnosis: resting ABI reporting statement", quote = "The resting ABI should be reported as abnormal (ABI ≤0.90), borderline (ABI 0.91–0.99), normal (ABI 1.00–1.40), or noncompressible (ABI >1.40)." },
+]
+
+[[range]]
+set = "acc-aha-2024-pad"
+kind = "reference"
+low = 1.00
+high = 1.40
+population = "Adults with suspected or known lower extremity peripheral artery disease, resting ABI in each leg"
+evidence = "guideline"
+note = "Normal resting ABI band (1.00 to 1.40, boundaries inclusive) as defined by the guideline."
+citations = [
+  { pmid = "38752899", doi = "10.1016/j.jacc.2024.02.013", title = "2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.", url = "https://pubmed.ncbi.nlm.nih.gov/38752899/", locator = "Full text, Diagnosis: resting ABI reporting statement", quote = "The resting ABI should be reported as abnormal (ABI ≤0.90), borderline (ABI 0.91–0.99), normal (ABI 1.00–1.40), or noncompressible (ABI >1.40)." },
+]
+
+[[range]]
+set = "acc-aha-2024-pad"
+kind = "decision"
+low = 1.40
+population = "Adults with suspected or known lower extremity peripheral artery disease, resting ABI in each leg"
+evidence = "guideline"
+note = "Noncompressible vessels (resting ABI above 1.40, boundary exclusive). The ABI is not interpretable here; toe pressure or toe-brachial index is recommended. Common in diabetes and CKD."
+citations = [
+  { pmid = "38752899", doi = "10.1016/j.jacc.2024.02.013", title = "2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.", url = "https://pubmed.ncbi.nlm.nih.gov/38752899/", locator = "Full text, Diagnosis: resting ABI reporting statement", quote = "The resting ABI should be reported as abnormal (ABI ≤0.90), borderline (ABI 0.91–0.99), normal (ABI 1.00–1.40), or noncompressible (ABI >1.40)." },
+]

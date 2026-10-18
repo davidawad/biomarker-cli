@@ -1,6 +1,6 @@
 use serde_json::json;
 
-use crate::cli::{MarkerAddArgs, MarkerCmd, MarkerEditArgs};
+use crate::cli::{LoincCmd, MarkerAddArgs, MarkerCmd, MarkerEditArgs};
 use crate::context::Ctx;
 use crate::db::{int, opt_real, real, Db, RowExt};
 use crate::error::{AppError, Result};
@@ -20,7 +20,33 @@ pub fn run(ctx: &Ctx, cmd: MarkerCmd) -> Result<()> {
         MarkerCmd::Alias { marker, aliases, remove } => alias(ctx, &marker, &aliases, remove),
         MarkerCmd::Categories => categories(ctx),
         MarkerCmd::Sync { file, dry_run } => sync(ctx, file.as_deref(), dry_run),
+        MarkerCmd::Loinc { cmd } => loinc(ctx, cmd),
     }
+}
+
+fn loinc(ctx: &Ctx, cmd: LoincCmd) -> Result<()> {
+    use crate::interop::loinc as map;
+    let db = ctx.db()?;
+    let cat = Catalog::load(&db)?;
+    match cmd {
+        LoincCmd::Add { marker, code, relation } => {
+            let m = cat.get(&marker)?;
+            map::add(&db, m, &code, &relation)?;
+            ctx.info(&format!("LOINC {} now maps to {} ({relation})", code.trim(), m.slug));
+        }
+        LoincCmd::Remove { marker, code } => {
+            let m = cat.get(&marker)?;
+            map::remove(&db, m, &code)?;
+            ctx.info(&format!("removed LOINC {} from {}", code.trim(), m.slug));
+        }
+        LoincCmd::List { marker } => {
+            let id = marker.as_deref().map(|m| cat.get(m).map(|m| m.id)).transpose()?;
+            let rows = map::list(&db, id)?.iter().map(to_record).collect();
+            return ctx
+                .emit(&Report::list("marker_loinc", rows).table_columns(&["marker", "loinc", "relation", "source"]));
+        }
+    }
+    Ok(())
 }
 
 pub fn marker_record(m: &Marker) -> Record {

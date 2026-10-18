@@ -8,38 +8,12 @@ description = "Ratio of plasma aldosterone to renin, the primary screening index
 set = "endocrine-society-2025"
 kind = "diagnostic"
 low = 15
-when = { method = "lc-ms/ms", markers = [ { slug = "aldosterone", op = ">=", value = 7.5, unit = "ng/dL" }, { slug = "renin-activity", op = "<=", value = 1, unit = "ng/mL/h" } ] }
+when = { method = "lc-ms/ms", markers = [ { slug = "aldosterone", op = ">=", value = 7.5, unit = "ng/dL" }, { slug = "plasma-renin-activity", op = "<=", value = 1, unit = "ng/mL/h" } ] }
 population = "Adults screened for primary aldosteronism; ARR with PAC and PRA by LC-MS/MS (Endocrine Society 2025 criteria as summarised in a 2026 analysis)"
 evidence = "review"
 note = "Endocrine Society 2025 screening criterion: ARR above 15, applied together with PAC at or above 7.5 ng/dL and PRA at or below 1 ng/mL/h. Cited via the Hypertension 2026 analysis, not the guideline full text."
 citations = [
   { pmid = "42751802", doi = "10.1161/HYPERTENSIONAHA.126.27634", title = "Evaluation of Current Screening Thresholds for the Detection of Primary Aldosteronism.", url = "https://pubmed.ncbi.nlm.nih.gov/42751802/", locator = "Abstract, Background", quote = "plasma renin activity (PRA) ≤1 ng/mL per hour, plasma aldosterone concentration (PAC) ≥7.5 ng/dL by liquid chromatography-tandem mass spectrometry, and aldosterone-to-renin ratio >15" },
-]
-
-[[range]]
-set = "age-specific-arr-2026"
-kind = "diagnostic"
-low = 2.4
-unit = "ng/dL per mIU/L"
-when = { age_max = 49 }
-population = "Hypertensive patients: 281 with confirmed primary aldosteronism and 1242 with essential hypertension, screened by ARR"
-evidence = "outcome"
-note = "Recommended screening ARR for patients under 50 (unified cut-off, high sensitivity and specificity). Source expresses ARR as (ng/dL)/(mU/L), i.e. aldosterone in ng/dL and renin in mU/L; not converted to the canonical renin unit."
-citations = [
-  { pmid = "41706428", doi = "10.1111/jch.70218", title = "Optimal Cut-Off Values of the Aldosterone-Renin Ratio in Different Age Groups for Primary Aldosteronism Screening.", url = "https://pubmed.ncbi.nlm.nih.gov/41706428/", locator = "Abstract, Results", quote = "Further evaluation revealed that for patients under 50-years-old, a unified ARR cut-off of 2.4 provided high sensitivity and specificity, while for patients aged 50 or older, a cut-off of 3.7 was more appropriate." },
-]
-
-[[range]]
-set = "age-specific-arr-2026"
-kind = "diagnostic"
-low = 3.7
-unit = "ng/dL per mIU/L"
-when = { age_min = 50 }
-population = "Hypertensive patients: 281 with confirmed primary aldosteronism and 1242 with essential hypertension, screened by ARR"
-evidence = "outcome"
-note = "Recommended screening ARR for patients aged 50 or older. Source expresses ARR as (ng/dL)/(mU/L); not converted to the canonical renin unit."
-citations = [
-  { pmid = "41706428", doi = "10.1111/jch.70218", title = "Optimal Cut-Off Values of the Aldosterone-Renin Ratio in Different Age Groups for Primary Aldosteronism Screening.", url = "https://pubmed.ncbi.nlm.nih.gov/41706428/", locator = "Abstract, Results", quote = "Further evaluation revealed that for patients under 50-years-old, a unified ARR cut-off of 2.4 provided high sensitivity and specificity, while for patients aged 50 or older, a cut-off of 3.7 was more appropriate." },
 ]
 
 [[range]]
@@ -64,17 +38,4 @@ evidence = "outcome"
 note = "ARR after the seated saline infusion test, LC-MS/MS (sensitivity 64%, specificity 85%). Study-derived threshold."
 citations = [
   { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", locator = "Abstract, Results", quote = "At a PAC cutoff of ≥5.0 ng/dl (138.7 pmol/L), sensitivity was 68% and specificity was 85%, while an ARR cutoff of ≥ 19.0 (ng/dl)/(ng·ml⁻¹·h⁻¹) yielded a sensitivity of 64% and a specificity of 85%." },
-]
-
-[[range]]
-set = "china-sandwich-immunoassay-2026"
-kind = "diagnostic"
-low = 11
-unit = "ng/L/mU/L"
-when = { method = "chemiluminescent sandwich immunoassay" }
-population = "676 Chinese adults suspected of primary aldosteronism at seven centres"
-evidence = "outcome"
-note = "ARR cut-off on a sandwich immunoassay (90% sensitivity, 62% specificity). Source unit ng/L per mU/L is not convertible to the canonical unit; assay-specific."
-citations = [
-  { pmid = "42343549", doi = "10.1515/cclm-2026-0579", title = "New insights in primary aldosteronism diagnosis: a prospective multicenter study.", url = "https://pubmed.ncbi.nlm.nih.gov/42343549/", locator = "Abstract, Results", quote = "An aldosterone renin ratio (ARR) cut-off of 11 ng/L/mU/L showed 90 % sensitivity (95 % CI: 85-94 %) and 62 % specificity (95 % CI: 58-67 %)" },
 ]

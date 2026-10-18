@@ -600,6 +600,18 @@ fn measurement_params(m: &NewMeasurement) -> Vec<Value> {
     ]
 }
 
+/// Overwrite measurement `id` with `m`.
+pub fn update_measurement(db: &Db, id: i64, m: &NewMeasurement) -> Result<()> {
+    let mut p = measurement_params(m);
+    p.push(int(id));
+    db.execute(
+        "UPDATE measurements SET person_id = ?1, marker_id = ?2, taken_at = ?3, value_raw = ?4, unit_raw = ?5, value = ?6,
+         qualifier = ?7, lab = ?8, fasting = ?9, note = ?10, tags = ?11, batch_id = ?12, created_at = ?13 WHERE id = ?14",
+        &p,
+    )
+    .map(|_| ())
+}
+
 /// Insert a measurement honouring the duplicate policy. Returns the outcome and row id.
 pub fn insert_measurement(db: &Db, m: &NewMeasurement, policy: Dedupe) -> Result<(Outcome, i64)> {
     match (existing_measurement(db, m.person_id, m.marker_id, &m.taken_at)?, policy) {
@@ -608,13 +620,7 @@ pub fn insert_measurement(db: &Db, m: &NewMeasurement, policy: Dedupe) -> Result
             Err(AppError::invalid(format!("duplicate measurement at {} (use --dedupe skip|replace)", m.taken_at)))
         }
         (Some(id), Dedupe::Replace) => {
-            let mut p = measurement_params(m);
-            p.push(int(id));
-            db.execute(
-                "UPDATE measurements SET person_id = ?1, marker_id = ?2, taken_at = ?3, value_raw = ?4, unit_raw = ?5, value = ?6,
-                 qualifier = ?7, lab = ?8, fasting = ?9, note = ?10, tags = ?11, batch_id = ?12, created_at = ?13 WHERE id = ?14",
-                &p,
-            )?;
+            update_measurement(db, id, m)?;
             Ok((Outcome::Replaced, id))
         }
         (None, _) => {
@@ -629,6 +635,8 @@ pub fn insert_measurement(db: &Db, m: &NewMeasurement, policy: Dedupe) -> Result
 }
 
 pub fn delete_measurement(db: &Db, id: i64) -> Result<usize> {
+    // the import link goes with the row, or a re-import would find nothing to amend
+    db.execute("DELETE FROM result_source WHERE kind = 'measurement' AND target_id = ?1", &[int(id)])?;
     db.execute("DELETE FROM measurements WHERE id = ?1", &[int(id)])
 }
 
@@ -755,15 +763,17 @@ pub struct NewObservation {
     pub batch_id: Option<String>,
 }
 
-/// Insert a qualitative observation honouring the duplicate policy.
-pub fn insert_observation(db: &Db, o: &NewObservation, policy: Dedupe) -> Result<Outcome> {
-    let existing = db
+pub fn existing_observation(db: &Db, person_id: i64, marker_id: i64, taken_at: &str) -> Result<Option<i64>> {
+    Ok(db
         .query_opt(
             "SELECT id FROM observations WHERE person_id = ?1 AND marker_id = ?2 AND taken_at = ?3",
-            &[int(o.person_id), int(o.marker_id), text(&o.taken_at)],
+            &[int(person_id), int(marker_id), text(taken_at)],
         )?
-        .and_then(|r| r.i(0));
-    let params = vec![
+        .and_then(|r| r.i(0)))
+}
+
+fn observation_params(o: &NewObservation) -> Vec<Value> {
+    vec![
         int(o.person_id),
         int(o.marker_id),
         text(&o.taken_at),
@@ -775,30 +785,40 @@ pub fn insert_observation(db: &Db, o: &NewObservation, policy: Dedupe) -> Result
         opt_text(o.lab.as_ref()),
         opt_text(o.batch_id.as_ref()),
         text(crate::util::now_iso()),
-    ];
-    match (existing, policy) {
+    ]
+}
+
+/// Overwrite observation `id` with `o`.
+pub fn update_observation(db: &Db, id: i64, o: &NewObservation) -> Result<()> {
+    let mut p = observation_params(o);
+    p.push(int(id));
+    db.execute(
+        "UPDATE observations SET person_id = ?1, marker_id = ?2, taken_at = ?3, text = ?4, flag = ?5, range_low = ?6,
+         range_high = ?7, note = ?8, lab = ?9, batch_id = ?10, created_at = ?11 WHERE id = ?12",
+        &p,
+    )
+    .map(|_| ())
+}
+
+/// Insert a new observation row without any duplicate check; returns its id.
+pub fn insert_observation_row(db: &Db, o: &NewObservation) -> Result<i64> {
+    db.execute(
+        "INSERT INTO observations (person_id, marker_id, taken_at, text, flag, range_low, range_high, note, lab, batch_id, created_at)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)",
+        &observation_params(o),
+    )?;
+    Ok(db.last_insert_rowid())
+}
+
+/// Insert a qualitative observation honouring the duplicate policy.
+pub fn insert_observation(db: &Db, o: &NewObservation, policy: Dedupe) -> Result<Outcome> {
+    match (existing_observation(db, o.person_id, o.marker_id, &o.taken_at)?, policy) {
         (Some(_), Dedupe::Skip) => Ok(Outcome::Skipped),
         (Some(_), Dedupe::Error) => {
             Err(AppError::invalid(format!("duplicate observation at {} (use --dedupe skip|replace)", o.taken_at)))
         }
-        (Some(id), Dedupe::Replace) => {
-            let mut p = params;
-            p.push(int(id));
-            db.execute(
-                "UPDATE observations SET person_id = ?1, marker_id = ?2, taken_at = ?3, text = ?4, flag = ?5, range_low = ?6,
-                 range_high = ?7, note = ?8, lab = ?9, batch_id = ?10, created_at = ?11 WHERE id = ?12",
-                &p,
-            )?;
-            Ok(Outcome::Replaced)
-        }
-        (None, _) => {
-            db.execute(
-                "INSERT INTO observations (person_id, marker_id, taken_at, text, flag, range_low, range_high, note, lab, batch_id, created_at)
-                 VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)",
-                &params,
-            )?;
-            Ok(Outcome::Inserted)
-        }
+        (Some(id), Dedupe::Replace) => update_observation(db, id, o).map(|()| Outcome::Replaced),
+        (None, _) => insert_observation_row(db, o).map(|_| Outcome::Inserted),
     }
 }
 

@@ -1,0 +1,7 @@
+slug = "urine-nitrite"
+name = "Urine Nitrite (dipstick)"
+category = "urinalysis"
+unit = "qualitative"
+loinc = "5802-4"
+description = "Dipstick test for nitrite produced from urinary nitrate by many Enterobacterales. The expected result is negative; a positive result suggests bacteriuria, while a negative result does not exclude infection."
+no_reference = "Qualitative dipstick result (negative or positive); no numeric reference interval applies."

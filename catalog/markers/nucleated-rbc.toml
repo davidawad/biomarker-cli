@@ -1,0 +1,20 @@
+slug = "nucleated-rbc"
+name = "Nucleated red blood cells (NRBC)"
+category = "cbc"
+unit = "/100 WBC"
+aliases = ["nrbc"]
+loinc = "58413-6"
+description = "Immature red cells with a nucleus that normally stay in bone marrow; they appear in blood with severe hypoxia, marrow stress, haemolysis, infiltration or sepsis. Any count above zero is abnormal in adults."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.0
+high = 0.5
+when = { age = [20.0, 200] }
+population = "280 healthy adults aged 20 to over 60 years (age groups 20-40, 41-60, >60; 144 males and 136 females), Sysmex XN-2000 analyser, 2.5th-97.5th percentile reference range per CLSI guidance"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "26915613", doi = "10.3343/alm.2016.36.3.244", title = "Establishment of Age- and Gender-Specific Reference Ranges for 36 Routine and 57 Cell Population Data Items in a New Automated Blood Cell Analyzer, Sysmex XN-2000.", locator = "Results, reference range table" },
+]
+note = "Analyser reports NRBC as NRBC(%); equated with per 100 WBC here, which the source does not state explicitly. Single-centre study; no significant sex or age difference reported for NRBC(%)."

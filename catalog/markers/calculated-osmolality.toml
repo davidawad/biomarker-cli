@@ -1,0 +1,18 @@
+slug = "calculated-osmolality"
+name = "Calculated Serum Osmolality"
+category = "electrolyte"
+unit = "mOsm/kg"
+loinc = "18182-6"
+description = "Estimated serum osmolality from measured sodium, glucose and urea: 2 x Na + glucose/18 + BUN/2.8 (glucose in mg/dL, BUN in mg/dL). Compared with measured osmolality to compute the osmolal gap, and used to screen for hyperosmolar states and toxic alcohol exposure."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 275
+high = 295
+population = "Adults (normal range of plasma tonicity as stated by the source; not restricted by sex or age)"
+evidence = "consensus"
+citations = [
+  { pmid = "27343561", title = "Basic concepts and practical equations on osmolality: Biochemical approach.", locator = "Abstract" },
+]
+note = "Source gives the normal range for plasma tonicity (mOsm/kg water) and states the calculated-osmolality formula. Narrative review, not a single study; reference interval applied to calculated osmolality as the source's comparison value."

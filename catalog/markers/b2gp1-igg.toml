@@ -1,0 +1,30 @@
+slug = "b2gp1-igg"
+name = "Anti-Beta2-Glycoprotein I IgG"
+category = "autoimmune"
+unit = "U/mL"
+loinc = "44448-9"
+description = "IgG antibodies against beta2-glycoprotein I, a plasma protein that binds phospholipids. Persistent medium or high titres are antiphospholipid syndrome criteria and are linked to thrombosis risk."
+aliases = ["anti-beta2gpi igg", "anti-β2gpi igg", "anti-beta2-glycoprotein i igg", "anti-beta2-glycoprotein-igg"]
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 40
+high = 79
+population = "Patients in a Turkish cohort used to validate the 2023 ACR/EULAR APS classification criteria"
+evidence = "cohort"
+citations = [
+  { pmid = "39410609", doi = "10.3390/diagnostics14192205", url = "https://pubmed.ncbi.nlm.nih.gov/39410609/", title = "The Validation of the 2023 ACR/EULAR Antiphospholipid Syndrome Classification Criteria in a Cohort from Turkey.", locator = "Methods, aPL antibody positivity definition" },
+]
+note = "2023 ACR/EULAR APS criteria: moderate aPL positivity, applied to anti-beta2GPI as well as anticardiolipin. The source reports the titre in 'units' and does not state U/mL explicitly; treat the equivalence as unverified. Sydney 2006 uses a >99th percentile cut-off that is not expressed numerically in the retrieved text. Source kind: decision. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "acr-eular-2023-aps"
+kind = "warn"
+high = 80
+population = "Patients in a Turkish cohort used to validate the 2023 ACR/EULAR APS classification criteria"
+evidence = "cohort"
+citations = [
+  { pmid = "39410609", doi = "10.3390/diagnostics14192205", url = "https://pubmed.ncbi.nlm.nih.gov/39410609/", title = "The Validation of the 2023 ACR/EULAR Antiphospholipid Syndrome Classification Criteria in a Cohort from Turkey.", locator = "Methods, aPL antibody positivity definition" },
+]
+note = "2023 ACR/EULAR APS criteria: high aPL positivity (>=80), applied to anti-beta2GPI as well as anticardiolipin. The source reports the titre in 'units' and does not state U/mL explicitly; treat the equivalence as unverified. Source kind: decision. Source band >= 80; stored as the warn high bound 80."

@@ -1,0 +1,6 @@
+slug = "phenoage-acceleration"
+name = "PhenoAge Acceleration"
+category = "aging"
+unit = "years"
+description = "Difference between PhenoAge biological age and chronological age, in years. Zero means biological age equals chronological age; positive values mean older-than-expected biology."
+no_reference = "Difference score with no published clinical reference interval; zero is the neutral point."

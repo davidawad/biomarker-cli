@@ -1,0 +1,57 @@
+slug = "plr"
+name = "Platelet-to-Lymphocyte Ratio"
+unit = "ratio"
+category = "hematology"
+description = "Platelet-to-lymphocyte ratio (PLR) is the platelet count divided by the lymphocyte count from a complete blood count, a computed inflammation index. It is tracked as a low-cost systemic inflammation marker and is studied as a prognostic index in cancer and cardiovascular disease. No single clinical cut-off is established. Expected result in healthy people: within the sex- and age-specific reference interval, which varies by study and analyser."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 63.15
+high = 191.34
+when = { sex = "male" }
+population = "Healthy adults, Jiangsu region, Eastern China (males, all ages), Sysmex platform"
+evidence = "reference-interval-study"
+note = "Non-parametric 2.5th-97.5th percentile interval, males; the study reports no significant age differences. Analyser-specific."
+citations = [
+  { pmid = "37145057", doi = "10.7754/Clin.Lab.2022.220837", title = "Establishment of Reference Intervals for SII, NLR, PLR, and LMR in Healthy Adults in Jiangsu Region in Eastern China.", locator = "Results", quote = "males (162 x 109/L - 811 x 109/L; 0.89 - 3.26; 63.15 - 191.34; 3.18 - 9.61)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 69.04
+high = 205.62
+when = { sex = "female" }
+population = "Healthy adults, Jiangsu region, Eastern China (females, all ages), Sysmex platform"
+evidence = "reference-interval-study"
+note = "Non-parametric 2.5th-97.5th percentile interval, females; the study reports no significant age differences. Analyser-specific."
+citations = [
+  { pmid = "37145057", doi = "10.7754/Clin.Lab.2022.220837", title = "Establishment of Reference Intervals for SII, NLR, PLR, and LMR in Healthy Adults in Jiangsu Region in Eastern China.", locator = "Results", quote = "females (165 x 109/L - 792 x 109/L; 0.87 - 3.16; 69.04 - 205.62; 3.46 - 10.96)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 49
+high = 198
+when = { age_min = 18, age_max = 65 }
+population = "Healthy Han Chinese adults aged 18-64, western China (CLSI method, multi-centre)"
+evidence = "reference-interval-study"
+note = "Central reference interval for young adults (18-64) as reported by the study. The study reports lower values in adults 65-79 (see separate range)."
+citations = [
+  { pmid = "30868857", doi = "10.7754/Clin.Lab.2018.180715", title = "Normal Reference Intervals of Neutrophil-To-Lymphocyte Ratio, Platelet-To-Lymphocyte Ratio, Lymphocyte-To-Monocyte Ratio, and Systemic Immune Inflammation Index in Healthy Adults: a Large Multi-Center Study from Western China.", locator = "Abstract (Results)", quote = "PLR, LMR, and SII values were significantly higher in the young adults (18 - 64 years) than in old adults (65 - 79 years) (p < 0.001). ... The RIs of NLR, PLR (adults), PLR (old adults), LMR and SII were 0.88 - 4.0, 49 - 198, 42 - 187, 2.63 - 9.9, 142 x 109/L - 804 x 109/L, respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 42
+high = 187
+when = { age_min = 65, age_max = 80 }
+population = "Healthy Han Chinese adults aged 65-79, western China (CLSI method, multi-centre)"
+evidence = "reference-interval-study"
+note = "Central reference interval for older adults (65-79) as reported by the study."
+citations = [
+  { pmid = "30868857", doi = "10.7754/Clin.Lab.2018.180715", title = "Normal Reference Intervals of Neutrophil-To-Lymphocyte Ratio, Platelet-To-Lymphocyte Ratio, Lymphocyte-To-Monocyte Ratio, and Systemic Immune Inflammation Index in Healthy Adults: a Large Multi-Center Study from Western China.", locator = "Abstract (Results)", quote = "PLR, LMR, and SII values were significantly higher in the young adults (18 - 64 years) than in old adults (65 - 79 years) (p < 0.001). ... The RIs of NLR, PLR (adults), PLR (old adults), LMR and SII were 0.88 - 4.0, 49 - 198, 42 - 187, 2.63 - 9.9, 142 x 109/L - 804 x 109/L, respectively." },
+]

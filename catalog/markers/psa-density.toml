@@ -1,0 +1,18 @@
+slug = "psa-density"
+name = "PSA Density"
+category = "tumour"
+unit = "ng/mL/cm3"
+description = "Serum PSA divided by prostate volume (cm3) measured by imaging. It helps judge whether a raised PSA is explained by a large prostate or suggests clinically significant cancer."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "psa-density-2026"
+kind = "warn"
+high = 0.15
+when = { sex = "male" }
+population = "Men with suspected prostate cancer who had MRI-derived prostate volume (single-centre retrospective cohort)"
+evidence = "cohort"
+citations = [
+  { pmid = "42599322", doi = "10.1007/s00345-026-06613-9", url = "https://pubmed.ncbi.nlm.nih.gov/42599322/", title = "PSA density for clinically significant prostate cancer detection: a retrospective cohort study on the influence of age and prostate volume.", locator = "Abstract, Purpose" },
+]
+note = "PSA density (PSA divided by prostate volume) threshold of 0.15 ng/mL/cm3 used in current practice for clinically significant cancer. The study evaluated its performance across volumes and ages; boundary not stated in the quoted sentence. Not a PSA mass-concentration threshold; the unit is ng/mL per cm3. Source kind: decision. Source band >= 0.15; stored as the warn high bound 0.15."

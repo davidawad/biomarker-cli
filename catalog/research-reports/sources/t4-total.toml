@@ -1,0 +1,47 @@
+slug = "t4-total"
+name = "Total T4 (Thyroxine)"
+loinc = "3026-2"
+category = "thyroid"
+unit = "µg/dL"
+description = "Total serum thyroxine, bound plus free. Levels follow binding protein concentrations, so it rises in pregnancy and with oestrogen exposure; free T4 is usually preferred for diagnosis."
+
+[[range]]
+set = "second-trimester-ethnicity-2007"
+kind = "reference"
+low = 6.90
+high = 13.67
+when = { pregnancy = true, trimester = 2 }
+population = "Pregnant women in the US (Asian, Black, Hispanic and White), antibody-negative with normal TSH, ARCHITECT immunoassay"
+evidence = "reference-interval"
+note = "Nonparametric 2.5th-97.5th percentile for all participants, in ug/dL as printed. Source also gives 89.0-176.3 nmol/L."
+citations = [
+  { pmid = "17712003", doi = "10.1373/clinchem.2007.089680", title = "Second-trimester reference intervals for thyroid tests: the role of ethnicity.", url = "https://pubmed.ncbi.nlm.nih.gov/17712003/", locator = "Abstract, Results", quote = "89.0-176.3 nmol/L (6.90-13.67 mug/dL; TT4)" },
+]
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 59.31
+high = 150.72
+unit = "nmol/L"
+when = { sex = "male", age_min = 9, age_max = 12 }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval"
+note = "Age 9 to under 12 years, male. The results sentence prints pmol/L, but the same paper's abstract reports total T4 in nmol/L (72.33-171.60 nmol/L); the magnitude matches nmol/L, so the range is read as nmol/L and converted to µg/dL."
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", locator = "Results", quote = "The RI of T4 also exhibited a difference between males and females in the 9- to 12-year age group (59.31-150.72 vs. 63.29-146.94 pmol/L for males and females, respectively)." },
+]
+
+[[range]]
+set = "chinese-pediatric-2021"
+kind = "reference"
+low = 63.29
+high = 146.94
+unit = "nmol/L"
+when = { sex = "female", age_min = 9, age_max = 12 }
+population = "Healthy Chinese children aged 1 day to 12 years (n=1,279), Mindray CL-6000i immunoassay"
+evidence = "reference-interval"
+note = "Age 9 to under 12 years, female. Printed as pmol/L in the results sentence; read as nmol/L (the abstract reports total T4 in nmol/L) and converted to µg/dL."
+citations = [
+  { pmid = "34765471", doi = "10.21037/tp-21-389", title = "Age- and sex-specific reference intervals for thyroid hormones in a Chinese pediatrics: a prospective observational study of 1,279 healthy children.", url = "https://pubmed.ncbi.nlm.nih.gov/34765471/", locator = "Results", quote = "The RI of T4 also exhibited a difference between males and females in the 9- to 12-year age group (59.31-150.72 vs. 63.29-146.94 pmol/L for males and females, respectively)." },
+]

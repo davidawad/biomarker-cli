@@ -1,6 +1,6 @@
 # Biomarker catalog
 
-314 markers, 1862 ranges (1734 cited). See [coverage](coverage.md) for the range coverage matrix.
+382 markers, 2008 ranges (1880 cited). See [coverage](coverage.md) for the range coverage matrix.
 
 Range sets:
 
@@ -462,24 +462,52 @@ Range sets:
 * `zhou-2002-china-as-cited-2026`: Published source set: zhou-2002-china-as-cited-2026
 * `zimbabwe-adults-2003-c3c4`: Published source set: zimbabwe-adults-2003-c3c4
 * `population-ri`: Reference intervals from single-population studies (one country, cohort or analyser); select with range_sets
+* `acc-aha-2018-cholesterol-7-5-19-9`: Published source set: acc-aha-2018-cholesterol-7-5-19-9
+* `acc-aha-2026-dyslipidemia-5-10`: Published source set: acc-aha-2026-dyslipidemia-5-10
+* `acr-eular-2010-ra`: Published source set: acr-eular-2010-ra
+* `acromegaly-octreotide-switch-2021`: Published source set: acromegaly-octreotide-switch-2021
+* `age-specific-arr-2026`: Published source set: age-specific-arr-2026
+* `aha-life-essential-8-2022-50-79`: Published source set: aha-life-essential-8-2022-50-79
+* `beta-hydroxybutyrate-bands-1-6-3-0`: Published source set: beta-hydroxybutyrate-bands-1-6-3-0
+* `chest-2026-rhabdo-review`: Published source set: chest-2026-rhabdo-review
+* `dimension-vista-2017`: Published source set: dimension-vista-2017
+* `espghan-2020-coeliac`: Published source set: espghan-2020-coeliac
+* `hcg-48h-rise-case-series-2021`: Published source set: hcg-48h-rise-case-series-2021
+* `kdigo-ckd-mbd-2017`: Published source set: kdigo-ckd-mbd-2017
+* `kodama-2009-crf-mets`: Published source set: kodama-2009-crf-mets
+* `nice-ng203-26-52-265-2`: Published source set: nice-ng203-26-52-265-2
+* `pct-sepsis-meta-2023-0-1-0-25`: Published source set: pct-sepsis-meta-2023-0-1-0-25
+* `psa-density-2026`: Published source set: psa-density-2026
+* `scct-cac-drs-2018-100-299`: Published source set: scct-cac-drs-2018-100-299
+* `usa-elecsys-vitd-2019`: Published source set: usa-elecsys-vitd-2019
+* `frax-10y-bands-11-1-24-4`: Published source set: frax-10y-bands-11-1-24-4
+* `frax-10y-bands-12-2-19-4`: Published source set: frax-10y-bands-12-2-19-4
+* `frax-10y-bands-16-5-26-4`: Published source set: frax-10y-bands-16-5-26-4
+* `frax-10y-bands-20-3-32-5`: Published source set: frax-10y-bands-20-3-32-5
+* `frax-10y-bands-4-5-11-4`: Published source set: frax-10y-bands-4-5-11-4
+* `frax-10y-bands-6-0-14-6`: Published source set: frax-10y-bands-6-0-14-6
+* `frax-10y-bands-7-3-11-7`: Published source set: frax-10y-bands-7-3-11-7
+* `frax-10y-bands-8-6-19-8`: Published source set: frax-10y-bands-8-6-19-8
+* `frax-10y-bands-9-5-15-2`: Published source set: frax-10y-bands-9-5-15-2
 
 ## adrenal
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [17-Hydroxyprogesterone](17-oh-progesterone.md) | `17-oh-progesterone` | ng/dL | - | 6 | 6 |
+| [17-Hydroxyprogesterone](17-ohp.md) | `17-ohp` | ng/dL | - | 6 | 6 |
 | [Aldosterone-to-Renin Ratio](aldosterone-renin-ratio.md) | `aldosterone-renin-ratio` | ng/dL per ng/mL/h | - | 3 | 3 |
 | [Aldosterone](aldosterone.md) | `aldosterone` | ng/dL | - | 8 | 8 |
 | [Androstenedione](androstenedione.md) | `androstenedione` | ng/dL | - | 2 | 2 |
-| [Cortisol, Late-Night Salivary](cortisol-salivary-late-night.md) | `cortisol-salivary-late-night` | ng/dL | - | 7 | 7 |
-| [Cortisol, Free, 24-Hour Urine](cortisol-urine-free-24h.md) | `cortisol-urine-free-24h` | µg/24 h | - | 2 | 2 |
+| [Aldosterone/Renin Ratio (direct renin concentration)](arr-direct-renin.md) | `arr-direct-renin` | ng/dL per mIU/L | - | 3 | 3 |
 | [DHEA (Dehydroepiandrosterone, unconjugated)](dhea.md) | `dhea` | ng/dL | - | 7 | 7 |
-| [Metanephrine, Plasma Free](metanephrine-plasma-free.md) | `metanephrine-plasma-free` | pg/mL | - | 3 | 3 |
-| [Metanephrines, Fractionated, 24-Hour Urine](metanephrines-urine-24h.md) | `metanephrines-urine-24h` | µg/24 h | - | 2 | 2 |
-| [Normetanephrine, Plasma Free](normetanephrine-plasma-free.md) | `normetanephrine-plasma-free` | pg/mL | - | 4 | 4 |
+| [Direct Renin Concentration](direct-renin.md) | `direct-renin` | mIU/L | - | 3 | 3 |
+| [Metanephrine, Plasma Free](metanephrine-free.md) | `metanephrine-free` | pg/mL | - | 3 | 3 |
+| [Normetanephrine, Plasma Free](normetanephrine.md) | `normetanephrine` | pg/mL | - | 4 | 4 |
+| [Plasma Renin Activity](plasma-renin-activity.md) | `plasma-renin-activity` | ng/mL/h | - | 2 | 2 |
 | [Pregnenolone](pregnenolone.md) | `pregnenolone` | ng/dL | - | 7 | 7 |
-| [Plasma Renin Activity](renin-activity.md) | `renin-activity` | ng/mL/h | - | 2 | 2 |
-| [Direct Renin Concentration](renin-direct.md) | `renin-direct` | mIU/L | - | 3 | 3 |
+| [Cortisol, Late-Night Salivary](salivary-cortisol.md) | `salivary-cortisol` | ng/dL | - | 7 | 7 |
+| [Cortisol, Free, 24-Hour Urine](urine-free-cortisol.md) | `urine-free-cortisol` | µg/24 h | - | 2 | 2 |
+| [Metanephrines, Fractionated, 24-Hour Urine](urine-metanephrines.md) | `urine-metanephrines` | µg/24 h | - | 2 | 2 |
 
 ## aging
 
@@ -487,29 +515,54 @@ Range sets:
 |---|---|---|---|---|---|
 | [DunedinPACE (Pace of Aging)](dunedinpace.md) | `dunedinpace` | years/year | - | 1 | 1 |
 | [GrimAge Acceleration](grimage-acceleration.md) | `grimage-acceleration` | years | - | 1 | 1 |
+| [PhenoAge Acceleration](phenoage-acceleration.md) | `phenoage-acceleration` | years | - | 0 | 0 |
+| [PhenoAge (Levine Phenotypic Age)](phenoage.md) | `phenoage` | years | - | 0 | 0 |
+
+## allergy
+
+| Marker | Slug | Unit | LOINC | Ranges | Cited |
+|---|---|---|---|---|---|
+| [Specific IgE, Birch (White Birch)](ige-birch.md) | `ige-birch` | kU/L | 41874-9 | 3 | 3 |
+| [Specific IgE, Cat Dander](ige-cat-dander.md) | `ige-cat-dander` | kU/L | 6833-8 | 2 | 2 |
+| [Specific IgE, Cow Milk](ige-cow-milk.md) | `ige-cow-milk` | kU/L | 7258-7 | 4 | 4 |
+| [Specific IgE, Dog Dander](ige-dog-dander.md) | `ige-dog-dander` | kUA/L | 6098-8 | 1 | 1 |
+| [Specific IgE, Dust Mite (D. pteronyssinus)](ige-dust-mite-d-pteronyssinus.md) | `ige-dust-mite-d-pteronyssinus` | kUA/L | 6096-2 | 1 | 1 |
+| [Specific IgE, Egg White](ige-egg-white.md) | `ige-egg-white` | kUA/L | 6106-9 | 2 | 2 |
+| [Specific IgE, Peanut](ige-peanut.md) | `ige-peanut` | kUA/L | 6206-7 | 1 | 1 |
+| [Specific IgE, Timothy Grass](ige-timothy-grass.md) | `ige-timothy-grass` | kUA/L | 6265-3 | 1 | 1 |
 
 ## amino-acid
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [Arginine](arginine.md) | `arginine` | µmol/L | - | 1 | 1 |
+| [Citrulline](citrulline.md) | `citrulline` | µmol/L | 2130-3 | 3 | 3 |
 | [Glutamine](glutamine.md) | `glutamine` | µmol/L | - | 1 | 1 |
+| [Glycine](glycine.md) | `glycine` | µmol/L | 2391-1 | 3 | 3 |
+| [Isoleucine](isoleucine.md) | `isoleucine` | µmol/L | 2508-0 | 3 | 3 |
 | [Leucine](leucine.md) | `leucine` | µmol/L | - | 3 | 3 |
+| [Lysine](lysine.md) | `lysine` | µmol/L | 2585-8 | 3 | 3 |
+| [Methionine](methionine.md) | `methionine` | µmol/L | 2622-9 | 3 | 3 |
 | [Phenylalanine/Tyrosine ratio](phe-tyr-ratio.md) | `phe-tyr-ratio` | ratio | - | 1 | 1 |
 | [Phenylalanine](phenylalanine.md) | `phenylalanine` | µmol/L | - | 4 | 4 |
 | [Tyrosine](tyrosine.md) | `tyrosine` | µmol/L | - | 1 | 1 |
+| [Valine](valine.md) | `valine` | umol/L | 3118-7 | 1 | 1 |
 
 ## autoimmune
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
+| [Antinuclear Antibody (ANA) Screen](ana-screen.md) | `ana-screen` | titer | 8061-4 | 1 | 1 |
 | [Antinuclear Antibody Titer (HEp-2 IFA)](ana-titer.md) | `ana-titer` | titer (reciprocal of dilution) | 5048-4 | 2 | 2 |
-| [Anti-Beta2-Glycoprotein I IgG](anti-beta2-glycoprotein-igg.md) | `anti-beta2-glycoprotein-igg` | U/mL | 44448-9 | 1 | 1 |
-| [Anti-Cyclic Citrullinated Peptide Antibodies](anti-ccp.md) | `anti-ccp` | U/mL | 53027-9 | 0 | 0 |
-| [Anti-dsDNA Antibodies](anti-dsdna.md) | `anti-dsdna` | IU/mL | 5130-0 | 1 | 1 |
-| [Anticardiolipin IgG](anticardiolipin-igg.md) | `anticardiolipin-igg` | GPL/mL | 3181-5 | 2 | 2 |
-| [Rheumatoid Factor](rheumatoid-factor.md) | `rheumatoid-factor` | IU/mL | 11572-5 | 0 | 0 |
-| [Tissue Transglutaminase IgA](ttg-iga.md) | `ttg-iga` | U/mL | 31017-7 | 0 | 0 |
+| [Anti-Cyclic Citrullinated Peptide Antibodies (multiple of upper limit of normal)](anti-ccp-uln-multiple.md) | `anti-ccp-uln-multiple` | x ULN | - | 1 | 1 |
+| [Anti-Cyclic Citrullinated Peptide Antibodies](anti-ccp.md) | `anti-ccp` | U/mL | 53027-9 | 1 | 1 |
+| [Anti-dsDNA Antibodies](anti-dsdna.md) | `anti-dsdna` | IU/mL | 5130-0 | 2 | 2 |
+| [Anticardiolipin IgG](anticardiolipin-igg.md) | `anticardiolipin-igg` | GPL/mL | 3181-5 | 3 | 3 |
+| [Anti-Beta2-Glycoprotein I IgG](b2gp1-igg.md) | `b2gp1-igg` | U/mL | 44448-9 | 2 | 2 |
+| [Rheumatoid Factor (multiple of upper limit of normal)](rheumatoid-factor-uln-multiple.md) | `rheumatoid-factor-uln-multiple` | x ULN | - | 1 | 1 |
+| [Rheumatoid Factor](rheumatoid-factor.md) | `rheumatoid-factor` | IU/mL | 11572-5 | 1 | 1 |
+| [Tissue Transglutaminase IgA (multiple of upper limit of normal)](tissue-transglutaminase-iga-uln-multiple.md) | `tissue-transglutaminase-iga-uln-multiple` | x ULN | - | 2 | 2 |
+| [Tissue Transglutaminase IgA](tissue-transglutaminase-iga.md) | `tissue-transglutaminase-iga` | U/mL | 31017-7 | 0 | 0 |
 
 ## body
 
@@ -517,26 +570,36 @@ Range sets:
 |---|---|---|---|---|---|
 | [Appendicular Lean Mass Index (ALM/height2)](appendicular-lean-mass-index.md) | `appendicular-lean-mass-index` | kg/m2 | - | 6 | 6 |
 | [Biological Age](biological-age.md) | `biological-age` | years | - | 0 | 0 |
-| [Bone Mineral Density T-score](bmd-t-score.md) | `bmd-t-score` | SD | 38263-0 | 3 | 3 |
 | [Body Mass Index](bmi.md) | `bmi` | kg/m² | 39156-5 | 17 | 15 |
 | [Body Fat](body-fat.md) | `body-fat` | % | 41982-0 | 3 | 2 |
-| [Usual Gait Speed](gait-speed.md) | `gait-speed` | m/s | - | 2 | 2 |
+| [Bone Mineral Density T-score](dxa-t-score.md) | `dxa-t-score` | SD | 38263-0 | 3 | 3 |
 | [Handgrip Strength](grip-strength.md) | `grip-strength` | kg | - | 6 | 6 |
 | [Waist Circumference](waist-circumference.md) | `waist-circumference` | cm | - | 8 | 8 |
-| [Waist-to-Height Ratio](waist-to-height-ratio.md) | `waist-to-height-ratio` | ratio | - | 2 | 2 |
+| [Waist-to-Height Ratio](waist-to-height-ratio.md) | `waist-to-height-ratio` | ratio | - | 3 | 3 |
 | [Waist-to-Hip Ratio](waist-to-hip-ratio.md) | `waist-to-hip-ratio` | ratio | - | 2 | 2 |
+| [Usual Gait Speed](walking-speed.md) | `walking-speed` | m/s | - | 2 | 2 |
 | [Body Weight](weight.md) | `weight` | kg | 29463-7 | 0 | 0 |
+
+## body-composition
+
+| Marker | Slug | Unit | LOINC | Ranges | Cited |
+|---|---|---|---|---|---|
+| [Basal Metabolic Rate](basal-metabolic-rate.md) | `basal-metabolic-rate` | kcal/day | - | 0 | 0 |
+| [Height / Length](height.md) | `height` | cm | 8302-2 | 2 | 2 |
 
 ## bone
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Bone-Specific Alkaline Phosphatase](bone-alp.md) | `bone-alp` | µg/L | - | 8 | 8 |
+| [Bone-Specific Alkaline Phosphatase (activity)](bsap-activity.md) | `bsap-activity` | U/L | - | 1 | 1 |
+| [Bone-Specific Alkaline Phosphatase](bsap.md) | `bsap` | µg/L | - | 8 | 8 |
 | [C-Terminal Telopeptide (β-CrossLaps, serum CTX)](ctx.md) | `ctx` | ng/mL | - | 10 | 10 |
+| [FRAX 10-Year Fracture Risk](frax-10y.md) | `frax-10y` | % | - | 15 | 15 |
 | [N-Telopeptide, Urine](ntx-urine.md) | `ntx-urine` | nmol BCE/mmol creatinine | - | 2 | 2 |
 | [Osteocalcin](osteocalcin.md) | `osteocalcin` | ng/mL | - | 3 | 3 |
 | [Procollagen Type 1 N-Terminal Propeptide](p1np.md) | `p1np` | ng/mL | - | 10 | 10 |
-| [Parathyroid Hormone, Intact](pth.md) | `pth` | pg/mL | - | 1 | 1 |
+| [Parathyroid Hormone, Intact (multiple of upper limit of normal)](pth-intact-uln-multiple.md) | `pth-intact-uln-multiple` | x ULN | - | 1 | 1 |
+| [Parathyroid Hormone, Intact](pth-intact.md) | `pth-intact` | pg/mL | - | 2 | 2 |
 | [Parathyroid Hormone-Related Protein](pthrp.md) | `pthrp` | pmol/L | - | 1 | 1 |
 
 ## cardiac
@@ -546,8 +609,10 @@ Range sets:
 | [B-type Natriuretic Peptide](bnp.md) | `bnp` | pg/mL | 30934-4 | 6 | 6 |
 | [High-Sensitivity Cardiac Troponin I](hs-troponin-i.md) | `hs-troponin-i` | ng/L | 89579-7 | 8 | 8 |
 | [High-Sensitivity Cardiac Troponin T](hs-troponin-t.md) | `hs-troponin-t` | ng/L | 67151-1 | 7 | 7 |
+| [Lp-PLA2 Activity (U/L)](lp-pla2-activity-u-l.md) | `lp-pla2-activity-u-l` | U/L | - | 2 | 2 |
 | [Lipoprotein-associated Phospholipase A2](lp-pla2.md) | `lp-pla2` | nmol/min/mL | 79639-2 | 1 | 1 |
 | [NT-proBNP](nt-probnp.md) | `nt-probnp` | pg/mL | 33762-6 | 10 | 10 |
+| [QTc Interval](qtc.md) | `qtc` | ms | 8636-3 | 6 | 6 |
 
 ## cbc
 
@@ -574,7 +639,7 @@ Range sets:
 | [Neutrophils (Absolute)](neutrophils-abs.md) | `neutrophils-abs` | 10^3/µL | 751-8 | 11 | 10 |
 | [Neutrophils (%)](neutrophils-pct.md) | `neutrophils-pct` | % | 770-8 | 1 | 1 |
 | [Neutrophil-to-lymphocyte ratio (NLR)](nlr.md) | `nlr` | ratio | - | 3 | 3 |
-| [Nucleated red blood cells (NRBC)](nrbc.md) | `nrbc` | /100 WBC | 58413-6 | 1 | 1 |
+| [Nucleated red blood cells (NRBC)](nucleated-rbc.md) | `nucleated-rbc` | /100 WBC | 58413-6 | 1 | 1 |
 | [Platelets](platelets.md) | `platelets` | 10^3/µL | 777-3 | 3 | 2 |
 | [Red Blood Cells](rbc.md) | `rbc` | 10^6/µL | 789-8 | 5 | 2 |
 | [Red cell distribution width, standard deviation](rdw-sd.md) | `rdw-sd` | fL | - | 3 | 3 |
@@ -588,7 +653,8 @@ Range sets:
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [Amylase](amylase.md) | `amylase` | U/L | - | 2 | 2 |
-| [Beta-Hydroxybutyrate (Ketones, Blood)](beta-hydroxybutyrate.md) | `beta-hydroxybutyrate` | mmol/L | - | 2 | 2 |
+| [Beta-Hydroxybutyrate (Ketones, Blood)](beta-hydroxybutyrate.md) | `beta-hydroxybutyrate` | mmol/L | - | 4 | 4 |
+| [Creatine Kinase (multiple of upper limit of normal)](ck-uln-multiple.md) | `ck-uln-multiple` | x ULN | - | 3 | 3 |
 | [Creatine Kinase](ck.md) | `ck` | U/L | - | 20 | 20 |
 | [Lactate Dehydrogenase](ldh.md) | `ldh` | U/L | - | 8 | 8 |
 | [Lipase](lipase.md) | `lipase` | U/L | - | 1 | 1 |
@@ -625,27 +691,27 @@ Range sets:
 | [Fibrinogen](fibrinogen.md) | `fibrinogen` | g/L | 3255-7 | 11 | 11 |
 | [International normalized ratio](inr.md) | `inr` | ratio | 6301-6 | 5 | 5 |
 | [Protein C activity](protein-c.md) | `protein-c` | % | 27818-3 | 6 | 6 |
-| [Free protein S antigen](protein-s-free.md) | `protein-s-free` | % | 27822-5 | 6 | 6 |
+| [Free protein S antigen](protein-s.md) | `protein-s` | % | 27822-5 | 6 | 6 |
 | [Prothrombin time](pt.md) | `pt` | s | 5902-2 | 5 | 5 |
 | [Thrombin time](thrombin-time.md) | `thrombin-time` | s | 3243-3 | 3 | 3 |
-| [von Willebrand factor antigen (VWF:Ag)](vwf-antigen.md) | `vwf-antigen` | IU/dL | 27816-7 | 3 | 3 |
+| [von Willebrand factor antigen (VWF:Ag)](von-willebrand-antigen.md) | `von-willebrand-antigen` | IU/dL | 27816-7 | 3 | 3 |
 
 ## composite
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [10-year ASCVD Risk (Pooled Cohort Equations)](ascvd-10y-risk.md) | `ascvd-10y-risk` | % | - | 1 | 1 |
-| [Coronary Artery Calcium Score (Agatston)](coronary-artery-calcium.md) | `coronary-artery-calcium` | Agatston units | - | 2 | 2 |
-| [Life's Essential 8 Cardiovascular Health Score](lifes-essential-8.md) | `lifes-essential-8` | score | - | 1 | 1 |
-| [AHA PREVENT 10-year CVD Risk](prevent-10y-risk.md) | `prevent-10y-risk` | % | - | 2 | 2 |
+| [10-year ASCVD Risk (Pooled Cohort Equations)](ascvd-10y-risk.md) | `ascvd-10y-risk` | % | - | 3 | 3 |
+| [Coronary Artery Calcium Score (Agatston)](cac-score.md) | `cac-score` | Agatston units | - | 4 | 4 |
+| [Life's Essential 8 Cardiovascular Health Score](lifes-essential-8.md) | `lifes-essential-8` | score | - | 3 | 3 |
+| [AHA PREVENT 10-year CVD Risk](prevent-risk.md) | `prevent-risk` | % | - | 4 | 4 |
 
 ## derived
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [AST to Platelet Ratio Index](apri.md) | `apri` | index | - | 2 | 2 |
-| [Atherogenic Index of Plasma](atherogenic-index-of-plasma.md) | `atherogenic-index-of-plasma` | index | - | 2 | 2 |
-| [NAFLD Fibrosis Score](nafld-fibrosis-score.md) | `nafld-fibrosis-score` | score | - | 3 | 3 |
+| [Atherogenic Index of Plasma](atherogenic-index-plasma.md) | `atherogenic-index-plasma` | index | - | 3 | 3 |
+| [NAFLD Fibrosis Score](nafld-fibrosis-score.md) | `nafld-fibrosis-score` | score | - | 4 | 4 |
 | [Triglyceride-Glucose Index](tyg-index.md) | `tyg-index` | index | - | 1 | 1 |
 
 ## electrolyte
@@ -653,20 +719,23 @@ Range sets:
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [Anion Gap](anion-gap.md) | `anion-gap` | mmol/L | 33037-3 | 3 | 3 |
+| [Calculated Serum Osmolality](calculated-osmolality.md) | `calculated-osmolality` | mOsm/kg | 18182-6 | 1 | 1 |
+| [Albumin-Corrected Calcium](corrected-calcium.md) | `corrected-calcium` | mg/dL | 46099-8 | 1 | 1 |
 | [Magnesium](magnesium.md) | `magnesium` | mg/dL | 19123-9 | 17 | 16 |
 | [Osmolal Gap](osmolal-gap.md) | `osmolal-gap` | mOsm/kg | - | 2 | 2 |
-| [Osmolality, Serum](osmolality.md) | `osmolality` | mOsm/kg | 2692-2 | 1 | 1 |
+| [Osmolality, Serum](osmolality.md) | `osmolality` | mOsm/kg | 2692-2 | 2 | 2 |
 
 ## fatty-acid
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
+| [EPA/arachidonic acid ratio](aa-epa-ratio.md) | `aa-epa-ratio` | ratio | - | 1 | 1 |
 | [Arachidonic acid (AA)](arachidonic-acid.md) | `arachidonic-acid` | % | - | 1 | 1 |
 | [Docosahexaenoic acid (DHA)](dha.md) | `dha` | % | - | 1 | 1 |
-| [EPA/arachidonic acid ratio](epa-aa-ratio.md) | `epa-aa-ratio` | ratio | - | 1 | 1 |
 | [Eicosapentaenoic acid (EPA)](epa.md) | `epa` | % | - | 1 | 1 |
 | [Linoleic acid (LA)](linoleic-acid.md) | `linoleic-acid` | % | - | 1 | 1 |
-| [Omega-3 Index](omega-3-index.md) | `omega-3-index` | % | - | 2 | 2 |
+| [Omega-3 Index](omega-3-index.md) | `omega-3-index` | % | - | 3 | 3 |
+| [Omega-6/Omega-3 Ratio](omega6-omega3-ratio.md) | `omega6-omega3-ratio` | ratio | - | 0 | 0 |
 
 ## glycemic
 
@@ -682,17 +751,28 @@ Range sets:
 | [CGM time below range (<70 mg/dL)](cgm-time-below-70.md) | `cgm-time-below-70` | % | - | 3 | 3 |
 | [CGM time in range (70-180 mg/dL)](cgm-time-in-range.md) | `cgm-time-in-range` | % | - | 9 | 9 |
 | [CGM Time in Tight Range (70-140 mg/dL)](cgm-time-in-tight-range.md) | `cgm-time-in-tight-range` | % | - | 1 | 1 |
+| [Estimated Average Glucose (eAG)](estimated-average-glucose.md) | `estimated-average-glucose` | mg/dL | 27353-2 | 0 | 0 |
 | [Fructosamine](fructosamine.md) | `fructosamine` | µmol/L | - | 3 | 3 |
-| [Glucose, 1-hour OGTT (75 g)](glucose-ogtt-1h.md) | `glucose-ogtt-1h` | mg/dL | - | 2 | 2 |
-| [Glucose, 2-hour OGTT (75 g)](glucose-ogtt-2h.md) | `glucose-ogtt-2h` | mg/dL | - | 4 | 4 |
+| [Glucose, 1-hour OGTT (75 g)](glucose-ogtt-1h.md) | `glucose-ogtt-1h` | mg/dL | - | 3 | 3 |
 | [Glycated Albumin](glycated-albumin.md) | `glycated-albumin` | % | - | 9 | 9 |
 | [HOMA-IR](homa-ir.md) | `homa-ir` | ratio | - | 22 | 22 |
+| [Glucose, 2-hour OGTT (75 g)](ogtt-2h-glucose.md) | `ogtt-2h-glucose` | mg/dL | - | 4 | 4 |
 
 ## growth
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
+| [Insulin-like Growth Factor 1 (multiple of upper limit of normal)](igf-1-uln-multiple.md) | `igf-1-uln-multiple` | x ULN | - | 1 | 1 |
 | [Insulin-like Growth Factor Binding Protein 3](igfbp-3.md) | `igfbp-3` | mg/L | - | 10 | 10 |
+
+## hematology
+
+| Marker | Slug | Unit | LOINC | Ranges | Cited |
+|---|---|---|---|---|---|
+| [Platelet Distribution Width](pdw.md) | `pdw` | fL | 32207-3 | 1 | 1 |
+| [Plateletcrit](plateletcrit.md) | `plateletcrit` | % | 51637-7 | 1 | 1 |
+| [Platelet-to-Lymphocyte Ratio](plr.md) | `plr` | ratio | - | 4 | 4 |
+| [Systemic Immune-Inflammation Index](sii.md) | `sii` | 10^9/L | - | 4 | 4 |
 
 ## hormone
 
@@ -701,7 +781,7 @@ Range sets:
 | [Anti-Müllerian Hormone](amh.md) | `amh` | ng/mL | - | 15 | 15 |
 | [Cortisol (AM)](cortisol.md) | `cortisol` | µg/dL | 2143-6 | 16 | 15 |
 | [DHEA-Sulfate](dhea-s.md) | `dhea-s` | µg/dL | 2191-5 | 7 | 6 |
-| [Dihydrotestosterone](dht.md) | `dht` | ng/dL | - | 2 | 2 |
+| [Dihydrotestosterone](dihydrotestosterone.md) | `dihydrotestosterone` | ng/dL | - | 2 | 2 |
 | [Estradiol](estradiol.md) | `estradiol` | pg/mL | 2243-4 | 20 | 19 |
 | [Estrone](estrone.md) | `estrone` | pg/mL | - | 2 | 2 |
 | [Free Androgen Index](free-androgen-index.md) | `free-androgen-index` | % | - | 1 | 1 |
@@ -724,37 +804,49 @@ Range sets:
 | [Complement C3](c3.md) | `c3` | g/L | 4485-9 | 4 | 4 |
 | [Complement C4](c4.md) | `c4` | g/L | 4498-2 | 4 | 4 |
 | [Total Haemolytic Complement (CH50)](ch50.md) | `ch50` | U/mL | 4532-8 | 1 | 1 |
-| [Serum Free Light Chain Kappa/Lambda Ratio](free-light-chain-ratio.md) | `free-light-chain-ratio` | ratio | 48378-4 | 4 | 4 |
+| [Kappa Free Light Chains](free-kappa.md) | `free-kappa` | mg/L | 36916-5 | 2 | 2 |
+| [Lambda Free Light Chains](free-lambda.md) | `free-lambda` | mg/L | 33944-0 | 2 | 2 |
 | [Immunoglobulin A](iga.md) | `iga` | g/L | 2458-8 | 5 | 5 |
 | [Immunoglobulin E, Total](ige-total.md) | `ige-total` | kU/L | 19113-0 | 3 | 3 |
 | [Immunoglobulin G](igg.md) | `igg` | g/L | 2465-3 | 6 | 6 |
 | [Immunoglobulin M](igm.md) | `igm` | g/L | 2472-9 | 8 | 8 |
-| [Kappa Free Light Chains](kappa-free-light-chain.md) | `kappa-free-light-chain` | mg/L | 36916-5 | 2 | 2 |
-| [Lambda Free Light Chains](lambda-free-light-chain.md) | `lambda-free-light-chain` | mg/L | 33944-0 | 2 | 2 |
+| [Serum Free Light Chain Kappa/Lambda Ratio](kappa-lambda-ratio.md) | `kappa-lambda-ratio` | ratio | 48378-4 | 4 | 4 |
 
 ## infectious
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Hepatitis B Surface Antibody](anti-hbs.md) | `anti-hbs` | mIU/mL | 16935-9 | 1 | 1 |
-| [CD4+ T-cell Count](cd4-count.md) | `cd4-count` | cells/µL | 24467-3 | 4 | 4 |
+| [CD4+ T-cell Count](cd4-absolute.md) | `cd4-absolute` | cells/µL | 24467-3 | 4 | 4 |
+| [CD4+ T Cells (Percent of Lymphocytes)](cd4-percent.md) | `cd4-percent` | % | - | 1 | 1 |
+| [Chlamydia trachomatis NAAT](chlamydia-naat.md) | `chlamydia-naat` | qualitative | 21613-5 | 0 | 0 |
+| [Neisseria gonorrhoeae NAAT](gonorrhea-naat.md) | `gonorrhea-naat` | qualitative | 24111-7 | 0 | 0 |
+| [Helicobacter pylori Urea Breath Test](h-pylori-breath.md) | `h-pylori-breath` | per mil | 29891-9 | 1 | 1 |
+| [Hepatitis B Core Antibody, Total](hbcab.md) | `hbcab` | qualitative | 16933-4 | 0 | 0 |
+| [Hepatitis B Surface Antibody](hbsab.md) | `hbsab` | mIU/mL | 16935-9 | 1 | 1 |
+| [Hepatitis B Surface Antigen](hbsag.md) | `hbsag` | qualitative | 5195-3 | 0 | 0 |
 | [Hepatitis B Virus DNA](hbv-dna.md) | `hbv-dna` | IU/mL | 29615-2 | 3 | 3 |
+| [Hepatitis C Antibody](hcv-ab.md) | `hcv-ab` | qualitative | 16128-1 | 0 | 0 |
 | [Hepatitis C Virus RNA](hcv-rna.md) | `hcv-rna` | IU/mL | 11011-4 | 1 | 1 |
+| [HIV-1/2 Antigen/Antibody Combination](hiv-1-2-ag-ab.md) | `hiv-1-2-ag-ab` | qualitative | 105080-6 | 0 | 0 |
 | [HIV-1 RNA (Viral Load)](hiv-viral-load.md) | `hiv-viral-load` | copies/mL | 20447-9 | 3 | 3 |
-| [Measles IgG](measles-igg.md) | `measles-igg` | mIU/mL | - | 3 | 3 |
+| [HPV High-Risk Genotypes DNA (Cervical)](hpv-high-risk.md) | `hpv-high-risk` | qualitative | 95532-8 | 0 | 0 |
+| [Influenza A and B RNA (PCR)](influenza-a-b-pcr.md) | `influenza-a-b-pcr` | qualitative | 92882-0 | 0 | 0 |
+| [Measles IgG](measles-igg.md) | `measles-igg` | mIU/mL | - | 4 | 4 |
 | [Rubella IgG](rubella-igg.md) | `rubella-igg` | IU/mL | 8014-3 | 1 | 1 |
-| [Tetanus Antitoxin IgG](tetanus-antitoxin.md) | `tetanus-antitoxin` | IU/mL | - | 3 | 3 |
+| [SARS-CoV-2 RNA (PCR)](sars-cov-2-pcr.md) | `sars-cov-2-pcr` | qualitative | 94531-1 | 0 | 0 |
+| [Group A Streptococcus Antigen (Rapid)](strep-a-rapid.md) | `strep-a-rapid` | qualitative | 18481-2 | 0 | 0 |
+| [Tetanus Antitoxin IgG](tetanus-antitoxin-igg.md) | `tetanus-antitoxin-igg` | IU/mL | - | 3 | 3 |
 
 ## inflammation
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [C-Reactive Protein (standard assay)](crp-standard.md) | `crp-standard` | mg/L | 1988-5 | 6 | 6 |
+| [C-Reactive Protein (standard assay)](crp.md) | `crp` | mg/L | 1988-5 | 6 | 6 |
 | [Erythrocyte sedimentation rate (ESR)](esr.md) | `esr` | mm/h | 4537-7 | 15 | 15 |
 | [Homocysteine](homocysteine.md) | `homocysteine` | µmol/L | 13965-9 | 16 | 14 |
 | [hs-CRP](hscrp.md) | `hscrp` | mg/L | 30522-7 | 11 | 8 |
 | [Interleukin-6](il-6.md) | `il-6` | pg/mL | 26881-3 | 6 | 6 |
-| [Procalcitonin](procalcitonin.md) | `procalcitonin` | ng/mL | 33959-8 | 6 | 6 |
+| [Procalcitonin](procalcitonin.md) | `procalcitonin` | ng/mL | 33959-8 | 8 | 8 |
 
 ## iron
 
@@ -763,7 +855,7 @@ Range sets:
 | [Ferritin](ferritin.md) | `ferritin` | ng/mL | 2276-4 | 30 | 26 |
 | [Iron, Serum](iron.md) | `iron` | µg/dL | 2498-4 | 7 | 4 |
 | [Reticulocyte hemoglobin (Ret-He / CHr)](reticulocyte-hemoglobin.md) | `reticulocyte-hemoglobin` | pg | - | 15 | 15 |
-| [Soluble transferrin receptor](soluble-transferrin-receptor.md) | `soluble-transferrin-receptor` | mg/L | 30248-9 | 3 | 3 |
+| [Soluble transferrin receptor](stfr.md) | `stfr` | mg/L | 30248-9 | 3 | 3 |
 | [Total Iron Binding Capacity](tibc.md) | `tibc` | µg/dL | 2500-7 | 5 | 4 |
 | [Transferrin Saturation](transferrin-saturation.md) | `transferrin-saturation` | % | 2502-3 | 9 | 7 |
 | [Transferrin](transferrin.md) | `transferrin` | mg/dL | - | 4 | 4 |
@@ -788,6 +880,7 @@ Range sets:
 | [HDL Cholesterol](hdl-c.md) | `hdl-c` | mg/dL | 2085-9 | 25 | 20 |
 | [LDL Cholesterol](ldl-c.md) | `ldl-c` | mg/dL | 13457-7 | 29 | 25 |
 | [LDL Particle Number (LDL-P)](ldl-p.md) | `ldl-p` | nmol/L | - | 1 | 1 |
+| [Lipoprotein(a) Mass](lpa-mass.md) | `lpa-mass` | mg/dL | - | 1 | 1 |
 | [Lipoprotein(a)](lpa.md) | `lpa` | nmol/L | 43583-4 | 7 | 6 |
 | [Non-HDL Cholesterol](non-hdl-c.md) | `non-hdl-c` | mg/dL | 43396-1 | 14 | 12 |
 | [Remnant Cholesterol](remnant-cholesterol.md) | `remnant-cholesterol` | mg/dL | - | 3 | 3 |
@@ -804,7 +897,7 @@ Range sets:
 |---|---|---|---|---|---|
 | [Albumin/Globulin Ratio](albumin-globulin-ratio.md) | `albumin-globulin-ratio` | ratio | - | 5 | 5 |
 | [Bilirubin, Direct (Conjugated)](bilirubin-direct.md) | `bilirubin-direct` | mg/dL | - | 13 | 13 |
-| [FIB-4 Index](fib-4.md) | `fib-4` | ratio | - | 10 | 10 |
+| [FIB-4 Index](fib4.md) | `fib4` | ratio | - | 10 | 10 |
 | [Gamma-Glutamyl Transferase](ggt.md) | `ggt` | U/L | 2324-2 | 12 | 7 |
 | [Globulin (calculated)](globulin.md) | `globulin` | g/dL | - | 5 | 5 |
 
@@ -840,9 +933,12 @@ Range sets:
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Lead, Blood](blood-lead.md) | `blood-lead` | µg/dL | - | 1 | 1 |
+| [BMI Percentile for Age and Sex](bmi-percentile.md) | `bmi-percentile` | percentile | 59576-9 | 4 | 4 |
+| [Head Circumference](head-circumference.md) | `head-circumference` | cm | 9843-4 | 0 | 0 |
 | [Immunoreactive Trypsinogen (newborn screen)](immunoreactive-trypsinogen.md) | `immunoreactive-trypsinogen` | ng/mL | - | 2 | 2 |
+| [Newborn Screen TSH (Dried Blood Spot)](newborn-tsh.md) | `newborn-tsh` | mIU/L | 29575-8 | 3 | 3 |
 | [Sweat Chloride](sweat-chloride.md) | `sweat-chloride` | mmol/L | - | 3 | 3 |
+| [Body Weight Percentile for Age](weight-percentile.md) | `weight-percentile` | percentile | 8336-0 | 4 | 4 |
 
 ## pituitary
 
@@ -850,30 +946,36 @@ Range sets:
 |---|---|---|---|---|---|
 | [Adrenocorticotropic Hormone](acth.md) | `acth` | pg/mL | - | 3 | 3 |
 | [Copeptin](copeptin.md) | `copeptin` | pmol/L | - | 3 | 3 |
-| [Growth Hormone](growth-hormone.md) | `growth-hormone` | ng/mL | - | 10 | 10 |
+| [Growth Hormone](gh.md) | `gh` | ng/mL | - | 10 | 10 |
 
 ## pregnancy
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Alpha-Fetoprotein, Maternal Serum](afp-maternal.md) | `afp-maternal` | MoM | - | 1 | 1 |
-| [Bile Acids, Total (serum)](bile-acids-total.md) | `bile-acids-total` | µmol/L | - | 4 | 4 |
-| [Unconjugated Estriol, Maternal Serum](estriol-unconjugated.md) | `estriol-unconjugated` | MoM | - | 1 | 1 |
-| [Fetal Fibronectin, Cervicovaginal](fetal-fibronectin.md) | `fetal-fibronectin` | ng/mL | - | 5 | 5 |
+| [Alpha-Fetoprotein, Maternal Serum](afp-maternal-serum.md) | `afp-maternal-serum` | MoM | - | 1 | 1 |
+| [Red Cell Antibody Screen](antibody-screen.md) | `antibody-screen` | qualitative | 890-4 | 0 | 0 |
+| [Bile Acids, Total (serum)](bile-acids.md) | `bile-acids` | µmol/L | - | 4 | 4 |
+| [Fetal Fibronectin, Cervicovaginal](fetal-fibronectin.md) | `fetal-fibronectin` | ng/mL | - | 6 | 6 |
 | [Free β-hCG, Maternal Serum](free-beta-hcg.md) | `free-beta-hcg` | MoM | - | 3 | 3 |
-| [Human Chorionic Gonadotropin, Quantitative (beta-hCG)](hcg.md) | `hcg` | mIU/mL | - | 6 | 6 |
+| [Group B Streptococcus Culture (Vaginal/Rectal)](gbs-culture.md) | `gbs-culture` | qualitative | 72607-5 | 0 | 0 |
+| [Glucose Challenge Test, 1 Hour (50 g)](glucose-challenge-1h.md) | `glucose-challenge-1h` | mg/dL | 1504-0 | 3 | 3 |
+| [hCG 48-Hour Percentage Rise](hcg-48h-rise.md) | `hcg-48h-rise` | % | - | 3 | 3 |
+| [Human Chorionic Gonadotropin, Quantitative (beta-hCG)](hcg-quantitative.md) | `hcg-quantitative` | mIU/mL | - | 6 | 6 |
 | [Inhibin A, Maternal Serum](inhibin-a.md) | `inhibin-a` | MoM | - | 1 | 1 |
+| [Oral Glucose Tolerance Test, 2 Hour (75 g), Pregnancy](ogtt-2h-75g-pregnancy.md) | `ogtt-2h-75g-pregnancy` | mg/dL | 1518-0 | 2 | 2 |
 | [Pregnancy-Associated Plasma Protein A](papp-a.md) | `papp-a` | MoM | - | 3 | 3 |
-| [Placental Growth Factor](plgf.md) | `plgf` | pg/mL | - | 2 | 2 |
+| [Placental Growth Factor](plgf.md) | `plgf` | pg/mL | - | 3 | 3 |
+| [ABO and Rh Blood Group](rh-type.md) | `rh-type` | qualitative | 882-1 | 0 | 0 |
 | [sFlt-1/PlGF Ratio](sflt1-plgf-ratio.md) | `sflt1-plgf-ratio` | ratio | - | 5 | 5 |
+| [Unconjugated Estriol, Maternal Serum](unconjugated-estriol.md) | `unconjugated-estriol` | MoM | - | 1 | 1 |
 
 ## stool
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [Faecal Calprotectin](fecal-calprotectin.md) | `fecal-calprotectin` | µg/g | 38445-3 | 5 | 5 |
-| [Faecal Elastase-1](fecal-elastase.md) | `fecal-elastase` | µg/g | 25907-7 | 2 | 2 |
-| [Faecal Immunochemical Test (Haemoglobin)](fit-hemoglobin.md) | `fit-hemoglobin` | µg Hb/g | 29771-3 | 3 | 3 |
+| [Faecal Elastase-1](fecal-elastase.md) | `fecal-elastase` | µg/g | 25907-7 | 3 | 3 |
+| [Faecal Immunochemical Test (Haemoglobin)](fit.md) | `fit` | µg Hb/g | 29771-3 | 4 | 4 |
 
 ## thyroid
 
@@ -882,12 +984,13 @@ Range sets:
 | [Calcitonin](calcitonin.md) | `calcitonin` | pg/mL | - | 9 | 9 |
 | [Free T3](free-t3.md) | `free-t3` | pg/mL | 3051-0 | 11 | 10 |
 | [Free T4](free-t4.md) | `free-t4` | ng/dL | 3024-7 | 13 | 12 |
+| [Total T3 (Triiodothyronine)](t3-total.md) | `t3-total` | ng/dL | 3053-6 | 3 | 3 |
+| [Total T4 (Thyroxine)](t4-total.md) | `t4-total` | µg/dL | 3026-2 | 3 | 3 |
 | [Thyroxine-Binding Globulin](tbg.md) | `tbg` | mg/L | - | 1 | 1 |
 | [Thyroglobulin Antibodies](thyroglobulin-ab.md) | `thyroglobulin-ab` | IU/mL | - | 3 | 3 |
 | [Thyroglobulin](thyroglobulin.md) | `thyroglobulin` | ng/mL | - | 8 | 8 |
-| [Total T3 (Triiodothyronine)](total-t3.md) | `total-t3` | ng/dL | 3053-6 | 3 | 3 |
-| [Total T4 (Thyroxine)](total-t4.md) | `total-t4` | µg/dL | 3026-2 | 1 | 1 |
 | [Thyroid Peroxidase Antibodies](tpo-ab.md) | `tpo-ab` | IU/mL | 8099-4 | 5 | 4 |
+| [TSH Receptor Antibodies (multiple of upper limit of normal)](trab-uln-multiple.md) | `trab-uln-multiple` | x ULN | - | 1 | 1 |
 | [TSH Receptor Antibodies (TRAb/TSI)](trab.md) | `trab` | IU/L | - | 12 | 12 |
 | [Thyroid Stimulating Hormone](tsh.md) | `tsh` | mIU/L | 3016-3 | 31 | 28 |
 
@@ -895,12 +998,12 @@ Range sets:
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Aluminum (serum)](aluminum-serum.md) | `aluminum-serum` | µg/L | - | 2 | 2 |
+| [Aluminum (serum)](aluminum.md) | `aluminum` | µg/L | - | 2 | 2 |
 | [Cadmium, whole blood](cadmium-blood.md) | `cadmium-blood` | µg/L | - | 1 | 1 |
 | [Cadmium, urine](cadmium-urine.md) | `cadmium-urine` | µg/g creatinine | - | 2 | 2 |
-| [Chromium, whole blood](chromium-blood.md) | `chromium-blood` | µg/L | - | 1 | 1 |
-| [Cobalt, whole blood](cobalt-blood.md) | `cobalt-blood` | µg/L | - | 3 | 3 |
-| [Blood lead](lead-blood.md) | `lead-blood` | µg/dL | - | 3 | 3 |
+| [Chromium, whole blood](chromium.md) | `chromium` | µg/L | - | 1 | 1 |
+| [Cobalt, whole blood](cobalt.md) | `cobalt` | µg/L | - | 3 | 3 |
+| [Blood lead](lead.md) | `lead` | µg/dL | - | 3 | 3 |
 | [Mercury, whole blood](mercury-blood.md) | `mercury-blood` | µg/L | - | 2 | 2 |
 
 ## trace-element
@@ -919,25 +1022,32 @@ Range sets:
 | [Cancer Antigen 15-3](ca-15-3.md) | `ca-15-3` | U/mL | 6875-9 | 2 | 2 |
 | [Carbohydrate Antigen 19-9](ca-19-9.md) | `ca-19-9` | U/mL | 24108-3 | 5 | 5 |
 | [Carcinoembryonic Antigen](cea.md) | `cea` | ng/mL | 2039-6 | 7 | 7 |
+| [PSA Density](psa-density.md) | `psa-density` | ng/mL/cm3 | - | 1 | 1 |
 | [Free PSA Percentage](psa-free-percent.md) | `psa-free-percent` | % | 12841-3 | 1 | 1 |
 
 ## urinalysis
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Urine Albumin-to-Creatinine Ratio](urine-acr.md) | `urine-acr` | mg/g | 9318-7 | 6 | 6 |
+| [Urine Albumin-to-Creatinine Ratio](urine-acr.md) | `urine-acr` | mg/g | 9318-7 | 8 | 8 |
+| [Urine Blood / Hemoglobin (dipstick)](urine-blood.md) | `urine-blood` | qualitative | 5794-3 | 0 | 0 |
+| [Urine Appearance / Clarity](urine-clarity.md) | `urine-clarity` | qualitative | 5767-9 | 0 | 0 |
+| [Urine Color](urine-color.md) | `urine-color` | qualitative | 5778-6 | 0 | 0 |
+| [Urine Leukocyte Esterase (dipstick)](urine-leukocyte-esterase.md) | `urine-leukocyte-esterase` | qualitative | 5799-2 | 0 | 0 |
+| [Urine Nitrite (dipstick)](urine-nitrite.md) | `urine-nitrite` | qualitative | 5802-4 | 0 | 0 |
 | [Urine Osmolality](urine-osmolality.md) | `urine-osmolality` | mOsm/kg | 2695-5 | 3 | 3 |
 | [Urine Protein-to-Creatinine Ratio](urine-pcr.md) | `urine-pcr` | mg/g | - | 7 | 7 |
 | [Urine pH](urine-ph.md) | `urine-ph` | pH | 5803-2 | 2 | 2 |
 | [Urine Red Blood Cells (microscopy)](urine-rbc.md) | `urine-rbc` | /HPF | 13945-1 | 1 | 1 |
 | [Urine Specific Gravity](urine-specific-gravity.md) | `urine-specific-gravity` | ratio | 5811-5 | 2 | 2 |
-| [Urine White Blood Cells (microscopy)](urine-wbc.md) | `urine-wbc` | /HPF | 5821-4 | 3 | 3 |
+| [Urine White Blood Cells (per microlitre)](urine-wbc-count.md) | `urine-wbc-count` | /µL | - | 2 | 2 |
+| [Urine White Blood Cells (microscopy)](urine-wbc.md) | `urine-wbc` | /HPF | 5821-4 | 4 | 4 |
 
 ## vitals
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Ankle-Brachial Index](ankle-brachial-index.md) | `ankle-brachial-index` | ratio | - | 4 | 4 |
+| [Ankle-Brachial Index](abi.md) | `abi` | ratio | - | 4 | 4 |
 | [Body Temperature](body-temperature.md) | `body-temperature` | °C | 8310-5 | 4 | 4 |
 | [Blood Pressure, Diastolic](bp-diastolic.md) | `bp-diastolic` | mmHg | 8462-4 | 5 | 4 |
 | [Blood Pressure, Systolic](bp-systolic.md) | `bp-systolic` | mmHg | 8480-6 | 7 | 5 |
@@ -945,23 +1055,23 @@ Range sets:
 | [Respiratory Rate](respiratory-rate.md) | `respiratory-rate` | breaths/min | 9279-1 | 6 | 6 |
 | [Resting Heart Rate](resting-hr.md) | `resting-hr` | bpm | 40443-4 | 2 | 1 |
 | [Oxygen Saturation (SpO2)](spo2.md) | `spo2` | % | 59408-5 | 2 | 2 |
-| [VO2 Max](vo2max.md) | `vo2max` | mL/kg/min | 94122-9 | 12 | 12 |
+| [VO2 Max](vo2max.md) | `vo2max` | mL/kg/min | 94122-9 | 15 | 15 |
 
 ## vitamin
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [Beta-carotene](beta-carotene.md) | `beta-carotene` | µg/dL | - | 1 | 1 |
-| [Erythrocyte glutathione reductase activation coefficient (EGRAC)](egrac.md) | `egrac` | ratio | - | 2 | 2 |
+| [1,25-dihydroxyvitamin D](calcitriol.md) | `calcitriol` | pg/mL | 1649-3 | 7 | 7 |
+| [Erythrocyte glutathione reductase activation coefficient (EGRAC)](egrac.md) | `egrac` | ratio | - | 3 | 3 |
+| [Red blood cell folate](folate-rbc.md) | `folate-rbc` | ng/mL | - | 2 | 2 |
 | [Folate](folate.md) | `folate` | ng/mL | 2284-8 | 5 | 4 |
 | [Holotranscobalamin](holotranscobalamin.md) | `holotranscobalamin` | pmol/L | - | 2 | 2 |
-| [Red blood cell folate](rbc-folate.md) | `rbc-folate` | ng/mL | - | 2 | 2 |
-| [Retinol (vitamin A)](vitamin-a.md) | `vitamin-a` | µg/dL | - | 4 | 4 |
-| [Vitamin B1 (thiamine diphosphate, whole blood)](vitamin-b1.md) | `vitamin-b1` | nmol/L | - | 2 | 2 |
+| [Vitamin B6 (pyridoxal 5'-phosphate)](pyridoxal-phosphate.md) | `pyridoxal-phosphate` | nmol/L | - | 1 | 1 |
+| [Retinol (vitamin A)](retinol.md) | `retinol` | µg/dL | - | 4 | 4 |
+| [Vitamin B1 (thiamine diphosphate, whole blood)](thiamine.md) | `thiamine` | nmol/L | - | 2 | 2 |
 | [Vitamin B12](vitamin-b12.md) | `vitamin-b12` | pg/mL | 2132-9 | 7 | 5 |
-| [Vitamin B6 (pyridoxal 5'-phosphate)](vitamin-b6.md) | `vitamin-b6` | nmol/L | - | 1 | 1 |
-| [Vitamin C (ascorbic acid)](vitamin-c.md) | `vitamin-c` | mg/dL | - | 2 | 2 |
-| [1,25-dihydroxyvitamin D](vitamin-d-1-25.md) | `vitamin-d-1-25` | pg/mL | 1649-3 | 7 | 7 |
+| [Vitamin C (ascorbic acid)](vitamin-c.md) | `vitamin-c` | mg/dL | - | 3 | 3 |
 | [Vitamin D, 25-Hydroxy](vitamin-d.md) | `vitamin-d` | ng/mL | 1989-3 | 12 | 10 |
 | [Alpha-tocopherol (vitamin E)](vitamin-e.md) | `vitamin-e` | mg/L | - | 2 | 2 |
 | [Phylloquinone (vitamin K1)](vitamin-k1.md) | `vitamin-k1` | ng/mL | - | 1 | 1 |
@@ -970,12 +1080,12 @@ Range sets:
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Apnea-Hypopnea Index](apnea-hypopnea-index.md) | `apnea-hypopnea-index` | events/h | 69990-0 | 4 | 4 |
+| [Apnea-Hypopnea Index](ahi.md) | `ahi` | events/h | 69990-0 | 4 | 4 |
 | [Glucose Coefficient of Variation (CGM)](cgm-coefficient-of-variation.md) | `cgm-coefficient-of-variation` | % | - | 3 | 3 |
-| [Daily Step Count](daily-steps.md) | `daily-steps` | steps/day | 55423-8 | 3 | 3 |
-| [Glucose Management Indicator](glucose-management-indicator.md) | `glucose-management-indicator` | % | 97506-0 | 1 | 1 |
-| [Sleep Duration](sleep-duration.md) | `sleep-duration` | h | 93832-4 | 2 | 2 |
+| [Glucose Management Indicator](gmi.md) | `gmi` | % | 97506-0 | 1 | 1 |
 | [Sleep Efficiency](sleep-efficiency.md) | `sleep-efficiency` | % | - | 3 | 3 |
+| [Daily Step Count](steps.md) | `steps` | steps/day | 55423-8 | 3 | 3 |
+| [Sleep Duration](total-sleep-time.md) | `total-sleep-time` | h | 93832-4 | 2 | 2 |
 
 ---
 

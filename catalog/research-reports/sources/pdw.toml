@@ -1,0 +1,19 @@
+slug = "pdw"
+name = "Platelet Distribution Width"
+loinc = "32207-3"
+category = "hematology"
+unit = "fL"
+description = "Platelet distribution width (PDW) is the spread of platelet volumes reported by automated hematology analysers, expressed in femtolitres. It is tracked as a platelet-size (anisocytosis) index alongside MPV and platelet count. Expected result in healthy people: within the analyser-specific reference interval. Values depend on the analyser model and its PDW algorithm, so intervals are not interchangeable between platforms."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 9.5
+high = 17.2
+when = {}
+population = "Healthy Danish blood donors (n = 30,917), Sysmex XN-10 analyser; reported as stable across age and sex"
+evidence = "reference-interval-study"
+note = "Non-parametric central 95% reference interval (2.5th-97.5th percentile) on the Sysmex XN-10 platform only."
+citations = [
+  { pmid = "36111813", doi = "10.1080/00365513.2022.2116727", title = "Reference intervals for platelet large cell ratio, platelet distribution width, plateletcrit and standard haematological parameters determined on the Sysmex XN-10 in a cohort of 30,917 Danish blood donors.", locator = "Abstract", quote = "P DW, fL:9.5 (90% CI: 9.5 - 9.5) - 17.2 (90% CI: 17.2 - 17.3)" },
+]

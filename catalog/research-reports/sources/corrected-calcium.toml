@@ -1,0 +1,20 @@
+slug = "corrected-calcium"
+name = "Albumin-Corrected Calcium"
+loinc = "46099-8"
+category = "electrolyte"
+unit = "mg/dL"
+description = "Total serum calcium adjusted for serum albumin with a correction formula. Correction formulas are less accurate than ionized calcium, particularly in hypoalbuminaemia and hypercalcaemia, so ionized calcium is the reference measure where available."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 2.151
+high = 2.500
+unit = "mmol/L"
+when = { age_min = 40 }
+population = "Healthy Chinese adults aged 40 years or older with eGFR of at least 60 mL/min/1.73m2, Jiading district, Shanghai (albumin-adjusted calcium)"
+evidence = "reference-interval-study"
+note = "Derived with the study's own albumin-adjustment equation (total calcium + 0.019 x (49 - albumin)). The source states the numbers in mmol/L; they are not converted to the canonical mg/dL unit."
+citations = [
+  { pmid = "36017320", doi = "10.3389/fendo.2022.937380", title = "Association of famine exposure and the serum calcium level in healthy Chinese adults.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9395633/", locator = "Abstract (Results)", quote = "with a 95% reference interval of 2.151~2.500 mmol/L" },
+]

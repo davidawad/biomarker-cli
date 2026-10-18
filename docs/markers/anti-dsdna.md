@@ -12,12 +12,11 @@ Autoantibodies against double-stranded DNA, found largely in systemic lupus eryt
 
 ## Ranges
 
-No clinical reference range: No general clinical reference interval is cited; see the diagnostic, target and alternative ranges.
-
 Bounds in IU/mL. The most specific matching range of each set applies.
 
 | Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
 |---|---|---|---|---|---|---|---|---|
+| clinical | reference | all | 35 | 45 | consensus | Patients with suspected or established SLE; assay-specific reference values from a manufacturer table | [Update and clinical management of anti-DNA auto-antibodies.](https://pubmed.ncbi.nlm.nih.gov/37362416/), Full text, table of manufacturer reference values | Ambiguous (equivocal) band in the same manufacturer table row: 35-45 IU/mL. Assay-specific; repeat or use the laboratory's own cut-off. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point. |
 | anti-dna-review-manufacturer-table | warn | all | - | 45 | consensus | Patients with suspected or established SLE; assay-specific reference values from a manufacturer table | [Update and clinical management of anti-DNA auto-antibodies.](https://pubmed.ncbi.nlm.nih.gov/37362416/), Full text, table of manufacturer reference values | One manufacturer-specific row from a review table: >45 IU/mL is positive. Cut-offs are assay-specific and the method for this row is not identified in the retrieved text. Use the laboratory's own reference value and do not transfer it between methods. Boundary is > 45 for positive. Source kind: decision. Source band >= 45; stored as the warn high bound 45. |
 
 ---

@@ -1,0 +1,43 @@
+slug = "dxa-t-score"
+name = "Bone Mineral Density T-score"
+category = "body"
+unit = "SD"
+loinc = "38263-0"
+description = "Bone mineral density expressed as standard deviations from the mean of a young adult reference population, measured by DXA. Used to diagnose osteoporosis; a T-score of -2.5 or lower defines osteoporosis in postmenopausal women and men aged 50 and older."
+aliases = ["dxa t-score", "bmd t-score", "bone density t-score", "bmd-t-score"]
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "iscd-adult-positions"
+kind = "warn"
+low = -2.5
+when = { menopause = "post" }
+population = "Postmenopausal women (DXA; lumbar spine, total hip or femoral neck)"
+evidence = "guideline"
+citations = [
+  { url = "https://iscd.org/learn/official-positions/adult-positions/", title = "ISCD Official Positions: Adult Positions", locator = "Diagnosis" },
+]
+note = "Osteoporosis if T-score is -2.5 or less (boundary is less-than-or-equal). Site is the lumbar spine, total hip or femoral neck. Source kind: decision. Source band <= -2.5; stored as the warn low bound -2.5."
+
+[[range]]
+set = "iscd-adult-positions"
+kind = "warn"
+low = -2.5
+when = { sex = "male", age = [50.0, 200] }
+population = "Men aged 50 and older (DXA; lumbar spine, total hip or femoral neck)"
+evidence = "guideline"
+citations = [
+  { url = "https://iscd.org/learn/official-positions/adult-positions/", title = "ISCD Official Positions: Adult Positions", locator = "Diagnosis" },
+]
+note = "Osteoporosis if T-score is -2.5 or less (boundary is less-than-or-equal). Source kind: decision. Source band <= -2.5; stored as the warn low bound -2.5."
+
+[[range]]
+set = "iscd-adult-positions"
+kind = "warn"
+low = -2.0
+population = "Premenopausal women and men under 50 (Z-score, not T-score); the quoted sentence does not state the age or menopausal status restriction"
+evidence = "guideline"
+citations = [
+  { url = "https://iscd.org/learn/official-positions/adult-positions/", title = "ISCD Official Positions: Adult Positions", locator = "Z-score interpretation" },
+]
+note = "Z-score of -2.0 or lower is defined as 'below the expected range for age' (Z-score, not T-score). The ISCD text retrieved does not state the population for this band, so the premenopausal/under-50 applicability is not confirmed by the quote. Source kind: decision. Source band <= -2.0; stored as the warn low bound -2.0."

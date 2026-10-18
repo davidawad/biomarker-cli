@@ -1,0 +1,46 @@
+slug = "newborn-tsh"
+name = "Newborn Screen TSH (Dried Blood Spot)"
+loinc = "29575-8"
+category = "pediatric"
+unit = "mIU/L"
+description = "Thyroid-stimulating hormone measured in a heel-prick dried blood spot on the newborn screening card (congenital hypothyroidism screen). Dried blood spot values run lower than serum TSH, so serum reference intervals do not apply."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.40
+high = 4.10
+unit = "mU/L"
+when = { age_min = 0, age_max = 0.0833 }
+population = "Neonates sampled on days 5-8 of life, newborn screening dried blood spots (PerkinElmer neonatal hTSH kit, GSP analyser)"
+evidence = "reference-interval-study"
+note = "Age upper bound (first month) is applied here; the source specifies day 5-8 screening samples. Source states mU/L, which is numerically the same unit as the canonical mIU/L."
+citations = [
+  { pmid = "35751155", doi = "10.1177/00045632221112654", title = "Adult and neonate TSH blood spot reference intervals.", locator = "Abstract (Results)", quote = "The neonatal DBS reference interval was 0.40-4.10 mU/L from 8351 results." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.49
+high = 3.07
+unit = "mU/L"
+when = { age_min = 18 }
+population = "Euthyroid adults not on thyroid medication with normal haematocrit, dried blood spot TSH (PerkinElmer neonatal hTSH kit, GSP analyser); comparator for the dried blood spot method"
+evidence = "reference-interval-study"
+note = "Adult comparator for the same dried blood spot method, not a newborn screening range. Source states mU/L."
+citations = [
+  { pmid = "35751155", doi = "10.1177/00045632221112654", title = "Adult and neonate TSH blood spot reference intervals.", locator = "Abstract (Results)", quote = "reference interval was 0.49-3.07 mU/L" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 20
+when = { age_max = 0.0833 }
+population = "Neonates screened beyond 24 hours of life, capillary (dried blood spot) TSH, Delhi pilot programme (India)"
+evidence = "outcome-study"
+note = "Screen-positive recall threshold from a diagnostic accuracy pilot (102 confirmed cases of 174 referrals). Not a guideline cut-off; population-specific."
+citations = [
+  { pmid = "31064895", title = "An Optimal Capillary Screen Cut-off of Thyroid Stimulating Hormone for Diagnosing Congenital Hypothyroidism: Data from a Pilot Newborn Screening Program in Delhi.", locator = "Abstract (Conclusions)", quote = "A cut off of >=20 mIU/L for capillary TSH screening beyond 24 hours of life is optimal in the Indian setting" },
+]

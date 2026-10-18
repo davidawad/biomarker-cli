@@ -8,7 +8,7 @@ _No description yet._
 | Canonical unit | years |
 | LOINC | - |
 | Specimen | - |
-| Aliases | `bio age`, `phenotypic age`, `phenoage` |
+| Aliases | `bio age` |
 
 ## Ranges
 

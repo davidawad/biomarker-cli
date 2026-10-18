@@ -1,0 +1,30 @@
+slug = "urine-free-cortisol"
+name = "Cortisol, Free, 24-Hour Urine"
+category = "adrenal"
+unit = "µg/24 h"
+aliases = ["cortisol-urine-free-24h"]
+description = "Unconjugated (free) cortisol excreted in a 24-hour urine collection. Reflects the biologically active cortisol fraction integrated over the day; used as a screening test for Cushing's syndrome. Results depend on a complete collection and on the assay (LC-MS/MS vs immunoassay)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 11.0
+high = 70.0
+population = "Literature reference range (11-70 µg/day, LC-MS/MS), confirmed in a healthy study group (specimen: urine-24h; method: lc-ms/ms)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "31012054", doi = "10.1007/s40618-019-01050-5", url = "https://pubmed.ncbi.nlm.nih.gov/31012054/", title = "Measurement of urinary free cortisol by LC-MS-MS: adoption of a literature reference range and comparison with our current immunometric method.", locator = "Abstract, Results" },
+]
+note = "Literature-derived reference range for 24-hour urinary free cortisol by LC-MS/MS, confirmed in a healthy group in one laboratory. Immunoassays overestimated results compared with LC-MS/MS. Converted from the source's µg/day (11-70) to µg/24 h using factor 1."
+
+[[range]]
+set = "neoplastic-hypercortisolism-lcms-2026"
+kind = "warn"
+high = 43.5
+when = { conditions = ["neoplastic-hypercortisolism"] }
+population = "Adults screened for neoplastic hypercortisolism at one centre (2015-2022), with 24-hour urine collected on two consecutive days; 27 cases and 417 non-cases for urinary cortisol (specimen: urine-24h; method: lc-ms/ms)"
+evidence = "cohort"
+citations = [
+  { pmid = "42173303", doi = "10.1016/j.cca.2026.121107", url = "https://pubmed.ncbi.nlm.nih.gov/42173303/", title = "Cut-off values of urinary free cortisol and cortisone for diagnosing neoplastic hypercortisolism.", locator = "Abstract, Results" },
+]
+note = "ROC-derived optimal cut-off for 24-hour urinary free cortisol by LC-MS/MS (sensitivity 89%, specificity 86%, AUC 0.937); values at or above it are suggestive of neoplastic hypercortisolism. Single-centre retrospective cut-off that the authors say needs validation in another cohort; not a guideline upper limit. Source unit nmol/24 h, not converted. Converted from the source's nmol/24 h (120) to µg/24 h using factor 0.3625. Source kind: diagnostic. Source band >= 43.5; stored as the warn high bound 43.5."

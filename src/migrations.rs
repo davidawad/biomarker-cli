@@ -186,6 +186,11 @@ pub const MIGRATIONS: &[Migration] = &[
         name: "catalog as data: person attributes, built-in range rows",
         apply: crate::seed::catalog_as_data,
     },
+    Migration {
+        version: 8,
+        name: "FHIR/HL7 interchange: LOINC map, result sources, lab ranges",
+        apply: crate::interop::schema::migrate_v8,
+    },
 ];
 
 pub fn latest_version() -> i64 {

@@ -1,0 +1,7 @@
+slug = "hcv-ab"
+name = "Hepatitis C Antibody"
+category = "infectious"
+unit = "qualitative"
+loinc = "16128-1"
+description = "Antibody to hepatitis C virus in serum or plasma, reported as reactive or non-reactive, and as a signal-to-cutoff index by some assays. A reactive result shows exposure to hepatitis C virus; it does not distinguish current from resolved infection, which requires HCV RNA testing. Expected result: non-reactive (negative)."
+no_reference = "Qualitative result (reactive or non-reactive); no numeric reference interval applies."

@@ -1,0 +1,28 @@
+slug = "walking-speed"
+name = "Usual Gait Speed"
+category = "body"
+unit = "m/s"
+description = "Walking speed over a short distance (usually 4 to 6 metres) at the person's usual pace, in metres per second. Used as the physical performance criterion for sarcopenia and as a marker of mobility and survival."
+aliases = ["usual gait speed", "walking speed", "6-m walk speed"]
+
+[[range]]
+set = "ewgsop2-2019"
+kind = "decision"
+high = 0.8
+population = "Older adults (European consensus)"
+evidence = "consensus"
+note = "Gait speed at or below 0.8 m/s indicates severe sarcopenia (poor physical performance). Boundary is less-than-or-equal."
+citations = [
+  { pmid = "30312372", doi = "10.1093/ageing/afy169", title = "Sarcopenia: revised European consensus on definition and diagnosis.", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", locator = "Section: Defining cut-off points for sarcopenia tests", quote = "a single cut-off speed ≤0.8 m/s is advised by EWGSOP2 as an indicator of severe sarcopenia" },
+]
+
+[[range]]
+set = "awgs-2019"
+kind = "decision"
+high = 1.0
+population = "Asian older adults (AWGS 2019 consensus); 6-m walk test"
+evidence = "consensus"
+note = "Low physical performance if 6-m walk speed is below 1.0 m/s (strict less-than boundary). Applies to the 6-m walk test."
+citations = [
+  { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", locator = "Abstract, Results", quote = "criteria for low physical performance are 6-m walk <1.0 m/s" },
+]

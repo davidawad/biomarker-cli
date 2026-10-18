@@ -3,7 +3,6 @@ name = "Erythrocyte glutathione reductase activation coefficient (EGRAC)"
 category = "vitamin"
 unit = "ratio"
 description = "Functional riboflavin (vitamin B2) status: the ratio of erythrocyte glutathione reductase activity with added FAD to activity without it. Higher values mean lower riboflavin status; cut-offs vary between laboratories and methods."
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
 set = "jnutr-2026-riboflavin"
@@ -26,3 +25,15 @@ citations = [
   { pmid = "36264281", doi = "10.1093/ajcn/nqac240", title = "Vitamin B-6 and riboflavin, their metabolic interaction, and relationship with MTHFR genotype in adults aged 18-102 years.", locator = "Abstract, Results" },
 ]
 note = "Optimal riboflavin status. Plasma PLP fell stepwise across these classes, most strongly in older adults."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.27
+high = 1.39
+population = "Irish adults aged 18-102 y (NANS, TUDA and Genovit cohorts)"
+evidence = "cohort"
+citations = [
+  { pmid = "36264281", doi = "10.1093/ajcn/nqac240", title = "Vitamin B-6 and riboflavin, their metabolic interaction, and relationship with MTHFR genotype in adults aged 18-102 years.", locator = "Abstract, Results" },
+]
+note = "Suboptimal (marginal) riboflavin status in the same Irish study classification. Source kind: insufficient. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."

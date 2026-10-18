@@ -1,8 +1,0 @@
-slug = "ttg-iga"
-name = "Tissue Transglutaminase IgA"
-category = "autoimmune"
-unit = "U/mL"
-loinc = "31017-7"
-description = "IgA antibodies against tissue transglutaminase 2, the first-line serological test for coeliac disease. A high titre, with total IgA normal, can allow diagnosis without duodenal biopsy in children."
-aliases = ["tga-iga", "anti-ttg iga"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."

@@ -1,0 +1,19 @@
+slug = "bsap-activity"
+name = "Bone-Specific Alkaline Phosphatase (activity)"
+category = "bone"
+unit = "U/L"
+description = "Bone-specific alkaline phosphatase reported as enzyme activity in U/L, the form used by some immunoassays, rather than as a mass concentration in µg/L."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 14.8
+high = 38.8
+when = { sex = "female", menopause = "pre", age = [35.0, 39.0] }
+population = "Healthy premenopausal European Caucasian women aged 35-39 years (France and Denmark) (specimen: serum; method: elisa)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Results" },
+  { pmid = "22348982", doi = "10.1016/j.bone.2012.02.003", url = "https://pubmed.ncbi.nlm.nih.gov/22348982/", title = "Reference intervals of bone turnover markers in healthy premenopausal women: results from a cross-sectional European study.", locator = "Abstract, Methods" },
+]
+note = "Central 95% range for bone ALP on the Metra BAP EIA. Reported in U/L, which is not interchangeable with the mass-based ranges."

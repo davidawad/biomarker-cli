@@ -5,7 +5,18 @@ unit = "/HPF"
 loinc = "5821-4"
 description = "White blood cells counted on microscopy of a urine sediment, per high-power field. Pyuria (raised WBC) suggests urinary tract infection or inflammation, but its predictive value depends on how concentrated the urine is."
 aliases = ["pyuria", "urine leukocytes", "urine wbc"]
-no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5
+high = 10
+population = "Adults: commonly accepted pyuria cut-off range, as cited in a study of older women"
+evidence = "consensus"
+citations = [
+  { pmid = "36806580", doi = "10.1093/cid/ciad099", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", locator = "Introduction (full text)" },
+]
+note = "Commonly accepted pyuria cut-off of 5 to 10 leukocytes per high-power field (adult background cited in the 2023 Clinical Infectious Diseases study). The study itself argues these cut-offs are too low for older women. Lower bound 5 is the threshold; the upper bound is the cited upper end of the band. Source kind: decision. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
 
 [[range]]
 set = "pediatric-pyuria-sg-2021"

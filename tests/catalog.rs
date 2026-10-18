@@ -145,7 +145,11 @@ fn upgrades_a_v0_7_2_database_and_keeps_its_flags() {
     assert_eq!(status["current_version"], 6);
     e.run(&["db", "migrate"]);
     let info = e.json(&["db", "info"]);
-    assert_eq!(info["data"]["schema_version"], 7);
+    assert_eq!(info["data"]["schema_version"], 8);
+    // migration 8 is additive: the catalog's LOINC codes are mapped, and nothing existing grows new fields
+    let loinc = e.data(&["marker", "loinc", "list", "glucose"]);
+    assert_eq!((loinc[0]["loinc"].as_str(), loinc[0]["source"].as_str()), (Some("2345-7"), Some("catalog")));
+    assert!(e.data(&["query", "--all-people"]).iter().all(|r| r.get("lab_ref_low").is_none()));
     assert_eq!((info["data"]["people"].as_i64(), info["data"]["measurements"].as_i64()), (Some(2), Some(3)));
     // v0.7.2 had 71 markers, all in the catalog; markers added to the catalog since are seeded once
     let catalog: Value = serde_json::from_str(&e.run(&["catalog", "lint", "--json"])).unwrap();
