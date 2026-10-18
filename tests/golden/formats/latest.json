@@ -31,8 +31,8 @@
       "opt_level": "high",
       "level": "high",
       "warn_low": null,
-      "warn_high": null,
-      "status": "high",
+      "warn_high": 130.0,
+      "status": "near-high",
       "sex": "male",
       "age": 39.75,
       "range_set": {
@@ -56,7 +56,16 @@
           "note": null,
           "conditions": {}
         },
-        "warn": null
+        "warn": {
+          "id": null,
+          "source": "catalog",
+          "set": "clinical",
+          "sex": "any",
+          "age_min": 0.0,
+          "age_max": 200.0,
+          "note": "Risk-enhancing factor in the 2018 AHA/ACC cholesterol guideline, particularly with triglycerides >= 200 mg/dL (as summarised in the cited review). Superseded by the 2026 ACC/AHA dyslipidemia guideline, whose apoB text could not be retrieved. Source band >= 130; stored as the warn high bound 130.",
+          "conditions": {}
+        }
       },
       "lab": null,
       "fasting": null,
@@ -89,7 +98,7 @@
       "opt_level": "low",
       "level": "normal",
       "warn_low": null,
-      "warn_high": null,
+      "warn_high": 116.0,
       "status": "in-range",
       "sex": "male",
       "age": 39.75,
@@ -109,12 +118,21 @@
           "source": "catalog",
           "set": "optimal",
           "sex": "any",
-          "age_min": 0.0,
+          "age_min": 20.0,
           "age_max": 200.0,
-          "note": null,
+          "note": "High HDL-C (>= 60 mg/dL, ATP III); counted as a negative risk factor.",
           "conditions": {}
         },
-        "warn": null
+        "warn": {
+          "id": null,
+          "source": "catalog",
+          "set": "clinical",
+          "sex": "male",
+          "age_min": 0.0,
+          "age_max": 200.0,
+          "note": "Very high HDL-C in men: HR 2.06 (1.44-2.95) all-cause mortality versus the lowest-risk HDL-C group, for HDL-C >= 116 mg/dL (>= 3.0 mmol/L). Outcome association, not a treatment target. Source band >= 116; stored as the warn high bound 116.",
+          "conditions": {}
+        }
       },
       "lab": "Quest <East>",
       "fasting": null,
@@ -140,14 +158,14 @@
       "ref_high": 100.0,
       "ref_flag": "normal",
       "opt_low": null,
-      "opt_high": 70.0,
-      "opt_flag": "high",
+      "opt_high": 100.0,
+      "opt_flag": "normal",
       "flag": "normal",
       "ref_level": "normal",
-      "opt_level": "high",
+      "opt_level": "normal",
       "level": "normal",
       "warn_low": null,
-      "warn_high": 159.0,
+      "warn_high": 129.0,
       "status": "in-range",
       "sex": "male",
       "age": 39.75,
@@ -167,9 +185,9 @@
           "source": "catalog",
           "set": "optimal",
           "sex": "any",
-          "age_min": 0.0,
+          "age_min": 20.0,
           "age_max": 200.0,
-          "note": null,
+          "note": "Optimal: strictly below 100 mg/dL (ATP III).",
           "conditions": {}
         },
         "warn": {
@@ -177,9 +195,9 @@
           "source": "catalog",
           "set": "clinical",
           "sex": "any",
-          "age_min": 0.0,
+          "age_min": 20.0,
           "age_max": 200.0,
-          "note": "100-159 mg/dL: near optimal to borderline high",
+          "note": "Near optimal/above optimal (ATP III). Source band 100-129; stored as the warn high bound 129.",
           "conditions": {}
         }
       },

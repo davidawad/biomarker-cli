@@ -13,7 +13,7 @@ INDEX  NAME  ROWS  COLUMNS  DIMENSIONS
 $ biomarker import examples/dashboard.xlsx --mapping examples/dashboard-mapping.toml \
     --create-markers --dry-run
 import examples/dashboard.xlsx (xlsx, sheet "Labs", transposed layout, header row 3)
-matched (11):
+matched (12):
   White Blood Cell Count (WBC)      -> wbc
   Red Blood Cell Count (RBC)        -> rbc
   Hemoglobin (Hgb)                  -> hemoglobin
@@ -25,7 +25,8 @@ matched (11):
   Hemoglobin A1c                    -> hba1c
   ALT (SGPT)                        -> alt
   Thyroid Stimulating Hormone (TSH) -> tsh
-created (3): urine-protein, urine-appearance, urine-wbc
+  WBC, Urine                        -> urine-wbc
+created (2): urine-protein, urine-appearance
 skipped by mapping (2): Lipoprotein Particle Score, Control Sample
 qualitative (11, skipped; use --qualitative store to keep them):
   2024-03-01  urine-protein: Negative
@@ -53,7 +54,7 @@ reference ranges from the sheet (12):
   hba1c: 4.8..5.6 %
   alt: 0..44 U/L
   tsh: 0.45..4.5 mIU/L
-  urine-wbc: 0..5 /hpf
+  urine-wbc: 0..5 /HPF
 values per date:
   2024-03-01  11
   2024-08-15  11

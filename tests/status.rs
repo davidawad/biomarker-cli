@@ -91,7 +91,8 @@ fn age_at_draw_selects_the_range_and_rows_report_it() {
     assert_eq!(kim["age"], Value::Null);
     assert_eq!(kim["sex"], "female");
     assert_eq!(kim["ref_low"], 50.0);
-    assert_eq!(kim["range_set"]["warn"], Value::Null);
+    // the catalog's cited very-high-HDL bound for women (>= 135 mg/dL)
+    assert_eq!((kim["warn_high"].as_f64(), kim["range_set"]["warn"]["sex"].as_str()), (Some(135.0), Some("female")));
 }
 
 #[test]

@@ -162,7 +162,7 @@ fn seed_marker(db: &Db, m: &MarkerDef) -> Result<i64> {
 
 /// The markers v0.7.2 shipped. Migration 7 records them as seen even when
 /// you removed one, so it is not seeded again.
-const LEGACY_SLUGS: &[&str] = &[
+pub const LEGACY_SLUGS: &[&str] = &[
     "albumin",
     "alp",
     "alt",

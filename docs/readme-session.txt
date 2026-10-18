@@ -41,7 +41,7 @@ hdl-c              mg/dL       44.00     57.00       29.55  normal     normal
 ldl-c              mg/dL      138.00     72.00      -47.83  high       normal
 total-cholesterol  mg/dL      212.00    168.00      -20.75  high       normal
 triglycerides      mg/dL      150.00     96.00      -36.00  normal     normal
-glucose            mg/dL      100.89     86.48      -14.29  high       normal
+glucose            mg/dL      100.89     86.48      -14.29  normal     normal
 hba1c              %            5.70      5.20       -8.77  high       normal
 vitamin-d          ng/mL       22.00     46.00      109.09  low        normal
 

@@ -456,7 +456,8 @@ mod tests {
         let r = lint(&Sources::embedded(), &crate::seed::unit_symbols(), true, false);
         assert!(r.ok(), "{:#?}", r.findings.iter().filter(|f| f.severity == Severity::Error).collect::<Vec<_>>());
         assert!(r.warnings > 0, "legacy ranges are uncited");
-        assert_eq!(r.universe.as_ref().map(|u| u.missing.len()), Some(0));
+        let u = r.universe.as_ref().unwrap();
+        assert!(u.covered > 0 && u.covered + u.missing.len() == u.entries, "universe gaps are warnings");
     }
 
     #[test]

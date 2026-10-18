@@ -25,7 +25,8 @@ impl Env {
         Self { dir, db, plaintext: false }
     }
 
-    /// A copy of the database a v0.7.2 binary wrote (tests/fixtures/v0.7.2.db):
+    /// A database as v0.7.2 left it, rebuilt from the frozen v0.7.2 schema and
+    /// seed data (migrations 1-6, pruned to the 71 markers v0.7.2 shipped):
     /// people alex (male, 1985-06-01) and kim (female); glucose 104 and HDL 42
     /// for alex on 2024-01-01, LDL 95 for kim on 2024-02-01; `range set hdl
     /// --sex male --age-min 50 --low 45`, `range set ldl --kind optimal --high 60`
@@ -33,8 +34,13 @@ impl Env {
     fn v072() -> Self {
         let mut e = Self::new();
         e.db = e.dir.path().join("v0.7.2.db");
-        let fixture = Path::new(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/v0.7.2.db");
-        std::fs::copy(fixture, &e.db).unwrap();
+        let p = e.db.clone();
+        std::thread::Builder::new()
+            .stack_size(256 * 1024 * 1024)
+            .spawn(move || write_v072(&p))
+            .unwrap()
+            .join()
+            .unwrap();
         e.plaintext = true;
         e
     }
@@ -86,6 +92,48 @@ impl Env {
     }
 }
 
+/// Write what a v0.7.2 binary would have: schema version 6 and its rows.
+fn write_v072(path: &Path) {
+    use biomarker_cli::{migrations, seed};
+    let db = biomarker_cli::db::Db::open_plain(path).unwrap();
+    migrations::applied(&db).unwrap();
+    for m in migrations::MIGRATIONS.iter().filter(|m| m.version <= 6) {
+        (m.apply)(&db).unwrap();
+        db.execute(
+            "INSERT INTO schema_migrations (version, name, applied_at) VALUES (?1, ?2, '2024-01-01T00:00:00Z')",
+            &[biomarker_cli::db::int(m.version), biomarker_cli::db::text(m.name)],
+        )
+        .unwrap();
+    }
+    let legacy = seed::LEGACY_SLUGS.iter().map(|s| format!("'{s}'")).collect::<Vec<_>>().join(", ");
+    let newer = format!("SELECT id FROM markers WHERE slug NOT IN ({legacy})");
+    db.execute_batch(&format!(
+        "DELETE FROM marker_aliases WHERE marker_id IN ({newer});
+         DELETE FROM unit_conversions WHERE marker_id IN ({newer});
+         DELETE FROM ranges WHERE marker_id IN ({newer});
+         DELETE FROM markers WHERE slug NOT IN ({legacy});
+         INSERT INTO people (slug, sex, dob, created_at) VALUES ('alex', 'male', '1985-06-01', '2024-01-01T00:00:00Z');
+         INSERT INTO people (slug, sex, created_at) VALUES ('kim', 'female', '2024-01-01T00:00:00Z');
+         INSERT INTO measurements (person_id, marker_id, taken_at, value_raw, unit_raw, value, created_at)
+           SELECT p.id, m.id, '2024-01-01', 104, 'mg/dL', 104, '2024-01-01T00:00:00Z' FROM people p, markers m
+           WHERE p.slug = 'alex' AND m.slug = 'glucose';
+         INSERT INTO measurements (person_id, marker_id, taken_at, value_raw, unit_raw, value, created_at)
+           SELECT p.id, m.id, '2024-01-01', 42, 'mg/dL', 42, '2024-01-01T00:00:00Z' FROM people p, markers m
+           WHERE p.slug = 'alex' AND m.slug = 'hdl-c';
+         INSERT INTO measurements (person_id, marker_id, taken_at, value_raw, unit_raw, value, created_at)
+           SELECT p.id, m.id, '2024-02-01', 95, 'mg/dL', 95, '2024-02-01T00:00:00Z' FROM people p, markers m
+           WHERE p.slug = 'kim' AND m.slug = 'ldl-c';
+         INSERT INTO ranges (marker_id, kind, sex, age_min, age_max, low, note)
+           SELECT id, 'reference', 'male', 50, 200, 45, 'synthetic 50+' FROM markers WHERE slug = 'hdl-c';
+         UPDATE ranges SET low = NULL, high = 60, note = NULL
+           WHERE marker_id = (SELECT id FROM markers WHERE slug = 'ldl-c') AND kind = 'optimal' AND sex = 'any';
+         INSERT INTO person_ranges (person_id, marker_id, kind, high)
+           SELECT p.id, m.id, 'reference', 90 FROM people p, markers m WHERE p.slug = 'kim' AND m.slug = 'glucose';
+         PRAGMA user_version = 6;"
+    ))
+    .unwrap();
+}
+
 fn find<'a>(rows: &'a [Value], marker: &str) -> &'a Value {
     rows.iter().find(|r| r["marker"] == marker).unwrap_or_else(|| panic!("no {marker} in {rows:?}"))
 }
@@ -119,10 +167,12 @@ fn upgrades_a_v0_7_2_database_and_keeps_its_flags() {
     assert!(ldl["range_set"]["optimal"]["id"].is_i64(), "a database row: {}", ldl["range_set"]);
     assert_eq!(ldl["range_set"]["optimal"]["set"], Value::Null);
 
-    // the seeded rows are hidden; the edited ones are listed once
+    // the seeded rows are hidden; the edited ones are listed once, next to the catalog's cited ranges
     let opt = e.data(&["range", "list", "ldl", "--kind", "optimal"]);
-    assert_eq!(opt.len(), 1, "{opt:?}");
-    assert_eq!(opt[0]["high"], 60.0);
+    let db_rows: Vec<&Value> = opt.iter().filter(|r| r["id"].as_i64().is_some_and(|id| id > 0)).collect();
+    assert_eq!(db_rows.len(), 1, "{opt:?}");
+    assert_eq!(db_rows[0]["high"], 60.0);
+    assert!(opt.iter().all(|r| r["legacy"] != true), "the seeded legacy optimal row is hidden: {opt:?}");
     let hdl_ranges = e.data(&["range", "list", "hdl", "--kind", "reference"]);
     assert!(hdl_ranges.iter().any(|r| r["note"] == "synthetic 50+" && r["id"].is_i64()));
     assert!(hdl_ranges.iter().any(|r| r["set"] == "clinical" && r["sex"] == "female" && r["legacy"] == true));
@@ -178,7 +228,8 @@ fn range_sets_marker_overrides_and_config_ranges() {
         "config.toml",
         "range_sets = [\"blueprint\", \"clinical\", \"optimal\"]\n[marker_range_sets]\nldl = [\"optimal\"]\n",
     );
-    assert_eq!(opt("ldl"), (Some(70.0), Some("optimal".into())));
+    // the cited ATP III adult (20+) optimal bound is more specific than the uncited any-age one
+    assert_eq!(opt("ldl"), (Some(100.0), Some("optimal".into())));
     // config [[range]] entries beat every set
     e.write("config.toml", "[[range]]\nmarker = \"glucose\"\nkind = \"optimal\"\nhigh = 5.0\nunit = \"mmol/L\"\n");
     let q = e.data(&["latest", "-p", "pat", "-m", "glucose"]);
@@ -238,7 +289,10 @@ fn catalog_lint_reports_errors_warnings_and_coverage() {
     let built_in: Value = serde_json::from_str(&e.run(&["catalog", "lint", "--universe", "--json"])).unwrap();
     assert_eq!(built_in["data"]["errors"], 0, "{}", built_in["data"]["findings"]);
     assert!(built_in["data"]["warnings"].as_u64().unwrap() > 0, "legacy ranges are uncited");
-    assert_eq!(built_in["data"]["universe"]["missing"].as_array().map(Vec::len), Some(0));
+    // universe entries without a catalog file are warnings, not errors
+    let universe = &built_in["data"]["universe"];
+    let missing = universe["missing"].as_array().map_or(0, Vec::len) as u64;
+    assert_eq!(universe["covered"].as_u64().unwrap() + missing, universe["entries"].as_u64().unwrap());
     assert_eq!(e.code(&["catalog", "lint", "--strict"]), 4);
 
     let head = "slug = \"x\"\nname = \"X\"\ncategory = \"lipid\"\nunit = \"mg/dL\"\ndescription = \"Synthetic.\"\n";
@@ -316,5 +370,6 @@ fn schema_and_sets_are_published() {
     assert_eq!(schema["required"], serde_json::json!(["slug", "name", "category", "unit"]));
     let sets = e.data(&["catalog", "sets"]);
     let names: Vec<&str> = sets.iter().map(|s| s["name"].as_str().unwrap()).collect();
-    assert_eq!(names, ["clinical", "optimal", "blueprint"]);
+    assert_eq!(names[..3], ["clinical", "optimal", "blueprint"]);
+    assert!(names.contains(&"population-ri") && names.iter().any(|n| n.starts_with("alt-")));
 }

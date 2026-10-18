@@ -183,15 +183,16 @@ fn stop_at_ignores_the_named_row_and_everything_below() {
     let e = Env::new();
     let mapping = e.path("stop.toml");
     std::fs::write(&mapping, "stop_at = \"Urinalysis\"\n").unwrap();
+    let slugs = || -> Vec<String> {
+        let list = e.json(&["marker", "list"]);
+        list["data"].as_array().unwrap().iter().map(|m| m["slug"].as_str().unwrap().to_string()).collect()
+    };
+    let before = slugs();
     let (_, stderr) =
         e.run_io(&["import", &e.workbook(), "-p", "alex", "--create-markers", "--mapping", mapping.to_str().unwrap()]);
     assert!(stderr.contains("stop_at"), "{stderr}");
-    let created: Vec<String> = e.json(&["marker", "list"])["data"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|m| m["slug"].as_str().unwrap().to_string())
-        .collect();
+    // the catalog has urine markers of its own: look only at the ones the import created
+    let created: Vec<String> = slugs().into_iter().filter(|s| !before.contains(s)).collect();
     assert!(!created.iter().any(|s| s.starts_with("urine") || s.contains("urine")), "{created:?}");
     assert!(created.iter().any(|s| s == "lipoprotein-particle-score"), "rows above the stop are imported");
 }
@@ -294,10 +295,11 @@ fn mapping_renames_dates_and_skip() {
     let d = &v["data"];
     assert_eq!(d["inserted"], 43, "{v}");
     assert_eq!(d["skipped_names"], serde_json::json!(["Lipoprotein Particle Score", "Control Sample"]));
-    assert_eq!(d["markers_created"], serde_json::json!(["urine-protein", "urine-appearance", "urine-wbc"]));
+    // "WBC, Urine" matches the catalog's urine-wbc
+    assert_eq!(d["markers_created"], serde_json::json!(["urine-protein", "urine-appearance"]));
     assert_eq!(d["date_corrections"], serde_json::json!([{"from": "2024-12-02", "to": "2024-12-04", "cells": 13}]));
     assert!(d["cells_per_date"].get("2024-12-02").is_none());
-    assert_eq!(e.json(&["marker", "show", "urine-wbc"])["data"]["category"], "urine");
+    assert_eq!(e.json(&["marker", "show", "urine-protein"])["data"]["category"], "urine");
     assert_eq!(e.query("ldl-c")[2]["taken_at"], "2024-12-04");
     // "6-10 Abnormal" keeps its range on the observation
     let obs = e.json(&["observations", "-m", "urine-wbc", "--flagged"]);
