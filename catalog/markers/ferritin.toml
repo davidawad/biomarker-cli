@@ -39,7 +39,7 @@ legacy = true
 [[range]]
 set = "who-2020"
 kind = "warn"
-high = 15
+low = 15
 when = { age = [5.0, 200] }
 population = "Children older than 5 years, adolescents and adults, in the absence of inflammation (WHO ferritin guideline thresholds as reported in a 2024 review)"
 evidence = "guideline"
@@ -47,12 +47,12 @@ citations = [
   { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on WHO definition" },
   { pmid = "28615259", doi = "10.3945/ajcn.116.141762", title = "Adjusting ferritin concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Abstract, Design" },
 ]
-note = "Secondary citation: the WHO 2020 guideline text could not be retrieved, so the threshold is taken from Hemasphere 2024 and BRINDA 2017 which both report it. Not valid when inflammation is present; see the inflammation ranges. The review cites WHO as 2022 in one sentence; the guideline itself is WHO 2020. Source kind: deficient."
+note = "Secondary citation: the WHO 2020 guideline text could not be retrieved, so the threshold is taken from Hemasphere 2024 and BRINDA 2017 which both report it. Not valid when inflammation is present; see the inflammation ranges. The review cites WHO as 2022 in one sentence; the guideline itself is WHO 2020. Source kind: deficient. Source band <= 15; stored as the warn low bound 15."
 
 [[range]]
 set = "who-2020"
 kind = "warn"
-high = 12
+low = 12
 when = { age = [0.0, 5.0] }
 population = "Children younger than 5 years, in the absence of inflammation (WHO ferritin guideline thresholds as reported in a 2024 review); BRINDA preschool children aged 6-59 months"
 evidence = "guideline"
@@ -60,12 +60,12 @@ citations = [
   { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on WHO definition" },
   { pmid = "28615259", doi = "10.3945/ajcn.116.141762", title = "Adjusting ferritin concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Abstract, Design" },
 ]
-note = "Secondary citation (see the adult range). Not valid when inflammation is present. Source kind: deficient."
+note = "Secondary citation (see the adult range). Not valid when inflammation is present. Source kind: deficient. Source band <= 12; stored as the warn low bound 12."
 
 [[range]]
 set = "who-2020"
 kind = "warn"
-high = 30
+low = 30
 when = { age = [0.0, 5.0], conditions = ["inflammation"] }
 population = "Children under 5 years with systemic inflammation (raised ESR or CRP)"
 evidence = "guideline"
@@ -73,12 +73,12 @@ citations = [
   { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on inflammation" },
   { pmid = "28615259", doi = "10.3945/ajcn.116.141762", title = "Adjusting ferritin concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Abstract, Design" },
 ]
-note = "Inflammation-adjusted WHO threshold as reported in a 2024 review (secondary citation). The BRINDA 2017 abstract also describes raising the cut-off to 30 ug/L as an adjustment approach. Source kind: deficient."
+note = "Inflammation-adjusted WHO threshold as reported in a 2024 review (secondary citation). The BRINDA 2017 abstract also describes raising the cut-off to 30 ug/L as an adjustment approach. Source kind: deficient. Source band <= 30; stored as the warn low bound 30."
 
 [[range]]
 set = "hf-trial-definition"
 kind = "warn"
-high = 100
+low = 100
 when = { conditions = ["heart-failure"] }
 population = "Patients with heart failure (definition used in heart failure trials and carried into cardiology guidance)"
 evidence = "guideline"
@@ -86,80 +86,79 @@ citations = [
   { pmid = "36282723", doi = "10.1093/eurheartj/ehac569", title = "Iron deficiency and cardiovascular disease.", locator = "Section on definition of iron deficiency in heart failure" },
   { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic heart failure section" },
 ]
-note = "Attribution caveat: the ESC 2021 HF guideline text could not be retrieved; the definition is taken from a 2023 European Heart Journal review that describes it as the one used in HF trials. Use with transferrin saturation criterion in the next range. Source kind: deficient."
+note = "Attribution caveat: the ESC 2021 HF guideline text could not be retrieved; the definition is taken from a 2023 European Heart Journal review that describes it as the one used in HF trials. Use with transferrin saturation criterion in the next range. Source kind: deficient. Source band <= 100; stored as the warn low bound 100."
 
 [[range]]
 set = "who-2020"
 kind = "warn"
-high = 70
+low = 70
 when = { age = [5.0, 200], conditions = ["inflammation"] }
 population = "Children older than 5 years, adolescents and adults with systemic inflammation (raised ESR or CRP)"
 evidence = "guideline"
 citations = [
   { pmid = "39011129", doi = "10.1002/hem3.108", title = "Recommendations for diagnosis, treatment, and prevention of iron deficiency and iron deficiency anemia.", locator = "Diagnosis section, para on inflammation" },
 ]
-note = "Inflammation-adjusted WHO threshold as reported in a 2024 review (secondary citation). Source kind: deficient."
+note = "Inflammation-adjusted WHO threshold as reported in a 2024 review (secondary citation). Source kind: deficient. Source band <= 70; stored as the warn low bound 70."
 
 [[range]]
 set = "bsg-2021"
 kind = "warn"
-high = 30
+low = 30
 when = { age = [18.0, 200] }
 population = "Adults in the UK guideline scope for iron deficiency anaemia (absence of inflammation implied by the guideline's wording)"
 evidence = "guideline"
 citations = [
   { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Diagnosis section, para on serum ferritin" },
 ]
-note = "Guideline states SF below 30 indicates low body iron stores and the lower limit of normal lies at 15-30 ug/L. Below 15 indicates absent iron stores. Source kind: insufficient."
+note = "Guideline states SF below 30 indicates low body iron stores and the lower limit of normal lies at 15-30 ug/L. Below 15 indicates absent iron stores. Source kind: insufficient. Source band <= 30; stored as the warn low bound 30."
 
 [[range]]
 set = "hf-trial-definition"
 kind = "warn"
-low = 100
-high = 299
+low = 299
 when = { markers = [{ marker = "transferrin-saturation", op = "<=", value = 20 }], conditions = ["heart-failure"] }
 population = "Patients with heart failure, ferritin 100-299 ng/mL with transferrin saturation below 20%"
 evidence = "guideline"
 citations = [
   { pmid = "36282723", doi = "10.1093/eurheartj/ehac569", title = "Iron deficiency and cardiovascular disease.", locator = "Section on definition of iron deficiency in heart failure" },
 ]
-note = "Applies only when TSAT is also low (source says TSAT <20%; the marker check treats 20 as inclusive, so a TSAT of exactly 20 is included here). Source kind: deficient."
+note = "Applies only when TSAT is also low (source says TSAT <20%; the marker check treats 20 as inclusive, so a TSAT of exactly 20 is included here). Source kind: deficient. Source band 100-299; stored as the warn low bound 299."
 
 [[range]]
 set = "easl-2022"
 kind = "warn"
-low = 200
+high = 200
 when = { sex = "female", menopause = "pre", markers = [{ marker = "transferrin-saturation", op = ">=", value = 45 }], conditions = ["hfe-c282y-homozygous"] }
 population = "Premenopausal women homozygous for HFE p.Cys282Tyr with high transferrin saturation"
 evidence = "guideline"
 citations = [
   { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract" },
 ]
-note = "Provisional iron overload criterion. Guideline gives the female threshold without a menopausal split; the male and postmenopausal values are in the next ranges, so this is read as premenopausal women. Requires TSAT above 45% at the same time. Source kind: diagnostic."
+note = "Provisional iron overload criterion. Guideline gives the female threshold without a menopausal split; the male and postmenopausal values are in the next ranges, so this is read as premenopausal women. Requires TSAT above 45% at the same time. Source kind: diagnostic. Source band >= 200; stored as the warn high bound 200."
 
 [[range]]
 set = "easl-2022"
 kind = "warn"
-low = 300
+high = 300
 when = { sex = "male", markers = [{ marker = "transferrin-saturation", op = ">=", value = 50 }], conditions = ["hfe-c282y-homozygous"] }
 population = "Men homozygous for HFE p.Cys282Tyr with high transferrin saturation"
 evidence = "guideline"
 citations = [
   { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract" },
 ]
-note = "Provisional iron overload criterion. Requires TSAT above 50% at the same time. Hepatic iron or genotype confirmation still needed for other HFE genotypes. Source kind: diagnostic."
+note = "Provisional iron overload criterion. Requires TSAT above 50% at the same time. Hepatic iron or genotype confirmation still needed for other HFE genotypes. Source kind: diagnostic. Source band >= 300; stored as the warn high bound 300."
 
 [[range]]
 set = "easl-2022"
 kind = "warn"
-low = 300
+high = 300
 when = { sex = "female", menopause = "post", markers = [{ marker = "transferrin-saturation", op = ">=", value = 50 }], conditions = ["hfe-c282y-homozygous"] }
 population = "Postmenopausal women homozygous for HFE p.Cys282Tyr with high transferrin saturation"
 evidence = "guideline"
 citations = [
   { pmid = "35662478", doi = "10.1016/j.jhep.2022.03.033", title = "EASL Clinical Practice Guidelines on haemochromatosis.", locator = "Abstract" },
 ]
-note = "Provisional iron overload criterion. Requires TSAT above 50% at the same time. Source kind: diagnostic."
+note = "Provisional iron overload criterion. Requires TSAT above 50% at the same time. Source kind: diagnostic. Source band >= 300; stored as the warn high bound 300."
 
 [[range]]
 set = "easl-2022"
@@ -214,26 +213,26 @@ note = "Typical values table from the guideline, not a percentile-based referenc
 [[range]]
 set = "bsg-2021"
 kind = "warn"
-high = 100
+low = 100
 when = { markers = [{ marker = "transferrin-saturation", op = "<=", value = 20 }], conditions = ["ckd"] }
 population = "Adults with CKD who are predialysis or on peritoneal dialysis"
 evidence = "guideline"
 citations = [
   { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic kidney disease section" },
 ]
-note = "Absolute iron deficiency in CKD as defined in the guideline; applies only when TSAT is also at or below 20%. Not a general population cut-off. Source kind: deficient."
+note = "Absolute iron deficiency in CKD as defined in the guideline; applies only when TSAT is also at or below 20%. Not a general population cut-off. Source kind: deficient. Source band <= 100; stored as the warn low bound 100."
 
 [[range]]
-set = "alt-1"
+set = "bsg-2021"
 kind = "warn"
-high = 200
+low = 200
 when = { markers = [{ marker = "transferrin-saturation", op = "<=", value = 20 }], conditions = ["ckd", "hemodialysis"] }
 population = "Adults with CKD on haemodialysis"
 evidence = "guideline"
 citations = [
   { pmid = "34497146", doi = "10.1136/gutjnl-2021-325210", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", locator = "Chronic kidney disease section" },
 ]
-note = "Absolute iron deficiency in haemodialysis patients as defined in the guideline; applies only when TSAT is also at or below 20%. Source kind: deficient. Alternative to the default bsg-2021 warn range for the same population."
+note = "Absolute iron deficiency in haemodialysis patients as defined in the guideline; applies only when TSAT is also at or below 20%. Source kind: deficient. Source band <= 200; stored as the warn low bound 200."
 
 [[range]]
 set = "seniorlab"
@@ -329,14 +328,14 @@ note = "Indirect (data-mining) reference interval from health-examination record
 [[range]]
 set = "pregnancy-first-trimester-study"
 kind = "warn"
-high = 30
+low = 30
 when = { pregnant = true, trimester = 1 }
 population = "Unselected non-anaemic women in the first trimester (single US study as summarised in a 2020 review)"
 evidence = "consensus"
 citations = [
   { pmid = "32053933", doi = "10.3390/nu12020447", title = "Iron Deficiency and Iron Deficiency Anemia: Implications and Impact in Pregnancy, Fetal Development, and Early Childhood Parameters.", locator = "Section on diagnostic criteria in pregnancy" },
 ]
-note = "Weak: a single study reported by a review. A 2024 review states there are no standardized ferritin thresholds in pregnancy, and a normal ferritin cannot exclude iron deficiency. Also applies the TSAT<19% criterion (see transferrin-saturation). Source kind: deficient."
+note = "Weak: a single study reported by a review. A 2024 review states there are no standardized ferritin thresholds in pregnancy, and a normal ferritin cannot exclude iron deficiency. Also applies the TSAT<19% criterion (see transferrin-saturation). Source kind: deficient. Source band <= 30; stored as the warn low bound 30."
 
 [[range]]
 set = "hyperferritinemia-review"

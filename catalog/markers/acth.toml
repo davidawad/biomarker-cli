@@ -20,23 +20,23 @@ note = "09:00 plasma ACTH reference interval (mean +/- 2 SD after log transforma
 [[range]]
 set = "cushing-acth-review-2023"
 kind = "warn"
-high = 10
+low = 10
 when = { conditions = ["cushing-syndrome"] }
 population = "Patients with suspected hypercortisolism (Cushing syndrome), as restated in a laboratory-medicine review"
 evidence = "consensus"
 citations = [
   { pmid = "37189516", doi = "10.3390/diagnostics13081415", url = "https://pubmed.ncbi.nlm.nih.gov/37189516/", title = "Pitfalls in the Diagnosis and Management of Hypercortisolism (Cushing Syndrome) in Humans; A Review of the Laboratory Medicine Perspective.", locator = "Full text (Cushing diagnosis section)" },
 ]
-note = "ACTH below about 10 pg/mL suggests an adrenal (ACTH-independent) cortisol source once exogenous glucocorticoids are excluded. The source notes that the level varies between assays. Restates a review's threshold; not verified against the primary guideline. Source kind: diagnostic."
+note = "ACTH below about 10 pg/mL suggests an adrenal (ACTH-independent) cortisol source once exogenous glucocorticoids are excluded. The source notes that the level varies between assays. Restates a review's threshold; not verified against the primary guideline. Source kind: diagnostic. Source band <= 10; stored as the warn low bound 10."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 20
+high = 20
 when = { conditions = ["cushing-syndrome"] }
 population = "Patients with suspected hypercortisolism (Cushing syndrome), as restated in a laboratory-medicine review"
 evidence = "consensus"
 citations = [
   { pmid = "37189516", doi = "10.3390/diagnostics13081415", url = "https://pubmed.ncbi.nlm.nih.gov/37189516/", title = "Pitfalls in the Diagnosis and Management of Hypercortisolism (Cushing Syndrome) in Humans; A Review of the Laboratory Medicine Perspective.", locator = "Full text (Cushing diagnosis section)" },
 ]
-note = "ACTH above about 20 pg/mL (or an intermediate value) indicates an ACTH-dependent cause of hypercortisolism. Restates a review's threshold; not verified against the primary guideline. Source kind: diagnostic. Alternative to the default cushing-acth-review-2023 warn range for the same population."
+note = "ACTH above about 20 pg/mL (or an intermediate value) indicates an ACTH-dependent cause of hypercortisolism. Restates a review's threshold; not verified against the primary guideline. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20. Alternative to the default cushing-acth-review-2023 warn range for the same population."

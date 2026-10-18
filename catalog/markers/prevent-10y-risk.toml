@@ -9,45 +9,21 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "acc-aha-2026-dyslipidemia"
 kind = "warn"
-high = 3
+low = 3
 population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
 evidence = "guideline"
 citations = [
   { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", locator = "Methods, risk category definitions (full text)" },
 ]
-note = "Low risk, <3% 10-year PREVENT risk. Categories as stated in the cited paper, which attributes them to the 2026 multisociety dyslipidemia guideline; the quote does not name the risk outcome, the paper applies them to PREVENT-ASCVD. Upper limit is exclusive. Source kind: decision."
+note = "Low risk, <3% 10-year PREVENT risk. Categories as stated in the cited paper, which attributes them to the 2026 multisociety dyslipidemia guideline; the quote does not name the risk outcome, the paper applies them to PREVENT-ASCVD. Upper limit is exclusive. Source kind: decision. Source band <= 3; stored as the warn low bound 3."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 3
-high = 5
-population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
-evidence = "guideline"
-citations = [
-  { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", locator = "Methods, risk category definitions (full text)" },
-]
-note = "Borderline risk, 3 to <5% 10-year PREVENT risk. Boundary semantics: >=3 and <5. Categories as reported in the cited paper (see the low-risk range note). Alternative to the default acc-aha-2026-dyslipidemia warn range for the same population."
-
-[[range]]
-set = "alt-2"
-kind = "warn"
-low = 5
 high = 10
 population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
 evidence = "guideline"
 citations = [
   { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", locator = "Methods, risk category definitions (full text)" },
 ]
-note = "Intermediate risk, 5 to <10% 10-year PREVENT risk. The same paper reports this as the 'intermediate-or-higher' threshold for lipid-lowering therapy consideration (>=5%). Boundary semantics: >=5 and <10. Source kind: decision. Alternative to the default acc-aha-2026-dyslipidemia warn range for the same population."
-
-[[range]]
-set = "alt-3"
-kind = "warn"
-low = 10
-population = "US adults aged 30-79 years without known cardiovascular disease, PREVENT-based 10-year risk"
-evidence = "guideline"
-citations = [
-  { pmid = "42828255", doi = "10.1016/j.ajpc.2026.101711", url = "https://pubmed.ncbi.nlm.nih.gov/42828255/", title = "Risk-Treatment Discordance and Fatal Cardiovascular Disease: A Nationwide Analysis Using PREVENT Thresholds.", locator = "Methods, risk category definitions (full text)" },
-]
-note = "High risk, >=10% 10-year PREVENT risk. Lower bound only (open above). Source kind: decision. Alternative to the default acc-aha-2026-dyslipidemia warn range for the same population."
+note = "High risk, >=10% 10-year PREVENT risk. Lower bound only (open above). Source kind: decision. Source band >= 10; stored as the warn high bound 10. Alternative to the default acc-aha-2026-dyslipidemia warn range for the same population."

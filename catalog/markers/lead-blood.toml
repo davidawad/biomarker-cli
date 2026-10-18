@@ -19,7 +19,6 @@ note = "Blood lead reference value (BLRV) set at the 97.5th percentile of the ch
 [[range]]
 set = "cdc-blood-lead-clinical-guidance"
 kind = "warn"
-low = 3.5
 high = 19
 when = { age = [0.0, 18.0] }
 population = "Children with a venous blood lead level reported to clinicians (CDC clinical guidance for healthcare providers)"
@@ -27,16 +26,16 @@ evidence = "guideline"
 citations = [
   { url = "https://www.cdc.gov/lead-prevention/hcp/clinical-guidance/index.html", title = "CDC Clinical Guidance for Healthcare Providers: Lead Exposure in Children (web page)", locator = "Clinical guidance table, BLL tiers" },
 ]
-note = "Management tier: environmental history, nutrition counseling, follow-up testing and public health reporting. Age limit is an assumption of the pediatric guidance scope."
+note = "Management tier: environmental history, nutrition counseling, follow-up testing and public health reporting. Age limit is an assumption of the pediatric guidance scope. Source band 3.5-19; stored as the warn high bound 19."
 
 [[range]]
 set = "cdc-blood-lead-clinical-guidance"
 kind = "critical"
-low = 45
+high = 45
 when = { age = [0.0, 18.0] }
 population = "Children with a venous blood lead level, CDC clinical guidance for healthcare providers"
 evidence = "guideline"
 citations = [
   { url = "https://www.cdc.gov/lead-prevention/hcp/clinical-guidance/index.html", title = "CDC Clinical Guidance for Healthcare Providers: Lead Exposure in Children (web page)", locator = "Clinical guidance table, BLL tiers" },
 ]
-note = "Highest management tier; CDC calls for urgent medical management of very high levels."
+note = "Highest management tier; CDC calls for urgent medical management of very high levels. Source band >= 45; stored as the critical high bound 45."

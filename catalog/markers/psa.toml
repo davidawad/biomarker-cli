@@ -17,50 +17,50 @@ legacy = true
 [[range]]
 set = "nice-ng12-2021"
 kind = "warn"
-low = 2.5
+high = 2.5
 when = { sex = "male", age = [40.0, 50.0] }
 population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 40-49, in primary care (setting: possible-prostate-cancer-symptoms)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds" },
 ]
-note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 2.5 ng/mL (micrograms/litre). Boundary is > (strictly more than). Trans women and non-binary people with male reproductive organs are covered by the same recommendation. Source kind: decision."
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 2.5 ng/mL (micrograms/litre). Boundary is > (strictly more than). Trans women and non-binary people with male reproductive organs are covered by the same recommendation. Source kind: decision. Source band >= 2.5; stored as the warn high bound 2.5."
 
 [[range]]
 set = "nice-ng12-2021"
 kind = "warn"
-low = 3.5
+high = 3.5
 when = { sex = "male", age = [50.0, 60.0] }
 population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 50-59, in primary care (setting: possible-prostate-cancer-symptoms)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds" },
 ]
-note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 3.5 ng/mL. Boundary is >. Source kind: decision."
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 3.5 ng/mL. Boundary is >. Source kind: decision. Source band >= 3.5; stored as the warn high bound 3.5."
 
 [[range]]
 set = "nice-ng12-2021"
 kind = "warn"
-low = 4.5
+high = 4.5
 when = { sex = "male", age = [60.0, 70.0] }
 population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 60-69, in primary care (setting: possible-prostate-cancer-symptoms)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds" },
 ]
-note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 4.5 ng/mL. Boundary is >. Source kind: decision."
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 4.5 ng/mL. Boundary is >. Source kind: decision. Source band >= 4.5; stored as the warn high bound 4.5."
 
 [[range]]
 set = "nice-ng12-2021"
 kind = "warn"
-low = 6.5
+high = 6.5
 when = { sex = "male", age = [70.0, 80.0] }
 population = "Men with possible symptoms of prostate cancer (lower urinary tract symptoms, erectile dysfunction or visible haematuria), aged 70-79, in primary care (setting: possible-prostate-cancer-symptoms)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations", title = "Suspected cancer: recognition and referral", locator = "Recommendation 1.6.3, Table 2 Age-specific PSA thresholds" },
 ]
-note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 6.5 ng/mL. Boundary is >. Under 40 and over 79 NICE advises clinical judgement, so no range is given for those ages. Source kind: decision."
+note = "Age-specific referral threshold (NICE NG12, recommendation 1.6.3, Table 2): consider a suspected cancer pathway referral if PSA is more than 6.5 ng/mL. Boundary is >. Under 40 and over 79 NICE advises clinical judgement, so no range is given for those ages. Source kind: decision. Source band >= 6.5; stored as the warn high bound 6.5."
 
 [[range]]
 set = "oesterling-1993"
@@ -113,36 +113,35 @@ note = "Age-specific 95th percentile of total PSA for men aged 70-79 years. The 
 [[range]]
 set = "psa-biopsy-thresholds-2009"
 kind = "warn"
-low = 2.0
-high = 3.0
+high = 2.0
 when = { sex = "male" }
 population = "Men undergoing PSA-based prostate cancer detection (review of European screening data)"
 evidence = "consensus"
 citations = [
   { pmid = "19357513", doi = "10.1097/MOU.0b013e328329a2d0", url = "https://pubmed.ncbi.nlm.nih.gov/19357513/", title = "Defining the optimal prostate-specific antigen threshold for the diagnosis of prostate cancer.", locator = "Abstract, Summary" },
 ]
-note = "Borderline band: PSA 2.0-3.0 ng/mL warrants more frequent re-testing rather than immediate biopsy. Boundaries as quoted; not a guideline threshold."
+note = "Borderline band: PSA 2.0-3.0 ng/mL warrants more frequent re-testing rather than immediate biopsy. Boundaries as quoted; not a guideline threshold. Source band 2.0-3.0; stored as the warn high bound 2.0."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 4.0
+high = 4.0
 when = { sex = "male" }
 population = "Men undergoing PSA-based prostate cancer detection (review of European screening data)"
 evidence = "consensus"
 citations = [
   { pmid = "19357513", doi = "10.1097/MOU.0b013e328329a2d0", url = "https://pubmed.ncbi.nlm.nih.gov/19357513/", title = "Defining the optimal prostate-specific antigen threshold for the diagnosis of prostate cancer.", locator = "Abstract, Summary" },
 ]
-note = "Biopsy-decision cut-off: PSA at or above 4.0 ng/mL is one of the commonly used thresholds (>2.5, 3.0 or 4.0 ng/mL were all considered reasonable). Age-specific thresholds may be preferable in older men; 5-alpha-reductase inhibitor users need PSA interpreted with caution. Source kind: decision. Alternative to the default psa-biopsy-thresholds-2009 warn range for the same population."
+note = "Biopsy-decision cut-off: PSA at or above 4.0 ng/mL is one of the commonly used thresholds (>2.5, 3.0 or 4.0 ng/mL were all considered reasonable). Age-specific thresholds may be preferable in older men; 5-alpha-reductase inhibitor users need PSA interpreted with caution. Source kind: decision. Source band >= 4.0; stored as the warn high bound 4.0. Alternative to the default psa-biopsy-thresholds-2009 warn range for the same population."
 
 [[range]]
 set = "pcrmp-as-cited-2024"
 kind = "warn"
-low = 3.0
+high = 3.0
 when = { sex = "male", age = [50.0, 70.0] }
 population = "Asymptomatic men aged 50-69 undergoing opportunistic PSA testing in UK primary care (PCRMP threshold, as described in a 2024 UK clinical consensus) (setting: asymptomatic-screening)"
 evidence = "consensus"
 citations = [
   { pmid = "39038964", doi = "10.3399/BJGP.2023.0586", url = "https://pubmed.ncbi.nlm.nih.gov/39038964/", title = "Optimising the use of the prostate-specific antigen blood test in asymptomatic men for early prostate cancer detection in primary care: report from a UK clinical consensus.", locator = "Full text, Results" },
 ]
-note = "PCRMP referral threshold of 3.0 ng/mL for asymptomatic men aged 50-69 (boundary >= 3.0 as stated). Cited here from a 2024 UK consensus that questions its rationale; the PCRMP document itself was not retrieved. A 2023 review notes the PCRMP threshold is 3 ng/mL regardless of age, which is not separately quoted as a range. Source kind: decision."
+note = "PCRMP referral threshold of 3.0 ng/mL for asymptomatic men aged 50-69 (boundary >= 3.0 as stated). Cited here from a 2024 UK consensus that questions its rationale; the PCRMP document itself was not retrieved. A 2023 review notes the PCRMP threshold is 3 ng/mL regardless of age, which is not separately quoted as a range. Source kind: decision. Source band >= 3.0; stored as the warn high bound 3.0."

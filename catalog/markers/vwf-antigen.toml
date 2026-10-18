@@ -21,22 +21,21 @@ note = "Mean +/- 2SD range for blood group O, quoted from a review that cites th
 [[range]]
 set = "vwd-guidelines-as-cited-jcm-2017"
 kind = "warn"
-high = 30
+low = 30
 population = "Adults and children suspected of von Willebrand disease (as summarised in a 2017 review of VWD diagnosis and treatment)"
 evidence = "consensus"
 citations = [
   { pmid = "28394285", doi = "10.3390/jcm6040045", title = "Diagnosis and Treatment of von Willebrand Disease and Rare Bleeding Disorders.", locator = "Full text, type 1 VWD paragraph" },
 ]
-note = "Threshold attributed by the review to 'several guidelines' (its ref 16); the 2021 ASH/ISTH/NHF/WFH guideline text itself was not retrievable, and the 2025 monitoring report full text contains no numeric cutoffs. Values below this level are diagnostic of VWD. Source kind: diagnostic."
+note = "Threshold attributed by the review to 'several guidelines' (its ref 16); the 2021 ASH/ISTH/NHF/WFH guideline text itself was not retrievable, and the 2025 monitoring report full text contains no numeric cutoffs. Values below this level are diagnostic of VWD. Source kind: diagnostic. Source band <= 30; stored as the warn low bound 30."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 30
-high = 50
+low = 50
 population = "Adults and children with low VWF levels suspected of von Willebrand disease (as summarised in a 2017 review)"
 evidence = "consensus"
 citations = [
   { pmid = "28394285", doi = "10.3390/jcm6040045", title = "Diagnosis and Treatment of von Willebrand Disease and Rare Bleeding Disorders.", locator = "Full text, type 1 VWD paragraph" },
 ]
-note = "Described as 'low VWF' with a mild bleeding risk, as attributed to guidelines by the review. Not a diagnostic threshold. Alternative to the default vwd-guidelines-as-cited-jcm-2017 warn range for the same population."
+note = "Described as 'low VWF' with a mild bleeding risk, as attributed to guidelines by the review. Not a diagnostic threshold. Source band 30-50; stored as the warn low bound 50. Alternative to the default vwd-guidelines-as-cited-jcm-2017 warn range for the same population."

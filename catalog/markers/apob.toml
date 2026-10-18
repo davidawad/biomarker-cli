@@ -21,24 +21,24 @@ legacy = true
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 130
+high = 130
 population = "Adults (2018 AHA/ACC risk-enhancing factor)"
 evidence = "guideline"
 citations = [
   { pmid = "42876934", doi = "10.3389/fcvm.2026.1857230", title = "Apolipoprotein B in cardiovascular risk assessment: beyond traditional lipid markers.", locator = "Introduction / risk-enhancing factors paragraph" },
 ]
-note = "Risk-enhancing factor in the 2018 AHA/ACC cholesterol guideline, particularly with triglycerides >= 200 mg/dL (as summarised in the cited review). Superseded by the 2026 ACC/AHA dyslipidemia guideline, whose apoB text could not be retrieved."
+note = "Risk-enhancing factor in the 2018 AHA/ACC cholesterol guideline, particularly with triglycerides >= 200 mg/dL (as summarised in the cited review). Superseded by the 2026 ACC/AHA dyslipidemia guideline, whose apoB text could not be retrieved. Source band >= 130; stored as the warn high bound 130."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 130
+high = 130
 population = "Adults; apoB as a risk-enhancing biomarker (as restated in a 2026 review)"
 evidence = "guideline"
 citations = [
   { pmid = "42629510", doi = "10.1007/s40119-026-00473-5", title = "Beyond LDL-C: Modern Lipid Management for ASCVD Prevention in Primary Care.", locator = "Lipid management section" },
 ]
-note = "apoB >= 130 mg/dL as a risk-enhancing biomarker supporting therapy initiation or intensification, as restated in the cited 2026 review. The review does not name the guideline edition; the 2026 ACC/AHA text itself was not retrievable."
+note = "apoB >= 130 mg/dL as a risk-enhancing biomarker supporting therapy initiation or intensification, as restated in the cited 2026 review. The review does not name the guideline edition; the 2026 ACC/AHA text itself was not retrievable. Source band >= 130; stored as the warn high bound 130."
 
 [[range]]
 set = "target"
@@ -74,7 +74,7 @@ citations = [
 note = "ESC/EAS 2019 secondary target: apoB strictly below 100 mg/dL (as summarised in the cited review). Applies only to: risk=moderate-cardiovascular-risk. Source kind: target. Alternative to the default target optimal range for the same population."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 60.0
 high = 150.0
@@ -84,10 +84,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "21419755", doi = "10.1016/j.cca.2011.03.015", title = "Apolipoprotein A-I, apolipoprotein B, and apolipoprotein B/apolipoprotein A-I ratio: reference intervals compared with values in different pathophysiological conditions from the FINRISK 2007 study.", locator = "Abstract (Results)" },
 ]
-note = "Sex-specific 95% reference interval (FINRISK 2007 reference sample; source abstract is sex-ordered for apoB as men then women, inferred from the sentence order). Abstract only: the paper is not open access. Converted from the source's g/L (0.6-1.5) to mg/dL using factor 100."
+note = "Sex-specific 95% reference interval (FINRISK 2007 reference sample; source abstract is sex-ordered for apoB as men then women, inferred from the sentence order). Abstract only: the paper is not open access. Converted from the source's g/L (0.6-1.5) to mg/dL using factor 100. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 60.0
 high = 130.0
@@ -97,7 +97,7 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "21419755", doi = "10.1016/j.cca.2011.03.015", title = "Apolipoprotein A-I, apolipoprotein B, and apolipoprotein B/apolipoprotein A-I ratio: reference intervals compared with values in different pathophysiological conditions from the FINRISK 2007 study.", locator = "Abstract (Results)" },
 ]
-note = "Sex-specific 95% reference interval (FINRISK 2007 reference sample; source abstract is sex-ordered for apoB as men then women, inferred from the sentence order). Abstract only: the paper is not open access. Converted from the source's g/L (0.6-1.3) to mg/dL using factor 100."
+note = "Sex-specific 95% reference interval (FINRISK 2007 reference sample; source abstract is sex-ordered for apoB as men then women, inferred from the sentence order). Abstract only: the paper is not open access. Converted from the source's g/L (0.6-1.3) to mg/dL using factor 100. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "alt-3"
@@ -113,10 +113,10 @@ note = "Therapeutic apoB goal for low-risk individuals derived in FINRISK 2007 (
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 100.0
+high = 100.0
 population = "Adults; laboratory flagging of lipid results"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract (laboratory flagging recommendation)" },
 ]
-note = "EAS/EFLM 2016 laboratory flag: apoB at or above 1.0 g/L (100 mg/dL). apoB is not affected by fasting status per the same consensus. Converted from the source's g/L (1.0) to mg/dL using factor 100. Alternative to the default clinical warn range for the same population."
+note = "EAS/EFLM 2016 laboratory flag: apoB at or above 1.0 g/L (100 mg/dL). apoB is not affected by fasting status per the same consensus. Converted from the source's g/L (1.0) to mg/dL using factor 100. Source band >= 100.0; stored as the warn high bound 100.0. Alternative to the default clinical warn range for the same population."

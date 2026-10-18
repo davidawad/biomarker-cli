@@ -8,14 +8,14 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 34.8
+high = 34.8
 when = { fasting = false }
 population = "Adults, non-fasting samples"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract (laboratory flagging recommendation)" },
 ]
-note = "EAS/EFLM 2016 laboratory flag for calculated remnant cholesterol (35 mg/dL). The same consensus gives no remnant-cholesterol flag for fasting samples. Converted from the source's mmol/L (0.9) to mg/dL using factor 38.67."
+note = "EAS/EFLM 2016 laboratory flag for calculated remnant cholesterol (35 mg/dL). The same consensus gives no remnant-cholesterol flag for fasting samples. Converted from the source's mmol/L (0.9) to mg/dL using factor 38.67. Source band >= 34.8; stored as the warn high bound 34.8."
 
 [[range]]
 set = "optimal"
@@ -32,11 +32,11 @@ note = "Lowest-risk category in the Copenhagen cohort: non-fasting remnant chole
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 58.01
+high = 58.01
 when = { fasting = false }
 population = "Adults from the Copenhagen General Population Study (non-fasting measurement)"
 evidence = "cohort"
 citations = [
   { pmid = "25605681", doi = "10.1373/clinchem.2014.234146", title = "Extreme nonfasting remnant cholesterol vs extreme LDL cholesterol as contributors to cardiovascular disease and all-cause mortality in 90000 individuals from the general population.", locator = "Results" },
 ]
-note = "Highest-risk category in the Copenhagen cohort: non-fasting remnant cholesterol of 1.5 mmol/L (58 mg/dL) or more, hazard ratio 2.4 for ischemic heart disease versus the lowest category. Not a guideline cut-off. Converted from the source's mmol/L (1.5) to mg/dL using factor 38.67. Alternative to the default clinical warn range for the same population."
+note = "Highest-risk category in the Copenhagen cohort: non-fasting remnant cholesterol of 1.5 mmol/L (58 mg/dL) or more, hazard ratio 2.4 for ischemic heart disease versus the lowest category. Not a guideline cut-off. Converted from the source's mmol/L (1.5) to mg/dL using factor 38.67. Source band >= 58.01; stored as the warn high bound 58.01. Alternative to the default clinical warn range for the same population."

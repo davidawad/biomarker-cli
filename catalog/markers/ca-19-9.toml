@@ -45,21 +45,21 @@ note = "Upper reference limit (97.5th percentile) for CA19-9 in men aged 70 and 
 [[range]]
 set = "ca19-9-ipmn-meta-2026"
 kind = "warn"
-low = 37
+high = 37
 population = "Patients with intraductal papillary mucinous neoplasm (IPMN) who underwent resection (systematic review and meta-analysis)"
 evidence = "cohort"
 citations = [
   { pmid = "42360746", doi = "10.1001/jamanetworkopen.2026.17587", url = "https://pubmed.ncbi.nlm.nih.gov/42360746/", title = "Serum CA19.9 for Detecting High-Grade Dysplasia and Invasive Carcinoma in Patients With Intraductal Papillary Mucinous Neoplasm: A Systematic Review and Meta-Analysis.", locator = "Abstract, Introduction" },
 ]
-note = "Guideline-referenced threshold: serum CA19-9 >= 37 U/mL is considered a worrisome feature. Boundary is >= 37. Used as a diagnostic cut-off in this IPMN meta-analysis; not a general screening threshold. Source kind: decision."
+note = "Guideline-referenced threshold: serum CA19-9 >= 37 U/mL is considered a worrisome feature. Boundary is >= 37. Used as a diagnostic cut-off in this IPMN meta-analysis; not a general screening threshold. Source kind: decision. Source band >= 37; stored as the warn high bound 37."
 
 [[range]]
 set = "ca199-fut3-cutoff-2026"
 kind = "warn"
-high = 7
+low = 7
 population = "Patients with pancreatic ductal adenocarcinoma (PDAC) with FUT3-null (Lewis-negative) status, training and validation cohorts"
 evidence = "cohort"
 citations = [
   { pmid = "42162970", doi = "10.1158/1078-0432.CCR-25-4564", url = "https://pubmed.ncbi.nlm.nih.gov/42162970/", title = "A New CA19-9 Cutoff Value Identifies Lewis Antigen Status and Refines Prognostic Stratification in PDAC.", locator = "Abstract, Results" },
 ]
-note = "Lewis-negative caveat: a CA19-9 at or below 7 U/mL suggests FUT3-null (Lewis-negative) status, in which CA19-9 is not produced and a low value does not exclude cancer. Boundary is <= 7 U/mL. Derived in one PDAC cohort. Source kind: decision."
+note = "Lewis-negative caveat: a CA19-9 at or below 7 U/mL suggests FUT3-null (Lewis-negative) status, in which CA19-9 is not produced and a low value does not exclude cancer. Boundary is <= 7 U/mL. Derived in one PDAC cohort. Source kind: decision. Source band <= 7; stored as the warn low bound 7."

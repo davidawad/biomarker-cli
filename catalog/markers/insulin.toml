@@ -25,7 +25,7 @@ high = 6.0
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 1.61
 high = 11.37
@@ -35,10 +35,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results" },
 ]
-note = "Central 95% reference interval for fasting insulin in men (source unit uU/mL, identical to uIU/mL)."
+note = "Central 95% reference interval for fasting insulin in men (source unit uU/mL, identical to uIU/mL). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 2.34
 high = 11.98
@@ -48,10 +48,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "24530467", doi = "10.1016/j.clinbiochem.2014.02.007", title = "Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study.", locator = "Abstract, Results" },
 ]
-note = "Central 95% reference interval for fasting insulin in women (source unit uU/mL, identical to uIU/mL)."
+note = "Central 95% reference interval for fasting insulin in women (source unit uU/mL, identical to uIU/mL). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 2.63
 high = 14.56
@@ -61,4 +61,4 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "41857869", doi = "10.1136/bmjopen-2025-109523", title = "Reference intervals for fasting insulin and insulin-related indices in healthy adults: a cross-sectional study in Gandaki Province, Nepal.", locator = "Abstract, Results" },
 ]
-note = "Non-parametric 2.5th-97.5th percentile reference interval, Nepal; sex not reported separately."
+note = "Non-parametric 2.5th-97.5th percentile reference interval, Nepal; sex not reported separately. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."

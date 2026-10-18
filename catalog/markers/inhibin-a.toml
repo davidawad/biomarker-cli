@@ -8,7 +8,7 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "inhibin-a-second-trimester-preeclampsia-1999"
 kind = "warn"
-low = 2.0
+high = 2.0
 when = { pregnant = true, trimester = 2 }
 population = "Second-trimester maternal serum inhibin A in a pregnancy cohort, with pre-eclampsia and small-for-gestational-age infants as outcomes"
 evidence = "cohort"
@@ -16,4 +16,4 @@ citations = [
   { pmid = "10411808", doi = "10.1016/s0002-9378(99)70448-5", url = "https://pubmed.ncbi.nlm.nih.gov/10411808/", title = "Second-trimester maternal serum inhibin A concentration as an early marker for preeclampsia.", locator = "Abstract, Results" },
   { pmid = "33059628", doi = "10.1186/s12884-020-03298-9", url = "https://pubmed.ncbi.nlm.nih.gov/33059628/", title = "Quad test for fetal aneuploidy screening as a predictor of small-for-gestational-age fetuses: a population-based study.", locator = "Methods" },
 ]
-note = "Women above 2.0 MoM were significantly more likely to develop pre-eclampsia and to deliver a small-for-gestational-age infant. The 1999 study is older; the 2020 cut-off below uses the same threshold. Source kind: diagnostic."
+note = "Women above 2.0 MoM were significantly more likely to develop pre-eclampsia and to deliver a small-for-gestational-age infant. The 1999 study is older; the 2020 cut-off below uses the same threshold. Source kind: diagnostic. Source band >= 2.0; stored as the warn high bound 2.0."

@@ -10,11 +10,11 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "aasld-idsa-2019-hcv"
 kind = "warn"
-high = 25
+low = 25
 population = "Adults with chronic hepatitis C, tested for treatment response or SVR"
 evidence = "guideline"
 citations = [
   { pmid = "31816111", doi = "10.1002/hep.31060", url = "https://pubmed.ncbi.nlm.nih.gov/31816111/", title = "Hepatitis C Guidance 2019 Update: American Association for the Study of Liver Diseases-Infectious Diseases Society of America Recommendations for Testing, Managing, and Treating Hepatitis C Virus Infection.", locator = "Full text, Testing section (dried blood spot / assay detection level)" },
   { pmid = "31816111", doi = "10.1002/hep.31060", url = "https://pubmed.ncbi.nlm.nih.gov/31816111/", title = "Hepatitis C Guidance 2019 Update: American Association for the Study of Liver Diseases-Infectious Diseases Society of America Recommendations for Testing, Managing, and Treating Hepatitis C Virus Infection.", locator = "Full text, SVR section" },
 ]
-note = "Assay requirement, not a treatment-outcome cut-off: the guidance asks for an HCV RNA assay with a detection level of 25 IU/mL or lower (boundary <=25) so that undetectable results can be reported. The guidance gives no 15 IU/mL value. SVR is undetectable HCV RNA 12 or more weeks after completing DAA therapy. Source kind: decision."
+note = "Assay requirement, not a treatment-outcome cut-off: the guidance asks for an HCV RNA assay with a detection level of 25 IU/mL or lower (boundary <=25) so that undetectable results can be reported. The guidance gives no 15 IU/mL value. SVR is undetectable HCV RNA 12 or more weeks after completing DAA therapy. Source kind: decision. Source band <= 25; stored as the warn low bound 25."

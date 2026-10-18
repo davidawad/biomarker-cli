@@ -9,33 +9,33 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "sleep-2011-actigraphy-poor-sleep"
 kind = "warn"
-high = 85
+low = 85
 population = "Healthy middle-aged community adults with 3-day actigraphy in a cross-sectional wave of a follow-up study (method: actigraphy)"
 evidence = "cohort"
 citations = [
   { pmid = "21286244", doi = "10.1093/sleep/34.2.225", url = "https://pubmed.ncbi.nlm.nih.gov/21286244/", title = "Relationship of sleep quantity and quality with 24-hour urinary catecholamines and salivary awakening cortisol in healthy middle-aged adults.", locator = "Abstract, Measurements and Results" },
 ]
-note = "Research classification of objectively poor sleepers: actigraphy sleep efficiency below 85% (boundary < 85%). A study-defined threshold, not a clinical guideline cut-off; above 85% counts as good sleep in this comparison. Source kind: decision."
+note = "Research classification of objectively poor sleepers: actigraphy sleep efficiency below 85% (boundary < 85%). A study-defined threshold, not a clinical guideline cut-off; above 85% counts as good sleep in this comparison. Source kind: decision. Source band <= 85; stored as the warn low bound 85."
 
 [[range]]
 set = "insomnia-research-criteria-2019"
 kind = "warn"
-high = 85
+low = 85
 when = { conditions = ["insomnia"] }
 population = "Adults meeting DSM-5 criteria for insomnia, selected for actigraphy versus in-laboratory polysomnography comparison (method: polysomnography)"
 evidence = "cohort"
 citations = [
   { pmid = "30941838", doi = "10.1111/jsr.12854", url = "https://pubmed.ncbi.nlm.nih.gov/30941838/", title = "Relation between ambulatory actigraphy and laboratory polysomnography in insomnia practice and research.", locator = "Abstract, Methods" },
 ]
-note = "Research inclusion criterion for insomnia: in-laboratory polysomnography sleep efficiency below 85% (boundary < 85%). The study used this as an entry threshold; it is not a diagnostic cut-off for insomnia by itself. Source kind: decision."
+note = "Research inclusion criterion for insomnia: in-laboratory polysomnography sleep efficiency below 85% (boundary < 85%). The study used this as an entry threshold; it is not a diagnostic cut-off for insomnia by itself. Source kind: decision. Source band <= 85; stored as the warn low bound 85."
 
 [[range]]
 set = "jacc-adv-2026-sleep-health-women-mi"
 kind = "warn"
-high = 85
+low = 85
 population = "Women after myocardial infarction, sleep measured by actigraphy and diary"
 evidence = "cohort"
 citations = [
   { pmid = "42748745", doi = "10.1016/j.jacadv.2026.103194", url = "https://pubmed.ncbi.nlm.nih.gov/42748745/", title = "Objective and Subjective Multidimensional Sleep Health in Women After Myocardial Infarction.", locator = "Full text, Methods (sleep health definitions)" },
 ]
-note = "Authors' definition of suboptimal sleep health: efficiency below 85% (boundary < 85%), alongside duration and WASO thresholds. The thresholds are attributed by the authors to AASM/SRS recommendations and prior research; that attribution was not verified against the source documents here."
+note = "Authors' definition of suboptimal sleep health: efficiency below 85% (boundary < 85%), alongside duration and WASO thresholds. The thresholds are attributed by the authors to AASM/SRS recommendations and prior research; that attribution was not verified against the source documents here. Source band <= 85; stored as the warn low bound 85."

@@ -20,35 +20,35 @@ note = "Upper reference limit for non-fasting total serum bile acids in the thir
 [[range]]
 set = "bjog-2021-icp-thresholds"
 kind = "warn"
-low = 19
+high = 19
 when = { pregnant = true, fasting = false, conditions = ["intrahepatic-cholestasis-of-pregnancy"] }
 population = "Women with suspected intrahepatic cholestasis of pregnancy, non-fasting sampling (BJOG 2021) (specimen: serum)"
 evidence = "cohort"
 citations = [
   { pmid = "33586324", doi = "10.1111/1471-0528.16669", url = "https://pubmed.ncbi.nlm.nih.gov/33586324/", title = "Re-evaluating diagnostic thresholds for intrahepatic cholestasis of pregnancy: case-control and cohort study.", locator = "Abstract, Conclusions" },
 ]
-note = "Proposed non-fasting threshold (19 µmol/L or more) that improves diagnostic accuracy because postprandial rise in normal pregnancy is accounted for. Compare with fasting thresholds. Source kind: diagnostic."
+note = "Proposed non-fasting threshold (19 µmol/L or more) that improves diagnostic accuracy because postprandial rise in normal pregnancy is accounted for. Compare with fasting thresholds. Source kind: diagnostic. Source band >= 19; stored as the warn high bound 19."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 40
+high = 40
 when = { pregnant = true, fasting = false, conditions = ["intrahepatic-cholestasis-of-pregnancy"] }
 population = "Women with intrahepatic cholestasis of pregnancy, non-fasting sampling (BJOG 2021) (specimen: serum)"
 evidence = "cohort"
 citations = [
   { pmid = "33586324", doi = "10.1111/1471-0528.16669", url = "https://pubmed.ncbi.nlm.nih.gov/33586324/", title = "Re-evaluating diagnostic thresholds for intrahepatic cholestasis of pregnancy: case-control and cohort study.", locator = "Abstract, Conclusions" },
 ]
-note = "Severe ICP cut-off (40 µmol/L or more). Non-fasting sampling detected over 91% of severe cases in this study; fasting sampling detected 9%. Source kind: diagnostic. Alternative to the default bjog-2021-icp-thresholds warn range for the same population."
+note = "Severe ICP cut-off (40 µmol/L or more). Non-fasting sampling detected over 91% of severe cases in this study; fasting sampling detected 9%. Source kind: diagnostic. Source band >= 40; stored as the warn high bound 40. Alternative to the default bjog-2021-icp-thresholds warn range for the same population."
 
 [[range]]
 set = "ovadia-2019-lancet"
 kind = "critical"
-low = 100
+high = 100
 when = { pregnant = true, conditions = ["intrahepatic-cholestasis-of-pregnancy"] }
 population = "Women with intrahepatic cholestasis of pregnancy, aggregate and individual patient data from 27 studies (singleton pregnancies) (specimen: serum)"
 evidence = "cohort"
 citations = [
   { pmid = "30773280", doi = "10.1016/S0140-6736(18)31877-4", url = "https://pubmed.ncbi.nlm.nih.gov/30773280/", title = "Association of adverse perinatal outcomes of intrahepatic cholestasis of pregnancy with biochemical markers: results of aggregate and individual patient data meta-analyses.", locator = "Interpretation" },
 ]
-note = "Stillbirth risk is increased at 100 µmol/L or more in singleton pregnancies (stillbirth 3.44% vs 0.13% and 0.28% below 100 µmol/L). Most women with ICP are below this level; repeat testing is advised."
+note = "Stillbirth risk is increased at 100 µmol/L or more in singleton pregnancies (stillbirth 3.44% vs 0.13% and 0.28% below 100 µmol/L). Most women with ICP are below this level; repeat testing is advised. Source band >= 100; stored as the critical high bound 100."

@@ -37,7 +37,6 @@ note = "Acceptable pediatric non-HDL-C: strictly below 120 mg/dL."
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 120
 high = 144
 when = { age = [0.0, 20.0] }
 population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
@@ -45,7 +44,7 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "Pediatric borderline-high non-HDL-C."
+note = "Pediatric borderline-high non-HDL-C. Source band 120-144; stored as the warn high bound 144."
 
 [[range]]
 set = "target"
@@ -95,17 +94,17 @@ note = "NICE NG238 secondary-prevention non-HDL-C target, stated in mmol/L; numb
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 145
+high = 145
 when = { age = [0.0, 20.0] }
 population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "Pediatric high non-HDL-C (>= 145 mg/dL). Source kind: diagnostic."
+note = "Pediatric high non-HDL-C (>= 145 mg/dL). Source kind: diagnostic. Source band >= 145; stored as the warn high bound 145."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 73
 high = 220
@@ -115,10 +114,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 1.88-5.69 mmol/L)."
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 1.88-5.69 mmol/L). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 71
 high = 187
@@ -128,10 +127,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 1.83-4.84 mmol/L)."
+note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 1.83-4.84 mmol/L). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 89
 high = 226
@@ -141,28 +140,28 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 2.31-5.85 mmol/L)."
+note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 2.31-5.85 mmol/L). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 150
+high = 150
 when = { fasting = false }
 population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract" },
 ]
-note = "Laboratory flag for abnormal non-fasting non-HDL-C. The consensus full text gives 3.9 mmol/L (155 mg/dL) in one place and 3.9 mmol/L (150 mg/dL) in the abstract; the abstract value is used here."
+note = "Laboratory flag for abnormal non-fasting non-HDL-C. The consensus full text gives 3.9 mmol/L (155 mg/dL) in one place and 3.9 mmol/L (150 mg/dL) in the abstract; the abstract value is used here. Source band >= 150; stored as the warn high bound 150."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 145
+high = 145
 when = { fasting = true }
 population = "Fasting samples (lab flagging, EAS/EFLM consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Results / flagging section (full text)" },
 ]
-note = "Laboratory flag for abnormal fasting non-HDL-C."
+note = "Laboratory flag for abnormal fasting non-HDL-C. Source band >= 145; stored as the warn high bound 145."

@@ -7,14 +7,14 @@ description = "Conjugated (direct) serum bilirubin. Used with total bilirubin to
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 1.0
+high = 1.0
 when = { age = [0.0, 1.0] }
 population = "Infants jaundiced after 2 weeks of age"
 evidence = "guideline"
 citations = [
   { pmid = "27429428", doi = "10.1097/MPG.0000000000001334", title = "Guideline for the Evaluation of Cholestatic Jaundice in Infants: Joint Recommendations of the North American Society for Pediatric Gastroenterology, Hepatology, and Nutrition and the European Society for Pediatric Gastroenterology, Hepatology, and Nutrition.", locator = "Abstract" },
 ]
-note = "NASPGHAN/ESPGHAN joint guideline: an elevated direct bilirubin prompts timely evaluation and referral for neonatal/infant cholestasis. Source kind: diagnostic."
+note = "NASPGHAN/ESPGHAN joint guideline: an elevated direct bilirubin prompts timely evaluation and referral for neonatal/infant cholestasis. Source kind: diagnostic. Source band >= 1.0; stored as the warn high bound 1.0."
 
 [[range]]
 set = "clinical"
@@ -160,11 +160,11 @@ note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval s
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 0.5848
+high = 0.5848
 when = { age = [0.0, 18.0] }
 population = "Children up to 18 years with hyperbilirubinaemia (CALIPER case reviews)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "25445233", doi = "10.1016/j.clinbiochem.2014.10.011", title = "Clinical decision limits for interpretation of direct bilirubin--a CALIPER study of healthy multiethnic children and case report reviews.", locator = "Abstract (Conclusions)" },
 ]
-note = "Decision limit: direct bilirubin of 10 umol/L or more suggests conjugated hyperbilirubinaemia when total bilirubin is also above its reference interval. Converted from the source's µmol/L (10) to mg/dL using factor 0.05848. Source kind: diagnostic."
+note = "Decision limit: direct bilirubin of 10 umol/L or more suggests conjugated hyperbilirubinaemia when total bilirubin is also above its reference interval. Converted from the source's µmol/L (10) to mg/dL using factor 0.05848. Source kind: diagnostic. Source band >= 0.5848; stored as the warn high bound 0.5848."

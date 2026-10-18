@@ -16,23 +16,23 @@ legacy = true
 [[range]]
 set = "jes-2026-percent-bf-obesity"
 kind = "warn"
-low = 25
+high = 25
 when = { sex = "male" }
 population = "Adults (obesity threshold for percent body fat as cited in a 2026 Journal of the Endocrine Society brief report on DXA body composition) (method: dxa)"
 evidence = "cohort"
 citations = [
   { pmid = "42453567", doi = "10.1210/jendso/bvag139", url = "https://pubmed.ncbi.nlm.nih.gov/42453567/", title = "Percent body fat misclassifies patients with sarcopenia as obese: support for fat mass index in obesity assessment.", locator = "Full text, Introduction (obesity definitions)" },
 ]
-note = "Obesity by percent body fat in men: 25 percent or more (boundary >= 25). The report cites its own reference 5 for this threshold, which was not retrieved; the report describes %BF as reported on DXA. Source kind: decision."
+note = "Obesity by percent body fat in men: 25 percent or more (boundary >= 25). The report cites its own reference 5 for this threshold, which was not retrieved; the report describes %BF as reported on DXA. Source kind: decision. Source band >= 25; stored as the warn high bound 25."
 
 [[range]]
 set = "jes-2026-percent-bf-obesity"
 kind = "warn"
-low = 35
+high = 35
 when = { sex = "female" }
 population = "Adults (obesity threshold for percent body fat as cited in a 2026 Journal of the Endocrine Society brief report on DXA body composition) (method: dxa)"
 evidence = "cohort"
 citations = [
   { pmid = "42453567", doi = "10.1210/jendso/bvag139", url = "https://pubmed.ncbi.nlm.nih.gov/42453567/", title = "Percent body fat misclassifies patients with sarcopenia as obese: support for fat mass index in obesity assessment.", locator = "Full text, Introduction (obesity definitions)" },
 ]
-note = "Obesity by percent body fat in women: 35 percent or more (boundary >= 35). The report cites its own reference 5 for this threshold, which was not retrieved; the report describes %BF as reported on DXA. Source kind: decision."
+note = "Obesity by percent body fat in women: 35 percent or more (boundary >= 35). The report cites its own reference 5 for this threshold, which was not retrieved; the report describes %BF as reported on DXA. Source kind: decision. Source band >= 35; stored as the warn high bound 35."

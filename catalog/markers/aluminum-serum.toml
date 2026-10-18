@@ -19,11 +19,11 @@ note = "Serum aluminium of 2 µg/dL or more is the level above which the authors
 [[range]]
 set = "aluminum-osteomalacia-1986"
 kind = "warn"
-low = 100
+high = 100
 when = { conditions = ["ckd"] }
 population = "Patients on maintenance hemodialysis or CAPD, 28 of whom had bone biopsy with aluminium staining"
 evidence = "cohort"
 citations = [
   { pmid = "3776914", doi = "10.1093/ajcp/86.5.629", title = "Interpretation of serum aluminum values in dialysis patients.", locator = "Abstract" },
 ]
-note = "Reliable indicator of aluminium-associated osteomalacia on bone biopsy in this 1986 series. Lower levels did not exclude low-turnover or mixed bone disease. ng/mL is numerically equal to µg/L. Source kind: toxic."
+note = "Reliable indicator of aluminium-associated osteomalacia on bone biopsy in this 1986 series. Lower levels did not exclude low-turnover or mixed bone disease. ng/mL is numerically equal to µg/L. Source kind: toxic. Source band >= 100; stored as the warn high bound 100."

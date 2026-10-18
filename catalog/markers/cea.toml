@@ -44,25 +44,24 @@ note = "Upper reference limit (95th percentile) for CEA in adults aged 60 and ov
 [[range]]
 set = "cea-review-2026"
 kind = "warn"
-high = 5
+low = 5
 population = "Adults; colorectal cancer context (narrative review)"
 evidence = "consensus"
 citations = [
   { pmid = "42214175", doi = "10.1016/j.tranon.2026.102835", url = "https://pubmed.ncbi.nlm.nih.gov/42214175/", title = "Current opinions on CEA in the diagnosis and prognosis of colorectal cancer.", locator = "Full text, CEA levels section" },
 ]
-note = "Commonly used cut-off for CEA elevation. Values are not diagnostic on their own; smoking and other benign conditions can raise CEA. Boundary as quoted (5 ng/mL is the usual upper limit; the review does not state > versus >=). Source kind: decision."
+note = "Commonly used cut-off for CEA elevation. Values are not diagnostic on their own; smoking and other benign conditions can raise CEA. Boundary as quoted (5 ng/mL is the usual upper limit; the review does not state > versus >=). Source kind: decision. Source band <= 5; stored as the warn low bound 5."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 5
 high = 10
 population = "Adults; colorectal cancer context (narrative review)"
 evidence = "consensus"
 citations = [
   { pmid = "42214175", doi = "10.1016/j.tranon.2026.102835", url = "https://pubmed.ncbi.nlm.nih.gov/42214175/", title = "Current opinions on CEA in the diagnosis and prognosis of colorectal cancer.", locator = "Full text, CEA levels section" },
 ]
-note = "Borderline band: CEA 5-10 ng/mL can be produced by benign factors, so a value in this band needs context and repeat measurement. Alternative to the default cea-review-2026 warn range for the same population."
+note = "Borderline band: CEA 5-10 ng/mL can be produced by benign factors, so a value in this band needs context and repeat measurement. Source band 5-10; stored as the warn high bound 10. Alternative to the default cea-review-2026 warn range for the same population."
 
 [[range]]
 set = "wjgs-cea-2024"

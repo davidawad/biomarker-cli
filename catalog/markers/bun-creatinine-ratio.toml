@@ -8,21 +8,21 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 20
+high = 20
 population = "Adults and children with acute kidney injury"
 evidence = "consensus"
 citations = [
   { pmid = "29497527", doi = "10.1093/ckj/sfs013", title = "The meaning of the blood urea nitrogen/creatinine ratio in acute kidney injury.", locator = "Abstract, Background" },
 ]
-note = "Traditional threshold: a ratio strictly above 20 is used to suggest prerenal azotemia rather than acute tubular necrosis. The source (an expert opinion article) reports little evidence that the ratio reliably separates the two conditions. Source kind: diagnostic."
+note = "Traditional threshold: a ratio strictly above 20 is used to suggest prerenal azotemia rather than acute tubular necrosis. The source (an expert opinion article) reports little evidence that the ratio reliably separates the two conditions. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."
 
 [[range]]
 set = "bcr-prerenal-threshold"
 kind = "warn"
-low = 20
+high = 20
 population = "Adults with acute kidney injury (hospitalised patients, as discussed in a critical-care nephrology commentary)"
 evidence = "consensus"
 citations = [
   { pmid = "29497527", doi = "10.1093/ckj/sfs013", url = "https://pubmed.ncbi.nlm.nih.gov/29497527/", title = "The meaning of the blood urea nitrogen/creatinine ratio in acute kidney injury.", locator = "Full text, Introduction" },
 ]
-note = "Traditional pre-renal azotaemia threshold: BUN:creatinine ratio above 20 (boundary > 20). The source describes it as the traditional threshold and notes that about half of AKI patients in its cohort exceeded it, so a high ratio does not reliably separate pre-renal from tubular causes. A 10 to 20 reference interval was not retrievable and is not included. Source kind: decision."
+note = "Traditional pre-renal azotaemia threshold: BUN:creatinine ratio above 20 (boundary > 20). The source describes it as the traditional threshold and notes that about half of AKI patients in its cohort exceeded it, so a high ratio does not reliably separate pre-renal from tubular causes. A 10 to 20 reference interval was not retrievable and is not included. Source kind: decision. Source band >= 20; stored as the warn high bound 20."

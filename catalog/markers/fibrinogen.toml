@@ -8,14 +8,14 @@ description = "Clottable plasma protein that forms the fibrin clot, measured fun
 [[range]]
 set = "european-trauma-bleeding"
 kind = "critical"
-high = 2.0
+low = 2.0
 when = { conditions = ["major-bleeding"] }
 population = "adults with major bleeding and trauma-induced coagulopathy (European trauma guideline, 4th edition)"
 evidence = "guideline"
 citations = [
   { pmid = "27072503", doi = "10.1186/s13054-016-1265-x", title = "The European guideline on management of major bleeding and coagulopathy following trauma: fourth edition.", locator = "Recommendation 28" },
 ]
-note = "Replacement threshold band: Recommendation 28 (Grade 1C) advises fibrinogen concentrate or cryoprecipitate when significant bleeding is accompanied by viscoelastic signs of functional fibrinogen deficit or fibrinogen below 1.5-2.0 g/L. Guideline gives a band, not a single cut-off."
+note = "Replacement threshold band: Recommendation 28 (Grade 1C) advises fibrinogen concentrate or cryoprecipitate when significant bleeding is accompanied by viscoelastic signs of functional fibrinogen deficit or fibrinogen below 1.5-2.0 g/L. Guideline gives a band, not a single cut-off. Source band <= 2.0; stored as the critical low bound 2.0."
 
 [[range]]
 set = "clinical"
@@ -136,10 +136,10 @@ note = "Total fibrinogen reference interval (2.05-4.68 g/L = 205-468 mg/dL) by t
 [[range]]
 set = "fibrinogen-bleeding-review-2026"
 kind = "warn"
-high = 2.0
+low = 2.0
 population = "Patients with coagulopathic bleeding (cardiac surgery and haemorrhage), as summarised in a 2026 review; not a screening population"
 evidence = "consensus"
 citations = [
   { pmid = "42652560", doi = "10.3390/jcm15166156", url = "https://pubmed.ncbi.nlm.nih.gov/42652560/", title = "Fibrinogen Concentrate in Acute Hemorrhage: Mechanistic Insight, Thresholds, and Targeted Replacement.", locator = "Full text, Introduction (thresholds)" },
 ]
-note = "Fibrinogen below 200 mg/dL is described as putting patients at risk of more severe coagulopathic bleeding (boundary < 200 mg/dL). The review says this may vary by patient population; it is not a guideline cut-off. Converted from the source's mg/dL (200) to g/L using factor 0.01."
+note = "Fibrinogen below 200 mg/dL is described as putting patients at risk of more severe coagulopathic bleeding (boundary < 200 mg/dL). The review says this may vary by patient population; it is not a guideline cut-off. Converted from the source's mg/dL (200) to g/L using factor 0.01. Source band <= 2.0; stored as the warn low bound 2.0."

@@ -8,74 +8,74 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 5
+high = 5
 when = { sex = "male" }
 population = "Adults; Spanish elderly workers cohort (cut-off as stated in the source)"
 evidence = "consensus"
 citations = [
   { pmid = "36384458", doi = "10.1186/s12877-022-03547-w", title = "Cardiometabolic profile of 15057 elderly Spanish workers: association of sociodemographic variables and tobacco consumption.", locator = "Methods (atherogenic indexes)" },
 ]
-note = "Atherogenic ratio considered high in men when strictly above 5.0 (Castelli index), as stated by the cited study."
+note = "Atherogenic ratio considered high in men when strictly above 5.0 (Castelli index), as stated by the cited study. Source band >= 5; stored as the warn high bound 5."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 4.5
+high = 4.5
 when = { sex = "female" }
 population = "Adults; Spanish elderly workers cohort (cut-off as stated in the source)"
 evidence = "consensus"
 citations = [
   { pmid = "36384458", doi = "10.1186/s12877-022-03547-w", title = "Cardiometabolic profile of 15057 elderly Spanish workers: association of sociodemographic variables and tobacco consumption.", locator = "Methods (atherogenic indexes)" },
 ]
-note = "Atherogenic ratio considered high in women when strictly above 4.5 (Castelli index), as stated by the cited study."
+note = "Atherogenic ratio considered high in women when strictly above 4.5 (Castelli index), as stated by the cited study. Source band >= 4.5; stored as the warn high bound 4.5."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 5
+high = 5
 when = { sex = "male" }
 population = "Adults; Trujillo (Peru) population study (cut-off as stated in the source)"
 evidence = "consensus"
 citations = [
   { pmid = "39683532", doi = "10.3390/nu16234138", title = "Predictive Models of Atherogenic Risk in Citizens of Trujillo (Peru) Based on Associated Factors.", locator = "Section 2.4 (Evaluation of Atherogenic Indicators)" },
 ]
-note = "Elevated TC/HDL (Castelli risk index I) in men at or above 5, per the cited study's stated threshold (inclusive, unlike the Spanish source)."
+note = "Elevated TC/HDL (Castelli risk index I) in men at or above 5, per the cited study's stated threshold (inclusive, unlike the Spanish source). Source band >= 5; stored as the warn high bound 5."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 4.5
+high = 4.5
 when = { sex = "female" }
 population = "Adults; Trujillo (Peru) population study (cut-off as stated in the source)"
 evidence = "consensus"
 citations = [
   { pmid = "39683532", doi = "10.3390/nu16234138", title = "Predictive Models of Atherogenic Risk in Citizens of Trujillo (Peru) Based on Associated Factors.", locator = "Section 2.4 (Evaluation of Atherogenic Indicators)" },
 ]
-note = "Elevated TC/HDL (Castelli risk index I) in women at or above 4.5, per the cited study's stated threshold (inclusive)."
+note = "Elevated TC/HDL (Castelli risk index I) in women at or above 4.5, per the cited study's stated threshold (inclusive). Source band >= 4.5; stored as the warn high bound 4.5."
 
 [[range]]
 set = "millan-2009-table1"
 kind = "warn"
-low = 5.0
+high = 5.0
 when = { sex = "male" }
 population = "Adults stratified by sex; risk categories and target levels for primary and secondary prevention as tabulated in this review (sources cited in the table) (setting: primary-prevention)"
 evidence = "consensus"
 citations = [
   { pmid = "19774217", doi = "10.2147/vhrm.s6269", url = "https://pubmed.ncbi.nlm.nih.gov/19774217/", title = "Lipoprotein ratios: Physiological significance and clinical usefulness in cardiovascular prevention.", locator = "Table 1, Risk categories and target levels for total cholesterol/HDL-C ratio" },
 ]
-note = "Primary prevention, men: risk level above 5.0 (boundary > 5.0) for total cholesterol/HDL-C ratio. Source kind: decision."
+note = "Primary prevention, men: risk level above 5.0 (boundary > 5.0) for total cholesterol/HDL-C ratio. Source kind: decision. Source band >= 5.0; stored as the warn high bound 5.0."
 
 [[range]]
 set = "millan-2009-table1"
 kind = "warn"
-low = 4.5
+high = 4.5
 when = { sex = "female" }
 population = "Adults stratified by sex; risk categories and target levels for primary and secondary prevention as tabulated in this review (sources cited in the table) (setting: primary-prevention)"
 evidence = "consensus"
 citations = [
   { pmid = "19774217", doi = "10.2147/vhrm.s6269", url = "https://pubmed.ncbi.nlm.nih.gov/19774217/", title = "Lipoprotein ratios: Physiological significance and clinical usefulness in cardiovascular prevention.", locator = "Table 1, Risk categories and target levels for total cholesterol/HDL-C ratio" },
 ]
-note = "Primary prevention, women: risk level above 4.5 (boundary > 4.5) for total cholesterol/HDL-C ratio. Source kind: decision."
+note = "Primary prevention, women: risk level above 4.5 (boundary > 4.5) for total cholesterol/HDL-C ratio. Source kind: decision. Source band >= 4.5; stored as the warn high bound 4.5."
 
 [[range]]
 set = "millan-2009-table1"
@@ -104,26 +104,26 @@ note = "Primary prevention, women: target below 4.0 (boundary < 4.0) for total c
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 4.0
+high = 4.0
 when = { sex = "male" }
 population = "Adults stratified by sex; risk categories and target levels for primary and secondary prevention as tabulated in this review (sources cited in the table) (setting: secondary-prevention)"
 evidence = "consensus"
 citations = [
   { pmid = "19774217", doi = "10.2147/vhrm.s6269", url = "https://pubmed.ncbi.nlm.nih.gov/19774217/", title = "Lipoprotein ratios: Physiological significance and clinical usefulness in cardiovascular prevention.", locator = "Table 1, Risk categories and target levels for total cholesterol/HDL-C ratio" },
 ]
-note = "Secondary prevention, men: risk level above 4.0 (boundary > 4.0) for total cholesterol/HDL-C ratio. Source kind: decision. Alternative to the default millan-2009-table1 warn range for the same population."
+note = "Secondary prevention, men: risk level above 4.0 (boundary > 4.0) for total cholesterol/HDL-C ratio. Source kind: decision. Source band >= 4.0; stored as the warn high bound 4.0. Alternative to the default millan-2009-table1 warn range for the same population."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 3.5
+high = 3.5
 when = { sex = "female" }
 population = "Adults stratified by sex; risk categories and target levels for primary and secondary prevention as tabulated in this review (sources cited in the table) (setting: secondary-prevention)"
 evidence = "consensus"
 citations = [
   { pmid = "19774217", doi = "10.2147/vhrm.s6269", url = "https://pubmed.ncbi.nlm.nih.gov/19774217/", title = "Lipoprotein ratios: Physiological significance and clinical usefulness in cardiovascular prevention.", locator = "Table 1, Risk categories and target levels for total cholesterol/HDL-C ratio" },
 ]
-note = "Secondary prevention, women: risk level above 3.5 (boundary > 3.5) for total cholesterol/HDL-C ratio. Source kind: decision. Alternative to the default millan-2009-table1 warn range for the same population."
+note = "Secondary prevention, women: risk level above 3.5 (boundary > 3.5) for total cholesterol/HDL-C ratio. Source kind: decision. Source band >= 3.5; stored as the warn high bound 3.5. Alternative to the default millan-2009-table1 warn range for the same population."
 
 [[range]]
 set = "alt-1"

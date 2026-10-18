@@ -10,10 +10,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "aua-sufu-microhematuria-2020"
 kind = "warn"
-low = 3
+high = 3
 population = "Adults with suspected microhematuria on microscopic urinalysis of a single specimen"
 evidence = "guideline"
 citations = [
   { pmid = "32698717", doi = "10.1097/JU.0000000000001297", url = "https://pubmed.ncbi.nlm.nih.gov/32698717/", title = "Microhematuria: AUA/SUFU Guideline.", locator = "Abstract, Results" },
 ]
-note = "Microhematuria is defined as >=3 RBC/HPF on microscopy of a single specimen. A 2025 AUA/SUFU update exists; its numbers were not checked for this entry. Source kind: decision."
+note = "Microhematuria is defined as >=3 RBC/HPF on microscopy of a single specimen. A 2025 AUA/SUFU update exists; its numbers were not checked for this entry. Source kind: decision. Source band >= 3; stored as the warn high bound 3."

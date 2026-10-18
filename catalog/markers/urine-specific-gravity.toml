@@ -10,21 +10,21 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "hypohydration-usg-runners-2021"
 kind = "warn"
-low = 1.03
+high = 1.03
 population = "Recreational runners in a tropical setting, hydration status assessment"
 evidence = "consensus"
 citations = [
   { pmid = "33923890", doi = "10.3390/nu13041374", url = "https://pubmed.ncbi.nlm.nih.gov/33923890/", title = "Hydration Status, Fluid Intake, Sweat Rate, and Sweat Sodium Concentration in Recreational Tropical Native Runners.", locator = "Methods, Urine Specific Gravity (USG)" },
 ]
-note = "Severe hypohydration threshold of USG >1.030 as stated in this field study, which cites its own reference [34] for the bands (that source was not retrieved). Boundary >1.030 as printed. Paired with the USG >1.020 hypohydration band in the same sentence. Source kind: decision."
+note = "Severe hypohydration threshold of USG >1.030 as stated in this field study, which cites its own reference [34] for the bands (that source was not retrieved). Boundary >1.030 as printed. Paired with the USG >1.020 hypohydration band in the same sentence. Source kind: decision. Source band >= 1.03; stored as the warn high bound 1.03."
 
 [[range]]
 set = "hypohydration-usg-validation-2022"
 kind = "warn"
-low = 1.02
+high = 1.02
 population = "Athletes, hydration status assessment"
 evidence = "cohort"
 citations = [
   { pmid = "36034925", doi = "10.3389/fnut.2022.997189", url = "https://pubmed.ncbi.nlm.nih.gov/36034925/", title = "Validation of urine colour L*a*b* for assessing hydration amongst athletes.", locator = "Abstract, Results" },
 ]
-note = "Hypohydration diagnosis threshold of USG >=1.020 as used in the cited validation study (the source writes >=; the >1.020 wording in the sports consensus hint was not verified). Compared against urine osmolality, a threshold of 700 mmol/kg is given in the same sentence. Source kind: decision."
+note = "Hypohydration diagnosis threshold of USG >=1.020 as used in the cited validation study (the source writes >=; the >1.020 wording in the sports consensus hint was not verified). Compared against urine osmolality, a threshold of 700 mmol/kg is given in the same sentence. Source kind: decision. Source band >= 1.02; stored as the warn high bound 1.02."

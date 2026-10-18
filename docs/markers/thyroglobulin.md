@@ -1,0 +1,30 @@
+# Thyroglobulin (`thyroglobulin`)
+
+Protein made only by thyroid follicular cells; a tumour marker after thyroid cancer treatment. Healthy values depend on the assay, and post-thyroidectomy thresholds depend on whether radioiodine ablation was given and whether TSH was suppressed or stimulated.
+
+| | |
+|---|---|
+| Category | [thyroid](index.md#thyroid) |
+| Canonical unit | ng/mL |
+| LOINC | - |
+| Specimen | - |
+| Aliases | - |
+
+## Ranges
+
+Bounds in ng/mL. The most specific matching range of each set applies.
+
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | female | - | 37.93 | reference-interval-study | Healthy adults without thyroid abnormalities (cohort A, 99 women, nuclear medicine practice, Germany) | [Evaluation of a new automated assay for high-sensitivity thyroglobulin measurement and comparison with two established high-sensitivity thyroglobulin assays.](https://pubmed.ncbi.nlm.nih.gov/34386567/), Results | Upper reference limit (CLSI C28-A3c) for the LIAISON Tg II Gen immunoassay; assay dependent, not transferable to other platforms. |
+| alt-1 | warn | total-thyroidectomy-with-rai | 1 | - | guideline | Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-stimulated serum Tg) | [Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.](https://pubmed.ncbi.nlm.nih.gov/42705671/), Table II.1 / Recommendations | Excellent response threshold for TSH-stimulated Tg as stated by the Korean Thyroid Association 2026 guideline. Source kind: diagnostic. Source band <= 1.0; stored as the warn low bound 1.0. Alternative to the default kta-2026-dtc-followup warn range for the same population. |
+| alt-2 | warn | total-thyroidectomy-without-rai | - | 5 | guideline | Adults with differentiated thyroid cancer after total thyroidectomy without RAI therapy (test: TSH-unstimulated serum Tg) | [Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.](https://pubmed.ncbi.nlm.nih.gov/42705671/), Recommendations | Biochemical incomplete response threshold in this setting as stated by the Korean Thyroid Association 2026 guideline (consistent with the 2024 KTA guideline per the text). Source kind: diagnostic. Source band >= 5.0; stored as the warn high bound 5.0. Alternative to the default kta-2026-dtc-followup warn range for the same population. |
+| alt-3 | warn | total-thyroidectomy-with-rai | - | 1 | guideline | Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-unstimulated serum Tg) | [Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.](https://pubmed.ncbi.nlm.nih.gov/42705671/), Recommendations | Biochemical incomplete response threshold (unstimulated) as stated by the Korean Thyroid Association 2026 guideline, citing an ATA-derived criterion. Source kind: diagnostic. Source band >= 1.0; stored as the warn high bound 1.0. Alternative to the default kta-2026-dtc-followup warn range for the same population. |
+| alt-4 | warn | total-thyroidectomy-with-rai | - | 10 | guideline | Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-stimulated serum Tg) | [Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.](https://pubmed.ncbi.nlm.nih.gov/42705671/), Recommendations | Biochemical incomplete response threshold (TSH-stimulated) as stated by the Korean Thyroid Association 2026 guideline. Source kind: diagnostic. Source band >= 10.0; stored as the warn high bound 10.0. Alternative to the default kta-2026-dtc-followup warn range for the same population. |
+| kta-2026-dtc-followup | warn | total-thyroidectomy-with-rai | 0.2 | - | guideline | Adults with differentiated thyroid cancer after total thyroidectomy and radioiodine (RAI) therapy (test: TSH-unstimulated serum Tg) | [Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.](https://pubmed.ncbi.nlm.nih.gov/42705671/), Table II.1 / Recommendations | Excellent response threshold (unstimulated, on TSH suppression) as stated by the Korean Thyroid Association 2026 guideline; requires negative TgAb and no structural disease. Source kind: diagnostic. Source band <= 0.2; stored as the warn low bound 0.2. |
+| kta-2026-dtc-followup | warn | total-thyroidectomy-without-rai | 0.2 | - | guideline | Adults with differentiated thyroid cancer after total thyroidectomy without RAI therapy (test: TSH-unstimulated serum Tg) | [Korean Thyroid Association Guidelines on the Management of Differentiated Thyroid Cancers, Part II: Follow-up Surveillance after Initial Treatment 2026.](https://pubmed.ncbi.nlm.nih.gov/42705671/), Recommendations | Excellent response threshold after total thyroidectomy without RAI as stated by the Korean Thyroid Association 2026 guideline; the 2025 ATA guideline uses 2.5 ng/mL in this setting. Source kind: diagnostic. Source band <= 0.2; stored as the warn low bound 0.2. |
+| liaison-tg-healthy-cohort-2021 | reference | male | - | 24.59 | reference-interval-study | Healthy adults without thyroid abnormalities (cohort A, 67 men, nuclear medicine practice, Germany) | [Evaluation of a new automated assay for high-sensitivity thyroglobulin measurement and comparison with two established high-sensitivity thyroglobulin assays.](https://pubmed.ncbi.nlm.nih.gov/34386567/), Results | Upper reference limit (CLSI C28-A3c) for the LIAISON Tg II Gen immunoassay; assay dependent. |
+
+---
+
+_Generated from catalog/ by `biomarker catalog docs`; do not edit by hand._

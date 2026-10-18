@@ -56,21 +56,21 @@ note = "Upper reference limit (<4.40 pg/mL) for third-trimester pregnancy. Elect
 [[range]]
 set = "sepsis-il6-cohort-2019"
 kind = "warn"
-low = 348.92
+high = 348.92
 population = "Adults with sepsis and septic shock (Sepsis-3), prospective controlled study (setting: sepsis)"
 evidence = "cohort"
 citations = [
   { pmid = "31718563", doi = "10.1186/s12879-019-4618-7", url = "https://pubmed.ncbi.nlm.nih.gov/31718563/", title = "Diagnostic and prognostic value of interleukin-6, pentraxin 3, and procalcitonin levels among sepsis and septic shock patients: a prospective controlled study according to the Sepsis-3 definitions.", locator = "Abstract, Results" },
 ]
-note = "Single-study Youden cut-off for 28-day mortality: IL-6 at or above 348.92 pg/mL (boundary >=). Not externally validated; cut-offs in other sepsis cohorts differ (see the 135.14 pg/mL range)."
+note = "Single-study Youden cut-off for 28-day mortality: IL-6 at or above 348.92 pg/mL (boundary >=). Not externally validated; cut-offs in other sepsis cohorts differ (see the 135.14 pg/mL range). Source band >= 348.92; stored as the warn high bound 348.92."
 
 [[range]]
 set = "sepsis-il6-prognosis-2026"
 kind = "warn"
-low = 135.14
+high = 135.14
 population = "Adults with sepsis in a prospective cohort (baseline IL-6 for mortality risk stratification) (setting: sepsis)"
 evidence = "cohort"
 citations = [
   { pmid = "42193317", doi = "10.3390/biomedicines14050990", url = "https://pubmed.ncbi.nlm.nih.gov/42193317/", title = "Baseline Interleukin-6 in Sepsis: Mortality Risk Stratification and Survival Analysis in a Prospective Cohort.", locator = "Abstract, Results" },
 ]
-note = "Youden-derived cut-off (sensitivity 87.65%, specificity 92.86%) for mortality risk stratification in one cohort (boundary >135.14 pg/mL). Not externally validated; differs from the 348.92 pg/mL cut-off in another sepsis cohort."
+note = "Youden-derived cut-off (sensitivity 87.65%, specificity 92.86%) for mortality risk stratification in one cohort (boundary >135.14 pg/mL). Not externally validated; differs from the 348.92 pg/mL cut-off in another sepsis cohort. Source band >= 135.14; stored as the warn high bound 135.14."

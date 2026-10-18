@@ -33,21 +33,21 @@ note = "Upper limit of the normal oral temperature range in healthy adults aged 
 [[range]]
 set = "pyrexia-review-2016"
 kind = "warn"
-low = 38.0
+high = 38.0
 population = "Adults, including febrile critically ill patients (review of pyrexia definitions)"
 evidence = "consensus"
 citations = [
   { pmid = "27581757", doi = "10.1186/s13054-016-1406-2", url = "https://pubmed.ncbi.nlm.nih.gov/27581757/", title = "Pyrexia: aetiology in the ICU.", locator = "Abstract" },
 ]
-note = "Commonly used definition of fever (pyrexia) as 38.0 °C or greater. The source notes that definitions vary by population and thermometer, so this is a common convention rather than a single guideline cut-off. Source kind: decision."
+note = "Commonly used definition of fever (pyrexia) as 38.0 °C or greater. The source notes that definitions vary by population and thermometer, so this is a common convention rather than a single guideline cut-off. Source kind: decision. Source band >= 38.0; stored as the warn high bound 38.0."
 
 [[range]]
 set = "low-body-temp-review"
 kind = "critical"
-high = 35
+low = 35
 population = "Adults, including older adults; general definition of hypothermia by core temperature"
 evidence = "consensus"
 citations = [
   { doi = "10.14740/jocmr6490", url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13094164/fullTextXML", title = "Approach to Low Body Temperature or Mild Hypothermia in the Geriatric Population: A Narrative Review.", locator = "Abstract" },
 ]
-note = "Hypothermia is defined as a temperature below 35 °C (boundary strictly below 35 °C, so 35.0 °C is not hypothermia by this definition). Described in the source as a medical emergency; the source is a narrative review, so this is a definitional cut-off."
+note = "Hypothermia is defined as a temperature below 35 °C (boundary strictly below 35 °C, so 35.0 °C is not hypothermia by this definition). Described in the source as a medical emergency; the source is a narrative review, so this is a definitional cut-off. Source band <= 35; stored as the critical low bound 35."

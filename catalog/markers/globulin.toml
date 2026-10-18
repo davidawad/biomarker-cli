@@ -56,11 +56,11 @@ note = "Sex-combined adult 95% reference interval (calculated analyte in the sou
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 3.8
+high = 3.8
 when = { conditions = ["hemodialysis"] }
 population = "Incident hemodialysis patients (retrospective cohort, 2007-2011)"
 evidence = "cohort"
 citations = [
   { pmid = "34617572", doi = "10.1093/ndt/gfab292", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9494081/", title = "Association of serum globulin with all-cause mortality in incident hemodialysis patients.", locator = "Abstract (Results)" },
 ]
-note = "Globulin above 3.8 g/dL was associated with higher all-cause and infection-related mortality (fully adjusted HR 1.11 for all-cause) versus the 3.0 to <3.2 g/dL reference group. Association only; not a treatment target."
+note = "Globulin above 3.8 g/dL was associated with higher all-cause and infection-related mortality (fully adjusted HR 1.11 for all-cause) versus the 3.0 to <3.2 g/dL reference group. Association only; not a treatment target. Source band >= 3.8; stored as the warn high bound 3.8."

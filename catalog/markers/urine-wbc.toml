@@ -8,49 +8,37 @@ aliases = ["pyuria", "urine leukocytes", "urine wbc"]
 no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
-set = "pyuria-cutoffs-older-women-2023"
-kind = "warn"
-low = 5
-high = 10
-population = "Adults: commonly accepted pyuria cut-off range, as cited in a study of older women"
-evidence = "consensus"
-citations = [
-  { pmid = "36806580", doi = "10.1093/cid/ciad099", url = "https://pubmed.ncbi.nlm.nih.gov/36806580/", title = "Current Pyuria Cutoffs Promote Inappropriate Urinary Tract Infection Diagnosis in Older Women.", locator = "Introduction (full text)" },
-]
-note = "Commonly accepted pyuria cut-off of 5 to 10 leukocytes per high-power field (adult background cited in the 2023 Clinical Infectious Diseases study). The study itself argues these cut-offs are too low for older women. Lower bound 5 is the threshold; the upper bound is the cited upper end of the band. Source kind: decision."
-
-[[range]]
 set = "pediatric-pyuria-sg-2021"
 kind = "warn"
-low = 3
+high = 3
 population = "Children under 24 months evaluated in the emergency department for suspected UTI, with paired urinalysis and urine culture"
 evidence = "cohort"
 citations = [
   { pmid = "33514634", doi = "10.1542/peds.2020-014068", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", locator = "Abstract, Results" },
   { pmid = "33514634", doi = "10.1542/peds.2020-014068", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", locator = "Abstract, Methods" },
 ]
-note = "Optimal microscopic WBC cut-off per HPF at low urine concentration (USG <1.011), against a positive urine culture (AAP culture thresholds). Cut-off applies to low-concentration urine only. Retrospective study in young children, not adults. Applies only to: markers={\"urine-specific-gravity\": \"<1.011\"}. Source kind: decision."
+note = "Optimal microscopic WBC cut-off per HPF at low urine concentration (USG <1.011), against a positive urine culture (AAP culture thresholds). Cut-off applies to low-concentration urine only. Retrospective study in young children, not adults. Applies only to: markers={\"urine-specific-gravity\": \"<1.011\"}. Source kind: decision. Source band >= 3; stored as the warn high bound 3."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 6
+high = 6
 population = "Children under 24 months evaluated in the emergency department for suspected UTI, with paired urinalysis and urine culture"
 evidence = "cohort"
 citations = [
   { pmid = "33514634", doi = "10.1542/peds.2020-014068", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", locator = "Abstract, Results" },
   { pmid = "33514634", doi = "10.1542/peds.2020-014068", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", locator = "Abstract, Methods" },
 ]
-note = "Optimal microscopic WBC cut-off per HPF at moderate urine concentration (USG 1.011 to 1.020), against a positive urine culture. Retrospective study in young children, not adults. Applies only to: markers={\"urine-specific-gravity\": \"1.011-1.020\"}. Source kind: decision. Alternative to the default pediatric-pyuria-sg-2021 warn range for the same population."
+note = "Optimal microscopic WBC cut-off per HPF at moderate urine concentration (USG 1.011 to 1.020), against a positive urine culture. Retrospective study in young children, not adults. Applies only to: markers={\"urine-specific-gravity\": \"1.011-1.020\"}. Source kind: decision. Source band >= 6; stored as the warn high bound 6. Alternative to the default pediatric-pyuria-sg-2021 warn range for the same population."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 8
+high = 8
 population = "Children under 24 months evaluated in the emergency department for suspected UTI, with paired urinalysis and urine culture"
 evidence = "cohort"
 citations = [
   { pmid = "33514634", doi = "10.1542/peds.2020-014068", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", locator = "Abstract, Results" },
   { pmid = "33514634", doi = "10.1542/peds.2020-014068", url = "https://pubmed.ncbi.nlm.nih.gov/33514634/", title = "Pyuria and Urine Concentration for Identifying Urinary Tract Infection in Young Children.", locator = "Abstract, Methods" },
 ]
-note = "Optimal microscopic WBC cut-off per HPF at high urine concentration (USG >1.020), against a positive urine culture. Retrospective study in young children, not adults. Applies only to: markers={\"urine-specific-gravity\": \">1.020\"}. Source kind: decision. Alternative to the default pediatric-pyuria-sg-2021 warn range for the same population."
+note = "Optimal microscopic WBC cut-off per HPF at high urine concentration (USG >1.020), against a positive urine culture. Retrospective study in young children, not adults. Applies only to: markers={\"urine-specific-gravity\": \">1.020\"}. Source kind: decision. Source band >= 8; stored as the warn high bound 8. Alternative to the default pediatric-pyuria-sg-2021 warn range for the same population."

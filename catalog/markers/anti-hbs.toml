@@ -10,10 +10,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "cdc-pinkbook-hepb"
 kind = "warn"
-low = 10
+high = 10
 population = "Persons after a complete hepatitis B vaccination series, including healthcare personnel tested for post-vaccination immunity"
 evidence = "guideline"
 citations = [
   { url = "https://www.cdc.gov/vaccines/pubs/pinkbook/hepb.html", locator = "Hepatitis B vaccine chapter, serologic testing / protective level" },
 ]
-note = "Anti-HBs at or above 10 mIU/mL is the protective (immune) level after a complete vaccine series (>=10 is immune). Below 10 mIU/mL the person should be revaccinated and retested. Source kind: decision."
+note = "Anti-HBs at or above 10 mIU/mL is the protective (immune) level after a complete vaccine series (>=10 is immune). Below 10 mIU/mL the person should be revaccinated and retested. Source kind: decision. Source band >= 10; stored as the warn high bound 10."

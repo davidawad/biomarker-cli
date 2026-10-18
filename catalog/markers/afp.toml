@@ -116,43 +116,43 @@ note = "Upper limit of normal for AFP varied between centres (8.1 to 13.4 ng/mL)
 [[range]]
 set = "afp-screening-thresholds-2026"
 kind = "warn"
-low = 20
+high = 20
 population = "Patients with liver disease under HCC screening (Veterans Health Administration cohort and UNOS cohort, 2001-2021) (setting: screening)"
 evidence = "cohort"
 citations = [
   { pmid = "41236449", doi = "10.1053/j.gastro.2025.08.021", url = "https://pubmed.ncbi.nlm.nih.gov/41236449/", title = "Changes in Liver Disease Etiology Support a Lower Alpha-Fetoprotein Threshold for Hepatocellular Carcinoma Screening.", locator = "Abstract, Results" },
 ]
-note = "Surveillance threshold: AFP >= 20 ng/mL flags HCC screening positivity (low sensitivity, high specificity in this cohort). Boundary is >= 20. Source kind: decision."
+note = "Surveillance threshold: AFP >= 20 ng/mL flags HCC screening positivity (low sensitivity, high specificity in this cohort). Boundary is >= 20. Source kind: decision. Source band >= 20; stored as the warn high bound 20."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 10
+high = 10
 population = "Patients with MASLD, alcohol-related liver disease or cured HCV cirrhosis under HCC screening (setting: screening)"
 evidence = "cohort"
 citations = [
   { pmid = "41236449", doi = "10.1053/j.gastro.2025.08.021", url = "https://pubmed.ncbi.nlm.nih.gov/41236449/", title = "Changes in Liver Disease Etiology Support a Lower Alpha-Fetoprotein Threshold for Hepatocellular Carcinoma Screening.", locator = "Abstract, Conclusions" },
 ]
-note = "Proposed lower screening threshold: AFP >= 10 ng/mL in MASLD, ALD and cured-HCV cirrhosis raised sensitivity with little loss of specificity. A borderline/early-warning band rather than a diagnostic cut-off. Alternative to the default afp-screening-thresholds-2026 warn range for the same population."
+note = "Proposed lower screening threshold: AFP >= 10 ng/mL in MASLD, ALD and cured-HCV cirrhosis raised sensitivity with little loss of specificity. A borderline/early-warning band rather than a diagnostic cut-off. Source band >= 10; stored as the warn high bound 10. Alternative to the default afp-screening-thresholds-2026 warn range for the same population."
 
 [[range]]
 set = "afp-hcc-cutoffs-2021"
 kind = "warn"
-low = 100
+high = 100
 population = "Patients receiving antiviral treatment for HBV-related HCC surveillance"
 evidence = "cohort"
 citations = [
   { pmid = "32852885", doi = "10.1111/jvh.13388", url = "https://pubmed.ncbi.nlm.nih.gov/32852885/", title = "Reappraisal of the diagnostic value of alpha-fetoprotein for surveillance of HBV-related hepatocellular carcinoma in the era of antiviral therapy.", locator = "Abstract, Results" },
 ]
-note = "Confirmatory threshold: AFP >= 100 ng/mL proposed as the confirmatory test, paired with 20 ng/mL for surveillance. Boundary is >= 100. Source kind: decision."
+note = "Confirmatory threshold: AFP >= 100 ng/mL proposed as the confirmatory test, paired with 20 ng/mL for surveillance. Boundary is >= 100. Source kind: decision. Source band >= 100; stored as the warn high bound 100."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 400
+high = 400
 population = "Patients with HBV-related liver disease; cut-off as cited from guidelines"
 evidence = "cohort"
 citations = [
   { pmid = "32852885", doi = "10.1111/jvh.13388", url = "https://pubmed.ncbi.nlm.nih.gov/32852885/", title = "Reappraisal of the diagnostic value of alpha-fetoprotein for surveillance of HBV-related hepatocellular carcinoma in the era of antiviral therapy.", locator = "Abstract, Results" },
 ]
-note = "Diagnostic-level threshold: AFP >= 400 ng/mL is a cut-off recommended by some guidelines (the cited study showed 200 and 400 ng/mL had lower sensitivity than 20 and 100 ng/mL). Boundary is >= 400. The primary AASLD/EASL text was not retrieved; the value is taken from this cited study's description. Source kind: decision. Alternative to the default afp-hcc-cutoffs-2021 warn range for the same population."
+note = "Diagnostic-level threshold: AFP >= 400 ng/mL is a cut-off recommended by some guidelines (the cited study showed 200 and 400 ng/mL had lower sensitivity than 20 and 100 ng/mL). Boundary is >= 400. The primary AASLD/EASL text was not retrieved; the value is taken from this cited study's description. Source kind: decision. Source band >= 400; stored as the warn high bound 400. Alternative to the default afp-hcc-cutoffs-2021 warn range for the same population."

@@ -33,13 +33,13 @@ note = "Reference interval in pregnancy."
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 14.6
+high = 14.6
 population = "Community residents of Yi-lan County, Taiwan (mean age 60.1 years, n=2192)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "26247684", doi = "10.1016/j.atherosclerosis.2015.07.037", title = "A comparison of glycated albumin and glycosylated hemoglobin for the screening of diabetes mellitus in Taiwan.", locator = "Abstract, Results" },
 ]
-note = "Prediabetes cut-point at the 75th percentile of the normal population (Taiwan)."
+note = "Prediabetes cut-point at the 75th percentile of the normal population (Taiwan). Source band >= 14.6; stored as the warn high bound 14.6."
 
 [[range]]
 set = "clinical"
@@ -55,54 +55,54 @@ note = "95th percentile in non-diabetic controls (Taiwan); upper limit only, not
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 16.5
+high = 16.5
 population = "Japanese blood donors (as reported in ref. 39767558)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Discussion (text)" },
 ]
-note = "Cited second-hand (Al-Lahham et al. citing Araki et al.): higher diabetes risk in Japanese blood donors with GA at or above this value. Not verified against the primary Japanese source. Alternative to the default clinical warn range for the same population."
+note = "Cited second-hand (Al-Lahham et al. citing Araki et al.): higher diabetes risk in Japanese blood donors with GA at or above this value. Not verified against the primary Japanese source. Source band >= 16.5; stored as the warn high bound 16.5. Alternative to the default clinical warn range for the same population."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 14.2
+high = 14.2
 population = "Euro-Brazilian adults with type 2 diabetes versus controls (n=283 cases, 290 controls)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Table 7" },
 ]
-note = "ROC cut-off for type 2 diabetes versus controls (Euro-Brazilian; Table 7 gives sensitivity and specificity). Note: not a standardised guideline threshold. Source kind: diagnostic."
+note = "ROC cut-off for type 2 diabetes versus controls (Euro-Brazilian; Table 7 gives sensitivity and specificity). Note: not a standardised guideline threshold. Source kind: diagnostic. Source band >= 14.2; stored as the warn high bound 14.2."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 14.8
+high = 14.8
 population = "Euro-Brazilian adults with type 1 diabetes versus controls (n=81 cases, 290 controls)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "39767558", doi = "10.3390/biomedicines12122651", title = "Reference Interval for Glycated Albumin, 1,5-AG/GA, and GA/HbA1c Ratios and Cut-Off Values for Type 1, Type 2, and Gestational Diabetes: A Cross-Sectional Study.", locator = "Table 7" },
 ]
-note = "ROC cut-off for type 1 diabetes in adults versus controls (Euro-Brazilian; Table 7). Not a standardised guideline threshold. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "ROC cut-off for type 1 diabetes in adults versus controls (Euro-Brazilian; Table 7). Not a standardised guideline threshold. Source kind: diagnostic. Source band >= 14.8; stored as the warn high bound 14.8. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-3"
 kind = "warn"
-low = 15.2
+high = 15.2
 population = "Japanese community residents (908 nondiabetic subjects; 176 with an OGTT)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "25817605", doi = "10.1016/j.metabol.2015.03.003", title = "Glycated albumin as a diagnostic tool for diabetes in a general Japanese population.", locator = "Abstract, Results" },
 ]
-note = "ROC-optimal cut-off for diabetes (OGTT-defined) in this population; low sensitivity and specificity, not a guideline threshold. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "ROC-optimal cut-off for diabetes (OGTT-defined) in this population; low sensitivity and specificity, not a guideline threshold. Source kind: diagnostic. Source band >= 15.2; stored as the warn high bound 15.2. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 16.5
+high = 16.5
 population = "Community residents of Yi-lan County, Taiwan (mean age 60.1 years, n=2192)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "26247684", doi = "10.1016/j.atherosclerosis.2015.07.037", title = "A comparison of glycated albumin and glycosylated hemoglobin for the screening of diabetes mellitus in Taiwan.", locator = "Abstract, Results" },
 ]
-note = "GA 16.5% corresponds to HbA1c 6.5%, diagnostic of diabetes (Taiwanese screening study). Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "GA 16.5% corresponds to HbA1c 6.5%, diagnostic of diabetes (Taiwanese screening study). Source kind: diagnostic. Source band >= 16.5; stored as the warn high bound 16.5. Alternative to the default diagnostic warn range for the same population."

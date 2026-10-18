@@ -377,7 +377,6 @@ note = "2.5th-97.5th percentile TSH (table columns: median [2.5th, 97.5th]); 108
 [[range]]
 set = "newborn-china-2025"
 kind = "warn"
-low = 9
 high = 20
 when = { age = [0.0, 0.0082] }
 population = "Newborns in a regional screening programme, heel-prick dried blood spot at about 72 hours of age (n=50,539) (specimen: dried-blood-spot)"
@@ -385,4 +384,4 @@ evidence = "cohort"
 citations = [
   { pmid = "40655394", doi = "10.3389/fendo.2025.1616748", url = "https://pubmed.ncbi.nlm.nih.gov/40655394/", title = "Screening of 50,539 newborns for congenital hypothyroidism: optimization of TSH cut-off values and seasonal impact in clinical practice.", locator = "Abstract, Results" },
 ]
-note = "Screening borderline zone, not a diagnostic range: 9-20 mIU/L (source uses uIU/mL, numerically equal) triggers repeat heel-prick testing; 20 or more is an initial positive. Local cut-off, assay and programme dependent. Not a guideline value."
+note = "Screening borderline zone, not a diagnostic range: 9-20 mIU/L (source uses uIU/mL, numerically equal) triggers repeat heel-prick testing; 20 or more is an initial positive. Local cut-off, assay and programme dependent. Not a guideline value. Source band 9-20; stored as the warn high bound 20."

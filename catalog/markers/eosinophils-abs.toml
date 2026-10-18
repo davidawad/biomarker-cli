@@ -56,10 +56,10 @@ note = "All-participant interval (n = 460) from the reference-interval table; th
 [[range]]
 set = "hes-definition-review"
 kind = "warn"
-low = 1.5
+high = 1.5
 population = "Patients with peripheral blood eosinophilia evaluated for hypereosinophilic syndrome (HES); review of the diagnostic definition"
 evidence = "consensus"
 citations = [
   { pmid = "25964669", doi = "10.1182/blood-2014-11-551614", title = "How I treat hypereosinophilic syndromes.", locator = "Abstract" },
 ]
-note = "Diagnostic threshold for eosinophilia used in HES definition (count >= 1.5 plus end-organ involvement). The 0.5 x 10^9/L eosinophilia cutoff was not found in retrieved text and is not encoded. Source kind: diagnostic."
+note = "Diagnostic threshold for eosinophilia used in HES definition (count >= 1.5 plus end-organ involvement). The 0.5 x 10^9/L eosinophilia cutoff was not found in retrieved text and is not encoded. Source kind: diagnostic. Source band >= 1.5; stored as the warn high bound 1.5."

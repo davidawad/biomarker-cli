@@ -14,7 +14,7 @@ high = 106.0
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 98.0
 high = 108
@@ -24,10 +24,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
 ]
-note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L."
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 99.0
 high = 108
@@ -37,10 +37,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "41671238", doi = "10.1371/journal.pone.0342530", title = "Verification of reference intervals for routine biochemical tests using the reflimR in Turkish adults.", locator = "Table 2" },
 ]
-note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L."
+note = "Sex-specific indirect reference interval (reflimR); the manufacturer interval was 101-109 mmol/L. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 94
 high = 111
@@ -50,10 +50,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source."
+note = "Central 95 % reference interval, conventional columns of the source (identical SI values). Age band 18~65 as printed in the source. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 103.0
 high = 114.0
@@ -63,10 +63,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 102.0
 high = 111.0
@@ -76,7 +76,7 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1)."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "optimal"
@@ -93,10 +93,10 @@ note = "Discharge chloride 100-108 mmol/L was not associated with different one-
 [[range]]
 set = "clinical"
 kind = "warn"
-high = 99
+low = 99
 population = "Adult hospital survivors at discharge (tertiary referral hospital cohort)"
 evidence = "cohort"
 citations = [
   { pmid = "32438557", doi = "10.3390/medsci8020022", title = "Serum Chloride Levels at Hospital Discharge and One-Year Mortality among Hospitalized Patients.", locator = "Abstract" },
 ]
-note = "Discharge chloride at or below 99 mmol/L (strictly, <=99) was associated with higher one-year mortality, with HR 1.45 for 97-99 and 1.94 for <=96 mmol/L versus 103-105 mmol/L (reference); HR 1.41 for >=109."
+note = "Discharge chloride at or below 99 mmol/L (strictly, <=99) was associated with higher one-year mortality, with HR 1.45 for 97-99 and 1.94 for <=96 mmol/L versus 103-105 mmol/L (reference); HR 1.41 for >=109. Source band <= 99; stored as the warn low bound 99."

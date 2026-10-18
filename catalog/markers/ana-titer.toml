@@ -10,22 +10,22 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "tan-1997-healthy-ana"
 kind = "warn"
-low = 160
+high = 160
 population = "Healthy individuals aged 20-60 years compared with patients with SLE, systemic sclerosis, Sjogren's syndrome, RA and soft tissue rheumatism (HEp-2 IFA across 15 laboratories)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "9324014", doi = "10.1002/art.1780400909", url = "https://pubmed.ncbi.nlm.nih.gov/9324014/", title = "Range of antinuclear antibodies in \"healthy\" individuals.", locator = "Abstract, Results" },
 ]
-note = "High-positive cut-off: a titre >=1:160 is specific but insensitive and would be likely to exclude about 95% of healthy individuals. The authors recommend reporting results at both 1:40 and 1:160. Source kind: decision."
+note = "High-positive cut-off: a titre >=1:160 is specific but insensitive and would be likely to exclude about 95% of healthy individuals. The authors recommend reporting results at both 1:40 and 1:160. Source kind: decision. Source band >= 160; stored as the warn high bound 160."
 
 [[range]]
 set = "eular-acr-2019-sle"
 kind = "warn"
-low = 80
+high = 80
 population = "Adults and children assessed for systemic lupus erythematosus classification"
 evidence = "consensus"
 citations = [
   { pmid = "31385462", doi = "10.1002/art.40930", url = "https://pubmed.ncbi.nlm.nih.gov/31385462/", title = "2019 European League Against Rheumatism/American College of Rheumatology Classification Criteria for Systemic Lupus Erythematosus.", locator = "Full text, ANA entry criterion" },
   { pmid = "22237992", doi = "10.1002/art.34380", url = "https://pubmed.ncbi.nlm.nih.gov/22237992/", title = "Prevalence and sociodemographic correlates of antinuclear antibodies in the United States.", locator = "Full text, Discussion" },
 ]
-note = "Positive ANA at a titre >=1:80 on HEp-2 cells (or an equivalent positive test) at least once is the obligatory entry criterion of the 2019 EULAR/ACR SLE classification criteria. Titres below 1:80 do not satisfy this entry criterion. Source kind: decision."
+note = "Positive ANA at a titre >=1:80 on HEp-2 cells (or an equivalent positive test) at least once is the obligatory entry criterion of the 2019 EULAR/ACR SLE classification criteria. Titres below 1:80 do not satisfy this entry criterion. Source kind: decision. Source band >= 80; stored as the warn high bound 80."

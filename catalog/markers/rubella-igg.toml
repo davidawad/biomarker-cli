@@ -10,11 +10,11 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "rubella-igg-cutoff-consensus"
 kind = "warn"
-low = 10
+high = 10
 population = "Women of reproductive age and pregnant women screened for rubella immunity; general adults"
 evidence = "consensus"
 citations = [
   { pmid = "41064497", doi = "10.2147/IJGM.S536793", url = "https://pubmed.ncbi.nlm.nih.gov/41064497/", title = "Rubella Seropositivity and Associated Factors Among Young Female Adults in Bangladesh: A Cross-Sectional Study.", locator = "Methods, Rubella IgG measurement" },
   { pmid = "41597578", doi = "10.3390/microorganisms14010058", url = "https://pubmed.ncbi.nlm.nih.gov/41597578/", title = "Evaluation of Commercial Immunoassays for Rubella Virus IgG Detection in Low-Antibody Sera Using a Recombinant Immunoblot as a Reference Method.", locator = "Introduction" },
 ]
-note = "A titre of 10 IU/mL or more is a positive (immune) result; values below 10 IU/mL are negative. Equivocal results are treated as negative. Some laboratories or programmes use a 5 IU/mL cut-off; that value is not supported by the sources used here. Source kind: decision."
+note = "A titre of 10 IU/mL or more is a positive (immune) result; values below 10 IU/mL are negative. Equivocal results are treated as negative. Some laboratories or programmes use a 5 IU/mL cut-off; that value is not supported by the sources used here. Source kind: decision. Source band >= 10; stored as the warn high bound 10."

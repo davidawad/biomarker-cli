@@ -83,10 +83,10 @@ note = "Tabulated laboratory interval for serum total copper (AAS). No sex or pr
 [[range]]
 set = "wilson-diagnostic-2025"
 kind = "warn"
-high = 59.1
+low = 59.1
 population = "Patients with suspected Wilson disease in Spanish and Danish cohorts, newly diagnosed WD versus non-Wilsonian hepatic disease and acute liver failure"
 evidence = "cohort"
 citations = [
   { pmid = "40198317", doi = "10.1111/liv.70089", title = "Relative Exchangeable Copper, Exchangeable Copper and Total Copper in the Diagnosis of Wilson Disease.", locator = "Discussion" },
 ]
-note = "ROC cut-off for total serum copper (AUC 0.966, sensitivity 86.5%, specificity 95.6% in the combined cohort). Not a general reference interval; the paper reports the same cut-off as 59.1 µg/dL. Discrimination was lower in acute liver failure cases. Source kind: diagnostic."
+note = "ROC cut-off for total serum copper (AUC 0.966, sensitivity 86.5%, specificity 95.6% in the combined cohort). Not a general reference interval; the paper reports the same cut-off as 59.1 µg/dL. Discrimination was lower in acute liver failure cases. Source kind: diagnostic. Source band <= 59.1; stored as the warn low bound 59.1."

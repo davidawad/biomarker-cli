@@ -19,21 +19,21 @@ note = "Central 95 % interval from the 2.5th and 97.5th percentiles in a healthy
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 270.2
+high = 270.2
 population = "Adults (derived from the ARIC healthy reference population)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "29436378", doi = "10.1373/clinchem.2017.285742", title = "Establishment of Community-Based Reference Intervals for Fructosamine, Glycated Albumin, and 1,5-Anhydroglucitol.", locator = "Abstract (Results)" },
 ]
-note = "Fructosamine concentration equivalent to an HbA1c of 6.5 % (the 96.5th percentile of this reference population). This is a derived equivalent, not an official ADA diagnostic criterion. Source kind: diagnostic."
+note = "Fructosamine concentration equivalent to an HbA1c of 6.5 % (the 96.5th percentile of this reference population). This is a derived equivalent, not an official ADA diagnostic criterion. Source kind: diagnostic. Source band >= 270.2; stored as the warn high bound 270.2."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 261.7
+high = 261.7
 population = "Adults (derived from the ARIC healthy reference population)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "29436378", doi = "10.1373/clinchem.2017.285742", title = "Establishment of Community-Based Reference Intervals for Fructosamine, Glycated Albumin, and 1,5-Anhydroglucitol.", locator = "Abstract (Results)" },
 ]
-note = "Fructosamine concentration equivalent to a fasting glucose of 126 mg/dL (the 93.9th percentile of this reference population). This is a derived equivalent, not an official ADA diagnostic criterion. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Fructosamine concentration equivalent to a fasting glucose of 126 mg/dL (the 93.9th percentile of this reference population). This is a derived equivalent, not an official ADA diagnostic criterion. Source kind: diagnostic. Source band >= 261.7; stored as the warn high bound 261.7. Alternative to the default diagnostic warn range for the same population."

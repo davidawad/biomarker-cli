@@ -34,11 +34,11 @@ note = "Source kind: therapeutic."
 [[range]]
 set = "iranian-msud-2025"
 kind = "critical"
-low = 1100
+high = 1100
 when = { conditions = ["msud"] }
 population = "Patients with MSUD in metabolic crisis (Iranian MSUD guideline 2025)"
 evidence = "guideline"
 citations = [
   { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, acute metabolic crisis section" },
 ]
-note = "Dialysis threshold rather than a steady-state target: the guideline says dialysis should be considered above this level and/or with rapid onset of neurological symptoms."
+note = "Dialysis threshold rather than a steady-state target: the guideline says dialysis should be considered above this level and/or with rapid onset of neurological symptoms. Source band >= 1100; stored as the critical high bound 1100."

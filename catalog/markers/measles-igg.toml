@@ -9,45 +9,33 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "siemens-enzygnost-measles-2026"
 kind = "warn"
-low = 300
+high = 300
 population = "Taiwan national measles elimination strategy; serology classification as described in the source (method: siemens-enzygnost)"
 evidence = "consensus"
 citations = [
   { pmid = "42042837", doi = "10.3390/vaccines14040361", url = "https://pubmed.ncbi.nlm.nih.gov/42042837/", title = "Taiwan's Strategy Toward Measles Elimination.", locator = "Methods, serology classification" },
 ]
-note = "Siemens Enzygnost Anti-Measles Virus/IgG assay: positive above 300 mIU/mL (boundary strictly greater than 300); 150 to 300 mIU/mL is classed equivocal by the same assay. Method-specific; do not transfer to other ELISA kits. Source kind: decision."
+note = "Siemens Enzygnost Anti-Measles Virus/IgG assay: positive above 300 mIU/mL (boundary strictly greater than 300); 150 to 300 mIU/mL is classed equivocal by the same assay. Method-specific; do not transfer to other ELISA kits. Source kind: decision. Source band >= 300; stored as the warn high bound 300."
 
 [[range]]
 set = "measles-prnt-120-2025"
 kind = "warn"
-low = 120
+high = 120
 population = "Vaccinated children in Kerala and Tamil Nadu, India (cross-sectional study of 684 children) (method: plaque-reduction-neutralisation)"
 evidence = "cohort"
 citations = [
   { pmid = "40864465", doi = "10.1001/jamanetworkopen.2025.29409", url = "https://pubmed.ncbi.nlm.nih.gov/40864465/", title = "Low Measles Seropositivity in Vaccinated Children.", locator = "Methods, neutralizing antibody assay" },
   { pmid = "42201515", doi = "10.1007/s15010-026-02832-9", url = "https://pubmed.ncbi.nlm.nih.gov/42201515/", title = "Sustaining herd immunity against measles: Insights from a serological cohort study in an outbreak-free population.", locator = "Discussion, paragraph on correlate of protection" },
 ]
-note = "Protective neutralising antibody threshold of 120 mIU/mL or higher, measured by the plaque reduction neutralisation test (PRNT, converted to mIU/mL against the WHO 3rd International Standard). This is the widely used correlate of protection; it is a neutralisation threshold, not an ELISA cut-off, and it should not be applied directly to commercial immunoassays. Source kind: decision."
+note = "Protective neutralising antibody threshold of 120 mIU/mL or higher, measured by the plaque reduction neutralisation test (PRNT, converted to mIU/mL against the WHO 3rd International Standard). This is the widely used correlate of protection; it is a neutralisation threshold, not an ELISA cut-off, and it should not be applied directly to commercial immunoassays. Source kind: decision. Source band >= 120; stored as the warn high bound 120."
 
 [[range]]
 set = "measles-elisa-200-2025"
 kind = "warn"
-low = 200
+high = 200
 population = "Residents of Ho Chi Minh City, Vietnam, in a 2024 serosurvey before a measles outbreak (method: elisa-manufacturer)"
 evidence = "cohort"
 citations = [
   { pmid = "41017062", doi = "10.3201/eid3110.250234", url = "https://pubmed.ncbi.nlm.nih.gov/41017062/", title = "Detection of Immunity Gap before Measles Outbreak, Ho Chi Minh City, Vietnam, 2024.", locator = "Methods, serologic testing" },
 ]
-note = "Seropositivity cut-off for a commercial ELISA: IgG above 200 mIU/mL (boundary strictly greater than 200; sensitivity 99.0%, specificity 95.0% in this study). The cut-off is assay-specific and the source notes limited data on the protective threshold. Source kind: decision."
-
-[[range]]
-set = "measles-elisa-equivocal-2025"
-kind = "warn"
-low = 150
-high = 200
-population = "Children on biologic DMARD therapy in a preliminary case-control study"
-evidence = "cohort"
-citations = [
-  { pmid = "41300643", doi = "10.3390/children12111526", url = "https://pubmed.ncbi.nlm.nih.gov/41300643/", title = "Preliminary Case-Control Study of Antibody Response to Vaccines in Children on bDMARDs.", locator = "Methods, serologic thresholds" },
-]
-note = "Equivocal band for measles IgG by ELISA: 150 to 200 mIU/mL. Below 150 was classed seronegative and above 200 seropositive in this study (boundary for seropositivity strictly greater than 200). Band labels are the source's; the assay was not named in the retrieved text."
+note = "Seropositivity cut-off for a commercial ELISA: IgG above 200 mIU/mL (boundary strictly greater than 200; sensitivity 99.0%, specificity 95.0% in this study). The cut-off is assay-specific and the source notes limited data on the protective threshold. Source kind: decision. Source band >= 200; stored as the warn high bound 200."

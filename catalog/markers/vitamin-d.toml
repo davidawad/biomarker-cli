@@ -27,25 +27,24 @@ legacy = true
 [[range]]
 set = "iom-2011"
 kind = "warn"
-high = 12
+low = 12
 population = "North American general population; IOM DRI scope (all life-stage groups, risk of deficiency relative to bone health)"
 evidence = "guideline"
 citations = [
   { url = "https://nap.nationalacademies.org/read/13050/chapter/2", title = "Dietary Reference Intakes for Calcium and Vitamin D (IOM 2011, NAP 13050)", locator = "Chapter 2 (NAP online text)" },
 ]
-note = "Upper bound of deficiency (below 30 nmol/L). Value 12 ng/mL is the boundary; source quote gives it as 'below'. Source kind: deficient."
+note = "Upper bound of deficiency (below 30 nmol/L). Value 12 ng/mL is the boundary; source quote gives it as 'below'. Source kind: deficient. Source band <= 12; stored as the warn low bound 12."
 
 [[range]]
-set = "alt-1"
+set = "iom-2011"
 kind = "warn"
 low = 12
-high = 20
 population = "North American general population; IOM DRI scope (all life-stage groups)"
 evidence = "guideline"
 citations = [
   { url = "https://nap.nationalacademies.org/read/13050/chapter/2", title = "Dietary Reference Intakes for Calcium and Vitamin D (IOM 2011, NAP 13050)", locator = "Chapter 2 (NAP online text)" },
 ]
-note = "IOM 'inadequacy' band, 30-50 nmol/L. Some but not all persons are potentially at risk. Source kind: insufficient. Alternative to the default iom-2011 warn range for the same population."
+note = "IOM 'inadequacy' band, 30-50 nmol/L. Some but not all persons are potentially at risk. Source kind: insufficient. Source band 12-20; stored as the warn low bound 12."
 
 [[range]]
 set = "iom-2011"
@@ -59,38 +58,37 @@ citations = [
 note = "Sufficiency threshold (at least 50 nmol/L). The IOM gives no upper bound for sufficiency; see the excess range for concern above 50 ng/mL."
 
 [[range]]
-set = "alt-2"
+set = "alt-1"
 kind = "warn"
-low = 50
+high = 50
 population = "North American general population; IOM DRI scope"
 evidence = "guideline"
 citations = [
   { url = "https://nap.nationalacademies.org/read/13050/chapter/2", title = "Dietary Reference Intakes for Calcium and Vitamin D (IOM 2011, NAP 13050)", locator = "Chapter 2 (NAP online text)" },
 ]
-note = "IOM: reason for concern about adverse effects above this level; not a diagnosis of toxicity. Source kind: excess. Alternative to the default iom-2011 warn range for the same population."
+note = "IOM: reason for concern about adverse effects above this level; not a diagnosis of toxicity. Source kind: excess. Source band >= 50; stored as the warn high bound 50. Alternative to the default iom-2011 warn range for the same population."
 
 [[range]]
 set = "endocrine-society-2011"
 kind = "warn"
-high = 20
+low = 20
 population = "Adults and children at risk of deficiency (Endocrine Society 2011 clinical practice guideline, as quoted by Wacker and Holick 2013)"
 evidence = "guideline"
 citations = [
   { pmid = "23306192", doi = "10.3390/nu5010111", title = "Vitamin D - effects on skeletal and extraskeletal health and the need for supplementation.", locator = "Section: Vitamin D deficiency (citing the Endocrine Society 2011 guideline, ref 16)" },
 ]
-note = "Endocrine Society 2011 deficiency cutoff; the guideline itself is paywalled, so the numbers are cited via a review by the guideline chair. Source kind: deficient."
+note = "Endocrine Society 2011 deficiency cutoff; the guideline itself is paywalled, so the numbers are cited via a review by the guideline chair. Source kind: deficient. Source band <= 20; stored as the warn low bound 20."
 
 [[range]]
-set = "alt-3"
+set = "alt-2"
 kind = "warn"
 low = 21
-high = 29
 population = "Adults and children at risk of deficiency (Endocrine Society 2011 clinical practice guideline, as quoted by Wacker and Holick 2013)"
 evidence = "guideline"
 citations = [
   { pmid = "23306192", doi = "10.3390/nu5010111", title = "Vitamin D - effects on skeletal and extraskeletal health and the need for supplementation.", locator = "Section: Vitamin D deficiency (citing the Endocrine Society 2011 guideline, ref 16)" },
 ]
-note = "Endocrine Society 2011 insufficiency band (21-29 ng/mL). Source kind: insufficient. Alternative to the default endocrine-society-2011 warn range for the same population."
+note = "Endocrine Society 2011 insufficiency band (21-29 ng/mL). Source kind: insufficient. Source band 21-29; stored as the warn low bound 21. Alternative to the default endocrine-society-2011 warn range for the same population."
 
 [[range]]
 set = "endocrine-society-2011"
@@ -130,10 +128,10 @@ note = "Range as summarized by the consensus authors from guidelines (radioimmun
 [[range]]
 set = "vitamin-d-toxicity-review-2018"
 kind = "warn"
-low = 150
+high = 150
 population = "Adults with vitamin D overdosing (exogenous vitamin D toxicity, VDT)"
 evidence = "consensus"
 citations = [
   { pmid = "30294301", doi = "10.3389/fendo.2018.00550", title = "Vitamin D Toxicity-A Clinical Perspective.", locator = "Introduction, para 1" },
 ]
-note = "Serum 25(OH)D above 150 ng/mL is the hallmark of exogenous VDT, usually with hypercalcemia and hypercalciuria; the review states that the IOM and the Endocrine Society also concluded that levels must exceed this value for toxicity. Source kind: toxic."
+note = "Serum 25(OH)D above 150 ng/mL is the hallmark of exogenous VDT, usually with hypercalcemia and hypercalciuria; the review states that the IOM and the Endocrine Society also concluded that levels must exceed this value for toxicity. Source kind: toxic. Source band >= 150; stored as the warn high bound 150."

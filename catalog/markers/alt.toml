@@ -50,7 +50,7 @@ citations = [
 note = "Upper limit of true healthy normal ALT (guideline range 19 to 25 IU/L); levels above this should be assessed. Source states IU/L. Converted from the source's IU/L (25) to U/L using factor 1."
 
 [[range]]
-set = "alt-1"
+set = "population-ri"
 kind = "reference"
 high = 57
 when = { sex = "male" }
@@ -59,10 +59,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
 ]
-note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men. Alternative to the default clinical reference range for the same population."
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "alt-1"
+set = "population-ri"
 kind = "reference"
 high = 35
 when = { sex = "female" }
@@ -71,10 +71,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
 ]
-note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women. Alternative to the default clinical reference range for the same population."
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "alt-2"
+set = "alt-1"
 kind = "reference"
 high = 30
 when = { sex = "male" }
@@ -83,10 +83,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "12093239", doi = "10.7326/0003-4819-137-1-200207020-00006", title = "Updated definitions of healthy ranges for serum alanine aminotransferase levels.", locator = "Abstract, Results" },
 ]
-note = "Updated healthy-range upper limit from a low-risk population; sensitivity for HCV viremia and liver biopsy lesions was higher than the older limit. Men. Alternative to the default clinical reference range for the same population."
+note = "Updated healthy-range upper limit from a low-risk population; sensitivity for HCV viremia and liver biopsy lesions was higher than the older limit. Men. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range. Alternative to the default population-ri reference range for the same population."
 
 [[range]]
-set = "alt-2"
+set = "alt-1"
 kind = "reference"
 high = 19
 when = { sex = "female" }
@@ -95,10 +95,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "12093239", doi = "10.7326/0003-4819-137-1-200207020-00006", title = "Updated definitions of healthy ranges for serum alanine aminotransferase levels.", locator = "Abstract, Results" },
 ]
-note = "Updated healthy-range upper limit from a low-risk population; women. Alternative to the default clinical reference range for the same population."
+note = "Updated healthy-range upper limit from a low-risk population; women. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range. Alternative to the default population-ri reference range for the same population."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 high = 25.8
 when = { sex = "male", age = [12.0, 18.0] }
@@ -107,10 +107,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "20064512", doi = "10.1053/j.gastro.2009.12.052", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC2846968/", title = "SAFETY study: alanine aminotransferase cutoff values are set too high for reliable detection of pediatric chronic liver disease.", locator = "Results; NHANES derived normal values" },
 ]
-note = "95th percentile of ALT in the NHANES-derived pediatric reference sample, boys."
+note = "95th percentile of ALT in the NHANES-derived pediatric reference sample, boys. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 high = 22.1
 when = { sex = "female", age = [12.0, 18.0] }
@@ -119,10 +119,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "20064512", doi = "10.1053/j.gastro.2009.12.052", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC2846968/", title = "SAFETY study: alanine aminotransferase cutoff values are set too high for reliable detection of pediatric chronic liver disease.", locator = "Results; NHANES derived normal values" },
 ]
-note = "95th percentile of ALT in the NHANES-derived pediatric reference sample, girls."
+note = "95th percentile of ALT in the NHANES-derived pediatric reference sample, girls. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 4
 high = 66
@@ -132,10 +132,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Adult male 95% reference interval, lower and upper limits from the 3rd and 5th SI-unit values (LAVE-corrected in the source)."
+note = "Adult male 95% reference interval, lower and upper limits from the 3rd and 5th SI-unit values (LAVE-corrected in the source). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 4
 high = 30
@@ -145,10 +145,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Adult female 95% reference interval (under 45 years), LAVE-corrected in the source."
+note = "Adult female 95% reference interval (under 45 years), LAVE-corrected in the source. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 3
 high = 43
@@ -158,10 +158,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Adult female 95% reference interval (45 years and over), LAVE-corrected in the source."
+note = "Adult female 95% reference interval (45 years and over), LAVE-corrected in the source. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.38
 high = 70.94
@@ -171,10 +171,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; the source band starts at 28 days, the age-band bounds here are whole years."
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; the source band starts at 28 days, the age-band bounds here are whole years. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.42
 high = 30.91
@@ -184,10 +184,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28)."
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 7.15
 high = 46.55
@@ -197,10 +197,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Male pediatric 95% interval (7 to under 18 years) from a 2026 Chinese reference-interval study; n = 32 males in the source band."
+note = "Male pediatric 95% interval (7 to under 18 years) from a 2026 Chinese reference-interval study; n = 32 males in the source band. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.25
 high = 28.18
@@ -210,4 +210,4 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Female pediatric 95% interval (7 to under 18 years) from a 2026 Chinese reference-interval study; n = 45 females in the source band."
+note = "Female pediatric 95% interval (7 to under 18 years) from a 2026 Chinese reference-interval study; n = 45 females in the source band. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."

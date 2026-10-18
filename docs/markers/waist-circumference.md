@@ -1,0 +1,32 @@
+# Waist Circumference (`waist-circumference`)
+
+Waist circumference measured at the level of the umbilicus or the midpoint between the lowest rib and the iliac crest. It is a measure of central (abdominal) adiposity and is used in metabolic syndrome criteria. Cut-offs differ by sex and ethnicity.
+
+| | |
+|---|---|
+| Category | [body](index.md#body) |
+| Canonical unit | cm |
+| LOINC | - |
+| Specimen | - |
+| Aliases | `waist`, `abdominal circumference`, `wc` |
+
+## Ranges
+
+No clinical reference range: No general clinical reference interval is cited; see the diagnostic, target and alternative ranges.
+
+Bounds in cm. The most specific matching range of each set applies.
+
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| alt-1 | warn | male | - | 102 | consensus | Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote) | [Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.](https://pubmed.ncbi.nlm.nih.gov/42739267/), Full text, waist circumference paragraph | Substantially higher risk waist circumference for men: 102 cm or more (boundary >= 102). Attributed by the review to a cited reference (ref 59) that was not retrieved. Source kind: decision. Source band >= 102; stored as the warn high bound 102. Alternative to the default waist-cutoffs-review-2026 warn range for the same population. |
+| alt-1 | warn | female | - | 88 | consensus | Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote) | [Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.](https://pubmed.ncbi.nlm.nih.gov/42739267/), Full text, waist circumference paragraph | Substantially higher risk waist circumference for women: 88 cm or more (boundary >= 88). Attributed by the review to a cited reference (ref 59) that was not retrieved. Source kind: decision. Source band >= 88; stored as the warn high bound 88. Alternative to the default waist-cutoffs-review-2026 warn range for the same population. |
+| idf-2005-asian-as-cited-2020 | warn | male | - | 90 | consensus | Asian men (ethnicity-specific central obesity cut-point for metabolic syndrome, as cited in a 2020 multi-ethnic Indonesian study) | [Diagnosing metabolic syndrome in a multi-ethnic country: is an ethnic-specific cut-off point of waist circumference needed?](https://pubmed.ncbi.nlm.nih.gov/32513949/), Introduction | Ethnic-specific central obesity cut-point for men used in the metabolic syndrome definition. The number is taken from the 2020 study's description of the IDF definition, not from the IDF document itself. Boundary semantics are not stated in the quote. Applies only to: ethnicity=asian. Source kind: decision. Source band >= 90; stored as the warn high bound 90. |
+| idf-2005-asian-as-cited-2020 | warn | female | - | 80 | consensus | Asian women (ethnicity-specific central obesity cut-point for metabolic syndrome, as cited in a 2020 multi-ethnic Indonesian study) | [Diagnosing metabolic syndrome in a multi-ethnic country: is an ethnic-specific cut-off point of waist circumference needed?](https://pubmed.ncbi.nlm.nih.gov/32513949/), Introduction | Ethnic-specific central obesity cut-point for women used in the metabolic syndrome definition. The number is taken from the 2020 study's description of the IDF definition, not from the IDF document itself. Boundary semantics are not stated in the quote. Applies only to: ethnicity=asian. Source kind: decision. Source band >= 80; stored as the warn high bound 80. |
+| nhlbi-1998-obesity | warn | male | - | 102 | guideline | Adults (NHLBI 1998 high-risk waist circumference cut-point) | [Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report](https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf), Risk classification by waist circumference (high-risk column) | High-risk waist circumference for men: greater than 102 cm (boundary >). The NHLBI cut-point is sex-specific and was set for the guideline's risk classification. Source kind: decision. Source band >= 102; stored as the warn high bound 102. |
+| nhlbi-1998-obesity | warn | female | - | 88 | guideline | Adults (NHLBI 1998 high-risk waist circumference cut-point) | [Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report](https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf), Risk classification by waist circumference (high-risk column) | High-risk waist circumference for women: greater than 88 cm (boundary >). The NHLBI cut-point is sex-specific and was set for the guideline's risk classification. Source kind: decision. Source band >= 88; stored as the warn high bound 88. |
+| waist-cutoffs-review-2026 | warn | male | - | 94 | consensus | Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote) | [Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.](https://pubmed.ncbi.nlm.nih.gov/42739267/), Full text, waist circumference paragraph | Increased-risk waist circumference for men: 94 cm or more (boundary >= 94). The review attributes these values to a cited reference (ref 59) that was not retrieved. Ethnicity-specific values for Asians are in the separate Asian ranges above. Source kind: decision. Source band >= 94; stored as the warn high bound 94. |
+| waist-cutoffs-review-2026 | warn | female | - | 80 | consensus | Adults (general population cut-off as summarised by a 2026 narrative review; Europid ethnicity not stated in the quote) | [Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.](https://pubmed.ncbi.nlm.nih.gov/42739267/), Full text, waist circumference paragraph | Increased-risk waist circumference for women: 80 cm or more (boundary >= 80). The review attributes these values to a cited reference (ref 59) that was not retrieved. Source kind: decision. Source band >= 80; stored as the warn high bound 80. |
+
+---
+
+_Generated from catalog/ by `biomarker catalog docs`; do not edit by hand._

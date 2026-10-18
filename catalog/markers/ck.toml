@@ -247,10 +247,10 @@ note = "Upper reference limit for CK in White males aged 13 and over. The study 
 [[range]]
 set = "rhabdo-review-2016"
 kind = "critical"
-low = 1000
+high = 1000
 population = "Adults with suspected rhabdomyolysis (clinical review)"
 evidence = "consensus"
 citations = [
   { pmid = "27301374", doi = "10.1186/s13054-016-1314-5", url = "https://pubmed.ncbi.nlm.nih.gov/27301374/", title = "Beyond muscle destruction: a systematic review of rhabdomyolysis for clinical practice.", locator = "Full text, diagnostic criteria" },
 ]
-note = "Rhabdomyolysis threshold: CK above 1000 U/L (strict >1000). Taken from a systematic review of rhabdomyolysis for clinical practice, not a numbered guideline."
+note = "Rhabdomyolysis threshold: CK above 1000 U/L (strict >1000). Taken from a systematic review of rhabdomyolysis for clinical practice, not a numbered guideline. Source band >= 1000; stored as the critical high bound 1000."

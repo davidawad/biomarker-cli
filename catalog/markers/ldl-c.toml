@@ -50,7 +50,6 @@ note = "Optimal: strictly below 100 mg/dL (ATP III)."
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 100
 high = 129
 when = { age = [20.0, 200] }
 population = "Adults aged 20 years or older"
@@ -58,12 +57,11 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2" },
 ]
-note = "Near optimal/above optimal (ATP III)."
+note = "Near optimal/above optimal (ATP III). Source band 100-129; stored as the warn high bound 129."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 130
 high = 159
 when = { age = [20.0, 200] }
 population = "Adults aged 20 years or older"
@@ -71,7 +69,7 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2" },
 ]
-note = "Borderline high LDL-C (ATP III). Alternative to the default clinical warn range for the same population."
+note = "Borderline high LDL-C (ATP III). Source band 130-159; stored as the warn high bound 159. Alternative to the default clinical warn range for the same population."
 
 [[range]]
 set = "clinical"
@@ -88,7 +86,6 @@ note = "Acceptable pediatric LDL-C: strictly below 110 mg/dL."
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 110
 high = 129
 when = { age = [0.0, 20.0] }
 population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
@@ -96,12 +93,12 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "Pediatric borderline-high LDL-C."
+note = "Pediatric borderline-high LDL-C. Source band 110-129; stored as the warn high bound 129."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 190
+high = 190
 when = { age = [20.0, 200] }
 population = "Adults aged 20 years or older"
 evidence = "guideline"
@@ -109,12 +106,11 @@ citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2" },
   { pmid = "42211141", doi = "10.12997/jla.2026.15.2.216", title = "Statins, LDL-C and Beyond: A Contemporary Review of Atherosclerotic Cardiovascular Risk Assessment and Management.", locator = "Table 3" },
 ]
-note = "Very high LDL-C (ATP III); severe hypercholesterolemia in the 2018 AHA/ACC guideline as restated in the cited review. Source kind: diagnostic."
+note = "Very high LDL-C (ATP III); severe hypercholesterolemia in the 2018 AHA/ACC guideline as restated in the cited review. Source kind: diagnostic. Source band >= 190; stored as the warn high bound 190."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 160
 high = 189
 when = { age = [20.0, 200] }
 population = "Adults aged 20 years or older"
@@ -122,7 +118,7 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Table 2" },
 ]
-note = "High LDL-C (ATP III). Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "High LDL-C (ATP III). Source kind: diagnostic. Source band 160-189; stored as the warn high bound 189. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "target"
@@ -216,17 +212,17 @@ note = "NICE NG238 secondary-prevention LDL-C target, stated in mmol/L; numbers 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 130
+high = 130
 when = { age = [0.0, 20.0] }
 population = "Children and adolescents (NHLBI expert panel, Table 9-1)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "Pediatric high LDL-C (>= 130 mg/dL). Source kind: diagnostic."
+note = "Pediatric high LDL-C (>= 130 mg/dL). Source kind: diagnostic. Source band >= 130; stored as the warn high bound 130."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 48.72
 high = 146.9
@@ -236,10 +232,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1" },
 ]
-note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.26-3.8) to mg/dL using factor 38.67."
+note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.26-3.8) to mg/dL using factor 38.67. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 74.63
 high = 228.2
@@ -249,10 +245,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1" },
 ]
-note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.93-5.9) to mg/dL using factor 38.67."
+note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.93-5.9) to mg/dL using factor 38.67. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 55
 high = 166
@@ -262,10 +258,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egypt, under 45 years. Conventional mg/dL values from Table 3 (SI 1.42-4.28 mmol/L). Age-partitioned in the source."
+note = "95% reference interval, Egypt, under 45 years. Conventional mg/dL values from Table 3 (SI 1.42-4.28 mmol/L). Age-partitioned in the source. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 54
 high = 185
@@ -275,10 +271,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egypt, 45 years and over. Conventional mg/dL values from Table 3 (SI 1.38-4.79 mmol/L)."
+note = "95% reference interval, Egypt, 45 years and over. Conventional mg/dL values from Table 3 (SI 1.38-4.79 mmol/L). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 49.5
 high = 131.5
@@ -288,10 +284,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Infant bands (28 days to 2 years) not encoded because they are not whole-year ages. Converted from the source's mmol/L (1.28-3.4) to mg/dL using factor 38.67."
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Infant bands (28 days to 2 years) not encoded because they are not whole-year ages. Converted from the source's mmol/L (1.28-3.4) to mg/dL using factor 38.67. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 49.5
 high = 126.5
@@ -301,10 +297,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (1.28-3.27) to mg/dL using factor 38.67."
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (1.28-3.27) to mg/dL using factor 38.67. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 35.19
 high = 116.0
@@ -314,10 +310,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (0.91-3.0) to mg/dL using factor 38.67."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (0.91-3.0) to mg/dL using factor 38.67. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 47.18
 high = 134.6
@@ -327,16 +323,16 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (1.22-3.48) to mg/dL using factor 38.67."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's mmol/L (1.22-3.48) to mg/dL using factor 38.67. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 115
+high = 115
 when = { fasting = false }
 population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract" },
 ]
-note = "Laboratory flag for abnormal non-fasting LDL-C. The consensus states the same cut-points apply to fasting samples."
+note = "Laboratory flag for abnormal non-fasting LDL-C. The consensus states the same cut-points apply to fasting samples. Source band >= 115; stored as the warn high bound 115."

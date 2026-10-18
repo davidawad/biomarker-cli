@@ -9,24 +9,12 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 set = "harris-2008"
 kind = "warn"
 low = 4
-high = 8
-population = "Adults; risk zones proposed for erythrocyte EPA plus DHA from the omega-3 index risk-factor review (specimen: rbc)"
-evidence = "consensus"
-citations = [
-  { pmid = "18541601", title = "The omega-3 index as a risk factor for coronary heart disease.", locator = "Abstract" },
-]
-note = "Proposed intermediate-risk band for the Omega-3 Index (percent of erythrocyte fatty acids). Proposed zones, not a population reference interval."
-
-[[range]]
-set = "alt-1"
-kind = "warn"
-high = 4
 population = "Adults; high-risk zone for erythrocyte EPA plus DHA from the omega-3 index risk-factor review (specimen: rbc)"
 evidence = "consensus"
 citations = [
   { pmid = "18541601", title = "The omega-3 index as a risk factor for coronary heart disease.", locator = "Abstract" },
 ]
-note = "Proposed high-risk zone for the Omega-3 Index. Proposed cutoff, not a population reference interval. Source kind: deficient. Alternative to the default harris-2008 warn range for the same population."
+note = "Proposed high-risk zone for the Omega-3 Index. Proposed cutoff, not a population reference interval. Source kind: deficient. Source band <= 4; stored as the warn low bound 4."
 
 [[range]]
 set = "harris-2004"

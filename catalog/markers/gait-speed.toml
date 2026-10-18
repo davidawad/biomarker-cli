@@ -9,21 +9,21 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "ewgsop2-2019"
 kind = "warn"
-high = 0.8
+low = 0.8
 population = "Older adults (European consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "30312372", doi = "10.1093/ageing/afy169", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", title = "Sarcopenia: revised European consensus on definition and diagnosis.", locator = "Section: Defining cut-off points for sarcopenia tests" },
 ]
-note = "Gait speed at or below 0.8 m/s indicates severe sarcopenia (poor physical performance). Boundary is less-than-or-equal. Source kind: decision."
+note = "Gait speed at or below 0.8 m/s indicates severe sarcopenia (poor physical performance). Boundary is less-than-or-equal. Source kind: decision. Source band <= 0.8; stored as the warn low bound 0.8."
 
 [[range]]
 set = "awgs-2019"
 kind = "warn"
-high = 1.0
+low = 1.0
 population = "Asian older adults (AWGS 2019 consensus); 6-m walk test"
 evidence = "consensus"
 citations = [
   { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", locator = "Abstract, Results" },
 ]
-note = "Low physical performance if 6-m walk speed is below 1.0 m/s (strict less-than boundary). Applies to the 6-m walk test. Source kind: decision."
+note = "Low physical performance if 6-m walk speed is below 1.0 m/s (strict less-than boundary). Applies to the 6-m walk test. Source kind: decision. Source band <= 1.0; stored as the warn low bound 1.0."

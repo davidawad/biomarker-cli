@@ -10,22 +10,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "acr-eular-2023-aps"
 kind = "warn"
-low = 40
-high = 79
+high = 80
 population = "Patients in a Turkish cohort used to validate the 2023 ACR/EULAR APS classification criteria"
 evidence = "cohort"
 citations = [
   { pmid = "39410609", doi = "10.3390/diagnostics14192205", url = "https://pubmed.ncbi.nlm.nih.gov/39410609/", title = "The Validation of the 2023 ACR/EULAR Antiphospholipid Syndrome Classification Criteria in a Cohort from Turkey.", locator = "Methods, aPL antibody positivity definition" },
 ]
-note = "2023 ACR/EULAR APS criteria: moderate aPL positivity, applied to anti-beta2GPI as well as anticardiolipin. The source reports the titre in 'units' and does not state U/mL explicitly; treat the equivalence as unverified. Sydney 2006 uses a >99th percentile cut-off that is not expressed numerically in the retrieved text. Source kind: decision."
-
-[[range]]
-set = "alt-1"
-kind = "warn"
-low = 80
-population = "Patients in a Turkish cohort used to validate the 2023 ACR/EULAR APS classification criteria"
-evidence = "cohort"
-citations = [
-  { pmid = "39410609", doi = "10.3390/diagnostics14192205", url = "https://pubmed.ncbi.nlm.nih.gov/39410609/", title = "The Validation of the 2023 ACR/EULAR Antiphospholipid Syndrome Classification Criteria in a Cohort from Turkey.", locator = "Methods, aPL antibody positivity definition" },
-]
-note = "2023 ACR/EULAR APS criteria: high aPL positivity (>=80), applied to anti-beta2GPI as well as anticardiolipin. The source reports the titre in 'units' and does not state U/mL explicitly; treat the equivalence as unverified. Source kind: decision. Alternative to the default acr-eular-2023-aps warn range for the same population."
+note = "2023 ACR/EULAR APS criteria: high aPL positivity (>=80), applied to anti-beta2GPI as well as anticardiolipin. The source reports the titre in 'units' and does not state U/mL explicitly; treat the equivalence as unverified. Source kind: decision. Source band >= 80; stored as the warn high bound 80."

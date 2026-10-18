@@ -8,32 +8,32 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "endocrine-society-2025"
 kind = "warn"
-low = 15
+high = 15
 population = "Adults screened for primary aldosteronism; ARR with PAC and PRA by LC-MS/MS (Endocrine Society 2025 criteria as summarised in a 2026 analysis) (method: lc-ms/ms)"
 evidence = "consensus"
 citations = [
   { pmid = "42751802", doi = "10.1161/HYPERTENSIONAHA.126.27634", url = "https://pubmed.ncbi.nlm.nih.gov/42751802/", title = "Evaluation of Current Screening Thresholds for the Detection of Primary Aldosteronism.", locator = "Abstract, Background" },
 ]
-note = "Endocrine Society 2025 screening criterion: ARR above 15, applied together with PAC at or above 7.5 ng/dL and PRA at or below 1 ng/mL/h. Cited via the Hypertension 2026 analysis, not the guideline full text. Applies only to: markers=[{\"slug\": \"aldosterone\", \"op\": \">=\", \"value\": 7.5, \"unit\": \"ng/dL\"}, {\"slug\": \"renin-activity\", \"op\": \"<=\", \"value\": 1, \"unit\": \"ng/mL/h\"}]. Source kind: diagnostic."
+note = "Endocrine Society 2025 screening criterion: ARR above 15, applied together with PAC at or above 7.5 ng/dL and PRA at or below 1 ng/mL/h. Cited via the Hypertension 2026 analysis, not the guideline full text. Applies only to: markers=[{\"slug\": \"aldosterone\", \"op\": \">=\", \"value\": 7.5, \"unit\": \"ng/dL\"}, {\"slug\": \"renin-activity\", \"op\": \"<=\", \"value\": 1, \"unit\": \"ng/mL/h\"}]. Source kind: diagnostic. Source band >= 15; stored as the warn high bound 15."
 
 [[range]]
 set = "china-multicenter-pa-2026"
 kind = "warn"
-low = 9.3
+high = 9.3
 population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension) (method: lc-ms/ms; test: captopril challenge test, 2 h post-dose)"
 evidence = "cohort"
 citations = [
   { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", locator = "Abstract, Results" },
 ]
-note = "ARR two hours after the captopril challenge, LC-MS/MS (sensitivity 61%, specificity 85%). Study-derived threshold; the 19.0 seated-saline cut-off is a separate range. Source kind: diagnostic."
+note = "ARR two hours after the captopril challenge, LC-MS/MS (sensitivity 61%, specificity 85%). Study-derived threshold; the 19.0 seated-saline cut-off is a separate range. Source kind: diagnostic. Source band >= 9.3; stored as the warn high bound 9.3."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 19.0
+high = 19.0
 population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension) (method: lc-ms/ms; test: seated saline infusion test)"
 evidence = "cohort"
 citations = [
   { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", locator = "Abstract, Results" },
 ]
-note = "ARR after the seated saline infusion test, LC-MS/MS (sensitivity 64%, specificity 85%). Study-derived threshold. Source kind: diagnostic. Alternative to the default china-multicenter-pa-2026 warn range for the same population."
+note = "ARR after the seated saline infusion test, LC-MS/MS (sensitivity 64%, specificity 85%). Study-derived threshold. Source kind: diagnostic. Source band >= 19.0; stored as the warn high bound 19.0. Alternative to the default china-multicenter-pa-2026 warn range for the same population."

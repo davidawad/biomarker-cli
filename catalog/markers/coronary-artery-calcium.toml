@@ -7,48 +7,23 @@ aliases = ["cac score", "agatston score", "coronary calcium score"]
 no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
-set = "acc-aha-2019-primary-prevention"
-kind = "warn"
-low = 1
-high = 99
-when = { age = [55.0, 200] }
-population = "Adults with a coronary artery calcium score measured for a statin decision, primary prevention"
-evidence = "guideline"
-citations = [
-  { pmid = "30894319", doi = "10.1016/j.jacc.2019.03.009", url = "https://pubmed.ncbi.nlm.nih.gov/30894319/", title = "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease: Executive Summary: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Full text, Recommendations on coronary artery calcium" },
-]
-note = "Some coronary calcium (1-99). Reasonable to initiate statin therapy for patients aged 55 years or older. Boundary semantics: >=1 and <=99. Units are not stated in the quote; the calcium score is the Agatston score."
-
-[[range]]
 set = "acc-aha-2018-cholesterol"
 kind = "warn"
-low = 100
+high = 100
 population = "Adults with a coronary artery calcium score measured for a statin decision"
 evidence = "guideline"
 citations = [
   { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", url = "https://pubmed.ncbi.nlm.nih.gov/30586774/", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Full text, Recommendations on coronary artery calcium" },
 ]
-note = "CAC of 100 Agatston units or higher: statin therapy is indicated unless deferred after clinician-patient risk discussion. The same recommendation also accepts a score at or above the 75th percentile as an equivalent cut-off; that percentile is not a numeric Agatston range and is not encoded here. Lower bound only (open above). Source kind: decision."
+note = "CAC of 100 Agatston units or higher: statin therapy is indicated unless deferred after clinician-patient risk discussion. The same recommendation also accepts a score at or above the 75th percentile as an equivalent cut-off; that percentile is not a numeric Agatston range and is not encoded here. Lower bound only (open above). Source kind: decision. Source band >= 100; stored as the warn high bound 100."
 
 [[range]]
 set = "scct-cac-drs-2018"
 kind = "warn"
-low = 100
-high = 299
+high = 300
 population = "Adults undergoing coronary artery calcium scoring (CAC-DRS reporting categories)"
 evidence = "consensus"
 citations = [
   { pmid = "39445716", doi = "10.1097/HCO.0000000000001185", url = "https://pubmed.ncbi.nlm.nih.gov/39445716/", title = "Beyond the Agatston calcium score: role of calcium density and other calcified plaque markers for cardiovascular disease prediction.", locator = "Full text, CAC-DRS description" },
 ]
-note = "CAC-DRS category A2, moderately increased (100-299 Agatston units). The primary SCCT CAC-DRS 2018 document (PMID 29793848) is not retrievable with numbers; the category wording is taken from the review cited here, which summarises the CAC-DRS categories. Boundary semantics: >=100 and <=299. Source kind: decision."
-
-[[range]]
-set = "alt-1"
-kind = "warn"
-low = 300
-population = "Adults undergoing coronary artery calcium scoring (CAC-DRS reporting categories)"
-evidence = "consensus"
-citations = [
-  { pmid = "39445716", doi = "10.1097/HCO.0000000000001185", url = "https://pubmed.ncbi.nlm.nih.gov/39445716/", title = "Beyond the Agatston calcium score: role of calcium density and other calcified plaque markers for cardiovascular disease prediction.", locator = "Full text, CAC-DRS description" },
-]
-note = "CAC-DRS category A3, severely increased (>=300 Agatston units). Same caveat as the 100-299 range: the category is taken from the review cited here. Lower bound only (open above). Source kind: decision. Alternative to the default scct-cac-drs-2018 warn range for the same population."
+note = "CAC-DRS category A3, severely increased (>=300 Agatston units). Same caveat as the 100-299 range: the category is taken from the review cited here. Lower bound only (open above). Source kind: decision. Source band >= 300; stored as the warn high bound 300."

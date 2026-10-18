@@ -20,7 +20,7 @@ high = 25.0
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 high = 49
 when = { sex = "male" }
@@ -29,10 +29,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
 ]
-note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men."
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, men. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 high = 33
 when = { sex = "female" }
@@ -41,10 +41,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "41255223", doi = "10.1111/liv.70440", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628042/", title = "Updated Reference Limits for Liver Blood Tests With Validation Against Long-Term Liver-Related Outcomes.", locator = "Abstract, Results" },
 ]
-note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women."
+note = "Upper reference limit (97.5th percentile) in the healthiest subpopulation, women. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 12
 high = 38
@@ -54,10 +54,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Adult male 95% reference interval (LAVE-corrected in the source)."
+note = "Adult male 95% reference interval (LAVE-corrected in the source). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 10
 high = 32
@@ -67,10 +67,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Adult female 95% reference interval (LAVE-corrected in the source)."
+note = "Adult female 95% reference interval (LAVE-corrected in the source). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 22.29
 high = 75.7
@@ -80,10 +80,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; the source band starts at 28 days."
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study; the source band starts at 28 days. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 24.48
 high = 55.68
@@ -93,10 +93,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28)."
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 21.91
 high = 44.81
@@ -106,10 +106,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28)."
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 13.3
 high = 38.58
@@ -119,10 +119,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28)."
+note = "Pediatric 95% interval from a 2026 Chinese reference-interval study (CLSI EP28). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 11.21
 high = 33.44
@@ -132,10 +132,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Male pediatric 95% interval (n = 27 in the source band) from a 2026 Chinese reference-interval study."
+note = "Male pediatric 95% interval (n = 27 in the source band) from a 2026 Chinese reference-interval study. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 10.33
 high = 27.44
@@ -145,4 +145,4 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Female pediatric 95% interval (n = 32 in the source band) from a 2026 Chinese reference-interval study."
+note = "Female pediatric 95% interval (n = 32 in the source band) from a 2026 Chinese reference-interval study. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."

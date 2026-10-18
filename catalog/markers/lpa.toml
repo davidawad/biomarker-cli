@@ -11,12 +11,6 @@ from = "mg/dL"
 factor = 2.15
 
 [[range]]
-set = "clinical"
-kind = "reference"
-high = 75.0
-legacy = true
-
-[[range]]
 set = "optimal"
 kind = "optimal"
 high = 30.0
@@ -25,35 +19,35 @@ legacy = true
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 100
+high = 100
 population = "Adults"
 evidence = "guideline"
 citations = [
   { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Section on the 2024 NLA focused update (secondary review of the guideline text)" },
 ]
-note = "NLA 2024 focused update: Lp(a) above 50 mg/dL or 100-125 nmol/L is a risk-enhancing factor (risk modifier). Lower bound of the band shown as 100 nmol/L."
+note = "NLA 2024 focused update: Lp(a) above 50 mg/dL or 100-125 nmol/L is a risk-enhancing factor (risk modifier). Lower bound of the band shown as 100 nmol/L. Source band >= 100; stored as the warn high bound 100."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 125
+high = 125
 population = "Adults; 2026 US multi-society (ACC/AHA) dyslipidemia guideline as summarised in the cited review"
 evidence = "guideline"
 citations = [
   { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Introduction / risk stratification" },
 ]
-note = "2026 ACC/AHA: Lp(a) >= 125 nmol/L (about 50 mg/dL) is a risk-enhancing factor. Quoted in nmol/L as the source states it; the review notes mg/dL and nmol/L are not interchangeable. Alternative to the default clinical warn range for the same population."
+note = "2026 ACC/AHA: Lp(a) >= 125 nmol/L (about 50 mg/dL) is a risk-enhancing factor. Quoted in nmol/L as the source states it; the review notes mg/dL and nmol/L are not interchangeable. Source band >= 125; stored as the warn high bound 125. Alternative to the default clinical warn range for the same population."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 250
+high = 250
 population = "Adults; 2026 US multi-society (ACC/AHA) dyslipidemia guideline as summarised in the cited review"
 evidence = "guideline"
 citations = [
   { pmid = "42739646", doi = "10.3390/jcm15176640", title = "Lipoprotein(a) in Personalized Cardiovascular Prevention: Risk Stratification, Coronary Artery Calcium, and Emerging Lp(a)-Lowering Therapies.", locator = "Introduction / risk stratification" },
 ]
-note = "2026 ACC/AHA: Lp(a) >= 250 nmol/L is a major risk enhancer. Quoted in nmol/L as the source states it. Alternative to the default clinical warn range for the same population."
+note = "2026 ACC/AHA: Lp(a) >= 250 nmol/L is a major risk enhancer. Quoted in nmol/L as the source states it. Source band >= 250; stored as the warn high bound 250. Alternative to the default clinical warn range for the same population."
 
 [[range]]
 set = "clinical"
@@ -67,24 +61,23 @@ citations = [
 note = "EAS 2022 'rule-out' cut-off: below 75 nmol/L (below 30 mg/dL)."
 
 [[range]]
-set = "alt-3"
+set = "alt-1"
 kind = "warn"
-low = 75
 high = 125
 population = "Adults (EAS 2022 consensus on Lp(a) in ASCVD and aortic stenosis)"
 evidence = "consensus"
 citations = [
   { pmid = "36036785", doi = "10.1093/eurheartj/ehac361", title = "Lipoprotein(a) in atherosclerotic cardiovascular disease and aortic stenosis: a European Atherosclerosis Society consensus statement.", locator = "Consensus statement, section on Lp(a) cut-offs for rule-out and rule-in" },
 ]
-note = "EAS 2022 grey zone (30-50 mg/dL): relevant when weighing Lp(a)-attributable risk together with other risk factors. Alternative to the default clinical warn range for the same population."
+note = "EAS 2022 grey zone (30-50 mg/dL): relevant when weighing Lp(a)-attributable risk together with other risk factors. Source band 75-125; stored as the warn high bound 125. Alternative to the default clinical warn range for the same population."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 125
+high = 125
 population = "Adults (EAS 2022 consensus on Lp(a) in ASCVD and aortic stenosis)"
 evidence = "consensus"
 citations = [
   { pmid = "36036785", doi = "10.1093/eurheartj/ehac361", title = "Lipoprotein(a) in atherosclerotic cardiovascular disease and aortic stenosis: a European Atherosclerosis Society consensus statement.", locator = "Consensus statement, section on Lp(a) cut-offs for rule-out and rule-in" },
 ]
-note = "EAS 2022 'rule-in' category: above 125 nmol/L (above 50 mg/dL) indicates elevated Lp(a)-associated risk. Source kind: diagnostic."
+note = "EAS 2022 'rule-in' category: above 125 nmol/L (above 50 mg/dL) indicates elevated Lp(a)-associated risk. Source kind: diagnostic. Source band >= 125; stored as the warn high bound 125."

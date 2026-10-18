@@ -31,7 +31,7 @@ set = "premenopausal-women-2011"
 kind = "reference"
 low = 15
 high = 46
-when = { sex = "female", age = [30.0, 30.0] }
+when = { sex = "female", age = [30.0, 31.0] }
 population = "Normally cycling healthy premenopausal women aged 18-49 (n=161); percentiles estimated for a typical 30-year-old woman, pooled across menstrual cycle phases"
 evidence = "reference-interval-study"
 citations = [
@@ -109,7 +109,7 @@ set = "female-age-continuous-2026"
 kind = "reference"
 low = 13.99
 high = 79.17
-when = { sex = "female", age = [20.0, 20.0] }
+when = { sex = "female", age = [20.0, 21.0] }
 population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
 evidence = "reference-interval-study"
 citations = [
@@ -122,7 +122,7 @@ set = "female-age-continuous-2026"
 kind = "reference"
 low = 7.037
 high = 65.78
-when = { sex = "female", age = [40.0, 40.0] }
+when = { sex = "female", age = [40.0, 41.0] }
 population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
 evidence = "reference-interval-study"
 citations = [
@@ -135,7 +135,7 @@ set = "female-age-continuous-2026"
 kind = "reference"
 low = 5.018
 high = 59.99
-when = { sex = "female", age = [50.0, 50.0] }
+when = { sex = "female", age = [50.0, 51.0] }
 population = "5,323 healthy women aged 19-59 years from a private UK healthcare service (capillary serum sampling), excluding PCOS, BMI outside 18.5-30, hormonal contraception, hirsutism and menstrual irregularity"
 evidence = "reference-interval-study"
 citations = [
@@ -158,35 +158,35 @@ note = "Upper limit of the reference interval only, in boys during mini-puberty;
 [[range]]
 set = "endocrine-society-2018"
 kind = "warn"
-high = 264
+low = 264
 when = { sex = "male" }
 population = "Men with suspected male hypogonadism; cut-off restated in a 2026 joint position statement (Brazil)"
 evidence = "consensus"
 citations = [
   { pmid = "41678706", doi = "10.1590/S1677-5538.IBJU.2025.0610", url = "https://pubmed.ncbi.nlm.nih.gov/41678706/", title = "Care of Patients with Male Hypogonadism: A Joint Position Statement from the Brazilian Society of Endocrinology and Metabolism (SBEM), the Brazilian Society of Urology (SBU), and the Brazilian Association for Sexual Medicine and Health (ABEMSS).", locator = "Discussion (threshold paragraph)" },
 ]
-note = "Lower total testosterone limit for low-testosterone diagnosis (values below 264 ng/dL support hypogonadism) as the Endocrine Society 2018 guideline recommends, restated verbatim in an open-access position statement. Assay-dependent: CDC-certified LC-MS/MS or immunoassays recommended. Not verified against the paywalled guideline itself. Source kind: diagnostic."
+note = "Lower total testosterone limit for low-testosterone diagnosis (values below 264 ng/dL support hypogonadism) as the Endocrine Society 2018 guideline recommends, restated verbatim in an open-access position statement. Assay-dependent: CDC-certified LC-MS/MS or immunoassays recommended. Not verified against the paywalled guideline itself. Source kind: diagnostic. Source band <= 264; stored as the warn low bound 264."
 
 [[range]]
 set = "eau-srh-2026"
 kind = "warn"
-high = 346.1
+low = 346.1
 when = { sex = "male" }
 population = "Men with symptomatic suspected male hypogonadism; EAU Guidelines on Sexual and Reproductive Health (2026 summary)"
 evidence = "consensus"
 citations = [
   { pmid = "42177105", doi = "10.1016/j.euf.2026.04.015", url = "https://pubmed.ncbi.nlm.nih.gov/42177105/", title = "EAU Guidelines on Sexual and Reproductive Health: A Summary of the 2026 Recommendations for Measurement and Biochemical Confirmation of Hypogonadism.", locator = "Abstract, Key findings" },
 ]
-note = "Threshold for diagnosing symptomatic male hypogonadism: total testosterone of 12 nmol/L or less (the zone is values at or below 12 nmol/L). Summary of EAU guidelines in an open-access abstract, not the full guideline text. Source unit nmol/L (about 346 ng/dL). Converted from the source's nmol/L (12) to ng/dL using factor 28.84. Source kind: diagnostic."
+note = "Threshold for diagnosing symptomatic male hypogonadism: total testosterone of 12 nmol/L or less (the zone is values at or below 12 nmol/L). Summary of EAU guidelines in an open-access abstract, not the full guideline text. Source unit nmol/L (about 346 ng/dL). Converted from the source's nmol/L (12) to ng/dL using factor 28.84. Source kind: diagnostic. Source band <= 346.1; stored as the warn low bound 346.1."
 
 [[range]]
 set = "pcos-lcms-2021"
 kind = "warn"
-high = 33.7
+low = 33.7
 when = { sex = "female", conditions = ["pcos"] }
 population = "Women with PCOS (n=102) and healthy volunteers (n=41), Chinese cohort, LC-MS/MS (method: lc-ms/ms; test: ROC analysis for hyperandrogenemia)"
 evidence = "cohort"
 citations = [
   { pmid = "33583431", doi = "10.1186/s13048-021-00781-5", url = "https://pubmed.ncbi.nlm.nih.gov/33583431/", title = "Comparison of the efficacy of different androgens measured by LC-MS/MS in representing hyperandrogenemia and an evaluation of adrenal-origin androgens with a dexamethasone suppression test in patients with PCOS.", locator = "Abstract, Results" },
 ]
-note = "Optimal ROC cut-off for hyperandrogenemia in PCOS (sensitivity 72.0%, specificity 82.93%). Values above the cut-off indicate hyperandrogenemia in this study. Single-centre diagnostic accuracy, not a reference interval; source unit is ng/mL (about 33.7 ng/dL). Converted from the source's ng/mL (0.337) to ng/dL using factor 100. Source kind: diagnostic."
+note = "Optimal ROC cut-off for hyperandrogenemia in PCOS (sensitivity 72.0%, specificity 82.93%). Values above the cut-off indicate hyperandrogenemia in this study. Single-centre diagnostic accuracy, not a reference interval; source unit is ng/mL (about 33.7 ng/dL). Converted from the source's ng/mL (0.337) to ng/dL using factor 100. Source kind: diagnostic. Source band <= 33.7; stored as the warn low bound 33.7."

@@ -9,13 +9,13 @@ aliases = ["faecal calprotectin", "fecal calprotectin", "fc", "fcp", "stool calp
 [[range]]
 set = "espghan-fc-250-as-cited"
 kind = "warn"
-low = 250
+high = 250
 population = "Children with suspected inflammatory bowel disease (ESPGHAN cut-off as cited by a UK paediatric cohort)"
 evidence = "consensus"
 citations = [
   { pmid = "33571226", doi = "10.1371/journal.pone.0246091", url = "https://pubmed.ncbi.nlm.nih.gov/33571226/", title = "Guidance on the interpretation of faecal calprotectin levels in children.", locator = "Methods, cut-off levels" },
 ]
-note = "Cut-off above which faecal calprotectin was suggested to predict mucosal inflammation in IBD. The number is taken from ESPGHAN as cited in the 2021 paper, not from the ESPGHAN document itself. Quoted as above 250 µg/g. Source kind: decision."
+note = "Cut-off above which faecal calprotectin was suggested to predict mucosal inflammation in IBD. The number is taken from ESPGHAN as cited in the 2021 paper, not from the ESPGHAN document itself. Quoted as above 250 µg/g. Source kind: decision. Source band >= 250; stored as the warn high bound 250."
 
 [[range]]
 set = "clinical"
@@ -55,10 +55,10 @@ note = "Laboratory reference value used in this paediatric cohort. Results above
 [[range]]
 set = "fc-mre-systematic-review-2025"
 kind = "warn"
-low = 100
+high = 100
 population = "Adults with Crohn's disease or ulcerative colitis; activity cut-offs as reported across studies in a systematic review"
 evidence = "cohort"
 citations = [
   { pmid = "41216276", doi = "10.21037/tgh-24-159", url = "https://pubmed.ncbi.nlm.nih.gov/41216276/", title = "Comparison between fecal calprotectin and magnetic resonance enterography in ileal Crohn's disease for activity disease assessment: a systematic review.", locator = "Abstract, Results" },
 ]
-note = "IBD activity cut-offs reported across studies ranged from above 100 to above 430 µg/g. The lower end of that range is shown here; this is not a single guideline threshold, so treat it as indicative only. Source kind: decision."
+note = "IBD activity cut-offs reported across studies ranged from above 100 to above 430 µg/g. The lower end of that range is shown here; this is not a single guideline threshold, so treat it as indicative only. Source kind: decision. Source band >= 100; stored as the warn high bound 100."

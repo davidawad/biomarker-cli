@@ -8,95 +8,95 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "diagnostic"
 kind = "warn"
-high = 0.604
+low = 0.604
 when = { fasting = false, conditions = ["diabetes"] }
 population = "People with insulin-treated diabetes; stimulated (non-fasting random, post-glucagon or mixed-meal) C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Absolute insulin deficiency / absolute insulin requirement (strictly below). Source unit nmol/L (1 nmol/L = 3 ng/mL); numbers not converted. Converted from the source's nmol/L (0.2) to ng/mL using factor 3.02. Source kind: diagnostic."
+note = "Absolute insulin deficiency / absolute insulin requirement (strictly below). Source unit nmol/L (1 nmol/L = 3 ng/mL); numbers not converted. Converted from the source's nmol/L (0.2) to ng/mL using factor 3.02. Source kind: diagnostic. Source band <= 0.604; stored as the warn low bound 0.604."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-high = 0.2416
+low = 0.2416
 when = { fasting = true, conditions = ["diabetes"] }
 population = "People with insulin-treated diabetes; fasting C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Absolute insulin deficiency / absolute insulin requirement (strictly below). Source unit nmol/L. Converted from the source's nmol/L (0.08) to ng/mL using factor 3.02. Source kind: diagnostic."
+note = "Absolute insulin deficiency / absolute insulin requirement (strictly below). Source unit nmol/L. Converted from the source's nmol/L (0.08) to ng/mL using factor 3.02. Source kind: diagnostic. Source band <= 0.2416; stored as the warn low bound 0.2416."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-high = 1.812
+low = 1.812
 when = { fasting = false, conditions = ["diabetes"] }
 population = "People with insulin-treated diabetes; stimulated (non-fasting random, post-glucagon or mixed-meal) C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Likely Type 1 diabetes / inability to achieve glycaemic control with non-insulin therapies (strictly below). Source unit nmol/L. Converted from the source's nmol/L (0.6) to ng/mL using factor 3.02. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Likely Type 1 diabetes / inability to achieve glycaemic control with non-insulin therapies (strictly below). Source unit nmol/L. Converted from the source's nmol/L (0.6) to ng/mL using factor 3.02. Source kind: diagnostic. Source band <= 1.812; stored as the warn low bound 1.812. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-high = 0.755
+low = 0.755
 when = { fasting = true, conditions = ["diabetes"] }
 population = "People with insulin-treated diabetes; fasting C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Likely Type 1 diabetes / inability to achieve glycaemic control with non-insulin therapies (strictly below). Source unit nmol/L. Converted from the source's nmol/L (0.25) to ng/mL using factor 3.02. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Likely Type 1 diabetes / inability to achieve glycaemic control with non-insulin therapies (strictly below). Source unit nmol/L. Converted from the source's nmol/L (0.25) to ng/mL using factor 3.02. Source kind: diagnostic. Source band <= 0.755; stored as the warn low bound 0.755. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 0.604
+high = 0.604
 when = { fasting = false, conditions = ["diabetes"] }
 population = "People with insulin-treated diabetes > 3-5 years post-diagnosis; stimulated (non-fasting random, post-glucagon or mixed-meal) C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Suggests Type 2 or monogenic (MODY) diabetes in presumed Type 1 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (0.2) to ng/mL using factor 3.02. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Suggests Type 2 or monogenic (MODY) diabetes in presumed Type 1 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (0.2) to ng/mL using factor 3.02. Source kind: diagnostic. Source band >= 0.604; stored as the warn high bound 0.604. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 0.2416
+high = 0.2416
 when = { fasting = true, conditions = ["diabetes"] }
 population = "People with insulin-treated diabetes > 3-5 years post-diagnosis; fasting C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Suggests Type 2 or monogenic (MODY) diabetes in presumed Type 1 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (0.08) to ng/mL using factor 3.02. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Suggests Type 2 or monogenic (MODY) diabetes in presumed Type 1 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (0.08) to ng/mL using factor 3.02. Source kind: diagnostic. Source band >= 0.2416; stored as the warn high bound 0.2416. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-3"
 kind = "warn"
-low = 3.02
+high = 3.02
 when = { fasting = false, conditions = ["diabetes"] }
 population = "People with insulin-treated young-onset diabetes at diagnosis; stimulated C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Consider MODY / Type 2 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (1) to ng/mL using factor 3.02. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Consider MODY / Type 2 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (1) to ng/mL using factor 3.02. Source kind: diagnostic. Source band >= 3.02; stored as the warn high bound 3.02. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-3"
 kind = "warn"
-low = 1.208
+high = 1.208
 when = { fasting = true, conditions = ["diabetes"] }
 population = "People with insulin-treated young-onset diabetes at diagnosis; fasting C-peptide"
 evidence = "consensus"
 citations = [
   { pmid = "23413806", doi = "10.1111/dme.12159", title = "The clinical utility of C-peptide measurement in the care of patients with diabetes.", locator = "Table 1" },
 ]
-note = "Consider MODY / Type 2 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (0.4) to ng/mL using factor 3.02. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Consider MODY / Type 2 diabetes (strictly above). Source unit nmol/L. Converted from the source's nmol/L (0.4) to ng/mL using factor 3.02. Source kind: diagnostic. Source band >= 1.208; stored as the warn high bound 1.208. Alternative to the default diagnostic warn range for the same population."

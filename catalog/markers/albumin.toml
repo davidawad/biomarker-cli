@@ -21,7 +21,7 @@ high = 5.0
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 4.0
 high = 5.3
@@ -31,9 +31,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Results (sex-specific 95% RIs) and Table 4" },
 ]
+note = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 3.7
 high = 5.1
@@ -43,9 +44,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Results (sex-specific 95% RIs) and Table 4" },
 ]
+note = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 3.945
 high = 4.922
@@ -55,10 +57,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Reference interval table (Alb rows)" },
 ]
-note = "Pediatric age band from a 2026 Chinese reference-interval study (not CALIPER); source states the value in g/L. Converted from the source's g/L (39.45-49.22) to g/dL using factor 0.1."
+note = "Pediatric age band from a 2026 Chinese reference-interval study (not CALIPER); source states the value in g/L. Converted from the source's g/L (39.45-49.22) to g/dL using factor 0.1. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 3.6
 high = 5.1
@@ -68,10 +70,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Sex-combined adult 95% reference interval. The source's conventional-unit block is labelled g/L, but the values are g/dL (the SI block is 36-51 g/L); used as g/dL, not converted."
+note = "Sex-combined adult 95% reference interval. The source's conventional-unit block is labelled g/L, but the values are g/dL (the SI block is 36-51 g/L); used as g/dL, not converted. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 3.085
 high = 4.763
@@ -81,7 +83,7 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's g/L (30.85-47.63) to g/dL using factor 0.1."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's g/L (30.85-47.63) to g/dL using factor 0.1. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "optimal"

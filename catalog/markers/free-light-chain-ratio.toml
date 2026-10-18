@@ -46,10 +46,10 @@ note = "Proposed ratio range for people of African descent with normal kidney fu
 [[range]]
 set = "imwg-2016"
 kind = "warn"
-low = 100
+high = 100
 population = "Patients with suspected multiple myeloma (IMWG myeloma-defining event criteria)"
 evidence = "consensus"
 citations = [
   { pmid = "27249749", doi = "10.1200/EDBK_159009", url = "https://pubmed.ncbi.nlm.nih.gov/27249749/", title = "Updated Diagnostic Criteria and Staging System for Multiple Myeloma.", locator = "Abstract" },
 ]
-note = "Myeloma-defining biomarker: involved/uninvolved FLC ratio at or above 100, provided the involved free light chain is at least 100 mg/L. The mg/L condition is not captured by this ratio range; check it separately. The cited text is a 2016 review of the IMWG criteria. Source kind: decision."
+note = "Myeloma-defining biomarker: involved/uninvolved FLC ratio at or above 100, provided the involved free light chain is at least 100 mg/L. The mg/L condition is not captured by this ratio range; check it separately. The cited text is a 2016 review of the IMWG criteria. Source kind: decision. Source band >= 100; stored as the warn high bound 100."

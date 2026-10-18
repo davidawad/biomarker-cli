@@ -9,11 +9,11 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "guerrero-romero-2010"
 kind = "warn"
-low = 4.68
+high = 4.68
 when = { fasting = true }
 population = "Adults in a validation study against the euglycemic-hyperinsulinemic clamp"
 evidence = "cohort"
 citations = [
   { pmid = "20484475", doi = "10.1210/jc.2010-0288", url = "https://pubmed.ncbi.nlm.nih.gov/20484475/", title = "The product of triglycerides and glucose, a simple measure of insulin sensitivity. Comparison with the euglycemic-hyperinsulinemic clamp.", locator = "Abstract, Results" },
 ]
-note = "Best ROC value for insulin resistance (sensitivity 96.5%, specificity 85.0%). Formula in the source: Ln(fasting triglycerides mg/dl) x fasting glucose mg/dl / 2. Applies to fasting values only. Source kind: decision."
+note = "Best ROC value for insulin resistance (sensitivity 96.5%, specificity 85.0%). Formula in the source: Ln(fasting triglycerides mg/dl) x fasting glucose mg/dl / 2. Applies to fasting values only. Source kind: decision. Source band >= 4.68; stored as the warn high bound 4.68."

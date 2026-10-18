@@ -32,26 +32,26 @@ legacy = true
 [[range]]
 set = "who"
 kind = "warn"
-low = 49
+high = 49
 when = { sex = "male", age = [18.0, 200] }
 population = "adult men, WHO 2016 criteria for polycythaemia vera (as quoted in a 2021 Annals of Hematology paper)"
 evidence = "guideline"
 citations = [
   { pmid = "34013406", doi = "10.1007/s00277-021-04546-4", title = "Diagnosis and management of non-clonal erythrocytosis remains challenging: a single centre clinical experience.", locator = "Introduction" },
 ]
-note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.5 g/dL in men). Not a general reference limit. Source kind: diagnostic."
+note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.5 g/dL in men). Not a general reference limit. Source kind: diagnostic. Source band >= 49; stored as the warn high bound 49."
 
 [[range]]
 set = "who"
 kind = "warn"
-low = 48
+high = 48
 when = { sex = "female", age = [18.0, 200] }
 population = "adult women, WHO 2016 criteria for polycythaemia vera (as quoted in a 2021 Annals of Hematology paper)"
 evidence = "guideline"
 citations = [
   { pmid = "34013406", doi = "10.1007/s00277-021-04546-4", title = "Diagnosis and management of non-clonal erythrocytosis remains challenging: a single centre clinical experience.", locator = "Introduction" },
 ]
-note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.0 g/dL in women). Not a general reference limit. Source kind: diagnostic."
+note = "Haematocrit above this value is a WHO 2016 diagnostic criterion for polycythaemia vera (with Hb above 16.0 g/dL in women). Not a general reference limit. Source kind: diagnostic. Source band >= 48; stored as the warn high bound 48."
 
 [[range]]
 set = "norip"

@@ -1828,3 +1828,7 @@ description = "Published source set: zhou-2002-china-as-cited-2026"
 [[set]]
 name = "zimbabwe-adults-2003-c3c4"
 description = "Published source set: zimbabwe-adults-2003-c3c4"
+
+[[set]]
+name = "population-ri"
+description = "Reference intervals from single-population studies (one country, cohort or analyser); select with range_sets"

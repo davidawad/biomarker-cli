@@ -8,10 +8,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 1300
+high = 1300
 population = "Adults with normal fasting glucose in the Multi-Ethnic Study of Atherosclerosis (MESA); cut-point as used in that analysis (method: nmr)"
 evidence = "consensus"
 citations = [
   { pmid = "36545388", doi = "10.1016/j.ajpc.2022.100436", title = "Small dense low-density lipoprotein cholesterol compared to other lipoprotein biomarkers for predicting coronary heart disease among individuals with normal fasting glucose: The Multi-Ethnic Study of Atherosclerosis.", locator = "Methods (statistical analysis, cut-points)" },
 ]
-note = "Elevated LDL-P at or above 1300 nmol/L. This is the company-recommended NMR cut-point the MESA analysis used as a clinical cut-point; the paper did not derive it from a population percentile. Not a reference interval."
+note = "Elevated LDL-P at or above 1300 nmol/L. This is the company-recommended NMR cut-point the MESA analysis used as a clinical cut-point; the paper did not derive it from a population percentile. Not a reference interval. Source band >= 1300; stored as the warn high bound 1300."

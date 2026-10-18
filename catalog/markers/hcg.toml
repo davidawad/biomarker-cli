@@ -67,11 +67,11 @@ note = "Non-parametric 97.5th percentile upper reference limit for System D. Con
 [[range]]
 set = "gestational-sac-discriminatory-2013"
 kind = "warn"
-low = 3510
+high = 3510
 when = { pregnant = true, trimester = 1 }
 population = "Women with first-trimester bleeding or pain, 651 pregnancies (366 viable) with serum beta-hCG and transvaginal ultrasound within 6 hours"
 evidence = "cohort"
 citations = [
   { pmid = "23262929", doi = "10.1097/aog.0b013e318278f421", url = "https://pubmed.ncbi.nlm.nih.gov/23262929/", title = "Reevaluation of discriminatory and threshold levels for serum β-hCG in early pregnancy.", locator = "Abstract, Results" },
 ]
-note = "Discriminatory level at which a gestational sac is predicted to be seen on transvaginal ultrasound 99% of the time. Below this level an empty uterus does not exclude a viable pregnancy. Yolk sac and fetal pole levels are substantially higher. Source kind: diagnostic."
+note = "Discriminatory level at which a gestational sac is predicted to be seen on transvaginal ultrasound 99% of the time. Below this level an empty uterus does not exclude a viable pregnancy. Yolk sac and fetal pole levels are substantially higher. Source kind: diagnostic. Source band >= 3510; stored as the warn high bound 3510."

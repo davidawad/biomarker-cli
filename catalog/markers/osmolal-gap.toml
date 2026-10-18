@@ -18,10 +18,10 @@ note = "Osmolal gap (measured osmolality minus calculated osmolality), not measu
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 20
+high = 20
 population = "Adults with suspected toxic alcohol poisoning"
 evidence = "consensus"
 citations = [
   { pmid = "31809199", doi = "10.1080/00365513.2019.1672086", title = "Reference values for osmolal gap in healthy subjects and in medical inpatients.", locator = "Abstract" },
 ]
-note = "Osmolal gap at or above 20 mOsm/kg (source's practice threshold for suspecting methanol or ethylene glycol poisoning). Osmolal gap in this range, not measured serum osmolality. The source suggests a reference value of 5 or less for healthy subjects. Source kind: diagnostic."
+note = "Osmolal gap at or above 20 mOsm/kg (source's practice threshold for suspecting methanol or ethylene glycol poisoning). Osmolal gap in this range, not measured serum osmolality. The source suggests a reference value of 5 or less for healthy subjects. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."

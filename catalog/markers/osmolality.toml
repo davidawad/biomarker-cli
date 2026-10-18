@@ -7,26 +7,13 @@ description = "Serum osmolality measures the concentration of osmotically active
 no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
-set = "clinical"
-kind = "warn"
-low = 295
-high = 300
-when = { age = [65.0, 200] }
-population = "Older people aged 65 years and over in five cohorts (community and hospital; directly measured serum/plasma osmolality)"
-evidence = "cohort"
-citations = [
-  { pmid = "26490100", doi = "10.1136/bmjopen-2015-008846", title = "Diagnostic accuracy of calculated serum osmolarity to predict dehydration in older people: adding value to pathology laboratory reports.", locator = "Abstract" },
-]
-note = "Impending dehydration band: osmolality at or above 295 mOsm/kg up to the 300 mOsm/kg current-dehydration threshold (the source gives >=295 and >300 separately; high = 300 marks where the current-dehydration cut-off starts)."
-
-[[range]]
 set = "diagnostic"
 kind = "warn"
-low = 300
+high = 300
 when = { age = [65.0, 200] }
 population = "Hospitalised adults aged 65 years and over (low-intake dehydration; directly measured serum or plasma osmolality)"
 evidence = "cohort"
 citations = [
   { pmid = "42158549", doi = "10.1136/bmjph-2025-002985", title = "Prevalence of low-intake dehydration in hospitalised older adults: systematic review and meta-analysis.", locator = "Abstract (Results)" },
 ]
-note = "Low-intake dehydration threshold: measured osmolality strictly above 300 mOsm/kg (low = 300 means strictly greater than 300). Threshold as used by the 19 included studies. Source kind: diagnostic."
+note = "Low-intake dehydration threshold: measured osmolality strictly above 300 mOsm/kg (low = 300 means strictly greater than 300). Threshold as used by the 19 included studies. Source kind: diagnostic. Source band >= 300; stored as the warn high bound 300."

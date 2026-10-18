@@ -86,45 +86,43 @@ note = "Central 95% interval (2.5th and 97.5th percentile point estimates, ACL T
 [[range]]
 set = "issth-2001-as-cited-in-chess-ii"
 kind = "warn"
-high = 1
+low = 1
 population = "People with haemophilia A (severity classes as cited in the European CHESS II cohort study, attributed there to the ISTH definitions)"
 evidence = "consensus"
 citations = [
   { pmid = "40462223", doi = "10.1186/s13023-025-03699-z", title = "The association of factor VIII activity levels with bleeding and quality of life in haemophilia a: findings from the European CHESS II study.", locator = "Background, para 1" },
 ]
-note = "Severe haemophilia A: factor VIII activity below 1 IU/dL (open lower bound). The class boundaries are quoted from a 2025 cohort paper that cites the ISTH definition; the ISTH 2001 text itself was not retrievable. Source kind: diagnostic."
+note = "Severe haemophilia A: factor VIII activity below 1 IU/dL (open lower bound). The class boundaries are quoted from a 2025 cohort paper that cites the ISTH definition; the ISTH 2001 text itself was not retrievable. Source kind: diagnostic. Source band <= 1; stored as the warn low bound 1."
+
+[[range]]
+set = "issth-2001-as-cited-in-chess-ii"
+kind = "warn"
+low = 1
+population = "People with haemophilia A (severity classes as cited in the European CHESS II cohort study, attributed there to the ISTH definitions)"
+evidence = "consensus"
+citations = [
+  { pmid = "40462223", doi = "10.1186/s13023-025-03699-z", title = "The association of factor VIII activity levels with bleeding and quality of life in haemophilia a: findings from the European CHESS II study.", locator = "Background, para 1" },
+]
+note = "Moderate haemophilia A: factor VIII activity 1 to 5 IU/dL. Source kind: diagnostic. Source band 1-5; stored as the warn low bound 1."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 1
-high = 5
-population = "People with haemophilia A (severity classes as cited in the European CHESS II cohort study, attributed there to the ISTH definitions)"
-evidence = "consensus"
-citations = [
-  { pmid = "40462223", doi = "10.1186/s13023-025-03699-z", title = "The association of factor VIII activity levels with bleeding and quality of life in haemophilia a: findings from the European CHESS II study.", locator = "Background, para 1" },
-]
-note = "Moderate haemophilia A: factor VIII activity 1 to 5 IU/dL. Source kind: diagnostic. Alternative to the default issth-2001-as-cited-in-chess-ii warn range for the same population."
-
-[[range]]
-set = "alt-2"
-kind = "warn"
 low = 5
-high = 40
 population = "People with haemophilia A (severity classes as cited in the European CHESS II cohort study, attributed there to the ISTH definitions)"
 evidence = "consensus"
 citations = [
   { pmid = "40462223", doi = "10.1186/s13023-025-03699-z", title = "The association of factor VIII activity levels with bleeding and quality of life in haemophilia a: findings from the European CHESS II study.", locator = "Background, para 1" },
 ]
-note = "Mild haemophilia A: factor VIII activity above 5 and up to 40 IU/dL. The source writes '> 5-40%'; the lower boundary is exclusive. Source kind: diagnostic. Alternative to the default issth-2001-as-cited-in-chess-ii warn range for the same population."
+note = "Mild haemophilia A: factor VIII activity above 5 and up to 40 IU/dL. The source writes '> 5-40%'; the lower boundary is exclusive. Source kind: diagnostic. Source band 5-40; stored as the warn low bound 5. Alternative to the default issth-2001-as-cited-in-chess-ii warn range for the same population."
 
 [[range]]
 set = "koster-leiden-1995"
 kind = "warn"
-low = 150
+high = 150
 population = "Population-based patient-control study: 301 consecutive patients younger than 70 with a first objectively diagnosed deep-vein thrombosis, and 301 age- and sex-matched healthy controls"
 evidence = "cohort"
 citations = [
   { pmid = "7823669", doi = "10.1016/s0140-6736(95)90166-3", title = "Role of clotting factor VIII in effect of von Willebrand factor on occurrence of deep-vein thrombosis.", locator = "Abstract, Results" },
 ]
-note = "Odds ratio 4.8 for factor VIII above 1500 IU/L (= 150 IU/dL), adjusted for other factors in multivariate analysis. Source unit IU/L, converted with factor 0.1. Source kind: excess."
+note = "Odds ratio 4.8 for factor VIII above 1500 IU/L (= 150 IU/dL), adjusted for other factors in multivariate analysis. Source unit IU/L, converted with factor 0.1. Source kind: excess. Source band >= 150; stored as the warn high bound 150."

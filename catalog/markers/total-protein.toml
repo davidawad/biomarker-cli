@@ -14,7 +14,7 @@ high = 8.5
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.9
 high = 9.2
@@ -24,9 +24,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Table 4" },
 ]
+note = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.7
 high = 8.9
@@ -36,9 +37,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Table 4" },
 ]
+note = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.8
 high = 8.9
@@ -48,9 +50,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Results (combined 95% RIs)" },
 ]
+note = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 5.96
 high = 7.53
@@ -60,10 +63,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Reference interval table (TP rows)" },
 ]
-note = "Source states the value in g/L; not CALIPER or NORIP. Converted from the source's g/L (59.6-75.3) to g/dL using factor 0.1."
+note = "Source states the value in g/L; not CALIPER or NORIP. Converted from the source's g/L (59.6-75.3) to g/dL using factor 0.1. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.19
 high = 8.07
@@ -73,10 +76,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Reference interval table (TP rows)" },
 ]
-note = "Source states the value in g/L; not CALIPER or NORIP. Converted from the source's g/L (61.9-80.7) to g/dL using factor 0.1."
+note = "Source states the value in g/L; not CALIPER or NORIP. Converted from the source's g/L (61.9-80.7) to g/dL using factor 0.1. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.0
 high = 8.2
@@ -86,10 +89,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Sex-combined adult 95% reference interval. The source's conventional-unit block is labelled g/L, but the values are g/dL (the SI block is 60-82 g/L); used as g/dL, not converted."
+note = "Sex-combined adult 95% reference interval. The source's conventional-unit block is labelled g/L, but the values are g/dL (the SI block is 60-82 g/L); used as g/dL, not converted. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 4.7
 high = 7.0
@@ -99,10 +102,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's g/L (47.0-70.0) to g/dL using factor 0.1."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's g/L (47.0-70.0) to g/dL using factor 0.1. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 5.49
 high = 7.43
@@ -112,4 +115,4 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's g/L (54.9-74.3) to g/dL using factor 0.1."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's g/L (54.9-74.3) to g/dL using factor 0.1. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."

@@ -15,6 +15,9 @@ EVID = {"guideline": "guideline", "consensus": "consensus", "reference-interval"
         "review": "consensus", "textbook": "consensus"}
 RANK = {"guideline": 0, "reference-interval-study": 1, "consensus": 2, "cohort": 3, "rct": 3, "lab-convention": 4}
 ENGINE_KINDS = {"reference", "optimal", "warn", "critical"}
+POP_SET = "population-ri"
+POP_NOTE = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
+NO_REF = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 SOFT = {"method", "specimen", "setting", "test", "region"}
 
 
@@ -98,6 +101,20 @@ def strip_folded(text):
     return "".join(keep).rstrip() + "\n"
 
 
+def range_key(r):
+    num = lambda v: None if v is None else float(v)
+    when = {k: (sorted(v) if k == "conditions" else [float(x) for x in v] if k == "age" else v) for k, v in r.get("when", {}).items()}
+    return (r.get("set", "clinical"), r.get("kind", "reference"), json.dumps(when, sort_keys=True), num(r.get("low")), num(r.get("high")))
+
+
+def drop_superseded(text, final):
+    """Remove legacy ranges that a cited range now states exactly (same set, kind, when and bounds)."""
+    cited = {range_key(r) for r in final}
+    parts = re.split(r"(?=^\[\[range\]\]\n)", text, flags=re.M)
+    keep = [parts[0]] + [p for p in parts[1:] if range_key(tomllib.loads(p)["range"][0]) not in cited]
+    return "".join(keep).rstrip() + "\n", len(parts) - len(keep)
+
+
 def convert_when(w, known):
     out = {}
     restrict = []
@@ -152,6 +169,9 @@ def convert_when(w, known):
         div = {"months": 12.0, "days": 365.25, "weeks": 52.18, "years": 1.0}.get(w.get("age_unit", "years"), 1.0)
         lo = float(w.get("age_min", 0)) / div
         hi = float(w["age_max"]) / div if "age_max" in w else 200
+        if "age_max" in w and float(w["age_max"]) == float(w.get("age_min", 0)):
+            # A point on an age curve ("at age 22") covers that whole year of age: [22, 23).
+            hi = (float(w["age_max"]) + 1) / div
         out["age"] = [round(lo, 4), round(hi, 4) if "age_max" in w else 200]
     if conds:
         out["conditions"] = sorted(set(conds))
@@ -160,7 +180,8 @@ def convert_when(w, known):
 
 def spec(rng):
     w = rng["when"]
-    n = len([k for k in w if k not in ("sex", "age")])
+    # Same specificity as the engine (Cond::count): each marker and condition counts once.
+    n = sum(len(v) if k in ("markers", "conditions") else 1 for k, v in w.items() if k not in ("sex", "age"))
     a = w.get("age", [0, 200])
     return (n, 1 if "sex" in w else 0, -(a[1] - a[0]))
 
@@ -187,6 +208,45 @@ def conflicts(a, b):
     if (a.get("low"), a.get("high")) == (b.get("low"), b.get("high")):
         return False
     return spec(a) == spec(b) and can_comatch(a, b)
+
+
+def bound_side(zone, ref):
+    """Which side of the reference range a two-sided band [a, b] lies on: above, below, near-low or near-high."""
+    (a, b), lo, hi = zone, ref.get("low"), ref.get("high")
+    m = (a + b) / 2
+    if hi is not None and m >= hi:
+        return "above"
+    if lo is not None and m <= lo:
+        return "below"
+    if lo is not None and hi is not None:
+        return "near-low" if m - lo < hi - m else "near-high"
+    if lo is not None:
+        return "near-low" if a <= lo else "above"
+    if hi is not None:
+        return "near-high" if b >= hi else "below"
+    return None
+
+
+def to_cut_points(c, refs):
+    """Research bands are zones ("[low, high] is where the label applies"); the engine's warn and
+    critical ranges are cut points beside the reference limits (docs/json-schema.md). Returns the
+    engine bounds and a note, or None when a two-sided band cannot be oriented."""
+    a, b = c.get("low"), c.get("high")
+    crit = c["kind"] == "critical"
+    if b is None:
+        out = {"high": a}
+    elif a is None:
+        out = {"low": b}
+    else:
+        same = [r for r in refs if r["when"] == c["when"]] or [r for r in refs if can_comatch(r, c)] or refs
+        side = bound_side((a, b), same[0]) if same else None
+        if side is None or (crit and side.startswith("near")):
+            return None
+        out = {"above": {"high": a if crit else b}, "below": {"low": b if crit else a},
+               "near-low": {"low": b}, "near-high": {"high": a}}[side]
+    (k, v), = out.items()
+    band = f"{'' if a is None else a}-{'' if b is None else b}" if a is not None and b is not None else (f">= {a}" if b is None else f"<= {b}")
+    return out, f"Source band {band}; stored as the {c['kind']} {k} bound {v}."
 
 
 def build():
@@ -288,7 +348,7 @@ def build():
             if k0 not in ENGINE_KINDS:
                 note_bits.append(f"Source kind: {k0}.")
             note = " ".join(([r["note"]] if r.get("note") else []) + note_bits)
-            rng = {"set": sname, "kind": kind}
+            rng = {"set": sname, "kind": kind, "_src": s0}
             if low is not None:
                 rng["low"] = low
             if high is not None:
@@ -300,9 +360,39 @@ def build():
             if note:
                 rng["note"] = note
             cands.append(rng)
+        # Only legacy ranges survive strip_folded; ranges folded by an earlier run are rebuilt here.
+        kept = [r for r in e.get("range", []) if r.get("legacy")] if e else []
+        # A marker this script created on an earlier run is treated as new again.
+        created = not e or (not kept and e.get("no_reference", NO_REF) == NO_REF)
+        # A single study's reference interval (source set "reference") must not shadow a
+        # general clinical reference: an age band would make it the more specific match.
+        general = any(r.get("set", "clinical") == "clinical" and r.get("kind", "reference") == "reference"
+                      for r in kept) or any(c["_src"] == "clinical" and c["set"] == "clinical" and c["kind"] == "reference" for c in cands)
+        if general:
+            for c in cands:
+                if c["_src"] == "reference" and c["set"] == "clinical" and c["kind"] == "reference":
+                    c["set"] = POP_SET
+                    c["note"] = (c.get("note", "") + " " + POP_NOTE).strip()
+        refs = [dict(r, when=dict(r.get("when", {}))) for r in kept if r.get("set", "clinical") == "clinical" and r.get("kind", "reference") == "reference"]
+        refs += [c for c in cands if c["set"] == "clinical" and c["kind"] == "reference"]
+        # without a clinical reference, any cited reference interval shows where normal is
+        refs = refs or [c for c in cands if c["kind"] == "reference"]
+        for c in list(cands):
+            if c["kind"] not in ("warn", "critical"):
+                continue
+            cut = to_cut_points(c, refs)
+            if cut is None:
+                cands.remove(c)
+                dropped["two-sided band without a reference range to orient it"] += 1
+                drop_log.append((slug, "two-sided band without a reference range to orient it", c.get("low"), c.get("high")))
+                continue
+            c.pop("low", None)
+            c.pop("high", None)
+            c.update(cut[0])
+            c["note"] = (c.get("note", "") + " " + cut[1]).strip()
         placed = []
-        if e:
-            for r in e.get("range", []):
+        if kept:
+            for r in kept:
                 placed.append({"set": r.get("set", "clinical"), "kind": r.get("kind", "reference"),
                                "low": r.get("low"), "high": r.get("high"), "when": dict(r.get("when", {}))})
         cands.sort(key=lambda c: (RANK.get(c["evidence"], 9), 0 if c["set"] in ("clinical", "optimal") else 1, -len(c["citations"])))
@@ -320,8 +410,8 @@ def build():
                 tgt["note"] = (c.get("note", "") + f" Alternative to the default {c['set']} {c['kind']} range for the same population.").strip()
             placed.append(tgt)
             final.append(tgt)
-        has_clin = lambda: any(r["set"] == "clinical" and r["kind"] == "reference" for r in final) or (e and any(r.get("set", "clinical") == "clinical" and r.get("kind", "reference") == "reference" for r in e.get("range", [])))
-        if not e and not has_clin():
+        has_clin = lambda: any(r["set"] == "clinical" and r["kind"] == "reference" for r in final) or any(r.get("set", "clinical") == "clinical" and r.get("kind", "reference") == "reference" for r in kept)
+        if created and not has_clin():
             for a in final:
                 if a["kind"] == "reference" and a["set"] not in ("optimal", "contextual", "diagnostic"):
                     t = dict(a, set="clinical")
@@ -349,7 +439,12 @@ def build():
             lines.append("")
         stats["ranges_out"] += len(final)
         if e:
-            text = strip_folded(open(f"{MK}/{slug}.toml").read())
+            text, n = drop_superseded(strip_folded(open(f"{MK}/{slug}.toml").read()), final)
+            stats["legacy_superseded"] = stats.get("legacy_superseded", 0) + n
+            if created:
+                text = text.replace(f"no_reference = {tv(NO_REF)}\n", "")
+                if not any(r["set"] == "clinical" and r["kind"] == "reference" for r in final):
+                    text = text.rstrip() + f"\nno_reference = {tv(NO_REF)}\n"
             if "description" not in e and rd.get("description"):
                 text = re.sub(r"^(unit = .*\n)", lambda m: m.group(1) + f"description = {tv(rd['description'])}\n", text, count=1, flags=re.M)
             if "loinc" not in e and rd.get("loinc") and re.fullmatch(r"[0-9]{1,7}-[0-9]", rd["loinc"]):
@@ -370,7 +465,7 @@ def build():
             if al:
                 hdr.append(f"aliases = {tv(al)}")
             if not any(r["set"] == "clinical" and r["kind"] == "reference" for r in final):
-                hdr.append('no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."')
+                hdr.append(f"no_reference = {tv(NO_REF)}")
             body = "\n".join(hdr) + "\n\n" + "\n".join(lines)
             stats["markers_new"] += 1
         out_files[slug] = body.rstrip() + "\n"
@@ -390,7 +485,8 @@ def main():
     have = set(re.findall(r'^name = "([^"]+)"', st, re.M))
     desc = {"contextual": "Cited ranges that apply only under a condition the engine cannot express (see each range's note)",
             "diagnostic": "Diagnostic and decision cut-offs from the literature, kept apart from reference intervals",
-            "target": "Treatment and monitoring targets", "therapeutic": "Therapeutic ranges",
+            "target": "Treatment and monitoring targets",
+            POP_SET: "Reference intervals from single-population studies (one country, cohort or analyser); select with range_sets", "therapeutic": "Therapeutic ranges",
             "deficient": "Deficiency cut-offs", "insufficient": "Insufficiency cut-offs",
             "toxic": "Toxicity cut-offs", "excess": "Excess cut-offs"}
     add = ""

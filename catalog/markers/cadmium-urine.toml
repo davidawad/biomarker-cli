@@ -19,10 +19,10 @@ note = "Laboratory reference value stated secondhand in the cited paper. Not a h
 [[range]]
 set = "outcome-review"
 kind = "warn"
-low = 1
+high = 1
 population = "Adults in Swedish cadmium-exposed populations, outcome study (calciuria) as summarised in a 2004 review (specimen: urine)"
 evidence = "cohort"
 citations = [
   { pmid = "15238284", doi = "10.1289/ehp.6751", title = "Adverse health effects of chronic exposure to low-level cadmium in foodstuffs and cigarette smoke.", locator = "Results, para (calciuria)" },
 ]
-note = "Outcome-based level: calciuria (urinary calcium loss) increased in women 50-70 years old above this urinary cadmium level (Jarup et al. 1998, as cited). Not an official limit; the ACGIH BEI (5 µg/g) and EFSA value were not verifiable from retrieved text."
+note = "Outcome-based level: calciuria (urinary calcium loss) increased in women 50-70 years old above this urinary cadmium level (Jarup et al. 1998, as cited). Not an official limit; the ACGIH BEI (5 µg/g) and EFSA value were not verifiable from retrieved text. Source band >= 1; stored as the warn high bound 1."

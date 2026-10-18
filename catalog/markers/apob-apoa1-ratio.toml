@@ -33,22 +33,21 @@ note = "Sex-specific reference interval for the apoB/apoA-I ratio (both apolipop
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 0.61
-high = 0.9
+high = 0.61
 population = "Adults, men and women combined (AMORIS cohort)"
 evidence = "cohort"
 citations = [
   { pmid = "34851955", doi = "10.1371/journal.pmed.1003853", title = "Long-term risk of a major cardiovascular event by apoB, apoA-1, and the apoB/apoA-1 ratio-Experience from the Swedish AMORIS cohort: A cohort study.", locator = "Results, 'The apoB/apoA-1 ratio and its relations to levels of apoB and apoA-1' section" },
 ]
-note = "Tentative medium-risk band of the apoB/apoA-1 ratio (AMORIS, Swedish cohort). Not sex-specific; the source calls the levels tentative."
+note = "Tentative medium-risk band of the apoB/apoA-1 ratio (AMORIS, Swedish cohort). Not sex-specific; the source calls the levels tentative. Source band 0.61-0.9; stored as the warn high bound 0.61."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 0.91
+high = 0.91
 population = "Adults, men and women combined (AMORIS cohort)"
 evidence = "cohort"
 citations = [
   { pmid = "34851955", doi = "10.1371/journal.pmed.1003853", title = "Long-term risk of a major cardiovascular event by apoB, apoA-1, and the apoB/apoA-1 ratio-Experience from the Swedish AMORIS cohort: A cohort study.", locator = "Results, 'The apoB/apoA-1 ratio and its relations to levels of apoB and apoA-1' section" },
 ]
-note = "Tentative high-risk band of the apoB/apoA-1 ratio (AMORIS, Swedish cohort). Not sex-specific. Alternative to the default clinical warn range for the same population."
+note = "Tentative high-risk band of the apoB/apoA-1 ratio (AMORIS, Swedish cohort). Not sex-specific. Source band >= 0.91; stored as the warn high bound 0.91. Alternative to the default clinical warn range for the same population."

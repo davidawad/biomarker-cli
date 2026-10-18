@@ -46,7 +46,7 @@ note = "Central 95% interval by ICP-MS. Zinc showed no age dependence in this st
 [[range]]
 set = "diagnostic"
 kind = "warn"
-high = 65
+low = 65
 when = { fasting = false, age = [0.0, 10.0] }
 population = "Children under 10 years, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
 evidence = "consensus"
@@ -54,12 +54,12 @@ citations = [
   { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)" },
   { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)" },
 ]
-note = "Low serum zinc: strictly below 65 ug/dL (IZiNCG cut-off, morning non-fasting sample). Applies to any sex. Population-level cut-off, not an individual diagnosis. The cited source gives no afternoon cut-off. Source kind: diagnostic."
+note = "Low serum zinc: strictly below 65 ug/dL (IZiNCG cut-off, morning non-fasting sample). Applies to any sex. Population-level cut-off, not an individual diagnosis. The cited source gives no afternoon cut-off. Source kind: diagnostic. Source band <= 65; stored as the warn low bound 65."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-high = 66
+low = 66
 when = { sex = "female", fasting = false, age = [10.0, 200] }
 population = "Girls aged 10 years and older, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
 evidence = "consensus"
@@ -67,12 +67,12 @@ citations = [
   { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)" },
   { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)" },
 ]
-note = "Low serum zinc: strictly below 66 ug/dL in girls aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis. Source kind: diagnostic."
+note = "Low serum zinc: strictly below 66 ug/dL in girls aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis. Source kind: diagnostic. Source band <= 66; stored as the warn low bound 66."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-high = 70
+low = 70
 when = { sex = "male", fasting = false, age = [10.0, 200] }
 population = "Boys aged 10 years and older, morning non-fasting serum samples (IZiNCG cut-off as applied in the cited study)"
 evidence = "consensus"
@@ -80,64 +80,64 @@ citations = [
   { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Zinc determination)" },
   { pmid = "40461893", doi = "10.1007/s00277-025-06429-4", title = "Zinc level and its impact on the phenotype of sickle cell disease.", locator = "Methods (Sample collection)" },
 ]
-note = "Low serum zinc: strictly below 70 ug/dL in boys aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis. Source kind: diagnostic."
+note = "Low serum zinc: strictly below 70 ug/dL in boys aged 10 and older (IZiNCG cut-off, morning non-fasting sample). Population-level cut-off, not an individual diagnosis. Source kind: diagnostic. Source band <= 70; stored as the warn low bound 70."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-high = 70
+low = 70
 when = { sex = "female", fasting = true, age = [10.0, 200] }
 population = "Adolescents (10 years and older), fasting serum samples (cut-off as applied in the cited study)"
 evidence = "consensus"
 citations = [
   { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)" },
 ]
-note = "Low serum zinc in fasting samples: strictly below 70 ug/dL in females (the cited study applies this to fasting samples; the source quote does not state the time of day). Source kind: diagnostic."
+note = "Low serum zinc in fasting samples: strictly below 70 ug/dL in females (the cited study applies this to fasting samples; the source quote does not state the time of day). Source kind: diagnostic. Source band <= 70; stored as the warn low bound 70."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-high = 74
+low = 74
 when = { sex = "male", fasting = true, age = [10.0, 200] }
 population = "Adolescents (10 years and older), fasting serum samples (cut-off as applied in the cited study)"
 evidence = "consensus"
 citations = [
   { pmid = "36629194", doi = "10.4103/ijmr.ijmr_3130_21", title = "Assessment of zinc inadequacy among tribal adolescent population of central India - A cross-sectional study.", locator = "Methods (Prevalence of low serum zinc)" },
 ]
-note = "Low serum zinc in fasting samples: strictly below 74 ug/dL in males (the cited study applies this to fasting samples; the source quote does not state the time of day). Source kind: diagnostic."
+note = "Low serum zinc in fasting samples: strictly below 74 ug/dL in males (the cited study applies this to fasting samples; the source quote does not state the time of day). Source kind: diagnostic. Source band <= 74; stored as the warn low bound 74."
 
 [[range]]
 set = "izincg"
 kind = "warn"
-high = 70
+low = 70
 when = { sex = "female", pregnant = false, fasting = true, age = [15.0, 50.0] }
 population = "Nonpregnant women of reproductive age 15-49 y in 13 nationally representative surveys (BRINDA); cut-off applies to a morning fasting sample"
 evidence = "consensus"
 citations = [
   { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions" },
 ]
-note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Morning nonfasting cut-off is 66 (separate range); afternoon nonfasting cut-off is 59 µg/dL, not encoded because there is no time-of-day key. Source kind: deficient."
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Morning nonfasting cut-off is 66 (separate range); afternoon nonfasting cut-off is 59 µg/dL, not encoded because there is no time-of-day key. Source kind: deficient. Source band <= 70; stored as the warn low bound 70."
 
 [[range]]
 set = "izincg"
 kind = "warn"
-high = 66
+low = 66
 when = { sex = "female", pregnant = false, fasting = false, age = [15.0, 50.0] }
 population = "Nonpregnant women of reproductive age 15-49 y in BRINDA; cut-off applies to a morning nonfasting sample"
 evidence = "consensus"
 citations = [
   { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions" },
 ]
-note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon nonfasting cut-off is 59 µg/dL (not encoded: no time-of-day key). Source kind: deficient."
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon nonfasting cut-off is 59 µg/dL (not encoded: no time-of-day key). Source kind: deficient. Source band <= 66; stored as the warn low bound 66."
 
 [[range]]
 set = "izincg"
 kind = "warn"
-high = 65
+low = 65
 when = { age = [0.5, 5.0] }
 population = "Preschool children 6-59 months in BRINDA; cut-off applies to a morning sample presumed nonfasting"
 evidence = "consensus"
 citations = [
   { pmid = "32266402", doi = "10.1093/ajcn/nqz304", title = "Adjusting plasma or serum zinc concentrations for inflammation: Biomarkers Reflecting Inflammation and Nutritional Determinants of Anemia (BRINDA) project.", locator = "Methods, Case definitions" },
 ]
-note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon cut-off is 57 µg/dL (not encoded: no time-of-day key). Source kind: deficient."
+note = "IZiNCG plasma zinc cut-off as applied in BRINDA. Afternoon cut-off is 57 µg/dL (not encoded: no time-of-day key). Source kind: deficient. Source band <= 65; stored as the warn low bound 65."

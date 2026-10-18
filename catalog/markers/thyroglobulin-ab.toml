@@ -8,33 +8,33 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "tgab-cutoffs-dtc-review-2026"
 kind = "warn"
-low = 4.11
+high = 4.11
 population = "Patients with differentiated thyroid cancer (review of TgAb measurement and interpretation)"
 evidence = "consensus"
 citations = [
   { pmid = "42047636", doi = "10.1530/JME-25-0217", url = "https://pubmed.ncbi.nlm.nih.gov/42047636/", title = "Thyroglobulin and thyroglobulin antibodies in differentiated thyroid cancer: interpretation, challenges, and future perspectives.", locator = "Results" },
 ]
-note = "Manufacturer cut-off (MCO) for TgAb positivity as quoted in the review; assay dependent. Source kind: diagnostic."
+note = "Manufacturer cut-off (MCO) for TgAb positivity as quoted in the review; assay dependent. Source kind: diagnostic. Source band >= 4.11; stored as the warn high bound 4.11."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 10
+high = 10
 population = "Patients with differentiated thyroid cancer (review of TgAb measurement and interpretation)"
 evidence = "consensus"
 citations = [
   { pmid = "42047636", doi = "10.1530/JME-25-0217", url = "https://pubmed.ncbi.nlm.nih.gov/42047636/", title = "Thyroglobulin and thyroglobulin antibodies in differentiated thyroid cancer: interpretation, challenges, and future perspectives.", locator = "Results" },
 ]
-note = "Institutional cut-off (ICO) for TgAb positivity, based on NACB guidance as cited; higher-titre TgAb interferes with immunoassay Tg. Assay dependent. Source kind: diagnostic. Alternative to the default tgab-cutoffs-dtc-review-2026 warn range for the same population."
+note = "Institutional cut-off (ICO) for TgAb positivity, based on NACB guidance as cited; higher-titre TgAb interferes with immunoassay Tg. Assay dependent. Source kind: diagnostic. Source band >= 10; stored as the warn high bound 10. Alternative to the default tgab-cutoffs-dtc-review-2026 warn range for the same population."
 
 [[range]]
 set = "ptc-lymph-node-cohort-2026"
 kind = "warn"
-high = 115
+low = 115
 when = { conditions = ["papillary-thyroid-carcinoma"] }
 population = "Patients with persistent or recurrent papillary thyroid carcinoma in cervical lymph nodes (retrospective cohort)"
 evidence = "cohort"
 citations = [
   { pmid = "42388622", doi = "10.3389/fonc.2026.1869134", url = "https://pubmed.ncbi.nlm.nih.gov/42388622/", title = "Predictors of false-negative serum thyroglobulin in persistent/recurrent Papillary Thyroid Carcinoma cervical lymph nodes.", locator = "Results" },
 ]
-note = "Study-defined TgAb-negative range (<=115 IU/mL); used to stratify false-negative serum Tg, not a general reference limit. Source kind: diagnostic."
+note = "Study-defined TgAb-negative range (<=115 IU/mL); used to stratify false-negative serum Tg, not a general reference limit. Source kind: diagnostic. Source band <= 115; stored as the warn low bound 115."

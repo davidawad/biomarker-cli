@@ -13,13 +13,6 @@ low = 60.0
 legacy = true
 
 [[range]]
-set = "clinical"
-kind = "warn"
-low = 90.0
-note = "60-89: mildly decreased"
-legacy = true
-
-[[range]]
 set = "optimal"
 kind = "optimal"
 low = 90.0
@@ -37,149 +30,141 @@ citations = [
 note = "GFR category G1 (normal or high). CKD requires markers of kidney damage in addition to GFR category. Alternative to the default clinical reference range for the same population."
 
 [[range]]
-set = "alt-1"
+set = "clinical"
 kind = "warn"
-low = 60
-high = 90
+low = 90
 population = "Adults at risk of or with CKD"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
 ]
-note = "GFR category G2 (mildly decreased), 60 to strictly below 90. CKD is diagnosed only with markers of kidney damage or GFR below 60 for more than 3 months. Alternative to the default clinical warn range for the same population."
+note = "GFR category G2 (mildly decreased), 60 to strictly below 90. CKD is diagnosed only with markers of kidney damage or GFR below 60 for more than 3 months. Source band 60-90; stored as the warn low bound 90."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-high = 90
+low = 90
 when = { age = [2.0, 200] }
 population = "Children and adolescents over 2 years of age, eGFR based on creatinine (eGFRcr) (method: creatinine)"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Practice Point 1.2.3.5" },
 ]
-note = "Pediatric practice point: an eGFRcr below 90 can be flagged as low in children and adolescents over 2 years."
+note = "Pediatric practice point: an eGFRcr below 90 can be flagged as low in children and adolescents over 2 years. Source band <= 90; stored as the warn low bound 90."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
 low = 45
-high = 60
 population = "Adults at risk of or with CKD"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Chapter 1 (Definition and classification of CKD)" },
 ]
-note = "GFR category G3a (mildly to moderately decreased), 45 to strictly below 60. CKD category when GFR is below 60 for more than 3 months. Source kind: diagnostic."
+note = "GFR category G3a (mildly to moderately decreased), 45 to strictly below 60. CKD category when GFR is below 60 for more than 3 months. Source kind: diagnostic. Source band 45-60; stored as the warn low bound 45."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+low = 30
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G3b (moderately to severely decreased), 30 to strictly below 45. Source kind: diagnostic. Source band 30-45; stored as the warn low bound 30. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 30
-high = 45
+low = 15
 population = "Adults at risk of or with CKD"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
 ]
-note = "GFR category G3b (moderately to severely decreased), 30 to strictly below 45. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "GFR category G4 (severely decreased), 15 to strictly below 30. Source kind: diagnostic. Source band 15-30; stored as the warn low bound 15. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "alt-2"
+kind = "warn"
+low = 15
+population = "Adults at risk of or with CKD"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+]
+note = "GFR category G5 (kidney failure), strictly below 15. Kidney failure category. Source kind: diagnostic. Source band <= 15; stored as the warn low bound 15. Alternative to the default diagnostic warn range for the same population."
+
+[[range]]
+set = "kdigo-2024"
+kind = "warn"
+high = 90
+population = "Adults and children with CKD or at risk, staged by GFR category"
+evidence = "guideline"
+citations = [
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
+]
+note = "KDIGO G1 (normal or high): eGFR >= 90. A GFR category alone does not establish CKD; CKD also needs markers of kidney damage or eGFR < 60 persisting over 3 months. Source kind: decision. Source band >= 90; stored as the warn high bound 90."
 
 [[range]]
 set = "alt-3"
 kind = "warn"
-low = 15
-high = 30
-population = "Adults at risk of or with CKD"
+low = 89
+population = "Adults and children with CKD or at risk, staged by GFR category"
 evidence = "guideline"
 citations = [
-  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
+  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
 ]
-note = "GFR category G4 (severely decreased), 15 to strictly below 30. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "KDIGO G2 (mildly decreased). Boundaries as printed in the KDIGO table: 60-89, so values between 89 and 90 are not classed in the table. Source kind: decision. Source band 60-89; stored as the warn low bound 89. Alternative to the default kdigo-2024 warn range for the same population."
 
 [[range]]
 set = "alt-4"
 kind = "warn"
-high = 15
-population = "Adults at risk of or with CKD"
-evidence = "guideline"
-citations = [
-  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 2 (GFR categories in CKD)" },
-]
-note = "GFR category G5 (kidney failure), strictly below 15. Kidney failure category. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
-
-[[range]]
-set = "kdigo-2024"
-kind = "warn"
-low = 90
-population = "Adults and children with CKD or at risk, staged by GFR category"
-evidence = "guideline"
-citations = [
-  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
-]
-note = "KDIGO G1 (normal or high): eGFR >= 90. A GFR category alone does not establish CKD; CKD also needs markers of kidney damage or eGFR < 60 persisting over 3 months. Source kind: decision."
-
-[[range]]
-set = "alt-5"
-kind = "warn"
-low = 60
-high = 89
-population = "Adults and children with CKD or at risk, staged by GFR category"
-evidence = "guideline"
-citations = [
-  { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
-]
-note = "KDIGO G2 (mildly decreased). Boundaries as printed in the KDIGO table: 60-89, so values between 89 and 90 are not classed in the table. Source kind: decision. Alternative to the default kdigo-2024 warn range for the same population."
-
-[[range]]
-set = "alt-6"
-kind = "warn"
 low = 45
-high = 59
 population = "Adults and children with CKD or at risk, staged by GFR category"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
 ]
-note = "KDIGO G3a (mildly to moderately decreased). Source kind: decision. Alternative to the default kdigo-2024 warn range for the same population."
+note = "KDIGO G3a (mildly to moderately decreased). Source kind: decision. Source band 45-59; stored as the warn low bound 45. Alternative to the default kdigo-2024 warn range for the same population."
 
 [[range]]
-set = "alt-7"
+set = "alt-1"
 kind = "warn"
 low = 30
-high = 44
 population = "Adults and children with CKD or at risk, staged by GFR category"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
 ]
-note = "KDIGO G3b (moderately to severely decreased). Source kind: decision. Alternative to the default kdigo-2024 warn range for the same population."
+note = "KDIGO G3b (moderately to severely decreased). Source kind: decision. Source band 30-44; stored as the warn low bound 30. Alternative to the default kdigo-2024 warn range for the same population."
 
 [[range]]
-set = "alt-8"
+set = "alt-2"
 kind = "warn"
 low = 15
-high = 29
 population = "Adults and children with CKD or at risk, staged by GFR category"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
 ]
-note = "KDIGO G4 (severely decreased). Source kind: decision. Alternative to the default kdigo-2024 warn range for the same population."
+note = "KDIGO G4 (severely decreased). Source kind: decision. Source band 15-29; stored as the warn low bound 15. Alternative to the default kdigo-2024 warn range for the same population."
 
 [[range]]
 set = "kdigo-2024"
 kind = "critical"
-high = 15
+low = 15
 population = "Adults and children with CKD or at risk, staged by GFR category"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "GFR categories table" },
 ]
-note = "KDIGO G5 (kidney failure): eGFR < 15 (open at the top, exclusive boundary)."
+note = "KDIGO G5 (kidney failure): eGFR < 15 (open at the top, exclusive boundary). Source band <= 15; stored as the critical low bound 15."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 79
 high = 144
@@ -189,10 +174,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Sex- and age-partitioned reference interval (males, under 45 y). The source partitions age at 45 years (under 45 vs 45 and over). Central 95 percent limits."
+note = "Sex- and age-partitioned reference interval (males, under 45 y). The source partitions age at 45 years (under 45 vs 45 and over). Central 95 percent limits. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 58
 high = 113
@@ -202,10 +187,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Sex- and age-partitioned reference interval (males, 45 y and older). Central 95 percent limits."
+note = "Sex- and age-partitioned reference interval (males, 45 y and older). Central 95 percent limits. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 87
 high = 123
@@ -215,10 +200,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Sex- and age-partitioned reference interval (females, under 45 y). Central 95 percent limits."
+note = "Sex- and age-partitioned reference interval (females, under 45 y). Central 95 percent limits. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 61
 high = 105
@@ -228,13 +213,12 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Sex- and age-partitioned reference interval (females, 45 y and older). Central 95 percent limits."
+note = "Sex- and age-partitioned reference interval (females, 45 y and older). Central 95 percent limits. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "ada-kdigo-2022"
 kind = "warn"
 low = 30
-high = 45
 when = { conditions = ["ckd", "diabetes"] }
 population = "Adults with type 2 diabetes and CKD on metformin"
 evidence = "consensus"
@@ -242,16 +226,16 @@ citations = [
   { pmid = "36189689", doi = "10.2337/dci22-0027", url = "https://pubmed.ncbi.nlm.nih.gov/36189689/", title = "Diabetes Management in Chronic Kidney Disease: A Consensus Report by the American Diabetes Association (ADA) and Kidney Disease: Improving Global Outcomes (KDIGO).", locator = "Recommendation 4.1.1" },
   { pmid = "36189689", doi = "10.2337/dci22-0027", url = "https://pubmed.ncbi.nlm.nih.gov/36189689/", title = "Diabetes Management in Chronic Kidney Disease: A Consensus Report by the American Diabetes Association (ADA) and Kidney Disease: Improving Global Outcomes (KDIGO).", locator = "Practice Point 4.1.3" },
 ]
-note = "Metformin may be started at eGFR >= 30; the dose is adjusted when eGFR is below 45 and considered for some patients at 45-59."
+note = "Metformin may be started at eGFR >= 30; the dose is adjusted when eGFR is below 45 and considered for some patients at 45-59. Source band 30-45; stored as the warn low bound 30."
 
 [[range]]
 set = "ada-kdigo-2022"
 kind = "critical"
-high = 30
+low = 30
 when = { conditions = ["ckd", "diabetes"] }
 population = "Adults with type 2 diabetes and CKD on metformin"
 evidence = "consensus"
 citations = [
   { pmid = "36189689", doi = "10.2337/dci22-0027", url = "https://pubmed.ncbi.nlm.nih.gov/36189689/", title = "Diabetes Management in Chronic Kidney Disease: A Consensus Report by the American Diabetes Association (ADA) and Kidney Disease: Improving Global Outcomes (KDIGO).", locator = "Table 4 (metformin dosing by eGFR)" },
 ]
-note = "Metformin should be discontinued when eGFR is below 30 mL/min/1.73 m2 (lactic acidosis risk)."
+note = "Metformin should be discontinued when eGFR is below 30 mL/min/1.73 m2 (lactic acidosis risk). Source band <= 30; stored as the critical low bound 30."

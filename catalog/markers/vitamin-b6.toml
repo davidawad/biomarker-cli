@@ -8,10 +8,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "adv-nutr-2026-micronutrients"
 kind = "warn"
-high = 20
+low = 20
 population = "general adults in high-income countries, in an expert review of micronutrient status and anaemia (specimen: serum)"
 evidence = "consensus"
 citations = [
   { pmid = "42398768", doi = "10.1016/j.advnut.2026.100697", title = "The Role of Micronutrient Deficiencies in Nutritional Anemia Beyond Iron: An Expert Perspective on the Scope and Strength of the Current Evidence.", locator = "Vitamin B-6 section" },
 ]
-note = "Functional deficiency is typically defined as PLP below 20 nmol/L; the source notes some studies use <30 nmol/L instead. Inflammation effect (not a range): in Framingham adults, mean PLP was 36.5 nmol/L with CRP >= 6 mg/L versus 55.8 nmol/L with CRP < 6 mg/L (PMID 11401933). No blood-based toxicity threshold was found; toxicity is an intake-based (UL) question. Source kind: deficient."
+note = "Functional deficiency is typically defined as PLP below 20 nmol/L; the source notes some studies use <30 nmol/L instead. Inflammation effect (not a range): in Framingham adults, mean PLP was 36.5 nmol/L with CRP >= 6 mg/L versus 55.8 nmol/L with CRP < 6 mg/L (PMID 11401933). No blood-based toxicity threshold was found; toxicity is an intake-based (UL) question. Source kind: deficient. Source band <= 20; stored as the warn low bound 20."

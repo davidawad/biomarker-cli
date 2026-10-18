@@ -9,71 +9,71 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "dodds-2014-grip"
 kind = "warn"
-high = 32
+low = 32
 when = { sex = "male" }
 population = "Adults aged 20 to 80+ years from twelve British studies (normative data)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "25474696", doi = "10.1371/journal.pone.0113637", url = "https://pubmed.ncbi.nlm.nih.gov/25474696/", title = "Grip strength across the life course: normative data from twelve British studies.", locator = "Discussion" },
 ]
-note = "Authors' weak-grip band: T-score -2 or below, equivalent to 32 kg in men. The authors note a T-score of -2.5 (27 kg in men) may be more discriminatory. Band, not a diagnostic cut-off."
+note = "Authors' weak-grip band: T-score -2 or below, equivalent to 32 kg in men. The authors note a T-score of -2.5 (27 kg in men) may be more discriminatory. Band, not a diagnostic cut-off. Source band <= 32; stored as the warn low bound 32."
 
 [[range]]
 set = "dodds-2014-grip"
 kind = "warn"
-high = 19
+low = 19
 when = { sex = "female" }
 population = "Adults aged 20 to 80+ years from twelve British studies (normative data)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "25474696", doi = "10.1371/journal.pone.0113637", url = "https://pubmed.ncbi.nlm.nih.gov/25474696/", title = "Grip strength across the life course: normative data from twelve British studies.", locator = "Discussion" },
 ]
-note = "Authors' weak-grip band: T-score -2 or below, equivalent to 19 kg in women. The authors note a T-score of -2.5 (16 kg in women) may be more discriminatory. Band, not a diagnostic cut-off."
+note = "Authors' weak-grip band: T-score -2 or below, equivalent to 19 kg in women. The authors note a T-score of -2.5 (16 kg in women) may be more discriminatory. Band, not a diagnostic cut-off. Source band <= 19; stored as the warn low bound 19."
 
 [[range]]
 set = "ewgsop2-2019"
 kind = "warn"
-high = 27
+low = 27
 when = { sex = "male" }
 population = "Older adults (European consensus); low strength cut-off in men"
 evidence = "consensus"
 citations = [
   { pmid = "30312372", doi = "10.1093/ageing/afy169", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", title = "Sarcopenia: revised European consensus on definition and diagnosis.", locator = "Table 3, EWGSOP2 cut-off points for low strength" },
 ]
-note = "Low muscle strength if below 27 kg in men (strict less-than boundary). Table lists chair stand or grip strength cut-offs. Source kind: decision."
+note = "Low muscle strength if below 27 kg in men (strict less-than boundary). Table lists chair stand or grip strength cut-offs. Source kind: decision. Source band <= 27; stored as the warn low bound 27."
 
 [[range]]
 set = "ewgsop2-2019"
 kind = "warn"
-high = 16
+low = 16
 when = { sex = "female" }
 population = "Older adults (European consensus); low strength cut-off in women"
 evidence = "consensus"
 citations = [
   { pmid = "30312372", doi = "10.1093/ageing/afy169", url = "https://pubmed.ncbi.nlm.nih.gov/30312372/", title = "Sarcopenia: revised European consensus on definition and diagnosis.", locator = "Table 3, EWGSOP2 cut-off points for low strength" },
 ]
-note = "Low muscle strength if below 16 kg in women (strict less-than boundary). Source kind: decision."
+note = "Low muscle strength if below 16 kg in women (strict less-than boundary). Source kind: decision. Source band <= 16; stored as the warn low bound 16."
 
 [[range]]
 set = "awgs-2019"
 kind = "warn"
-high = 28
+low = 28
 when = { sex = "male" }
 population = "Asian older adults (AWGS 2019 consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", locator = "Abstract, Results" },
 ]
-note = "Low muscle strength if handgrip strength is below 28 kg in men (strict less-than boundary). Source kind: decision."
+note = "Low muscle strength if handgrip strength is below 28 kg in men (strict less-than boundary). Source kind: decision. Source band <= 28; stored as the warn low bound 28."
 
 [[range]]
 set = "awgs-2019"
 kind = "warn"
-high = 18
+low = 18
 when = { sex = "female" }
 population = "Asian older adults (AWGS 2019 consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "32033882", doi = "10.1016/j.jamda.2019.12.012", url = "https://pubmed.ncbi.nlm.nih.gov/32033882/", title = "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment.", locator = "Abstract, Results" },
 ]
-note = "Low muscle strength if handgrip strength is below 18 kg in women (strict less-than boundary). Source kind: decision."
+note = "Low muscle strength if handgrip strength is below 18 kg in women (strict less-than boundary). Source kind: decision. Source band <= 18; stored as the warn low bound 18."

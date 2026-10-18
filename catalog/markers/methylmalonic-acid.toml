@@ -33,11 +33,11 @@ note = "Table 2 shows 5th and 95th percentiles for all subjects. Geometric mean 
 [[range]]
 set = "clarke-2003"
 kind = "warn"
-low = 350
+high = 350
 when = { age = [65.0, 200] }
 population = "Older persons aged 65 and over in Oxford (population study, n=1562); used to flag high risk of B12 deficiency among borderline B12 results"
 evidence = "cohort"
 citations = [
   { pmid = "12716678", doi = "10.1093/ajcn/77.5.1241", title = "Screening for vitamin B-12 and folate deficiency in older persons.", locator = "Design, para 1 (Abstract)" },
 ]
-note = "Elevated-MMA cut-off used in the study's high-risk classification, not a stand-alone diagnostic threshold. Published MMA cut-offs range from about 210 to 480 nmol/L across studies (NHANES roundtable). Frequency of abnormal MMA falls as the cut-off rises (Hordaland data, 71-74 y: 17.7% above 260 nmol/L, 5.2% above 370 nmol/L). Renal impairment can raise MMA independently of B12."
+note = "Elevated-MMA cut-off used in the study's high-risk classification, not a stand-alone diagnostic threshold. Published MMA cut-offs range from about 210 to 480 nmol/L across studies (NHANES roundtable). Frequency of abnormal MMA falls as the cut-off rises (Hordaland data, 71-74 y: 17.7% above 260 nmol/L, 5.2% above 370 nmol/L). Renal impairment can raise MMA independently of B12. Source band >= 350; stored as the warn high bound 350."

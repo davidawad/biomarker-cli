@@ -33,65 +33,65 @@ note = "Sex-specific 99th percentile upper reference limit for men on the Abbott
 [[range]]
 set = "eurheartj-2023-troponin-early"
 kind = "warn"
-high = 5
+low = 5
 population = "Patients presenting with suspected myocardial infarction, including those presenting within 3 hours of symptom onset (setting: suspected-acute-mi; method: abbott-architect-stat)"
 evidence = "cohort"
 citations = [
   { pmid = "37350492", doi = "10.1093/eurheartj/ehad376", url = "https://pubmed.ncbi.nlm.nih.gov/37350492/", title = "Troponin in early presenters to rule out myocardial infarction.", locator = "Abstract, Results" },
 ]
-note = "Optimised single-sample rule-out threshold for hs-cTnI at presentation. Boundary is strict (<5 ng/L). The same study reports a 2 ng/L limit of detection threshold with higher sensitivity. Source kind: decision."
+note = "Optimised single-sample rule-out threshold for hs-cTnI at presentation. Boundary is strict (<5 ng/L). The same study reports a 2 ng/L limit of detection threshold with higher sensitivity. Source kind: decision. Source band <= 5; stored as the warn low bound 5."
 
 [[range]]
 set = "high-steacs-2017"
 kind = "warn"
-high = 5
+low = 5
 population = "Patients with suspected acute coronary syndrome in the High-STEACS-derived pathway (setting: suspected-acute-mi; method: abbott-architect-stat)"
 evidence = "cohort"
 citations = [
   { pmid = "28344141", doi = "10.1016/j.amjmed.2017.02.032", url = "https://pubmed.ncbi.nlm.nih.gov/28344141/", title = "Single High-Sensitivity Cardiac Troponin I to Rule Out Acute Myocardial Infarction.", locator = "Abstract, Results" },
 ]
-note = "High-STEACS hs-cTnI rule-out threshold at presentation (strict <5 ng/L). Used alone or with a normal ECG. Source kind: decision."
+note = "High-STEACS hs-cTnI rule-out threshold at presentation (strict <5 ng/L). Used alone or with a normal ECG. Source kind: decision. Source band <= 5; stored as the warn low bound 5."
 
 [[range]]
 set = "iscience-2024-esc-algorithm"
 kind = "warn"
-low = 64
+high = 64
 population = "Adults with suspected myocardial infarction in a multicentre prospective ESC-algorithm cohort (Architect STAT hs-cTnI) (setting: suspected-acute-mi; method: abbott-architect-stat)"
 evidence = "cohort"
 citations = [
   { pmid = "39262795", doi = "10.1016/j.isci.2024.110643", url = "https://pubmed.ncbi.nlm.nih.gov/39262795/", title = "A multicenter prospective study on the ESC algorithm for the early diagnosis of non-ST-elevation myocardial infarction.", locator = "Results" },
 ]
-note = "ESC 0/1-hour algorithm: direct rule-in at presentation for hs-cTnI of 64 ng/L or more (inclusive, >=64). Concentrations below this are triaged by the 1-hour change (rule-in for a 0/1-hour change of 6 ng/L or more). Source kind: decision."
+note = "ESC 0/1-hour algorithm: direct rule-in at presentation for hs-cTnI of 64 ng/L or more (inclusive, >=64). Concentrations below this are triaged by the 1-hour change (rule-in for a 0/1-hour change of 6 ng/L or more). Source kind: decision. Source band >= 64; stored as the warn high bound 64."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-high = 4
+low = 4
 population = "Adults with suspected myocardial infarction in a multicentre prospective Chinese cohort applying the ESC 0/1-hour algorithm (Architect STAT hs-cTnI) (setting: suspected-acute-mi; method: abbott-architect-stat)"
 evidence = "cohort"
 citations = [
   { pmid = "39262795", doi = "10.1016/j.isci.2024.110643", url = "https://pubmed.ncbi.nlm.nih.gov/39262795/", title = "A multicenter prospective study on the ESC algorithm for the early diagnosis of non-ST-elevation myocardial infarction.", locator = "Introduction, ESC algorithm thresholds" },
 ]
-note = "2020 ESC 0/1-hour algorithm, direct rule-out at presentation: hs-cTnI below 4 ng/L (strict <4) when chest pain onset was more than 3 hours before presentation. Source kind: decision. Alternative to the default iscience-2024-esc-algorithm warn range for the same population."
+note = "2020 ESC 0/1-hour algorithm, direct rule-out at presentation: hs-cTnI below 4 ng/L (strict <4) when chest pain onset was more than 3 hours before presentation. Source kind: decision. Source band <= 4; stored as the warn low bound 4. Alternative to the default iscience-2024-esc-algorithm warn range for the same population."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-high = 2
+low = 2
 population = "Adults with suspected myocardial infarction in a multicentre prospective Chinese cohort applying the ESC 0/1-hour algorithm (Architect STAT hs-cTnI) (setting: suspected-acute-mi; method: abbott-architect-stat)"
 evidence = "cohort"
 citations = [
   { pmid = "39262795", doi = "10.1016/j.isci.2024.110643", url = "https://pubmed.ncbi.nlm.nih.gov/39262795/", title = "A multicenter prospective study on the ESC algorithm for the early diagnosis of non-ST-elevation myocardial infarction.", locator = "Methods, ESC algorithm thresholds" },
 ]
-note = "ESC 0/1-hour algorithm, 1-hour rule-out: absolute change from baseline below 2 ng/L (strict <2) for hs-cTnI, as described for the algorithm in the study methods. Source kind: decision. Alternative to the default iscience-2024-esc-algorithm warn range for the same population."
+note = "ESC 0/1-hour algorithm, 1-hour rule-out: absolute change from baseline below 2 ng/L (strict <2) for hs-cTnI, as described for the algorithm in the study methods. Source kind: decision. Source band <= 2; stored as the warn low bound 2. Alternative to the default iscience-2024-esc-algorithm warn range for the same population."
 
 [[range]]
 set = "alt-3"
 kind = "warn"
-low = 6
+high = 6
 population = "Adults with suspected myocardial infarction in a multicentre prospective Chinese cohort applying the ESC 0/1-hour algorithm (Architect STAT hs-cTnI) (setting: suspected-acute-mi; method: abbott-architect-stat)"
 evidence = "cohort"
 citations = [
   { pmid = "39262795", doi = "10.1016/j.isci.2024.110643", url = "https://pubmed.ncbi.nlm.nih.gov/39262795/", title = "A multicenter prospective study on the ESC algorithm for the early diagnosis of non-ST-elevation myocardial infarction.", locator = "Results" },
 ]
-note = "ESC 0/1-hour algorithm, 1-hour rule-in: hs-cTnI change of 6 ng/L or more (inclusive, >=6) from baseline to 1 hour. Source kind: decision. Alternative to the default iscience-2024-esc-algorithm warn range for the same population."
+note = "ESC 0/1-hour algorithm, 1-hour rule-in: hs-cTnI change of 6 ng/L or more (inclusive, >=6) from baseline to 1 hour. Source kind: decision. Source band >= 6; stored as the warn high bound 6. Alternative to the default iscience-2024-esc-algorithm warn range for the same population."

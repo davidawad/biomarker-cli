@@ -8,13 +8,13 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "jnutr-2026-riboflavin"
 kind = "warn"
-low = 1.4
+high = 1.4
 population = "females of reproductive age and children in population samples from Ireland, UK, Cambodia, DR Congo, and cohorts in Northern Ireland, Spain, Canada, Malaysia, Lao PDR, Uganda"
 evidence = "consensus"
 citations = [
   { pmid = "41735095", doi = "10.1016/j.tjnut.2025.101277", title = "Riboflavin Deficiency Is Highly Prevalent in Females and Children across High and Low/Middle Income Countries Worldwide.", locator = "Methods" },
 ]
-note = "Deficiency at 1.40 or above, as used in the 2026 multi-country study. Other national surveys have used a lower threshold: the UK NDNS analysis cited EGRAC of 1.30 or above as deficient (PMID 19102813), and the authors call for re-evaluating the threshold because the method changes results. Source kind: deficient."
+note = "Deficiency at 1.40 or above, as used in the 2026 multi-country study. Other national surveys have used a lower threshold: the UK NDNS analysis cited EGRAC of 1.30 or above as deficient (PMID 19102813), and the authors call for re-evaluating the threshold because the method changes results. Source kind: deficient. Source band >= 1.4; stored as the warn high bound 1.4."
 
 [[range]]
 set = "ajcn-2022-irish-nans-tuda"
@@ -26,15 +26,3 @@ citations = [
   { pmid = "36264281", doi = "10.1093/ajcn/nqac240", title = "Vitamin B-6 and riboflavin, their metabolic interaction, and relationship with MTHFR genotype in adults aged 18-102 years.", locator = "Abstract, Results" },
 ]
 note = "Optimal riboflavin status. Plasma PLP fell stepwise across these classes, most strongly in older adults."
-
-[[range]]
-set = "ajcn-2022-irish-nans-tuda"
-kind = "warn"
-low = 1.27
-high = 1.39
-population = "Irish adults aged 18-102 y (NANS, TUDA and Genovit cohorts)"
-evidence = "cohort"
-citations = [
-  { pmid = "36264281", doi = "10.1093/ajcn/nqac240", title = "Vitamin B-6 and riboflavin, their metabolic interaction, and relationship with MTHFR genotype in adults aged 18-102 years.", locator = "Abstract, Results" },
-]
-note = "Suboptimal (marginal) riboflavin status in the same Irish study classification. Source kind: insufficient."

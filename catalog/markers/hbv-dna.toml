@@ -10,33 +10,33 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "easl-2017-hbv"
 kind = "warn"
-low = 2000
+high = 2000
 population = "Adults with chronic hepatitis B"
 evidence = "guideline"
 citations = [
   { pmid = "28427875", doi = "10.1016/j.jhep.2017.03.021", url = "https://pubmed.ncbi.nlm.nih.gov/28427875/", title = "EASL 2017 Clinical Practice Guidelines on the management of hepatitis B virus infection.", locator = "Abstract" },
 ]
-note = "Typical treatment indication: HBV DNA above 2,000 IU/mL (boundary >2,000), together with elevated ALT and/or at least moderate histological lesions. The guideline text quoted here does not give the cirrhosis rule, so it is not included in this range. Source kind: decision."
+note = "Typical treatment indication: HBV DNA above 2,000 IU/mL (boundary >2,000), together with elevated ALT and/or at least moderate histological lesions. The guideline text quoted here does not give the cirrhosis rule, so it is not included in this range. Source kind: decision. Source band >= 2000; stored as the warn high bound 2000."
 
 [[range]]
 set = "aasld-2018-hbv"
 kind = "warn"
-low = 20000
+high = 20000
 population = "Adults with chronic hepatitis B with immune-active disease (typically HBeAg-positive)"
 evidence = "guideline"
 citations = [
   { pmid = "29405329", doi = "10.1002/hep.29800", url = "https://pubmed.ncbi.nlm.nih.gov/29405329/", title = "Update on prevention, diagnosis, and treatment of chronic hepatitis B: AASLD 2018 hepatitis B guidance.", locator = "Full text, Diagnosis of chronic hepatitis B" },
 ]
-note = "Immune-active chronic hepatitis B is described with HBV DNA above 20,000 IU/mL (boundary >20,000). The guideline states this cut-off is arbitrary, reflecting the detection limit of older non-PCR assays. Lower levels are generally seen with HBeAg-negative disease. Source kind: decision."
+note = "Immune-active chronic hepatitis B is described with HBV DNA above 20,000 IU/mL (boundary >20,000). The guideline states this cut-off is arbitrary, reflecting the detection limit of older non-PCR assays. Lower levels are generally seen with HBeAg-negative disease. Source kind: decision. Source band >= 20000; stored as the warn high bound 20000."
 
 [[range]]
 set = "aasld-2018-hbv"
 kind = "warn"
-low = 200000
+high = 200000
 when = { pregnant = true, trimester = 3 }
 population = "Pregnant women with chronic hepatitis B"
 evidence = "guideline"
 citations = [
   { pmid = "29405329", doi = "10.1002/hep.29800", url = "https://pubmed.ncbi.nlm.nih.gov/29405329/", title = "Update on prevention, diagnosis, and treatment of chronic hepatitis B: AASLD 2018 hepatitis B guidance.", locator = "Full text, Pregnancy section" },
 ]
-note = "Third trimester: antiviral therapy (tenofovir) is recommended for serum HBV DNA above 200,000 IU/mL (boundary >200,000), to reduce mother-to-child transmission. Source kind: decision."
+note = "Third trimester: antiviral therapy (tenofovir) is recommended for serum HBV DNA above 200,000 IU/mL (boundary >200,000), to reduce mother-to-child transmission. Source kind: decision. Source band >= 200000; stored as the warn high bound 200000."

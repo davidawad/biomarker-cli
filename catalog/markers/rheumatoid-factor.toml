@@ -6,15 +6,3 @@ loinc = "11572-5"
 description = "Autoantibody (mostly IgM) against the Fc portion of IgG. Positive results support a diagnosis of rheumatoid arthritis and feed into classification scores; low titres are also seen in other conditions and in healthy older adults."
 aliases = ["rf", "igm rf"]
 no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
-
-[[range]]
-set = "thermo-fisher-rf-cutoff"
-kind = "warn"
-low = 5
-high = 15
-population = "RA and control patients in a review of autoimmune serology (Thermo Fisher assay) (method: thermo-fisher)"
-evidence = "consensus"
-citations = [
-  { pmid = "35036891", doi = "10.1016/j.jtauto.2022.100142", url = "https://pubmed.ncbi.nlm.nih.gov/35036891/", title = "Impact of autoimmune serology test results on RA classification and diagnosis.", locator = "Full text, Figure 3 legend" },
-]
-note = "Manufacturer-based low-positive band for this assay: above the 5 IU/mL cut-off up to 15 IU/mL; above 15 IU/mL is high positive. Assay-specific and not transferable to other RF methods. Source kind: decision."

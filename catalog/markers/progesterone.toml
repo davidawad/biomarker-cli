@@ -69,23 +69,23 @@ note = "5th percentile for the whole luteal phase, not a mid-luteal-only thresho
 [[range]]
 set = "viability-meta-2022"
 kind = "warn"
-low = 20
+high = 20
 when = { pregnant = true, trimester = 1, conditions = ["symptomatic-first-trimester"] }
 population = "symptomatic first-trimester pregnant patients (pain or bleeding); 15,878 patients in the pooled studies"
 evidence = "cohort"
 citations = [
   { pmid = "35921048", doi = "10.1007/s43678-022-00332-x", url = "https://pubmed.ncbi.nlm.nih.gov/35921048/", title = "Performance of single serum progesterone in the evaluation of symptomatic first-trimester pregnant patients: a systematic review and meta-analysis.", locator = "Abstract, Results" },
 ]
-note = "Single serum progesterone at or above about 20 ng/mL (about 63.6 nmol/L) makes a viable pregnancy likely (NPV 0.89-0.99 across the prevalences reported in the review). Pregnancy-viability decision value, not a reference interval. Source kind: diagnostic."
+note = "Single serum progesterone at or above about 20 ng/mL (about 63.6 nmol/L) makes a viable pregnancy likely (NPV 0.89-0.99 across the prevalences reported in the review). Pregnancy-viability decision value, not a reference interval. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-high = 6.3
+low = 6.3
 when = { pregnant = true, trimester = 1, conditions = ["symptomatic-first-trimester"] }
 population = "symptomatic first-trimester pregnant patients (pain or bleeding); 15,878 patients in the pooled studies"
 evidence = "cohort"
 citations = [
   { pmid = "35921048", doi = "10.1007/s43678-022-00332-x", url = "https://pubmed.ncbi.nlm.nih.gov/35921048/", title = "Performance of single serum progesterone in the evaluation of symptomatic first-trimester pregnant patients: a systematic review and meta-analysis.", locator = "Abstract, Results" },
 ]
-note = "Single serum progesterone below about 6.3 ng/mL (about 20 nmol/L) makes a non-viable pregnancy likely (specificity 99.2% in the review). Pregnancy-viability decision value, not a reference interval. Source kind: diagnostic. Alternative to the default viability-meta-2022 warn range for the same population."
+note = "Single serum progesterone below about 6.3 ng/mL (about 20 nmol/L) makes a non-viable pregnancy likely (specificity 99.2% in the review). Pregnancy-viability decision value, not a reference interval. Source kind: diagnostic. Source band <= 6.3; stored as the warn low bound 6.3. Alternative to the default viability-meta-2022 warn range for the same population."

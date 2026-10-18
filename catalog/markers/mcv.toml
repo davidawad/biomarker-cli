@@ -29,10 +29,10 @@ note = "Non-parametric 2.5th-97.5th percentiles. The NORIP abstract reports one 
 [[range]]
 set = "am-fam-physician-2009"
 kind = "warn"
-low = 100
+high = 100
 population = "adults with an incidental raised MCV on a complete blood count (macrocytosis evaluation review)"
 evidence = "consensus"
 citations = [
   { pmid = "19202968", title = "Evaluation of macrocytosis.", locator = "Abstract" },
 ]
-note = "Review (American Family Physician) defining macrocytosis as MCV above 100 fL; abstract-level citation, not a guideline threshold. No microcytosis (low MCV) cutoff was found in retrievable open-access text, so none is encoded."
+note = "Review (American Family Physician) defining macrocytosis as MCV above 100 fL; abstract-level citation, not a guideline threshold. No microcytosis (low MCV) cutoff was found in retrievable open-access text, so none is encoded. Source band >= 100; stored as the warn high bound 100."

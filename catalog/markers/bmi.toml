@@ -22,24 +22,24 @@ legacy = true
 [[range]]
 set = "who-obesity-fact-sheet"
 kind = "warn"
-low = 25.0
+high = 25.0
 population = "Adults aged 18 years and over"
 evidence = "guideline"
 citations = [
   { url = "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", title = "Obesity and overweight", locator = "Key facts / definition" },
 ]
-note = "WHO overweight category: BMI greater than or equal to 25 kg/m2. Source kind: decision."
+note = "WHO overweight category: BMI greater than or equal to 25 kg/m2. Source kind: decision. Source band >= 25.0; stored as the warn high bound 25.0."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 30.0
+high = 30.0
 population = "Adults aged 18 years and over"
 evidence = "guideline"
 citations = [
   { url = "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", title = "Obesity and overweight", locator = "Key facts / definition" },
 ]
-note = "WHO obesity category: BMI greater than or equal to 30 kg/m2 (boundary is >= 30). Source kind: decision. Alternative to the default who-obesity-fact-sheet warn range for the same population."
+note = "WHO obesity category: BMI greater than or equal to 30 kg/m2 (boundary is >= 30). Source kind: decision. Source band >= 30.0; stored as the warn high bound 30.0. Alternative to the default who-obesity-fact-sheet warn range for the same population."
 
 [[range]]
 set = "nhlbi-1998-obesity"
@@ -67,93 +67,90 @@ note = "Normal weight band. Upper boundary as printed (24.9); values between 24.
 [[range]]
 set = "nhlbi-1998-obesity"
 kind = "warn"
-low = 25.0
 high = 29.9
 population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI" },
 ]
-note = "Overweight class: BMI 25.0 to 29.9 kg/m2. The source does not use the term pre-obese. Source kind: decision."
+note = "Overweight class: BMI 25.0 to 29.9 kg/m2. The source does not use the term pre-obese. Source kind: decision. Source band 25.0-29.9; stored as the warn high bound 29.9."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 30.0
 high = 34.9
 population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI" },
 ]
-note = "Obesity class I: BMI 30.0 to 34.9 kg/m2. Source kind: decision. Alternative to the default nhlbi-1998-obesity warn range for the same population."
+note = "Obesity class I: BMI 30.0 to 34.9 kg/m2. Source kind: decision. Source band 30.0-34.9; stored as the warn high bound 34.9. Alternative to the default nhlbi-1998-obesity warn range for the same population."
 
 [[range]]
 set = "alt-3"
 kind = "warn"
-low = 35.0
 high = 39.9
 population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI" },
 ]
-note = "Obesity class II: BMI 35.0 to 39.9 kg/m2. Source kind: decision. Alternative to the default nhlbi-1998-obesity warn range for the same population."
+note = "Obesity class II: BMI 35.0 to 39.9 kg/m2. Source kind: decision. Source band 35.0-39.9; stored as the warn high bound 39.9. Alternative to the default nhlbi-1998-obesity warn range for the same population."
 
 [[range]]
 set = "alt-4"
 kind = "warn"
-low = 40
+high = 40
 population = "Adults (NHLBI 1998 classification, adapted from WHO 1997)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf", title = "Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults: The Evidence Report", locator = "Table IV-1, Classification of overweight and obesity by BMI" },
 ]
-note = "Extreme obesity, class III: BMI 40 kg/m2 or more. Source kind: decision. Alternative to the default nhlbi-1998-obesity warn range for the same population."
+note = "Extreme obesity, class III: BMI 40 kg/m2 or more. Source kind: decision. Source band >= 40; stored as the warn high bound 40. Alternative to the default nhlbi-1998-obesity warn range for the same population."
 
 [[range]]
 set = "who-2004-asia"
 kind = "warn"
-low = 23.0
+high = 23.0
 population = "Asian populations (WHO expert consultation)"
 evidence = "consensus"
 citations = [
   { pmid = "14726171", doi = "10.1016/S0140-6736(03)15268-3", url = "https://pubmed.ncbi.nlm.nih.gov/14726171/", title = "Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.", locator = "Abstract, Results" },
 ]
-note = "Public health action point for Asian populations: increased risk begins at BMI 23.0 kg/m2. The next action point is 27.5 kg/m2. Applies to Asian populations only; WHO retained the standard international cut-offs. Applies only to: ethnicity=asian."
+note = "Public health action point for Asian populations: increased risk begins at BMI 23.0 kg/m2. The next action point is 27.5 kg/m2. Applies to Asian populations only; WHO retained the standard international cut-offs. Applies only to: ethnicity=asian. Source band >= 23.0; stored as the warn high bound 23.0."
 
 [[range]]
 set = "alt-5"
 kind = "warn"
-low = 27.5
+high = 27.5
 population = "Asian populations (WHO expert consultation)"
 evidence = "consensus"
 citations = [
   { pmid = "14726171", doi = "10.1016/S0140-6736(03)15268-3", url = "https://pubmed.ncbi.nlm.nih.gov/14726171/", title = "Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.", locator = "Abstract, Results" },
 ]
-note = "Second WHO public health action point for Asian populations: 27.5 kg/m2. The source abstract lists the action points without stating their risk level. Applies only to: ethnicity=asian. Alternative to the default who-2004-asia warn range for the same population."
+note = "Second WHO public health action point for Asian populations: 27.5 kg/m2. The source abstract lists the action points without stating their risk level. Applies only to: ethnicity=asian. Source band >= 27.5; stored as the warn high bound 27.5. Alternative to the default who-2004-asia warn range for the same population."
 
 [[range]]
 set = "indian-consensus-as-cited-2026"
 kind = "warn"
-low = 23
+high = 23
 population = "Asian Indian adults (as reported in a 2026 narrative review)"
 evidence = "consensus"
 citations = [
   { pmid = "42739267", doi = "10.3390/diagnostics16172837", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", locator = "Full text, BMI section" },
 ]
-note = "Overweight threshold recommended by the Indian Consensus Group, as quoted by a 2026 narrative review. The primary consensus document was not retrieved. Applies only to: ethnicity=south-asian. Source kind: decision."
+note = "Overweight threshold recommended by the Indian Consensus Group, as quoted by a 2026 narrative review. The primary consensus document was not retrieved. Applies only to: ethnicity=south-asian. Source kind: decision. Source band >= 23; stored as the warn high bound 23."
 
 [[range]]
 set = "alt-6"
 kind = "warn"
-low = 25
+high = 25
 population = "Asian Indian adults (as reported in a 2026 narrative review)"
 evidence = "consensus"
 citations = [
   { pmid = "42739267", doi = "10.3390/diagnostics16172837", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", locator = "Full text, BMI section" },
 ]
-note = "Obesity threshold recommended by the Indian Consensus Group, as quoted by a 2026 narrative review. The primary consensus document was not retrieved. Applies only to: ethnicity=south-asian. Source kind: decision. Alternative to the default indian-consensus-as-cited-2026 warn range for the same population."
+note = "Obesity threshold recommended by the Indian Consensus Group, as quoted by a 2026 narrative review. The primary consensus document was not retrieved. Applies only to: ethnicity=south-asian. Source kind: decision. Source band >= 25; stored as the warn high bound 25. Alternative to the default indian-consensus-as-cited-2026 warn range for the same population."
 
 [[range]]
 set = "global-bmi-mortality-2016"
@@ -170,22 +167,21 @@ note = "All-cause mortality was minimal across BMI 20.0 to <25.0 kg/m2 (referenc
 [[range]]
 set = "zhou-2002-china-as-cited-2026"
 kind = "warn"
-low = 24
 high = 27.9
 population = "Chinese adults (cut-offs suggested by Zhou 2002, as quoted by a 2026 narrative review)"
 evidence = "cohort"
 citations = [
   { pmid = "42739267", doi = "10.3390/diagnostics16172837", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", locator = "Full text, BMI section" },
 ]
-note = "Overweight band for Chinese adults: BMI 24 to 27.9 kg/m2, as quoted by the review. Original study not retrieved. Applies only to: ethnicity=east-asian. Source kind: decision."
+note = "Overweight band for Chinese adults: BMI 24 to 27.9 kg/m2, as quoted by the review. Original study not retrieved. Applies only to: ethnicity=east-asian. Source kind: decision. Source band 24-27.9; stored as the warn high bound 27.9."
 
 [[range]]
 set = "alt-7"
 kind = "warn"
-low = 28
+high = 28
 population = "Chinese adults (cut-offs suggested by Zhou 2002, as quoted by a 2026 narrative review)"
 evidence = "cohort"
 citations = [
   { pmid = "42739267", doi = "10.3390/diagnostics16172837", url = "https://pubmed.ncbi.nlm.nih.gov/42739267/", title = "Clinical Assessment of Obesity Beyond Body Mass Index: Adiposity Evaluation, Body-Composition Phenotyping and Disease Staging: A Narrative Review.", locator = "Full text, BMI section" },
 ]
-note = "Obesity threshold for Chinese adults: BMI 28 kg/m2 or more, as quoted by the review. Original study not retrieved. Applies only to: ethnicity=east-asian. Source kind: decision. Alternative to the default zhou-2002-china-as-cited-2026 warn range for the same population."
+note = "Obesity threshold for Chinese adults: BMI 28 kg/m2 or more, as quoted by the review. Original study not retrieved. Applies only to: ethnicity=east-asian. Source kind: decision. Source band >= 28; stored as the warn high bound 28. Alternative to the default zhou-2002-china-as-cited-2026 warn range for the same population."

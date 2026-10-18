@@ -9,10 +9,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "lu-grimage-2019"
 kind = "warn"
-low = 8.3
+high = 8.3
 population = "Adults in the Framingham and other validation cohorts in Lu et al. 2019; approximate 95th percentile of AgeAccelGrim"
 evidence = "cohort"
 citations = [
   { pmid = "30669119", doi = "10.18632/aging.101684", url = "https://pubmed.ncbi.nlm.nih.gov/30669119/", title = "DNA methylation GrimAge strongly predicts lifespan and healthspan.", locator = "Results, AgeAccelGrim and mortality (full text)" },
 ]
-note = "Fast ageing: AgeAccelGrim at about the top 5% (95th percentile) of the distribution, where the hazard of death is about twice that of the average person in the same stratum (HR about 2.2 from 1.10^8.3). The source text shows '=8.3 years', most likely a symbol lost in extraction for >=8.3. Lower bound only (open above). The bottom 5th percentile (-7.5 years) is not encoded because negative values cannot be matched by the quote check."
+note = "Fast ageing: AgeAccelGrim at about the top 5% (95th percentile) of the distribution, where the hazard of death is about twice that of the average person in the same stratum (HR about 2.2 from 1.10^8.3). The source text shows '=8.3 years', most likely a symbol lost in extraction for >=8.3. Lower bound only (open above). The bottom 5th percentile (-7.5 years) is not encoded because negative values cannot be matched by the quote check. Source band >= 8.3; stored as the warn high bound 8.3."

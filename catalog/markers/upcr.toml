@@ -43,24 +43,24 @@ note = "Spot PCR usually considered normal in children over 2 years, strictly be
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 500
+high = 500
 population = "Adults with suspected or confirmed CKD (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Figure box 'Diagnosis of CKD' (Chapter 3 algorithm)" },
 ]
-note = "PCR of 500 mg/g or more, approximately equivalent to ACR of 300 mg/g or more (A3 albuminuria). Part of the KDIGO criteria for diagnosing CKD with albuminuria. Source kind: diagnostic."
+note = "PCR of 500 mg/g or more, approximately equivalent to ACR of 300 mg/g or more (A3 albuminuria). Part of the KDIGO criteria for diagnosing CKD with albuminuria. Source kind: diagnostic. Source band >= 500; stored as the warn high bound 500."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 442.0
+high = 442.0
 population = "Adults with suspected or confirmed CKD (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Figure box 'Diagnosis of CKD' (Chapter 3 algorithm)" },
 ]
-note = "PCR of 50 mg/mmol or more (the same threshold as 500 mg/g), approximately equivalent to ACR of 30 mg/mmol or more. Converted from the source's mg/mmol (50) to mg/g using factor 8.84. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "PCR of 50 mg/mmol or more (the same threshold as 500 mg/g), approximately equivalent to ACR of 30 mg/mmol or more. Converted from the source's mg/mmol (50) to mg/g using factor 8.84. Source kind: diagnostic. Source band >= 442.0; stored as the warn high bound 442.0. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "clinical"
@@ -77,11 +77,11 @@ note = "Normal spot protein:creatinine ratio in pregnancy, strictly below 30 mg/
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 300.0
+high = 300.0
 when = { pregnant = true }
 population = "Pregnant women with new-onset hypertension, evaluation for significant proteinuria / preeclampsia (specimen: spot-urine)"
 evidence = "cohort"
 citations = [
   { pmid = "41517598", doi = "10.3390/jcm15010345", title = "The Prognostic Significance of Proteinuria Severity in Pregnancy: A Retrospective Cohort Study of Maternal and Neonatal Outcomes", locator = "Introduction" },
 ]
-note = "Spot PCR cut-off of 0.3 mg/mg (equivalent to 300 mg/g or 30 mg/mmol) used to indicate significant proteinuria in pregnancy. The cut-off is quoted from the introduction of this cohort study, which cites its own sources; the ACOG and ISSHP texts were not retrieved, so they are not cited here. Converted from the source's mg/mg (0.3) to mg/g using factor 1000. Source kind: diagnostic."
+note = "Spot PCR cut-off of 0.3 mg/mg (equivalent to 300 mg/g or 30 mg/mmol) used to indicate significant proteinuria in pregnancy. The cut-off is quoted from the introduction of this cohort study, which cites its own sources; the ACOG and ISSHP texts were not retrieved, so they are not cited here. Converted from the source's mg/mg (0.3) to mg/g using factor 1000. Source kind: diagnostic. Source band >= 300.0; stored as the warn high bound 300.0."

@@ -18,7 +18,7 @@ high = 24.0
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 4.706
 high = 19.8
@@ -28,10 +28,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted; the 2.5th to 97.5th percentile interval is used. Converted from the source's mmol/L (1.68-7.07) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted; the 2.5th to 97.5th percentile interval is used. Converted from the source's mmol/L (1.68-7.07) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.162
 high = 15.74
@@ -41,10 +41,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted; the 2.5th to 97.5th percentile interval is used. Converted from the source's mmol/L (2.2-5.62) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted; the 2.5th to 97.5th percentile interval is used. Converted from the source's mmol/L (2.2-5.62) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.123
 high = 19.61
@@ -54,10 +54,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.9-7.0) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.9-7.0) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.442
 high = 17.09
@@ -67,10 +67,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.3-6.1) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.3-6.1) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.179
 high = 19.61
@@ -80,10 +80,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.92-7.0) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.92-7.0) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.722
 high = 17.65
@@ -93,10 +93,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.4-6.3) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.4-6.3) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.403
 high = 20.73
@@ -106,10 +106,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.0-7.4) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.0-7.4) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 7.283
 high = 18.77
@@ -119,10 +119,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.6-6.7) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.6-6.7) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.683
 high = 21.57
@@ -132,10 +132,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.1-7.7) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.1-7.7) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 7.843
 high = 20.56
@@ -145,10 +145,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.8-7.34) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (2.8-7.34) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 9.523
 high = 23.25
@@ -158,10 +158,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.4-8.3) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.4-8.3) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.683
 high = 21.57
@@ -171,10 +171,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.1-7.7) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Converted from the source's mmol/L (3.1-7.7) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 10.36
 high = 22.97
@@ -184,10 +184,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Sample size for the oldest band is small; interpret with caution. Converted from the source's mmol/L (3.7-8.2) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Sample size for the oldest band is small; interpret with caution. Converted from the source's mmol/L (3.7-8.2) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.599
 high = 20.56
@@ -197,10 +197,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33980952", doi = "10.1038/s41598-021-89565-x", title = "Age- and sex-specific reference intervals for blood urea nitrogen in Chinese general population.", locator = "Table 4" },
 ]
-note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Sample size for the oldest band is small; interpret with caution. Converted from the source's mmol/L (3.07-7.34) to mg/dL using factor 2.801."
+note = "Source values are urea in mmol/L (labelled blood urea nitrogen in the source), not converted. Sample size for the oldest band is small; interpret with caution. Converted from the source's mmol/L (3.07-7.34) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 7.563
 high = 21.29
@@ -210,10 +210,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Serum urea, not urea nitrogen: the source reports urea in mmol/L (and mg/dL urea in its conventional block). Numbers are kept as printed in mmol/L and not converted to BUN mg/dL. Converted from the source's mmol/L (2.7-7.6) to mg/dL using factor 2.801."
+note = "Serum urea, not urea nitrogen: the source reports urea in mmol/L (and mg/dL urea in its conventional block). Numbers are kept as printed in mmol/L and not converted to BUN mg/dL. Converted from the source's mmol/L (2.7-7.6) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 5.882
 high = 19.61
@@ -223,10 +223,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Serum urea, not urea nitrogen: numbers kept as printed in mmol/L and not converted to BUN mg/dL. Converted from the source's mmol/L (2.1-7.0) to mg/dL using factor 2.801."
+note = "Serum urea, not urea nitrogen: numbers kept as printed in mmol/L and not converted to BUN mg/dL. Converted from the source's mmol/L (2.1-7.0) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 7.983
 high = 19.69
@@ -236,10 +236,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Serum urea, not urea nitrogen: numbers kept as printed in mmol/L. The paper's infant urea bands (28 days to under 1 year) are not encoded because their limits cannot be expressed in whole years. Converted from the source's mmol/L (2.85-7.03) to mg/dL using factor 2.801."
+note = "Serum urea, not urea nitrogen: numbers kept as printed in mmol/L. The paper's infant urea bands (28 days to under 1 year) are not encoded because their limits cannot be expressed in whole years. Converted from the source's mmol/L (2.85-7.03) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 6.638
 high = 17.81
@@ -249,10 +249,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Serum urea, not urea nitrogen: numbers kept as printed in mmol/L. Infant urea bands not encoded (see the male range). Converted from the source's mmol/L (2.37-6.36) to mg/dL using factor 2.801."
+note = "Serum urea, not urea nitrogen: numbers kept as printed in mmol/L. Infant urea bands not encoded (see the male range). Converted from the source's mmol/L (2.37-6.36) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 2.773
 high = 14.9
@@ -262,10 +262,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Urea (not BUN) sub-year pediatric 95% interval, reported in mmol/L in the source Table 1 (2026 Chinese reference-interval study). Converted from the source's mmol/L (0.99-5.32) to mg/dL using factor 2.801."
+note = "Urea (not BUN) sub-year pediatric 95% interval, reported in mmol/L in the source Table 1 (2026 Chinese reference-interval study). Converted from the source's mmol/L (0.99-5.32) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 3.165
 high = 16.58
@@ -275,4 +275,4 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Urea (not BUN) sub-year pediatric 95% interval, reported in mmol/L in the source Table 1 (2026 Chinese reference-interval study). Converted from the source's mmol/L (1.13-5.92) to mg/dL using factor 2.801."
+note = "Urea (not BUN) sub-year pediatric 95% interval, reported in mmol/L in the source Table 1 (2026 Chinese reference-interval study). Converted from the source's mmol/L (1.13-5.92) to mg/dL using factor 2.801. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."

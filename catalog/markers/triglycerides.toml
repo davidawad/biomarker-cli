@@ -51,7 +51,6 @@ note = "Normal: strictly below 150 mg/dL (ATP III)."
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 150
 high = 199
 when = { age = [20.0, 200] }
 population = "Adults aged 20 years or older"
@@ -59,19 +58,19 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Triglyceride classification" },
 ]
-note = "Borderline-high triglycerides (ATP III)."
+note = "Borderline-high triglycerides (ATP III). Source band 150-199; stored as the warn high bound 199."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 175
+high = 175
 when = { fasting = false }
 population = "Adults with persistently elevated primary hypertriglyceridemia (non-fasting)"
 evidence = "guideline"
 citations = [
   { pmid = "42211141", doi = "10.12997/jla.2026.15.2.216", title = "Statins, LDL-C and Beyond: A Contemporary Review of Atherosclerotic Cardiovascular Risk Assessment and Management.", locator = "Risk-enhancing factors table" },
 ]
-note = "Risk-enhancing factor in the 2018 AHA/ACC framework, as listed in the cited review."
+note = "Risk-enhancing factor in the 2018 AHA/ACC framework, as listed in the cited review. Source band >= 175; stored as the warn high bound 175."
 
 [[range]]
 set = "clinical"
@@ -88,7 +87,6 @@ note = "Acceptable pediatric triglycerides, ages 0-9 years: strictly below 75 mg
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 75
 high = 99
 when = { age = [0.0, 10.0] }
 population = "Children aged 0-9 years (NHLBI expert panel, Table 9-1)"
@@ -96,7 +94,7 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "Borderline-high pediatric triglycerides, ages 0-9 years."
+note = "Borderline-high pediatric triglycerides, ages 0-9 years. Source band 75-99; stored as the warn high bound 99."
 
 [[range]]
 set = "clinical"
@@ -113,7 +111,6 @@ note = "Acceptable pediatric triglycerides, ages 10-19 years: strictly below 90 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 90
 high = 129
 when = { age = [10.0, 20.0] }
 population = "Adolescents aged 10-19 years (NHLBI expert panel, Table 9-1)"
@@ -121,12 +118,11 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "Borderline-high pediatric triglycerides, ages 10-19 years."
+note = "Borderline-high pediatric triglycerides, ages 10-19 years. Source band 90-129; stored as the warn high bound 129."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 200
 high = 499
 when = { age = [20.0, 200] }
 population = "Adults aged 20 years or older"
@@ -134,57 +130,57 @@ evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Triglyceride classification" },
 ]
-note = "High triglycerides (ATP III). Source kind: diagnostic."
+note = "High triglycerides (ATP III). Source kind: diagnostic. Source band 200-499; stored as the warn high bound 499."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 500
+high = 500
 when = { age = [20.0, 200] }
 population = "Adults aged 20 years or older"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Triglyceride classification" },
 ]
-note = "Very high triglycerides (ATP III); ATP III aims first to prevent acute pancreatitis. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Very high triglycerides (ATP III); ATP III aims first to prevent acute pancreatitis. Source kind: diagnostic. Source band >= 500; stored as the warn high bound 500. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 150
+high = 150
 population = "Adults, metabolic syndrome criteria"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf", locator = "Metabolic syndrome criteria table" },
 ]
-note = "Metabolic syndrome component: triglycerides at or above 150 mg/dL (ATP III criteria). Source kind: diagnostic."
+note = "Metabolic syndrome component: triglycerides at or above 150 mg/dL (ATP III criteria). Source kind: diagnostic. Source band >= 150; stored as the warn high bound 150."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 100
+high = 100
 when = { age = [0.0, 10.0] }
 population = "Children aged 0-9 years (NHLBI expert panel, Table 9-1)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "High pediatric triglycerides, ages 0-9 years (>= 100 mg/dL). Source kind: diagnostic."
+note = "High pediatric triglycerides, ages 0-9 years (>= 100 mg/dL). Source kind: diagnostic. Source band >= 100; stored as the warn high bound 100."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 130
+high = 130
 when = { age = [10.0, 20.0] }
 population = "Adolescents aged 10-19 years (NHLBI expert panel, Table 9-1)"
 evidence = "guideline"
 citations = [
   { url = "https://www.nhlbi.nih.gov/files/docs/guidelines/peds_guidelines_full.pdf", locator = "Table 9-1" },
 ]
-note = "High pediatric triglycerides, ages 10-19 years (>= 130 mg/dL). Source kind: diagnostic."
+note = "High pediatric triglycerides, ages 10-19 years (>= 130 mg/dL). Source kind: diagnostic. Source band >= 130; stored as the warn high bound 130."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 47.83
 high = 206.4
@@ -194,10 +190,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1" },
 ]
-note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (0.54-2.33) to mg/dL using factor 88.57."
+note = "95% reference interval, first trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (0.54-2.33) to mg/dL using factor 88.57. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 148.8
 high = 502.2
@@ -207,10 +203,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "34498500", doi = "10.1080/07853890.2021.1974082", title = "Establishment of trimester-specific reference intervals of serum lipids and the associations with pregnancy complications and adverse perinatal outcomes: a population-based prospective study.", locator = "Table 1" },
 ]
-note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.68-5.67) to mg/dL using factor 88.57."
+note = "95% reference interval, third trimester. Numbers are in mmol/L as the source states them. Converted from the source's mmol/L (1.68-5.67) to mg/dL using factor 88.57. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 44
 high = 359
@@ -220,10 +216,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 0.50-4.06 mmol/L)."
+note = "95% reference interval, Egyptian men, 18-65 years. Conventional mg/dL values from Table 3 (SI 0.50-4.06 mmol/L). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 36
 high = 240
@@ -233,10 +229,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 0.40-2.72 mmol/L)."
+note = "95% reference interval, Egyptian women under 45 years. Conventional mg/dL values from Table 3 (SI 0.40-2.72 mmol/L). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 51
 high = 311
@@ -246,10 +242,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 0.57-3.52 mmol/L)."
+note = "95% reference interval, Egyptian women, 45 years and over. Conventional mg/dL values from Table 3 (SI 0.57-3.52 mmol/L). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 38.97
 high = 225.0
@@ -259,10 +255,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (0.44-2.54) to mg/dL using factor 88.57."
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (0.44-2.54) to mg/dL using factor 88.57. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 27.46
 high = 184.2
@@ -272,10 +268,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (0.31-2.08) to mg/dL using factor 88.57."
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (0.31-2.08) to mg/dL using factor 88.57. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 31.0
 high = 163.9
@@ -285,39 +281,39 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (0.35-1.85) to mg/dL using factor 88.57."
+note = "95% reference interval, pediatric. Numbers are in mmol/L as the source states them (SI only). Converted from the source's mmol/L (0.35-1.85) to mg/dL using factor 88.57. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "clinical"
 kind = "critical"
-low = 880
+high = 880
 population = "Adults, non-fasting or fasting samples"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract" },
 ]
-note = "Life-threatening concentration: separate referral is required for pancreatitis risk. The source gives 10 mmol/L and 880 mg/dL."
+note = "Life-threatening concentration: separate referral is required for pancreatitis risk. The source gives 10 mmol/L and 880 mg/dL. Source band >= 880; stored as the critical high bound 880."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 175
+high = 175
 when = { fasting = false }
 population = "Non-fasting samples (lab flagging, EAS/EFLM consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Abstract" },
 ]
-note = "Laboratory flag for abnormal non-fasting triglycerides."
+note = "Laboratory flag for abnormal non-fasting triglycerides. Source band >= 175; stored as the warn high bound 175."
 
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 150
+high = 150
 when = { fasting = true }
 population = "Fasting samples (lab flagging, EAS/EFLM consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "27122601", doi = "10.1093/eurheartj/ehw152", title = "Fasting is not routinely required for determination of a lipid profile: clinical and laboratory implications including flagging at desirable concentration cut-points-a joint consensus statement from the European Atherosclerosis Society and European Federation of Clinical Chemistry and Laboratory Medicine.", locator = "Results / flagging section (full text)" },
 ]
-note = "Laboratory flag for abnormal fasting triglycerides."
+note = "Laboratory flag for abnormal fasting triglycerides. Source band >= 150; stored as the warn high bound 150."

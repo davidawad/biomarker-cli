@@ -8,21 +8,21 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "georgia-cf-nbs-algorithm"
 kind = "warn"
-low = 55
+high = 55
 population = "Newborns screened in the Georgia (US) cystic fibrosis newborn screening program (specimen: dried-blood-spot)"
 evidence = "cohort"
 citations = [
   { pmid = "41133699", doi = "10.3390/ijns11040087", url = "https://pubmed.ncbi.nlm.nih.gov/41133699/", title = "Evaluating Georgia's Cystic Fibrosis Newborn Screening Algorithm to Inform Improvement Recommendations.", locator = "Abstract" },
 ]
-note = "Program-specific first-tier cut-off. Values at or above 55 ng/mL trigger CFTR genetic testing. Cut-offs differ between programs and need local validation, so this is not a universal threshold. Source kind: diagnostic."
+note = "Program-specific first-tier cut-off. Values at or above 55 ng/mL trigger CFTR genetic testing. Cut-offs differ between programs and need local validation, so this is not a universal threshold. Source kind: diagnostic. Source band >= 55; stored as the warn high bound 55."
 
 [[range]]
 set = "brazil-irt-irt-2024"
 kind = "warn"
-low = 70
+high = 70
 population = "Newborns in a Northeastern Brazil cystic fibrosis newborn screening program, using the IRT/IRT two-tier protocol"
 evidence = "cohort"
 citations = [
   { pmid = "39194088", doi = "10.1590/0102-311XEN150623", url = "https://pubmed.ncbi.nlm.nih.gov/39194088/", title = "IRT/IRT as a newborn cystic fibrosis screening method: optimal cutoff points for a mixed population.", locator = "Abstract" },
 ]
-note = "Second-tier IRT cut-off of the current protocol in that program (70 ng/mL). The same study found that raising it to 90 ng/mL performed similarly with fewer false positives. This value is program-specific and not a general standard. Source kind: diagnostic."
+note = "Second-tier IRT cut-off of the current protocol in that program (70 ng/mL). The same study found that raising it to 90 ng/mL performed similarly with fewer false positives. This value is program-specific and not a general standard. Source kind: diagnostic. Source band >= 70; stored as the warn high bound 70."

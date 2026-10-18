@@ -21,56 +21,54 @@ note = "Respiration rate 12-20 breaths/min is the NEWS2 score-0 band, i.e. the n
 [[range]]
 set = "rcp-news2-2017"
 kind = "critical"
-high = 8
+low = 8
 population = "Adults, as used in the NEWS2 early warning score chart (score 3 band for respiration rate)"
 evidence = "consensus"
 citations = [
   { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)" },
 ]
-note = "NEWS2 score-3 band: respiration rate of 8 breaths/min or fewer (scores 3 for a single parameter; a reduced rate indicates CNS depression or narcosis). Boundary as printed in the chart."
+note = "NEWS2 score-3 band: respiration rate of 8 breaths/min or fewer (scores 3 for a single parameter; a reduced rate indicates CNS depression or narcosis). Boundary as printed in the chart. Source band <= 8; stored as the critical low bound 8."
 
 [[range]]
 set = "alt-1"
 kind = "critical"
-low = 25
+high = 25
 population = "Adults, as used in the NEWS2 early warning score chart (score 3 band for respiration rate)"
 evidence = "consensus"
 citations = [
   { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)" },
 ]
-note = "NEWS2 score-3 band: respiration rate of 25 breaths/min or more. Boundary as printed in the chart. Alternative to the default rcp-news2-2017 critical range for the same population."
+note = "NEWS2 score-3 band: respiration rate of 25 breaths/min or more. Boundary as printed in the chart. Source band >= 25; stored as the critical high bound 25. Alternative to the default rcp-news2-2017 critical range for the same population."
 
 [[range]]
 set = "rcp-news2-2017"
 kind = "warn"
 low = 9
-high = 11
 population = "Adults, as used in the NEWS2 early warning score chart (score 1 band for respiration rate)"
 evidence = "consensus"
 citations = [
   { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)" },
 ]
-note = "NEWS2 score-1 band: respiration rate 9-11 breaths/min (low-ish rate that adds one point). Boundaries inclusive as printed."
+note = "NEWS2 score-1 band: respiration rate 9-11 breaths/min (low-ish rate that adds one point). Boundaries inclusive as printed. Source band 9-11; stored as the warn low bound 9."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 21
 high = 24
 population = "Adults, as used in the NEWS2 early warning score chart (score 2 band for respiration rate)"
 evidence = "consensus"
 citations = [
   { url = "https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf", locator = "Chart 1: The NEWS scoring system (Respiration rate, per minute)" },
 ]
-note = "NEWS2 score-2 band: respiration rate 21-24 breaths/min. Boundaries inclusive as printed. Alternative to the default rcp-news2-2017 warn range for the same population."
+note = "NEWS2 score-2 band: respiration rate 21-24 breaths/min. Boundaries inclusive as printed. Source band 21-24; stored as the warn high bound 24. Alternative to the default rcp-news2-2017 warn range for the same population."
 
 [[range]]
 set = "sepsis-3-2016-qsofa"
 kind = "warn"
-low = 22
+high = 22
 population = "Adults with suspected infection outside the ICU (out-of-hospital, emergency department or general ward) in the Sepsis-3 consensus"
 evidence = "consensus"
 citations = [
   { pmid = "26903338", doi = "10.1001/jama.2016.0287", url = "https://pubmed.ncbi.nlm.nih.gov/26903338/", title = "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3).", locator = "Abstract" },
 ]
-note = "qSOFA criterion: respiratory rate of 22/min or greater (one of three bedside criteria; two or more positive criteria indicate higher risk of poor outcome). A screening threshold, not a diagnostic cut-off for sepsis. Source kind: decision."
+note = "qSOFA criterion: respiratory rate of 22/min or greater (one of three bedside criteria; two or more positive criteria indicate higher risk of poor outcome). A screening threshold, not a diagnostic cut-off for sepsis. Source kind: decision. Source band >= 22; stored as the warn high bound 22."

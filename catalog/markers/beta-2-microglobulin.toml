@@ -35,21 +35,21 @@ note = "Non-parametric reference interval for older adults, measured by immunone
 [[range]]
 set = "iss-2005"
 kind = "warn"
-high = 3.5
+low = 3.5
 population = "Newly diagnosed multiple myeloma patients (International Staging System derivation and validation)"
 evidence = "cohort"
 citations = [
   { pmid = "15809451", doi = "10.1200/JCO.2005.04.242", url = "https://pubmed.ncbi.nlm.nih.gov/15809451/", title = "International staging system for multiple myeloma.", locator = "Abstract, Results" },
 ]
-note = "ISS stage I (lowest risk) requires beta-2 microglobulin below 3.5 mg/L together with serum albumin >= 3.5 g/dL. Boundary is < 3.5 mg/L (strictly less than). Stage I median survival 62 months in the original cohort. Applies only to: markers={\"albumin\": \">=3.5\"}. Source kind: decision."
+note = "ISS stage I (lowest risk) requires beta-2 microglobulin below 3.5 mg/L together with serum albumin >= 3.5 g/dL. Boundary is < 3.5 mg/L (strictly less than). Stage I median survival 62 months in the original cohort. Applies only to: markers={\"albumin\": \">=3.5\"}. Source kind: decision. Source band <= 3.5; stored as the warn low bound 3.5."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 5.5
+high = 5.5
 population = "Newly diagnosed multiple myeloma patients (International Staging System derivation and validation)"
 evidence = "cohort"
 citations = [
   { pmid = "15809451", doi = "10.1200/JCO.2005.04.242", url = "https://pubmed.ncbi.nlm.nih.gov/15809451/", title = "International staging system for multiple myeloma.", locator = "Abstract, Results" },
 ]
-note = "ISS stage III (highest risk) is beta-2 microglobulin >= 5.5 mg/L regardless of albumin. Boundary is >= 5.5 mg/L. Median survival 29 months in the original cohort. Source kind: decision. Alternative to the default iss-2005 warn range for the same population."
+note = "ISS stage III (highest risk) is beta-2 microglobulin >= 5.5 mg/L regardless of albumin. Boundary is >= 5.5 mg/L. Median survival 29 months in the original cohort. Source kind: decision. Source band >= 5.5; stored as the warn high bound 5.5. Alternative to the default iss-2005 warn range for the same population."

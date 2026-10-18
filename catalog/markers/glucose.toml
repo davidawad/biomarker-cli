@@ -41,7 +41,6 @@ legacy = true
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 100
 high = 125
 when = { fasting = true }
 population = "Adults without a previous diabetes diagnosis"
@@ -49,12 +48,11 @@ evidence = "guideline"
 citations = [
   { pmid = "41928882", doi = "10.3389/fendo.2026.1789777", title = "The impact of glucose and metabolic disturbances on white matter hyperintensity volume in apparently healthy adults.", locator = "Table 1" },
 ]
-note = "Impaired fasting glucose (prediabetes) by ADA criteria."
+note = "Impaired fasting glucose (prediabetes) by ADA criteria. Source band 100-125; stored as the warn high bound 125."
 
 [[range]]
-set = "alt-1"
+set = "clinical"
 kind = "warn"
-low = 110
 high = 125
 when = { fasting = true }
 population = "Adults without a previous diabetes diagnosis"
@@ -62,7 +60,7 @@ evidence = "guideline"
 citations = [
   { pmid = "41598648", doi = "10.3390/jcm15020710", title = "Should Prediabetes Be Classified as a Treatable Disease?", locator = "Section 3 (Definition of Prediabetes)" },
 ]
-note = "Impaired fasting glucose by WHO criteria (ADA uses 100-125 mg/dL). Alternative to the default clinical warn range for the same population."
+note = "Impaired fasting glucose by WHO criteria (ADA uses 100-125 mg/dL). Source band 110-125; stored as the warn high bound 125."
 
 [[range]]
 set = "clinical"
@@ -79,26 +77,26 @@ note = "Normal fasting plasma glucose category, strictly below 5.6 mmol/L. Sourc
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 126
+high = 126
 when = { fasting = true }
 population = "Adults"
 evidence = "guideline"
 citations = [
   { pmid = "41928882", doi = "10.3389/fendo.2026.1789777", title = "The impact of glucose and metabolic disturbances on white matter hyperintensity volume in apparently healthy adults.", locator = "Table 1" },
 ]
-note = "Diabetes by fasting plasma glucose (ADA); confirm on a second day unless unequivocal symptoms. Source kind: diagnostic."
+note = "Diabetes by fasting plasma glucose (ADA); confirm on a second day unless unequivocal symptoms. Source kind: diagnostic. Source band >= 126; stored as the warn high bound 126."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 100.9
+high = 100.9
 when = { pregnant = true, fasting = true }
 population = "Pregnant women"
 evidence = "guideline"
 citations = [
   { url = "https://www.nice.org.uk/guidance/ng3/chapter/recommendations", locator = "Recommendation 1.2.8" },
 ]
-note = "Gestational diabetes by NICE: fasting glucose at or above this value at diagnosis. Converted from the source's mmol/L (5.6) to mg/dL using factor 18.016. Source kind: diagnostic."
+note = "Gestational diabetes by NICE: fasting glucose at or above this value at diagnosis. Converted from the source's mmol/L (5.6) to mg/dL using factor 18.016. Source kind: diagnostic. Source band >= 100.9; stored as the warn high bound 100.9."
 
 [[range]]
 set = "target"
@@ -126,7 +124,7 @@ citations = [
 note = "Fasting or pre-prandial glucose goal for healthy older adults with diabetes, as tabulated by a review of the ADA 2023 recommendation. Units given in mg/dL in the source. Source kind: target."
 
 [[range]]
-set = "alt-1"
+set = "target"
 kind = "optimal"
 low = 90
 high = 150
@@ -136,22 +134,22 @@ evidence = "guideline"
 citations = [
   { pmid = "37841649", doi = "10.2147/cia.s423122", title = "Management of Glucose-Lowering Therapy in Older Adults with Type 2 Diabetes: Challenges and Opportunities.", locator = "Table (Glycemic targets in older adults, ADA 2023 row)" },
 ]
-note = "Fasting or pre-prandial glucose goal for complex/intermediate older adults with diabetes, as tabulated from ADA 2023 by a review. The matching HbA1c goal is <8.0%. Source kind: target. Alternative to the default target optimal range for the same population."
+note = "Fasting or pre-prandial glucose goal for complex/intermediate older adults with diabetes, as tabulated from ADA 2023 by a review. The matching HbA1c goal is <8.0%. Source kind: target."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 200
+high = 200
 when = { fasting = false }
 population = "Adults with classic symptoms of hyperglycaemia (random, non-fasting sample)"
 evidence = "guideline"
 citations = [
   { pmid = "42321865", doi = "10.1186/s13098-026-02213-0", title = "Diagnostic utility of fasting versus non-fasting blood glucose: contextualising testing strategies-a narrative review.", locator = "Introduction (ADA diagnostic criteria paragraph)" },
 ]
-note = "Diabetes by random plasma glucose (ADA), only in the presence of classic symptoms of hyperglycaemia; confirm per ADA criteria. Does not require fasting. Source kind: diagnostic."
+note = "Diabetes by random plasma glucose (ADA), only in the presence of classic symptoms of hyperglycaemia; confirm per ADA criteria. Does not require fasting. Source kind: diagnostic. Source band >= 200; stored as the warn high bound 200."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 56
 high = 111
@@ -161,10 +159,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Egyptian reference interval for glucose, age partition only: the source did not partition glucose by sex (MF = both sexes). Fasting status is not stated in the quoted text. Source reports 3.15-6.19 mmol/L; the mg/dL conversion in the same row is used here."
+note = "Egyptian reference interval for glucose, age partition only: the source did not partition glucose by sex (MF = both sexes). Fasting status is not stated in the quoted text. Source reports 3.15-6.19 mmol/L; the mg/dL conversion in the same row is used here. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 58
 high = 128
@@ -174,10 +172,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Egyptian reference interval for glucose, age partition only (MF = both sexes, no sex partition). Fasting status is not stated in the quoted text. Source reports 3.22-7.56 mmol/L; the mg/dL values in the same row are used here."
+note = "Egyptian reference interval for glucose, age partition only (MF = both sexes, no sex partition). Fasting status is not stated in the quoted text. Source reports 3.22-7.56 mmol/L; the mg/dL values in the same row are used here. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 69.54
 high = 104.5
@@ -187,10 +185,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. The glucose-oxidase method (Glu-GOD) in the same table gives 3.86-5.78 mmol/L for this age group. Converted from the source's mmol/L (3.86-5.8) to mg/dL using factor 18.016."
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. The glucose-oxidase method (Glu-GOD) in the same table gives 3.86-5.78 mmol/L for this age group. Converted from the source's mmol/L (3.86-5.8) to mg/dL using factor 18.016. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 64.86
 high = 106.3
@@ -200,10 +198,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Glucose-oxidase (Glu-GOD) gives 3.63-6.02 mmol/L for this age group. Converted from the source's mmol/L (3.6-5.9) to mg/dL using factor 18.016."
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Glucose-oxidase (Glu-GOD) gives 3.63-6.02 mmol/L for this age group. Converted from the source's mmol/L (3.6-5.9) to mg/dL using factor 18.016. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 63.96
 high = 108.1
@@ -213,10 +211,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Male interval only; see the female range for the sex-specific value. Converted from the source's mmol/L (3.55-6.0) to mg/dL using factor 18.016."
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Male interval only; see the female range for the sex-specific value. Converted from the source's mmol/L (3.55-6.0) to mg/dL using factor 18.016. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 62.7
 high = 106.8
@@ -226,42 +224,41 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Female interval from the same row as the male range. Converted from the source's mmol/L (3.48-5.93) to mg/dL using factor 18.016."
+note = "Hexokinase method (Glu-HK). Source values in mmol/L, kept exactly. Female interval from the same row as the male range. Converted from the source's mmol/L (3.48-5.93) to mg/dL using factor 18.016. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
 low = 54
-high = 70
 population = "People with diabetes (CGM consensus definition)"
 evidence = "consensus"
 citations = [
   { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 1 (CGM metrics)" },
 ]
-note = "Level 1 hypoglycaemia: glucose below 70 mg/dL, 54-69 mg/dL band. Consensus thresholds apply to CGM and plasma glucose monitoring. Alternative to the default clinical warn range for the same population."
+note = "Level 1 hypoglycaemia: glucose below 70 mg/dL, 54-69 mg/dL band. Consensus thresholds apply to CGM and plasma glucose monitoring. Source band 54-70; stored as the warn low bound 54. Alternative to the default clinical warn range for the same population."
 
 [[range]]
 set = "clinical"
 kind = "critical"
-high = 54
+low = 54
 population = "People with diabetes (CGM consensus definition)"
 evidence = "consensus"
 citations = [
   { pmid = "31177185", doi = "10.2337/dci19-0028", title = "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.", locator = "Table 1 (CGM metrics)" },
 ]
-note = "Level 2 (clinically significant) hypoglycaemia: strictly below 54 mg/dL."
+note = "Level 2 (clinically significant) hypoglycaemia: strictly below 54 mg/dL. Source band <= 54; stored as the critical low bound 54."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 92
+high = 92
 when = { pregnant = true, fasting = true }
 population = "Pregnant women, 75 g OGTT (IADPSG criteria)"
 evidence = "consensus"
 citations = [
   { pmid = "20190296", doi = "10.2337/dc09-1848", title = "International association of diabetes and pregnancy study groups recommendations on the diagnosis and classification of hyperglycemia in pregnancy.", locator = "Threshold table (consensus thresholds)" },
 ]
-note = "Gestational diabetes if any one OGTT value meets or exceeds the threshold (IADPSG 2010). Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Gestational diabetes if any one OGTT value meets or exceeds the threshold (IADPSG 2010). Source kind: diagnostic. Source band >= 92; stored as the warn high bound 92. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "optimal"

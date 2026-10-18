@@ -18,7 +18,7 @@ high = 1.2
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.3
 high = 1.5
@@ -28,10 +28,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Abstract (Results)" },
 ]
-note = "Combined adult 95% reference interval; the source also reports sex-specific intervals (see the male and female ranges)."
+note = "Combined adult 95% reference interval; the source also reports sex-specific intervals (see the male and female ranges). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.2398
 high = 1.56
@@ -41,10 +41,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Results (sex-specific 95% RIs) and Table 4" },
 ]
-note = "Male 95% reference interval; source states the value in µmol/L only. Converted from the source's µmol/L (4.1-26.68) to mg/dL using factor 0.05848."
+note = "Male 95% reference interval; source states the value in µmol/L only. Converted from the source's µmol/L (4.1-26.68) to mg/dL using factor 0.05848. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.3
 high = 1.4
@@ -54,10 +54,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38722987", doi = "10.1371/journal.pgph.0001865", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081272/", title = "Establishment of dry-chemistry-based reference intervals of routine liver function tests for the adult population of Gandaki Province, Nepal.", locator = "Results (sex-specific 95% RIs) and Table 4" },
 ]
-note = "Female 95% reference interval; source states the value in µmol/L only. Converted from the source's µmol/L (5.13-23.94) to mg/dL using factor 0.05848."
+note = "Female 95% reference interval; source states the value in µmol/L only. Converted from the source's µmol/L (5.13-23.94) to mg/dL using factor 0.05848. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.05848
 high = 0.7018
@@ -67,10 +67,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "25445233", doi = "10.1016/j.clinbiochem.2014.10.011", title = "Clinical decision limits for interpretation of direct bilirubin--a CALIPER study of healthy multiethnic children and case report reviews.", locator = "Abstract (Results)" },
 ]
-note = "Pediatric total bilirubin reference interval from CALIPER; the neonatal phototherapy nomograms are not used. Converted from the source's µmol/L (1-12) to mg/dL using factor 0.05848."
+note = "Pediatric total bilirubin reference interval from CALIPER; the neonatal phototherapy nomograms are not used. Converted from the source's µmol/L (1-12) to mg/dL using factor 0.05848. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.66
 high = 8.04
@@ -80,10 +80,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38087776", doi = "10.1002/jcla.24995", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", locator = "Reference interval table (total bilirubin rows)" },
 ]
-note = "Age-specific CLSI EP28-A3 interval; wider confidence intervals at the upper limit in early life."
+note = "Age-specific CLSI EP28-A3 interval; wider confidence intervals at the upper limit in early life. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.42
 high = 4.13
@@ -93,9 +93,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38087776", doi = "10.1002/jcla.24995", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", locator = "Reference interval table (total bilirubin rows)" },
 ]
+note = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.36
 high = 1.77
@@ -105,10 +106,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "38087776", doi = "10.1002/jcla.24995", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10756939/", title = "Age-specific reference intervals for liver function tests in healthy neonates, infants, and young children in Iran.", locator = "Reference interval table (total bilirubin rows)" },
 ]
-note = "Upper age limit is approximate (30 months is 2.5 years)."
+note = "Upper age limit is approximate (30 months is 2.5 years). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.15
 high = 1.2
@@ -118,10 +119,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Adult male 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
+note = "Adult male 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.13
 high = 0.72
@@ -131,10 +132,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979267/", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Adult female 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted."
+note = "Adult female 95% reference interval. The source conventional-unit block is labelled ug/dL, but the values are the mg/dL range (they match the SI block, 2.5-20.6 umol/L for total bilirubin); values are used as mg/dL, not converted. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.1415
 high = 0.7456
@@ -144,10 +145,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval; the source states this in umol/L. Converted from the source's µmol/L (2.42-12.75) to mg/dL using factor 0.05848."
+note = "Pediatric 95% interval; the source states this in umol/L. Converted from the source's µmol/L (2.42-12.75) to mg/dL using factor 0.05848. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.2234
 high = 1.006
@@ -157,10 +158,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Pediatric 95% interval; the source states this in umol/L. Converted from the source's µmol/L (3.82-17.2) to mg/dL using factor 0.05848."
+note = "Pediatric 95% interval; the source states this in umol/L. Converted from the source's µmol/L (3.82-17.2) to mg/dL using factor 0.05848. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.1193
 high = 1.778
@@ -170,10 +171,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's µmol/L (2.04-30.4) to mg/dL using factor 0.05848."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's µmol/L (2.04-30.4) to mg/dL using factor 0.05848. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 0.0807
 high = 0.5825
@@ -183,16 +184,16 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13196472/", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's µmol/L (1.38-9.96) to mg/dL using factor 0.05848."
+note = "Sub-year pediatric 95% interval from a 2026 Chinese reference-interval study (Table 1). Converted from the source's µmol/L (1.38-9.96) to mg/dL using factor 0.05848. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 1.0
+high = 1.0
 when = { conditions = ["gilbert-syndrome"] }
 population = "Adults and children with unconjugated hyperbilirubinaemia (Gilbert syndrome definition)"
 evidence = "consensus"
 citations = [
   { pmid = "37738404", doi = "10.1097/HC9.0000000000000245", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10519483/", title = "Clinical and genetic definition of serum bilirubin levels for the diagnosis of Gilbert syndrome and hypobilirubinemia.", locator = "Abstract (Background and Aims)" },
 ]
-note = "Total bilirubin at or above 1 mg/dL (17 umol/L) used as the phenotypic definition of Gilbert syndrome in a cohort study; not a population reference limit. Source kind: diagnostic."
+note = "Total bilirubin at or above 1 mg/dL (17 umol/L) used as the phenotypic definition of Gilbert syndrome in a cohort study; not a population reference limit. Source kind: diagnostic. Source band >= 1.0; stored as the warn high bound 1.0."

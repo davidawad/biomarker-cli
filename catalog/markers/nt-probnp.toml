@@ -9,24 +9,24 @@ aliases = ["nt-pro-bnp", "n-terminal pro-bnp", "ntprobnp"]
 [[range]]
 set = "hf-guideline-review-2026"
 kind = "warn"
-low = 125
+high = 125
 population = "Adults assessed for suspected heart failure in the community (non-acute setting) (setting: ambulatory)"
 evidence = "guideline"
 citations = [
   { pmid = "41778370", doi = "10.1093/ehjqcco/qcag029", url = "https://pubmed.ncbi.nlm.nih.gov/41778370/", title = "Heart failure with reduced ejection fraction: a systematic review of clinical practice guidelines and recommendations.", locator = "Full text, guideline diagnostic criteria table" },
 ]
-note = "Community (non-acute) heart failure diagnostic criterion: NT-proBNP at or above 125 pg/mL (boundary inclusive). Values below this are used to argue against heart failure in the non-acute setting. Criteria are as tabulated in a systematic review of HF guideline recommendations. Source kind: decision."
+note = "Community (non-acute) heart failure diagnostic criterion: NT-proBNP at or above 125 pg/mL (boundary inclusive). Values below this are used to argue against heart failure in the non-acute setting. Criteria are as tabulated in a systematic review of HF guideline recommendations. Source kind: decision. Source band >= 125; stored as the warn high bound 125."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 300
+high = 300
 population = "Adults presenting to the emergency department with acute dyspnoea (setting: acute-dyspnoea)"
 evidence = "guideline"
 citations = [
   { pmid = "41778370", doi = "10.1093/ehjqcco/qcag029", url = "https://pubmed.ncbi.nlm.nih.gov/41778370/", title = "Heart failure with reduced ejection fraction: a systematic review of clinical practice guidelines and recommendations.", locator = "Full text, guideline diagnostic criteria table" },
 ]
-note = "Emergency-setting heart failure diagnostic criterion: NT-proBNP at or above 300 pg/mL (boundary inclusive). Below 300 pg/mL, acute heart failure is unlikely in the emergency setting (see the rule-out range). Source kind: decision. Alternative to the default hf-guideline-review-2026 warn range for the same population."
+note = "Emergency-setting heart failure diagnostic criterion: NT-proBNP at or above 300 pg/mL (boundary inclusive). Below 300 pg/mL, acute heart failure is unlikely in the emergency setting (see the rule-out range). Source kind: decision. Source band >= 300; stored as the warn high bound 300. Alternative to the default hf-guideline-review-2026 warn range for the same population."
 
 [[range]]
 set = "clinical"
@@ -55,7 +55,7 @@ note = "Age- and sex-specific 97.5th percentile upper reference limit for NT-pro
 [[range]]
 set = "pride-2005"
 kind = "warn"
-low = 450
+high = 450
 when = { age = [0.0, 50.0] }
 population = "Patients presenting to the emergency department with acute dyspnoea, aged under 50 years (PRIDE study) (setting: acute-dyspnoea)"
 evidence = "cohort"
@@ -63,12 +63,12 @@ citations = [
   { pmid = "15820160", doi = "10.1016/j.amjcard.2004.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/15820160/", title = "The N-terminal Pro-BNP investigation of dyspnea in the emergency department (PRIDE) study.", locator = "Abstract, Results" },
   { pmid = "39135432", doi = "10.1002/ehf2.15017", url = "https://pubmed.ncbi.nlm.nih.gov/39135432/", title = "Refining the diagnosis of acute heart failure in the elderly.", locator = "Discussion, rule-in strategies" },
 ]
-note = "Age-stratified rule-in cut-off for acute heart failure, age under 50 years. The PRIDE abstract phrases this as '>450 pg/ml' (strict); the review phrasing is '≥450'. Boundary treated as inclusive here. Source kind: decision."
+note = "Age-stratified rule-in cut-off for acute heart failure, age under 50 years. The PRIDE abstract phrases this as '>450 pg/ml' (strict); the review phrasing is '≥450'. Boundary treated as inclusive here. Source kind: decision. Source band >= 450; stored as the warn high bound 450."
 
 [[range]]
 set = "ehf-2024-elderly-ahf"
 kind = "warn"
-low = 900
+high = 900
 when = { age = [50.0, 75.0] }
 population = "Adults aged 50 to 74 years presenting with acute dyspnoea (setting: acute-dyspnoea)"
 evidence = "cohort"
@@ -76,12 +76,12 @@ citations = [
   { pmid = "39135432", doi = "10.1002/ehf2.15017", url = "https://pubmed.ncbi.nlm.nih.gov/39135432/", title = "Refining the diagnosis of acute heart failure in the elderly.", locator = "Discussion, rule-in strategies" },
   { pmid = "15820160", doi = "10.1016/j.amjcard.2004.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/15820160/", title = "The N-terminal Pro-BNP investigation of dyspnea in the emergency department (PRIDE) study.", locator = "Abstract, Results" },
 ]
-note = "Age-stratified rule-in cut-off for acute heart failure, ages 50 to 74 years (boundary inclusive, >=900). The 1800 pg/mL cut-off applies from age 75. Source kind: decision."
+note = "Age-stratified rule-in cut-off for acute heart failure, ages 50 to 74 years (boundary inclusive, >=900). The 1800 pg/mL cut-off applies from age 75. Source kind: decision. Source band >= 900; stored as the warn high bound 900."
 
 [[range]]
 set = "ehf-2024-over75-threshold"
 kind = "warn"
-low = 3474
+high = 3474
 when = { age = [75.0, 200] }
 population = "Hospitalised patients aged 75 years or older with acute dyspnoea and eGFR below 30 mL/min (APHP multicentre cohort) (setting: acute-dyspnoea)"
 evidence = "cohort"
@@ -89,12 +89,12 @@ citations = [
   { pmid = "38923835", doi = "10.1002/ehf2.14894", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", locator = "Abstract, Results" },
   { pmid = "38923835", doi = "10.1002/ehf2.14894", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", locator = "Abstract, Methods" },
 ]
-note = "Subgroup rule-in threshold for acute heart failure in older patients with severely reduced kidney function (eGFR below 30 mL/min). Threshold reported with a 90% PPV; derived in a single multicentre cohort and not a general guideline value. Applies only to: markers={\"egfr\": \"<30\"}. Source kind: decision."
+note = "Subgroup rule-in threshold for acute heart failure in older patients with severely reduced kidney function (eGFR below 30 mL/min). Threshold reported with a 90% PPV; derived in a single multicentre cohort and not a general guideline value. Applies only to: markers={\"egfr\": \"<30\"}. Source kind: decision. Source band >= 3474; stored as the warn high bound 3474."
 
 [[range]]
 set = "ehf-2024-over75-threshold"
 kind = "warn"
-low = 1375
+high = 1375
 when = { age = [75.0, 200], conditions = ["obesity"] }
 population = "Hospitalised patients aged 75 years or older with acute dyspnoea and obesity (APHP multicentre cohort) (setting: acute-dyspnoea)"
 evidence = "cohort"
@@ -102,27 +102,27 @@ citations = [
   { pmid = "38923835", doi = "10.1002/ehf2.14894", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", locator = "Abstract, Results" },
   { pmid = "38923835", doi = "10.1002/ehf2.14894", url = "https://pubmed.ncbi.nlm.nih.gov/38923835/", title = "Setting the optimal threshold of NT-proBNP and BNP for the diagnosis of heart failure in patients over 75 years.", locator = "Abstract, Methods" },
 ]
-note = "Subgroup rule-in threshold for acute heart failure in older patients with obesity, reported with an 85% PPV. Derived in a single multicentre cohort; obesity lowers natriuretic peptide levels, so this threshold is lower than the general over-75 value. Source kind: decision."
+note = "Subgroup rule-in threshold for acute heart failure in older patients with obesity, reported with an 85% PPV. Derived in a single multicentre cohort; obesity lowers natriuretic peptide levels, so this threshold is lower than the general over-75 value. Source kind: decision. Source band >= 1375; stored as the warn high bound 1375."
 
 [[range]]
 set = "pride-2005"
 kind = "warn"
-high = 300
+low = 300
 population = "Patients presenting to the emergency department with acute dyspnoea (PRIDE study) (setting: acute-dyspnoea)"
 evidence = "cohort"
 citations = [
   { pmid = "15820160", doi = "10.1016/j.amjcard.2004.12.032", url = "https://pubmed.ncbi.nlm.nih.gov/15820160/", title = "The N-terminal Pro-BNP investigation of dyspnea in the emergency department (PRIDE) study.", locator = "Abstract, Results" },
 ]
-note = "Rule-out threshold for acute heart failure in the emergency department: NT-proBNP below 300 pg/mL (strict <300). The study reports a negative predictive value of 99% at this cut-off. Source kind: decision."
+note = "Rule-out threshold for acute heart failure in the emergency department: NT-proBNP below 300 pg/mL (strict <300). The study reports a negative predictive value of 99% at this cut-off. Source kind: decision. Source band <= 300; stored as the warn low bound 300."
 
 [[range]]
 set = "ehf-2024-elderly-ahf"
 kind = "warn"
-low = 1800
+high = 1800
 when = { age = [75.0, 200] }
 population = "Adults aged 75 years or older presenting with acute dyspnoea (setting: acute-dyspnoea)"
 evidence = "cohort"
 citations = [
   { pmid = "39135432", doi = "10.1002/ehf2.15017", url = "https://pubmed.ncbi.nlm.nih.gov/39135432/", title = "Refining the diagnosis of acute heart failure in the elderly.", locator = "Discussion, rule-in strategies" },
 ]
-note = "Age-stratified rule-in cut-off for acute heart failure, age 75 years or older (boundary inclusive, >=1800). A 2024 APHP cohort in patients aged 75 or older reports a PPV-based threshold of 1748 pg/mL, and a higher 2235 pg/mL threshold over age 85; co-morbidities (CKD, obesity, atrial fibrillation) shift results. Source kind: decision."
+note = "Age-stratified rule-in cut-off for acute heart failure, age 75 years or older (boundary inclusive, >=1800). A 2024 APHP cohort in patients aged 75 or older reports a PPV-based threshold of 1748 pg/mL, and a higher 2235 pg/mL threshold over age 85; co-morbidities (CKD, obesity, atrial fibrillation) shift results. Source kind: decision. Source band >= 1800; stored as the warn high bound 1800."

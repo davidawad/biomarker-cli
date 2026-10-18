@@ -18,14 +18,13 @@ note = "KDIGO albuminuria category A1 (normal to mildly increased), strictly bel
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 30
 high = 300
 population = "Adults and children with or at risk of CKD (persistent albuminuria categories) (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease" },
 ]
-note = "KDIGO albuminuria category A2 (moderately increased), 30 to 300 mg/g inclusive. A3 starts strictly above 300 mg/g."
+note = "KDIGO albuminuria category A2 (moderately increased), 30 to 300 mg/g inclusive. A3 starts strictly above 300 mg/g. Source band 30-300; stored as the warn high bound 300."
 
 [[range]]
 set = "alt-1"
@@ -41,60 +40,59 @@ note = "KDIGO albuminuria category A1 (normal to mildly increased), strictly bel
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 26.52
 high = 265.2
 population = "Adults and children with or at risk of CKD (persistent albuminuria categories) (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease" },
 ]
-note = "KDIGO albuminuria category A2 (moderately increased), 3 to 30 mg/mmol inclusive. A3 starts strictly above 30 mg/mmol. Converted from the source's mg/mmol (3-30) to mg/g using factor 8.84. Alternative to the default clinical warn range for the same population."
+note = "KDIGO albuminuria category A2 (moderately increased), 3 to 30 mg/mmol inclusive. A3 starts strictly above 30 mg/mmol. Converted from the source's mg/mmol (3-30) to mg/g using factor 8.84. Source band 26.52-265.2; stored as the warn high bound 265.2. Alternative to the default clinical warn range for the same population."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 300
+high = 300
 population = "Adults and children with or at risk of CKD (persistent albuminuria categories) (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease" },
 ]
-note = "KDIGO albuminuria category A3 (severely increased), strictly above 300 mg/g. Source kind: diagnostic."
+note = "KDIGO albuminuria category A3 (severely increased), strictly above 300 mg/g. Source kind: diagnostic. Source band >= 300; stored as the warn high bound 300."
 
 [[range]]
-set = "alt-2"
+set = "alt-1"
 kind = "warn"
-low = 265.2
+high = 265.2
 population = "Adults and children with or at risk of CKD (persistent albuminuria categories) (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD", locator = "Table 3 | Albuminuria categories in chronic kidney disease" },
 ]
-note = "KDIGO albuminuria category A3 (severely increased), strictly above 30 mg/mmol. Converted from the source's mg/mmol (30) to mg/g using factor 8.84. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "KDIGO albuminuria category A3 (severely increased), strictly above 30 mg/mmol. Converted from the source's mg/mmol (30) to mg/g using factor 8.84. Source kind: diagnostic. Source band >= 265.2; stored as the warn high bound 265.2. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 30.9
+high = 30.9
 when = { sex = "female" }
 population = "Women; historical sex-specific ACR criterion (superseded by a unified 30 mg/g threshold in KDIGO 2012) (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { pmid = "40143452", doi = "10.1111/dom.16359", title = "Developments in albuminuria testing: A key biomarker for detection, prognosis and surveillance of kidney and cardiovascular disease-A practical update for clinicians.", locator = "Sex-specific ACR cut-offs (text)" },
 ]
-note = "Historical sex-specific abnormal ACR cut-off for women (about 3.5 mg/mmol). Superseded; kept only to document the sex-specific partition. Do not use as a current diagnostic threshold. Source kind: diagnostic."
+note = "Historical sex-specific abnormal ACR cut-off for women (about 3.5 mg/mmol). Superseded; kept only to document the sex-specific partition. Do not use as a current diagnostic threshold. Source kind: diagnostic. Source band >= 30.9; stored as the warn high bound 30.9."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 22.1
+high = 22.1
 when = { sex = "male" }
 population = "Men; historical sex-specific ACR criterion (superseded by a unified 30 mg/g threshold in KDIGO 2012) (specimen: spot-urine)"
 evidence = "guideline"
 citations = [
   { pmid = "40143452", doi = "10.1111/dom.16359", title = "Developments in albuminuria testing: A key biomarker for detection, prognosis and surveillance of kidney and cardiovascular disease-A practical update for clinicians.", locator = "Sex-specific ACR cut-offs (text)" },
 ]
-note = "Historical sex-specific abnormal ACR cut-off for men (about 2.5 mg/mmol). Superseded; kept only to document the sex-specific partition. Do not use as a current diagnostic threshold. Source kind: diagnostic."
+note = "Historical sex-specific abnormal ACR cut-off for men (about 2.5 mg/mmol). Superseded; kept only to document the sex-specific partition. Do not use as a current diagnostic threshold. Source kind: diagnostic. Source band >= 22.1; stored as the warn high bound 22.1."
 
 [[range]]
 set = "optimal"

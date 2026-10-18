@@ -46,7 +46,7 @@ note = "Median with 2.5th-97.5th percentile, both sexes together (Table 3). Sour
 set = "adrenal-steroids-lcms-2017"
 kind = "reference"
 high = 973.3
-when = { sex = "male", age = [22.0, 22.0] }
+when = { sex = "male", age = [22.0, 23.0] }
 population = "Volunteers aged 18-81 years, men, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
 evidence = "reference-interval-study"
 citations = [
@@ -58,7 +58,7 @@ note = "Upper cut-off (age-specific curve fit) at age 22 in men. Falls about 74%
 set = "adrenal-steroids-lcms-2017"
 kind = "reference"
 high = 913.2
-when = { sex = "female", age = [22.0, 22.0] }
+when = { sex = "female", age = [22.0, 23.0] }
 population = "Volunteers aged 18-81 years, women, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
 evidence = "reference-interval-study"
 citations = [
@@ -70,7 +70,7 @@ note = "Upper cut-off (age-specific curve fit) at age 22 in women. Source unit n
 set = "adrenal-steroids-lcms-2017"
 kind = "reference"
 high = 252.8
-when = { sex = "male", age = [70.0, 70.0] }
+when = { sex = "male", age = [70.0, 71.0] }
 population = "Volunteers aged 18-81 years, men, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
 evidence = "reference-interval-study"
 citations = [
@@ -82,7 +82,7 @@ note = "Upper cut-off (age-specific curve fit) at age 70 in men. Source unit nmo
 set = "adrenal-steroids-lcms-2017"
 kind = "reference"
 high = 230.7
-when = { sex = "female", age = [70.0, 70.0] }
+when = { sex = "female", age = [70.0, 71.0] }
 population = "Volunteers aged 18-81 years, women, with and without hypertension (specimen: plasma; method: lc-ms/ms)"
 evidence = "reference-interval-study"
 citations = [

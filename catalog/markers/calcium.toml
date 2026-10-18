@@ -18,7 +18,7 @@ high = 10.2
 legacy = true
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 9.9
 high = 11.84
@@ -28,10 +28,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "36524863", doi = "10.1111/jcmm.17646", title = "Age-specific reference intervals for routine biochemical parameters in healthy neonates, infants, and young children in Iran.", locator = "Table 1" },
 ]
-note = "Total calcium in infancy; age partitioning was not required for calcium in this study. Upper limit is above the adult range."
+note = "Total calcium in infancy; age partitioning was not required for calcium in this study. Upper limit is above the adult range. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.76
 high = 10.24
@@ -41,10 +41,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "32892370", doi = "10.1111/cen.14326", title = "Reference interval for albumin-adjusted calcium based on a large UK population.", locator = "Results" },
 ]
-note = "99% reference interval for albumin-adjusted serum calcium, not for total calcium. Upper limits were sex and age dependent in the source (for example 2.59 mmol/L in women aged 55-69, 2.55 mmol/L in men)."
+note = "99% reference interval for albumin-adjusted serum calcium, not for total calcium. Upper limits were sex and age dependent in the source (for example 2.59 mmol/L in women aged 55-69, 2.55 mmol/L in men). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 8.7
 high = 10.7
@@ -54,7 +54,7 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Total serum calcium, central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source."
+note = "Total serum calcium, central 95 % reference interval in mg/dL (conventional-unit columns of the source). Age band 18~65 as printed in the source. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "alt-1"
@@ -67,10 +67,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "33740794", doi = "10.1371/journal.pone.0236772", title = "Establishment of reference intervals of clinical chemistry analytes for the adult population in Egypt.", locator = "Table 3" },
 ]
-note = "Albumin-adjusted calcium (aCa), not total calcium. Central 95 % reference interval in mg/dL (conventional-unit columns of the source). Alternative to the default clinical reference range for the same population."
+note = "Albumin-adjusted calcium (aCa), not total calcium. Central 95 % reference interval in mg/dL (conventional-unit columns of the source). Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range. Alternative to the default population-ri reference range for the same population."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 9.379
 high = 10.94
@@ -80,10 +80,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Total calcium in mmol/L as stated in the source (not converted). Sex partitions were not reported for calcium in this age band. Converted from the source's mmol/L (2.34-2.73) to mg/dL using factor 4.008."
+note = "Total calcium in mmol/L as stated in the source (not converted). Sex partitions were not reported for calcium in this age band. Converted from the source's mmol/L (2.34-2.73) to mg/dL using factor 4.008. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 9.579
 high = 10.74
@@ -93,10 +93,10 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Total calcium in mmol/L as stated in the source (not converted). Converted from the source's mmol/L (2.39-2.68) to mg/dL using factor 4.008."
+note = "Total calcium in mmol/L as stated in the source (not converted). Converted from the source's mmol/L (2.39-2.68) to mg/dL using factor 4.008. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
-set = "clinical"
+set = "population-ri"
 kind = "reference"
 low = 9.459
 high = 10.54
@@ -106,39 +106,37 @@ evidence = "reference-interval-study"
 citations = [
   { pmid = "42179679", doi = "10.1016/j.plabm.2026.e00537", title = "Establishment of reference intervals for 41 serum biochemical analytes in healthy Chinese children.", locator = "Table 1" },
 ]
-note = "Total calcium in mmol/L as stated in the source (not converted). Converted from the source's mmol/L (2.36-2.63) to mg/dL using factor 4.008."
+note = "Total calcium in mmol/L as stated in the source (not converted). Converted from the source's mmol/L (2.36-2.63) to mg/dL using factor 4.008. Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
 
 [[range]]
 set = "diagnostic"
 kind = "warn"
-low = 10.5
 high = 12
 population = "Adults with hypercalcaemia (mild grade)"
 evidence = "consensus"
 citations = [
   { pmid = "35217631", doi = "10.12659/MSM.935821", title = "A Review of Current Clinical Concepts in the Pathophysiology, Etiology, Diagnosis, and Management of Hypercalcemia.", locator = "Definition, Epidemiology, and Screening for Hypercalcemia" },
 ]
-note = "Mild hypercalcaemia (strictly above 10.5 mg/dL, up to 12 mg/dL), grading as stated in a narrative review of hypercalcaemia. Source kind: diagnostic."
+note = "Mild hypercalcaemia (strictly above 10.5 mg/dL, up to 12 mg/dL), grading as stated in a narrative review of hypercalcaemia. Source kind: diagnostic. Source band 10.5-12; stored as the warn high bound 12."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 12.1
 high = 14
 population = "Adults with hypercalcaemia (moderate grade)"
 evidence = "consensus"
 citations = [
   { pmid = "35217631", doi = "10.12659/MSM.935821", title = "A Review of Current Clinical Concepts in the Pathophysiology, Etiology, Diagnosis, and Management of Hypercalcemia.", locator = "Definition, Epidemiology, and Screening for Hypercalcemia" },
 ]
-note = "Moderate hypercalcaemia (12.1 to 14 mg/dL), grading as stated in a narrative review of hypercalcaemia. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Moderate hypercalcaemia (12.1 to 14 mg/dL), grading as stated in a narrative review of hypercalcaemia. Source kind: diagnostic. Source band 12.1-14; stored as the warn high bound 14. Alternative to the default diagnostic warn range for the same population."
 
 [[range]]
-set = "alt-2"
+set = "alt-1"
 kind = "warn"
-low = 14
+high = 14
 population = "Adults with hypercalcaemia (severe grade)"
 evidence = "consensus"
 citations = [
   { pmid = "35217631", doi = "10.12659/MSM.935821", title = "A Review of Current Clinical Concepts in the Pathophysiology, Etiology, Diagnosis, and Management of Hypercalcemia.", locator = "Definition, Epidemiology, and Screening for Hypercalcemia" },
 ]
-note = "Severe hypercalcaemia (strictly above 14 mg/dL), grading as stated in a narrative review of hypercalcaemia. Source kind: diagnostic. Alternative to the default diagnostic warn range for the same population."
+note = "Severe hypercalcaemia (strictly above 14 mg/dL), grading as stated in a narrative review of hypercalcaemia. Source kind: diagnostic. Source band >= 14; stored as the warn high bound 14. Alternative to the default diagnostic warn range for the same population."

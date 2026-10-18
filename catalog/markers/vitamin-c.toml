@@ -8,26 +8,13 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "ajcn-2009-nhanes-2003-2004"
 kind = "warn"
-high = 0.2008
+low = 0.2008
 population = "US civilians aged 6 years and older, NHANES 2003-2004 (serum vitamin C); the 11.4 µmol/L cut-off is the NHANES III deficiency definition (specimen: serum)"
 evidence = "reference-interval-study"
 citations = [
   { pmid = "19675106", doi = "10.3945/ajcn.2008.27016", title = "Serum vitamin C and the prevalence of vitamin C deficiency in the United States: 2003-2004 National Health and Nutrition Examination Survey (NHANES).", locator = "Background" },
 ]
-note = "Deficiency below 11.4 µmol/L (about 0.20 mg/dL). Overall deficiency prevalence was 7.1% in NHANES 2003-2004 and adult smokers had about one-third lower concentrations than nonsmokers. Source kind: deficient."
-
-[[range]]
-set = "bmc-womens-health-2022-categories"
-kind = "warn"
-low = 0.2008
-high = 0.4225
-population = "US women aged 18-59 years, NHANES 2003-2006 (cut-offs adopted from a prior study, reference 22 of the source) (specimen: serum)"
-evidence = "consensus"
-citations = [
-  { pmid = "36199060", doi = "10.1186/s12905-022-01993-7", title = "Association between serum vitamin C and HPV infection in American women: a cross-sectional study.", locator = "Methods, Statistical analysis" },
-  { pmid = "19675106", doi = "10.3945/ajcn.2008.27016", title = "Serum vitamin C and the prevalence of vitamin C deficiency in the United States: 2003-2004 National Health and Nutrition Examination Survey (NHANES).", locator = "Background" },
-]
-note = "Hypovitaminosis C, classed together with deficiency in the source (0-23.99 µmol/L). Deficiency proper (below 11.4 µmol/L) is the range above. Source kind: insufficient."
+note = "Deficiency below 11.4 µmol/L (about 0.20 mg/dL). Overall deficiency prevalence was 7.1% in NHANES 2003-2004 and adult smokers had about one-third lower concentrations than nonsmokers. Source kind: deficient. Source band <= 0.2008; stored as the warn low bound 0.2008."
 
 [[range]]
 set = "bmc-womens-health-2022-categories"

@@ -1,0 +1,29 @@
+# Cortisol, Late-Night Salivary (`cortisol-salivary-late-night`)
+
+Cortisol measured in saliva collected at bedtime or late evening. Loss of the normal circadian fall of cortisol makes it a sensitive screening test for Cushing's syndrome. Cut-offs differ widely by assay (immunoassay vs LC-MS/MS), so use the cut-off for your own method.
+
+| | |
+|---|---|
+| Category | [adrenal](index.md#adrenal) |
+| Canonical unit | ng/dL |
+| LOINC | - |
+| Specimen | - |
+| Aliases | - |
+
+## Ranges
+
+Bounds in ng/dL. The most specific matching range of each set applies.
+
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | all | 17 | 97 | reference-interval-study | 100 healthy volunteers (specimen: saliva; method: lc-ms/ms) | [Reference ranges of late-night salivary cortisol and cortisone measured by LC-MS/MS and accuracy for the diagnosis of Cushing's syndrome.](https://pubmed.ncbi.nlm.nih.gov/32772255/), Abstract, Results | Reference interval for late-night salivary cortisol by LC-MS/MS in healthy volunteers. Converted values are not provided; the source unit is µg/L. Converted from the source's µg/L (0.17-0.97) to ng/dL using factor 100. Applies only to: time_of_day=late-night. |
+| bedtime-saliva-children-2021 | warn | age 4-16 | - | 8.7 | reference-interval-study | 320 healthy children aged 4-16 years (cut-off from the 97.5th percentile), validated in 54 children from an obesity clinic and 3 with pituitary Cushing syndrome (specimen: saliva; method: lc-ms/ms) | [Bedtime Salivary Cortisol as a Screening Test for Cushing Syndrome in Children.](https://pubmed.ncbi.nlm.nih.gov/33928203/), Abstract, Results | Bedtime sample. Derived as 97.5th percentile in healthy children; age and sex-specific cut-offs were not needed in this study. Paediatric screening, single-centre. Converted from the source's nmol/L (2.4) to ng/dL using factor 3.625. Applies only to: time_of_day=late-night. Source kind: diagnostic. Source band >= 8.7; stored as the warn high bound 8.7. |
+| lnsc-chemiluminescence-2021 | warn | all | - | 36.61 | cohort | 217 patients prospectively evaluated for suspected hypercortisolism (36 with hypercortisolism, 149 negative controls, 32 in remission) (specimen: saliva; method: chemiluminescence immunoassay) | [Distinct Late-Night Salivary Cortisol Cut-Off Values for the Diagnosis of Hypercortisolism.](https://pubmed.ncbi.nlm.nih.gov/34607366/), Abstract, Results | ROC-derived cut-off for hypercortisolism with an automated chemiluminescence immunoassay (sensitivity 94%, specificity 84%). The source reports slightly lower thresholds for obesity (9.1), hypertension or adrenal tumours (9.8), and pituitary adenomas (9.5). Converted from the source's nmol/L (10.1) to ng/dL using factor 3.625. Applies only to: time_of_day=late-night. Source kind: diagnostic. Source band >= 36.61; stored as the warn high bound 36.61. |
+| lnsc-ecl-immunoassay-2023 | warn | age 18-60 | - | 24.4 | cohort | 155 healthy controls aged 18-60 years and 92 adults with endogenous Cushing syndrome (South-Asian population) (specimen: saliva; method: electrochemiluminescence immunoassay) | [Late-night salivary cortisol cut-offs for diagnosis of Cushing syndrome using second-generation electrochemiluminescence immunoassay kits.](https://pubmed.ncbi.nlm.nih.gov/37052382/), Abstract, Conclusions | Cut-off for second-generation Elecsys cortisol II immunoassay (sensitivity 97.8%, specificity 94.8%). Samples collected at home. Converted from the source's nmol/L (6.73) to ng/dL using factor 3.625. Applies only to: time_of_day=late-night; ethnicity=south-asian. Source kind: diagnostic. Source band >= 24.4; stored as the warn high bound 24.4. |
+| neoplastic-lnsc-2025 | warn | neoplastic-hypercortisolism | - | 8.156 | cohort | 25 subjects with neoplastic hypercortisolism and 430 subjects without (Amsterdam UMC, 2015-2022) (specimen: saliva; method: lc-ms/ms) | [Neoplastic hypercortisolism: Cut-off values for late-night salivary cortisol & cortisone.](https://pubmed.ncbi.nlm.nih.gov/40250820/), Abstract, Results | Cut-off for neoplastic hypercortisolism (sensitivity 92%, specificity 89%). The source recommends salivary cortisone (cut-off 15.5 nmol/L) as the preferred measurement. Converted from the source's nmol/L (2.25) to ng/dL using factor 3.625. Applies only to: time_of_day=late-night. Source kind: diagnostic. Source band >= 8.156; stored as the warn high bound 8.156. |
+| salivary-lcms-2020 | warn | suspected-hypercortisolism | - | 115 | cohort | 50 consecutive patients with suspected hypercortisolism (specimen: saliva; method: lc-ms/ms) | [Reference ranges of late-night salivary cortisol and cortisone measured by LC-MS/MS and accuracy for the diagnosis of Cushing's syndrome.](https://pubmed.ncbi.nlm.nih.gov/32772255/), Abstract, Results | Most accurate cut-off for hypercortisolism in patients with suspected hypercortisolism (AUC 1). Small study. Converted from the source's µg/L (1.15) to ng/dL using factor 100. Applies only to: time_of_day=late-night. Source kind: diagnostic. Source band >= 115.0; stored as the warn high bound 115.0. |
+| salivary-lcms-2020 | warn | all | - | 130 | cohort | 100 healthy volunteers and 50 consecutive patients with suspected hypercortisolism (combined population) (specimen: saliva; method: lc-ms/ms) | [Reference ranges of late-night salivary cortisol and cortisone measured by LC-MS/MS and accuracy for the diagnosis of Cushing's syndrome.](https://pubmed.ncbi.nlm.nih.gov/32772255/), Abstract, Results | Most accurate cut-off when healthy individuals are included (AUC 1). Small study. Converted from the source's µg/L (1.3) to ng/dL using factor 100. Applies only to: time_of_day=late-night. Source kind: diagnostic. Source band >= 130.0; stored as the warn high bound 130.0. |
+
+---
+
+_Generated from catalog/ by `biomarker catalog docs`; do not edit by hand._

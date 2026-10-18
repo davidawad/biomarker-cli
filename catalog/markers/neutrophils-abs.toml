@@ -77,57 +77,54 @@ note = "All-participant interval (n = 460) from the reference-interval table."
 [[range]]
 set = "neutropenia-cutoff-merz-2023"
 kind = "warn"
-high = 1.5
+low = 1.5
 population = "Background statement on neutropenia prevalence in Black and White US adults, from a study of Duffy status in healthy Black adults"
 evidence = "consensus"
 citations = [
   { pmid = "35994632", doi = "10.1182/bloodadvances.2022007679", title = "Absolute neutrophil count by Duffy status among healthy Black and African American adults.", locator = "Introduction" },
 ]
-note = "Single neutropenia cutoff (ANC below 1500 cells/µL) as stated in the cited article. No graded neutropenia thresholds (e.g. CTCAE grades 2-4) were retrieved, so they are not encoded. Source kind: diagnostic."
+note = "Single neutropenia cutoff (ANC below 1500 cells/µL) as stated in the cited article. No graded neutropenia thresholds (e.g. CTCAE grades 2-4) were retrieved, so they are not encoded. Source kind: diagnostic. Source band <= 1.5; stored as the warn low bound 1.5."
 
 [[range]]
 set = "oncologist-2022-grades"
 kind = "warn"
 low = 1.0
-high = 1.5
 population = "adults receiving myelosuppressive chemotherapy in the US (narrative review of chemotherapy-induced neutropenia)"
 evidence = "consensus"
 citations = [
   { pmid = "35552754", doi = "10.1093/oncolo/oyac074", title = "Chemotherapy-Induced Neutropenia and Febrile Neutropenia in the US: A Beast of Burden That Needs to Be Tamed?", locator = "Introduction" },
 ]
-note = "Mild grade of neutropenia as categorised in the review; neutropenia itself is ANC below 1.5. The review states there is no standard classification. No CTCAE grade table was retrieved. Source kind: diagnostic."
+note = "Mild grade of neutropenia as categorised in the review; neutropenia itself is ANC below 1.5. The review states there is no standard classification. No CTCAE grade table was retrieved. Source kind: diagnostic. Source band 1.0-1.5; stored as the warn low bound 1.0."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
 low = 0.5
-high = 1.0
 population = "adults receiving myelosuppressive chemotherapy in the US (narrative review of chemotherapy-induced neutropenia)"
 evidence = "consensus"
 citations = [
   { pmid = "35552754", doi = "10.1093/oncolo/oyac074", title = "Chemotherapy-Induced Neutropenia and Febrile Neutropenia in the US: A Beast of Burden That Needs to Be Tamed?", locator = "Introduction" },
 ]
-note = "Moderate grade of neutropenia as categorised in the review. Source kind: diagnostic. Alternative to the default oncologist-2022-grades warn range for the same population."
+note = "Moderate grade of neutropenia as categorised in the review. Source kind: diagnostic. Source band 0.5-1.0; stored as the warn low bound 0.5. Alternative to the default oncologist-2022-grades warn range for the same population."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
 low = 0.2
-high = 0.5
 population = "adults receiving myelosuppressive chemotherapy in the US (narrative review of chemotherapy-induced neutropenia)"
 evidence = "consensus"
 citations = [
   { pmid = "35552754", doi = "10.1093/oncolo/oyac074", title = "Chemotherapy-Induced Neutropenia and Febrile Neutropenia in the US: A Beast of Burden That Needs to Be Tamed?", locator = "Introduction" },
 ]
-note = "Severe grade as stated by the review is ANC 0.2-0.5 (not below 0.5 as sometimes used). Values below 0.2 are the separate very severe grade. Source kind: diagnostic. Alternative to the default oncologist-2022-grades warn range for the same population."
+note = "Severe grade as stated by the review is ANC 0.2-0.5 (not below 0.5 as sometimes used). Values below 0.2 are the separate very severe grade. Source kind: diagnostic. Source band 0.2-0.5; stored as the warn low bound 0.2. Alternative to the default oncologist-2022-grades warn range for the same population."
 
 [[range]]
-set = "alt-3"
+set = "alt-2"
 kind = "warn"
-high = 0.2
+low = 0.2
 population = "adults receiving myelosuppressive chemotherapy in the US (narrative review of chemotherapy-induced neutropenia)"
 evidence = "consensus"
 citations = [
   { pmid = "35552754", doi = "10.1093/oncolo/oyac074", title = "Chemotherapy-Induced Neutropenia and Febrile Neutropenia in the US: A Beast of Burden That Needs to Be Tamed?", locator = "Introduction" },
 ]
-note = "Very severe grade (termed agranulocytosis in the review): ANC below 0.2. Source kind: diagnostic. Alternative to the default oncologist-2022-grades warn range for the same population."
+note = "Very severe grade (termed agranulocytosis in the review): ANC below 0.2. Source kind: diagnostic. Source band <= 0.2; stored as the warn low bound 0.2. Alternative to the default oncologist-2022-grades warn range for the same population."

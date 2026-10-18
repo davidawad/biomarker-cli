@@ -8,10 +8,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "hepatorenal-tyrosinaemia-consensus-2017"
 kind = "warn"
-low = 150
+high = 150
 population = "Newborns in tyrosinaemia type I newborn screening programmes (US and Canadian consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "28771246", doi = "10.1038/gim.2017.101", title = "Diagnosis and treatment of tyrosinemia type I: a US and Canadian consensus group review and recommendations.", locator = "Newborn screening section" },
 ]
-note = "A second-tier trigger quoted as an example of a tyrosine cutoff; the consensus states that this tyrosine-first approach is not recommended, since some infants with HT-1 have normal tyrosine. Not a treatment target or reference interval."
+note = "A second-tier trigger quoted as an example of a tyrosine cutoff; the consensus states that this tyrosine-first approach is not recommended, since some infants with HT-1 have normal tyrosine. Not a treatment target or reference interval. Source band >= 150; stored as the warn high bound 150."

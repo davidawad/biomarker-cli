@@ -26,34 +26,34 @@ note = "Assay reference range as stated by the study (not a population-derived i
 [[range]]
 set = "cn-preconception-cohort-2026"
 kind = "warn"
-low = 34
+high = 34
 population = "Chinese women in routine preconception evaluation (retrospective cohort, n = 256)"
 evidence = "cohort"
 citations = [
   { pmid = "42143362", doi = "10.1186/s12902-026-02318-7", url = "https://pubmed.ncbi.nlm.nih.gov/42143362/", title = "Correlation analysis between serum 25-hydroxyvitamin D levels and thyroid peroxidase antibody positivity in preconception women.", locator = "Methods" },
 ]
-note = "Positivity threshold prespecified by the study for the primary analysis; the same study reports an assay reference range of 0-9 IU/mL. Source kind: diagnostic."
+note = "Positivity threshold prespecified by the study for the primary analysis; the same study reports an assay reference range of 0-9 IU/mL. Source kind: diagnostic. Source band >= 34; stored as the warn high bound 34."
 
 [[range]]
 set = "cn-maternal-tpo-cohort-2026"
 kind = "warn"
-low = 34
+high = 34
 when = { pregnant = true }
 population = "10,154 Chinese mother-newborn pairs, maternal serum sampled before birth (retrospective cohort)"
 evidence = "cohort"
 citations = [
   { pmid = "42137608", doi = "10.1177/20420188261446409", url = "https://pubmed.ncbi.nlm.nih.gov/42137608/", title = "Maternal TPO-Ab status modulates associations between gestational thyroid hormones and neonatal TSH in 10,154 Chinese mother-newborn pairs.", locator = "Methods" },
 ]
-note = "Positivity definition used by the study for maternal TPO-Ab; assay-specific cut-off. Source kind: diagnostic."
+note = "Positivity definition used by the study for maternal TPO-Ab; assay-specific cut-off. Source kind: diagnostic. Source band >= 34; stored as the warn high bound 34."
 
 [[range]]
 set = "cn-tpoab-gdm-cohort-2026"
 kind = "warn"
-low = 12
+high = 12
 when = { pregnant = true }
 population = "Pregnant women in early pregnancy, single centre (Chinese cohort, gestational diabetes study) (method: chemiluminescence immunoassay (Architect i2000SR))"
 evidence = "cohort"
 citations = [
   { pmid = "42156488", doi = "10.1038/s41598-026-53582-5", url = "https://pubmed.ncbi.nlm.nih.gov/42156488/", title = "Lipid profiles and risk of gestational diabetes mellitus in women with isolated TPOAb positivity during early pregnancy.", locator = "Methods" },
 ]
-note = "Study defines positivity as the manufacturer's upper limit of normal for this assay; not a guideline cut-off and assay dependent. Source kind: diagnostic."
+note = "Study defines positivity as the manufacturer's upper limit of normal for this assay; not a guideline cut-off and assay dependent. Source kind: diagnostic. Source band >= 12; stored as the warn high bound 12."

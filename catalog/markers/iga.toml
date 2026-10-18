@@ -47,21 +47,21 @@ note = "Serum IgA reference limits (91-414 mg/dL) as adopted from 1996 consensus
 [[range]]
 set = "iga-deficiency-review-2026"
 kind = "warn"
-high = 0.07
+low = 0.07
 population = "People older than 4 years with suspected selective IgA deficiency (as defined in a 2026 scoping review)"
 evidence = "cohort"
 citations = [
   { pmid = "42820738", doi = "10.1002/ueg2.70296", url = "https://pubmed.ncbi.nlm.nih.gov/42820738/", title = "Immunoglobulin a Deficiency in Coeliac Disease: A Scoping Review.", locator = "Full text, Introduction" },
 ]
-note = "Selective IgA deficiency: serum IgA below 0.07 g/L (strict) with normal IgM and IgG. Evidence is a scoping review of the literature, not a meta-analysis; the definition is the one it cites as current. Source kind: decision."
+note = "Selective IgA deficiency: serum IgA below 0.07 g/L (strict) with normal IgM and IgG. Evidence is a scoping review of the literature, not a meta-analysis; the definition is the one it cites as current. Source kind: decision. Source band <= 0.07; stored as the warn low bound 0.07."
 
 [[range]]
 set = "iga-coeliac-flowchart-2026"
 kind = "warn"
-high = 0.2
+low = 0.2
 population = "Patients with suspected coeliac disease undergoing serology (flowchart in a 2026 scoping review)"
 evidence = "cohort"
 citations = [
   { pmid = "42820738", doi = "10.1002/ueg2.70296", url = "https://pubmed.ncbi.nlm.nih.gov/42820738/", title = "Immunoglobulin a Deficiency in Coeliac Disease: A Scoping Review.", locator = "Full text, Figure legend (flowchart)" },
 ]
-note = "Serum IgA cut-off used in the review's coeliac testing flowchart because IgA-based antibody tests may give false negatives. The quote states the cut-off value but not its direction; the review applies it to low serum IgA results. Evidence is a scoping review, not a meta-analysis. Source kind: decision."
+note = "Serum IgA cut-off used in the review's coeliac testing flowchart because IgA-based antibody tests may give false negatives. The quote states the cut-off value but not its direction; the review applies it to low serum IgA results. Evidence is a scoping review, not a meta-analysis. Source kind: decision. Source band <= 0.2; stored as the warn low bound 0.2."

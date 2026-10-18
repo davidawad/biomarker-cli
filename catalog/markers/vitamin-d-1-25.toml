@@ -83,11 +83,11 @@ note = "Method-specific interval, as reported by the review. Converted from pmol
 [[range]]
 set = "host-ckd-2012"
 kind = "warn"
-high = 15
+low = 15
 when = { conditions = ["ckd"] }
 population = "Patients with advanced CKD (stages 4-5, not yet on dialysis) in the HOST randomized trial, 1,099 veterans, plasma samples"
 evidence = "cohort"
 citations = [
   { pmid = "22621970", doi = "10.1053/j.ajkd.2012.04.014", title = "Associations of plasma 25-hydroxyvitamin D and 1,25-dihydroxyvitamin D concentrations with death and progression to maintenance dialysis in patients with advanced kidney disease.", locator = "Abstract, Methods" },
 ]
-note = "Statistical tertile cut-off, not a validated clinical threshold. Lowest tertile associated with death and dialysis initiation (HR 1.33 and 1.78 vs highest tertile). Reference-interval values above do not apply to this cut."
+note = "Statistical tertile cut-off, not a validated clinical threshold. Lowest tertile associated with death and dialysis initiation (HR 1.33 and 1.78 vs highest tertile). Reference-interval values above do not apply to this cut. Source band <= 15; stored as the warn low bound 15."

@@ -10,24 +10,24 @@ no_reference = "legacy catalog entry without a reference range; needs research"
 [[range]]
 set = "kleiger-1987-sdnn-post-mi"
 kind = "warn"
-high = 50
+low = 50
 population = "Survivors of acute myocardial infarction (808 patients), 24-hour Holter recordings made 11 +/- 3 days after AMI (method: sdnn-24h; setting: post-acute-mi)"
 evidence = "cohort"
 citations = [
   { pmid = "3812275", doi = "10.1016/0002-9149(87)90795-8", url = "https://pubmed.ncbi.nlm.nih.gov/3812275/", title = "Decreased heart rate variability and its association with increased mortality after acute myocardial infarction.", locator = "Abstract, Results" },
 ]
-note = "24-hour SDNN below 50 ms is a high-mortality-risk band (risk cut-off from the cohort, not a guideline). Boundary as published: 'less than 50 ms'. Source kind: decision."
+note = "24-hour SDNN below 50 ms is a high-mortality-risk band (risk cut-off from the cohort, not a guideline). Boundary as published: 'less than 50 ms'. Source kind: decision. Source band <= 50; stored as the warn low bound 50."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 100
+high = 100
 population = "Survivors of acute myocardial infarction (808 patients), 24-hour Holter recordings made 11 +/- 3 days after AMI (method: sdnn-24h; setting: post-acute-mi)"
 evidence = "cohort"
 citations = [
   { pmid = "3812275", doi = "10.1016/0002-9149(87)90795-8", url = "https://pubmed.ncbi.nlm.nih.gov/3812275/", title = "Decreased heart rate variability and its association with increased mortality after acute myocardial infarction.", locator = "Abstract, Results" },
 ]
-note = "24-hour SDNN above 100 ms was the low-risk comparator group in this cohort (the reference against which the 5.3-fold mortality risk was computed). It is an observed comparator, not a validated health target. Source kind: decision. Alternative to the default kleiger-1987-sdnn-post-mi warn range for the same population."
+note = "24-hour SDNN above 100 ms was the low-risk comparator group in this cohort (the reference against which the 5.3-fold mortality risk was computed). It is an observed comparator, not a validated health target. Source kind: decision. Source band >= 100; stored as the warn high bound 100. Alternative to the default kleiger-1987-sdnn-post-mi warn range for the same population."
 
 [[range]]
 set = "nunan-2010-short-term-norms"
@@ -56,11 +56,10 @@ note = "Indicative spread only: 32-93 ms is the range of study-level mean SDNN a
 [[range]]
 set = "shaffer-2017-sdnn-24h"
 kind = "warn"
-low = 50
 high = 100
 population = "Adults with 24-hour ambulatory ECG monitoring, as classified in the review by Shaffer 2017 (the review attributes these thresholds to the post-MI cohort work it cites) (method: sdnn-24h)"
 evidence = "cohort"
 citations = [
   { pmid = "29034226", doi = "10.3389/fpubh.2017.00258", url = "https://pubmed.ncbi.nlm.nih.gov/29034226/", title = "An Overview of Heart Rate Variability Metrics and Norms.", locator = "Section 'Twenty-Four Hour Measurement Norms' / SDNN description" },
 ]
-note = "Compromised-health band: 24-hour SDNN from 50 to 100 ms (boundaries as stated in the review, below 50 ms unhealthy and above 100 ms healthy). The sub-50 ms boundary is also covered by the cohort cut-off above."
+note = "Compromised-health band: 24-hour SDNN from 50 to 100 ms (boundaries as stated in the review, below 50 ms unhealthy and above 100 ms healthy). The sub-50 ms boundary is also covered by the cohort cut-off above. Source band 50-100; stored as the warn high bound 100."

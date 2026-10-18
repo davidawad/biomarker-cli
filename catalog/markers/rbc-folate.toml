@@ -20,10 +20,10 @@ note = "WHO recommends RBC folate above 400 ng/mL (906 nmol/L) at population lev
 [[range]]
 set = "who-2018-review"
 kind = "warn"
-high = 134.6
+low = 134.6
 population = "Women of reproductive age in the folate-status literature summarised by WHO authors; deficiency defined by megaloblastic change"
 evidence = "consensus"
 citations = [
   { pmid = "30239016", doi = "10.1111/nyas.13963", title = "Global folate status in women of reproductive age: a systematic review with emphasis on methodological issues.", locator = "Table 1 and surrounding text (full text)" },
 ]
-note = "305 nmol/L is about 135 ng/mL. The review says megaloblastic changes tend to appear below this level. An older NHANES III Bio-Rad cut-off for RBC folate deficiency was below 340 nmol/L (about 150 ng/mL). Source kind: deficient."
+note = "305 nmol/L is about 135 ng/mL. The review says megaloblastic changes tend to appear below this level. An older NHANES III Bio-Rad cut-off for RBC folate deficiency was below 340 nmol/L (about 150 ng/mL). Source kind: deficient. Source band <= 134.6; stored as the warn low bound 134.6."

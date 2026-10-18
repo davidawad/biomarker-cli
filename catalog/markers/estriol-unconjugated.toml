@@ -8,7 +8,7 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "ue3-second-trimester-outcome-2020"
 kind = "warn"
-high = 0.5
+low = 0.5
 when = { pregnant = true, trimester = 2 }
 population = "Second-trimester quadruple-screen samples in a population-based cohort, with small-for-gestational-age infants as the outcome"
 evidence = "cohort"
@@ -16,4 +16,4 @@ citations = [
   { pmid = "33059628", doi = "10.1186/s12884-020-03298-9", url = "https://pubmed.ncbi.nlm.nih.gov/33059628/", title = "Quad test for fetal aneuploidy screening as a predictor of small-for-gestational-age fetuses: a population-based study.", locator = "Methods" },
   { pmid = "41639641", doi = "10.1186/s12884-026-08758-2", url = "https://pubmed.ncbi.nlm.nih.gov/41639641/", title = "The association of first and second-trimester serum biomarkers with adverse perinatal outcomes in late-preterm and term deliveries: a retrospective cohort study.", locator = "Methods" },
 ]
-note = "Unconjugated estriol below 0.5 MoM is treated as abnormal in the cited outcome studies. Values below the bound are flagged. Assay-dependent; the cited studies used conventional cut-offs from earlier literature. Source kind: diagnostic."
+note = "Unconjugated estriol below 0.5 MoM is treated as abnormal in the cited outcome studies. Values below the bound are flagged. Assay-dependent; the cited studies used conventional cut-offs from earlier literature. Source kind: diagnostic. Source band <= 0.5; stored as the warn low bound 0.5."

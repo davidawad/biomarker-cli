@@ -19,11 +19,11 @@ note = "Literature-derived reference range for 24-hour urinary free cortisol by 
 [[range]]
 set = "neoplastic-hypercortisolism-lcms-2026"
 kind = "warn"
-low = 43.5
+high = 43.5
 when = { conditions = ["neoplastic-hypercortisolism"] }
 population = "Adults screened for neoplastic hypercortisolism at one centre (2015-2022), with 24-hour urine collected on two consecutive days; 27 cases and 417 non-cases for urinary cortisol (specimen: urine-24h; method: lc-ms/ms)"
 evidence = "cohort"
 citations = [
   { pmid = "42173303", doi = "10.1016/j.cca.2026.121107", url = "https://pubmed.ncbi.nlm.nih.gov/42173303/", title = "Cut-off values of urinary free cortisol and cortisone for diagnosing neoplastic hypercortisolism.", locator = "Abstract, Results" },
 ]
-note = "ROC-derived optimal cut-off for 24-hour urinary free cortisol by LC-MS/MS (sensitivity 89%, specificity 86%, AUC 0.937); values at or above it are suggestive of neoplastic hypercortisolism. Single-centre retrospective cut-off that the authors say needs validation in another cohort; not a guideline upper limit. Source unit nmol/24 h, not converted. Converted from the source's nmol/24 h (120) to µg/24 h using factor 0.3625. Source kind: diagnostic."
+note = "ROC-derived optimal cut-off for 24-hour urinary free cortisol by LC-MS/MS (sensitivity 89%, specificity 86%, AUC 0.937); values at or above it are suggestive of neoplastic hypercortisolism. Single-centre retrospective cut-off that the authors say needs validation in another cohort; not a guideline upper limit. Source unit nmol/24 h, not converted. Converted from the source's nmol/24 h (120) to µg/24 h using factor 0.3625. Source kind: diagnostic. Source band >= 43.5; stored as the warn high bound 43.5."

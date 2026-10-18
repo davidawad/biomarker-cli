@@ -33,66 +33,66 @@ note = "Central 95% reference interval for plasma aldosterone in females on a fu
 [[range]]
 set = "endocrine-society-2025"
 kind = "warn"
-low = 7.5
+high = 7.5
 population = "Adults screened for primary aldosteronism; PAC and PRA by LC-MS/MS (Endocrine Society 2025 criteria as summarised in a 2026 analysis) (method: lc-ms/ms)"
 evidence = "consensus"
 citations = [
   { pmid = "42751802", doi = "10.1161/HYPERTENSIONAHA.126.27634", url = "https://pubmed.ncbi.nlm.nih.gov/42751802/", title = "Evaluation of Current Screening Thresholds for the Detection of Primary Aldosteronism.", locator = "Abstract, Background" },
 ]
-note = "Endocrine Society 2025 screening criterion: PAC at or above 7.5 ng/dL (LC-MS/MS) together with PRA at or below 1 ng/mL/h and ARR above 15. Cited via the Hypertension 2026 analysis of these thresholds, not the guideline full text. Applies only to: markers=[{\"slug\": \"renin-activity\", \"op\": \"<=\", \"value\": 1, \"unit\": \"ng/mL/h\"}]. Source kind: diagnostic."
+note = "Endocrine Society 2025 screening criterion: PAC at or above 7.5 ng/dL (LC-MS/MS) together with PRA at or below 1 ng/mL/h and ARR above 15. Cited via the Hypertension 2026 analysis of these thresholds, not the guideline full text. Applies only to: markers=[{\"slug\": \"renin-activity\", \"op\": \"<=\", \"value\": 1, \"unit\": \"ng/mL/h\"}]. Source kind: diagnostic. Source band >= 7.5; stored as the warn high bound 7.5."
 
 [[range]]
 set = "endocrine-society-2025"
 kind = "warn"
-low = 20
+high = 20
 when = { conditions = ["spontaneous-hypokalemia", "undetectable-renin"] }
 population = "Adults with hypertension; patients with spontaneous hypokalemia and suppressed renin"
 evidence = "consensus"
 citations = [
   { pmid = "41638798", doi = "10.1016/bs.vh.2025.06.001", url = "https://pubmed.ncbi.nlm.nih.gov/41638798/", title = "Diagnosis of primary aldosteronism: Confirmatory test.", locator = "Abstract" },
 ]
-note = "Diagnosis can be made without confirmatory testing when PAC is above 20 ng/dL with spontaneous hypokalemia and PRA or DRC below the assay detection limit. Cited via a 2026 review of the guideline. Source kind: diagnostic."
+note = "Diagnosis can be made without confirmatory testing when PAC is above 20 ng/dL with spontaneous hypokalemia and PRA or DRC below the assay detection limit. Cited via a 2026 review of the guideline. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."
 
 [[range]]
 set = "china-multicenter-pa-2026"
 kind = "warn"
-low = 5.7
+high = 5.7
 population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension) (method: lc-ms/ms; test: captopril challenge test, 2 h post-dose)"
 evidence = "cohort"
 citations = [
   { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", locator = "Abstract, Results" },
 ]
-note = "Post-captopril PAC cut-off by LC-MS/MS (sensitivity 61%, specificity 85%), measured two hours after the challenge. Study-derived threshold, not a guideline value. Source kind: diagnostic."
+note = "Post-captopril PAC cut-off by LC-MS/MS (sensitivity 61%, specificity 85%), measured two hours after the challenge. Study-derived threshold, not a guideline value. Source kind: diagnostic. Source band >= 5.7; stored as the warn high bound 5.7."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 5.0
+high = 5.0
 population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension) (method: lc-ms/ms; test: seated saline infusion test)"
 evidence = "cohort"
 citations = [
   { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", locator = "Abstract, Results" },
 ]
-note = "Post-seated-saline-infusion PAC cut-off by LC-MS/MS (sensitivity 68%, specificity 85%). Study-derived threshold, not a guideline value. Source kind: diagnostic. Alternative to the default china-multicenter-pa-2026 warn range for the same population."
+note = "Post-seated-saline-infusion PAC cut-off by LC-MS/MS (sensitivity 68%, specificity 85%). Study-derived threshold, not a guideline value. Source kind: diagnostic. Source band >= 5.0; stored as the warn high bound 5.0. Alternative to the default china-multicenter-pa-2026 warn range for the same population."
 
 [[range]]
 set = "china-sandwich-immunoassay-2026"
 kind = "warn"
-low = 5.6
+high = 5.6
 population = "676 Chinese adults suspected of primary aldosteronism at seven centres (method: chemiluminescent sandwich immunoassay; test: seated saline infusion test)"
 evidence = "cohort"
 citations = [
   { pmid = "42343549", doi = "10.1515/cclm-2026-0579", url = "https://pubmed.ncbi.nlm.nih.gov/42343549/", title = "New insights in primary aldosteronism diagnosis: a prospective multicenter study.", locator = "Abstract, Results" },
 ]
-note = "Post-seated-saline-infusion PAC cut-off for 85% specificity on a sandwich immunoassay (Maglumi X8). Assay-specific; not interchangeable with LC-MS/MS or other immunoassay cut-offs. Source unit ng/L is not converted. Converted from the source's ng/L (56) to ng/dL using factor 0.1. Source kind: diagnostic."
+note = "Post-seated-saline-infusion PAC cut-off for 85% specificity on a sandwich immunoassay (Maglumi X8). Assay-specific; not interchangeable with LC-MS/MS or other immunoassay cut-offs. Source unit ng/L is not converted. Converted from the source's ng/L (56) to ng/dL using factor 0.1. Source kind: diagnostic. Source band >= 5.6; stored as the warn high bound 5.6."
 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 5.9
+high = 5.9
 population = "676 Chinese adults suspected of primary aldosteronism at seven centres (method: chemiluminescent sandwich immunoassay; test: captopril challenge test)"
 evidence = "cohort"
 citations = [
   { pmid = "42343549", doi = "10.1515/cclm-2026-0579", url = "https://pubmed.ncbi.nlm.nih.gov/42343549/", title = "New insights in primary aldosteronism diagnosis: a prospective multicenter study.", locator = "Abstract, Results" },
 ]
-note = "Post-captopril-challenge PAC cut-off for 85% specificity on a sandwich immunoassay (Maglumi X8). Assay-specific; source unit ng/L is not converted. Converted from the source's ng/L (59) to ng/dL using factor 0.1. Source kind: diagnostic. Alternative to the default china-sandwich-immunoassay-2026 warn range for the same population."
+note = "Post-captopril-challenge PAC cut-off for 85% specificity on a sandwich immunoassay (Maglumi X8). Assay-specific; source unit ng/L is not converted. Converted from the source's ng/L (59) to ng/dL using factor 0.1. Source kind: diagnostic. Source band >= 5.9; stored as the warn high bound 5.9. Alternative to the default china-sandwich-immunoassay-2026 warn range for the same population."

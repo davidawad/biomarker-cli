@@ -173,11 +173,11 @@ note = "2.5th-97.5th percentile for girls aged 12-19 years (pubertal), mIU/mL. I
 [[range]]
 set = "eshre-poi-2024"
 kind = "warn"
-low = 25.0
+high = 25.0
 when = { sex = "female", conditions = ["suspected-poi"] }
 population = "Women with disordered menstrual cycles (spontaneous amenorrhoea or irregular cycles for at least 4 months); ESHRE evidence-based guideline 2024"
 evidence = "consensus"
 citations = [
   { pmid = "39660328", doi = "10.1093/hropen/hoae065", url = "https://pubmed.ncbi.nlm.nih.gov/39660328/", title = "Evidence-based guideline: premature ovarian insufficiency.", locator = "Recommendations (diagnosis)" },
 ]
-note = "Restates the ESHRE 2024 premature ovarian insufficiency guideline, cited via its open-access abstract. Values strictly above 25 IU/L (low = 25 is the lower bound of the zone) support POI with the clinical picture. The 2024 guideline needs only one elevated FSH; the 2015/2016 ESHRE guidance required two occasions. Repeat FSH after 4-6 weeks if uncertain. Source unit IU/L (equivalent to mIU/mL). Converted from the source's IU/L (25) to mIU/mL using factor 1. Source kind: diagnostic."
+note = "Restates the ESHRE 2024 premature ovarian insufficiency guideline, cited via its open-access abstract. Values strictly above 25 IU/L (low = 25 is the lower bound of the zone) support POI with the clinical picture. The 2024 guideline needs only one elevated FSH; the 2015/2016 ESHRE guidance required two occasions. Repeat FSH after 4-6 weeks if uncertain. Source unit IU/L (equivalent to mIU/mL). Converted from the source's IU/L (25) to mIU/mL using factor 1. Source kind: diagnostic. Source band >= 25.0; stored as the warn high bound 25.0."

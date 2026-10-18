@@ -8,25 +8,24 @@ aliases = ["abi", "ankle brachial pressure index", "ankle-brachial pressure inde
 [[range]]
 set = "acc-aha-2024-pad"
 kind = "warn"
-high = 0.9
+low = 0.9
 population = "Adults with suspected or known lower extremity peripheral artery disease, resting ABI in each leg"
 evidence = "guideline"
 citations = [
   { pmid = "38752899", doi = "10.1016/j.jacc.2024.02.013", url = "https://pubmed.ncbi.nlm.nih.gov/38752899/", title = "2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.", locator = "Full text, Diagnosis: resting ABI reporting statement" },
 ]
-note = "Abnormal resting ABI (<=0.90, boundary inclusive); PAD is suspected at this level. Sensitivity is reduced in diabetes. Source kind: decision."
+note = "Abnormal resting ABI (<=0.90, boundary inclusive); PAD is suspected at this level. Sensitivity is reduced in diabetes. Source kind: decision. Source band <= 0.9; stored as the warn low bound 0.9."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
 low = 0.91
-high = 0.99
 population = "Adults with suspected or known lower extremity peripheral artery disease, resting ABI in each leg"
 evidence = "guideline"
 citations = [
   { pmid = "38752899", doi = "10.1016/j.jacc.2024.02.013", url = "https://pubmed.ncbi.nlm.nih.gov/38752899/", title = "2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.", locator = "Full text, Diagnosis: resting ABI reporting statement" },
 ]
-note = "Borderline resting ABI (0.91 to 0.99). Exercise treadmill ABI is suggested for suspected chronic symptomatic PAD in this band and in the normal band. Alternative to the default acc-aha-2024-pad warn range for the same population."
+note = "Borderline resting ABI (0.91 to 0.99). Exercise treadmill ABI is suggested for suspected chronic symptomatic PAD in this band and in the normal band. Source band 0.91-0.99; stored as the warn low bound 0.91. Alternative to the default acc-aha-2024-pad warn range for the same population."
 
 [[range]]
 set = "clinical"
@@ -43,10 +42,10 @@ note = "Normal resting ABI band (1.00 to 1.40, boundaries inclusive) as defined 
 [[range]]
 set = "alt-2"
 kind = "warn"
-low = 1.4
+high = 1.4
 population = "Adults with suspected or known lower extremity peripheral artery disease, resting ABI in each leg"
 evidence = "guideline"
 citations = [
   { pmid = "38752899", doi = "10.1016/j.jacc.2024.02.013", url = "https://pubmed.ncbi.nlm.nih.gov/38752899/", title = "2024 ACC/AHA/AACVPR/APMA/ABC/SCAI/SVM/SVN/SVS/SIR/VESS Guideline for the Management of Lower Extremity Peripheral Artery Disease: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.", locator = "Full text, Diagnosis: resting ABI reporting statement" },
 ]
-note = "Noncompressible vessels (resting ABI above 1.40, boundary exclusive). The ABI is not interpretable here; toe pressure or toe-brachial index is recommended. Common in diabetes and CKD. Source kind: decision. Alternative to the default acc-aha-2024-pad warn range for the same population."
+note = "Noncompressible vessels (resting ABI above 1.40, boundary exclusive). The ABI is not interpretable here; toe pressure or toe-brachial index is recommended. Common in diabetes and CKD. Source kind: decision. Source band >= 1.4; stored as the warn high bound 1.4. Alternative to the default acc-aha-2024-pad warn range for the same population."

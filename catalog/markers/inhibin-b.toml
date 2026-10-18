@@ -70,47 +70,47 @@ note = "95% prediction interval at the peak of inhibin B in puberty (stage III).
 [[range]]
 set = "male-infertility-inhibin-b-cutoffs-2021"
 kind = "warn"
-high = 58.25
+low = 58.25
 when = { sex = "male", conditions = ["severe-oligozoospermia"] }
 population = "Subfertile Chinese men, 324 patients with different spermatogenesis status"
 evidence = "cohort"
 citations = [
   { pmid = "34181290", doi = "10.1002/jcla.23882", url = "https://pubmed.ncbi.nlm.nih.gov/34181290/", title = "Clinical application value of Inhibin B alone or in combination with other hormone indicators in subfertile men with different spermatogenesis status: A study of 324 Chinese men.", locator = "Abstract, Results" },
 ]
-note = "Upper cut-off for severe oligozoospermia (ISO) in the source. Values at or below this favour impaired spermatogenesis. Single-centre, derived from the same cohort it was tested in. Source kind: diagnostic."
+note = "Upper cut-off for severe oligozoospermia (ISO) in the source. Values at or below this favour impaired spermatogenesis. Single-centre, derived from the same cohort it was tested in. Source kind: diagnostic. Source band <= 58.25; stored as the warn low bound 58.25."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-high = 45.9
+low = 45.9
 when = { sex = "male", conditions = ["nonobstructive-azoospermia"] }
 population = "Subfertile Chinese men, 324 patients with different spermatogenesis status"
 evidence = "cohort"
 citations = [
   { pmid = "34181290", doi = "10.1002/jcla.23882", url = "https://pubmed.ncbi.nlm.nih.gov/34181290/", title = "Clinical application value of Inhibin B alone or in combination with other hormone indicators in subfertile men with different spermatogenesis status: A study of 324 Chinese men.", locator = "Abstract, Results" },
 ]
-note = "Cut-off to diagnose non-obstructive azoospermia versus obstructive azoospermia; values below this favour NOA. Single-centre. Source kind: diagnostic. Alternative to the default male-infertility-inhibin-b-cutoffs-2021 warn range for the same population."
+note = "Cut-off to diagnose non-obstructive azoospermia versus obstructive azoospermia; values below this favour NOA. Single-centre. Source kind: diagnostic. Source band <= 45.9; stored as the warn low bound 45.9. Alternative to the default male-infertility-inhibin-b-cutoffs-2021 warn range for the same population."
 
 [[range]]
 set = "tese-inhibin-b-cutoff-2016"
 kind = "warn"
-low = 19.1
+high = 19.1
 when = { sex = "male", conditions = ["azoospermia"] }
 population = "Azoospermia patients undergoing testicular sperm extraction (TESE), Chinese cohort"
 evidence = "cohort"
 citations = [
   { pmid = "29282914", url = "https://pubmed.ncbi.nlm.nih.gov/29282914/", title = "[Level of serum inhibin B for predicting the results of testicular sperm extraction in azoospermia patients].", locator = "Abstract, Results" },
 ]
-note = "ROC cut-off for predicting TESE result. Values at or above this favour sperm retrieval. Single-centre, small sample. Source kind: diagnostic."
+note = "ROC cut-off for predicting TESE result. Values at or above this favour sperm retrieval. Single-centre, small sample. Source kind: diagnostic. Source band >= 19.1; stored as the warn high bound 19.1."
 
 [[range]]
 set = "micro-tese-inhibin-b-cutoff-2023"
 kind = "warn"
-low = 21.51
+high = 21.51
 when = { sex = "male", conditions = ["non-obstructive-azoospermia"] }
 population = "Men with idiopathic non-obstructive azoospermia undergoing micro-TESE"
 evidence = "cohort"
 citations = [
   { pmid = "36675430", doi = "10.3390/jcm12020500", url = "https://pubmed.ncbi.nlm.nih.gov/36675430/", title = "Inhibin B-to-Anti-Mullerian Hormone Ratio as Noninvasive Predictors of Positive Sperm Retrieval in Idiopathic Non-Obstructive Azoospermia.", locator = "Abstract, Results" },
 ]
-note = "ROC cut-off for positive sperm retrieval with micro-TESE. Values above this favour a positive retrieval. Single-centre. Source kind: diagnostic."
+note = "ROC cut-off for positive sperm retrieval with micro-TESE. Values above this favour a positive retrieval. Single-centre. Source kind: diagnostic. Source band >= 21.51; stored as the warn high bound 21.51."

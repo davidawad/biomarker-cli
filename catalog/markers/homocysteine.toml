@@ -126,69 +126,65 @@ note = "Reference interval for non-pregnant women. The abstract does not state f
 [[range]]
 set = "hhcy-grading-cureus-2024"
 kind = "warn"
-low = 16
 high = 30
 population = "Plasma total homocysteine grading of hyperhomocysteinaemia as used in a 2024 systematic review (young adults with arterial dissection)"
 evidence = "consensus"
 citations = [
   { pmid = "38910639", doi = "10.7759/cureus.60878", title = "Exploring the Nexus: A Systematic Review on the Interplay of the Methylenetetrahydrofolate Reductase (MTHFR) Gene C677T Genotype, Hyperhomocysteinemia, and Spontaneous Cervical/Vertebral Artery Dissection in Young Adults.", locator = "Introduction, para 1 (Abstract/full text)" },
 ]
-note = "Moderate hyperhomocysteinaemia. The brief's grading (15-30) is not what this source quotes (16-30); the original consensus (Refsum 2004, Clin Chem) was not retrievable, so confirm the boundary there before use."
+note = "Moderate hyperhomocysteinaemia. The brief's grading (15-30) is not what this source quotes (16-30); the original consensus (Refsum 2004, Clin Chem) was not retrievable, so confirm the boundary there before use. Source band 16-30; stored as the warn high bound 30."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 31
 high = 100
 population = "Plasma total homocysteine grading of hyperhomocysteinaemia as used in a 2024 systematic review (young adults with arterial dissection)"
 evidence = "consensus"
 citations = [
   { pmid = "38910639", doi = "10.7759/cureus.60878", title = "Exploring the Nexus: A Systematic Review on the Interplay of the Methylenetetrahydrofolate Reductase (MTHFR) Gene C677T Genotype, Hyperhomocysteinemia, and Spontaneous Cervical/Vertebral Artery Dissection in Young Adults.", locator = "Introduction, para 1 (Abstract/full text)" },
 ]
-note = "Intermediate hyperhomocysteinaemia. See the moderate band for the source caveat. Alternative to the default hhcy-grading-cureus-2024 warn range for the same population."
+note = "Intermediate hyperhomocysteinaemia. See the moderate band for the source caveat. Source band 31-100; stored as the warn high bound 100. Alternative to the default hhcy-grading-cureus-2024 warn range for the same population."
 
 [[range]]
 set = "hhcy-grading-cureus-2024"
 kind = "critical"
-low = 100
+high = 100
 population = "Plasma total homocysteine grading of hyperhomocysteinaemia as used in a 2024 systematic review (young adults with arterial dissection)"
 evidence = "consensus"
 citations = [
   { pmid = "38910639", doi = "10.7759/cureus.60878", title = "Exploring the Nexus: A Systematic Review on the Interplay of the Methylenetetrahydrofolate Reductase (MTHFR) Gene C677T Genotype, Hyperhomocysteinemia, and Spontaneous Cervical/Vertebral Artery Dissection in Young Adults.", locator = "Introduction, para 1 (Abstract/full text)" },
 ]
-note = "Severe hyperhomocysteinaemia, open-ended above 100 micromol/L. See the moderate band for the source caveat."
+note = "Severe hyperhomocysteinaemia, open-ended above 100 micromol/L. See the moderate band for the source caveat. Source band >= 100; stored as the critical high bound 100."
 
 [[range]]
 set = "hhcy-categories-2021"
 kind = "warn"
-low = 15
 high = 30
 population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
 evidence = "cohort"
 citations = [
   { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", locator = "Abstract, Background" },
 ]
-note = "Moderate hyperhomocysteinaemia band (15-30 umol/L). A review quotes 16-30 for this band, so the lower boundary varies between sources. Source kind: decision."
+note = "Moderate hyperhomocysteinaemia band (15-30 umol/L). A review quotes 16-30 for this band, so the lower boundary varies between sources. Source kind: decision. Source band 15-30; stored as the warn high bound 30."
 
 [[range]]
-set = "alt-2"
+set = "alt-1"
 kind = "warn"
-low = 30
 high = 100
 population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
 evidence = "cohort"
 citations = [
   { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", locator = "Abstract, Objective" },
 ]
-note = "Intermediate hyperhomocysteinaemia band (30-100 umol/L; boundary 30 included, 100 included as stated in the source). Source kind: decision. Alternative to the default hhcy-categories-2021 warn range for the same population."
+note = "Intermediate hyperhomocysteinaemia band (30-100 umol/L; boundary 30 included, 100 included as stated in the source). Source kind: decision. Source band 30-100; stored as the warn high bound 100. Alternative to the default hhcy-categories-2021 warn range for the same population."
 
 [[range]]
-set = "alt-3"
+set = "alt-1"
 kind = "warn"
-low = 100
+high = 100
 population = "Cardiovascular patients and cohorts with hyperhomocysteinaemia related to vitamin deficiency or inherited disorders"
 evidence = "cohort"
 citations = [
   { pmid = "33693455", doi = "10.1093/ajcn/nqaa432", url = "https://pubmed.ncbi.nlm.nih.gov/33693455/", title = "Cardiovascular manifestations of intermediate and major hyperhomocysteinemia due to vitamin B12 and folate deficiency and/or inherited disorders of one-carbon metabolism: a 3.5-year retrospective cross-sectional study of consecutive patients.", locator = "Abstract, Objective" },
 ]
-note = "Severe hyperhomocysteinaemia band (above 100 umol/L; boundary > 100). Source kind: decision. Alternative to the default hhcy-categories-2021 warn range for the same population."
+note = "Severe hyperhomocysteinaemia band (above 100 umol/L; boundary > 100). Source kind: decision. Source band >= 100; stored as the warn high bound 100. Alternative to the default hhcy-categories-2021 warn range for the same population."

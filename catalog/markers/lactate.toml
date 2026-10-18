@@ -9,47 +9,47 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "ssc-2012"
 kind = "critical"
-low = 4
+high = 4
 when = { conditions = ["sepsis"] }
 population = "Adults with sepsis-induced tissue hypoperfusion requiring protocolised resuscitation (Surviving Sepsis Campaign 2012)"
 evidence = "guideline"
 citations = [
   { pmid = "23361625", doi = "10.1007/s00134-012-2769-8", title = "Surviving Sepsis Campaign: international guidelines for management of severe sepsis and septic shock, 2012.", locator = "Recommendation 1, Initial resuscitation" },
 ]
-note = "Resuscitation threshold: hypoperfusion is defined as persistent hypotension after fluid challenge or lactate at or above this level."
+note = "Resuscitation threshold: hypoperfusion is defined as persistent hypotension after fluid challenge or lactate at or above this level. Source band >= 4; stored as the critical high bound 4."
 
 [[range]]
 set = "j-sscg-2020"
 kind = "warn"
-low = 2
+high = 2
 when = { conditions = ["sepsis"] }
 population = "Adults with sepsis in the Japanese guideline, septic shock definition (vasopressors to keep MAP at or above 65 mmHg, with lactate above this level despite fluids)"
 evidence = "guideline"
 citations = [
   { pmid = "34433491", doi = "10.1186/s40560-021-00555-7", title = "The Japanese Clinical Practice Guidelines for Management of Sepsis and Septic Shock 2020 (J-SSCG 2020).", locator = "Section on definitions, septic shock" },
 ]
-note = "Septic-shock lactate criterion in the Japanese 2020 guideline, the same 2 mmol/L level as Sepsis-3. Included as a second source for that threshold. Source kind: diagnostic."
+note = "Septic-shock lactate criterion in the Japanese 2020 guideline, the same 2 mmol/L level as Sepsis-3. Included as a second source for that threshold. Source kind: diagnostic. Source band >= 2; stored as the warn high bound 2."
 
 [[range]]
 set = "sepsis-3-2016"
 kind = "warn"
-low = 2
+high = 2
 when = { conditions = ["sepsis"] }
 population = "Adults with sepsis and septic shock, measured after adequate fluid resuscitation (Sepsis-3 septic shock criteria)"
 evidence = "consensus"
 citations = [
   { pmid = "26903336", doi = "10.1001/jama.2016.0289", title = "Developing a New Definition and Assessing New Clinical Criteria for Septic Shock: For the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3).", locator = "Abstract, Conclusions" },
 ]
-note = "Septic-shock criterion in Sepsis-3 (with vasopressors); a level above 2 is the hyperlactataemia threshold used alongside hypotension. Source kind: diagnostic."
+note = "Septic-shock criterion in Sepsis-3 (with vasopressors); a level above 2 is the hyperlactataemia threshold used alongside hypotension. Source kind: diagnostic. Source band >= 2; stored as the warn high bound 2."
 
 [[range]]
 set = "lactate-kinetics-2016"
 kind = "warn"
-low = 1.5
+high = 1.5
 when = { conditions = ["critical-illness"] }
 population = "Critically ill adults in a systematic review of blood lactate kinetics (observational and interventional studies)"
 evidence = "consensus"
 citations = [
   { pmid = "27520452", doi = "10.1186/s13054-016-1403-5", title = "The value of blood lactate kinetics in critically ill patients: a systematic review.", locator = "Introduction" },
 ]
-note = "Review statement that minor rises above this level are associated with higher mortality. For lactate, mEq/L equals mmol/L. The same review says the normal blood lactate concentration is around 1 mEq/L, a single value that is not encoded as an interval."
+note = "Review statement that minor rises above this level are associated with higher mortality. For lactate, mEq/L equals mmol/L. The same review says the normal blood lactate concentration is around 1 mEq/L, a single value that is not encoded as an interval. Source band >= 1.5; stored as the warn high bound 1.5."

@@ -7,13 +7,13 @@ description = "Serum or plasma selenium, the marker of selenium status used with
 [[range]]
 set = "us-epa-2002"
 kind = "warn"
-low = 1000
+high = 1000
 population = "Adults with selenium exposure; threshold taken from the US EPA (2002) value quoted in a 2020 review (specimen: whole-blood)"
 evidence = "guideline"
 citations = [
   { pmid = "31388899", doi = "10.1007/s42000-019-00125-5", title = "Selenium intake, status, and health: a complex relationship.", locator = "Section on mercury exposure in the Brazilian Amazon" },
 ]
-note = "Whole-blood selenium considered toxic. Value cited secondhand from a review (Rayman 2020); the primary EPA document was not retrieved. Source kind: toxic."
+note = "Whole-blood selenium considered toxic. Value cited secondhand from a review (Rayman 2020); the primary EPA document was not retrieved. Source kind: toxic. Source band >= 1000; stored as the warn high bound 1000."
 
 [[range]]
 set = "clinical"
@@ -42,21 +42,21 @@ note = "Plasma selenium at which GPX3 and SEPP1 selenoprotein expression reaches
 [[range]]
 set = "clinical"
 kind = "warn"
-low = 120
+high = 120
 population = "Adults (observational and dose-response data)"
 evidence = "cohort"
 citations = [
   { pmid = "37880477", doi = "10.1007/s12011-023-03900-z", title = "Selenium Species in Diabetes Mellitus Type 2.", locator = "Discussion (dose-response paragraph)" },
 ]
-note = "Blood selenium at or above 120 ug/L was associated with increased risk of type 2 diabetes in the source's pooled observational data. This is a risk signal from observational studies, not a treatment or toxicity limit."
+note = "Blood selenium at or above 120 ug/L was associated with increased risk of type 2 diabetes in the source's pooled observational data. This is a risk signal from observational studies, not a treatment or toxicity limit. Source band >= 120; stored as the warn high bound 120."
 
 [[range]]
 set = "epic-reference-2020"
 kind = "warn"
-high = 45.7
+low = 45.7
 population = "Adults with COVID-19 compared with the EPIC reference population (n=1915) for total serum selenium (specimen: serum)"
 evidence = "cohort"
 citations = [
   { pmid = "32708526", doi = "10.3390/nu12072098", title = "Selenium Deficiency Is Associated with Mortality Risk from COVID-19.", locator = "Results, paragraph 1" },
 ]
-note = "Authors' low-status cut-off: below the 2.5th percentile of the EPIC reference population. It is a reference-derived lower limit, not a clinical deficiency cut-off. The same paper gives only mean and SD for the reference group. Source kind: deficient."
+note = "Authors' low-status cut-off: below the 2.5th percentile of the EPIC reference population. It is a reference-derived lower limit, not a clinical deficiency cut-off. The same paper gives only mean and SD for the reference group. Source kind: deficient. Source band <= 45.7; stored as the warn low bound 45.7."

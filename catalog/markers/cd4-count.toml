@@ -9,39 +9,38 @@ aliases = ["cd4 count", "cd4+ t-lymphocyte count", "cd4 t-cell count"]
 [[range]]
 set = "cdc-1992-hiv-classification"
 kind = "warn"
-high = 200
+low = 200
 when = { conditions = ["hiv"] }
 population = "HIV-infected adults and adolescents, CDC clinical classification system"
 evidence = "guideline"
 citations = [
   { url = "https://www.cdc.gov/mmwr/preview/mmwrhtml/00018871.htm", locator = "Section: CD4+ T-Lymphocyte Categories" },
 ]
-note = "CDC category 3 (AIDS threshold): CD4 count below 200 cells/µL (boundary <200). Category 3 is the threshold that also defines the AIDS case definition. Source kind: decision."
+note = "CDC category 3 (AIDS threshold): CD4 count below 200 cells/µL (boundary <200). Category 3 is the threshold that also defines the AIDS case definition. Source kind: decision. Source band <= 200; stored as the warn low bound 200."
+
+[[range]]
+set = "cdc-1992-hiv-classification"
+kind = "warn"
+low = 200
+when = { conditions = ["hiv"] }
+population = "HIV-infected adults and adolescents, CDC clinical classification system"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/mmwr/preview/mmwrhtml/00018871.htm", locator = "Section: CD4+ T-Lymphocyte Categories" },
+]
+note = "CDC category 2: CD4 count 200 to 499 cells/µL. Source kind: decision. Source band 200-499; stored as the warn low bound 200."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-low = 200
-high = 499
+high = 500
 when = { conditions = ["hiv"] }
 population = "HIV-infected adults and adolescents, CDC clinical classification system"
 evidence = "guideline"
 citations = [
   { url = "https://www.cdc.gov/mmwr/preview/mmwrhtml/00018871.htm", locator = "Section: CD4+ T-Lymphocyte Categories" },
 ]
-note = "CDC category 2: CD4 count 200 to 499 cells/µL. Source kind: decision. Alternative to the default cdc-1992-hiv-classification warn range for the same population."
-
-[[range]]
-set = "alt-2"
-kind = "warn"
-low = 500
-when = { conditions = ["hiv"] }
-population = "HIV-infected adults and adolescents, CDC clinical classification system"
-evidence = "guideline"
-citations = [
-  { url = "https://www.cdc.gov/mmwr/preview/mmwrhtml/00018871.htm", locator = "Section: CD4+ T-Lymphocyte Categories" },
-]
-note = "CDC category 1: CD4 count of 500 cells/µL or more (boundary >=500). The source text prints the unit as cells/mL in this category label; the threshold itself is the cells/µL figure used in the category table. Source kind: decision. Alternative to the default cdc-1992-hiv-classification warn range for the same population."
+note = "CDC category 1: CD4 count of 500 cells/µL or more (boundary >=500). The source text prints the unit as cells/mL in this category label; the threshold itself is the cells/µL figure used in the category table. Source kind: decision. Source band >= 500; stored as the warn high bound 500. Alternative to the default cdc-1992-hiv-classification warn range for the same population."
 
 [[range]]
 set = "clinical"

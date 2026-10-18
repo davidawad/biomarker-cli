@@ -21,10 +21,10 @@ note = "Upper reference limit (95th percentile) for CA15-3 in elderly women as t
 [[range]]
 set = "ca153-recurrence-2024"
 kind = "warn"
-low = 30
+high = 30
 population = "Patients with suspected recurrent breast carcinoma (Bangladesh diagnostic accuracy study)"
 evidence = "cohort"
 citations = [
   { pmid = "39360039", doi = "10.7759/cureus.68448", url = "https://pubmed.ncbi.nlm.nih.gov/39360039/", title = "Diagnostic Accuracy of Cancer Antigen 15-3 as a Seromarker Among Recurrent Breast Carcinoma in Bangladesh.", locator = "Abstract, Results" },
 ]
-note = "Diagnostic cut-off of 30 U/mL used in this study for recurrent breast carcinoma (sensitivity 95.7%, specificity 69.4%). Boundary taken as >= 30. Single-centre study; other cut-offs (roughly 30-35 U/mL) are used in practice and were not verified here. Source kind: decision."
+note = "Diagnostic cut-off of 30 U/mL used in this study for recurrent breast carcinoma (sensitivity 95.7%, specificity 69.4%). Boundary taken as >= 30. Single-centre study; other cut-offs (roughly 30-35 U/mL) are used in practice and were not verified here. Source kind: decision. Source band >= 30; stored as the warn high bound 30."

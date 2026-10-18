@@ -8,13 +8,13 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "endocrine-society-2025"
 kind = "warn"
-high = 1
+low = 1
 population = "Adults screened for primary aldosteronism; PRA and PAC by LC-MS/MS (Endocrine Society 2025 criteria as summarised in a 2026 analysis) (method: lc-ms/ms)"
 evidence = "consensus"
 citations = [
   { pmid = "42751802", doi = "10.1161/HYPERTENSIONAHA.126.27634", url = "https://pubmed.ncbi.nlm.nih.gov/42751802/", title = "Evaluation of Current Screening Thresholds for the Detection of Primary Aldosteronism.", locator = "Abstract, Background" },
 ]
-note = "Suppressed renin for screening: PRA at or below 1 ng/mL/h, applied together with PAC at or above 7.5 ng/dL and ARR above 15. Applies only to: markers=[{\"slug\": \"aldosterone\", \"op\": \">=\", \"value\": 7.5, \"unit\": \"ng/dL\"}]. Source kind: diagnostic."
+note = "Suppressed renin for screening: PRA at or below 1 ng/mL/h, applied together with PAC at or above 7.5 ng/dL and ARR above 15. Applies only to: markers=[{\"slug\": \"aldosterone\", \"op\": \">=\", \"value\": 7.5, \"unit\": \"ng/dL\"}]. Source kind: diagnostic. Source band <= 1; stored as the warn low bound 1."
 
 [[range]]
 set = "renin-status-outcomes-2025"

@@ -10,10 +10,10 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "lp-pla2-review-2021"
 kind = "warn"
-low = 225
+high = 225
 population = "Adults at cardiovascular risk, assessed with the PLAC Test Activity (manufacturer cut-off) (method: plac-test)"
 evidence = "consensus"
 citations = [
   { pmid = "34336025", doi = "10.5114/aoms.2020.98195", url = "https://pubmed.ncbi.nlm.nih.gov/34336025/", title = "On the present and future role of Lp-PLA(2) in atherosclerosis-related cardiovascular risk prediction and management.", locator = "Full text, Lp-PLA2 measurement section" },
 ]
-note = "Manufacturer-declared enzyme activity cut-off of the PLAC Test that identifies high cardiovascular risk (at or above 225 nmol/min/mL, boundary inclusive). The source is a review that reports the manufacturer cut-off; it is not an independent guideline value. Activity thresholds are assay specific and may need to be sex and race specific. Source kind: decision."
+note = "Manufacturer-declared enzyme activity cut-off of the PLAC Test that identifies high cardiovascular risk (at or above 225 nmol/min/mL, boundary inclusive). The source is a review that reports the manufacturer cut-off; it is not an independent guideline value. Activity thresholds are assay specific and may need to be sex and race specific. Source kind: decision. Source band >= 225; stored as the warn high bound 225."

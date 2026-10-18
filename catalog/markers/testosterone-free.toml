@@ -70,7 +70,7 @@ set = "premenopausal-women-2011"
 kind = "reference"
 low = 1.2
 high = 6.4
-when = { sex = "female", age = [30.0, 30.0] }
+when = { sex = "female", age = [30.0, 31.0] }
 population = "Normally cycling healthy premenopausal women aged 18-49 (n=161); percentiles estimated for a typical 30-year-old woman, pooled across menstrual cycle phases"
 evidence = "reference-interval-study"
 citations = [

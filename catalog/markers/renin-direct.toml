@@ -33,10 +33,10 @@ note = "Central 95% reference interval for direct renin concentration (PRC) in f
 [[range]]
 set = "china-multicenter-pa-2026"
 kind = "warn"
-high = 15
+low = 15
 population = "Chinese adults at high risk of primary aldosteronism at seven tertiary centres (117 PA, 354 essential hypertension) (method: immunoassay; test: seated saline infusion test)"
 evidence = "cohort"
 citations = [
   { pmid = "41633645", doi = "10.3760/cma.j.cn112138-20250721-00423", url = "https://pubmed.ncbi.nlm.nih.gov/41633645/", title = "[Establishing LC-MS/MS-based cutoffs for the confirmatory testing for primary aldosteronism: a prospective multi-center study].", locator = "Abstract, Methods" },
 ]
-note = "Upright renin concentration below 15 mU/L used as a suppression criterion alongside a post-seated-saline PAC of at least 8.5 ng/dL (CLIA). This is the study's own PA definition, not a guideline value. Source kind: diagnostic."
+note = "Upright renin concentration below 15 mU/L used as a suppression criterion alongside a post-seated-saline PAC of at least 8.5 ng/dL (CLIA). This is the study's own PA definition, not a guideline value. Source kind: diagnostic. Source band <= 15; stored as the warn low bound 15."

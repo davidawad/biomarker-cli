@@ -45,10 +45,10 @@ note = "Reference range as reported in ref. 39544236 (citing a US study); source
 [[range]]
 set = "clinical"
 kind = "warn"
-high = 10
+low = 10
 population = "Nondiabetic adults followed about 20 years (Warren et al., as reported in ref. 39544236)"
 evidence = "cohort"
 citations = [
   { pmid = "39544236", doi = "10.3389/fendo.2024.1471577", title = "The clinical potential of 1,5-anhydroglucitol as biomarker in diabetes mellitus.", locator = "Text, 1,5-AG and cardiovascular outcomes paragraph" },
 ]
-note = "Risk threshold: serum 1,5-AG strictly below 10 ug/mL, associated with incident diabetes and adverse outcomes; cited in the review as a short-term hyperglycaemia / postprandial marker threshold. Source unit ug/mL."
+note = "Risk threshold: serum 1,5-AG strictly below 10 ug/mL, associated with incident diabetes and adverse outcomes; cited in the review as a short-term hyperglycaemia / postprandial marker threshold. Source unit ug/mL. Source band <= 10; stored as the warn low bound 10."

@@ -7,22 +7,9 @@ aliases = ["nfs", "nafld-fs"]
 no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 
 [[range]]
-set = "angulo-2007"
-kind = "warn"
-low = -1.455
-high = 0.676
-population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
-evidence = "cohort"
-citations = [
-  { pmid = "17393509", doi = "10.1002/hep.21496", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", locator = "Abstract, Results" },
-  { pmid = "17393509", doi = "10.1002/hep.21496", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", locator = "Abstract, Results" },
-]
-note = "Indeterminate band between the low cut-off -1.455 and the high cut-off 0.676."
-
-[[range]]
 set = "mcpherson-2017"
 kind = "warn"
-high = 0.12
+low = 0.12
 when = { age = [65.0, 200] }
 population = "Adults aged 65 and over with biopsy-proven NAFLD"
 evidence = "cohort"
@@ -30,26 +17,26 @@ citations = [
   { pmid = "27725647", doi = "10.1038/ajg.2016.453", url = "https://pubmed.ncbi.nlm.nih.gov/27725647/", title = "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.", locator = "Results, Discussion" },
   { pmid = "27725647", doi = "10.1038/ajg.2016.453", url = "https://pubmed.ncbi.nlm.nih.gov/27725647/", title = "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.", locator = "Results, Discussion" },
 ]
-note = "Age-adjusted lower cut-off for 65 and over: NFS below 0.12 is used to exclude advanced fibrosis, per the paper's proposed thresholds (sensitivity 80%, specificity 70%). Upper cut-off unchanged. Source kind: decision."
+note = "Age-adjusted lower cut-off for 65 and over: NFS below 0.12 is used to exclude advanced fibrosis, per the paper's proposed thresholds (sensitivity 80%, specificity 70%). Upper cut-off unchanged. Source kind: decision. Source band <= 0.12; stored as the warn low bound 0.12."
+
+[[range]]
+set = "angulo-2007"
+kind = "warn"
+low = -1.455
+population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
+evidence = "cohort"
+citations = [
+  { pmid = "17393509", doi = "10.1002/hep.21496", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", locator = "Abstract, Results" },
+]
+note = "Low cut-off: scores below -1.455 exclude advanced fibrosis with high accuracy (NPV 93% and 88%). Not validated for under 35 and for 65 and over, where age-adjusted cut-offs apply. Source kind: decision. Source band <= -1.455; stored as the warn low bound -1.455."
 
 [[range]]
 set = "alt-1"
 kind = "warn"
-high = -1.455
+high = 0.676
 population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
 evidence = "cohort"
 citations = [
   { pmid = "17393509", doi = "10.1002/hep.21496", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", locator = "Abstract, Results" },
 ]
-note = "Low cut-off: scores below -1.455 exclude advanced fibrosis with high accuracy (NPV 93% and 88%). Not validated for under 35 and for 65 and over, where age-adjusted cut-offs apply. Source kind: decision. Alternative to the default angulo-2007 warn range for the same population."
-
-[[range]]
-set = "alt-2"
-kind = "warn"
-low = 0.676
-population = "Adults with biopsy-proven NAFLD (derivation and validation cohorts)"
-evidence = "cohort"
-citations = [
-  { pmid = "17393509", doi = "10.1002/hep.21496", url = "https://pubmed.ncbi.nlm.nih.gov/17393509/", title = "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.", locator = "Abstract, Results" },
-]
-note = "High cut-off: scores above 0.676 indicate advanced fibrosis (PPV 90% and 82%). The upper cut-off is unchanged for age 65 and over. Source kind: decision. Alternative to the default angulo-2007 warn range for the same population."
+note = "High cut-off: scores above 0.676 indicate advanced fibrosis (PPV 90% and 82%). The upper cut-off is unchanged for age 65 and over. Source kind: decision. Source band >= 0.676; stored as the warn high bound 0.676. Alternative to the default angulo-2007 warn range for the same population."

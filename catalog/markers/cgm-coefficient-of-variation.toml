@@ -31,10 +31,10 @@ note = "Lower CV target of below 33 percent (boundary < 33). The consensus footn
 [[range]]
 set = "hgv-cvw-2021"
 kind = "warn"
-low = 36
+high = 36
 population = "Adults with type 1 diabetes; within-day CV (%CVw) computed from 14 days of CGM data"
 evidence = "cohort"
 citations = [
   { pmid = "34099517", doi = "10.2337/dc20-1847", url = "https://pubmed.ncbi.nlm.nih.gov/34099517/", title = "Is the Consensual Threshold for Defining High Glucose Variability Implementable in Clinical Practice?", locator = "Abstract, Objective" },
 ]
-note = "High glycaemic variability is defined as CV above 36 percent (boundary > 36). The source found that CGM devices report only total CV, which can exceed 36 percent while within-day CV stays at or below 36 percent, so a total CV above 36 percent is not always high within-day variability."
+note = "High glycaemic variability is defined as CV above 36 percent (boundary > 36). The source found that CGM devices report only total CV, which can exceed 36 percent while within-day CV stays at or below 36 percent, so a total CV above 36 percent is not always high within-day variability. Source band >= 36; stored as the warn high bound 36."

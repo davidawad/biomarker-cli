@@ -10,33 +10,21 @@ no_reference = "No general clinical reference interval is cited; see the diagnos
 [[range]]
 set = "uk-pei-consensus-2021"
 kind = "warn"
-low = 200
-population = "Adults with suspected exocrine pancreatic insufficiency (UK practical consensus)"
-evidence = "consensus"
-citations = [
-  { pmid = "34140324", doi = "10.1136/bmjgast-2021-000643", url = "https://pubmed.ncbi.nlm.nih.gov/34140324/", title = "Consensus for the management of pancreatic exocrine insufficiency: UK practical guidelines.", locator = "Section on diagnosis, Statement 1.2 and supporting text" },
-]
-note = "Result at or above 200 µg/g is not in the moderate-PEI band. The consensus gives <200 as moderate and <100 as severe, so 200 is the boundary. The consensus does not state a normal range in these words; the lower limit is taken by implication. Source kind: decision."
-
-[[range]]
-set = "alt-1"
-kind = "warn"
-low = 100
 high = 200
 population = "Adults with suspected exocrine pancreatic insufficiency (UK practical consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "34140324", doi = "10.1136/bmjgast-2021-000643", url = "https://pubmed.ncbi.nlm.nih.gov/34140324/", title = "Consensus for the management of pancreatic exocrine insufficiency: UK practical guidelines.", locator = "Section on diagnosis, Statement 1.2 and supporting text" },
 ]
-note = "Moderate PEI band. Lower bound 100 is inclusive and upper bound 200 is exclusive, as the consensus states <200 for moderate PEI and <100 for severe PEI. Alternative to the default uk-pei-consensus-2021 warn range for the same population."
+note = "Result at or above 200 µg/g is not in the moderate-PEI band. The consensus gives <200 as moderate and <100 as severe, so 200 is the boundary. The consensus does not state a normal range in these words; the lower limit is taken by implication. Source kind: decision. Source band >= 200; stored as the warn high bound 200."
 
 [[range]]
 set = "uk-pei-consensus-2021"
 kind = "critical"
-high = 100
+low = 100
 population = "Adults with suspected exocrine pancreatic insufficiency (UK practical consensus)"
 evidence = "consensus"
 citations = [
   { pmid = "34140324", doi = "10.1136/bmjgast-2021-000643", url = "https://pubmed.ncbi.nlm.nih.gov/34140324/", title = "Consensus for the management of pancreatic exocrine insufficiency: UK practical guidelines.", locator = "Section on diagnosis, Statement 1.2 and supporting text" },
 ]
-note = "Severe PEI band (below 100 µg/g), per the UK consensus wording '<100 µg/g suggests severe PEI'."
+note = "Severe PEI band (below 100 µg/g), per the UK consensus wording '<100 µg/g suggests severe PEI'. Source band <= 100; stored as the critical low bound 100."

@@ -19,10 +19,10 @@ note = "The review states the consensus as 40-200 pmol/L and advises confirming 
 [[range]]
 set = "cclm-2010"
 kind = "warn"
-high = 40
+low = 40
 population = "Routine serum samples from 107 men and 143 women (mean ages 59 and 54 y) with total B12 at or below 221 pmol/L, AxSYM active B12 assay (specimen: serum)"
 evidence = "cohort"
 citations = [
   { pmid = "19961395", doi = "10.1515/CCLM.2010.032", title = "Determination of serum holotranscobalamin concentrations with the AxSYM active B(12) assay: cut-off point evaluation in the clinical laboratory.", locator = "Results (Abstract)" },
 ]
-note = "Single-laboratory cut-off chosen to flag cobalamin deficiency in a population with reduced total B12. Sensitivity 0.86 and specificity 0.66 against the study's criteria (total B12, folate, homocysteine). Not validated against clinical outcomes; the assay is method-specific. Source kind: deficient."
+note = "Single-laboratory cut-off chosen to flag cobalamin deficiency in a population with reduced total B12. Sensitivity 0.86 and specificity 0.66 against the study's criteria (total B12, folate, homocysteine). Not validated against clinical outcomes; the assay is method-specific. Source kind: deficient. Source band <= 40; stored as the warn low bound 40."

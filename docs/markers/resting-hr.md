@@ -1,6 +1,6 @@
 # Resting Heart Rate (`resting-hr`)
 
-_No description yet._
+Heart rate measured at rest, in beats per minute. Higher resting rates in the general population are associated with greater all-cause and cardiovascular mortality.
 
 | | |
 |---|---|
@@ -17,6 +17,7 @@ Bounds in bpm. The most specific matching range of each set applies.
 | Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
 |---|---|---|---|---|---|---|---|---|
 | clinical | reference | all | 60 | 100 | - | - | uncited (legacy) | - |
+| cmaj-2016-rhr-mortality | warn | all | - | 80 | cohort | General population adults in prospective cohorts (meta-analysis of 46 studies) | [Resting heart rate and all-cause and cardiovascular mortality in the general population: a meta-analysis.](https://pubmed.ncbi.nlm.nih.gov/26598376/), Abstract, Results | Resting heart rate above 80 beats/min: relative risk 1.45 for all-cause mortality compared with the lowest category in the meta-analysis. The 80 bpm cut-off is the one stated by the source; the boundary is read as strictly greater than 80. Source band >= 80; stored as the warn high bound 80. |
 
 ---
 
