@@ -3,5 +3,17 @@ name = "Urine Potassium"
 loinc = "2828-2"
 category = "electrolyte"
 unit = "mmol/L"
-description = "Urine Potassium. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Urine Potassium. Spot-urine concentration; decision limits and population percentiles with cited sources."
+
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 20
+when = { specimen = "spot-urine", conditions = ["hypokalemia"] }
+population = "Adults with hypokalemia"
+evidence = "textbook"
+note = "Random urine potassium < 20 mmol/L indicates potassium loss from nonrenal origins."
+citations = [
+  { pmid = "40964691", doi = "10.1155/ije/9911400", title = "The Diagnostic Value of the Random Urine Potassium-Creatinine Ratio to the Synchronous Serum Potassium Concentration Squared for Renal Potassium Loss in Hypokalemia Patients.", locator = "Discussion", quote = "Potassium loss from nonrenal origins is indicated by a random urine potassium concentration of less than 20 mmol/L" },
+]

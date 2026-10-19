@@ -12,9 +12,12 @@ Myoglobin. Tracked marker with no verified reference range yet, so values can be
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+Bounds in ng/mL. The most specific matching range of each set applies.
 
-No ranges yet.
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | male | - | 70 | reference-interval-study | Healthy adults; reference values determined following IFCC recommendations on the Beckman Access assay (method: beckman-access) | [Multicenter evaluation of five assays for myoglobin determination.](https://pubmed.ncbi.nlm.nih.gov/11017942/), Abstract | Upper reference limit for this assay only; myoglobin results differ markedly between commercial assays. Source unit microgram/L (same numeric value as ng/mL, kept as stated). Converted from the source's microgram/L (70) to ng/mL using factor 1. |
+| clinical | reference | female | - | 52 | reference-interval-study | Healthy adults; reference values determined following IFCC recommendations on the Beckman Access assay (method: beckman-access) | [Multicenter evaluation of five assays for myoglobin determination.](https://pubmed.ncbi.nlm.nih.gov/11017942/), Abstract | Upper reference limit for this assay only; myoglobin results differ markedly between commercial assays. Source unit microgram/L (same numeric value as ng/mL, kept as stated). Converted from the source's microgram/L (52) to ng/mL using factor 1. |
 
 ---
 

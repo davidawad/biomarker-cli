@@ -1,0 +1,29 @@
+slug = "bmd-lumbar-spine-t-score"
+name = "Bone Mineral Density, Lumbar Spine (DXA) (T-score)"
+category = "bone"
+unit = "T-score"
+description = "Bone Mineral Density, Lumbar Spine (DXA) reported in T-score. Results in T-score are assay specific and are not interchangeable with Bone Mineral Density, Lumbar Spine (DXA) in g/cm2."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = -2.5
+high = -1
+population = "Adults (WHO densitometric definition)"
+evidence = "guideline"
+citations = [
+  { pmid = "21234807", doi = "10.1007/s11154-010-9154-0", title = "Diagnosis and treatment of osteopenia.", locator = "Abstract" },
+]
+note = "Osteopenia (low bone mass): T-score -1 to -2.5. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = -2.5
+when = { age = [50.0, 200] }
+population = "Postmenopausal women and men aged 50 years and older"
+evidence = "consensus"
+citations = [
+  { pmid = "24577348", doi = "10.1007/s00198-014-2655-z", title = "The clinical diagnosis of osteoporosis: a position statement from the National Bone Health Alliance Working Group.", locator = "Abstract" },
+]
+note = "Osteoporosis: T-score at or below -2.5 (lumbar spine, femur neck, or total hip). Source kind: diagnostic. Source band <= -2.5; stored as the warn low bound -2.5."

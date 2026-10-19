@@ -3,5 +3,29 @@ name = "Urine Chloride"
 loinc = "2078-4"
 category = "urinalysis"
 unit = "mmol/L"
-description = "Urine Chloride. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Urine Chloride. Spot-urine concentration; decision limits and population percentiles with cited sources."
+
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 20
+when = { specimen = "spot-urine", conditions = ["metabolic-alkalosis"] }
+population = "Adults with metabolic alkalosis"
+evidence = "textbook"
+note = "Chloride-responsive metabolic alkalosis (volume depletion, vomiting, diuretics); respond to NaCl."
+citations = [
+  { pmid = "40336441", doi = "10.4102/safp.v67i1.6058", title = "Mastering blood gas interpretation: A practical guide for primary care providers.", locator = "Step 3, metabolic alkalosis", quote = "Urinary chloride < 20 mmol/L. These patients respond to administered sodium chloride (NaCl) infusion." },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 20
+when = { specimen = "spot-urine", conditions = ["metabolic-alkalosis"] }
+population = "Adults with metabolic alkalosis"
+evidence = "textbook"
+note = "Chloride-resistant metabolic alkalosis (e.g. mineralocorticoid excess); does not respond to NaCl."
+citations = [
+  { pmid = "40336441", doi = "10.4102/safp.v67i1.6058", title = "Mastering blood gas interpretation: A practical guide for primary care providers.", locator = "Step 3, metabolic alkalosis", quote = "Chloride resistant: Urinary chloride > 20 mmol/L; typically seen in euvolemic or fluid overload states." },
+]

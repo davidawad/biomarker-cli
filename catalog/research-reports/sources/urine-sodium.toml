@@ -3,5 +3,29 @@ name = "Urine Sodium"
 loinc = "2955-3"
 category = "electrolyte"
 unit = "mmol/L"
-description = "Urine Sodium. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Urine Sodium. Spot-urine concentration; decision limits and population percentiles with cited sources."
+
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 30
+when = { specimen = "spot-urine", conditions = ["hyponatremia"] }
+population = "Adults with hypotonic hyponatremia"
+evidence = "textbook"
+note = "Spot urine sodium < 30 supports hypovolemic hyponatremia (extrarenal loss); diuretics and renal dysfunction confound."
+citations = [
+  { pmid = "41907365", doi = "10.5527/wjn.v15.i1.115252", title = "Hyponatremia: Evolving diagnostics and emerging therapeutics in clinical practice.", locator = "Urine osmolality, sodium section", quote = "urinary sodium < 30 mmol/L in hypovolemia and > 30 mmol/L in SIADH" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+low = 30
+when = { specimen = "spot-urine", conditions = ["hyponatremia"] }
+population = "Adults with hypotonic hyponatremia"
+evidence = "textbook"
+note = "Spot urine sodium > 30 supports non-hypovolemic hyponatremia such as SIADH; diuretics and renal dysfunction confound."
+citations = [
+  { pmid = "41907365", doi = "10.5527/wjn.v15.i1.115252", title = "Hyponatremia: Evolving diagnostics and emerging therapeutics in clinical practice.", locator = "Urine osmolality, sodium section", quote = "urinary sodium < 30 mmol/L in hypovolemia and > 30 mmol/L in SIADH" },
+]

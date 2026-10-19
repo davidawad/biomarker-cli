@@ -4,4 +4,17 @@ category = "amino-acid"
 unit = "µmol/L"
 loinc = "2508-0"
 description = "Isoleucine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "target"
+kind = "optimal"
+low = 200
+high = 400
+when = { conditions = ["msud"] }
+population = "Patients with maple syrup urine disease on dietary treatment (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, long-term management section" },
+]
+note = "Treatment target for plasma isoleucine in MSUD, not a general reference interval. Source kind: target."

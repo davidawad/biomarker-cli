@@ -3,5 +3,16 @@ name = "CA 27.29 (Cancer Antigen 27.29)"
 loinc = "17842-6"
 category = "tumor-marker"
 unit = "U/mL"
-description = "CA 27.29 (Cancer Antigen 27.29). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "CA 27.29 (Cancer Antigen 27.29)."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 31
+when = { specimen = "serum", method = "tosoh-aia" }
+population = "Patients with primary breast cancer in the SUCCESS trial (n = 2669); Tosoh ST AIA-PACK CA27.29 on AIA-600II"
+evidence = "outcome-study"
+note = "Assay-specific positivity cut-off used in the study (values above 31 U/ml considered positive); not a population reference interval and not diagnostic on its own."
+citations = [
+  { pmid = "27481512", doi = "10.1007/s13277-016-5171-2", title = "CA27.29 as a tumour marker for risk evaluation and therapy monitoring in primary breast cancer patients.", locator = "Abstract", quote = "Values above 31 U/ml were considered positive." },
+]

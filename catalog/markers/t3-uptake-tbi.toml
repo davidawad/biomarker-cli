@@ -1,0 +1,17 @@
+slug = "t3-uptake-tbi"
+name = "T3 Resin Uptake (T3RU) (TBI)"
+category = "thyroid"
+unit = "TBI"
+description = "T3 Resin Uptake (T3RU) reported in TBI. Results in TBI are assay specific and are not interchangeable with T3 Resin Uptake (T3RU) in %."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.9
+high = 1.2
+population = "305 healthy Croatian adults on the Snibe MAGLUMI X6 immunoassay; assay-specific, nonparametric 2.5th-97.5th percentile"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41008732", doi = "10.3390/diagnostics15182360", title = "Reference Intervals and Cut-Off Values for Thyroid Tests in the Croatian Adult Population on the Snibe MAGLUMI X6 Immunoassay Analyzer.", locator = "Abstract" },
+]
+note = "T-uptake (thyroid binding index) central 95% reference interval, both sexes."

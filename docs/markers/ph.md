@@ -12,9 +12,11 @@ pH, Arterial Blood. Tracked marker with no verified reference range yet, so valu
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+Bounds in pH. The most specific matching range of each set applies.
 
-No ranges yet.
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | all | 7.35 | 7.45 | consensus | Adults, arterial blood | [Blood gas analysis: Clinical applications, interpretation and future directions (Review).](https://pubmed.ncbi.nlm.nih.gov/41473681/), Section 3 | Normal arterial pH; <7.35 acidemia, >7.45 alkalemia. |
 
 ---
 

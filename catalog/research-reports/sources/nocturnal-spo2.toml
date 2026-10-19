@@ -2,5 +2,26 @@ slug = "nocturnal-spo2"
 name = "Nocturnal SpO2"
 category = "wearable"
 unit = "%"
-description = "Nocturnal SpO2. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Overnight pulse-oximetry oxygen saturation. Sustained low nocturnal SpO2 defines sleep-related hypoxemia (ICSD-3) and is used as a surrogate for sleep hypoventilation."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 88
+population = "Adults, overnight oximetry"
+evidence = "consensus"
+note = "Sleep-related hypoxemia: SpO2 at or below 88% for more than 5 consecutive minutes (ICSD-3 / AASM definition as applied in the cited cohort study)."
+citations = [
+  { pmid = "37695533", doi = "10.1007/s00415-023-11978-7", title = "Insomnia and sleep-disordered breathing in FKRP-related limb-girdle muscular dystrophy R9. The Norwegian LGMDR9 cohort study (2020).", locator = "Methods", quote = "Sleep-related hypoxemia was defined as SpO2 <= 88% for > 5 consecutive minutes in accordance with ICSD-3 (AASM 2014)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = 90
+population = "Adults, overnight oximetry"
+evidence = "consensus"
+note = "Surrogate criterion for sleep hypoventilation when CO2 is unavailable: SpO2 below 90% for more than 10% of total sleep time (or <=88% for 5 consecutive minutes)."
+citations = [
+  { pmid = "39011358", doi = "10.3389/fneur.2024.1389949", title = "Excessive daytime sleepiness in myotonic dystrophy: a narrative review.", locator = "Diagnostic criteria", quote = "nocturnal oximetry demonstrating sustained oxygen desaturation (SpO2) <= 88% for 5 consecutive minutes or SpO2 < 90% for >10% of total sleep time" },
+]

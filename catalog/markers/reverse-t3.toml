@@ -4,4 +4,15 @@ category = "thyroid"
 unit = "ng/dL"
 loinc = "3052-8"
 description = "Reverse T3. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 44.0
+high = 73.0
+population = "305 healthy Croatian adults on the Snibe MAGLUMI X6 immunoassay; assay-specific, nonparametric 2.5th-97.5th percentile"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41008732", doi = "10.3390/diagnostics15182360", title = "Reference Intervals and Cut-Off Values for Thyroid Tests in the Croatian Adult Population on the Snibe MAGLUMI X6 Immunoassay Analyzer.", locator = "Abstract" },
+]
+note = "Reverse T3 central 95% reference interval, both sexes. Converted from the source's ng/mL (0.44-0.73) to ng/dL using factor 100.0."

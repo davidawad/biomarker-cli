@@ -1,0 +1,19 @@
+slug = "urine-urea-24h"
+name = "Urine Urea, 24 Hour"
+loinc = ""
+category = "urinalysis"
+unit = "g/day"
+description = "Total urea excreted in urine over 24 hours (g/day). 24-hour excretion companion of the spot marker urine-urea-nitrogen; reflects adequacy of protein intake."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 15
+high = 40
+when = { specimen = "24h-urine" }
+population = "Adults, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Guideline suggested reference range for 24-hour excretion; the guideline states reference values are merely a suggestion that vary by laboratory and population."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults", quote = "| Urea | 15-40 g/day | - | - | Adequacy of protein intake" },
+]

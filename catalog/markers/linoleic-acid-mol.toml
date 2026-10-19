@@ -1,0 +1,18 @@
+slug = "linoleic-acid-mol"
+name = "Linoleic acid (LA) (mol%)"
+category = "fatty-acid"
+unit = "mol%"
+description = "Linoleic acid (LA) reported in mol%. Results in mol% are assay specific and are not interchangeable with Linoleic acid (LA) in %."
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 21
+when = { age = [7.0, 11.0], conditions = ["cystic-fibrosis", "pancreatic-insufficiency"] }
+population = "Children aged 7 to 10 years with cystic fibrosis and pancreatic insufficiency (n=77) (specimen: serum-phospholipid)"
+evidence = "cohort"
+citations = [
+  { pmid = "18955866", doi = "10.1097/MPG.0b013e31817fb76b", title = "Serum linoleic acid status as a clinical indicator of essential fatty acid status in children with cystic fibrosis.", locator = "Abstract" },
+]
+note = "Serum phospholipid linoleic acid as mol% of total phospholipid fatty acids; concentration associated with better growth, body composition and FEV1 in this population. Authors state the cutoff still needs validation."

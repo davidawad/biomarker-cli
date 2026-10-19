@@ -3,4 +3,16 @@ name = "LDL/HDL Ratio"
 category = "lipid"
 unit = "ratio"
 description = "LDL/HDL Ratio. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 2.5
+when = { age = [35.0, 200] }
+population = "General healthy Uygur adults aged 35 years or older in Xinjiang, China (n=4047)"
+evidence = "cohort"
+citations = [
+  { pmid = "26907312", doi = "10.3390/ijerph13020235", title = "Appropriate LDL-C-to-HDL-C Ratio Cutoffs for Categorization of Cardiovascular Disease Risk Factors among Uygur Adults in Xinjiang, China.", locator = "Abstract" },
+]
+note = "ROC shortest-distance cutoff for detecting hypertension, dyslipidemia, diabetes or two or more of these risk factors; derived in one ethnic population, not a guideline target or reference interval. Source band >= 2.5; stored as the warn high bound 2.5."

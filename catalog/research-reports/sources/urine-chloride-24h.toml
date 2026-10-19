@@ -1,0 +1,19 @@
+slug = "urine-chloride-24h"
+name = "Urine Chloride, 24 Hour"
+loinc = ""
+category = "urinalysis"
+unit = "mEq/day"
+description = "Total chloride excreted in urine over 24 hours (mEq/day). 24-hour excretion companion of the spot-concentration marker urine-chloride."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 110
+high = 250
+when = { specimen = "24h-urine" }
+population = "Adults, 24-hour urine collection (Brazilian Society of Nephrology guideline, Table 4)"
+evidence = "guideline"
+note = "Guideline suggested reference range for 24-hour excretion; the guideline states reference values are merely a suggestion that vary by laboratory and population."
+citations = [
+  { pmid = "40080792", doi = "10.1590/2175-8239-JBN-2024-0189en", title = "Brazilian Guidelines on evaluation and clinical management of Nephrolithiasis: Brazilian Society of Nephrology.", locator = "Table 4, Urinary laboratory parameters in adults", quote = "| Chloride | 110-250 mEq/day | - | - | Anion Gap (urine)" },
+]

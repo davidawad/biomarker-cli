@@ -3,5 +3,17 @@ name = "Methionine"
 loinc = "2622-9"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Methionine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Methionine, an essential sulfur-containing amino acid. Pediatric serum reference interval from a Japanese LC-MS/MS study; no adult plasma reference interval was retrievable."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 15.7
+high = 48.8
+when = { age_min = 0, age_max = 7, specimen = "serum" }
+population = "296 non-IEM Japanese children aged 0-6 years (serum, LC-MS/MS; IFCC C-RIDL protocol)"
+evidence = "reference-interval-study"
+note = "Pediatric serum interval; not for adults."
+citations = [
+  { pmid = "41897644", doi = "10.3390/diagnostics16060911", title = "Fully Automated Serum LC-MS/MS Platform and Pediatric Reference Intervals for Organic Acids, Amino Acids, and Acylcarnitines in Children (Ages 0-6 Years): Toward Quantitative Diagnosis of Inborn Errors of Metabolism.", locator = "Table 3", quote = "Methionine | umol/L | 15.7-48.8" },
+]

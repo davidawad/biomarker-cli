@@ -4,4 +4,16 @@ category = "amino-acid"
 unit = "µmol/L"
 loinc = "2622-9"
 description = "Methionine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 15.7
+high = 48.8
+when = { age = [0.0, 7.0] }
+population = "296 non-IEM Japanese children aged 0-6 years (serum, LC-MS/MS; IFCC C-RIDL protocol) (specimen: serum)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41897644", doi = "10.3390/diagnostics16060911", title = "Fully Automated Serum LC-MS/MS Platform and Pediatric Reference Intervals for Organic Acids, Amino Acids, and Acylcarnitines in Children (Ages 0-6 Years): Toward Quantitative Diagnosis of Inborn Errors of Metabolism.", locator = "Table 3" },
+]
+note = "Pediatric serum interval; not for adults."

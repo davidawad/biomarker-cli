@@ -3,5 +3,18 @@ name = "Soluble fms-like Tyrosine Kinase-1 (sFlt-1)"
 loinc = "74756-8"
 category = "pregnancy"
 unit = "pg/mL"
-description = "Soluble fms-like Tyrosine Kinase-1 (sFlt-1). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Soluble fms-like Tyrosine Kinase-1 (sFlt-1)."
+
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1612
+high = 8267
+when = { pregnant = true, trimester = 3, specimen = "serum" }
+population = "146 healthy singleton term pregnancies (gestational week 37+0 to 40+0) with uncomplicated delivery; Elecsys sFlt-1"
+evidence = "reference-interval-study"
+note = "5th to 95th percentile (not 2.5th-97.5th) at term. The same study gives a higher post-term (>=40+2 weeks) interval of 2074-9141 pg/mL; the catalog cannot condition on gestational week, so only the term interval is coded."
+citations = [
+  { pmid = "33079955", doi = "10.1371/journal.pone.0240473", title = "Maternal placental growth factor and soluble fms-like tyrosine kinase-1 reference ranges in post-term pregnancies: A prospective observational study.", url = "https://pubmed.ncbi.nlm.nih.gov/33079955/", locator = "Table 2 (term group column)", quote = "| sFlt-1 (pg/mL) | | | 5th percentile | 1612 | 2074 ... | 95th percentile | 8267 | 9141" },
+]

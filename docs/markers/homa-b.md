@@ -12,9 +12,11 @@ HOMA-B. Tracked marker with no verified reference range yet, so values can be st
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+Bounds in %. The most specific matching range of each set applies.
 
-No ranges yet.
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | fasting | 40.74 | 159.52 | reference-interval-study | 135 healthy Nepalese adults aged 20-69 years, BMI 18.5-24.9 kg/m2 (Gandaki Province); CLSI EP28-A3c nonparametric 2.5th-97.5th percentile after outlier removal (method: homa2) | [Reference intervals for fasting insulin and insulin-related indices in healthy adults: a cross-sectional study in Gandaki Province, Nepal.](https://pubmed.ncbi.nlm.nih.gov/41857869/), Abstract, Results | HOMA2-%B central 95% reference interval (HOMA2 formula, not HOMA1). |
 
 ---
 

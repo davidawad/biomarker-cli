@@ -3,5 +3,55 @@ name = "Urine Creatinine"
 loinc = "2161-8"
 category = "kidney"
 unit = "mg/dL"
-description = "Urine Creatinine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Urine Creatinine. Spot-urine concentration; decision limits and population percentiles with cited sources."
+
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 49.56
+high = 254.4
+when = { sex = "male", specimen = "spot-urine" }
+population = "US males aged 6-90 years (NHANES III), spot urine; 10th-90th percentiles"
+evidence = "reference-interval-study"
+note = "10th-90th percentile limits (not 2.5-97.5), n=10,610."
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Table 2", quote = "10,610 | 49.56 (46.08-53.30) | 137.2 (134.2-141.0) | 254.4 (249.9-262.1)" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 27.36
+high = 217.7
+when = { sex = "female", specimen = "spot-urine" }
+population = "US females aged 6-90 years (NHANES III), spot urine; 10th-90th percentiles"
+evidence = "reference-interval-study"
+note = "10th-90th percentile limits (not 2.5-97.5), n=11,635."
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Table 2", quote = "11,635 | 27.36 (26.04-28.90) | 99.49 (97.15-102.9) | 217.7 (212.6-224.0)" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 30
+when = { specimen = "spot-urine" }
+population = "Spot urine samples for occupational biomonitoring"
+evidence = "guideline"
+note = "WHO: too dilute; collect another void."
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Introduction", quote = "if a sample is too dilute (creatinine concentration < 30 mg/dL) or too concentrated (creatinine concentration > 300 mg/dL), another urine void should be collected" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 300
+when = { specimen = "spot-urine" }
+population = "Spot urine samples for occupational biomonitoring"
+evidence = "guideline"
+note = "WHO: too concentrated; collect another void."
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Introduction", quote = "if a sample is too dilute (creatinine concentration < 30 mg/dL) or too concentrated (creatinine concentration > 300 mg/dL), another urine void should be collected" },
+]

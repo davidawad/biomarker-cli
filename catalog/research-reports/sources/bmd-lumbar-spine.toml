@@ -3,5 +3,31 @@ name = "Bone Mineral Density, Lumbar Spine (DXA)"
 loinc = "24966-4"
 category = "bone"
 unit = "g/cm2"
-description = "Bone Mineral Density, Lumbar Spine (DXA). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Bone mineral density at the lumbar spine by DXA. Diagnostic categories are defined on the T-score (SD units vs young-adult reference), not on g/cm2."
+
+[[range]]
+set = "clinical"
+kind = "diagnostic"
+high = -2.5
+unit = "T-score"
+when = { age_min = 50 }
+population = "Postmenopausal women and men aged 50 years and older"
+evidence = "consensus"
+note = "Osteoporosis: T-score at or below -2.5 (lumbar spine, femur neck, or total hip)."
+citations = [
+  { pmid = "24577348", doi = "10.1007/s00198-014-2655-z", title = "The clinical diagnosis of osteoporosis: a position statement from the National Bone Health Alliance Working Group.", locator = "Abstract", quote = "the standard criterion for the diagnosis of osteoporosis in postmenopausal women and older men is a T-score of <= -2.5 at the lumbar spine, femur neck, or total hip by bone mineral density testing" },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = -2.5
+high = -1
+unit = "T-score"
+when = { }
+population = "Adults (WHO densitometric definition)"
+evidence = "guideline"
+note = "Osteopenia (low bone mass): T-score -1 to -2.5."
+citations = [
+  { pmid = "21234807", doi = "10.1007/s11154-010-9154-0", title = "Diagnosis and treatment of osteopenia.", locator = "Abstract", quote = "By definition from the World Health Organization osteopenia is defined by bone densitometry as a T score -1 to -2.5." },
+]

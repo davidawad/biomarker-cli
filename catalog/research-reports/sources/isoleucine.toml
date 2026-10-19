@@ -3,5 +3,17 @@ name = "Isoleucine"
 loinc = "2508-0"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Isoleucine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Isoleucine, a branched-chain essential amino acid. Only a disease-specific treatment target (maple syrup urine disease) has a verified range; no healthy-population reference interval was retrievable."
+
+[[range]]
+set = "clinical"
+kind = "target"
+low = 200
+high = 400
+when = { conditions = ["msud"] }
+population = "Patients with maple syrup urine disease on dietary treatment (Iranian MSUD guideline 2025)"
+evidence = "guideline"
+note = "Treatment target for plasma isoleucine in MSUD, not a general reference interval."
+citations = [
+  { pmid = "39773751", doi = "10.1186/s13023-025-03533-6", title = "Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.", locator = "Full text, long-term management section", quote = "Plasma valine and isoleucine levels: 200 to 400 umol/L" },
+]

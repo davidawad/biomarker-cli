@@ -3,4 +3,16 @@ name = "Linoleic acid (LA)"
 category = "fatty-acid"
 unit = "%"
 description = "Linoleic acid (18:2n-6), the main dietary omega-6 polyunsaturated fatty acid, reported as a percent of total fatty acids in the blood lipid fraction measured. It reflects intake of vegetable oils; very low values suggest low essential fatty acid status."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "optimal"
+kind = "optimal"
+low = 21
+unit = "mol%"
+when = { age_min = 7, age_max = 11, conditions = ["cystic-fibrosis", "pancreatic-insufficiency"], specimen = "serum-phospholipid" }
+population = "Children aged 7 to 10 years with cystic fibrosis and pancreatic insufficiency (n=77)"
+evidence = "outcome-study"
+note = "Serum phospholipid linoleic acid as mol% of total phospholipid fatty acids; concentration associated with better growth, body composition and FEV1 in this population. Authors state the cutoff still needs validation."
+citations = [
+  { pmid = "18955866", doi = "10.1097/MPG.0b013e31817fb76b", title = "Serum linoleic acid status as a clinical indicator of essential fatty acid status in children with cystic fibrosis.", locator = "Abstract", quote = "Children with linoleic acid at 21 mol% or higher had significantly better growth and pulmonary status than those with lower concentrations." },
+]

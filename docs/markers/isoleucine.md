@@ -12,9 +12,13 @@ Isoleucine. Tracked marker with no verified reference range yet, so values can b
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+No clinical reference range: No general clinical reference interval is cited; see the diagnostic, target and alternative ranges.
 
-No ranges yet.
+Bounds in µmol/L. The most specific matching range of each set applies.
+
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| target | optimal | msud | 200 | 400 | guideline | Patients with maple syrup urine disease on dietary treatment (Iranian MSUD guideline 2025) | [Comprehensive Iranian guidelines for the diagnosis and management of maple syrup urine disease: an evidence- and consensus- based approach.](https://pubmed.ncbi.nlm.nih.gov/39773751/), Full text, long-term management section | Treatment target for plasma isoleucine in MSUD, not a general reference interval. Source kind: target. |
 
 ---
 

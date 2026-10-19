@@ -3,4 +3,81 @@ name = "TSH Receptor Antibodies (multiple of upper limit of normal)"
 category = "thyroid"
 unit = "x ULN"
 description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 25
+unit = "x ULN"
+when = { pregnant = true, trimester = 1, conditions = ["history-of-graves-disease"], method = "brahms-kryptor-trak" }
+population = "Pregnant women with a history of Graves disease (n = 500); BRAHMS TRAK human assay on Kryptor Compact Plus"
+evidence = "outcome-study"
+note = "Trimester 1 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism, NPV 100%; assay-specific and may not transfer to other TRAb platforms."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", locator = "Abstract", quote = "In women with a history of Graves disease (n = 500), trimester-specific cutoffs of 25-, 19-, and 6-fold the upper limit of normal (ULN) showed a negative predictive value of 100%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 19
+unit = "x ULN"
+when = { pregnant = true, trimester = 2, conditions = ["history-of-graves-disease"], method = "brahms-kryptor-trak" }
+population = "Pregnant women with a history of Graves disease (n = 500); BRAHMS TRAK human assay on Kryptor Compact Plus"
+evidence = "outcome-study"
+note = "Trimester 2 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism, NPV 100%; assay-specific and may not transfer to other TRAb platforms."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", locator = "Abstract", quote = "In women with a history of Graves disease (n = 500), trimester-specific cutoffs of 25-, 19-, and 6-fold the upper limit of normal (ULN) showed a negative predictive value of 100%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 6
+unit = "x ULN"
+when = { pregnant = true, trimester = 3, conditions = ["history-of-graves-disease"], method = "brahms-kryptor-trak" }
+population = "Pregnant women with a history of Graves disease (n = 500); BRAHMS TRAK human assay on Kryptor Compact Plus"
+evidence = "outcome-study"
+note = "Trimester 3 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism, NPV 100%; assay-specific and may not transfer to other TRAb platforms."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", locator = "Abstract", quote = "In women with a history of Graves disease (n = 500), trimester-specific cutoffs of 25-, 19-, and 6-fold the upper limit of normal (ULN) showed a negative predictive value of 100%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 10
+unit = "x ULN"
+when = { pregnant = true, trimester = 1, conditions = ["active-graves-disease"], method = "brahms-kryptor-trak" }
+population = "Pregnant women with active Graves disease (n = 178); BRAHMS TRAK human assay on Kryptor Compact Plus"
+evidence = "outcome-study"
+note = "Trimester 1 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism (sensitivities 89%, 86%, 83% across trimesters); assay-specific."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", locator = "Abstract", quote = "In women with active Graves (n = 178), cutoffs of 10-, 12-, and 10-fold the ULN showed sensitivities of 89%, 86%, and 83%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 12
+unit = "x ULN"
+when = { pregnant = true, trimester = 2, conditions = ["active-graves-disease"], method = "brahms-kryptor-trak" }
+population = "Pregnant women with active Graves disease (n = 178); BRAHMS TRAK human assay on Kryptor Compact Plus"
+evidence = "outcome-study"
+note = "Trimester 2 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism (sensitivities 89%, 86%, 83% across trimesters); assay-specific."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", locator = "Abstract", quote = "In women with active Graves (n = 178), cutoffs of 10-, 12-, and 10-fold the ULN showed sensitivities of 89%, 86%, and 83%." },
+]
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 10
+unit = "x ULN"
+when = { pregnant = true, trimester = 3, conditions = ["active-graves-disease"], method = "brahms-kryptor-trak" }
+population = "Pregnant women with active Graves disease (n = 178); BRAHMS TRAK human assay on Kryptor Compact Plus"
+evidence = "outcome-study"
+note = "Trimester 3 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism (sensitivities 89%, 86%, 83% across trimesters); assay-specific."
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", locator = "Abstract", quote = "In women with active Graves (n = 178), cutoffs of 10-, 12-, and 10-fold the ULN showed sensitivities of 89%, 86%, and 83%." },
+]

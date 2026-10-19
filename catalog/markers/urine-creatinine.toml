@@ -4,4 +4,51 @@ category = "kidney"
 unit = "mg/dL"
 loinc = "2161-8"
 description = "Urine Creatinine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 30
+population = "Spot urine samples for occupational biomonitoring (specimen: spot-urine)"
+evidence = "guideline"
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Introduction" },
+]
+note = "WHO: too dilute; collect another void. Source band <= 30; stored as the warn low bound 30."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 300
+population = "Spot urine samples for occupational biomonitoring (specimen: spot-urine)"
+evidence = "guideline"
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Introduction" },
+]
+note = "WHO: too concentrated; collect another void. Source band >= 300; stored as the warn high bound 300. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 49.56
+high = 254.4
+when = { sex = "male" }
+population = "US males aged 6-90 years (NHANES III), spot urine; 10th-90th percentiles (specimen: spot-urine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Table 2" },
+]
+note = "10th-90th percentile limits (not 2.5-97.5), n=10,610."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 27.36
+high = 217.7
+when = { sex = "female" }
+population = "US females aged 6-90 years (NHANES III), spot urine; 10th-90th percentiles (specimen: spot-urine)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "15687057", doi = "10.1289/ehp.7337", title = "Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements.", locator = "Table 2" },
+]
+note = "10th-90th percentile limits (not 2.5-97.5), n=11,635."

@@ -528,3 +528,31 @@ name = "Sarcopenia screening"
 [[condition]]
 slug = "severe-microcephaly"
 name = "Severe microcephaly"
+
+[[condition]]
+slug = "active-graves-disease"
+name = "Active graves disease"
+
+[[condition]]
+slug = "cystic-fibrosis"
+name = "Cystic fibrosis"
+
+[[condition]]
+slug = "history-of-graves-disease"
+name = "History of graves disease"
+
+[[condition]]
+slug = "hypokalemia"
+name = "Hypokalemia"
+
+[[condition]]
+slug = "hyponatremia"
+name = "Hyponatremia"
+
+[[condition]]
+slug = "metabolic-alkalosis"
+name = "Metabolic alkalosis"
+
+[[condition]]
+slug = "pancreatic-insufficiency"
+name = "Pancreatic insufficiency"

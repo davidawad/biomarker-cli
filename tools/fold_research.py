@@ -17,6 +17,7 @@ RANK = {"guideline": 0, "reference-interval-study": 1, "consensus": 2, "cohort":
 ENGINE_KINDS = {"reference", "optimal", "warn", "critical"}
 POP_SET = "population-ri"
 POP_NOTE = "Single-population reference interval, kept out of the default clinical set because the marker has a general clinical reference range."
+PENDING_RE = re.compile(r'^no_reference = "pending:[^\n]*"\n', re.M)
 NO_REF = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
 SOFT = {"method", "specimen", "setting", "test", "region"}
 
@@ -86,6 +87,11 @@ CONV = dict([
     T("pth-intact", "ng/L", "pg/mL", 1),
     # total T4 MW 776.87: 1 nmol/L = 0.0777 ug/dL
     T("t4-total", "nmol/L", "µg/dL", 0.0777),
+    # catecholamine MW (g/mol): dopamine 153.18, epinephrine 183.20, norepinephrine 169.18; 1 nmol/L = MW pg/mL
+    T("dopamine", "nmol/L", "pg/mL", 153.18), T("epinephrine", "nmol/L", "pg/mL", 183.20),
+    T("norepinephrine", "nmol/L", "pg/mL", 169.18),
+    # ug/L and ng/mL are numerically equal
+    T("myoglobin", "microgram/L", "ng/mL", 1), T("myoglobin", "µg/L", "ng/mL", 1),
 ])
 CONV = {(s, norm_unit(u)): v for (s, u), v in CONV.items()}
 
@@ -512,6 +518,10 @@ def build():
         if e:
             text, n = drop_superseded(strip_folded(open(f"{MK}/{slug}.toml").read()), final)
             stats["legacy_superseded"] = stats.get("legacy_superseded", 0) + n
+            if final and PENDING_RE.search(text):
+                # a pending marker that now has verified ranges is no longer pending
+                text = PENDING_RE.sub("", text)
+                created = True
             if created:
                 text = text.replace(f"no_reference = {tv(NO_REF)}\n", "")
                 if not any(r["set"] == "clinical" and r["kind"] == "reference" for r in final):

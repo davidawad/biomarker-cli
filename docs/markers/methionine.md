@@ -12,9 +12,11 @@ Methionine. Tracked marker with no verified reference range yet, so values can b
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+Bounds in µmol/L. The most specific matching range of each set applies.
 
-No ranges yet.
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | age 0-7 | 15.7 | 48.8 | reference-interval-study | 296 non-IEM Japanese children aged 0-6 years (serum, LC-MS/MS; IFCC C-RIDL protocol) (specimen: serum) | [Fully Automated Serum LC-MS/MS Platform and Pediatric Reference Intervals for Organic Acids, Amino Acids, and Acylcarnitines in Children (Ages 0-6 Years): Toward Quantitative Diagnosis of Inborn Errors of Metabolism.](https://pubmed.ncbi.nlm.nih.gov/41897644/), Table 3 | Pediatric serum interval; not for adults. |
 
 ---
 

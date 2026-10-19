@@ -1,87 +1,66 @@
 # Universe markers without a verified range (pending)
 
 Each slug below has a marker file so values can be stored, with `no_reference = "pending: no verified range yet (see UNCOVERED.md)"`.
-`biomarker catalog lint` reports them under the `pending` code. Research found no source that met the rules (every bound verbatim in a cited quote with its direction stated, resolving PMID/DOI, no derived bands, no min-max or mean +/- SD of small samples). Retried with Sonnet for every core and common slug.
+`biomarker catalog lint` reports them under the `pending` code. Research found no source that met the rules (every bound verbatim in a cited quote with its direction stated, resolving PMID/DOI, no derived bands, no min-max or mean +/- SD of small samples). Retried with Sonnet for every core and common slug, and again for all slugs in 8h7.5 (2026-10-19).
 
 | slug | priority | why no range yet |
 |---|---|---|
-| phenoage | common | quantitative biological age; no verified reference interval |
-| phenoage-acceleration | common | quantitative; no verified reference interval |
-| alanine | common | only neonatal DBS 0-28 d interval found (PMID 42739196); no plasma or adult interval |
-| bcaa-total | common | no total BCAA interval retrievable (per-analyte values only in supplements) |
-| cysteine | common | only control means and cohort quartiles found; no reference limits |
-| isoleucine | common | same as glycine |
-| lysine | common | same as glycine |
-| methionine | common | same as glycine |
-| tryptophan | common | no numeric source found |
-| basal-metabolic-rate | common | quantitative; no verified reference interval (moved from no_reference) |
-| body-water-percent | common | only abstract-level total body water data, no retrievable numeric values |
-| hip-circumference | common | no verified interval for hip circumference alone |
-| lean-body-mass | common | no verified reference interval |
-| bmd-femoral-neck | common | T-score cut-offs identified (PMIDs 21234807, 24577348) but not yet written; rerun with the fixed verifier |
-| bmd-lumbar-spine | common | same as bmd-femoral-neck |
-| omega6-omega3-ratio | common | quantitative ratio; sources give no numeric target |
-| estimated-average-glucose | common | quantitative formula of HbA1c; no independent verified interval |
-| light-sleep-duration | common | only per-decade changes in abstracts; no absolute reference values retrievable |
-| time-awake | common | no numeric threshold defined for time awake as a wearable metric |
-| dopamine | specialist | no numeric plasma reference interval found |
-| epinephrine | specialist | no numeric plasma reference interval found (only a single-cohort mean +/- SD) |
-| norepinephrine | specialist | no numeric plasma reference interval found |
-| grimage | specialist | quantitative epigenetic age; no verified reference interval |
-| horvath-epigenetic-clock | specialist | quantitative epigenetic age; no verified reference interval |
-| klemera-doubal-biological-age | specialist | quantitative biological age; no verified reference interval |
-| asparagine | specialist | only observed min-max in 95 volunteers; no reference interval |
-| histidine | specialist | only observed min-max in 95 volunteers; no reference interval |
-| ornithine | specialist | only mean/SD and min-max in small samples; no reference interval |
-| proline | specialist | same as ornithine |
-| serine | specialist | same as ornithine |
-| threonine | specialist | same as ornithine |
-| myoglobin | specialist | only pediatric interval source has no numbers in abstract and no open full text |
-| urine-potassium | specialist | no urine potassium reference interval retrievable (only mean excretion and dietary intake) |
-| urine-sodium | specialist | no urine sodium interval in mmol/L retrievable (only estimated intake in g/day) |
-| trans-fatty-acid-index | specialist | quantitative index; only group means found |
-| sit-to-stand | specialist | norms only in unreachable full text; other sources are mean +/- SD or not in abstract |
-| homa-b | specialist | only cut-offs found (PMID 25794879) whose risk direction is not stated in the abstract; removed rather than inferred |
-| igg-subclass-1 | specialist | no verifiable numeric IgG1 interval in retrievable text |
-| urine-creatinine | specialist | no verifiable numeric reference interval found |
-| apoc3 | specialist | reference-interval papers have values only in inaccessible tables |
-| hdl-large-p | specialist | no numeric large-HDL-P interval in accessible text |
-| ldl-hdl-ratio | specialist | quantitative ratio; no verifiable cut-off |
-| ldl-small-p | specialist | no verifiable numeric reference or cut-off found |
-| vldl-size | specialist | no VLDL particle size interval found |
-| 5-nucleotidase | specialist | no verifiable interval found |
-| adiponectin | specialist | only a pediatric paper with no numbers in abstract and no open full text |
-| base-excess | specialist | only venous interval found; marker is arterial |
-| ph | specialist | no verifiable numeric arterial pH interval |
-| betaine | specialist | only a 1994 statement without sample size or percentile basis |
-| s-adenosylhomocysteine | specialist | only mean +/- 2 SD of small samples |
-| s-adenosylmethionine | specialist | only mean +/- SD or small-sample ranges |
-| magnesium-rbc | specialist | only mean +/- SD (n=20) or small observed min-max |
-| urine-pyruvate | specialist | no numeric urine reference interval found |
-| urine-succinate | specialist | only a group comparison, no reference interval |
-| bone-age | specialist | no verifiable numeric reference interval or cut-off |
-| sflt-1 | specialist | only sFlt-1/PlGF ratio cut-offs or a threshold with no stated direction |
-| beta-globulin | specialist | only separate beta-1 and beta-2 intervals; no total beta bound |
-| estriol | specialist | only small or historical pregnancy studies; no verifiable interval |
-| stool-ph | specialist | only mean +/- SD of 14 volunteers |
-| ft3-rt3-ratio | specialist | calculated ratio; no verifiable source |
-| reverse-t3 | specialist | only source (PMID 32523672) gives an implausible upper limit (195 ng/dL); held back pending a second source |
-| t3-uptake | specialist | no numeric reference interval found |
-| molybdenum | specialist | blood-specific data is an observed range only; serum intervals are the wrong specimen |
-| ca-27-29 | specialist | no verifiable numeric reference interval or cut-off |
-| urine-chloride | specialist | no verifiable numeric urine chloride interval |
-| urine-granular-casts | specialist | no verifiable interval |
-| urine-phosphorus | specialist | only source blocked or mean +/- SD |
-| urine-urea-nitrogen | specialist | no verifiable numeric reference found |
-| basal-body-temperature | specialist | no verifiable reference interval; only phase-curve endpoints from 57 women |
-| biotin | specialist | only a statement without sample size or derivation |
-| niacin | specialist | no numeric source found |
-| pantothenic-acid | specialist | only mean +/- SD of 63 |
-| afib-burden | specialist | no published burden cut-off; only episode-duration thresholds |
-| nocturnal-spo2 | specialist | no verified nocturnal SpO2 cut-off or reference interval |
-| wrist-temperature-deviation | specialist | vendor-defined deviation from personal baseline; no numeric cut-off |
-| arachidonic-acid | common | only a Table 4 quote (PMID 22254080) that is not in retrievable text; range dropped |
-| dha | common | same as arachidonic-acid |
-| epa | common | same as arachidonic-acid |
-| linoleic-acid | common | same as arachidonic-acid |
-| trab-uln-multiple | specialist | its single multiple-of-ULN range lacked a verifiable bound in its quote |
+| alanine | common | only neonatal dried-blood-spot intervals (PMIDs 42739196, 34977148); no plasma or adult interval |
+| arachidonic-acid | common | only PMID 37746532 (n=56/108, limits look like CIs, not open access) |
+| basal-metabolic-rate | common | only prediction-equation validation papers; no reference interval |
+| bcaa-total | common | no source states a total BCAA interval (per-analyte only) |
+| bmd-femoral-neck | common | no g/cm2 interval; WHO T-score cut-offs are on bmd-femoral-neck-t-score |
+| bmd-lumbar-spine | common | no g/cm2 interval; WHO T-score cut-offs are on bmd-lumbar-spine-t-score |
+| body-water-percent | common | only BIA phase-angle/body-composition papers; no healthy-adult % range |
+| cysteine | common | only cardiovascular-risk cohorts; Lepage 1997 (PMID 9439460) gives cystine in graphs only |
+| dha | common | same as arachidonic-acid; EPA+DHA combined zones live on omega-3-index |
+| epa | common | same as dha |
+| estimated-average-glucose | common | ADAG (PMID 18540046) gives only the eAG regression and an HbA1c mapping, not a cut-off; ADA Standards not open access |
+| hip-circumference | common | only waist-hip-ratio papers; no hip-only interval |
+| lean-body-mass | common | EWGSOP2 limits (PMID 30312372) are appendicular muscle mass, not total lean mass; FFM percentile papers not accessible |
+| light-sleep-duration | common | meta-analyses (15586779, 31006560) give only per-decade changes |
+| linoleic-acid | common | no % of total fatty acids interval; a mol% phospholipid target (cystic fibrosis) is on linoleic-acid-mol |
+| lysine | common | PMID 42568356 gives mean/SD only; GA-I guideline gives no lysine limits |
+| omega6-omega3-ratio | common | no numeric target or threshold in accessible text |
+| phenoage | common | no published threshold or reference interval; only NHANES association studies |
+| phenoage-acceleration | common | cohort residual; any band would be derived |
+| time-awake | common | meta-analyses give only per-decade WASO changes; no wearable threshold |
+| tryptophan | common | no numeric reference limits found |
+| 5-nucleotidase | specialist | only a 1984 pregnancy paper (PMID 6516805) with no numbers in abstract |
+| afib-burden | specialist | ESC/EHRA consensus (PMID 40073206) states actionable burden thresholds are not defined |
+| apoc3 | specialist | PMID 11580913 mean +/- SD only; 16205021 no numbers in abstract |
+| asparagine | specialist | only Lepage 1997 graphical quantiles, no numbers in text |
+| basal-body-temperature | specialist | only small-study mean +/- SD (PMID 41624353) |
+| base-excess | specialist | PMID 21619466 has arterial BE intervals but no numbers in abstract and no full text |
+| beta-globulin | specialist | SPE RI studies (36039308, 39736375) give beta-1/beta-2 only; a total would be derived |
+| betaine | specialist | Northern China RI study (PMID 40157700) has no numbers in abstract and no open full text |
+| biotin | specialist | only method papers and small diet-study means |
+| bone-age | specialist | no consensus numeric cut-off found |
+| estriol | specialist | only MoM-based screening papers; non-pregnant LC-MS/MS shows estriol undetectable (PMID 31720688) |
+| ft3-rt3-ratio | specialist | no ratio reference interval published; computing one is not allowed |
+| grimage | specialist | same as phenoage |
+| hdl-large-p | specialist | NMR subclass thresholds found belong to ldl-p/ldl-size; PMID 37442713 no numbers or full text |
+| histidine | specialist | only Lepage 1997 graphical quantiles, no numbers in text |
+| horvath-epigenetic-clock | specialist | same as phenoage |
+| klemera-doubal-biological-age | specialist | same as phenoage |
+| ldl-small-p | specialist | same as hdl-large-p |
+| magnesium-rbc | specialist | PMIDs 3608148, 10612712 no numeric intervals accessible; only small-sample mean +/- SD |
+| molybdenum | specialist | CALIPER whole-blood study (PMID 37207688) has no numbers in abstract and no open full text |
+| niacin | specialist | only method papers and small diet-study means |
+| ornithine | specialist | PMID 26407660 is min-max of n=95; HHH review (25874378) gives no limits |
+| pantothenic-acid | specialist | only method papers and small diet-study means |
+| proline | specialist | large RI studies (25829462, 28278231, 40469518) keep values in tables not retrievable as text |
+| s-adenosylhomocysteine | specialist | same as s-adenosylmethionine |
+| s-adenosylmethionine | specialist | only small samples or mean +/- SD (PMIDs 35629877, 15919880, 23499573) |
+| serine | specialist | same as proline |
+| stool-ph | specialist | no source stating a limit; only microbiome and diet studies |
+| t3-uptake | specialist | no % interval; a TBI interval (PMID 41008732) is on t3-uptake-tbi |
+| threonine | specialist | same as proline |
+| trans-fatty-acid-index | specialist | no numeric cut-off or reference interval found |
+| urine-granular-casts | specialist | no healthy-adult per-LPF limit; only case reports and method papers |
+| urine-phosphorus | specialist | spot mg/dL interval not found; 24h excretion (PMID 40080792) is on urine-phosphorus-24h |
+| urine-pyruvate | specialist | no source with a numeric limit |
+| urine-succinate | specialist | no source with a numeric limit |
+| urine-urea-nitrogen | specialist | spot mg/dL interval not found; 24h excretion (PMID 40080792) is on urine-urea-24h |
+| vldl-size | specialist | same as hdl-large-p |
+| wrist-temperature-deviation | specialist | wearable papers (38544080, 41840158) are detection models with no deviation cut-off |

@@ -4,4 +4,172 @@ category = "fitness"
 unit = "reps"
 loinc = "66247-8"
 description = "Sit-to-Stand Test (30 seconds). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 14
+when = { sex = "male", age = [60.0, 65.0] }
+population = "Community-dwelling males aged 60-64"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 60-64" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 14 stands) indicates a risk for falls. Source band <= 14; stored as the warn low bound 14."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 12
+when = { sex = "female", age = [60.0, 65.0] }
+population = "Community-dwelling females aged 60-64"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 60-64" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 12 stands) indicates a risk for falls. Source band <= 12; stored as the warn low bound 12."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 12
+when = { sex = "male", age = [65.0, 70.0] }
+population = "Community-dwelling males aged 65-69"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 65-69" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 12 stands) indicates a risk for falls. Source band <= 12; stored as the warn low bound 12."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 11
+when = { sex = "female", age = [65.0, 70.0] }
+population = "Community-dwelling females aged 65-69"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 65-69" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 11 stands) indicates a risk for falls. Source band <= 11; stored as the warn low bound 11."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 12
+when = { sex = "male", age = [70.0, 75.0] }
+population = "Community-dwelling males aged 70-74"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 70-74" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 12 stands) indicates a risk for falls. Source band <= 12; stored as the warn low bound 12."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 10
+when = { sex = "female", age = [70.0, 75.0] }
+population = "Community-dwelling females aged 70-74"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 70-74" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 10 stands) indicates a risk for falls. Source band <= 10; stored as the warn low bound 10."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 11
+when = { sex = "male", age = [75.0, 80.0] }
+population = "Community-dwelling males aged 75-79"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 75-79" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 11 stands) indicates a risk for falls. Source band <= 11; stored as the warn low bound 11."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 10
+when = { sex = "female", age = [75.0, 80.0] }
+population = "Community-dwelling females aged 75-79"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 75-79" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 10 stands) indicates a risk for falls. Source band <= 10; stored as the warn low bound 10."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 10
+when = { sex = "male", age = [80.0, 85.0] }
+population = "Community-dwelling males aged 80-84"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 80-84" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 10 stands) indicates a risk for falls. Source band <= 10; stored as the warn low bound 10."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 9
+when = { sex = "female", age = [80.0, 85.0] }
+population = "Community-dwelling females aged 80-84"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 80-84" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 9 stands) indicates a risk for falls. Source band <= 9; stored as the warn low bound 9."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 8
+when = { sex = "male", age = [85.0, 90.0] }
+population = "Community-dwelling males aged 85-89"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 85-89" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 8 stands) indicates a risk for falls. Source band <= 8; stored as the warn low bound 8."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 8
+when = { sex = "female", age = [85.0, 90.0] }
+population = "Community-dwelling females aged 85-89"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 85-89" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 8 stands) indicates a risk for falls. Source band <= 8; stored as the warn low bound 8."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 7
+when = { sex = "male", age = [90.0, 95.0] }
+population = "Community-dwelling males aged 90-94"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 90-94" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 7 stands) indicates a risk for falls. Source band <= 7; stored as the warn low bound 7."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 4
+when = { sex = "female", age = [90.0, 95.0] }
+population = "Community-dwelling females aged 90-94"
+evidence = "guideline"
+citations = [
+  { url = "https://www.cdc.gov/steadi/media/pdfs/STEADI-Assessment-30Sec-508.pdf", locator = "Scoring table (Below Average Scores), age 90-94" },
+]
+note = "CDC STEADI 30-second chair stand: a below average score (strictly fewer than 4 stands) indicates a risk for falls. Source band <= 4; stored as the warn low bound 4."

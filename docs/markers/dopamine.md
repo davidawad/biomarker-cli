@@ -12,9 +12,11 @@ Dopamine (Plasma). Tracked marker with no verified reference range yet, so value
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+Bounds in pg/mL. The most specific matching range of each set applies.
 
-No ranges yet.
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | all | 3.676 | 27.57 | reference-interval-study | 115 apparently healthy individuals; blood sampled in the supine position (LC-MS/MS after in-matrix propionylation) (specimen: plasma) | [In Matrix Derivatization Combined with LC-MS/MS Results in Ultrasensitive Quantification of Plasma Free Metanephrines and Catecholamines.](https://pubmed.ncbi.nlm.nih.gov/32484659/), Results and Discussion, Reference Intervals | Reference interval as stated by the authors, in nmol/L (source units kept). Converted from the source's nmol/L (0.024-0.18) to pg/mL using factor 153.18. |
 
 ---
 

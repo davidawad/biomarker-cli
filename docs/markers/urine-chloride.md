@@ -12,9 +12,14 @@ Urine Chloride. Tracked marker with no verified reference range yet, so values c
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+No clinical reference range: No general clinical reference interval is cited; see the diagnostic, target and alternative ranges.
 
-No ranges yet.
+Bounds in mmol/L. The most specific matching range of each set applies.
+
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | warn | metabolic-alkalosis | 20 | - | consensus | Adults with metabolic alkalosis (specimen: spot-urine) | [Mastering blood gas interpretation: A practical guide for primary care providers.](https://pubmed.ncbi.nlm.nih.gov/40336441/), Step 3, metabolic alkalosis | Chloride-responsive metabolic alkalosis (volume depletion, vomiting, diuretics); respond to NaCl. Source band <= 20; stored as the warn low bound 20. |
+| diagnostic | warn | metabolic-alkalosis | - | 20 | consensus | Adults with metabolic alkalosis (specimen: spot-urine) | [Mastering blood gas interpretation: A practical guide for primary care providers.](https://pubmed.ncbi.nlm.nih.gov/40336441/), Step 3, metabolic alkalosis | Chloride-resistant metabolic alkalosis (e.g. mineralocorticoid excess); does not respond to NaCl. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20. |
 
 ---
 

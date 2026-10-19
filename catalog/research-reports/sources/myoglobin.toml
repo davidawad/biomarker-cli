@@ -3,5 +3,30 @@ name = "Myoglobin"
 loinc = "2639-3"
 category = "cardiac"
 unit = "ng/mL"
-description = "Myoglobin. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Myoglobin."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 70
+unit = "microgram/L"
+when = { sex = "male", method = "beckman-access" }
+population = "Healthy adults; reference values determined following IFCC recommendations on the Beckman Access assay"
+evidence = "reference-interval-study"
+note = "Upper reference limit for this assay only; myoglobin results differ markedly between commercial assays. Source unit microgram/L (same numeric value as ng/mL, kept as stated)."
+citations = [
+  { pmid = "11017942", title = "Multicenter evaluation of five assays for myoglobin determination.", locator = "Abstract", quote = "The following upper reference limits (microgram/L) for men and women, respectively, were obtained: Access, 70 and 52; BNA, 51 and 49; Hitachi, 67 and 58; Opus, 80 and 50; and Stratus, 86 and 63." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 52
+unit = "microgram/L"
+when = { sex = "female", method = "beckman-access" }
+population = "Healthy adults; reference values determined following IFCC recommendations on the Beckman Access assay"
+evidence = "reference-interval-study"
+note = "Upper reference limit for this assay only; myoglobin results differ markedly between commercial assays. Source unit microgram/L (same numeric value as ng/mL, kept as stated)."
+citations = [
+  { pmid = "11017942", title = "Multicenter evaluation of five assays for myoglobin determination.", locator = "Abstract", quote = "The following upper reference limits (microgram/L) for men and women, respectively, were obtained: Access, 70 and 52; BNA, 51 and 49; Hitachi, 67 and 58; Opus, 80 and 50; and Stratus, 86 and 63." },
+]

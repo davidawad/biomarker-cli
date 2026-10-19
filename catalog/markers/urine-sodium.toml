@@ -4,4 +4,28 @@ category = "electrolyte"
 unit = "mmol/L"
 loinc = "2955-3"
 description = "Urine Sodium. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+low = 30
+when = { conditions = ["hyponatremia"] }
+population = "Adults with hypotonic hyponatremia (specimen: spot-urine)"
+evidence = "consensus"
+citations = [
+  { pmid = "41907365", doi = "10.5527/wjn.v15.i1.115252", title = "Hyponatremia: Evolving diagnostics and emerging therapeutics in clinical practice.", locator = "Urine osmolality, sodium section" },
+]
+note = "Spot urine sodium < 30 supports hypovolemic hyponatremia (extrarenal loss); diuretics and renal dysfunction confound. Source kind: diagnostic. Source band <= 30; stored as the warn low bound 30."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 30
+when = { conditions = ["hyponatremia"] }
+population = "Adults with hypotonic hyponatremia (specimen: spot-urine)"
+evidence = "consensus"
+citations = [
+  { pmid = "41907365", doi = "10.5527/wjn.v15.i1.115252", title = "Hyponatremia: Evolving diagnostics and emerging therapeutics in clinical practice.", locator = "Urine osmolality, sodium section" },
+]
+note = "Spot urine sodium > 30 supports non-hypovolemic hyponatremia such as SIADH; diuretics and renal dysfunction confound. Source kind: diagnostic. Source band >= 30; stored as the warn high bound 30. Alternative to the default diagnostic warn range for the same population."

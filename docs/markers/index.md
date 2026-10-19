@@ -1,6 +1,6 @@
 # Biomarker catalog
 
-692 markers, 2537 ranges (2409 cited), 80 markers pending range research. See [coverage](coverage.md) for
+701 markers, 2603 ranges (2475 cited), 59 markers pending range research. See [coverage](coverage.md) for
 the range coverage matrix.
 
 Range sets:
@@ -511,10 +511,10 @@ Range sets:
 | [Cortisol (PM)](cortisol-pm.md) | `cortisol-pm` | ug/dL | 48099-6 | 2 | 2 |
 | [DHEA (Dehydroepiandrosterone, unconjugated)](dhea.md) | `dhea` | ng/dL | - | 7 | 7 |
 | [Direct Renin Concentration](direct-renin.md) | `direct-renin` | mIU/L | - | 3 | 3 |
-| [Dopamine (Plasma)](dopamine.md) | `dopamine` | pg/mL | 2216-0 | 0 | 0 |
-| [Epinephrine (Plasma)](epinephrine.md) | `epinephrine` | pg/mL | 2230-1 | 0 | 0 |
+| [Dopamine (Plasma)](dopamine.md) | `dopamine` | pg/mL | 2216-0 | 1 | 1 |
+| [Epinephrine (Plasma)](epinephrine.md) | `epinephrine` | pg/mL | 2230-1 | 1 | 1 |
 | [Metanephrine, Plasma Free](metanephrine-free.md) | `metanephrine-free` | pg/mL | - | 3 | 3 |
-| [Norepinephrine (Plasma)](norepinephrine.md) | `norepinephrine` | pg/mL | 2666-6 | 0 | 0 |
+| [Norepinephrine (Plasma)](norepinephrine.md) | `norepinephrine` | pg/mL | 2666-6 | 1 | 1 |
 | [Normetanephrine, Plasma Free](normetanephrine.md) | `normetanephrine` | pg/mL | - | 4 | 4 |
 | [Plasma Renin Activity](plasma-renin-activity.md) | `plasma-renin-activity` | ng/mL/h | - | 2 | 2 |
 | [Pregnenolone](pregnenolone.md) | `pregnenolone` | ng/dL | - | 7 | 7 |
@@ -565,10 +565,10 @@ Range sets:
 | [Glutamate](glutamate.md) | `glutamate` | µmol/L | 2364-8 | 1 | 1 |
 | [Glutamine](glutamine.md) | `glutamine` | µmol/L | - | 1 | 1 |
 | [Histidine](histidine.md) | `histidine` | µmol/L | 2420-8 | 0 | 0 |
-| [Isoleucine](isoleucine.md) | `isoleucine` | µmol/L | 2508-0 | 0 | 0 |
+| [Isoleucine](isoleucine.md) | `isoleucine` | µmol/L | 2508-0 | 1 | 1 |
 | [Leucine](leucine.md) | `leucine` | µmol/L | - | 3 | 3 |
 | [Lysine](lysine.md) | `lysine` | µmol/L | 2585-8 | 0 | 0 |
-| [Methionine](methionine.md) | `methionine` | µmol/L | 2622-9 | 0 | 0 |
+| [Methionine](methionine.md) | `methionine` | µmol/L | 2622-9 | 1 | 1 |
 | [Ornithine](ornithine.md) | `ornithine` | µmol/L | 2679-9 | 0 | 0 |
 | [Phenylalanine/Tyrosine ratio](phe-tyr-ratio.md) | `phe-tyr-ratio` | ratio | - | 1 | 1 |
 | [Phenylalanine](phenylalanine.md) | `phenylalanine` | µmol/L | - | 4 | 4 |
@@ -665,7 +665,9 @@ Range sets:
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
+| [Bone Mineral Density, Femoral Neck (DXA) (T-score)](bmd-femoral-neck-t-score.md) | `bmd-femoral-neck-t-score` | T-score | - | 2 | 2 |
 | [Bone Mineral Density, Femoral Neck (DXA)](bmd-femoral-neck.md) | `bmd-femoral-neck` | g/cm2 | 24701-5 | 0 | 0 |
+| [Bone Mineral Density, Lumbar Spine (DXA) (T-score)](bmd-lumbar-spine-t-score.md) | `bmd-lumbar-spine-t-score` | T-score | - | 2 | 2 |
 | [Bone Mineral Density, Lumbar Spine (DXA)](bmd-lumbar-spine.md) | `bmd-lumbar-spine` | g/cm2 | 24966-4 | 0 | 0 |
 | [Bone-Specific Alkaline Phosphatase (activity)](bsap-activity.md) | `bsap-activity` | U/L | - | 1 | 1 |
 | [Bone-Specific Alkaline Phosphatase](bsap.md) | `bsap` | µg/L | - | 8 | 8 |
@@ -692,7 +694,7 @@ Range sets:
 | [High-Sensitivity Cardiac Troponin T](hs-troponin-t.md) | `hs-troponin-t` | ng/L | 67151-1 | 7 | 7 |
 | [Lp-PLA2 Activity (U/L)](lp-pla2-activity-u-l.md) | `lp-pla2-activity-u-l` | U/L | - | 2 | 2 |
 | [Lipoprotein-associated Phospholipase A2](lp-pla2.md) | `lp-pla2` | nmol/min/mL | 79639-2 | 1 | 1 |
-| [Myoglobin](myoglobin.md) | `myoglobin` | ng/mL | 2639-3 | 0 | 0 |
+| [Myoglobin](myoglobin.md) | `myoglobin` | ng/mL | 2639-3 | 2 | 2 |
 | [NT-proBNP](nt-probnp.md) | `nt-probnp` | pg/mL | 33762-6 | 10 | 10 |
 | [QTc Interval](qtc.md) | `qtc` | ms | 8636-3 | 6 | 6 |
 | [Soluble ST2](st2.md) | `st2` | ng/mL | 90239-5 | 11 | 11 |
@@ -813,8 +815,8 @@ Range sets:
 | [Magnesium](magnesium.md) | `magnesium` | mg/dL | 19123-9 | 17 | 16 |
 | [Osmolal Gap](osmolal-gap.md) | `osmolal-gap` | mOsm/kg | - | 2 | 2 |
 | [Osmolality, Serum](osmolality.md) | `osmolality` | mOsm/kg | 2692-2 | 2 | 2 |
-| [Urine Potassium](urine-potassium.md) | `urine-potassium` | mmol/L | 2828-2 | 0 | 0 |
-| [Urine Sodium](urine-sodium.md) | `urine-sodium` | mmol/L | 2955-3 | 0 | 0 |
+| [Urine Potassium](urine-potassium.md) | `urine-potassium` | mmol/L | 2828-2 | 1 | 1 |
+| [Urine Sodium](urine-sodium.md) | `urine-sodium` | mmol/L | 2955-3 | 2 | 2 |
 
 ## fatty-acid
 
@@ -825,6 +827,7 @@ Range sets:
 | [Docosahexaenoic acid (DHA)](dha.md) | `dha` | % | - | 0 | 0 |
 | [Docosapentaenoic Acid (DPA, omega-3)](dpa.md) | `dpa` | % | 35180-9 | 2 | 2 |
 | [Eicosapentaenoic acid (EPA)](epa.md) | `epa` | % | - | 0 | 0 |
+| [Linoleic acid (LA) (mol%)](linoleic-acid-mol.md) | `linoleic-acid-mol` | mol% | - | 1 | 1 |
 | [Linoleic acid (LA)](linoleic-acid.md) | `linoleic-acid` | % | - | 0 | 0 |
 | [Omega-3 Index](omega-3-index.md) | `omega-3-index` | % | - | 3 | 3 |
 | [Omega-6/Omega-3 Ratio](omega6-omega3-ratio.md) | `omega6-omega3-ratio` | ratio | - | 0 | 0 |
@@ -835,7 +838,7 @@ Range sets:
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [Peak METs](mets-max.md) | `mets-max` | METs | - | 1 | 1 |
-| [Sit-to-Stand Test (30 seconds)](sit-to-stand.md) | `sit-to-stand` | reps | 66247-8 | 0 | 0 |
+| [Sit-to-Stand Test (30 seconds)](sit-to-stand.md) | `sit-to-stand` | reps | 66247-8 | 14 | 14 |
 | [Six-Minute Walk Distance](six-minute-walk-distance.md) | `six-minute-walk-distance` | m | 64098-7 | 2 | 2 |
 
 ## genetic
@@ -868,7 +871,7 @@ Range sets:
 | [Fructosamine](fructosamine.md) | `fructosamine` | µmol/L | - | 3 | 3 |
 | [Glucose, 1-hour OGTT (75 g)](glucose-ogtt-1h.md) | `glucose-ogtt-1h` | mg/dL | - | 3 | 3 |
 | [Glycated Albumin](glycated-albumin.md) | `glycated-albumin` | % | - | 9 | 9 |
-| [HOMA-B](homa-b.md) | `homa-b` | % | - | 0 | 0 |
+| [HOMA-B](homa-b.md) | `homa-b` | % | - | 1 | 1 |
 | [HOMA-IR](homa-ir.md) | `homa-ir` | ratio | - | 22 | 22 |
 | [Matsuda Insulin Sensitivity Index](matsuda-index.md) | `matsuda-index` | index | - | 1 | 1 |
 | [METS-IR (Metabolic Score for Insulin Resistance)](mets-ir.md) | `mets-ir` | index | - | 3 | 3 |
@@ -938,7 +941,7 @@ Range sets:
 | [Lambda Free Light Chains](free-lambda.md) | `free-lambda` | mg/L | 33944-0 | 2 | 2 |
 | [Immunoglobulin A](iga.md) | `iga` | g/L | 2458-8 | 5 | 5 |
 | [Immunoglobulin E, Total](ige-total.md) | `ige-total` | kU/L | 19113-0 | 3 | 3 |
-| [IgG Subclass 1](igg-subclass-1.md) | `igg-subclass-1` | g/L | 2466-1 | 0 | 0 |
+| [IgG Subclass 1](igg-subclass-1.md) | `igg-subclass-1` | g/L | 2466-1 | 9 | 9 |
 | [IgG Subclass 2](igg-subclass-2.md) | `igg-subclass-2` | g/L | 2467-9 | 1 | 1 |
 | [IgG Subclass 3](igg-subclass-3.md) | `igg-subclass-3` | g/L | 2468-7 | 1 | 1 |
 | [IgG Subclass 4](igg-subclass-4.md) | `igg-subclass-4` | g/L | 2469-5 | 1 | 1 |
@@ -1045,7 +1048,7 @@ Range sets:
 | [Urine Albumin/Creatinine Ratio](uacr.md) | `uacr` | mg/g | - | 9 | 9 |
 | [Urine Protein/Creatinine Ratio](upcr.md) | `upcr` | mg/g | - | 7 | 7 |
 | [Urine Albumin](urine-albumin.md) | `urine-albumin` | mg/g | 1754-1 | 3 | 3 |
-| [Urine Creatinine](urine-creatinine.md) | `urine-creatinine` | mg/dL | 2161-8 | 0 | 0 |
+| [Urine Creatinine](urine-creatinine.md) | `urine-creatinine` | mg/dL | 2161-8 | 4 | 4 |
 | [Urine Glucose](urine-glucose.md) | `urine-glucose` | mg/dL | - | 1 | 1 |
 | [Urine Protein, 24 Hour](urine-protein-24h.md) | `urine-protein-24h` | mg/24h | 2889-4 | 2 | 2 |
 | [Urine Protein](urine-protein.md) | `urine-protein` | mg/dL | - | 1 | 1 |
@@ -1065,7 +1068,7 @@ Range sets:
 | [LDL Cholesterol, Martin-Hopkins Calculated](ldl-c-martin-hopkins.md) | `ldl-c-martin-hopkins` | mg/dL | 96259-7 | 8 | 8 |
 | [LDL Cholesterol, Sampson/NIH Equation Calculated](ldl-c-sampson.md) | `ldl-c-sampson` | mg/dL | - | 8 | 8 |
 | [LDL Cholesterol](ldl-c.md) | `ldl-c` | mg/dL | 13457-7 | 29 | 25 |
-| [LDL/HDL Ratio](ldl-hdl-ratio.md) | `ldl-hdl-ratio` | ratio | - | 0 | 0 |
+| [LDL/HDL Ratio](ldl-hdl-ratio.md) | `ldl-hdl-ratio` | ratio | - | 1 | 1 |
 | [LDL Particle Number (LDL-P)](ldl-p.md) | `ldl-p` | nmol/L | - | 1 | 1 |
 | [LDL Particle Size](ldl-size.md) | `ldl-size` | nm | - | 2 | 2 |
 | [Small LDL Particle Number](ldl-small-p.md) | `ldl-small-p` | nmol/L | 43727-7 | 0 | 0 |
@@ -1105,7 +1108,7 @@ Range sets:
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Adiponectin](adiponectin.md) | `adiponectin` | µg/mL | 47828-9 | 0 | 0 |
+| [Adiponectin](adiponectin.md) | `adiponectin` | µg/mL | 47828-9 | 2 | 2 |
 | [Ammonia](ammonia.md) | `ammonia` | umol/L | 16362-6 | 1 | 1 |
 | [Base Excess, Arterial Blood](base-excess.md) | `base-excess` | mmol/L | 1925-7 | 0 | 0 |
 | [Glucose](glucose.md) | `glucose` | mg/dL | 2345-7 | 23 | 19 |
@@ -1115,7 +1118,7 @@ Range sets:
 | [Metabolic Syndrome Score](metabolic-syndrome-score.md) | `metabolic-syndrome-score` | criteria met | - | 1 | 1 |
 | [Partial Pressure of CO2, Arterial Blood](pco2.md) | `pco2` | mmHg | 2019-8 | 1 | 1 |
 | [Phosphatidylethanol (PEth)](peth.md) | `peth` | ng/mL | 74661-0 | 3 | 3 |
-| [pH, Arterial Blood](ph.md) | `ph` | pH | 2744-1 | 0 | 0 |
+| [pH, Arterial Blood](ph.md) | `ph` | pH | 2744-1 | 1 | 1 |
 | [Partial Pressure of O2, Arterial Blood](po2.md) | `po2` | mmHg | 2703-7 | 2 | 2 |
 | [Uric Acid](uric-acid.md) | `uric-acid` | mg/dL | 3084-1 | 15 | 11 |
 
@@ -1204,7 +1207,7 @@ Range sets:
 | [Pregnancy-Associated Plasma Protein A](papp-a.md) | `papp-a` | MoM | - | 3 | 3 |
 | [Placental Growth Factor](plgf.md) | `plgf` | pg/mL | - | 3 | 3 |
 | [ABO and Rh Blood Group](rh-type.md) | `rh-type` | qualitative | 882-1 | 0 | 0 |
-| [Soluble fms-like Tyrosine Kinase-1 (sFlt-1)](sflt-1.md) | `sflt-1` | pg/mL | 74756-8 | 0 | 0 |
+| [Soluble fms-like Tyrosine Kinase-1 (sFlt-1)](sflt-1.md) | `sflt-1` | pg/mL | 74756-8 | 1 | 1 |
 | [sFlt-1/PlGF Ratio](sflt1-plgf-ratio.md) | `sflt1-plgf-ratio` | ratio | - | 5 | 5 |
 | [Unconjugated Estriol, Maternal Serum](unconjugated-estriol.md) | `unconjugated-estriol` | MoM | - | 1 | 1 |
 
@@ -1268,15 +1271,16 @@ Range sets:
 | [Free T4](free-t4.md) | `free-t4` | ng/dL | 3024-7 | 13 | 12 |
 | [Free Thyroxine Index (FTI)](free-thyroxine-index.md) | `free-thyroxine-index` | index | - | 3 | 3 |
 | [Free T3 / Reverse T3 Ratio](ft3-rt3-ratio.md) | `ft3-rt3-ratio` | ratio | - | 0 | 0 |
-| [Reverse T3](reverse-t3.md) | `reverse-t3` | ng/dL | 3052-8 | 0 | 0 |
+| [Reverse T3](reverse-t3.md) | `reverse-t3` | ng/dL | 3052-8 | 1 | 1 |
 | [Total T3 (Triiodothyronine)](t3-total.md) | `t3-total` | ng/dL | 3053-6 | 3 | 3 |
+| [T3 Resin Uptake (T3RU) (TBI)](t3-uptake-tbi.md) | `t3-uptake-tbi` | TBI | - | 1 | 1 |
 | [T3 Resin Uptake (T3RU)](t3-uptake.md) | `t3-uptake` | % | 3050-2 | 0 | 0 |
 | [Total T4 (Thyroxine)](t4-total.md) | `t4-total` | µg/dL | 3026-2 | 3 | 3 |
 | [Thyroxine-Binding Globulin](tbg.md) | `tbg` | mg/L | - | 1 | 1 |
 | [Thyroglobulin Antibodies](thyroglobulin-ab.md) | `thyroglobulin-ab` | IU/mL | - | 3 | 3 |
 | [Thyroglobulin](thyroglobulin.md) | `thyroglobulin` | ng/mL | - | 8 | 8 |
 | [Thyroid Peroxidase Antibodies](tpo-ab.md) | `tpo-ab` | IU/mL | 8099-4 | 5 | 4 |
-| [TSH Receptor Antibodies (multiple of upper limit of normal)](trab-uln-multiple.md) | `trab-uln-multiple` | x ULN | - | 0 | 0 |
+| [TSH Receptor Antibodies (multiple of upper limit of normal)](trab-uln-multiple.md) | `trab-uln-multiple` | x ULN | - | 6 | 6 |
 | [TSH Receptor Antibodies (TRAb/TSI)](trab.md) | `trab` | IU/L | - | 12 | 12 |
 | [Thyroid Stimulating Hormone](tsh.md) | `tsh` | mIU/L | 3016-3 | 31 | 28 |
 | [Thyroid Stimulating Immunoglobulin (TSI) (IU/L)](tsi-iu-l.md) | `tsi-iu-l` | IU/L | - | 1 | 1 |
@@ -1317,7 +1321,7 @@ Range sets:
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [4Kscore](4kscore.md) | `4kscore` | % | 90740-2 | 2 | 2 |
-| [CA 27.29 (Cancer Antigen 27.29)](ca-27-29.md) | `ca-27-29` | U/mL | 17842-6 | 0 | 0 |
+| [CA 27.29 (Cancer Antigen 27.29)](ca-27-29.md) | `ca-27-29` | U/mL | 17842-6 | 1 | 1 |
 | [Chromogranin A](chromogranin-a.md) | `chromogranin-a` | ng/mL | 9811-1 | 4 | 4 |
 | [CYFRA 21-1 (Cytokeratin 19 Fragment)](cyfra-21-1.md) | `cyfra-21-1` | ng/mL | 25390-6 | 2 | 2 |
 | [HE4 (Human Epididymis Protein 4)](he4.md) | `he4` | pmol/L | 96044-3 | 5 | 5 |
@@ -1349,7 +1353,8 @@ Range sets:
 | [Urine Bacteria (microscopy)](urine-bacteria.md) | `urine-bacteria` | /uL | 105051-7 | 1 | 1 |
 | [Urine Bilirubin (dipstick)](urine-bilirubin.md) | `urine-bilirubin` | qualitative | 5770-3 | 0 | 0 |
 | [Urine Blood / Hemoglobin (dipstick)](urine-blood.md) | `urine-blood` | qualitative | 5794-3 | 0 | 0 |
-| [Urine Chloride](urine-chloride.md) | `urine-chloride` | mmol/L | 2078-4 | 0 | 0 |
+| [Urine Chloride, 24 Hour](urine-chloride-24h.md) | `urine-chloride-24h` | mEq/day | - | 1 | 1 |
+| [Urine Chloride](urine-chloride.md) | `urine-chloride` | mmol/L | 2078-4 | 2 | 2 |
 | [Urine Appearance / Clarity](urine-clarity.md) | `urine-clarity` | qualitative | 5767-9 | 0 | 0 |
 | [Urine Color](urine-color.md) | `urine-color` | qualitative | 5778-6 | 0 | 0 |
 | [Urine Cotinine](urine-cotinine.md) | `urine-cotinine` | ng/mL | 10366-3 | 1 | 1 |
@@ -1365,11 +1370,15 @@ Range sets:
 | [Urine Osmolality](urine-osmolality.md) | `urine-osmolality` | mOsm/kg | 2695-5 | 3 | 3 |
 | [Urine Protein-to-Creatinine Ratio](urine-pcr.md) | `urine-pcr` | mg/g | - | 7 | 7 |
 | [Urine pH](urine-ph.md) | `urine-ph` | pH | 5803-2 | 2 | 2 |
+| [Urine Phosphorus, 24 Hour](urine-phosphorus-24h.md) | `urine-phosphorus-24h` | mg/day | - | 1 | 1 |
 | [Urine Phosphorus (as phosphate)](urine-phosphorus.md) | `urine-phosphorus` | mg/dL | 2778-9 | 0 | 0 |
+| [Urine Potassium, 24 Hour](urine-potassium-24h.md) | `urine-potassium-24h` | mEq/day | - | 1 | 1 |
 | [Urine Red Blood Cells (microscopy)](urine-rbc.md) | `urine-rbc` | /HPF | 13945-1 | 1 | 1 |
+| [Urine Sodium, 24 Hour](urine-sodium-24h.md) | `urine-sodium-24h` | mEq/day | - | 1 | 1 |
 | [Urine Specific Gravity](urine-specific-gravity.md) | `urine-specific-gravity` | ratio | 5811-5 | 2 | 2 |
 | [Urine Squamous Epithelial Cells (/LPF)](urine-squamous-epithelial-cells-lpf.md) | `urine-squamous-epithelial-cells-lpf` | /LPF | - | 1 | 1 |
 | [Urine Squamous Epithelial Cells](urine-squamous-epithelial-cells.md) | `urine-squamous-epithelial-cells` | /HPF | 11277-1 | 0 | 0 |
+| [Urine Urea, 24 Hour](urine-urea-24h.md) | `urine-urea-24h` | g/day | - | 1 | 1 |
 | [Urine Urea Nitrogen](urine-urea-nitrogen.md) | `urine-urea-nitrogen` | mg/dL | 3095-7 | 0 | 0 |
 | [Urine Uric Acid (mg/day/1.73 m2)](urine-uric-acid-mg-day-1-73-m2.md) | `urine-uric-acid-mg-day-1-73-m2` | mg/day/1.73 m2 | - | 2 | 2 |
 | [Urine Uric Acid](urine-uric-acid.md) | `urine-uric-acid` | mg/day | 3086-6 | 3 | 3 |
@@ -1434,7 +1443,7 @@ Range sets:
 | [Glucose Management Indicator](gmi.md) | `gmi` | % | 97506-0 | 1 | 1 |
 | [Heart Rate Variability (RMSSD)](hrv-rmssd.md) | `hrv-rmssd` | ms | - | 1 | 1 |
 | [Nocturnal Respiratory Rate](nocturnal-respiratory-rate.md) | `nocturnal-respiratory-rate` | breaths/min | 9286-6 | 2 | 2 |
-| [Nocturnal SpO2](nocturnal-spo2.md) | `nocturnal-spo2` | % | - | 0 | 0 |
+| [Nocturnal SpO2](nocturnal-spo2.md) | `nocturnal-spo2` | % | - | 2 | 2 |
 | [Sleep Efficiency](sleep-efficiency.md) | `sleep-efficiency` | % | - | 3 | 3 |
 | [Daily Step Count](steps.md) | `steps` | steps/day | 55423-8 | 2 | 2 |
 | [Sleep Duration](total-sleep-time.md) | `total-sleep-time` | h | 93832-4 | 2 | 2 |

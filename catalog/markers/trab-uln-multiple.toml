@@ -3,4 +3,76 @@ name = "TSH Receptor Antibodies (multiple of upper limit of normal)"
 category = "thyroid"
 unit = "x ULN"
 description = "Result expressed as a multiple of the reporting laboratory's upper limit of normal (ULN) rather than in absolute units. Compute it as the measured result divided by the ULN printed on the same laboratory report."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 25
+when = { pregnant = true, trimester = 1, conditions = ["history-of-graves-disease"] }
+population = "Pregnant women with a history of Graves disease (n = 500); BRAHMS TRAK human assay on Kryptor Compact Plus (method: brahms-kryptor-trak)"
+evidence = "cohort"
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", locator = "Abstract" },
+]
+note = "Trimester 1 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism, NPV 100%; assay-specific and may not transfer to other TRAb platforms. Source band >= 25; stored as the warn high bound 25."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 19
+when = { pregnant = true, trimester = 2, conditions = ["history-of-graves-disease"] }
+population = "Pregnant women with a history of Graves disease (n = 500); BRAHMS TRAK human assay on Kryptor Compact Plus (method: brahms-kryptor-trak)"
+evidence = "cohort"
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", locator = "Abstract" },
+]
+note = "Trimester 2 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism, NPV 100%; assay-specific and may not transfer to other TRAb platforms. Source band >= 19; stored as the warn high bound 19."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+high = 6
+when = { pregnant = true, trimester = 3, conditions = ["history-of-graves-disease"] }
+population = "Pregnant women with a history of Graves disease (n = 500); BRAHMS TRAK human assay on Kryptor Compact Plus (method: brahms-kryptor-trak)"
+evidence = "cohort"
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", locator = "Abstract" },
+]
+note = "Trimester 3 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism, NPV 100%; assay-specific and may not transfer to other TRAb platforms. Source band >= 6; stored as the warn high bound 6."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 10
+when = { pregnant = true, trimester = 1, conditions = ["active-graves-disease"] }
+population = "Pregnant women with active Graves disease (n = 178); BRAHMS TRAK human assay on Kryptor Compact Plus (method: brahms-kryptor-trak)"
+evidence = "cohort"
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", locator = "Abstract" },
+]
+note = "Trimester 1 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism (sensitivities 89%, 86%, 83% across trimesters); assay-specific. Source band >= 10; stored as the warn high bound 10. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 12
+when = { pregnant = true, trimester = 2, conditions = ["active-graves-disease"] }
+population = "Pregnant women with active Graves disease (n = 178); BRAHMS TRAK human assay on Kryptor Compact Plus (method: brahms-kryptor-trak)"
+evidence = "cohort"
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", locator = "Abstract" },
+]
+note = "Trimester 2 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism (sensitivities 89%, 86%, 83% across trimesters); assay-specific. Source band >= 12; stored as the warn high bound 12. Alternative to the default clinical warn range for the same population."
+
+[[range]]
+set = "alt-1"
+kind = "warn"
+high = 10
+when = { pregnant = true, trimester = 3, conditions = ["active-graves-disease"] }
+population = "Pregnant women with active Graves disease (n = 178); BRAHMS TRAK human assay on Kryptor Compact Plus (method: brahms-kryptor-trak)"
+evidence = "cohort"
+citations = [
+  { pmid = "41846542", doi = "10.1210/clinem/dgag118", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13467015/", title = "Maternal TSH-receptor antibodies predict fetal/neonatal hyperthyroidism in pregnancies with a history of Graves disease.", locator = "Abstract" },
+]
+note = "Trimester 3 TRAb cut-off (multiple of the assay ULN) for risk stratification of fetal/neonatal hyperthyroidism (sensitivities 89%, 86%, 83% across trimesters); assay-specific. Source band >= 10; stored as the warn high bound 10. Alternative to the default clinical warn range for the same population."

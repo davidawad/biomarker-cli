@@ -4,4 +4,27 @@ category = "cardiac"
 unit = "ng/mL"
 loinc = "2639-3"
 description = "Myoglobin. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 70.0
+when = { sex = "male" }
+population = "Healthy adults; reference values determined following IFCC recommendations on the Beckman Access assay (method: beckman-access)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "11017942", title = "Multicenter evaluation of five assays for myoglobin determination.", locator = "Abstract" },
+]
+note = "Upper reference limit for this assay only; myoglobin results differ markedly between commercial assays. Source unit microgram/L (same numeric value as ng/mL, kept as stated). Converted from the source's microgram/L (70) to ng/mL using factor 1."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 52.0
+when = { sex = "female" }
+population = "Healthy adults; reference values determined following IFCC recommendations on the Beckman Access assay (method: beckman-access)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "11017942", title = "Multicenter evaluation of five assays for myoglobin determination.", locator = "Abstract" },
+]
+note = "Upper reference limit for this assay only; myoglobin results differ markedly between commercial assays. Source unit microgram/L (same numeric value as ng/mL, kept as stated). Converted from the source's microgram/L (52) to ng/mL using factor 1."

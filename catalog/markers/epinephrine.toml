@@ -4,4 +4,15 @@ category = "adrenal"
 unit = "pg/mL"
 loinc = "2230-1"
 description = "Epinephrine (Plasma). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 5.313
+high = 58.62
+population = "115 apparently healthy individuals; blood sampled in the supine position (LC-MS/MS after in-matrix propionylation) (specimen: plasma)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "32484659", doi = "10.1021/acs.analchem.0c01263", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7349590/", title = "In Matrix Derivatization Combined with LC-MS/MS Results in Ultrasensitive Quantification of Plasma Free Metanephrines and Catecholamines.", locator = "Results and Discussion, Reference Intervals" },
+]
+note = "Reference interval as stated by the authors, in nmol/L (source units kept). Converted from the source's nmol/L (0.029-0.32) to pg/mL using factor 183.2."

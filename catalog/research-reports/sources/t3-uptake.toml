@@ -3,5 +3,18 @@ name = "T3 Resin Uptake (T3RU)"
 loinc = "3050-2"
 category = "thyroid"
 unit = "%"
-description = "T3 Resin Uptake (T3RU). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Thyroid hormone binding ratio (T3 resin uptake, T-uptake). Reported as a ratio (TBI) on newer immunoassay platforms; the range below is assay-specific."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.9
+high = 1.2
+unit = "TBI"
+when = { }
+population = "305 healthy Croatian adults on the Snibe MAGLUMI X6 immunoassay; assay-specific, nonparametric 2.5th-97.5th percentile"
+evidence = "reference-interval-study"
+note = "T-uptake (thyroid binding index) central 95% reference interval, both sexes."
+citations = [
+  { pmid = "41008732", doi = "10.3390/diagnostics15182360", title = "Reference Intervals and Cut-Off Values for Thyroid Tests in the Croatian Adult Population on the Snibe MAGLUMI X6 Immunoassay Analyzer.", locator = "Abstract", quote = "Reference intervals for TSH, TT4, FT3, FT4, Tg, T-uptake and revT3 did not differ by gender (p > 0.05) and were 0.77-5.04 mIU/L, 69.9-127.7 nmol/L, 3.84-6.20 pmol/L, 13.8-19.7 pmol/L, 1.8-51.2 ug/L, 0.9-1.2 TBI and 0.44-0.73 ng/mL, respectively." },
+]

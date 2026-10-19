@@ -4,4 +4,15 @@ category = "metabolic"
 unit = "pH"
 loinc = "2744-1"
 description = "pH, Arterial Blood. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 7.35
+high = 7.45
+population = "Adults, arterial blood"
+evidence = "consensus"
+citations = [
+  { pmid = "41473681", doi = "10.3892/mi.2025.291", title = "Blood gas analysis: Clinical applications, interpretation and future directions (Review).", locator = "Section 3" },
+]
+note = "Normal arterial pH; <7.35 acidemia, >7.45 alkalemia."

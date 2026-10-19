@@ -12,9 +12,14 @@ Urine Sodium. Tracked marker with no verified reference range yet, so values can
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+No clinical reference range: No general clinical reference interval is cited; see the diagnostic, target and alternative ranges.
 
-No ranges yet.
+Bounds in mmol/L. The most specific matching range of each set applies.
+
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| alt-1 | warn | hyponatremia | - | 30 | consensus | Adults with hypotonic hyponatremia (specimen: spot-urine) | [Hyponatremia: Evolving diagnostics and emerging therapeutics in clinical practice.](https://pubmed.ncbi.nlm.nih.gov/41907365/), Urine osmolality, sodium section | Spot urine sodium > 30 supports non-hypovolemic hyponatremia such as SIADH; diuretics and renal dysfunction confound. Source kind: diagnostic. Source band >= 30; stored as the warn high bound 30. Alternative to the default diagnostic warn range for the same population. |
+| diagnostic | warn | hyponatremia | 30 | - | consensus | Adults with hypotonic hyponatremia (specimen: spot-urine) | [Hyponatremia: Evolving diagnostics and emerging therapeutics in clinical practice.](https://pubmed.ncbi.nlm.nih.gov/41907365/), Urine osmolality, sodium section | Spot urine sodium < 30 supports hypovolemic hyponatremia (extrarenal loss); diuretics and renal dysfunction confound. Source kind: diagnostic. Source band <= 30; stored as the warn low bound 30. |
 
 ---
 

@@ -5753,3 +5753,84 @@ loinc_note = "vendor-unit companion of rem-sleep-duration"
 category = "sleep"
 priority = "specialist"
 derived = false
+[[marker]]
+slug = "urine-phosphorus-24h"
+name = "Urine Phosphorus, 24 Hour"
+loinc = ""
+loinc_note = "LOINC not verified via NLM Clinical Tables API"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-urea-24h"
+name = "Urine Urea, 24 Hour"
+loinc = ""
+loinc_note = "LOINC not verified via NLM Clinical Tables API"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-sodium-24h"
+name = "Urine Sodium, 24 Hour"
+loinc = ""
+loinc_note = "LOINC not verified via NLM Clinical Tables API"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-potassium-24h"
+name = "Urine Potassium, 24 Hour"
+loinc = ""
+loinc_note = "LOINC not verified via NLM Clinical Tables API"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "urine-chloride-24h"
+name = "Urine Chloride, 24 Hour"
+loinc = ""
+loinc_note = "LOINC not verified via NLM Clinical Tables API"
+category = "urinalysis"
+priority = "specialist"
+derived = false
+
+
+[[marker]]
+slug = "bmd-femoral-neck-t-score"
+name = "Bone Mineral Density, Femoral Neck (DXA) (T-score)"
+loinc = ""
+loinc_note = "vendor-unit companion of bmd-femoral-neck"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "bmd-lumbar-spine-t-score"
+name = "Bone Mineral Density, Lumbar Spine (DXA) (T-score)"
+loinc = ""
+loinc_note = "vendor-unit companion of bmd-lumbar-spine"
+category = "bone"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "linoleic-acid-mol"
+name = "Linoleic acid (LA) (mol%)"
+loinc = ""
+loinc_note = "vendor-unit companion of linoleic-acid"
+category = "fatty-acid"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "t3-uptake-tbi"
+name = "T3 Resin Uptake (T3RU) (TBI)"
+loinc = ""
+loinc_note = "vendor-unit companion of t3-uptake"
+category = "thyroid"
+priority = "specialist"
+derived = false

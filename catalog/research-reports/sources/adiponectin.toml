@@ -3,5 +3,32 @@ name = "Adiponectin"
 loinc = "47828-9"
 category = "metabolic"
 unit = "µg/mL"
-description = "Adiponectin. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Adiponectin."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 6.6
+high = 28.2
+unit = "ug/mL"
+when = { sex = "female", age_min = 20, age_max = 31 }
+population = "Young adults aged 20-30 years; pooled literature-derived distribution (systematic review with bootstrapping)"
+evidence = "meta-analysis"
+note = "Central 90% of the pooled young-adult distribution (5th to 95th percentile), not a 95% reference interval; literature-derived estimate, not a single-cohort or assay-specific interval."
+citations = [
+  { pmid = "42330026", doi = "10.1371/journal.pbio.3003864", title = "The total mass, copy number, and distribution of hormones in the human bloodstream.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13349298/", locator = "Table 1", quote = "Adiponectin | F | 13.7 | 13.2-14.2 | 10.2-18.5 | 6.6-28.2 ... Total variation is represented by interquartile ranges covering 50, and the 90% of the population, respectively." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.9
+high = 18.3
+unit = "ug/mL"
+when = { sex = "male", age_min = 20, age_max = 31 }
+population = "Young adults aged 20-30 years; pooled literature-derived distribution (systematic review with bootstrapping)"
+evidence = "meta-analysis"
+note = "Central 90% of the pooled young-adult distribution (5th to 95th percentile), not a 95% reference interval; literature-derived estimate, not a single-cohort or assay-specific interval."
+citations = [
+  { pmid = "42330026", doi = "10.1371/journal.pbio.3003864", title = "The total mass, copy number, and distribution of hormones in the human bloodstream.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13349298/", locator = "Table 1", quote = "Adiponectin | M | 8.5 | 8.1-8.8 | 6.1-11.6 | 3.9-18.3 ... Total variation is represented by interquartile ranges covering 50, and the 90% of the population, respectively." },
+]

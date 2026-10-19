@@ -4,4 +4,28 @@ category = "urinalysis"
 unit = "mmol/L"
 loinc = "2078-4"
 description = "Urine Chloride. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+no_reference = "No general clinical reference interval is cited; see the diagnostic, target and alternative ranges."
+
+[[range]]
+set = "clinical"
+kind = "warn"
+low = 20
+when = { conditions = ["metabolic-alkalosis"] }
+population = "Adults with metabolic alkalosis (specimen: spot-urine)"
+evidence = "consensus"
+citations = [
+  { pmid = "40336441", doi = "10.4102/safp.v67i1.6058", title = "Mastering blood gas interpretation: A practical guide for primary care providers.", locator = "Step 3, metabolic alkalosis" },
+]
+note = "Chloride-responsive metabolic alkalosis (volume depletion, vomiting, diuretics); respond to NaCl. Source band <= 20; stored as the warn low bound 20."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 20
+when = { conditions = ["metabolic-alkalosis"] }
+population = "Adults with metabolic alkalosis (specimen: spot-urine)"
+evidence = "consensus"
+citations = [
+  { pmid = "40336441", doi = "10.4102/safp.v67i1.6058", title = "Mastering blood gas interpretation: A practical guide for primary care providers.", locator = "Step 3, metabolic alkalosis" },
+]
+note = "Chloride-resistant metabolic alkalosis (e.g. mineralocorticoid excess); does not respond to NaCl. Source kind: diagnostic. Source band >= 20; stored as the warn high bound 20."

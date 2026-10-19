@@ -3,5 +3,18 @@ name = "Dopamine (Plasma)"
 loinc = "2216-0"
 category = "adrenal"
 unit = "pg/mL"
-description = "Dopamine (Plasma). Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Dopamine (Plasma)."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 0.024
+high = 0.18
+unit = "nmol/L"
+when = { specimen = "plasma" }
+population = "115 apparently healthy individuals; blood sampled in the supine position (LC-MS/MS after in-matrix propionylation)"
+evidence = "reference-interval-study"
+note = "Reference interval as stated by the authors, in nmol/L (source units kept)."
+citations = [
+  { pmid = "32484659", doi = "10.1021/acs.analchem.0c01263", title = "In Matrix Derivatization Combined with LC-MS/MS Results in Ultrasensitive Quantification of Plasma Free Metanephrines and Catecholamines.", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7349590/", locator = "Results and Discussion, Reference Intervals", quote = "dopamine, 0.024-0.18 nmol/L" },
+]

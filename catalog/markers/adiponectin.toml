@@ -4,4 +4,29 @@ category = "metabolic"
 unit = "µg/mL"
 loinc = "47828-9"
 description = "Adiponectin. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 6.6
+high = 28.2
+when = { sex = "female", age = [20.0, 31.0] }
+population = "Young adults aged 20-30 years; pooled literature-derived distribution (systematic review with bootstrapping)"
+evidence = "cohort"
+citations = [
+  { pmid = "42330026", doi = "10.1371/journal.pbio.3003864", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13349298/", title = "The total mass, copy number, and distribution of hormones in the human bloodstream.", locator = "Table 1" },
+]
+note = "Central 90% of the pooled young-adult distribution (5th to 95th percentile), not a 95% reference interval; literature-derived estimate, not a single-cohort or assay-specific interval. Converted from the source's ug/mL (6.6-28.2) to µg/mL using factor 1.0."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.9
+high = 18.3
+when = { sex = "male", age = [20.0, 31.0] }
+population = "Young adults aged 20-30 years; pooled literature-derived distribution (systematic review with bootstrapping)"
+evidence = "cohort"
+citations = [
+  { pmid = "42330026", doi = "10.1371/journal.pbio.3003864", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13349298/", title = "The total mass, copy number, and distribution of hormones in the human bloodstream.", locator = "Table 1" },
+]
+note = "Central 90% of the pooled young-adult distribution (5th to 95th percentile), not a 95% reference interval; literature-derived estimate, not a single-cohort or assay-specific interval. Converted from the source's ug/mL (3.9-18.3) to µg/mL using factor 1.0."

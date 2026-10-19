@@ -3,4 +3,16 @@ name = "HOMA-B"
 category = "glycemic"
 unit = "%"
 description = "HOMA-B. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 40.74
+high = 159.52
+when = { fasting = true }
+population = "135 healthy Nepalese adults aged 20-69 years, BMI 18.5-24.9 kg/m2 (Gandaki Province); CLSI EP28-A3c nonparametric 2.5th-97.5th percentile after outlier removal (method: homa2)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "41857869", doi = "10.1136/bmjopen-2025-109523", title = "Reference intervals for fasting insulin and insulin-related indices in healthy adults: a cross-sectional study in Gandaki Province, Nepal.", locator = "Abstract, Results" },
+]
+note = "HOMA2-%B central 95% reference interval (HOMA2 formula, not HOMA1)."

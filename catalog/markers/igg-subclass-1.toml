@@ -4,4 +4,120 @@ category = "immune"
 unit = "g/L"
 loinc = "2466-1"
 description = "IgG Subclass 1. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.38
+high = 6.55
+when = { age = [0.08, 0.5] }
+population = "607 apparently healthy Chinese children, age group 1 to 6 months; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 1 to 6 months (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 1.55
+high = 7.26
+when = { age = [0.5, 1.0] }
+population = "607 apparently healthy Chinese children, age group 6 to 12 months; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 6 to 12 months (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.88
+high = 8.37
+when = { age = [1.0, 2.0] }
+population = "607 apparently healthy Chinese children, age group 1 to 2 years; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 1 to 2 years (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.05
+high = 8.82
+when = { age = [2.0, 3.0] }
+population = "607 apparently healthy Chinese children, age group 2 to 3 years; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 2 to 3 years (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.73
+high = 8.65
+when = { age = [3.0, 4.0] }
+population = "607 apparently healthy Chinese children, age group 3 to 4 years; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 3 to 4 years (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.74
+high = 9.79
+when = { age = [4.0, 6.0] }
+population = "607 apparently healthy Chinese children, age group 4 to 6 years; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 4 to 6 years (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.42
+high = 10.74
+when = { age = [6.0, 10.0] }
+population = "607 apparently healthy Chinese children, age group 6 to 9 years; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 6 to 9 years (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.45
+high = 10.2
+when = { age = [10.0, 13.0] }
+population = "607 apparently healthy Chinese children, age group 10 to 12 years; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 10 to 12 years (Table 1)."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 2.57
+high = 10.24
+when = { age = [13.0, 17.0] }
+population = "607 apparently healthy Chinese children, age group 13 to 16 years; Siemens BN II nephelometry"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "29505563", doi = "10.1371/journal.pone.0192923", url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5837086/", title = "A reference interval for serum IgG subclasses in Chinese children.", locator = "Table 1" },
+]
+note = "2.5th to 97.5th percentile, age group 13 to 16 years (Table 1)."
