@@ -9,6 +9,7 @@ Lipoprotein(a), an LDL-like particle with an apolipoprotein(a) component. Concen
 | LOINC | [43583-4](https://loinc.org/43583-4/) |
 | Specimen | - |
 | Aliases | `lp(a)`, `lipoprotein a`, `lipoprotein(a)`, `lpa` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md) |
 
 ## Unit conversions
 

@@ -1,0 +1,41 @@
+slug = "nfl"
+name = "Neurofilament Light Chain (NfL), Plasma"
+category = "neurology"
+unit = "pg/mL"
+description = "Neurofilament light chain, a marker of neuroaxonal injury. Concentrations rise strongly with age. Upper reference limits are platform-specific."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 18.0
+when = { age_min = 18, age_max = 51, method = "lumipulse" }
+population = "Control adults aged 18-50 years, Lumipulse platform, serum or plasma; upper limit is the 97.5th percentile"
+evidence = "reference-interval-study"
+note = "One-sided upper reference limit (97.5th percentile). Platform-specific."
+citations = [
+  { pmid = "42168010", doi = "10.1016/j.neurol.2026.03.013", title = "Establishing age-stratified reference values for blood Neurofilament Light chain (NfL) using the Lumipulse® platform.", locator = "Abstract", quote = "Reference values were defined as the 97.5th percentile and were 18.0pg/mL for patients aged 18-50, 25.4pg/mL for those aged 51-68, and 43.5pg/mL for patients aged 69years or older." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 25.4
+when = { age_min = 51, age_max = 69, method = "lumipulse" }
+population = "Control adults aged 51-68 years, Lumipulse platform, serum or plasma; upper limit is the 97.5th percentile"
+evidence = "reference-interval-study"
+note = "One-sided upper reference limit (97.5th percentile). Platform-specific."
+citations = [
+  { pmid = "42168010", doi = "10.1016/j.neurol.2026.03.013", title = "Establishing age-stratified reference values for blood Neurofilament Light chain (NfL) using the Lumipulse® platform.", locator = "Abstract", quote = "Reference values were defined as the 97.5th percentile and were 18.0pg/mL for patients aged 18-50, 25.4pg/mL for those aged 51-68, and 43.5pg/mL for patients aged 69years or older." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 43.5
+when = { age_min = 69, method = "lumipulse" }
+population = "Control adults aged 69 years or older, Lumipulse platform, serum or plasma; upper limit is the 97.5th percentile"
+evidence = "reference-interval-study"
+note = "One-sided upper reference limit (97.5th percentile). Platform-specific."
+citations = [
+  { pmid = "42168010", doi = "10.1016/j.neurol.2026.03.013", title = "Establishing age-stratified reference values for blood Neurofilament Light chain (NfL) using the Lumipulse® platform.", locator = "Abstract", quote = "Reference values were defined as the 97.5th percentile and were 18.0pg/mL for patients aged 18-50, 25.4pg/mL for those aged 51-68, and 43.5pg/mL for patients aged 69years or older." },
+]

@@ -9,6 +9,7 @@ Circulating 25-hydroxyvitamin D [25(OH)D], the main marker of vitamin D status f
 | LOINC | [1989-3](https://loinc.org/1989-3/) |
 | Specimen | - |
 | Aliases | `25-oh vitamin d`, `vit d`, `25(oh)d`, `vitamin d, 25-hydroxy`, `25-hydroxyvitamin d` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Unit conversions
 

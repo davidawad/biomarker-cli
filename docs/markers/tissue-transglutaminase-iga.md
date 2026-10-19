@@ -9,6 +9,7 @@ IgA antibodies against tissue transglutaminase 2, the first-line serological tes
 | LOINC | [31017-7](https://loinc.org/31017-7/) |
 | Specimen | - |
 | Aliases | `tga-iga`, `anti-ttg iga`, `ttg-iga` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Diabetes and glycemic control](../panels/diabetes.md), [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

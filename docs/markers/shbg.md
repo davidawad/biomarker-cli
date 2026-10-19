@@ -9,6 +9,7 @@ Liver-made carrier protein that binds testosterone and estradiol and sets how mu
 | LOINC | [13967-5](https://loinc.org/13967-5/) |
 | Specimen | - |
 | Aliases | `sex hormone binding globulin` |
+| Panels | [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

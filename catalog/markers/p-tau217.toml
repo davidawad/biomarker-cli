@@ -1,0 +1,28 @@
+slug = "p-tau217"
+name = "Plasma p-tau217"
+category = "neurology"
+unit = "pg/mL"
+description = "Plasma phosphorylated tau 217, the leading blood biomarker of Alzheimer's amyloid pathology. Values and cut-offs are strongly assay-specific; only a Lumipulse two-cut-off example is encoded."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 0.229
+high = 0.516
+population = "Subjective cognitive decline, MCI and AD-dementia patients (Lumipulse G600II); gray zone between the lower and upper cut-off (specimen: plasma; method: lumipulse-g600ii)"
+evidence = "cohort"
+citations = [
+  { pmid = "40357140", doi = "10.1002/dad2.70116", title = "The two cut-offs approach for plasma p-tau217 in detecting Alzheimer's disease in subjective cognitive decline and mild cognitive impairment.", locator = "Results" },
+]
+note = "Gray zone of the two-cut-off approach: neither amyloid-positive nor amyloid-negative (Core 1) classification; confirm with PET or CSF. Assay- and cohort-specific, not transferable to other assays. Two-sided band stored as a reference range in its own set because it has no clinical reference range to orient it as a warn or critical cut point."
+
+[[range]]
+set = "diagnostic"
+kind = "warn"
+high = 0.516
+population = "Subjective cognitive decline, MCI and AD-dementia patients (Lumipulse G600II) (specimen: plasma; method: lumipulse-g600ii)"
+evidence = "cohort"
+citations = [
+  { pmid = "40357140", doi = "10.1002/dad2.70116", title = "The two cut-offs approach for plasma p-tau217 in detecting Alzheimer's disease in subjective cognitive decline and mild cognitive impairment.", locator = "Results" },
+]
+note = "Above the upper cut-off (specificity 96%): predicts Core 1 positivity (amyloid PET / CSF). Assay- and cohort-specific. Source kind: diagnostic. Source band >= 0.516; stored as the warn high bound 0.516."

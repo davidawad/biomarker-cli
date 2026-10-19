@@ -9,6 +9,7 @@ Prothrombin time expressed as a ratio to a standard reference, so results are co
 | LOINC | [6301-6](https://loinc.org/6301-6/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

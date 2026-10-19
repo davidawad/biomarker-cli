@@ -9,6 +9,7 @@ Circulating fragment of the transferrin receptor that rises as tissue iron suppl
 | LOINC | [30248-9](https://loinc.org/30248-9/) |
 | Specimen | - |
 | Aliases | `soluble-transferrin-receptor` |
+| Panels | [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

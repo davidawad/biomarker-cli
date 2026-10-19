@@ -329,6 +329,70 @@ def doi_ok(doi):
     return j.get("responseCode") == 1
 
 
+def check_citations(cits, tag, errs, stats):
+    """Verify a citations list (PMID/title/DOI resolve, quote verbatim); return numbers found in quotes."""
+    if not cits:
+        errs.append(f"{tag}: no citations")
+    quote_nums = set()
+    for j, c in enumerate(cits):
+        ct = f"{tag}.citations[{j}]"
+        stats["citations"] += 1
+        ok = True
+        extra = set(c) - {"pmid", "doi", "url", "title", "locator", "quote"}
+        if extra:
+            errs.append(f"{ct}: unknown keys {sorted(extra)}"); ok = False
+        pmid, doi, url = c.get("pmid"), c.get("doi"), c.get("url")
+        if not (pmid or doi or url):
+            errs.append(f"{ct}: needs pmid, doi or url"); ok = False
+        q = c.get("quote")
+        if not isinstance(q, str) or len(q.strip()) < 8:
+            errs.append(f"{ct}: quote required"); ok = False
+            q = ""
+        if not c.get("locator"):
+            errs.append(f"{ct}: locator required"); ok = False
+        texts = []
+        if pmid:
+            pmid = str(pmid)
+            if not pmid.isdigit():
+                errs.append(f"{ct}: pmid must be digits"); ok = False
+            else:
+                d = esummary([pmid]).get(pmid)
+                if not d:
+                    errs.append(f"{ct}: PMID {pmid} does not resolve"); ok = False
+                else:
+                    if not c.get("title"):
+                        errs.append(f"{ct}: title required with pmid"); ok = False
+                    elif not title_match(c["title"], d.get("title", "")):
+                        errs.append(f"{ct}: title mismatch for PMID {pmid}: esummary={norm(d.get('title',''))!r}"); ok = False
+                    edoi, _ = ids_of(d)
+                    if doi and edoi and edoi.lower() != str(doi).lower():
+                        errs.append(f"{ct}: DOI {doi} != PubMed DOI {edoi} for PMID {pmid}"); ok = False
+                    texts += [t for _, t in source_texts(pmid)]
+        if doi:
+            if not doi_ok(str(doi)):
+                errs.append(f"{ct}: DOI {doi} does not resolve"); ok = False
+        if url:
+            if not str(url).startswith("http"):
+                errs.append(f"{ct}: url must be http(s)"); ok = False
+            elif not pmid or not texts:
+                t = url_text(url)
+                if t:
+                    texts.append(t)
+                elif not pmid:
+                    errs.append(f"{ct}: url {url} could not be fetched"); ok = False
+        if q and texts:
+            kq = key(q).replace("...", "\x00")
+            pieces = [p for p in kq.split("\x00") if p]
+            joined = [key(t) for t in texts]
+            if not all(any(p in jt for jt in joined) for p in pieces):
+                errs.append(f"{ct}: quote not found verbatim in retrieved source text: {q[:90]!r}"); ok = False
+        elif q and not texts:
+            errs.append(f"{ct}: no retrievable source text to check quote against"); ok = False
+        quote_nums |= numbers_in(q)
+        stats["cit_ok" if ok else "cit_fail"] += 1
+    return quote_nums
+
+
 def verify_file(path, stats):
     errs, warns = [], []
     try:
@@ -398,66 +462,7 @@ def verify_file(path, stats):
                 errs.append(f"{tag}: when.markers entries need marker, op (<,<=,>,>=), value[, unit]")
             else:
                 thresholds.append(m["value"])
-        cits = r.get("citations", [])
-        if not cits:
-            errs.append(f"{tag}: no citations")
-        quote_nums = set()
-        for j, c in enumerate(cits):
-            ct = f"{tag}.citations[{j}]"
-            stats["citations"] += 1
-            ok = True
-            extra = set(c) - {"pmid", "doi", "url", "title", "locator", "quote"}
-            if extra:
-                errs.append(f"{ct}: unknown keys {sorted(extra)}"); ok = False
-            pmid, doi, url = c.get("pmid"), c.get("doi"), c.get("url")
-            if not (pmid or doi or url):
-                errs.append(f"{ct}: needs pmid, doi or url"); ok = False
-            q = c.get("quote")
-            if not isinstance(q, str) or len(q.strip()) < 8:
-                errs.append(f"{ct}: quote required"); ok = False
-                q = ""
-            if not c.get("locator"):
-                errs.append(f"{ct}: locator required"); ok = False
-            texts = []
-            if pmid:
-                pmid = str(pmid)
-                if not pmid.isdigit():
-                    errs.append(f"{ct}: pmid must be digits"); ok = False
-                else:
-                    d = esummary([pmid]).get(pmid)
-                    if not d:
-                        errs.append(f"{ct}: PMID {pmid} does not resolve"); ok = False
-                    else:
-                        if not c.get("title"):
-                            errs.append(f"{ct}: title required with pmid"); ok = False
-                        elif not title_match(c["title"], d.get("title", "")):
-                            errs.append(f"{ct}: title mismatch for PMID {pmid}: esummary={norm(d.get('title',''))!r}"); ok = False
-                        edoi, _ = ids_of(d)
-                        if doi and edoi and edoi.lower() != str(doi).lower():
-                            errs.append(f"{ct}: DOI {doi} != PubMed DOI {edoi} for PMID {pmid}"); ok = False
-                        texts += [t for _, t in source_texts(pmid)]
-            if doi:
-                if not doi_ok(str(doi)):
-                    errs.append(f"{ct}: DOI {doi} does not resolve"); ok = False
-            if url:
-                if not str(url).startswith("http"):
-                    errs.append(f"{ct}: url must be http(s)"); ok = False
-                elif not pmid or not texts:
-                    t = url_text(url)
-                    if t:
-                        texts.append(t)
-                    elif not pmid:
-                        errs.append(f"{ct}: url {url} could not be fetched"); ok = False
-            if q and texts:
-                kq = key(q).replace("...", "\x00")
-                pieces = [p for p in kq.split("\x00") if p]
-                joined = [key(t) for t in texts]
-                if not all(any(p in jt for jt in joined) for p in pieces):
-                    errs.append(f"{ct}: quote not found verbatim in retrieved source text: {q[:90]!r}"); ok = False
-            elif q and not texts:
-                errs.append(f"{ct}: no retrievable source text to check quote against"); ok = False
-            quote_nums |= numbers_in(q)
-            stats["cit_ok" if ok else "cit_fail"] += 1
+        quote_nums = check_citations(r.get("citations", []), tag, errs, stats)
         for name, v in (("low", lo), ("high", hi)):
             sf = r.get("source_factor")
             src_ok = isinstance(v, (int, float)) and isinstance(sf, (int, float)) and sf and any(abs(float(v) / sf - x) <= 1e-3 * max(1.0, abs(x)) for x in quote_nums)
@@ -474,11 +479,63 @@ def verify_file(path, stats):
     return errs, warns
 
 
+PANEL_ROLES = {"core", "extended"}
+
+
+def verify_panel(path, stats):
+    """catalog/panels/<slug>.toml: a cited preset of catalog markers (see tools/research/FORMAT.md)."""
+    errs, warns = [], []
+    try:
+        doc = tomllib.load(open(path, "rb"))
+    except Exception as e:
+        return [f"TOML parse error: {e}"], []
+    slug = os.path.basename(path)[:-5]
+    for k in ("slug", "name", "description"):
+        if not isinstance(doc.get(k), str) or not doc.get(k):
+            errs.append(f"missing/invalid top-level {k}")
+    if doc.get("slug") != slug:
+        errs.append(f"slug {doc.get('slug')!r} != filename {slug!r}")
+    extra = set(doc) - {"slug", "name", "description", "aliases", "member"}
+    if extra:
+        errs.append(f"unknown top-level keys {sorted(extra)}")
+    members = doc.get("member", [])
+    if not members:
+        errs.append("no [[member]] entries")
+    mk_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(path))), "markers")
+    seen = set()
+    for i, m in enumerate(members):
+        tag = f"member[{i}]"
+        extra = set(m) - {"marker", "role", "reason", "term", "citations"}
+        if extra:
+            errs.append(f"{tag}: unknown keys {sorted(extra)}")
+        mk = m.get("marker")
+        if mk in seen:
+            errs.append(f"{tag}: duplicate marker {mk!r}")
+        seen.add(mk)
+        mp = os.path.join(mk_dir, f"{mk}.toml")
+        if not isinstance(mk, str) or not os.path.exists(mp):
+            errs.append(f"{tag}: marker {mk!r} is not in catalog/markers")
+            continue
+        if m.get("role") not in PANEL_ROLES:
+            errs.append(f"{tag}: role {m.get('role')!r} not in {sorted(PANEL_ROLES)}")
+        if not isinstance(m.get("reason"), str) or not m.get("reason"):
+            errs.append(f"{tag}: reason required")
+        check_citations(m.get("citations", []), tag, errs, stats)
+        md = tomllib.load(open(mp, "rb"))
+        terms = [md.get("name", ""), mk, mk.replace("-", " ")] + list(md.get("aliases", []))
+        if m.get("term"):
+            terms.append(m["term"])
+        quotes = " ".join(key(str(c.get("quote", ""))) for c in m.get("citations", []))
+        if not any(key(x) and key(x) in quotes for x in terms):
+            errs.append(f"{tag}: no citation quote names {mk!r} (name, alias, slug or term)")
+    return errs, warns
+
+
 def cmd_verify(a):
     stats = {"citations": 0, "cit_ok": 0, "cit_fail": 0}
     bad = 0
     for p in a.files:
-        errs, warns = verify_file(p, stats)
+        errs, warns = (verify_panel if os.sep + "panels" + os.sep in os.path.abspath(p) else verify_file)(p, stats)
         status = "FAIL" if errs else "OK"
         bad += bool(errs)
         print(f"{status} {p}")

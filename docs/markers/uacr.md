@@ -9,6 +9,7 @@ Urinary albumin-to-creatinine ratio on a spot urine sample. Staging marker for a
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

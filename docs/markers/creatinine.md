@@ -9,6 +9,7 @@ Serum creatinine, a filtration marker of kidney function. Reference intervals de
 | LOINC | [2160-0](https://loinc.org/2160-0/) |
 | Specimen | - |
 | Aliases | `creat`, `creatinine, serum` |
+| Panels | [Biological aging](../panels/biological-aging.md), [Diabetes and glycemic control](../panels/diabetes.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Unit conversions
 

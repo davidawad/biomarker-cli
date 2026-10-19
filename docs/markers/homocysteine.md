@@ -9,6 +9,7 @@ Total homocysteine (tHcy) is a sulfur amino acid whose blood level rises with lo
 | LOINC | [13965-9](https://loinc.org/13965-9/) |
 | Specimen | - |
 | Aliases | `hcy` |
+| Panels | [Alzheimer's disease and dementia workup](../panels/alzheimers.md), [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

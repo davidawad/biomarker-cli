@@ -9,6 +9,7 @@ Total serum vitamin B12 (cobalamin), including the inactive haptocorrin-bound fr
 | LOINC | [2132-9](https://loinc.org/2132-9/) |
 | Specimen | - |
 | Aliases | `b12`, `cobalamin` |
+| Panels | [Alzheimer's disease and dementia workup](../panels/alzheimers.md), [Diabetes and glycemic control](../panels/diabetes.md), [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Unit conversions
 

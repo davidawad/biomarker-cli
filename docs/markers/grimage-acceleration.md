@@ -9,6 +9,7 @@ Epigenetic age acceleration from the DNA methylation GrimAge clock: GrimAge in y
 | LOINC | - |
 | Specimen | - |
 | Aliases | `ageaccelgrim` |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

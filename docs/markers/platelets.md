@@ -9,6 +9,7 @@ Number of circulating platelets, needed for primary haemostasis. Low values (thr
 | LOINC | [777-3](https://loinc.org/777-3/) |
 | Specimen | - |
 | Aliases | `plt`, `platelet count` |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md), [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

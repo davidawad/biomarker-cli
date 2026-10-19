@@ -9,6 +9,7 @@ The pressure in the arteries during the heart's contraction, the upper number of
 | LOINC | [8480-6](https://loinc.org/8480-6/) |
 | Specimen | - |
 | Aliases | `systolic`, `systolic bp`, `sbp`, `blood pressure systolic` |
+| Panels | [Metabolic syndrome](../panels/metabolic-syndrome.md) |
 
 ## Ranges
 

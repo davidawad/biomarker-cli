@@ -101,6 +101,9 @@ pub enum Command {
     /// Manage the marker catalog
     #[command(subcommand)]
     Marker(MarkerCmd),
+    /// Browse cited marker panels
+    #[command(subcommand)]
+    Panel(crate::cli_panel::PanelCmd),
     /// Manage reference and optimal ranges
     #[command(subcommand)]
     Range(RangeCmd),
@@ -263,9 +266,16 @@ pub enum MarkerCmd {
         /// Case-insensitive substring search over slug, name and aliases
         #[arg(long)]
         search: Option<String>,
+        /// Restrict to markers in a cited panel
+        #[arg(long)]
+        panel: Option<String>,
     },
     /// Show a marker with aliases, ranges and conversions
-    Show { marker: String },
+    Show {
+        marker: String,
+        #[arg(long)]
+        panel: Option<String>,
+    },
     /// Edit a marker
     Edit(MarkerEditArgs),
     /// Remove a marker (and, with --force, its measurements)
@@ -713,6 +723,9 @@ pub struct FilterArgs {
     /// Marker slug/alias/name (repeatable or comma-separated)
     #[arg(short, long = "marker", value_delimiter = ',')]
     pub markers: Vec<String>,
+    /// Restrict results to markers in a cited panel
+    #[arg(long)]
+    pub panel: Option<String>,
     /// Marker category (repeatable)
     #[arg(short = 'c', long = "category", value_delimiter = ',')]
     pub categories: Vec<String>,

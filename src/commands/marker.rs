@@ -13,8 +13,10 @@ use crate::util::validate_slug;
 pub fn run(ctx: &Ctx, cmd: MarkerCmd) -> Result<()> {
     match cmd {
         MarkerCmd::Add(a) => add(ctx, a),
-        MarkerCmd::List { category, search } => list(ctx, category.as_deref(), search.as_deref()),
-        MarkerCmd::Show { marker } => show(ctx, &marker),
+        MarkerCmd::List { category, search, panel } => {
+            list(ctx, category.as_deref(), search.as_deref(), panel.as_deref())
+        }
+        MarkerCmd::Show { marker, panel } => show(ctx, &marker, panel.as_deref()),
         MarkerCmd::Edit(a) => edit(ctx, a),
         MarkerCmd::Rm { marker, force } => rm(ctx, &marker, force),
         MarkerCmd::Alias { marker, aliases, remove } => alias(ctx, &marker, &aliases, remove),
@@ -78,14 +80,28 @@ fn add(ctx: &Ctx, a: MarkerAddArgs) -> Result<()> {
     ctx.emit_mutation(&Report::object("marker", marker_record(cat.get(&m.slug)?)))
 }
 
-fn list(ctx: &Ctx, category: Option<&str>, search: Option<&str>) -> Result<()> {
+fn panel_slugs(name: &str) -> Result<Vec<String>> {
+    let defs = crate::catalog::builtin()?;
+    let panel = defs
+        .panels
+        .iter()
+        .find(|p| p.slug.eq_ignore_ascii_case(name) || p.aliases.iter().any(|a| a.eq_ignore_ascii_case(name)))
+        .ok_or_else(|| AppError::not_found(format!("unknown panel '{name}'")))?;
+    Ok(panel.members.iter().map(|m| m.marker.clone()).collect())
+}
+
+fn list(ctx: &Ctx, category: Option<&str>, search: Option<&str>, panel: Option<&str>) -> Result<()> {
     let db = ctx.db()?;
     let cat = Catalog::load(&db)?;
     let needle = search.map(str::to_lowercase);
+    let panel = panel.map(panel_slugs).transpose()?;
     let rows = cat
         .markers
         .iter()
         .filter(|m| category.is_none_or(|c| m.category.eq_ignore_ascii_case(c)))
+        .filter(|m| {
+            panel.as_ref().is_none_or(|members| members.iter().any(|s| cat.find(s).is_some_and(|x| x.id == m.id)))
+        })
         .filter(|m| {
             needle.as_deref().is_none_or(|n| {
                 m.slug.contains(n) || m.name.to_lowercase().contains(n) || m.aliases.iter().any(|a| a.contains(n))
@@ -96,10 +112,16 @@ fn list(ctx: &Ctx, category: Option<&str>, search: Option<&str>) -> Result<()> {
     ctx.emit(&Report::list("markers", rows).table_columns(&["slug", "name", "category", "unit", "loinc"]))
 }
 
-fn show(ctx: &Ctx, name: &str) -> Result<()> {
+fn show(ctx: &Ctx, name: &str, panel: Option<&str>) -> Result<()> {
     let db = ctx.db()?;
     let cat = Catalog::load(&db)?;
     let m = cat.get(name)?;
+    if let Some(p) = panel {
+        let members = panel_slugs(p)?;
+        if !members.iter().any(|s| cat.find(s).is_some_and(|x| x.id == m.id)) {
+            return Err(AppError::not_found(format!("marker '{}' is not in panel '{p}'", m.slug)));
+        }
+    }
     let mut rec = marker_record(m);
     let ranges: Vec<_> =
         cat.ranges_for(m.id).chain(cat.catalog_ranges.iter().filter(|r| r.marker_id == m.id)).map(to_record).collect();

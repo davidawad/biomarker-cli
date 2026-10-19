@@ -9,6 +9,7 @@ Plasma glucose 2 hours after a 75 g oral glucose load. Used to classify impaired
 | LOINC | - |
 | Specimen | - |
 | Aliases | `glucose-ogtt-2h` |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Ranges
 

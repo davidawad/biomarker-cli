@@ -9,6 +9,7 @@ Free kappa light chains are the unbound light-chain fragments of antibodies, mad
 | LOINC | [36916-5](https://loinc.org/36916-5/) |
 | Specimen | - |
 | Aliases | `kappa flc`, `free kappa light chains`, `sflc kappa`, `kappa-free-light-chain` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

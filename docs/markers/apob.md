@@ -9,6 +9,7 @@ Apolipoprotein B, one protein per atherogenic lipoprotein particle (LDL, VLDL, I
 | LOINC | [1884-6](https://loinc.org/1884-6/) |
 | Specimen | - |
 | Aliases | `apo b`, `apolipoprotein b`, `apo-b` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md) |
 
 ## Ranges
 

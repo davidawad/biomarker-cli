@@ -9,6 +9,7 @@ Plasma glucose, usually fasting, used to screen for and diagnose prediabetes, di
 | LOINC | [2345-7](https://loinc.org/2345-7/) |
 | Specimen | - |
 | Aliases | `glu`, `fasting glucose`, `blood glucose`, `glucose, serum` |
+| Panels | [Biological aging](../panels/biological-aging.md), [Diabetes and glycemic control](../panels/diabetes.md), [Metabolic syndrome](../panels/metabolic-syndrome.md) |
 
 ## Unit conversions
 

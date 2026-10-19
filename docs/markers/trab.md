@@ -9,6 +9,7 @@ Antibodies that stimulate or block the TSH receptor; the main cause of Graves di
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Thyroid function and autoimmunity](../panels/thyroid.md) |
 
 ## Ranges
 

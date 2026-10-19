@@ -9,6 +9,7 @@ C-peptide is secreted in equimolar amounts with insulin and measures endogenous 
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Ranges
 

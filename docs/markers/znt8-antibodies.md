@@ -9,6 +9,7 @@ IgG autoantibodies against zinc transporter 8 (ZnT8), a beta-cell antigen, measu
 | LOINC | [76651-9](https://loinc.org/76651-9/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Ranges
 

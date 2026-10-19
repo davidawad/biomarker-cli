@@ -5834,3 +5834,60 @@ loinc_note = "vendor-unit companion of t3-uptake"
 category = "thyroid"
 priority = "specialist"
 derived = false
+
+[[marker]]
+slug = "p-tau217"
+name = "Plasma p-tau217"
+loinc = "104663-0"
+category = "neurology"
+priority = "common"
+derived = false
+
+[[marker]]
+slug = "p-tau217-ratio"
+name = "Plasma %p-tau217 (p-tau217 / non-p-tau217 ratio)"
+loinc = "106940-0"
+category = "neurology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "p-tau181"
+name = "Plasma p-tau181"
+loinc = "103675-5"
+category = "neurology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "p-tau231"
+name = "Plasma p-tau231"
+loinc = ""
+loinc_note = "NLM Clinical Tables LOINC search for 'tau 231' returned no result"
+category = "neurology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "abeta42-40-ratio"
+name = "Plasma Abeta42/Abeta40 ratio"
+loinc = "106941-8"
+category = "neurology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "nfl"
+name = "Neurofilament Light Chain (NfL), Plasma"
+loinc = "101281-4"
+category = "neurology"
+priority = "specialist"
+derived = false
+
+[[marker]]
+slug = "gfap"
+name = "Glial Fibrillary Acidic Protein (GFAP), Plasma"
+loinc = "97604-3"
+category = "neurology"
+priority = "specialist"
+derived = false

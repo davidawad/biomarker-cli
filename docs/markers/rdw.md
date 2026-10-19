@@ -9,6 +9,7 @@ Coefficient of variation of red cell size (RDW-CV). A high RDW means mixed cell 
 | LOINC | [788-0](https://loinc.org/788-0/) |
 | Specimen | - |
 | Aliases | `rdw-cv` |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

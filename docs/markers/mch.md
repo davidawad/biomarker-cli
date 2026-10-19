@@ -9,6 +9,7 @@ Average mass of hemoglobin per red blood cell. Low values accompany microcytic a
 | LOINC | [785-6](https://loinc.org/785-6/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

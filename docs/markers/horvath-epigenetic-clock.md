@@ -9,6 +9,7 @@ Horvath Epigenetic Clock (Epigenetic Age). Tracked marker with no verified refer
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

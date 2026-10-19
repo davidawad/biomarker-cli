@@ -9,6 +9,7 @@ Fragment of type I collagen excreted in urine during bone resorption. Reported p
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

@@ -9,6 +9,7 @@ Serum bicarbonate (total CO2) reflects the metabolic component of acid-base bala
 | LOINC | [2028-9](https://loinc.org/2028-9/) |
 | Specimen | - |
 | Aliases | `bicarbonate`, `hco3`, `carbon dioxide, total` |
+| Panels | [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

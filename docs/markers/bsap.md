@@ -9,6 +9,7 @@ Enzyme made by osteoblasts and a marker of bone formation. Used alongside other 
 | LOINC | - |
 | Specimen | - |
 | Aliases | `bone-alp` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

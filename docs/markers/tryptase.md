@@ -9,6 +9,7 @@ Mast cell protease measured in serum. Basal (resting) tryptase screens for masto
 | LOINC | [21582-2](https://loinc.org/21582-2/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

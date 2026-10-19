@@ -9,6 +9,7 @@ Total prostate-specific antigen, a protein made by the prostate and measured in 
 | LOINC | [2857-1](https://loinc.org/2857-1/) |
 | Specimen | - |
 | Aliases | `psa, total` |
+| Panels | [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

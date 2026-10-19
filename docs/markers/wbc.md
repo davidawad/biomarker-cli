@@ -9,6 +9,7 @@ Total leukocyte count in blood, the sum of neutrophils, lymphocytes, monocytes, 
 | LOINC | [6690-2](https://loinc.org/6690-2/) |
 | Specimen | - |
 | Aliases | `white blood cell count`, `leukocytes` |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

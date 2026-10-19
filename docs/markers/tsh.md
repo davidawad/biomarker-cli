@@ -9,6 +9,7 @@ Pituitary hormone that drives thyroid hormone production; the primary screening 
 | LOINC | [3016-3](https://loinc.org/3016-3/) |
 | Specimen | - |
 | Aliases | `thyrotropin` |
+| Panels | [Alzheimer's disease and dementia workup](../panels/alzheimers.md), [Bone health and osteoporosis](../panels/bone-health.md), [Diabetes and glycemic control](../panels/diabetes.md), [Thyroid function and autoimmunity](../panels/thyroid.md) |
 
 ## Ranges
 

@@ -9,6 +9,7 @@ Serum albumin. Declines with age in adults and is lower in children and older ad
 | LOINC | [1751-7](https://loinc.org/1751-7/) |
 | Specimen | - |
 | Aliases | `alb` |
+| Panels | [Biological aging](../panels/biological-aging.md), [Bone health and osteoporosis](../panels/bone-health.md), [Liver health and MASLD](../panels/liver.md), [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

@@ -9,6 +9,7 @@ Pituitary gonadotropin that triggers ovulation and stimulates testosterone produ
 | LOINC | [10501-5](https://loinc.org/10501-5/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

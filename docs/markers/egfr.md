@@ -9,6 +9,7 @@ Estimated glomerular filtration rate from a creatinine- and/or cystatin C-based 
 | LOINC | [98979-8](https://loinc.org/98979-8/) |
 | Specimen | - |
 | Aliases | `gfr`, `estimated gfr` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Diabetes and glycemic control](../panels/diabetes.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

@@ -9,6 +9,7 @@ Coronary artery calcium score measured by non-contrast cardiac CT and quantified
 | LOINC | - |
 | Specimen | - |
 | Aliases | `cac score`, `agatston score`, `coronary calcium score`, `coronary-artery-calcium` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md) |
 
 ## Ranges
 

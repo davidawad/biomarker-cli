@@ -1,0 +1,6 @@
+slug = "p-tau181"
+name = "Plasma p-tau181"
+category = "neurology"
+unit = "pg/mL"
+description = "Plasma phosphorylated tau 181, a blood biomarker of Alzheimer's pathology with lower accuracy than p-tau217."
+no_reference = "pending: no verbatim cut-off or reference interval retrieved; plasma p-tau181 thresholds are assay- and cohort-specific and the guideline (PMID 40729527) does not state a single value."

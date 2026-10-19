@@ -9,6 +9,7 @@ IgG autoantibodies against insulinoma-associated antigen-2 (IA-2, ICA512), a bet
 | LOINC | [31209-0](https://loinc.org/31209-0/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Ranges
 

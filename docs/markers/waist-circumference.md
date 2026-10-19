@@ -9,6 +9,7 @@ Waist circumference measured at the level of the umbilicus or the midpoint betwe
 | LOINC | - |
 | Specimen | - |
 | Aliases | `waist`, `abdominal circumference`, `wc` |
+| Panels | [Metabolic syndrome](../panels/metabolic-syndrome.md) |
 
 ## Ranges
 

@@ -9,6 +9,7 @@ Erythrocyte porphyrin that rises when iron is short for heme synthesis; measured
 | LOINC | [33007-6](https://loinc.org/33007-6/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

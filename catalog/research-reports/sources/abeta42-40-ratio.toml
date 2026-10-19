@@ -1,0 +1,6 @@
+slug = "abeta42-40-ratio"
+name = "Plasma Abeta42/Abeta40 ratio"
+category = "neurology"
+unit = "ratio"
+no_reference = "pending: no verbatim cut-off retrieved; plasma Abeta42/40 cut-offs are assay-specific (immunoassay vs mass spectrometry) and the guideline (PMID 40729527) cautions about single cutoffs."
+description = "Plasma ratio of amyloid-beta 42 to amyloid-beta 40; a lower ratio indicates brain amyloid pathology."

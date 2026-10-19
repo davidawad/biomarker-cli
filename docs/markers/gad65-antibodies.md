@@ -9,6 +9,7 @@ Autoantibodies against glutamic acid decarboxylase 65 (GAD65), measured by radio
 | LOINC | [13926-1](https://loinc.org/13926-1/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Ranges
 

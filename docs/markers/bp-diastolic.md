@@ -9,6 +9,7 @@ The pressure in the arteries between heart beats, the lower number of a blood pr
 | LOINC | [8462-4](https://loinc.org/8462-4/) |
 | Specimen | - |
 | Aliases | `diastolic`, `diastolic bp`, `dbp`, `blood pressure diastolic` |
+| Panels | [Metabolic syndrome](../panels/metabolic-syndrome.md) |
 
 ## Ranges
 

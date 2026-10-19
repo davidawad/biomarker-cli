@@ -9,6 +9,7 @@ Serum magnesium, a marker of magnesium status. The commonly used reference inter
 | LOINC | [19123-9](https://loinc.org/19123-9/) |
 | Specimen | - |
 | Aliases | `mg` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Unit conversions
 

@@ -1,0 +1,212 @@
+slug = "diabetes"
+name = "Diabetes and glycemic control"
+description = "Diagnosis, classification, monitoring and complication screening (kidney, lipids, liver, thyroid, B12) per the ADA Standards of Care in Diabetes-2025."
+aliases = ["glycemic", "diabetes-mellitus"]
+
+[[member]]
+marker = "hba1c"
+role = "core"
+reason = "Diagnostic criterion (A1C >=6.5%), prediabetes criterion (5.7-6.4%) and baseline glycemic test at the initial evaluation."
+term = "A1C"
+citations = [
+  { doi = "10.2337/dc25-S002", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635041/", title = "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.", locator = "Table 2.1", quote = "A1C >=6.5% (>=48 mmol/mol). The test should be performed in a laboratory using a method that is NGSP certified and standardized to the DCCT assay." },
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "A1C, if the results are not available within the past 3 months" },
+]
+
+[[member]]
+marker = "glucose"
+role = "core"
+reason = "Fasting plasma glucose >=126 mg/dL is a diagnostic criterion; also used for screening."
+term = "FPG"
+citations = [
+  { doi = "10.2337/dc25-S002", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635041/", title = "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.", locator = "Table 2.1", quote = "FPG >=126 mg/dL (>=7.0 mmol/L). Fasting is defined as no caloric intake for at least 8 h." },
+]
+
+[[member]]
+marker = "ogtt-2h-glucose"
+role = "core"
+reason = "2-h plasma glucose >=200 mg/dL during a 75-g OGTT is a diagnostic criterion."
+term = "2-h PG"
+citations = [
+  { doi = "10.2337/dc25-S002", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635041/", title = "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.", locator = "Table 2.1", quote = "2-h PG >=200 mg/dL (>=11.1 mmol/L) during OGTT. The test should be performed as described by the WHO, using a glucose load containing the equivalent of 75 g anhydrous glucose dissolved in water." },
+]
+
+[[member]]
+marker = "uacr"
+role = "core"
+reason = "Annual albuminuria screening for diabetic kidney disease in type 2 diabetes and type 1 diabetes of >=5 years."
+term = "UACR"
+citations = [
+  { doi = "10.2337/dc25-S011", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635029/", title = "11. Chronic Kidney Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Recommendation 11.1a", quote = "spot urine albumin-to-creatinine ratio [UACR]) and estimated glomerular filtration rate [eGFR] in people with type 1 diabetes with duration of >=5 years and in all people with type 2 diabetes regardless of treatment." },
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Spot urinary albumin-to-creatinine ratio" },
+]
+
+[[member]]
+marker = "egfr"
+role = "core"
+reason = "Annual kidney function screening with UACR; staging and monitoring of CKD."
+citations = [
+  { doi = "10.2337/dc25-S011", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635029/", title = "11. Chronic Kidney Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Recommendation 11.1b", quote = "In people with established chronic kidney disease (CKD), monitor urinary albumin (e.g., spot UACR) and eGFR 1-4 times per year depending on the stage of the kidney disease" },
+]
+
+[[member]]
+marker = "creatinine"
+role = "core"
+reason = "Serum creatinine (basis of eGFR) at the initial evaluation and monitored when ACE inhibitors, ARBs or MRAs are used."
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Serum creatinine and estimated glomerular filtration rate" },
+  { doi = "10.2337/dc25-S011", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635029/", title = "11. Chronic Kidney Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Recommendation 11.4b", quote = "Monitor for increased serum creatinine and for increased serum potassium levels when ACE inhibitors, ARBs, and mineralocorticoid receptor antagonists (MRAs) are used" },
+]
+
+[[member]]
+marker = "potassium"
+role = "core"
+reason = "Serum potassium monitored in people on ACE inhibitors, ARBs, MRAs or diuretics."
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Serum potassium levels in people with diabetes on ACE inhibitors, ARBs, or diuretics" },
+]
+
+[[member]]
+marker = "total-cholesterol"
+role = "core"
+reason = "Total cholesterol is part of the lipid profile obtained at diagnosis, initial evaluation and then periodically to assess ASCVD risk."
+citations = [
+  { doi = "10.2337/dc25-S010", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635050/", title = "10. Cardiovascular Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Lipid panel monitoring", quote = "In adults with diabetes, it is reasonable to obtain a lipid profile (total cholesterol, LDL cholesterol, HDL cholesterol, and triglycerides) at the time of diagnosis, at the initial medical evaluation, and at least every 5 years thereafter in individuals <40 years of age." },
+]
+
+[[member]]
+marker = "ldl-c"
+role = "core"
+reason = "LDL cholesterol is part of the lipid profile obtained at diagnosis, initial evaluation and then periodically to assess ASCVD risk."
+citations = [
+  { doi = "10.2337/dc25-S010", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635050/", title = "10. Cardiovascular Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Lipid panel monitoring", quote = "In adults with diabetes, it is reasonable to obtain a lipid profile (total cholesterol, LDL cholesterol, HDL cholesterol, and triglycerides) at the time of diagnosis, at the initial medical evaluation, and at least every 5 years thereafter in individuals <40 years of age." },
+]
+
+[[member]]
+marker = "hdl-c"
+role = "core"
+reason = "HDL cholesterol is part of the lipid profile obtained at diagnosis, initial evaluation and then periodically to assess ASCVD risk."
+citations = [
+  { doi = "10.2337/dc25-S010", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635050/", title = "10. Cardiovascular Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Lipid panel monitoring", quote = "In adults with diabetes, it is reasonable to obtain a lipid profile (total cholesterol, LDL cholesterol, HDL cholesterol, and triglycerides) at the time of diagnosis, at the initial medical evaluation, and at least every 5 years thereafter in individuals <40 years of age." },
+]
+
+[[member]]
+marker = "triglycerides"
+role = "core"
+reason = "Triglycerides is part of the lipid profile obtained at diagnosis, initial evaluation and then periodically to assess ASCVD risk."
+citations = [
+  { doi = "10.2337/dc25-S010", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635050/", title = "10. Cardiovascular Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Lipid panel monitoring", quote = "In adults with diabetes, it is reasonable to obtain a lipid profile (total cholesterol, LDL cholesterol, HDL cholesterol, and triglycerides) at the time of diagnosis, at the initial medical evaluation, and at least every 5 years thereafter in individuals <40 years of age." },
+]
+
+[[member]]
+marker = "fib4"
+role = "core"
+reason = "Liver fibrosis screening (FIB-4) for MASLD at the initial evaluation."
+term = "FIB-4"
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Liver function tests (i.e., FIB-4)" },
+]
+
+[[member]]
+marker = "tsh"
+role = "core"
+reason = "TSH screening in people with type 1 diabetes at the initial evaluation."
+term = "Thyroid-stimulating hormone"
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Thyroid-stimulating hormone in people with type 1 diabetes" },
+]
+
+[[member]]
+marker = "vitamin-b12"
+role = "core"
+reason = "Vitamin B12 checked in people taking metformin for more than 5 years."
+term = "Vitamin B12"
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Vitamin B12 if taking metformin for >5 years" },
+]
+
+[[member]]
+marker = "tissue-transglutaminase-iga"
+role = "core"
+reason = "Celiac disease screening serology in people with type 1 diabetes; the catalog marker is the first-line serological test."
+term = "Celiac disease"
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Celiac disease in people with type 1 diabetes" },
+]
+
+[[member]]
+marker = "platelets"
+role = "core"
+reason = "CBC with platelets is part of the initial laboratory evaluation."
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "CBC with platelets" },
+]
+
+[[member]]
+marker = "calcium"
+role = "extended"
+reason = "Calcium (with vitamin D and phosphorous) assessed for appropriate people with diabetes."
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Calcium, vitamin D, and phosphorous for appropriate people with diabetes" },
+]
+
+[[member]]
+marker = "vitamin-d"
+role = "extended"
+reason = "Vitamin D assessed (with calcium and phosphorous) for appropriate people with diabetes."
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Calcium, vitamin D, and phosphorous for appropriate people with diabetes" },
+]
+
+[[member]]
+marker = "phosphorus"
+role = "extended"
+reason = "Phosphorous assessed (with calcium and vitamin D) for appropriate people with diabetes."
+term = "phosphorous"
+citations = [
+  { doi = "10.2337/dc25-S004", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635044/", title = "4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2025.", locator = "Table 4.1", quote = "Calcium, vitamin D, and phosphorous for appropriate people with diabetes" },
+]
+
+[[member]]
+marker = "gad65-antibodies"
+role = "extended"
+reason = "Primary islet autoantibody to measure when classifying suspected type 1 diabetes."
+term = "Glutamic acid decarboxylase (GAD)"
+citations = [
+  { doi = "10.2337/dc25-S002", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635041/", title = "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.", locator = "Classification table footnote", quote = "Glutamic acid decarboxylase (GAD) should be the primary antibody measured" },
+]
+
+[[member]]
+marker = "ia-2-antibodies"
+role = "extended"
+reason = "Second-line islet autoantibody if GAD is negative."
+term = "IA-2"
+citations = [
+  { doi = "10.2337/dc25-S002", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635041/", title = "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.", locator = "Classification table footnote", quote = "should be followed by islet tyrosine phosphatase 2 (IA-2) and/or zinc transporter 8 (ZnT8) where these tests are available" },
+]
+
+[[member]]
+marker = "znt8-antibodies"
+role = "extended"
+reason = "Second-line islet autoantibody if GAD is negative."
+term = "ZnT8"
+citations = [
+  { doi = "10.2337/dc25-S002", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635041/", title = "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.", locator = "Classification table footnote", quote = "should be followed by islet tyrosine phosphatase 2 (IA-2) and/or zinc transporter 8 (ZnT8) where these tests are available" },
+]
+
+[[member]]
+marker = "c-peptide"
+role = "extended"
+reason = "Indicated in insulin-treated people to classify diabetes type and exclude severe insulin deficiency."
+citations = [
+  { doi = "10.2337/dc25-S002", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635041/", title = "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.", locator = "Classification table footnote", quote = "A C-peptide test is only indicated in people receiving insulin treatment." },
+]
+
+[[member]]
+marker = "egfr-cystatin-c"
+role = "extended"
+reason = "Cystatin C combined with creatinine gives a more accurate eGFR than either alone."
+term = "cystatin C"
+citations = [
+  { doi = "10.2337/dc25-S011", url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11635029/", title = "11. Chronic Kidney Disease and Risk Management: Standards of Care in Diabetes-2025.", locator = "Epidemiology of Diabetes and CKD", quote = "increased use of cystatin C (another marker of eGFR) is suggested in combination with serum creatinine because combining filtration markers (creatinine and cystatin C) is more accurate" },
+]

@@ -9,6 +9,7 @@ Concentration of the oxygen-carrying protein hemoglobin in whole blood. Low valu
 | LOINC | [718-7](https://loinc.org/718-7/) |
 | Specimen | - |
 | Aliases | `hgb`, `hb`, `haemoglobin` |
+| Panels | [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md), [Kidney function and CKD](../panels/kidney.md), [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Unit conversions
 

@@ -1,0 +1,11 @@
+slug = "example"
+name = "Example panel"
+description = "A small test panel."
+aliases = ["sample"]
+
+[[member]]
+marker = "x"
+role = "core"
+reason = "Used for the example."
+term = "X"
+citations = [{ pmid = "123", title = "Example paper", quote = "X is used for the example." }]

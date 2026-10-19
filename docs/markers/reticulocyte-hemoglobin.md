@@ -9,6 +9,7 @@ Haemoglobin content of the reticulocyte population, measured on automated analys
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

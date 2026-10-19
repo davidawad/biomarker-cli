@@ -66,6 +66,7 @@ pub struct UniverseReport {
 #[derive(Debug, Clone, Serialize)]
 pub struct LintReport {
     pub markers: usize,
+    pub panels: usize,
     pub ranges: usize,
     /// Ranges with at least one citation.
     pub cited: usize,
@@ -151,6 +152,52 @@ pub fn lint(src: &Sources, known_units: &[&str], universe: bool, strict: bool) -
         }
     }
     let slugs: BTreeSet<&str> = markers.iter().map(|m| m.slug.as_str()).collect();
+    let mut panels = Vec::new();
+    for (file, text) in &src.panels {
+        match super::parse_panel(file, text) {
+            Ok(panel) => {
+                if *file != format!("{}.toml", panel.slug) {
+                    cx.push(
+                        Severity::Error,
+                        "panel-file-name",
+                        Some(&panel.slug),
+                        format!("{file} must be named {}.toml", panel.slug),
+                    );
+                }
+                let mut seen = BTreeSet::new();
+                for member in &panel.members {
+                    if !slugs.contains(member.marker.as_str()) {
+                        cx.push(
+                            Severity::Error,
+                            "panel-marker",
+                            Some(&panel.slug),
+                            format!("member marker '{}' is not in the catalog", member.marker),
+                        );
+                    }
+                    if !seen.insert(&member.marker) {
+                        cx.push(
+                            Severity::Error,
+                            "panel-duplicate",
+                            Some(&panel.slug),
+                            format!("duplicate member '{}'", member.marker),
+                        );
+                    }
+                    if member.citations.is_empty() {
+                        cx.push(
+                            Severity::Error,
+                            "panel-uncited",
+                            Some(&panel.slug),
+                            format!("member '{}' has no citations", member.marker),
+                        );
+                    }
+                    let at = |message: String| format!("panel member '{}': {message}", member.marker);
+                    member.citations.iter().for_each(|c| lint_citation(&mut cx, &panel.slug, &at, c));
+                }
+                panels.push(panel);
+            }
+            Err(e) => cx.push(Severity::Error, "panel-schema", None, e.message),
+        }
+    }
     let mut names: BTreeMap<String, &str> = BTreeMap::new();
     for m in &markers {
         for n in std::iter::once(&m.slug).chain(&m.aliases) {
@@ -177,6 +224,7 @@ pub fn lint(src: &Sources, known_units: &[&str], universe: bool, strict: bool) -
     let count = |s| cx.findings.iter().filter(|f| f.severity == s).count();
     LintReport {
         markers: markers.len(),
+        panels: panels.len(),
         ranges: markers.iter().map(|m| m.ranges.len()).sum(),
         cited: coverage.iter().map(|c| c.cited).sum(),
         pending: coverage.iter().filter(|c| c.pending).count(),
@@ -464,6 +512,7 @@ mod tests {
     fn src(markers: &[(&str, &str)]) -> Sources {
         Sources {
             markers: markers.iter().map(|(n, t)| ((*n).to_string(), (*t).to_string())).collect(),
+            panels: Vec::new(),
             ..Sources::embedded()
         }
     }
@@ -478,9 +527,48 @@ mod tests {
     fn embedded_catalog_has_no_errors() {
         let r = lint(&Sources::embedded(), &crate::seed::unit_symbols(), true, false);
         assert!(r.ok(), "{:#?}", r.findings.iter().filter(|f| f.severity == Severity::Error).collect::<Vec<_>>());
+        assert_eq!((r.markers, r.panels), (708, 11));
         assert!(r.warnings > 0, "legacy ranges are uncited");
         let u = r.universe.as_ref().unwrap();
         assert!(u.covered > 0 && u.covered + u.missing.len() == u.entries, "universe gaps are warnings");
+    }
+
+    #[test]
+    fn fixture_panel_parses_and_lints_memberships() {
+        let text = include_str!("../../tests/fixtures/panels/example.toml");
+        let mut source = src(&[("x.toml", HEAD)]);
+        source.panels = vec![("example.toml".into(), text.into())];
+        let defs = super::super::Defs::parse(&source).unwrap();
+        assert_eq!(defs.panels[0].aliases, ["sample"]);
+        let report = lint(&source, &crate::seed::unit_symbols(), false, false);
+        assert_eq!(report.panels, 1);
+        assert!(!report.findings.iter().any(|f| f.code.starts_with("panel-")));
+    }
+
+    #[test]
+    fn panel_lint_finds_missing_duplicate_and_uncited_members() {
+        let mut source = src(&[]);
+        source.panels = vec![(
+            "broken.toml".into(),
+            r#"slug = "broken"
+name = "Broken"
+description = "d"
+[[member]]
+marker = "missing"
+role = "core"
+reason = "r"
+[[member]]
+marker = "missing"
+role = "extended"
+reason = "r"
+"#
+            .into(),
+        )];
+        let report = lint(&source, &crate::seed::unit_symbols(), false, false);
+        let codes: BTreeSet<_> = report.findings.iter().map(|f| f.code).collect();
+        assert!(codes.contains("panel-marker"));
+        assert!(codes.contains("panel-duplicate"));
+        assert!(codes.contains("panel-uncited"));
     }
 
     #[test]

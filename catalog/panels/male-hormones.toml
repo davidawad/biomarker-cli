@@ -1,0 +1,98 @@
+slug = "male-hormones"
+name = "Male hormones and testosterone deficiency"
+description = "Diagnosis of male hypogonadism and safety monitoring of testosterone therapy (Endocrine Society 2018, BSSM 2023)."
+aliases = ["testosterone", "hypogonadism"]
+
+[[member]]
+marker = "testosterone-total"
+role = "core"
+reason = "Initial diagnostic test: fasting morning total T, repeated to confirm."
+term = "total T"
+citations = [
+  { pmid = "29562364", title = "Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline.", doi = "10.1210/jc.2018-00229", locator = "Abstract", quote = "We recommend measuring fasting morning total T concentrations using an accurate and reliable assay as the initial diagnostic test." },
+]
+
+[[member]]
+marker = "testosterone-free"
+role = "core"
+reason = "Obtain when total T is near the lower limit of normal or SHBG is altered."
+term = "free T"
+citations = [
+  { pmid = "29562364", title = "Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline.", doi = "10.1210/jc.2018-00229", locator = "Abstract", quote = "In men whose total T is near the lower limit of normal or who have a condition that alters sex hormone-binding globulin, we recommend obtaining a free T concentration using either equilibrium dialysis or estimating it using an accurate formula." },
+]
+
+[[member]]
+marker = "testosterone-free-calculated"
+role = "extended"
+reason = "Calculated free T from SHBG and albumin (Vermeulen) preferred over analogue immunoassays."
+term = "calculated FT"
+citations = [
+  { pmid = "36876744", title = "The British Society for Sexual Medicine Guidelines on Male Adult Testosterone Deficiency, with Statements for Practice.", doi = "10.5534/wjmh.221027", locator = "Laboratory diagnosis", quote = "we recommend the calculated FT derived from the SHBG and albumen via the Vermeulen equation" },
+]
+
+[[member]]
+marker = "shbg"
+role = "core"
+reason = "Altered SHBG changes free T; needed to calculate free T."
+term = "sex hormone-binding globulin"
+citations = [
+  { pmid = "29562364", title = "Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline.", doi = "10.1210/jc.2018-00229", locator = "Abstract", quote = "In men whose total T is near the lower limit of normal or who have a condition that alters sex hormone-binding globulin, we recommend obtaining a free T concentration" },
+]
+
+[[member]]
+marker = "albumin"
+role = "extended"
+reason = "Input to the calculated free T equation with SHBG."
+term = "albumen"
+citations = [
+  { pmid = "36876744", title = "The British Society for Sexual Medicine Guidelines on Male Adult Testosterone Deficiency, with Statements for Practice.", doi = "10.5534/wjmh.221027", locator = "Laboratory diagnosis", quote = "we recommend the calculated FT derived from the SHBG and albumen via the Vermeulen equation" },
+]
+
+[[member]]
+marker = "lh"
+role = "core"
+reason = "Differentiates primary from secondary testosterone deficiency."
+citations = [
+  { pmid = "36876744", title = "The British Society for Sexual Medicine Guidelines on Male Adult Testosterone Deficiency, with Statements for Practice.", doi = "10.5534/wjmh.221027", locator = "Laboratory diagnosis", quote = "LH levels should be assessed to differentiate between primary and secondary TD" },
+]
+
+[[member]]
+marker = "fsh"
+role = "extended"
+reason = "Low LH and FSH with very low T suggest pituitary disease."
+citations = [
+  { pmid = "36876744", title = "The British Society for Sexual Medicine Guidelines on Male Adult Testosterone Deficiency, with Statements for Practice.", doi = "10.5534/wjmh.221027", locator = "Laboratory diagnosis", quote = "Serum prolactin levels should be measured when both LH and FSH levels are low." },
+]
+
+[[member]]
+marker = "prolactin"
+role = "extended"
+reason = "Measure when LH and FSH are both low; high prolactin prompts pituitary MRI."
+citations = [
+  { pmid = "36876744", title = "The British Society for Sexual Medicine Guidelines on Male Adult Testosterone Deficiency, with Statements for Practice.", doi = "10.5534/wjmh.221027", locator = "Laboratory diagnosis", quote = "Serum prolactin levels should be measured when both LH and FSH levels are low." },
+]
+
+[[member]]
+marker = "hematocrit"
+role = "core"
+reason = "Elevated hematocrit contraindicates T therapy; monitored during therapy."
+citations = [
+  { pmid = "29562364", title = "Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline.", doi = "10.1210/jc.2018-00229", locator = "Abstract", quote = "Clinicians should monitor men receiving T therapy using a standardized plan that includes: evaluating symptoms, adverse effects, and compliance; measuring serum T and hematocrit concentrations; and evaluating prostate cancer risk during the first year after initiating T therapy." },
+]
+
+[[member]]
+marker = "psa"
+role = "core"
+reason = "Baseline and follow-up prostate safety: do not start T therapy if PSA > 4 ng/mL (> 3 in high-risk men)."
+term = "prostate-specific antigen"
+citations = [
+  { pmid = "29562364", title = "Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline.", doi = "10.1210/jc.2018-00229", locator = "Abstract", quote = "prostate-specific antigen level > 4 ng/mL, prostate-specific antigen > 3 ng/mL in men at increased risk of prostate cancer" },
+]
+
+[[member]]
+marker = "hemoglobin"
+role = "extended"
+reason = "T therapy raises hematocrit and haemoglobin (polycythaemia risk)."
+citations = [
+  { pmid = "36876744", title = "The British Society for Sexual Medicine Guidelines on Male Adult Testosterone Deficiency, with Statements for Practice.", doi = "10.5534/wjmh.221027", locator = "Risks of T therapy", quote = "with increases in haematocrit and haemoglobin" },
+]

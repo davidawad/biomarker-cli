@@ -9,6 +9,7 @@ GrimAge (DNA Methylation Clock). Tracked marker with no verified reference range
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

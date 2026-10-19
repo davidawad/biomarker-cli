@@ -9,6 +9,7 @@ Vitamin K-dependent protein made by osteoblasts and a marker of bone formation. 
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

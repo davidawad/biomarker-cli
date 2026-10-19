@@ -9,6 +9,7 @@ FIB-4 is a blood-based score (age, AST, ALT, platelets) used to stratify risk of
 | LOINC | - |
 | Specimen | - |
 | Aliases | `fib-4` |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md), [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

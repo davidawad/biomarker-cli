@@ -9,6 +9,7 @@ APRI is a simple serum score calculated from the AST level and platelet count. I
 | LOINC | - |
 | Specimen | - |
 | Aliases | `ast-to-platelet ratio index`, `ast/plt ratio` |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

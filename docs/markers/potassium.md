@@ -9,6 +9,7 @@ Serum potassium governs cardiac excitability. Hypokalaemia (<3.5 mmol/L) and hyp
 | LOINC | [2823-3](https://loinc.org/2823-3/) |
 | Specimen | - |
 | Aliases | `k` |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

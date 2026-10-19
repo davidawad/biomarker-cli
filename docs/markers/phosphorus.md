@@ -9,6 +9,7 @@ Serum inorganic phosphate, which falls steadily through childhood and is regulat
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Diabetes and glycemic control](../panels/diabetes.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

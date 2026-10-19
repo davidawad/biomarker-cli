@@ -9,6 +9,7 @@ Pituitary gonadotropin that drives ovarian follicle growth in women and spermato
 | LOINC | [15067-2](https://loinc.org/15067-2/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

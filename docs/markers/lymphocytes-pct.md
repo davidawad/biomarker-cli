@@ -9,6 +9,7 @@ Share of lymphocytes among all white blood cells on a differential count. Low va
 | LOINC | [736-9](https://loinc.org/736-9/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

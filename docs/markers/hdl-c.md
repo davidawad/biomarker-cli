@@ -9,6 +9,7 @@ Cholesterol in high-density lipoprotein particles. Adult ATP III categories (low
 | LOINC | [2085-9](https://loinc.org/2085-9/) |
 | Specimen | - |
 | Aliases | `hdl`, `hdl cholesterol`, `hdl-cholesterol` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md), [Diabetes and glycemic control](../panels/diabetes.md), [Metabolic syndrome](../panels/metabolic-syndrome.md) |
 
 ## Unit conversions
 

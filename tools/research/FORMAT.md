@@ -76,3 +76,28 @@ join two verbatim pieces of the same source), `locator` (abstract / Table 3 / se
 name / page), and at least one of `pmid`, `doi`, `url`. With a `pmid`, `title` must be
 the PubMed title. Every number in `low`, `high` and `when.markers[].value` must appear
 in at least one quote of that range. Never invent a citation, a number or a quote.
+
+## Panels (catalog/panels/<slug>.toml)
+
+A panel is a cited preset of catalog markers for one condition or goal (diabetes, Alzheimer's, biological aging...).
+
+```toml
+slug = "diabetes"
+name = "Diabetes and glycemic control"
+description = "Screening, diagnosis and monitoring of prediabetes and diabetes."
+aliases = ["glycemic"]            # optional
+
+[[member]]
+marker = "hba1c"                  # must exist as catalog/markers/<marker>.toml
+role = "core"                     # core = the guideline's named test set; extended = supported add-on
+reason = "Diagnostic criterion (>= 6.5%) and the main monitoring test."
+term = "A1C"                      # optional: the word the quote uses for this marker, if not its name/alias/slug
+citations = [
+  { pmid = "...", title = "...", url = "...", locator = "Abstract", quote = "verbatim text naming the marker and its role" },
+]
+```
+
+Rules: every member's citation quote must name the marker (its catalog name, an alias, the slug, or `term`)
+and state why it belongs (diagnosis, screening, monitoring, risk, clock input...). Prefer guidelines and
+consensus statements; for aging clocks cite the paper that defines the clock's inputs. `rt.py verify
+catalog/panels/<slug>.toml` checks markers exist, PMIDs/titles/DOIs resolve, and quotes are verbatim.

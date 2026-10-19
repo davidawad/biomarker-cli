@@ -1,6 +1,6 @@
 # Biomarker catalog
 
-701 markers, 2603 ranges (2475 cited), 59 markers pending range research. See [coverage](coverage.md) for
+708 markers, 2611 ranges (2483 cited), 63 markers pending range research. See [coverage](coverage.md) for
 the range coverage matrix.
 
 Range sets:
@@ -1145,6 +1145,18 @@ Range sets:
 | [Urine Calcium](urine-calcium.md) | `urine-calcium` | mg/24h | 2004-0 | 2 | 2 |
 | [Iodine, Urine (median, population)](urine-iodine.md) | `urine-iodine` | µg/L | - | 12 | 12 |
 | [Zinc, Serum](zinc.md) | `zinc` | µg/dL | - | 11 | 11 |
+
+## neurology
+
+| Marker | Slug | Unit | LOINC | Ranges | Cited |
+|---|---|---|---|---|---|
+| [Plasma Abeta42/Abeta40 ratio](abeta42-40-ratio.md) | `abeta42-40-ratio` | ratio | - | 0 | 0 |
+| [Glial Fibrillary Acidic Protein (GFAP), Plasma](gfap.md) | `gfap` | pg/mL | - | 3 | 3 |
+| [Neurofilament Light Chain (NfL), Plasma](nfl.md) | `nfl` | pg/mL | - | 3 | 3 |
+| [Plasma p-tau181](p-tau181.md) | `p-tau181` | pg/mL | - | 0 | 0 |
+| [Plasma %p-tau217 (p-tau217 / non-p-tau217 ratio)](p-tau217-ratio.md) | `p-tau217-ratio` | % | - | 0 | 0 |
+| [Plasma p-tau217](p-tau217.md) | `p-tau217` | pg/mL | - | 2 | 2 |
+| [Plasma p-tau231](p-tau231.md) | `p-tau231` | pg/mL | - | 0 | 0 |
 
 ## organic-acid
 

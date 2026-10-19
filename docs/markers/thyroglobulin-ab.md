@@ -9,6 +9,7 @@ Autoantibodies against thyroglobulin. In differentiated thyroid cancer follow-up
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Thyroid function and autoimmunity](../panels/thyroid.md) |
 
 ## Ranges
 

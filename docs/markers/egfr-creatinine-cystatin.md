@@ -9,6 +9,7 @@ Estimated glomerular filtration rate from the race-free CKD-EPI 2021 creatinine-
 | LOINC | [98980-6](https://loinc.org/98980-6/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

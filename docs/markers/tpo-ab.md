@@ -9,6 +9,7 @@ Autoantibodies against thyroid peroxidase, the main marker of autoimmune (Hashim
 | LOINC | [8099-4](https://loinc.org/8099-4/) |
 | Specimen | - |
 | Aliases | `tpo`, `anti-tpo` |
+| Panels | [Thyroid function and autoimmunity](../panels/thyroid.md) |
 
 ## Ranges
 

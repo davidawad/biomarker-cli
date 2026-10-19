@@ -9,6 +9,7 @@ Bone mineral density expressed as standard deviations from the mean of a young a
 | LOINC | [38263-0](https://loinc.org/38263-0/) |
 | Specimen | - |
 | Aliases | `dxa t-score`, `bmd t-score`, `bone density t-score`, `bmd-t-score` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

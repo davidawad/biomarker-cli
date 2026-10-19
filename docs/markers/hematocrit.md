@@ -9,6 +9,7 @@ Percentage of whole blood volume occupied by red blood cells (packed cell volume
 | LOINC | [4544-3](https://loinc.org/4544-3/) |
 | Specimen | - |
 | Aliases | `hct`, `haematocrit` |
+| Panels | [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

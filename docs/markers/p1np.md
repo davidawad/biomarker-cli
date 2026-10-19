@@ -9,6 +9,7 @@ Propeptide released when type I procollagen is cleaved during bone formation. A 
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

@@ -72,6 +72,15 @@ pub fn stale_pages(src: &Sources, out: &std::path::Path) -> Result<Vec<String>> 
                 .filter(|n| n.ends_with(".md") && !pages.contains_key(n)),
         );
     }
+    let panels = out.parent().unwrap_or(out).join("panels");
+    if let Ok(rd) = std::fs::read_dir(&panels) {
+        stale.extend(
+            rd.flatten()
+                .map(|e| e.file_name().to_string_lossy().into_owned())
+                .filter(|n| n.ends_with(".md") && !pages.contains_key(&format!("../panels/{n}")))
+                .map(|n| format!("../panels/{n}")),
+        );
+    }
     stale.sort();
     Ok(stale)
 }
@@ -125,8 +134,8 @@ fn emit_lint(ctx: &Ctx, r: &LintReport, json_flag: bool) -> Result<()> {
         ctx.emit(&Report::list("catalog_universe", rows))?;
     }
     ctx.info(&format!(
-        "{} markers, {} ranges ({} cited), {} pending: {} error(s), {} warning(s)",
-        r.markers, r.ranges, r.cited, r.pending, r.errors, r.warnings
+        "{} markers, {} panels, {} ranges ({} cited), {} pending: {} error(s), {} warning(s)",
+        r.markers, r.panels, r.ranges, r.cited, r.pending, r.errors, r.warnings
     ));
     Ok(())
 }

@@ -1,0 +1,122 @@
+slug = "iron-anemia"
+name = "Iron deficiency and iron deficiency anaemia"
+description = "Confirming iron deficiency, characterising the anaemia and screening for cause, per the British Society of Gastroenterology guideline."
+aliases = ["iron-deficiency", "iron-deficiency-anemia"]
+
+[[member]]
+marker = "ferritin"
+role = "core"
+reason = "Single most useful marker of iron deficiency anaemia; below 15 ug/L means absent stores."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Recommendation 4", quote = "Serum ferritin is the single most useful marker of IDA, but other blood tests (eg, transferrin saturation) can be helpful if a false-normal ferritin is suspected" },
+]
+
+[[member]]
+marker = "transferrin-saturation"
+role = "core"
+reason = "Helpful when a false-normal ferritin is suspected (inflammation); below 20% indicates iron restriction."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Recommendation 4", quote = "other blood tests (eg, transferrin saturation) can be helpful if a false-normal ferritin is suspected" },
+]
+
+[[member]]
+marker = "hemoglobin"
+role = "core"
+reason = "Defines anaemia, predicts GI cancer risk and tracks response to iron (rise >=10 g/L in 2 weeks)."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Recommendation 9", quote = "Age, sex, Hb concentration and mean cell volume are all independent predictors of risk of GI cancer in IDA" },
+]
+
+[[member]]
+marker = "mcv"
+role = "core"
+term = "mean cell volume"
+reason = "Microcytosis accompanies iron deficiency and independently predicts GI cancer risk."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Recommendation 9", quote = "Age, sex, Hb concentration and mean cell volume are all independent predictors of risk of GI cancer in IDA" },
+]
+
+[[member]]
+marker = "mch"
+role = "extended"
+reason = "Probably a more reliable and sensitive red-cell marker of iron deficiency than MCV."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Diagnosis section", quote = "MCH is probably a more reliable marker of iron deficiency as it is less dependent on storage and the counting machine used" },
+]
+
+[[member]]
+marker = "iron"
+role = "extended"
+reason = "Low serum iron is a serum marker of iron deficiency."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Diagnosis section", quote = "The serum markers of iron deficiency include low ferritin, low transferrin saturation, low iron, raised total iron-binding capacity" },
+]
+
+[[member]]
+marker = "tibc"
+role = "extended"
+reason = "Raised total iron-binding capacity is a serum marker of iron deficiency."
+term = "total iron-binding capacity"
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Diagnosis section", quote = "The serum markers of iron deficiency include low ferritin, low transferrin saturation, low iron, raised total iron-binding capacity" },
+]
+
+[[member]]
+marker = "stfr"
+role = "extended"
+reason = "Increased soluble transferrin receptor is a serum marker of iron deficiency."
+term = "sTfR"
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Diagnosis section", quote = "raised red cell zinc protoporphyrin, increased serum transferrin receptor (sTfR), low reticulocyte Hb (Retic-Hb)" },
+]
+
+[[member]]
+marker = "zinc-protoporphyrin"
+role = "extended"
+reason = "Raised red cell zinc protoporphyrin is a marker of iron deficiency."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Diagnosis section", quote = "raised red cell zinc protoporphyrin, increased serum transferrin receptor (sTfR), low reticulocyte Hb (Retic-Hb)" },
+]
+
+[[member]]
+marker = "reticulocyte-hemoglobin"
+role = "extended"
+reason = "Low reticulocyte Hb marks iron restriction, also outside CKD."
+term = "Retic-Hb"
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Diagnosis section", quote = "raised red cell zinc protoporphyrin, increased serum transferrin receptor (sTfR), low reticulocyte Hb (Retic-Hb)" },
+]
+
+[[member]]
+marker = "crp"
+role = "extended"
+reason = "Inflammatory marker used to interpret ferritin and decide on further GI investigation."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Diagnosis section", quote = "inflammatory markers (eg C-reactive protein (CRP)), transferrin saturation, red cell hypochromia and response to oral IRT can all be helpful" },
+]
+
+[[member]]
+marker = "tissue-transglutaminase-iga"
+role = "extended"
+reason = "Coeliac disease causes 3-5% of IDA; routine serological screening recommended."
+term = "serologically"
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Recommendation 8", quote = "we recommend that it should be routinely screened for serologically, or on small bowel biopsy at the time of gastroscopy" },
+]
+
+[[member]]
+marker = "vitamin-b12"
+role = "extended"
+reason = "Concurrent B12 deficiency causes poor response to oral iron and masks microcytosis."
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Response to oral iron", quote = "haemolysis, continued bleeding and concurrent deficiency of vitamin B12 or folic acid" },
+]
+
+[[member]]
+marker = "folate"
+role = "extended"
+reason = "Concurrent folate deficiency causes poor response to oral iron and masks microcytosis."
+term = "folic acid"
+citations = [
+  { pmid = "34497146", title = "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults.", doi = "10.1136/gutjnl-2021-325210", locator = "Response to oral iron", quote = "haemolysis, continued bleeding and concurrent deficiency of vitamin B12 or folic acid" },
+]

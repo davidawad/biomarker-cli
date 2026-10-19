@@ -9,6 +9,7 @@ Iron circulating bound to transferrin, measured as serum iron. It varies widely 
 | LOINC | [2498-4](https://loinc.org/2498-4/) |
 | Specimen | - |
 | Aliases | `serum iron`, `fe` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Unit conversions
 

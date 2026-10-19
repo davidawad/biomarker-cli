@@ -9,6 +9,7 @@ Percentage of transferrin iron-binding sites occupied by iron, calculated from s
 | LOINC | [2502-3](https://loinc.org/2502-3/) |
 | Specimen | - |
 | Aliases | `tsat`, `iron saturation` |
+| Panels | [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

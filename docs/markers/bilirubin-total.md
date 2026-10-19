@@ -9,6 +9,7 @@ Total (direct plus indirect) serum bilirubin. Reference intervals differ by age 
 | LOINC | [1975-2](https://loinc.org/1975-2/) |
 | Specimen | - |
 | Aliases | `bilirubin`, `tbil`, `total bilirubin` |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Unit conversions
 

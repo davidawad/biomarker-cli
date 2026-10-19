@@ -9,6 +9,7 @@ Capacity of serum transferrin to bind iron, reported as total iron-binding capac
 | LOINC | [2500-7](https://loinc.org/2500-7/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Unit conversions
 

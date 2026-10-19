@@ -1,0 +1,127 @@
+slug = "biological-aging"
+name = "Biological aging"
+description = "The nine routine blood markers that define Levine's Phenotypic Age (PhenoAge), plus the aging-clock outputs themselves."
+aliases = ["phenoage", "aging-clocks"]
+
+[[member]]
+marker = "albumin"
+role = "core"
+reason = "PhenoAge input (liver); negative weight."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| Albumin | Liver | g/L | -0.0336" },
+]
+
+[[member]]
+marker = "creatinine"
+role = "core"
+reason = "PhenoAge input (kidney)."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| Creatinine | Kidney | umol/L | 0.0095" },
+]
+
+[[member]]
+marker = "glucose"
+term = "Glucose, serum"
+role = "core"
+reason = "PhenoAge input (metabolic), serum glucose."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| Glucose, serum | Metabolic | mmol/L | 0.1953" },
+]
+
+[[member]]
+marker = "crp"
+term = "C-reactive protein (log)"
+role = "core"
+reason = "PhenoAge input (inflammation), log-transformed CRP."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| C-reactive protein (log) | Inflammation | mg/dL | 0.0954" },
+]
+
+[[member]]
+marker = "lymphocytes-pct"
+term = "Lymphocyte percent"
+role = "core"
+reason = "PhenoAge input (immune)."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| Lymphocyte percent | Immune | % | -0.0120" },
+]
+
+[[member]]
+marker = "mcv"
+term = "Mean cell volume"
+role = "core"
+reason = "PhenoAge input (immune)."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| Mean cell volume | Immune | fL | 0.0268" },
+]
+
+[[member]]
+marker = "rdw"
+term = "Red cell distribution width"
+role = "core"
+reason = "PhenoAge input (immune); the largest single weight."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| Red cell distribution width | Immune | % | 0.3306" },
+]
+
+[[member]]
+marker = "alp"
+term = "Alkaline phosphatase"
+role = "core"
+reason = "PhenoAge input (liver)."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| Alkaline phosphatase | Liver | U/L | 0.0019" },
+]
+
+[[member]]
+marker = "wbc"
+term = "White blood cell count"
+role = "core"
+reason = "PhenoAge input (immune)."
+citations = [
+  { pmid = "29676998", title = "An epigenetic biomarker of aging for lifespan and healthspan.", doi = "10.18632/aging.101414", locator = "Table 1", quote = "| White blood cell count | Immune | 1000 cells/uL | 0.0554" },
+]
+
+[[member]]
+marker = "phenoage"
+term = "Phenotypic Age"
+role = "core"
+reason = "Composite of the nine markers plus chronological age; predicts mortality."
+citations = [
+  { pmid = "30596641", title = "A new aging measure captures morbidity and mortality risk across diverse subpopulations from NHANES IV: A cohort study.", doi = "10.1371/journal.pmed.1002718", locator = "Methods", quote = "Phenotypic Age is calculated using chronological age and 9 biomarkers (albumin, creatinine, glucose, [log] C-reactive protein [CRP], lymphocyte percent, mean cell volume, red blood cell distribution width, alkaline phosphatase, and white blood cell count)" },
+]
+
+[[member]]
+marker = "grimage"
+role = "extended"
+reason = "Epigenetic clock built from DNAm surrogates of plasma proteins and smoking pack-years; predicts lifespan."
+citations = [
+  { pmid = "30669119", title = "DNA methylation GrimAge strongly predicts lifespan and healthspan.", doi = "10.18632/aging.101684", locator = "Abstract", quote = "The resulting predictor of lifespan, DNAm GrimAge (in units of years), is a composite biomarker based on the seven DNAm surrogates and a DNAm-based estimator of smoking pack-years." },
+]
+
+[[member]]
+marker = "grimage-acceleration"
+term = "AgeAccelGrim"
+role = "extended"
+reason = "Chronological-age-adjusted GrimAge; associated with age-related conditions."
+citations = [
+  { pmid = "30669119", title = "DNA methylation GrimAge strongly predicts lifespan and healthspan.", doi = "10.18632/aging.101684", locator = "Abstract", quote = "Adjusting DNAm GrimAge for chronological age generated novel measure of epigenetic age acceleration, AgeAccelGrim." },
+]
+
+[[member]]
+marker = "horvath-epigenetic-clock"
+term = "DNA methylation age"
+role = "extended"
+reason = "Multi-tissue DNA methylation age predictor (353 CpGs)."
+citations = [
+  { pmid = "24138928", title = "DNA methylation age of human tissues and cell types.", doi = "10.1186/gb-2013-14-10-r115", locator = "Abstract", quote = "I developed a multi-tissue predictor of age that allows one to estimate the DNA methylation age of most tissues and cell types." },
+]
+
+[[member]]
+marker = "klemera-doubal-biological-age"
+term = "Klemera and Doubal method"
+role = "extended"
+reason = "Biomarker-based biological age algorithm; best mortality predictor among five algorithms compared in NHANES III."
+citations = [
+  { pmid = "23213031", title = "Modeling the rate of senescence: can estimated biological age predict mortality more accurately than chronological age?", doi = "10.1093/gerona/gls233", locator = "Abstract", quote = "Results found that the Klemera and Doubal method was the most reliable predictor of mortality and performed significantly better than chronological age." },
+]

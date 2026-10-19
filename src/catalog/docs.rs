@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::fmt::Write as _;
 
 use super::lint::{lint, LintReport};
-use super::{Defs, MarkerDef, RangeDef, Sources};
+use super::{Defs, MarkerDef, Panel, PanelRole, RangeDef, Sources};
 use crate::error::Result;
 
 const FOOTER: &str = "\n---\n\n_Generated from catalog/ by `biomarker catalog docs`; do not edit by hand._\n";
@@ -62,6 +62,15 @@ fn marker_page(m: &MarkerDef, defs: &Defs) -> String {
         let rel = m.related.iter().map(|r| format!("[{r}]({r}.md)")).collect::<Vec<_>>().join(", ");
         let _ = writeln!(s, "| Related | {rel} |");
     }
+    let panels: Vec<_> = defs.panels.iter().filter(|p| p.members.iter().any(|x| x.marker == m.slug)).collect();
+    if !panels.is_empty() {
+        let links = panels
+            .iter()
+            .map(|p| format!("[{}](../panels/{}.md)", cell(&p.name), p.slug))
+            .collect::<Vec<_>>()
+            .join(", ");
+        let _ = writeln!(s, "| Panels | {links} |");
+    }
     if !m.conversions.is_empty() {
         let _ = write!(s, "\n## Unit conversions\n\nInto {}: `value * factor + offset`.\n\n", cell(&m.unit));
         s.push_str("| From | Factor | Offset |\n|---|---|---|\n");
@@ -97,6 +106,53 @@ fn marker_page(m: &MarkerDef, defs: &Defs) -> String {
                 r.note.as_deref().map_or_else(|| "-".into(), cell),
             );
         }
+    }
+    s.push_str(FOOTER);
+    s
+}
+
+fn panel_citations(citations: &[super::Citation]) -> String {
+    citations
+        .iter()
+        .map(|c| {
+            let label = cell(&c.label());
+            let link = c.link().map_or(label.clone(), |u| format!("[{label}]({u})"));
+            let locator = c.locator.as_deref().map(|l| format!(", {}", cell(l))).unwrap_or_default();
+            format!("{link}{locator}")
+        })
+        .collect::<Vec<_>>()
+        .join("; ")
+}
+
+fn panel_page(panel: &Panel, defs: &Defs) -> String {
+    let mut s = format!("# {} (`{}`)\n\n{}\n\n", panel.name, panel.slug, panel.description.trim());
+    for (label, role) in [("Core", PanelRole::Core), ("Extended", PanelRole::Extended)] {
+        let members: Vec<_> = panel.members.iter().filter(|m| m.role == role).collect();
+        if members.is_empty() {
+            continue;
+        }
+        let _ = writeln!(s, "## {label}\n\n| Marker | Reason | Citations |\n|---|---|---|");
+        for member in members {
+            let marker = defs
+                .marker(&member.marker)
+                .map(|m| format!("[{}](../markers/{}.md)", cell(&m.name), m.slug))
+                .unwrap_or_else(|| format!("`{}`", member.marker));
+            let _ = writeln!(s, "| {marker} | {} | {} |", cell(&member.reason), panel_citations(&member.citations));
+        }
+        s.push('\n');
+    }
+    s.push_str(FOOTER);
+    s
+}
+
+fn panels_index(defs: &Defs) -> String {
+    let mut s = String::from(
+        "# Biomarker panels\n\nCited marker presets.\n\n| Panel | Slug | Core | Extended |\n|---|---|---:|---:|\n",
+    );
+    for p in &defs.panels {
+        let core = p.members.iter().filter(|m| m.role == PanelRole::Core).count();
+        let extended = p.members.len() - core;
+        let _ = writeln!(s, "| [{}]({}.md) | `{}` | {core} | {extended} |", cell(&p.name), p.slug, p.slug);
     }
     s.push_str(FOOTER);
     s
@@ -224,6 +280,10 @@ pub fn render(src: &Sources) -> Result<BTreeMap<String, String>> {
     let report = lint(src, &crate::seed::unit_symbols(), true, false);
     let mut pages: BTreeMap<String, String> =
         defs.markers.iter().map(|m| (format!("{}.md", m.slug), marker_page(m, &defs))).collect();
+    for panel in &defs.panels {
+        pages.insert(format!("../panels/{}.md", panel.slug), panel_page(panel, &defs));
+    }
+    pages.insert("../panels/README.md".into(), panels_index(&defs));
     pages.insert("index.md".into(), index_page(&defs, &report));
     pages.insert("coverage.md".into(), coverage_page(&defs, &report));
     Ok(pages)
@@ -244,9 +304,23 @@ pub fn write(src: &Sources, out: &std::path::Path) -> Result<(Vec<String>, Vec<S
             removed.push(name);
         }
     }
+    let panels_dir = out.parent().unwrap_or(out).join("panels");
+    if let Ok(entries) = std::fs::read_dir(&panels_dir) {
+        for entry in entries.flatten() {
+            let name = entry.file_name().to_string_lossy().into_owned();
+            if name.ends_with(".md") && !pages.contains_key(&format!("../panels/{name}")) {
+                std::fs::remove_file(entry.path())
+                    .map_err(|e| AppError::io(format!("removing {}: {e}", entry.path().display())))?;
+                removed.push(format!("../panels/{name}"));
+            }
+        }
+    }
     let mut written = Vec::new();
     for (name, text) in &pages {
         let path = out.join(name);
+        if let Some(parent) = path.parent() {
+            std::fs::create_dir_all(parent).map_err(|e| AppError::io(format!("creating {}: {e}", parent.display())))?;
+        }
         if std::fs::read_to_string(&path).ok().as_deref() != Some(text.as_str()) {
             std::fs::write(&path, text).map_err(|e| AppError::io(format!("writing {}: {e}", path.display())))?;
             written.push(name.clone());
@@ -254,4 +328,35 @@ pub fn write(src: &Sources, out: &std::path::Path) -> Result<(Vec<String>, Vec<S
     }
     removed.sort();
     Ok((written, removed))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn fixture_panel_docs_render_backlinks_and_write_idempotently() {
+        let mut src = Sources::embedded();
+        src.panels.push((
+            "example.toml".into(),
+            r#"slug = "example"
+name = "Example panel"
+description = "A test panel."
+
+[[member]]
+marker = "glucose"
+role = "core"
+reason = "A test reason."
+citations = [{ pmid = "123", title = "Example guidance", quote = "Glucose is recommended." }]
+"#
+            .into(),
+        ));
+        let pages = render(&src).unwrap();
+        assert!(pages["../panels/example.md"].contains("[Glucose](../markers/glucose.md)"));
+        assert!(pages["glucose.md"].contains("[Example panel](../panels/example.md)"));
+        let temp = tempfile::tempdir().unwrap();
+        let out = temp.path().join("markers");
+        assert!(!write(&src, &out).unwrap().0.is_empty());
+        assert!(write(&src, &out).unwrap().0.is_empty());
+    }
 }

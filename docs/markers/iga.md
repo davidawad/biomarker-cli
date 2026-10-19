@@ -9,6 +9,7 @@ The main antibody on mucosal surfaces such as the gut and airways. Very low seru
 | LOINC | [2458-8](https://loinc.org/2458-8/) |
 | Specimen | - |
 | Aliases | `immunoglobulin a, serum` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

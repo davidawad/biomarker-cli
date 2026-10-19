@@ -9,6 +9,7 @@ Serum fragment of type I collagen released during bone resorption (beta-CrossLap
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

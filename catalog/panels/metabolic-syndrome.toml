@@ -1,0 +1,57 @@
+slug = "metabolic-syndrome"
+name = "Metabolic syndrome"
+description = "The five components of the harmonized IDF/NHLBI/AHA/WHF/IAS/IASO metabolic syndrome definition: any 3 of 5 abnormal."
+aliases = ["metabolic-syndrome-harmonized", "insulin-resistance-syndrome"]
+
+[[member]]
+marker = "waist-circumference"
+role = "core"
+reason = "Central obesity criterion; waist measurement is the preliminary screening tool (cut points are ethnic/national specific)."
+term = "waist measurement"
+citations = [
+  { pmid = "19805654", doi = "10.1161/CIRCULATIONAHA.109.192644", title = "Harmonizing the metabolic syndrome: a joint interim statement of the International Diabetes Federation Task Force on Epidemiology and Prevention; National Heart, Lung, and Blood Institute; American Heart Association; World Heart Federation; International Atherosclerosis Society; and International Association for the Study of Obesity.", locator = "Abstract", quote = "It was agreed that there should not be an obligatory component, but that waist measurement would continue to be a useful preliminary screening tool." },
+]
+
+[[member]]
+marker = "triglycerides"
+role = "core"
+reason = "Raised triglycerides is one of the five criteria; 3 of 5 abnormal findings define the syndrome."
+citations = [
+  { pmid = "19805654", doi = "10.1161/CIRCULATIONAHA.109.192644", title = "Harmonizing the metabolic syndrome: a joint interim statement of the International Diabetes Federation Task Force on Epidemiology and Prevention; National Heart, Lung, and Blood Institute; American Heart Association; World Heart Federation; International Atherosclerosis Society; and International Association for the Study of Obesity.", locator = "Abstract", quote = "The risk factors include raised blood pressure, dyslipidemia (raised triglycerides and lowered high-density lipoprotein cholesterol), raised fasting glucose, and central obesity." },
+]
+
+[[member]]
+marker = "hdl-c"
+role = "core"
+reason = "Reduced HDL cholesterol is one of the five criteria."
+term = "high-density lipoprotein cholesterol"
+citations = [
+  { pmid = "19805654", doi = "10.1161/CIRCULATIONAHA.109.192644", title = "Harmonizing the metabolic syndrome: a joint interim statement of the International Diabetes Federation Task Force on Epidemiology and Prevention; National Heart, Lung, and Blood Institute; American Heart Association; World Heart Federation; International Atherosclerosis Society; and International Association for the Study of Obesity.", locator = "Abstract", quote = "The risk factors include raised blood pressure, dyslipidemia (raised triglycerides and lowered high-density lipoprotein cholesterol), raised fasting glucose, and central obesity." },
+]
+
+[[member]]
+marker = "bp-systolic"
+role = "core"
+reason = "Raised blood pressure criterion (systolic and/or diastolic)."
+term = "blood pressure"
+citations = [
+  { pmid = "19805654", doi = "10.1161/CIRCULATIONAHA.109.192644", title = "Harmonizing the metabolic syndrome: a joint interim statement of the International Diabetes Federation Task Force on Epidemiology and Prevention; National Heart, Lung, and Blood Institute; American Heart Association; World Heart Federation; International Atherosclerosis Society; and International Association for the Study of Obesity.", locator = "Abstract", quote = "The risk factors include raised blood pressure, dyslipidemia (raised triglycerides and lowered high-density lipoprotein cholesterol), raised fasting glucose, and central obesity." },
+]
+
+[[member]]
+marker = "bp-diastolic"
+role = "core"
+reason = "Raised blood pressure criterion (systolic and/or diastolic)."
+term = "blood pressure"
+citations = [
+  { pmid = "19805654", doi = "10.1161/CIRCULATIONAHA.109.192644", title = "Harmonizing the metabolic syndrome: a joint interim statement of the International Diabetes Federation Task Force on Epidemiology and Prevention; National Heart, Lung, and Blood Institute; American Heart Association; World Heart Federation; International Atherosclerosis Society; and International Association for the Study of Obesity.", locator = "Abstract", quote = "The risk factors include raised blood pressure, dyslipidemia (raised triglycerides and lowered high-density lipoprotein cholesterol), raised fasting glucose, and central obesity." },
+]
+
+[[member]]
+marker = "glucose"
+role = "core"
+reason = "Raised fasting glucose criterion."
+term = "fasting glucose"
+citations = [
+  { pmid = "19805654", doi = "10.1161/CIRCULATIONAHA.109.192644", title = "Harmonizing the metabolic syndrome: a joint interim statement of the International Diabetes Federation Task Force on Epidemiology and Prevention; National Heart, Lung, and Blood Institute; American Heart Association; World Heart Federation; International Atherosclerosis Society; and International Association for the Study of Obesity.", locator = "Abstract", quote = "The risk factors include raised blood pressure, dyslipidemia (raised triglycerides and lowered high-density lipoprotein cholesterol), raised fasting glucose, and central obesity." },
+]

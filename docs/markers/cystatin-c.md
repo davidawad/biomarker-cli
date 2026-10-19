@@ -9,6 +9,7 @@ Serum cystatin C, a filtration marker of kidney function that is less dependent 
 | LOINC | [33863-2](https://loinc.org/33863-2/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

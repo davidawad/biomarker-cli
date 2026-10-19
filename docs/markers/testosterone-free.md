@@ -9,6 +9,7 @@ Unbound (free) testosterone in serum, measured by equilibrium dialysis or calcul
 | LOINC | [2991-8](https://loinc.org/2991-8/) |
 | Specimen | - |
 | Aliases | `free testosterone`, `ft` |
+| Panels | [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Unit conversions
 

@@ -9,6 +9,7 @@ Bone Mineral Density, Femoral Neck (DXA) reported in T-score. Results in T-score
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

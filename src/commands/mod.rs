@@ -12,6 +12,7 @@ pub mod marker;
 pub mod measure;
 pub mod misc;
 pub mod observations;
+pub mod panel;
 pub mod person;
 pub mod profile;
 pub mod range;
@@ -34,6 +35,7 @@ pub fn dispatch(ctx: &Ctx, cmd: Command) -> Result<Status> {
     match cmd {
         Command::Person(c) => person::run(ctx, c).map(|()| 0),
         Command::Marker(c) => marker::run(ctx, c).map(|()| 0),
+        Command::Panel(c) => panel::run(ctx, c).map(|()| 0),
         Command::Range(c) => range::run(ctx, c).map(|()| 0),
         Command::Unit(c) => unit::run(ctx, c).map(|()| 0),
         Command::Catalog(c) => catalog::run(ctx, c),
@@ -81,7 +83,23 @@ pub fn build_filter(ctx: &Ctx, db: &Db, cat: &Catalog, f: &FilterArgs) -> Result
         _ => Vec::new(),
     };
     let person_ids = persons.iter().map(|p| store::get_person(db, p).map(|p| p.id)).collect::<Result<Vec<_>>>()?;
-    let marker_ids = f.markers.iter().map(|m| cat.get(m).map(|m| m.id)).collect::<Result<Vec<_>>>()?;
+    let mut marker_ids = f.markers.iter().map(|m| cat.get(m).map(|m| m.id)).collect::<Result<Vec<_>>>()?;
+    if let Some(panel_slug) = &f.panel {
+        let defs = crate::catalog::builtin()?;
+        let panel = defs
+            .panels
+            .iter()
+            .find(|p| {
+                p.slug.eq_ignore_ascii_case(panel_slug) || p.aliases.iter().any(|a| a.eq_ignore_ascii_case(panel_slug))
+            })
+            .ok_or_else(|| crate::error::AppError::not_found(format!("unknown panel '{panel_slug}'")))?;
+        let panel_ids: Vec<i64> = panel.members.iter().filter_map(|m| cat.find(&m.marker).map(|x| x.id)).collect();
+        marker_ids = if marker_ids.is_empty() {
+            panel_ids
+        } else {
+            marker_ids.into_iter().filter(|id| panel_ids.contains(id)).collect()
+        };
+    }
     let since_last = f.last.as_deref().map(parse_span).transpose()?.map(|s| date_before(ctx.tz.today(), s).to_string());
     let from = f
         .from

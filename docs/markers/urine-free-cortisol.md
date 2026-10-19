@@ -9,6 +9,7 @@ Unconjugated (free) cortisol excreted in a 24-hour urine collection. Reflects th
 | LOINC | - |
 | Specimen | - |
 | Aliases | `cortisol-urine-free-24h` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

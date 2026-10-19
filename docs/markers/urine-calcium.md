@@ -9,6 +9,7 @@ Calcium excreted in urine, usually collected over 24 hours to assess calcium sto
 | LOINC | [2004-0](https://loinc.org/2004-0/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

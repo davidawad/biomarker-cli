@@ -9,6 +9,7 @@ Glycated haemoglobin, reflecting average glucose over about 2-3 months. Used to 
 | LOINC | [4548-4](https://loinc.org/4548-4/) |
 | Specimen | - |
 | Aliases | `a1c`, `hemoglobin a1c`, `glycated hemoglobin`, `hb a1c` |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Unit conversions
 

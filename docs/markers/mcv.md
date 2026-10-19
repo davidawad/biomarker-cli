@@ -9,6 +9,7 @@ Average volume of a red blood cell. Low values (microcytosis) suggest iron defic
 | LOINC | [787-2](https://loinc.org/787-2/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Biological aging](../panels/biological-aging.md), [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

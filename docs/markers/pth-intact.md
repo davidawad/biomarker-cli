@@ -9,6 +9,7 @@ Hormone from the parathyroid glands that raises blood calcium and controls phosp
 | LOINC | - |
 | Specimen | - |
 | Aliases | `pth` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

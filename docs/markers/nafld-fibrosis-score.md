@@ -9,6 +9,7 @@ Composite score from age, BMI, impaired glucose status, platelet count, albumin 
 | LOINC | - |
 | Specimen | - |
 | Aliases | `nfs`, `nafld-fs` |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

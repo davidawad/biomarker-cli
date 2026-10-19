@@ -9,6 +9,7 @@ Conjugated (direct) serum bilirubin. Used with total bilirubin to separate conju
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

@@ -9,6 +9,7 @@ Cholesterol in low-density lipoprotein particles, the primary lipid target of th
 | LOINC | [13457-7](https://loinc.org/13457-7/) |
 | Specimen | - |
 | Aliases | `ldl`, `ldl cholesterol`, `ldl-cholesterol`, `ldl chol calc (nih)` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md), [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Unit conversions
 

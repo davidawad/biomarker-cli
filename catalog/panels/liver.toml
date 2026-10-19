@@ -1,0 +1,125 @@
+slug = "liver"
+name = "Liver health and MASLD"
+description = "Liver chemistries, synthetic function and noninvasive fibrosis assessment for liver disease and MASLD."
+aliases = ["masld", "liver-function"]
+
+[[member]]
+marker = "alt"
+role = "core"
+reason = "Primary marker of hepatocellular injury; elevated ALT predicts liver-related mortality and is an input to FIB-4."
+citations = [
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Recommendation 1", quote = "Recommendation 1: Initial investigation for potential liver disease should include bilirubin, albumin, alanine aminotransferase (ALT), alkaline phosphatase (ALP) and γ-glutamyltransferase (GGT), together with a full blood count if not already performed within the previous 12 months." },
+  { pmid = "27995906", title = "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries.", url = "https://doi.org/10.1038/ajg.2016.517", locator = "Abstract", quote = "The most common liver chemistries ordered are serum alanine aminotransferase (ALT), aspartate aminotransferase (AST), alkaline phosphatase and bilirubin." },
+]
+
+[[member]]
+marker = "ast"
+role = "core"
+reason = "Hepatocellular injury marker, part of the first-line liver chemistries and an input to FIB-4 and APRI."
+citations = [
+  { pmid = "27995906", title = "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries.", url = "https://doi.org/10.1038/ajg.2016.517", locator = "Abstract", quote = "The most common liver chemistries ordered are serum alanine aminotransferase (ALT), aspartate aminotransferase (AST), alkaline phosphatase and bilirubin." },
+  { pmid = "36727674", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", url = "https://doi.org/10.1097/HEP.0000000000000323", locator = "Clinical and laboratory-based fibrosis biomarkers", quote = "FIB-4 is calculated using a simple algorithm based upon age, ALT, AST, and platelet count" },
+]
+
+[[member]]
+marker = "alp"
+role = "core"
+reason = "Defines cholestatic injury when disproportionately elevated relative to AST and ALT."
+term = "ALP"
+citations = [
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Recommendation 1", quote = "Recommendation 1: Initial investigation for potential liver disease should include bilirubin, albumin, alanine aminotransferase (ALT), alkaline phosphatase (ALP) and γ-glutamyltransferase (GGT), together with a full blood count if not already performed within the previous 12 months." },
+  { pmid = "27995906", title = "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries.", url = "https://doi.org/10.1038/ajg.2016.517", locator = "Abstract", quote = "Cholestatic injury is defined as disproportionate elevation of alkaline phosphatase level as compared with AST and ALT levels." },
+]
+
+[[member]]
+marker = "ggt"
+role = "core"
+reason = "Part of the initial investigation of potential liver disease; confirms hepatic origin of ALP elevation."
+term = "GGT"
+citations = [
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Recommendation 1", quote = "Recommendation 1: Initial investigation for potential liver disease should include bilirubin, albumin, alanine aminotransferase (ALT), alkaline phosphatase (ALP) and γ-glutamyltransferase (GGT), together with a full blood count if not already performed within the previous 12 months." },
+]
+
+[[member]]
+marker = "bilirubin-total"
+role = "core"
+reason = "Liver function and cholestasis marker; an elevated total level should be fractionated."
+term = "bilirubin"
+citations = [
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Recommendation 1", quote = "Recommendation 1: Initial investigation for potential liver disease should include bilirubin, albumin, alanine aminotransferase (ALT), alkaline phosphatase (ALP) and γ-glutamyltransferase (GGT), together with a full blood count if not already performed within the previous 12 months." },
+  { pmid = "27995906", title = "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries.", url = "https://doi.org/10.1038/ajg.2016.517", locator = "Abstract", quote = "Total bilirubin elevation can occur in either cholestatic or hepatocellular diseases." },
+]
+
+[[member]]
+marker = "bilirubin-direct"
+role = "extended"
+reason = "Elevated conjugated bilirubin implies hepatocellular disease or biliary obstruction."
+term = "conjugated bilirubin"
+citations = [
+  { pmid = "27995906", title = "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries.", url = "https://doi.org/10.1038/ajg.2016.517", locator = "Abstract", quote = "Elevated total serum bilirubin levels should be fractionated to direct and indirect bilirubin fractions and an elevated serum conjugated bilirubin implies hepatocellular disease or biliary obstruction in most settings." },
+]
+
+[[member]]
+marker = "albumin"
+role = "core"
+reason = "Synthetic liver function marker included in initial investigation of liver disease."
+citations = [
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Recommendation 1", quote = "Recommendation 1: Initial investigation for potential liver disease should include bilirubin, albumin, alanine aminotransferase (ALT), alkaline phosphatase (ALP) and γ-glutamyltransferase (GGT), together with a full blood count if not already performed within the previous 12 months." },
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Introduction", quote = "Hepatobiliary enzymes, when interpreted in isolation convey information on the level of ongoing injury, whereas bilirubin, albumin and INR convey information on liver function, with platelets conveying information on the level of fibrosis." },
+]
+
+[[member]]
+marker = "inr"
+role = "core"
+reason = "Synthetic liver function marker; abnormal in advanced disease with liver failure."
+term = "INR"
+citations = [
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Introduction", quote = "Hepatobiliary enzymes, when interpreted in isolation convey information on the level of ongoing injury, whereas bilirubin, albumin and INR convey information on liver function, with platelets conveying information on the level of fibrosis." },
+]
+
+[[member]]
+marker = "platelets"
+role = "core"
+reason = "Platelet count reflects fibrosis/portal hypertension and is an input to FIB-4."
+term = "platelet"
+citations = [
+  { pmid = "29122851", title = "Guidelines on the management of abnormal liver blood tests.", url = "https://doi.org/10.1136/gutjnl-2017-314924", locator = "Introduction", quote = "Hepatobiliary enzymes, when interpreted in isolation convey information on the level of ongoing injury, whereas bilirubin, albumin and INR convey information on liver function, with platelets conveying information on the level of fibrosis." },
+  { pmid = "36727674", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", url = "https://doi.org/10.1097/HEP.0000000000000323", locator = "Clinical and laboratory-based fibrosis biomarkers", quote = "FIB-4 is calculated using a simple algorithm based upon age, ALT, AST, and platelet count" },
+]
+
+[[member]]
+marker = "fib4"
+role = "core"
+reason = "First-line noninvasive score to exclude advanced fibrosis in MASLD (low risk < 1.3)."
+term = "FIB-4"
+citations = [
+  { pmid = "36727674", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", url = "https://doi.org/10.1097/HEP.0000000000000323", locator = "Clinical and laboratory-based fibrosis biomarkers", quote = "FIB-4 is the most validated. FIB-4 is calculated using a simple algorithm based upon age, ALT, AST, and platelet count" },
+  { pmid = "38851997", title = "EASL-EASD-EASO Clinical Practice Guidelines on the management of metabolic dysfunction-associated steatotic liver disease (MASLD).", url = "https://doi.org/10.1016/j.jhep.2024.04.031", locator = "Abstract", quote = "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes." },
+]
+
+[[member]]
+marker = "apri"
+role = "extended"
+reason = "Alternative noninvasive fibrosis index from AST and platelet count."
+term = "AST Platelet Ratio Index"
+citations = [
+  { pmid = "36727674", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", url = "https://doi.org/10.1097/HEP.0000000000000323", locator = "Clinical and laboratory-based fibrosis biomarkers", quote = "Several have been developed (eg, FIB-4, NAFLD Fibrosis Score, AST Platelet Ratio Index); however, FIB-4 is the most validated." },
+]
+
+[[member]]
+marker = "nafld-fibrosis-score"
+role = "extended"
+reason = "Alternative noninvasive fibrosis score for NAFLD."
+term = "NAFLD Fibrosis Score"
+citations = [
+  { pmid = "36727674", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", url = "https://doi.org/10.1097/HEP.0000000000000323", locator = "Clinical and laboratory-based fibrosis biomarkers", quote = "Several have been developed (eg, FIB-4, NAFLD Fibrosis Score, AST Platelet Ratio Index); however, FIB-4 is the most validated." },
+]
+
+[[member]]
+marker = "fibroscan-liver-stiffness"
+role = "extended"
+reason = "Second-step elastography after FIB-4; LSM < 8 kPa helps rule out advanced fibrosis."
+term = "liver stiffness measurement"
+citations = [
+  { pmid = "36727674", title = "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.", url = "https://doi.org/10.1097/HEP.0000000000000323", locator = "Elastography", quote = "A recent meta-analysis suggested that a VCTE-derived liver stiffness measurement (LSM) <8 kPa can be used to rule out advanced fibrosis, especially if used sequentially after FIB-4." },
+]

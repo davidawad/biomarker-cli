@@ -9,6 +9,7 @@ Estimated free (unbound) testosterone, calculated from measured total testostero
 | LOINC | [103227-5](https://loinc.org/103227-5/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

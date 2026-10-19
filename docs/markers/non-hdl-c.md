@@ -9,6 +9,7 @@ Total cholesterol minus HDL-C, capturing all atherogenic apolipoprotein B partic
 | LOINC | [43396-1](https://loinc.org/43396-1/) |
 | Specimen | - |
 | Aliases | `non-hdl`, `non hdl cholesterol` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md) |
 
 ## Unit conversions
 

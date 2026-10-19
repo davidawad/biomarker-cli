@@ -9,6 +9,7 @@ High-sensitivity C-reactive protein, an acute-phase protein made by the liver. M
 | LOINC | [30522-7](https://loinc.org/30522-7/) |
 | Specimen | - |
 | Aliases | `c-reactive protein`, `hs crp`, `high sensitivity crp`, `c-reactive protein, cardiac` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md) |
 
 ## Ranges
 

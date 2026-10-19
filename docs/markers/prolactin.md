@@ -9,6 +9,7 @@ Pituitary hormone from lactotroph cells that regulates lactation and modulates g
 | LOINC | [2842-3](https://loinc.org/2842-3/) |
 | Specimen | - |
 | Aliases | `prl` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Ranges
 

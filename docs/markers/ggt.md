@@ -9,6 +9,7 @@ Enzyme sensitive to biliary and alcohol-related liver injury; higher values are 
 | LOINC | [2324-2](https://loinc.org/2324-2/) |
 | Specimen | - |
 | Aliases | `gamma gt`, `ggtp` |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

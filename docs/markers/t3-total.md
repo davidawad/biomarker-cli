@@ -9,6 +9,7 @@ Total serum triiodothyronine, bound plus free. Less sensitive than free T3 for t
 | LOINC | [3053-6](https://loinc.org/3053-6/) |
 | Specimen | - |
 | Aliases | `total-t3` |
+| Panels | [Thyroid function and autoimmunity](../panels/thyroid.md) |
 
 ## Ranges
 

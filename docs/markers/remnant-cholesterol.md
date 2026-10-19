@@ -9,6 +9,7 @@ Cholesterol carried in triglyceride-rich remnant lipoproteins (IDL and VLDL remn
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md) |
 
 ## Ranges
 

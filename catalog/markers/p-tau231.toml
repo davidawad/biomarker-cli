@@ -1,0 +1,6 @@
+slug = "p-tau231"
+name = "Plasma p-tau231"
+category = "neurology"
+unit = "pg/mL"
+description = "Plasma phosphorylated tau 231, an early-changing blood biomarker of Alzheimer's amyloid pathology."
+no_reference = "pending: no verbatim cut-off or reference interval retrieved; plasma p-tau231 thresholds are assay- and cohort-specific."

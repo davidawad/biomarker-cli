@@ -9,6 +9,7 @@ Triglyceride concentration, interpreted by ATP III categories, the fasting/non-f
 | LOINC | [2571-8](https://loinc.org/2571-8/) |
 | Specimen | - |
 | Aliases | `tg`, `trig`, `triglyceride` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md), [Diabetes and glycemic control](../panels/diabetes.md), [Metabolic syndrome](../panels/metabolic-syndrome.md) |
 
 ## Unit conversions
 

@@ -9,6 +9,7 @@ Conventional (standard-sensitivity) C-reactive protein, an acute-phase protein m
 | LOINC | [1988-5](https://loinc.org/1988-5/) |
 | Specimen | - |
 | Aliases | `standard crp`, `crp-standard` |
+| Panels | [Biological aging](../panels/biological-aging.md), [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

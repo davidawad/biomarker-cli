@@ -9,6 +9,7 @@ Protein made only by thyroid follicular cells; a tumour marker after thyroid can
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Thyroid function and autoimmunity](../panels/thyroid.md) |
 
 ## Ranges
 

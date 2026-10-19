@@ -9,6 +9,7 @@ Total serum calcium adjusted for serum albumin with a correction formula. Correc
 | LOINC | [46099-8](https://loinc.org/46099-8/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

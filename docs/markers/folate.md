@@ -9,6 +9,7 @@ Serum folate reflects recent dietary folate intake and is the first-line test fo
 | LOINC | [2284-8](https://loinc.org/2284-8/) |
 | Specimen | - |
 | Aliases | `folic acid` |
+| Panels | [Alzheimer's disease and dementia workup](../panels/alzheimers.md), [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Unit conversions
 

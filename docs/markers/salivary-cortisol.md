@@ -9,6 +9,7 @@ Cortisol measured in saliva collected at bedtime or late evening. Loss of the no
 | LOINC | - |
 | Specimen | - |
 | Aliases | `cortisol-salivary-late-night` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

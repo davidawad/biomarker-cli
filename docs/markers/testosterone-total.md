@@ -9,6 +9,7 @@ Total testosterone in serum, the first-line test for male androgen deficiency an
 | LOINC | [2986-8](https://loinc.org/2986-8/) |
 | Specimen | - |
 | Aliases | `testosterone`, `total testosterone`, `tt` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Male hormones and testosterone deficiency](../panels/male-hormones.md) |
 
 ## Unit conversions
 

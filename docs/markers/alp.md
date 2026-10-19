@@ -9,6 +9,7 @@ Enzyme of biliary and bone origin; elevated values suggest cholestasis or bone d
 | LOINC | [6768-6](https://loinc.org/6768-6/) |
 | Specimen | - |
 | Aliases | `alkaline phosphatase` |
+| Panels | [Biological aging](../panels/biological-aging.md), [Bone health and osteoporosis](../panels/bone-health.md), [Kidney function and CKD](../panels/kidney.md), [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

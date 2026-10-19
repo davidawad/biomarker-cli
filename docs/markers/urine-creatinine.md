@@ -9,6 +9,7 @@ Urine Creatinine. Tracked marker with no verified reference range yet, so values
 | LOINC | [2161-8](https://loinc.org/2161-8/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

@@ -9,6 +9,7 @@ Free lambda light chains are the unbound light-chain fragments of antibodies, ma
 | LOINC | [33944-0](https://loinc.org/33944-0/) |
 | Specimen | - |
 | Aliases | `lambda flc`, `free lambda light chains`, `sflc lambda`, `lambda-free-light-chain` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md) |
 
 ## Ranges
 

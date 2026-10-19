@@ -1,0 +1,121 @@
+slug = "kidney"
+name = "Kidney function and CKD"
+description = "Detection, staging and complication monitoring for chronic kidney disease (KDIGO)."
+aliases = ["ckd", "renal"]
+
+[[member]]
+marker = "egfr"
+role = "core"
+reason = "Staging of CKD requires eGFR together with albuminuria; repeat to confirm chronicity."
+term = "eGFR"
+citations = [
+  { title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease.", url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Practice Point 1.1.3.2", quote = "Do not assume chronicity based upon a single abnormal level for eGFR and ACR, as the finding" },
+]
+
+[[member]]
+marker = "creatinine"
+role = "core"
+reason = "Serum creatinine underlies the default eGFRcr estimate used to stage CKD."
+term = "creatinine"
+citations = [
+  { title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease.", url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Recommendation 1.1.2.1", quote = "In adults at risk for CKD, we recommend using creatinine-based estimated glomer-" },
+]
+
+[[member]]
+marker = "cystatin-c"
+role = "core"
+reason = "Recommended to refine GFR category when available."
+term = "cystatin C"
+citations = [
+  { title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease.", url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Recommendation 1.1.2.1", quote = "If cystatin C is available, the GFR category should be" },
+]
+
+[[member]]
+marker = "egfr-creatinine-cystatin"
+role = "core"
+reason = "Combined eGFRcr-cys is recommended when eGFRcr is less accurate and GFR affects decisions."
+term = "eGFRcr-cys"
+citations = [
+  { title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease.", url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Recommendation 1.2.2.1", quote = "We recommend using eGFRcr-cys in clinical situations when eGFRcr is less accurate" },
+]
+
+[[member]]
+marker = "egfr-cystatin-c"
+role = "extended"
+reason = "eGFRcys is preferred over eGFRcr-cys when creatinine generation is reduced."
+term = "eGFRcys"
+citations = [
+  { title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease.", url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Figure 7 footnote", quote = "Consider eGFRcys rather than eGFRcr-cys in" },
+]
+
+[[member]]
+marker = "uacr"
+role = "core"
+reason = "Albuminuria category (A1-A3) is the second axis of CKD staging."
+term = "albumin-to-creatinine ratio"
+citations = [
+  { title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease.", url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Practice Point 1.1.1.2", quote = "Following incidental detection of elevated urinary albumin-to-creatinine ratio (ACR), hematuria," },
+]
+
+[[member]]
+marker = "co2"
+role = "extended"
+reason = "Serum bicarbonate identifies metabolic acidosis needing treatment in CKD."
+term = "bicarbonate"
+citations = [
+  { title = "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease.", url = "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf", locator = "Practice Point 3.10.1", quote = "intervention to prevent development of acidosis with potential clinical implications (e.g., serum bicarbonate <18 mmol/l in adults)." },
+]
+
+[[member]]
+marker = "potassium"
+role = "extended"
+reason = "Serum potassium is checked after starting or raising RAAS inhibitors, which are essential in CKD."
+term = "potassium"
+citations = [
+  { pmid = "40197825", title = "KDIGO 2024 clinical practice guideline on evaluation and management of chronic kidney disease: A primer on what pharmacists need to know.", url = "https://doi.org/10.1093/ajhp/zxaf044", locator = "RAASi", quote = "Check blood pressure, SCr, and serum potassium within 2 to 3 weeks of initiation or dose increase" },
+]
+
+[[member]]
+marker = "calcium"
+role = "extended"
+reason = "CKD-MBD biochemical monitoring beginning in CKD G3a."
+term = "calcium"
+citations = [
+  { pmid = "30675420", title = "KDIGO 2017 Clinical Practice Guideline Update for the Diagnosis, Evaluation, Prevention, and Treatment of Chronic Kidney Disease-Mineral and Bone Disorder (CKD-MBD).", url = "https://doi.org/10.1016/j.kisu.2017.04.001", locator = "Recommendation 3.1.1", quote = "3.1.1: We recommend monitoring serum levels of calcium, phosphate, PTH, and alkaline phosphatase activity beginning in CKD G3a (1C)." },
+]
+
+[[member]]
+marker = "phosphorus"
+role = "extended"
+reason = "CKD-MBD biochemical monitoring beginning in CKD G3a."
+term = "phosphate"
+citations = [
+  { pmid = "30675420", title = "KDIGO 2017 Clinical Practice Guideline Update for the Diagnosis, Evaluation, Prevention, and Treatment of Chronic Kidney Disease-Mineral and Bone Disorder (CKD-MBD).", url = "https://doi.org/10.1016/j.kisu.2017.04.001", locator = "Recommendation 3.1.1", quote = "3.1.1: We recommend monitoring serum levels of calcium, phosphate, PTH, and alkaline phosphatase activity beginning in CKD G3a (1C)." },
+]
+
+[[member]]
+marker = "pth-intact"
+role = "extended"
+reason = "CKD-MBD biochemical monitoring beginning in CKD G3a."
+term = "PTH"
+citations = [
+  { pmid = "30675420", title = "KDIGO 2017 Clinical Practice Guideline Update for the Diagnosis, Evaluation, Prevention, and Treatment of Chronic Kidney Disease-Mineral and Bone Disorder (CKD-MBD).", url = "https://doi.org/10.1016/j.kisu.2017.04.001", locator = "Recommendation 3.1.1", quote = "3.1.1: We recommend monitoring serum levels of calcium, phosphate, PTH, and alkaline phosphatase activity beginning in CKD G3a (1C)." },
+]
+
+[[member]]
+marker = "alp"
+role = "extended"
+reason = "Alkaline phosphatase activity is monitored in CKD-MBD beginning in CKD G3a."
+term = "alkaline phosphatase"
+citations = [
+  { pmid = "30675420", title = "KDIGO 2017 Clinical Practice Guideline Update for the Diagnosis, Evaluation, Prevention, and Treatment of Chronic Kidney Disease-Mineral and Bone Disorder (CKD-MBD).", url = "https://doi.org/10.1016/j.kisu.2017.04.001", locator = "Recommendation 3.1.1", quote = "3.1.1: We recommend monitoring serum levels of calcium, phosphate, PTH, and alkaline phosphatase activity beginning in CKD G3a (1C)." },
+]
+
+[[member]]
+marker = "hemoglobin"
+role = "extended"
+reason = "Hemoglobin is the monitored variable in CKD anemia (KDIGO anemia guideline)."
+term = "hemoglobin"
+citations = [
+  { pmid = "23891356", title = "KDOQI US commentary on the 2012 KDIGO Clinical Practice Guideline for Anemia in CKD.", url = "https://doi.org/10.1053/j.ajkd.2013.06.008", locator = "Abstract", quote = "We find a paucity of evidence that hemoglobin concentration targeted between 11 and 11.5 g/dL is associated with a safety risk." },
+]

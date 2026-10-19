@@ -9,6 +9,7 @@ pub mod cli;
 pub mod cli_admin;
 pub mod cli_catalog;
 pub mod cli_interventions;
+pub mod cli_panel;
 pub mod commands;
 pub mod config;
 pub mod container;

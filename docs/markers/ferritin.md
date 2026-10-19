@@ -9,6 +9,7 @@ Storage protein that reflects body iron stores; low values indicate iron deficie
 | LOINC | [2276-4](https://loinc.org/2276-4/) |
 | Specimen | - |
 | Aliases | `ferr` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Iron deficiency and iron deficiency anaemia](../panels/iron-anemia.md) |
 
 ## Ranges
 

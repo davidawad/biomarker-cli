@@ -9,6 +9,7 @@ Unbound thyroxine in serum, the biologically active thyroid hormone fraction. Us
 | LOINC | [3024-7](https://loinc.org/3024-7/) |
 | Specimen | - |
 | Aliases | `ft4`, `t4, free`, `free thyroxine` |
+| Panels | [Bone health and osteoporosis](../panels/bone-health.md), [Thyroid function and autoimmunity](../panels/thyroid.md) |
 
 ## Unit conversions
 

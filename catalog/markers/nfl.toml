@@ -1,0 +1,41 @@
+slug = "nfl"
+name = "Neurofilament Light Chain (NfL), Plasma"
+category = "neurology"
+unit = "pg/mL"
+description = "Neurofilament light chain, a marker of neuroaxonal injury. Concentrations rise strongly with age. Upper reference limits are platform-specific."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 18.0
+when = { age = [18.0, 51.0] }
+population = "Control adults aged 18-50 years, Lumipulse platform, serum or plasma; upper limit is the 97.5th percentile (method: lumipulse)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42168010", doi = "10.1016/j.neurol.2026.03.013", title = "Establishing age-stratified reference values for blood Neurofilament Light chain (NfL) using the Lumipulse® platform.", locator = "Abstract" },
+]
+note = "One-sided upper reference limit (97.5th percentile). Platform-specific."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 25.4
+when = { age = [51.0, 69.0] }
+population = "Control adults aged 51-68 years, Lumipulse platform, serum or plasma; upper limit is the 97.5th percentile (method: lumipulse)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42168010", doi = "10.1016/j.neurol.2026.03.013", title = "Establishing age-stratified reference values for blood Neurofilament Light chain (NfL) using the Lumipulse® platform.", locator = "Abstract" },
+]
+note = "One-sided upper reference limit (97.5th percentile). Platform-specific."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+high = 43.5
+when = { age = [69.0, 200] }
+population = "Control adults aged 69 years or older, Lumipulse platform, serum or plasma; upper limit is the 97.5th percentile (method: lumipulse)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "42168010", doi = "10.1016/j.neurol.2026.03.013", title = "Establishing age-stratified reference values for blood Neurofilament Light chain (NfL) using the Lumipulse® platform.", locator = "Abstract" },
+]
+note = "One-sided upper reference limit (97.5th percentile). Platform-specific."

@@ -1,0 +1,106 @@
+slug = "alzheimers"
+name = "Alzheimer's disease and dementia workup"
+description = "Reversible-cause laboratory screening in the evaluation of dementia (AAN practice parameter), supporting metabolic add-ons, and the plasma Alzheimer's blood biomarkers named by the Alzheimer's Association clinical practice guideline (PMID 40729527) and revised diagnostic criteria (PMID 38934362)."
+aliases = ["dementia", "cognitive-impairment"]
+
+[[member]]
+marker = "vitamin-b12"
+term = "B(12)"
+role = "core"
+reason = "AAN guideline: screen for B12 deficiency in the initial dementia evaluation."
+citations = [
+  { pmid = "11342678", title = "Practice parameter: diagnosis of dementia (an evidence-based review). Report of the Quality Standards Subcommittee of the American Academy of Neurology.", doi = "10.1212/wnl.56.9.1143", locator = "Abstract, Recommendation 4", quote = "Screening for depression, B(12) deficiency, and hypothyroidism should be performed (Guideline)." },
+]
+
+[[member]]
+marker = "tsh"
+term = "hypothyroidism"
+role = "core"
+reason = "AAN guideline: screen for hypothyroidism in the initial dementia evaluation; TSH is the screening test (thyroid profile named in the treatable-dementia guideline)."
+citations = [
+  { pmid = "11342678", title = "Practice parameter: diagnosis of dementia (an evidence-based review). Report of the Quality Standards Subcommittee of the American Academy of Neurology.", doi = "10.1212/wnl.56.9.1143", locator = "Abstract, Recommendation 4", quote = "Screening for depression, B(12) deficiency, and hypothyroidism should be performed (Guideline)." },
+  { pmid = "40046486", title = "Clinical practice guidelines on addressing cognitive impairment in treatable dementias.", doi = "10.4103/indianjpsychiatry.indianjpsychiatry_684_24", locator = "Table 6c", quote = "Blood thyroid profile (free T3, T4 and TSH)" },
+]
+
+[[member]]
+marker = "folate"
+role = "extended"
+reason = "Folate deficiency causes cognitive impairment and raises homocysteine; listed in the treatable-dementia work-up."
+citations = [
+  { pmid = "40046486", title = "Clinical practice guidelines on addressing cognitive impairment in treatable dementias.", doi = "10.4103/indianjpsychiatry.indianjpsychiatry_684_24", locator = "Metabolic dementias", quote = "Severe deficiencies in vitamin B12 and folate are linked to anaemia and cognitive impairment" },
+]
+
+[[member]]
+marker = "homocysteine"
+role = "extended"
+reason = "Elevated homocysteine linked to Alzheimer's and vascular disease pathophysiology."
+citations = [
+  { pmid = "40046486", title = "Clinical practice guidelines on addressing cognitive impairment in treatable dementias.", doi = "10.4103/indianjpsychiatry.indianjpsychiatry_684_24", locator = "Metabolic dementias", quote = "a folate shortage can result in elevated homocysteine levels, which are linked to the pathophysiology of Alzheimer's disease and vascular disease" },
+]
+
+[[member]]
+marker = "calcium"
+role = "extended"
+reason = "Parathyroid/calcium disorders are metabolic causes of cognitive impairment; blood calcium is the investigation."
+citations = [
+  { pmid = "40046486", title = "Clinical practice guidelines on addressing cognitive impairment in treatable dementias.", doi = "10.4103/indianjpsychiatry.indianjpsychiatry_684_24", locator = "Table 6c", quote = "Blood calcium, phosphate and parathormone levels" },
+]
+
+[[member]]
+marker = "p-tau217"
+role = "core"
+reason = "the Alzheimer's Association guideline names plasma p-tau217 among the blood-based biomarkers assessed for the diagnostic workup of suspected Alzheimer's disease."
+citations = [
+  { pmid = "40729527", title = "Alzheimer's Association Clinical Practice Guideline on the use of blood-based biomarkers in the diagnostic workup of suspected Alzheimer's disease within specialized care settings.", doi = "10.1002/alz.70535", locator = "Methods, Scope of the systematic review", quote = "p-tau217, the ratio of p-tau217 to non-p-tau217 x100 (expressed as a percentage of p-tau217 [%p-tau217]), p-tau181, p-tau231, and Aβ42/Aβ40." },
+]
+
+[[member]]
+marker = "p-tau217-ratio"
+term = "%p-tau217"
+role = "core"
+reason = "the Alzheimer's Association guideline names plasma %p-tau217 (p-tau217 / non-p-tau217 x100) among the blood-based biomarkers assessed for the diagnostic workup of suspected Alzheimer's disease."
+citations = [
+  { pmid = "40729527", title = "Alzheimer's Association Clinical Practice Guideline on the use of blood-based biomarkers in the diagnostic workup of suspected Alzheimer's disease within specialized care settings.", doi = "10.1002/alz.70535", locator = "Methods, Scope of the systematic review", quote = "p-tau217, the ratio of p-tau217 to non-p-tau217 x100 (expressed as a percentage of p-tau217 [%p-tau217]), p-tau181, p-tau231, and Aβ42/Aβ40." },
+]
+
+[[member]]
+marker = "p-tau181"
+role = "core"
+reason = "the Alzheimer's Association guideline names plasma p-tau181 among the blood-based biomarkers assessed for the diagnostic workup of suspected Alzheimer's disease."
+citations = [
+  { pmid = "40729527", title = "Alzheimer's Association Clinical Practice Guideline on the use of blood-based biomarkers in the diagnostic workup of suspected Alzheimer's disease within specialized care settings.", doi = "10.1002/alz.70535", locator = "Methods, Scope of the systematic review", quote = "p-tau217, the ratio of p-tau217 to non-p-tau217 x100 (expressed as a percentage of p-tau217 [%p-tau217]), p-tau181, p-tau231, and Aβ42/Aβ40." },
+]
+
+[[member]]
+marker = "p-tau231"
+role = "core"
+reason = "the Alzheimer's Association guideline names plasma p-tau231 among the blood-based biomarkers assessed for the diagnostic workup of suspected Alzheimer's disease."
+citations = [
+  { pmid = "40729527", title = "Alzheimer's Association Clinical Practice Guideline on the use of blood-based biomarkers in the diagnostic workup of suspected Alzheimer's disease within specialized care settings.", doi = "10.1002/alz.70535", locator = "Methods, Scope of the systematic review", quote = "p-tau217, the ratio of p-tau217 to non-p-tau217 x100 (expressed as a percentage of p-tau217 [%p-tau217]), p-tau181, p-tau231, and Aβ42/Aβ40." },
+]
+
+[[member]]
+marker = "abeta42-40-ratio"
+term = "Aβ42/Aβ40"
+role = "core"
+reason = "the Alzheimer's Association guideline names plasma Abeta42/Abeta40 ratio among the blood-based biomarkers assessed for the diagnostic workup of suspected Alzheimer's disease."
+citations = [
+  { pmid = "40729527", title = "Alzheimer's Association Clinical Practice Guideline on the use of blood-based biomarkers in the diagnostic workup of suspected Alzheimer's disease within specialized care settings.", doi = "10.1002/alz.70535", locator = "Methods, Scope of the systematic review", quote = "p-tau217, the ratio of p-tau217 to non-p-tau217 x100 (expressed as a percentage of p-tau217 [%p-tau217]), p-tau181, p-tau231, and Aβ42/Aβ40." },
+]
+
+[[member]]
+marker = "nfl"
+term = "NfL"
+role = "extended"
+reason = "Revised criteria list NfL as a biomarker of neuronal injury (N), a non-specific process in AD pathophysiology; supports staging and prognosis, not diagnosis."
+citations = [
+  { pmid = "38934362", title = "Revised criteria for diagnosis and staging of Alzheimer's disease: Alzheimer's Association Workgroup.", doi = "10.1002/alz.13859", locator = "Table 1", quote = "N (injury, dysfunction, or degeneration of neuropil) | NfL | Anatomic MRI, FDG PET" },
+]
+
+[[member]]
+marker = "gfap"
+role = "extended"
+reason = "Revised criteria list GFAP as a biomarker of astrocytic activation (I, inflammation), a non-specific process in AD pathophysiology."
+citations = [
+  { pmid = "38934362", title = "Revised criteria for diagnosis and staging of Alzheimer's disease: Alzheimer's Association Workgroup.", doi = "10.1002/alz.13859", locator = "Table 1", quote = "I (inflammation) Astrocytic activation | GFAP |" },
+]

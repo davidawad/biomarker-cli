@@ -1,0 +1,96 @@
+slug = "cardiovascular-risk"
+name = "Cardiovascular risk (lipids and risk enhancers)"
+description = "Lipid and risk-enhancer tests used in ACC/AHA and ESC/EAS-based ASCVD risk assessment: LDL-C, non-HDL-C, ApoB, Lp(a), triglycerides, hs-CRP."
+aliases = ["ascvd-risk", "lipid-risk", "cardiac-risk"]
+
+[[member]]
+marker = "ldl-c"
+role = "core"
+reason = "Primary lipid risk marker and treatment target; reduce LDL-C with statin therapy."
+term = "LDL-C"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Top 10 take-home messages", quote = "In patients with clinical ASCVD, reduce low-density lipoprotein cholesterol (LDL-C) with high-intensity statin therapy or maximally tolerated statin therapy." },
+  { pmid = "41504909", doi = "10.1007/s00392-025-02833-y", title = "A practical guide to the management of dyslipidaemia.", locator = "Lipid profile", quote = "A full lipid profile should include the following parameters: total cholesterol (TC), HDL-C, LDL-C, and triglycerides." },
+]
+
+[[member]]
+marker = "non-hdl-c"
+role = "core"
+reason = "Cholesterol in all ApoB-containing particles; used when triglycerides are high, with diabetes, obesity or metabolic syndrome; has explicit goals in the 2026 ACC/AHA guideline."
+term = "non-HDL-C"
+citations = [
+  { pmid = "42795336", doi = "10.3390/life16091470", title = "The 2026 ACC/AHA Dyslipidemia Guideline: A Critical and Transatlantic Perspective on Personalized Lipid Management.", locator = "3.3", quote = "Non-HDL-C reflects the cholesterol carried by all ApoB-containing atherogenic particles, including LDL, very-low-density lipoprotein remnants, intermediate-density lipoproteins, and Lp(a)." },
+  { pmid = "41504909", doi = "10.1007/s00392-025-02833-y", title = "A practical guide to the management of dyslipidaemia.", locator = "Lipid profile", quote = "if high levels of TG (> 400 mg/dL) are measured, it is recommended to calculate non-HDL-cholesterol (non-HDL-C = TC - HDL-C) and/or measure ApoB levels directly" },
+]
+
+[[member]]
+marker = "apob"
+role = "core"
+reason = "Selective risk enhancer (>=130 mg/dL) and a direct count of atherogenic particles, most useful when LDL-C is discordant."
+term = "apolipoprotein B"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Take-home message 8", quote = "Risk-enhancing factors include family history of premature ASCVD; persistently elevated LDL-C levels >=160 mg/dL (>=4.1 mmol/L); metabolic syndrome; chronic kidney disease; history of preeclampsia or premature menopause (age <40 years); chronic inflammatory disorders (eg, rheumatoid arthritis, psoriasis, or chronic HIV); high-risk ethnic groups (eg, South Asian); persistent elevations of triglycerides >=175 mg/dL (>=1.97 mmol/L); and, if measured in selected individuals, apolipoprotein B >=130 mg/dL, high-sensitivity C-reactive protein >=2.0 mg/L, ankle-brachial index (ABI) <0.9 and lipoprotein (a) >=50 mg/dL or 125 nmol/L" },
+  { pmid = "42795336", doi = "10.3390/life16091470", title = "The 2026 ACC/AHA Dyslipidemia Guideline: A Critical and Transatlantic Perspective on Personalized Lipid Management.", locator = "2.4", quote = "Selective measurement is the most useful when LDL-C may incompletely represent atherogenic burden or when residual risk persists despite achievement of conventional lipid goals." },
+]
+
+[[member]]
+marker = "lpa"
+role = "core"
+reason = "Risk-enhancing factor (>=50 mg/dL or 125 nmol/L); the 2026 ACC/AHA guideline recommends measuring it at least once in adulthood."
+term = "lipoprotein (a)"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Take-home message 8", quote = "Risk-enhancing factors include family history of premature ASCVD; persistently elevated LDL-C levels >=160 mg/dL (>=4.1 mmol/L); metabolic syndrome; chronic kidney disease; history of preeclampsia or premature menopause (age <40 years); chronic inflammatory disorders (eg, rheumatoid arthritis, psoriasis, or chronic HIV); high-risk ethnic groups (eg, South Asian); persistent elevations of triglycerides >=175 mg/dL (>=1.97 mmol/L); and, if measured in selected individuals, apolipoprotein B >=130 mg/dL, high-sensitivity C-reactive protein >=2.0 mg/L, ankle-brachial index (ABI) <0.9 and lipoprotein (a) >=50 mg/dL or 125 nmol/L" },
+  { pmid = "42795336", doi = "10.3390/life16091470", title = "The 2026 ACC/AHA Dyslipidemia Guideline: A Critical and Transatlantic Perspective on Personalized Lipid Management.", locator = "2.3", quote = "Measurement of Lp(a) at least once in adulthood is among the most clinically relevant changes." },
+  { pmid = "41504909", doi = "10.1007/s00392-025-02833-y", title = "A practical guide to the management of dyslipidaemia.", locator = "Lipid profile", quote = "Lp(a) measurement should be measured at least once for every patient." },
+]
+
+[[member]]
+marker = "triglycerides"
+role = "core"
+reason = "Part of the lipid profile; persistently >=175 mg/dL is a risk-enhancing factor."
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Take-home message 8", quote = "Risk-enhancing factors include family history of premature ASCVD; persistently elevated LDL-C levels >=160 mg/dL (>=4.1 mmol/L); metabolic syndrome; chronic kidney disease; history of preeclampsia or premature menopause (age <40 years); chronic inflammatory disorders (eg, rheumatoid arthritis, psoriasis, or chronic HIV); high-risk ethnic groups (eg, South Asian); persistent elevations of triglycerides >=175 mg/dL (>=1.97 mmol/L); and, if measured in selected individuals, apolipoprotein B >=130 mg/dL, high-sensitivity C-reactive protein >=2.0 mg/L, ankle-brachial index (ABI) <0.9 and lipoprotein (a) >=50 mg/dL or 125 nmol/L" },
+  { pmid = "41504909", doi = "10.1007/s00392-025-02833-y", title = "A practical guide to the management of dyslipidaemia.", locator = "Lipid profile", quote = "A full lipid profile should include the following parameters: total cholesterol (TC), HDL-C, LDL-C, and triglycerides." },
+]
+
+[[member]]
+marker = "total-cholesterol"
+role = "core"
+reason = "Part of the full lipid profile and required for SCORE2 risk estimation."
+citations = [
+  { pmid = "41504909", doi = "10.1007/s00392-025-02833-y", title = "A practical guide to the management of dyslipidaemia.", locator = "Lipid profile", quote = "A full lipid profile should include the following parameters: total cholesterol (TC), HDL-C, LDL-C, and triglycerides. TC and HDL-C are required for risk assessment using the SCORE2 calculations" },
+]
+
+[[member]]
+marker = "hdl-c"
+role = "core"
+reason = "Part of the full lipid profile and required for SCORE2 risk estimation."
+citations = [
+  { pmid = "41504909", doi = "10.1007/s00392-025-02833-y", title = "A practical guide to the management of dyslipidaemia.", locator = "Lipid profile", quote = "A full lipid profile should include the following parameters: total cholesterol (TC), HDL-C, LDL-C, and triglycerides. TC and HDL-C are required for risk assessment using the SCORE2 calculations" },
+]
+
+[[member]]
+marker = "hscrp"
+role = "extended"
+reason = "Risk-enhancing factor (>=2.0 mg/L) when measured in selected intermediate-risk individuals."
+term = "high-sensitivity C-reactive protein"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Take-home message 8", quote = "Risk-enhancing factors include family history of premature ASCVD; persistently elevated LDL-C levels >=160 mg/dL (>=4.1 mmol/L); metabolic syndrome; chronic kidney disease; history of preeclampsia or premature menopause (age <40 years); chronic inflammatory disorders (eg, rheumatoid arthritis, psoriasis, or chronic HIV); high-risk ethnic groups (eg, South Asian); persistent elevations of triglycerides >=175 mg/dL (>=1.97 mmol/L); and, if measured in selected individuals, apolipoprotein B >=130 mg/dL, high-sensitivity C-reactive protein >=2.0 mg/L, ankle-brachial index (ABI) <0.9 and lipoprotein (a) >=50 mg/dL or 125 nmol/L" },
+]
+
+[[member]]
+marker = "cac-score"
+role = "extended"
+reason = "Option to reclassify risk when the treatment decision is uncertain, in adults >=40 years."
+term = "coronary artery calcium (CAC) score"
+citations = [
+  { pmid = "30586774", doi = "10.1161/CIR.0000000000000625", title = "2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines.", locator = "Take-home message 4", quote = "when risk status is uncertain, a coronary artery calcium (CAC) score is an option to facilitate decision-making in adults >=40 years of age" },
+]
+
+[[member]]
+marker = "remnant-cholesterol"
+role = "extended"
+reason = "Cholesterol in triglyceride-rich lipoproteins; contributes to residual risk when LDL-C is controlled."
+citations = [
+  { pmid = "41504909", doi = "10.1007/s00392-025-02833-y", title = "A practical guide to the management of dyslipidaemia.", locator = "Lipid markers", quote = "Remnant cholesterol is an independent risk factor for ASCVD, contributing to residual cardiovascular risk even when LDL-C levels are well controlled" },
+]

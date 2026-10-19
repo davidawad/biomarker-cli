@@ -9,6 +9,7 @@ Liver stiffness measured by FibroScan transient elastography, in kilopascals (kP
 | LOINC | [77615-3](https://loinc.org/77615-3/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

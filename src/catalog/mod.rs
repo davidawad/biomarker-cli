@@ -40,6 +40,36 @@ pub const DEFAULT_SET: &str = "clinical";
 /// `range_sets` when not configured.
 pub const DEFAULT_SETS: &[&str] = &["clinical", "optimal"];
 
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct Panel {
+    pub slug: String,
+    pub name: String,
+    pub description: String,
+    #[serde(default)]
+    pub aliases: Vec<String>,
+    #[serde(default, rename = "member")]
+    pub members: Vec<PanelMember>,
+}
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct PanelMember {
+    pub marker: String,
+    pub role: PanelRole,
+    pub reason: String,
+    pub term: Option<String>,
+    #[serde(default)]
+    pub citations: Vec<Citation>,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum PanelRole {
+    Core,
+    Extended,
+}
+
 fn default_set() -> String {
     DEFAULT_SET.into()
 }
@@ -197,6 +227,8 @@ pub struct Citation {
     /// Where in the source, e.g. `Table 2`.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub locator: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub quote: Option<String>,
 }
 
 impl Citation {
@@ -257,6 +289,8 @@ pub struct UniverseEntry {
 pub struct Sources {
     /// `(file name, contents)` of every marker file, sorted by name.
     pub markers: Vec<(String, String)>,
+    /// `(file name, contents)` of panel files, sorted by name.
+    pub panels: Vec<(String, String)>,
     pub sets: String,
     pub conditions: String,
     pub universe: String,
@@ -266,14 +300,15 @@ impl Sources {
     pub fn embedded() -> Self {
         Self {
             markers: files::MARKER_FILES.iter().map(|(n, t)| ((*n).to_string(), (*t).to_string())).collect(),
+            panels: files::PANEL_FILES.iter().map(|(n, t)| ((*n).to_string(), (*t).to_string())).collect(),
             sets: SETS_TOML.into(),
             conditions: CONDITIONS_TOML.into(),
             universe: UNIVERSE_TOML.into(),
         }
     }
 
-    /// Read `<dir>/markers/*.toml`, `<dir>/sets.toml`, `<dir>/conditions.toml`
-    /// and `<dir>/universe.toml` (missing optional files fall back to the embedded ones).
+    /// Read `<dir>/markers/*.toml`, optional `<dir>/panels/*.toml`, and the
+    /// catalog metadata files (missing metadata falls back to the embedded ones).
     pub fn from_dir(dir: &Path) -> Result<Self> {
         let read =
             |p: &Path| std::fs::read_to_string(p).map_err(|e| AppError::io(format!("reading {}: {e}", p.display())));
@@ -288,6 +323,21 @@ impl Sources {
             .iter()
             .map(|p| Ok((p.file_name().unwrap_or_default().to_string_lossy().into_owned(), read(p)?)))
             .collect::<Result<Vec<_>>>()?;
+        let pdir = dir.join("panels");
+        let panels = if pdir.exists() {
+            let mut paths: Vec<_> = std::fs::read_dir(&pdir)
+                .map_err(|e| AppError::io(format!("reading {}: {e}", pdir.display())))?
+                .filter_map(|e| e.ok().map(|e| e.path()))
+                .filter(|p| p.extension().is_some_and(|x| x == "toml"))
+                .collect();
+            paths.sort();
+            paths
+                .iter()
+                .map(|p| Ok((p.file_name().unwrap_or_default().to_string_lossy().into_owned(), read(p)?)))
+                .collect::<Result<Vec<_>>>()?
+        } else {
+            Vec::new()
+        };
         let or_embedded = |name: &str, fallback: &str| {
             let p = dir.join(name);
             if p.exists() {
@@ -298,6 +348,7 @@ impl Sources {
         };
         Ok(Self {
             markers,
+            panels,
             sets: or_embedded("sets.toml", SETS_TOML)?,
             conditions: or_embedded("conditions.toml", CONDITIONS_TOML)?,
             universe: or_embedded("universe.toml", UNIVERSE_TOML)?,
@@ -310,6 +361,10 @@ fn parse<T: serde::de::DeserializeOwned>(text: &str, origin: &str) -> Result<T> 
 }
 
 pub fn parse_marker(file: &str, text: &str) -> Result<MarkerDef> {
+    parse(text, file)
+}
+
+pub fn parse_panel(file: &str, text: &str) -> Result<Panel> {
     parse(text, file)
 }
 
@@ -352,6 +407,7 @@ pub struct Defs {
     pub markers: Vec<MarkerDef>,
     pub sets: Vec<SetDef>,
     pub conditions: Vec<ConditionDef>,
+    pub panels: Vec<Panel>,
 }
 
 impl Defs {
@@ -361,6 +417,7 @@ impl Defs {
             markers: src.markers.iter().map(|(n, t)| parse_marker(n, t)).collect::<Result<_>>()?,
             sets: parse_sets(&src.sets)?,
             conditions: parse_conditions(&src.conditions)?,
+            panels: src.panels.iter().map(|(n, t)| parse_panel(n, t)).collect::<Result<_>>()?,
         })
     }
 
@@ -412,7 +469,8 @@ mod tests {
     #[test]
     fn embedded_catalog_parses_and_names_files_by_slug() {
         let defs = builtin().unwrap();
-        assert!(defs.markers.len() >= 70);
+        assert_eq!(defs.markers.len(), 708);
+        assert_eq!(defs.panels.len(), 11);
         for (file, text) in files::MARKER_FILES {
             let m = parse_marker(file, text).unwrap();
             assert_eq!(format!("{}.toml", m.slug), *file);
@@ -453,6 +511,7 @@ mod tests {
             url: Some("https://x".into()),
             title: Some("t".into()),
             locator: Some("Table 2".into()),
+            quote: None,
         };
         let range = RangeDef {
             low: Some(1.0),

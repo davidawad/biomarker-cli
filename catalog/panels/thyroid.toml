@@ -1,0 +1,69 @@
+slug = "thyroid"
+name = "Thyroid function and autoimmunity"
+description = "Screening, diagnosis and monitoring of hypothyroidism, hyperthyroidism/Graves' disease, thyroid autoimmunity and differentiated thyroid cancer follow-up."
+aliases = ["thyroid-function"]
+
+[[member]]
+marker = "tsh"
+role = "core"
+reason = "First-line test; defines subclinical hypothyroidism and hyperthyroidism and guides levothyroxine dosing."
+term = "TSH"
+citations = [
+  { pmid = "24783053", title = "2013 ETA Guideline: Management of Subclinical Hypothyroidism.", url = "https://doi.org/10.1159/000356507", locator = "Abstract", quote = "An initially raised serum TSH, with FT4 within reference range, should be investigated with a repeat measurement of both serum TSH and FT4, along with thyroid peroxidase antibodies" },
+  { pmid = "37847271", title = "Hyperthyroidism: A Review.", url = "https://doi.org/10.1001/jama.2023.19052", locator = "Abstract", quote = "Overt hyperthyroidism, defined as suppressed thyrotropin (previously thyroid-stimulating hormone) and high concentration of triiodothyronine (T3) and/or free thyroxine (FT4)" },
+]
+
+[[member]]
+marker = "free-t4"
+role = "core"
+reason = "Distinguishes subclinical from overt thyroid dysfunction and grades the severity of hyperthyroidism."
+term = "FT4"
+citations = [
+  { pmid = "24783053", title = "2013 ETA Guideline: Management of Subclinical Hypothyroidism.", url = "https://doi.org/10.1159/000356507", locator = "Abstract", quote = "An initially raised serum TSH, with FT4 within reference range, should be investigated with a repeat measurement of both serum TSH and FT4" },
+  { pmid = "37847271", title = "Hyperthyroidism: A Review.", url = "https://doi.org/10.1001/jama.2023.19052", locator = "Diagnosis", quote = "Free T4 levels can be used to assess the degree of hyperthyroidism." },
+]
+
+[[member]]
+marker = "tpo-ab"
+role = "core"
+reason = "Thyroid peroxidase antibodies identify autoimmune (Hashimoto) etiology in a raised TSH."
+term = "thyroid peroxidase antibodies"
+citations = [
+  { pmid = "24783053", title = "2013 ETA Guideline: Management of Subclinical Hypothyroidism.", url = "https://doi.org/10.1159/000356507", locator = "Abstract", quote = "along with thyroid peroxidase antibodies, preferably after a 2- to 3-month interval" },
+]
+
+[[member]]
+marker = "trab"
+role = "core"
+reason = "Recommended for accurate diagnosis of Graves' disease, before stopping antithyroid drugs and during pregnancy."
+term = "TSH-R-Ab"
+citations = [
+  { pmid = "30283735", title = "2018 European Thyroid Association Guideline for the Management of Graves' Hyperthyroidism.", url = "https://doi.org/10.1159/000490384", locator = "Abstract", quote = "In GD, measurement of TSH-R-Ab is recommended for an accurate diagnosis/differential diagnosis, prior to stopping antithyroid drug (ATD) treatment and during pregnancy." },
+]
+
+[[member]]
+marker = "t3-total"
+role = "extended"
+reason = "Helps establish the cause and severity of thyrotoxicosis; total T3 preferred over free T3 assays."
+term = "T3"
+citations = [
+  { pmid = "37847271", title = "Hyperthyroidism: A Review.", url = "https://doi.org/10.1001/jama.2023.19052", locator = "Diagnosis", quote = "T3 levels can also help establish the cause and severity of thyrotoxicosis." },
+]
+
+[[member]]
+marker = "thyroglobulin"
+role = "extended"
+reason = "Main follow-up biomarker for differentiated thyroid cancer recurrence."
+term = "Tg"
+citations = [
+  { pmid = "42047636", title = "Thyroglobulin and thyroglobulin antibodies in differentiated thyroid cancer: interpretation, challenges, and future perspectives.", url = "https://doi.org/10.1530/JME-25-0217", locator = "Abstract", quote = "For patients with differentiated thyroid carcinoma (DTC), Tg is the main biomarker during follow-up determining treatment response and risk of disease recurrence." },
+]
+
+[[member]]
+marker = "thyroglobulin-ab"
+role = "extended"
+reason = "Must accompany every thyroglobulin measurement because TgAb interferes with Tg assays; trend is prognostic."
+term = "TgAb"
+citations = [
+  { pmid = "42047636", title = "Thyroglobulin and thyroglobulin antibodies in differentiated thyroid cancer: interpretation, challenges, and future perspectives.", url = "https://doi.org/10.1530/JME-25-0217", locator = "Abstract", quote = "Because of potential TgAb interference in Tg assays, TgAb measurement must always accompany Tg analysis." },
+]

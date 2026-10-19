@@ -9,6 +9,7 @@ Cholesterol carried in all apolipoprotein B and HDL particles. Interpreted with 
 | LOINC | [2093-3](https://loinc.org/2093-3/) |
 | Specimen | - |
 | Aliases | `tc`, `cholesterol`, `chol`, `cholesterol, total` |
+| Panels | [Cardiovascular risk (lipids and risk enhancers)](../panels/cardiovascular-risk.md), [Diabetes and glycemic control](../panels/diabetes.md) |
 
 ## Unit conversions
 

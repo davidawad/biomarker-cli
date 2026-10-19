@@ -9,6 +9,7 @@ Hepatocellular enzyme; the most specific routine marker of hepatocyte injury. Up
 | LOINC | [1742-6](https://loinc.org/1742-6/) |
 | Specimen | - |
 | Aliases | `sgpt`, `alanine aminotransferase` |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 

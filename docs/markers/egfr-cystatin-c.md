@@ -9,6 +9,7 @@ Estimated glomerular filtration rate calculated from serum cystatin C alone, rep
 | LOINC | [50210-4](https://loinc.org/50210-4/) |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Diabetes and glycemic control](../panels/diabetes.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Ranges
 

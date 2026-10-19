@@ -64,3 +64,7 @@ Each slug below has a marker file so values can be stored, with `no_reference = 
 | urine-urea-nitrogen | specialist | spot mg/dL interval not found; 24h excretion (PMID 40080792) is on urine-urea-24h |
 | vldl-size | specialist | same as hdl-large-p |
 | wrist-temperature-deviation | specialist | wearable papers (38544080, 41840158) are detection models with no deviation cut-off |
+| p-tau217-ratio | specialist | named in the Alzheimer's Association blood-biomarker guideline (PMID 40729527); no verbatim cut-off found |
+| p-tau181 | specialist | no verbatim cut-off or reference interval found |
+| p-tau231 | specialist | no verbatim cut-off or reference interval found |
+| abeta42-40-ratio | specialist | cut-offs are assay-specific; guideline cautions against single cut-offs; none stated verbatim |

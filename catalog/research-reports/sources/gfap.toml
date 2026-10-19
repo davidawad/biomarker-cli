@@ -1,0 +1,41 @@
+slug = "gfap"
+name = "Glial Fibrillary Acidic Protein (GFAP), Plasma"
+category = "neurology"
+unit = "pg/mL"
+description = "Plasma GFAP, a marker of astrocytic activation. Rises with age and is higher in women after age 50. Upper reference limits are assay-specific."
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 38
+when = { age_min = 18, age_max = 50, specimen = "plasma", method = "msd-s-plex" }
+population = "Apparently healthy adults aged 18-<50 years, MSD S-Plex GFAP immunoassay; right-sided non-parametric upper reference limit"
+evidence = "reference-interval-study"
+note = "One-sided upper reference limit. Assay-specific."
+citations = [
+  { pmid = "40842193", doi = "10.1515/cclm-2025-0870", title = "Validation of a plasma GFAP immunoassay and establishment of age-related reference values: bridging analytical performance and routine implementation.", locator = "Abstract", quote = "Age-stratified upper reference limits for plasma GFAP were established as 38 pg/mL (18-<50 years), 73 pg/mL (>=50-<70 years), and 156 pg/mL (>=70 years)." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 73
+when = { age_min = 50, age_max = 70, specimen = "plasma", method = "msd-s-plex" }
+population = "Apparently healthy adults aged 50-<70 years, MSD S-Plex GFAP immunoassay; right-sided non-parametric upper reference limit"
+evidence = "reference-interval-study"
+note = "One-sided upper reference limit. Assay-specific; the study notes higher GFAP in females than males after age 50."
+citations = [
+  { pmid = "40842193", doi = "10.1515/cclm-2025-0870", title = "Validation of a plasma GFAP immunoassay and establishment of age-related reference values: bridging analytical performance and routine implementation.", locator = "Abstract", quote = "Age-stratified upper reference limits for plasma GFAP were established as 38 pg/mL (18-<50 years), 73 pg/mL (>=50-<70 years), and 156 pg/mL (>=70 years)." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+high = 156
+when = { age_min = 70, specimen = "plasma", method = "msd-s-plex" }
+population = "Apparently healthy adults aged 70 years or older, MSD S-Plex GFAP immunoassay; right-sided non-parametric upper reference limit"
+evidence = "reference-interval-study"
+note = "One-sided upper reference limit. Assay-specific."
+citations = [
+  { pmid = "40842193", doi = "10.1515/cclm-2025-0870", title = "Validation of a plasma GFAP immunoassay and establishment of age-related reference values: bridging analytical performance and routine implementation.", locator = "Abstract", quote = "Age-stratified upper reference limits for plasma GFAP were established as 38 pg/mL (18-<50 years), 73 pg/mL (>=50-<70 years), and 156 pg/mL (>=70 years)." },
+]

@@ -1,0 +1,314 @@
+slug = "bone-health"
+name = "Bone health and osteoporosis"
+description = "DXA diagnosis, secondary-cause laboratory work-up and bone turnover markers for osteoporosis (BHOF clinician's guide, IOF/IFCC)."
+aliases = ["osteoporosis"]
+
+[[member]]
+marker = "dxa-t-score"
+role = "core"
+reason = "Diagnostic and treatment threshold: T-score <= -2.5 by DXA."
+term = "T-score"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Recommendations", quote = "T-score <= - 2.5 at the femoral neck, total hip, lumbar spine, 33% radius (some uncertainty with existing data) by DXA." },
+]
+
+[[member]]
+marker = "bmd-lumbar-spine-t-score"
+role = "core"
+reason = "DXA site; T-score <= -2.5 at the lumbar spine qualifies for treatment."
+term = "lumbar spine"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Recommendations", quote = "T-score <= - 2.5 at the femoral neck, total hip, lumbar spine, 33% radius (some uncertainty with existing data) by DXA." },
+]
+
+[[member]]
+marker = "bmd-femoral-neck-t-score"
+role = "core"
+reason = "DXA site; T-score <= -2.5 at the femoral neck qualifies for treatment."
+term = "femoral neck"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Recommendations", quote = "T-score <= - 2.5 at the femoral neck, total hip, lumbar spine, 33% radius (some uncertainty with existing data) by DXA." },
+]
+
+[[member]]
+marker = "corrected-calcium"
+role = "core"
+reason = "Baseline secondary-cause chemistry panel."
+term = "albumin-adjusted calcium"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Chemistry levels (albumin-adjusted calcium, renal function, phosphorus, and magnesium)" },
+]
+
+[[member]]
+marker = "calcium"
+role = "core"
+reason = "Baseline secondary-cause chemistry panel (calcium)."
+term = "calcium"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Chemistry levels (albumin-adjusted calcium, renal function, phosphorus, and magnesium)" },
+]
+
+[[member]]
+marker = "phosphorus"
+role = "core"
+reason = "Baseline secondary-cause chemistry panel."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Chemistry levels (albumin-adjusted calcium, renal function, phosphorus, and magnesium)" },
+]
+
+[[member]]
+marker = "magnesium"
+role = "core"
+reason = "Baseline secondary-cause chemistry panel."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Chemistry levels (albumin-adjusted calcium, renal function, phosphorus, and magnesium)" },
+]
+
+[[member]]
+marker = "egfr"
+role = "core"
+reason = "Renal function, to exclude CKD-related bone disease."
+term = "renal function"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Chemistry levels (albumin-adjusted calcium, renal function, phosphorus, and magnesium)" },
+]
+
+[[member]]
+marker = "albumin"
+role = "core"
+reason = "Needed to adjust calcium; first-line secondary-cause test."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "2 Albumin" },
+]
+
+[[member]]
+marker = "vitamin-d"
+role = "core"
+reason = "Monitor 25(OH)D; maintain >= 30 ng/mL but <= 50 ng/mL."
+term = "25(OH) vitamin D"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "5 25(OH) vitamin D" },
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Recommendations", quote = "Monitor serum 25-hydroxyvitamin D levels." },
+]
+
+[[member]]
+marker = "pth-intact"
+role = "core"
+reason = "First-line test for hyperparathyroidism as a secondary cause."
+term = "Parathyroid hormone (PTH)"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "6 Parathyroid hormone (PTH)" },
+]
+
+[[member]]
+marker = "testosterone-total"
+role = "core"
+reason = "Men aged 50-69: screen for hypogonadism as a secondary cause."
+term = "Total testosterone"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "7 Total testosterone and gonadotropin (men aged 50-69 years)" },
+]
+
+[[member]]
+marker = "lh"
+role = "extended"
+reason = "Gonadotropins evaluated alongside testosterone in men."
+term = "gonadotropin"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "7 Total testosterone and gonadotropin (men aged 50-69 years)" },
+]
+
+[[member]]
+marker = "fsh"
+role = "extended"
+reason = "Gonadotropins evaluated alongside testosterone in men."
+term = "gonadotropin"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "7 Total testosterone and gonadotropin (men aged 50-69 years)" },
+]
+
+[[member]]
+marker = "urine-calcium"
+role = "core"
+reason = "24-h urinary calcium to detect hypercalciuria or malabsorption."
+term = "24-h urinary calcium"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "1 24-h urinary calcium and creatinine" },
+]
+
+[[member]]
+marker = "urine-creatinine"
+role = "extended"
+reason = "Urinary creatinine to validate the 24-h collection."
+term = "creatinine"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "1 24-h urinary calcium and creatinine" },
+]
+
+[[member]]
+marker = "alp"
+role = "extended"
+reason = "Included in liver function tests; elevated in osteomalacia and Paget disease."
+term = "Liver function tests"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "4 Liver function tests" },
+]
+
+[[member]]
+marker = "tsh"
+role = "extended"
+reason = "Thyroid disease as a secondary cause, tested in select patients."
+term = "Thyroid-stimulating hormone (TSH)"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Thyroid-stimulating hormone (TSH) +/- free T4" },
+]
+
+[[member]]
+marker = "free-t4"
+role = "extended"
+reason = "Free T4 added to TSH in select patients."
+term = "free T4"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Thyroid-stimulating hormone (TSH) +/- free T4" },
+]
+
+[[member]]
+marker = "tissue-transglutaminase-iga"
+role = "extended"
+reason = "Coeliac disease screen in select patients."
+term = "Tissue transglutaminase antibodies"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Tissue transglutaminase antibodies (and IgA levels)" },
+]
+
+[[member]]
+marker = "iga"
+role = "extended"
+reason = "Total IgA to interpret coeliac serology."
+term = "IgA levels"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Tissue transglutaminase antibodies (and IgA levels)" },
+]
+
+[[member]]
+marker = "ferritin"
+role = "extended"
+reason = "Iron status in select patients."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Iron and ferritin levels" },
+]
+
+[[member]]
+marker = "iron"
+role = "extended"
+reason = "Iron status in select patients."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Iron and ferritin levels" },
+]
+
+[[member]]
+marker = "homocysteine"
+role = "extended"
+reason = "To evaluate for homocystinuria."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Homocysteine (to evaluate for homocystinuria)" },
+]
+
+[[member]]
+marker = "prolactin"
+role = "extended"
+reason = "Hyperprolactinemia as a secondary cause."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Prolactin level" },
+]
+
+[[member]]
+marker = "tryptase"
+role = "extended"
+reason = "Systemic mastocytosis as a secondary cause."
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Tryptase" },
+]
+
+[[member]]
+marker = "free-kappa"
+role = "extended"
+reason = "Myeloma screen with SPEP and immunofixation in select patients."
+term = "free kappa"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Serum protein electrophoresis (SPEP), serum immunofixation, serum free kappa and lambda light chains" },
+]
+
+[[member]]
+marker = "free-lambda"
+role = "extended"
+reason = "Myeloma screen with SPEP and immunofixation in select patients."
+term = "lambda light chains"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Serum protein electrophoresis (SPEP), serum immunofixation, serum free kappa and lambda light chains" },
+]
+
+[[member]]
+marker = "salivary-cortisol"
+role = "extended"
+reason = "Cushing syndrome screen in select patients."
+term = "Salivary cortisol"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Salivary cortisol and/or Urinary free cortisol level" },
+]
+
+[[member]]
+marker = "urine-free-cortisol"
+role = "extended"
+reason = "Cushing syndrome screen in select patients."
+term = "Urinary free cortisol"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Table 3", quote = "Salivary cortisol and/or Urinary free cortisol level" },
+]
+
+[[member]]
+marker = "ctx"
+role = "core"
+reason = "IOF/IFCC reference bone resorption marker; treatment monitoring and adherence."
+term = "CTX"
+citations = [
+  { pmid = "21605012", title = "International Osteoporosis Foundation and International Federation of Clinical Chemistry and Laboratory Medicine position on bone marker standards in osteoporosis.", doi = "10.1515/CCLM.2011.602", locator = "Abstract", quote = "IOF/IFCC recommends one bone formation marker (serum procollagen type I N propeptide, s-PINP) and one bone resorption marker (serum C-terminal cross-linking telopeptide of type I collagen, s-CTX)" },
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Biochemical markers of bone turnover", quote = "Biochemical markers of bone remodeling include resorption markers serum C-telopeptide (CTX) and urinary N-telopeptide (NTX) and formation markers serum amino-terminal propeptide of type 1 procollagen (P1NP), bone-specific alkaline phosphatase (BALP), and osteocalcin (OC)." },
+]
+
+[[member]]
+marker = "p1np"
+role = "core"
+reason = "IOF/IFCC reference bone formation marker; monitoring anabolic therapy."
+term = "PINP"
+citations = [
+  { pmid = "21605012", title = "International Osteoporosis Foundation and International Federation of Clinical Chemistry and Laboratory Medicine position on bone marker standards in osteoporosis.", doi = "10.1515/CCLM.2011.602", locator = "Abstract", quote = "IOF/IFCC recommends one bone formation marker (serum procollagen type I N propeptide, s-PINP) and one bone resorption marker (serum C-terminal cross-linking telopeptide of type I collagen, s-CTX)" },
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Biochemical markers of bone turnover", quote = "Biochemical markers of bone remodeling include resorption markers serum C-telopeptide (CTX) and urinary N-telopeptide (NTX) and formation markers serum amino-terminal propeptide of type 1 procollagen (P1NP), bone-specific alkaline phosphatase (BALP), and osteocalcin (OC)." },
+]
+
+[[member]]
+marker = "bsap"
+role = "extended"
+reason = "Formation marker; preferred BTM in CKD-associated osteoporosis."
+term = "BALP"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Biochemical markers of bone turnover", quote = "Biochemical markers of bone remodeling include resorption markers serum C-telopeptide (CTX) and urinary N-telopeptide (NTX) and formation markers serum amino-terminal propeptide of type 1 procollagen (P1NP), bone-specific alkaline phosphatase (BALP), and osteocalcin (OC)." },
+]
+
+[[member]]
+marker = "osteocalcin"
+role = "extended"
+reason = "Bone formation marker."
+term = "OC"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Biochemical markers of bone turnover", quote = "Biochemical markers of bone remodeling include resorption markers serum C-telopeptide (CTX) and urinary N-telopeptide (NTX) and formation markers serum amino-terminal propeptide of type 1 procollagen (P1NP), bone-specific alkaline phosphatase (BALP), and osteocalcin (OC)." },
+]
+
+[[member]]
+marker = "ntx-urine"
+role = "extended"
+reason = "Urinary bone resorption marker."
+term = "NTX"
+citations = [
+  { pmid = "35478046", title = "The clinician's guide to prevention and treatment of osteoporosis.", doi = "10.1007/s00198-021-05900-y", locator = "Biochemical markers of bone turnover", quote = "Biochemical markers of bone remodeling include resorption markers serum C-telopeptide (CTX) and urinary N-telopeptide (NTX) and formation markers serum amino-terminal propeptide of type 1 procollagen (P1NP), bone-specific alkaline phosphatase (BALP), and osteocalcin (OC)." },
+]

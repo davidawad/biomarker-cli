@@ -346,7 +346,28 @@ fn catalog_docs_are_generated_and_checked() {
     let index = std::fs::read_to_string(out.join("index.md")).unwrap();
     assert!(index.contains("## lipid") && index.contains("[Glucose](glucose.md)"), "{index}");
     assert!(std::fs::read_to_string(out.join("coverage.md")).unwrap().contains("| [hdl-c](hdl-c.md) |"));
+    assert!(out.parent().unwrap().join("panels/README.md").exists());
+    let second = e.json(&["catalog", "docs", "--out", &o]);
+    assert_eq!(second["data"]["written"], serde_json::json!([]));
     assert_eq!(e.code(&["catalog", "docs", "--out", &o, "--check"]), 0);
+}
+
+#[test]
+fn panel_cli_lists_builtin_panels_and_shows_condition_panels() {
+    let e = Env::new();
+    let list = e.json(&["panel", "list"]);
+    let panels = list["data"].as_array().unwrap();
+    assert_eq!(panels.len(), 11);
+    assert!(panels.iter().any(|p| p["slug"] == "diabetes"));
+    assert!(panels.iter().any(|p| p["slug"] == "alzheimers"));
+    for slug in ["diabetes", "alzheimers"] {
+        let panel = e.json(&["panel", "show", slug]);
+        assert_eq!(panel["data"]["slug"], slug);
+        assert!(!panel["data"]["members"].as_array().unwrap().is_empty());
+    }
+    assert_eq!(e.code(&["panel", "show", "unknown"]), 3);
+    assert_eq!(e.code(&["query", "--panel", "unknown", "--all-people"]), 3);
+    assert_eq!(e.code(&["marker", "list", "--panel", "unknown"]), 3);
 }
 
 /// The committed docs/markers match the catalog. Regenerate with

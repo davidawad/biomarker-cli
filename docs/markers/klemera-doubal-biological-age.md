@@ -9,6 +9,7 @@ Klemera-Doubal Biological Age. Tracked marker with no verified reference range y
 | LOINC | - |
 | Specimen | - |
 | Aliases | - |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

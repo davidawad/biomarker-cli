@@ -9,6 +9,7 @@ PhenoAge (Levine Phenotypic Age). Tracked marker with no verified reference rang
 | LOINC | - |
 | Specimen | - |
 | Aliases | `phenotypic age`, `levine phenoage` |
+| Panels | [Biological aging](../panels/biological-aging.md) |
 
 ## Ranges
 

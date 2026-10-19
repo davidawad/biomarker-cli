@@ -9,6 +9,7 @@ Total serum calcium, the main laboratory measure of calcium status. Values are h
 | LOINC | [17861-6](https://loinc.org/17861-6/) |
 | Specimen | - |
 | Aliases | `ca` |
+| Panels | [Alzheimer's disease and dementia workup](../panels/alzheimers.md), [Bone health and osteoporosis](../panels/bone-health.md), [Diabetes and glycemic control](../panels/diabetes.md), [Kidney function and CKD](../panels/kidney.md) |
 
 ## Unit conversions
 

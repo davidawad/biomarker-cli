@@ -9,6 +9,7 @@ Hepatocellular and muscle enzyme; AST elevation relative to ALT is part of the h
 | LOINC | [1920-8](https://loinc.org/1920-8/) |
 | Specimen | - |
 | Aliases | `sgot`, `aspartate aminotransferase` |
+| Panels | [Liver health and MASLD](../panels/liver.md) |
 
 ## Ranges
 
