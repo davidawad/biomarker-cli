@@ -4,3 +4,6 @@
 *.profraw
 .beads/
 .pr-automerge.yml
+
+.rtcache/
+__pycache__/

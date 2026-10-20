@@ -1,7 +1,43 @@
 slug = "serine"
 name = "Serine"
-loinc = "2936-3"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Serine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma serine reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 111.8
+high = 259.46
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A20=Serine, Ser | B20=219.69 | C20=52.7 | D20=211.67 | E20=136.9–338.78 | F20=163.85 | G20=51.38 | H20=153.56 | I20=84.18–284.24 | J20=142.63 | K20=142.63 | L20=136.04 | M20=83.5–229.88 | N20=184.75 | O20=36.57 | P20=184.88 | Q20=111.8–259.46 | R20=184.97 | S20=35.950000000000003 | T20=183.4 | U20=121.79–259.49" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 121.79
+high = 259.49
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A20=Serine, Ser | B20=219.69 | C20=52.7 | D20=211.67 | E20=136.9–338.78 | F20=163.85 | G20=51.38 | H20=153.56 | I20=84.18–284.24 | J20=142.63 | K20=142.63 | L20=136.04 | M20=83.5–229.88 | N20=184.75 | O20=36.57 | P20=184.88 | Q20=111.8–259.46 | R20=184.97 | S20=35.950000000000003 | T20=183.4 | U20=121.79–259.49" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 83.5
+high = 229.88
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A20=Serine, Ser | B20=219.69 | C20=52.7 | D20=211.67 | E20=136.9–338.78 | F20=163.85 | G20=51.38 | H20=153.56 | I20=84.18–284.24 | J20=142.63 | K20=142.63 | L20=136.04 | M20=83.5–229.88 | N20=184.75 | O20=36.57 | P20=184.88 | Q20=111.8–259.46 | R20=184.97 | S20=35.950000000000003 | T20=183.4 | U20=121.79–259.49" },
+]

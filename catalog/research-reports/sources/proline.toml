@@ -1,7 +1,43 @@
 slug = "proline"
 name = "Proline"
-loinc = "2845-6"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Proline. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma proline reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 101.56
+high = 365.83
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A18=Proline, Pro | B18=225.22 | C18=52.94 | D18=217.48 | E18=144.44–353.38 | F18=198.16 | G18=56.36 | H18=193.24 | I18=105.92–323.68 | J18=186.92 | K18=186.92 | L18=180.37 | M18=92.44–353.71 | N18=219 | O18=63.23 | P18=215.67 | Q18=101.56–365.83 | R18=222.48 | S18=61.79 | T18=216.02 | U18=114.25–365.5" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 114.25
+high = 365.5
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A18=Proline, Pro | B18=225.22 | C18=52.94 | D18=217.48 | E18=144.44–353.38 | F18=198.16 | G18=56.36 | H18=193.24 | I18=105.92–323.68 | J18=186.92 | K18=186.92 | L18=180.37 | M18=92.44–353.71 | N18=219 | O18=63.23 | P18=215.67 | Q18=101.56–365.83 | R18=222.48 | S18=61.79 | T18=216.02 | U18=114.25–365.5" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 92.44
+high = 353.71
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A18=Proline, Pro | B18=225.22 | C18=52.94 | D18=217.48 | E18=144.44–353.38 | F18=198.16 | G18=56.36 | H18=193.24 | I18=105.92–323.68 | J18=186.92 | K18=186.92 | L18=180.37 | M18=92.44–353.71 | N18=219 | O18=63.23 | P18=215.67 | Q18=101.56–365.83 | R18=222.48 | S18=61.79 | T18=216.02 | U18=114.25–365.5" },
+]

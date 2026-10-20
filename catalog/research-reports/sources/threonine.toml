@@ -1,7 +1,43 @@
 slug = "threonine"
 name = "Threonine"
-loinc = "3008-0"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Threonine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma threonine reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 81.55
+high = 214.84
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A7=Threonine, Thr | B7=183.35 | C7=54.57 | D7=175.63 | E7=101.39–313.19 | F7=152.18 | G7=61.65 | H7=141.24 | I7=62.59–299.76 | J7=114.42 | K7=114.42 | L7=112.18 | M7=43.82–205 | N7=140.44 | O7=35.409999999999997 | P7=136.54 | Q7=81.55–214.84 | R7=141.76 | S7=33.35 | T7=139.75 | U7=82.31–212.51" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 82.31
+high = 212.51
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A7=Threonine, Thr | B7=183.35 | C7=54.57 | D7=175.63 | E7=101.39–313.19 | F7=152.18 | G7=61.65 | H7=141.24 | I7=62.59–299.76 | J7=114.42 | K7=114.42 | L7=112.18 | M7=43.82–205 | N7=140.44 | O7=35.409999999999997 | P7=136.54 | Q7=81.55–214.84 | R7=141.76 | S7=33.35 | T7=139.75 | U7=82.31–212.51" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 43.82
+high = 205
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A7=Threonine, Thr | B7=183.35 | C7=54.57 | D7=175.63 | E7=101.39–313.19 | F7=152.18 | G7=61.65 | H7=141.24 | I7=62.59–299.76 | J7=114.42 | K7=114.42 | L7=112.18 | M7=43.82–205 | N7=140.44 | O7=35.409999999999997 | P7=136.54 | Q7=81.55–214.84 | R7=141.76 | S7=33.35 | T7=139.75 | U7=82.31–212.51" },
+]

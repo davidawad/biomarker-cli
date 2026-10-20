@@ -3,4 +3,29 @@ name = "Arachidonic acid (AA)"
 category = "fatty-acid"
 unit = "%"
 description = "Arachidonic acid (20:4n-6), the omega-6 precursor of pro-inflammatory eicosanoids, reported as a percent of total fatty acids in the blood lipid fraction measured. Higher values relative to EPA are used as an inflammatory-balance marker."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 9.29
+high = 11.02
+when = { pregnant = false }
+population = "Healthy non-pregnant North Indian women (n=56)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract" },
+]
+note = "Study-reported 95% reference interval; the source used separate non-pregnant and pregnant reference groups."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 10.02
+high = 11.56
+when = { pregnant = true }
+population = "Healthy pregnant North Indian women (n=108)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract" },
+]
+note = "Study-reported 95% reference interval; the source used separate non-pregnant and pregnant reference groups."

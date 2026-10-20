@@ -4,4 +4,41 @@ category = "lipid"
 unit = "mg/dL"
 loinc = "1877-0"
 description = "Apolipoprotein C-III. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.7
+high = 14.4
+population = "Healthy Indian adults, overall reference population (age 25-65 years)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "16205021", doi = "10.5551/jat.12.251", url = "https://www.jstage.jst.go.jp/article/jat/12/5/12_5_251/_pdf", title = "Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.", locator = "Table 6" },
+]
+note = "2.5th and 97.5th percentile limits."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.9
+high = 14.71
+when = { sex = "male" }
+population = "Healthy Indian men, reference population (age 25-65 years)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "16205021", doi = "10.5551/jat.12.251", url = "https://www.jstage.jst.go.jp/article/jat/12/5/12_5_251/_pdf", title = "Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.", locator = "Table 6" },
+]
+note = "2.5th and 97.5th percentile limits."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 3.15
+high = 13.1
+when = { sex = "female" }
+population = "Healthy Indian women, reference population (age 25-65 years)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "16205021", doi = "10.5551/jat.12.251", url = "https://www.jstage.jst.go.jp/article/jat/12/5/12_5_251/_pdf", title = "Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.", locator = "Table 6" },
+]
+note = "2.5th and 97.5th percentile limits."

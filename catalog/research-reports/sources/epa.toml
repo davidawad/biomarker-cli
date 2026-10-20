@@ -2,5 +2,30 @@ slug = "epa"
 name = "Eicosapentaenoic acid (EPA)"
 category = "fatty-acid"
 unit = "%"
-description = "Eicosapentaenoic acid (20:5n-3), a long-chain omega-3 fatty acid from marine foods, reported as a percent of total fatty acids in the blood lipid fraction measured. Low values indicate low marine omega-3 intake or status."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Reported plasma fatty acid 95% reference intervals for healthy North Indian women, separated by pregnancy status."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.24
+high = 1.76
+when = { pregnant = false }
+population = "Healthy non-pregnant North Indian women (n=56)"
+evidence = "reference-interval-study"
+note = "Study-reported 95% reference interval; the source used separate non-pregnant and pregnant reference groups."
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract", quote = "The present multi-centric, and cross-sectional study determines the 95% reference interval for FAs ... The 95th and 97.5th percentile reference limits were used to estimate the 95 percentile of the reference distribution ... The reference ranges observed for ... Eicosapentaenoic-acid (1.24-1.76%; 1.09-1.62%) ... respectively for non-pregnant and pregnant women." },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 1.09
+high = 1.62
+when = { pregnant = true }
+population = "Healthy pregnant North Indian women (n=108)"
+evidence = "reference-interval-study"
+note = "Study-reported 95% reference interval; the source used separate non-pregnant and pregnant reference groups."
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract", quote = "The present multi-centric, and cross-sectional study determines the 95% reference interval for FAs ... The 95th and 97.5th percentile reference limits were used to estimate the 95 percentile of the reference distribution ... The reference ranges observed for ... Eicosapentaenoic-acid (1.24-1.76%; 1.09-1.62%) ... respectively for non-pregnant and pregnant women." },
+]

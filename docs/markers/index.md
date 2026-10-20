@@ -1,6 +1,6 @@
 # Biomarker catalog
 
-708 markers, 2611 ranges (2483 cited), 63 markers pending range research. See [coverage](coverage.md) for
+708 markers, 2649 ranges (2521 cited), 49 markers pending range research. See [coverage](coverage.md) for
 the range coverage matrix.
 
 Range sets:
@@ -555,27 +555,27 @@ Range sets:
 
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
-| [Alanine](alanine.md) | `alanine` | µmol/L | 1737-6 | 0 | 0 |
+| [Alanine](alanine.md) | `alanine` | µmol/L | 1737-6 | 3 | 3 |
 | [Arginine](arginine.md) | `arginine` | µmol/L | - | 1 | 1 |
 | [Asparagine](asparagine.md) | `asparagine` | µmol/L | 1908-3 | 0 | 0 |
 | [Aspartate](aspartate.md) | `aspartate` | µmol/L | 1913-3 | 1 | 1 |
 | [Branched-Chain Amino Acids, Total](bcaa-total.md) | `bcaa-total` | µmol/L | - | 0 | 0 |
 | [Citrulline](citrulline.md) | `citrulline` | µmol/L | 2130-3 | 3 | 3 |
-| [Cysteine](cysteine.md) | `cysteine` | µmol/L | 20641-7 | 0 | 0 |
+| [Cysteine](cysteine.md) | `cysteine` | µmol/L | 20641-7 | 3 | 3 |
 | [Glutamate](glutamate.md) | `glutamate` | µmol/L | 2364-8 | 1 | 1 |
 | [Glutamine](glutamine.md) | `glutamine` | µmol/L | - | 1 | 1 |
-| [Histidine](histidine.md) | `histidine` | µmol/L | 2420-8 | 0 | 0 |
+| [Histidine](histidine.md) | `histidine` | µmol/L | 2420-8 | 3 | 3 |
 | [Isoleucine](isoleucine.md) | `isoleucine` | µmol/L | 2508-0 | 1 | 1 |
 | [Leucine](leucine.md) | `leucine` | µmol/L | - | 3 | 3 |
-| [Lysine](lysine.md) | `lysine` | µmol/L | 2585-8 | 0 | 0 |
+| [Lysine](lysine.md) | `lysine` | µmol/L | 2585-8 | 3 | 3 |
 | [Methionine](methionine.md) | `methionine` | µmol/L | 2622-9 | 1 | 1 |
-| [Ornithine](ornithine.md) | `ornithine` | µmol/L | 2679-9 | 0 | 0 |
+| [Ornithine](ornithine.md) | `ornithine` | µmol/L | 2679-9 | 3 | 3 |
 | [Phenylalanine/Tyrosine ratio](phe-tyr-ratio.md) | `phe-tyr-ratio` | ratio | - | 1 | 1 |
 | [Phenylalanine](phenylalanine.md) | `phenylalanine` | µmol/L | - | 4 | 4 |
-| [Proline](proline.md) | `proline` | µmol/L | 2845-6 | 0 | 0 |
-| [Serine](serine.md) | `serine` | µmol/L | 2936-3 | 0 | 0 |
-| [Threonine](threonine.md) | `threonine` | µmol/L | 3008-0 | 0 | 0 |
-| [Tryptophan](tryptophan.md) | `tryptophan` | µmol/L | 3070-0 | 0 | 0 |
+| [Proline](proline.md) | `proline` | µmol/L | 2845-6 | 3 | 3 |
+| [Serine](serine.md) | `serine` | µmol/L | 2936-3 | 3 | 3 |
+| [Threonine](threonine.md) | `threonine` | µmol/L | 3008-0 | 3 | 3 |
+| [Tryptophan](tryptophan.md) | `tryptophan` | µmol/L | 3070-0 | 3 | 3 |
 | [Tyrosine](tyrosine.md) | `tyrosine` | µmol/L | - | 1 | 1 |
 | [Valine](valine.md) | `valine` | umol/L | 3118-7 | 1 | 1 |
 
@@ -823,12 +823,12 @@ Range sets:
 | Marker | Slug | Unit | LOINC | Ranges | Cited |
 |---|---|---|---|---|---|
 | [EPA/arachidonic acid ratio](aa-epa-ratio.md) | `aa-epa-ratio` | ratio | - | 1 | 1 |
-| [Arachidonic acid (AA)](arachidonic-acid.md) | `arachidonic-acid` | % | - | 0 | 0 |
-| [Docosahexaenoic acid (DHA)](dha.md) | `dha` | % | - | 0 | 0 |
+| [Arachidonic acid (AA)](arachidonic-acid.md) | `arachidonic-acid` | % | - | 2 | 2 |
+| [Docosahexaenoic acid (DHA)](dha.md) | `dha` | % | - | 2 | 2 |
 | [Docosapentaenoic Acid (DPA, omega-3)](dpa.md) | `dpa` | % | 35180-9 | 2 | 2 |
-| [Eicosapentaenoic acid (EPA)](epa.md) | `epa` | % | - | 0 | 0 |
+| [Eicosapentaenoic acid (EPA)](epa.md) | `epa` | % | - | 2 | 2 |
 | [Linoleic acid (LA) (mol%)](linoleic-acid-mol.md) | `linoleic-acid-mol` | mol% | - | 1 | 1 |
-| [Linoleic acid (LA)](linoleic-acid.md) | `linoleic-acid` | % | - | 0 | 0 |
+| [Linoleic acid (LA)](linoleic-acid.md) | `linoleic-acid` | % | - | 2 | 2 |
 | [Omega-3 Index](omega-3-index.md) | `omega-3-index` | % | - | 3 | 3 |
 | [Omega-6/Omega-3 Ratio](omega6-omega3-ratio.md) | `omega6-omega3-ratio` | ratio | - | 0 | 0 |
 | [Trans Fatty Acid Index](trans-fatty-acid-index.md) | `trans-fatty-acid-index` | index | - | 0 | 0 |
@@ -1060,7 +1060,7 @@ Range sets:
 | [Apolipoprotein A-I](apoa1.md) | `apoa1` | mg/dL | - | 3 | 3 |
 | [ApoB/ApoA-I Ratio](apob-apoa1-ratio.md) | `apob-apoa1-ratio` | ratio | - | 4 | 4 |
 | [Apolipoprotein B](apob.md) | `apob` | mg/dL | 1884-6 | 9 | 7 |
-| [Apolipoprotein C-III](apoc3.md) | `apoc3` | mg/dL | 1877-0 | 0 | 0 |
+| [Apolipoprotein C-III](apoc3.md) | `apoc3` | mg/dL | 1877-0 | 3 | 3 |
 | [HDL Cholesterol](hdl-c.md) | `hdl-c` | mg/dL | 2085-9 | 25 | 20 |
 | [Large HDL Particle Number](hdl-large-p.md) | `hdl-large-p` | µmol/L | 43729-3 | 0 | 0 |
 | [HDL Particle Number](hdl-p.md) | `hdl-p` | umol/L | 49748-7 | 2 | 2 |

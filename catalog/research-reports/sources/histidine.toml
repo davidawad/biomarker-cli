@@ -1,7 +1,43 @@
 slug = "histidine"
 name = "Histidine"
-loinc = "2420-8"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Histidine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma histidine reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 52.76
+high = 115.95
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A5=Histidine, His | B5=38.28 | C5=11.85 | D5=37.14 | E5=18.23–67.93 | F5=50.88 | G5=17.61 | H5=49.15 | I5=15.7–91.81 | J5=60.58 | K5=60.58 | L5=57.09 | M5=23.43–102.47 | N5=82.08 | O5=17.3 | P5=81.78 | Q5=52.76–115.95 | R5=81.99 | S5=15.4 | T5=82.73 | U5=54.46–111.4" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 54.46
+high = 111.4
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A5=Histidine, His | B5=38.28 | C5=11.85 | D5=37.14 | E5=18.23–67.93 | F5=50.88 | G5=17.61 | H5=49.15 | I5=15.7–91.81 | J5=60.58 | K5=60.58 | L5=57.09 | M5=23.43–102.47 | N5=82.08 | O5=17.3 | P5=81.78 | Q5=52.76–115.95 | R5=81.99 | S5=15.4 | T5=82.73 | U5=54.46–111.4" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 23.43
+high = 102.47
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A5=Histidine, His | B5=38.28 | C5=11.85 | D5=37.14 | E5=18.23–67.93 | F5=50.88 | G5=17.61 | H5=49.15 | I5=15.7–91.81 | J5=60.58 | K5=60.58 | L5=57.09 | M5=23.43–102.47 | N5=82.08 | O5=17.3 | P5=81.78 | Q5=52.76–115.95 | R5=81.99 | S5=15.4 | T5=82.73 | U5=54.46–111.4" },
+]

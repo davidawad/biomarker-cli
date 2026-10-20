@@ -1,7 +1,43 @@
 slug = "ornithine"
 name = "Ornithine"
-loinc = "2679-9"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Ornithine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma ornithine reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 43.41
+high = 222.56
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A40=Ornithine, Orn | B40=120.22 | C40=29.22 | D40=116.93 | E40=75.52–190.39 | F40=108.3 | G40=45.3 | H40=99.74 | I40=43.41–222.56 | J40=65.88 | K40=65.88 | L40=61.28 | M40=27.95–122.46 | N40=80.3 | O40=23.09 | P40=80.239999999999995 | Q40=36.94–131.04 | R40=92.97 | S40=30.32 | T40=89.19 | U40=44.65–167.13" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 75.52
+high = 190.39
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A40=Ornithine, Orn | B40=120.22 | C40=29.22 | D40=116.93 | E40=75.52–190.39 | F40=108.3 | G40=45.3 | H40=99.74 | I40=43.41–222.56 | J40=65.88 | K40=65.88 | L40=61.28 | M40=27.95–122.46 | N40=80.3 | O40=23.09 | P40=80.239999999999995 | Q40=36.94–131.04 | R40=92.97 | S40=30.32 | T40=89.19 | U40=44.65–167.13" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 27.95
+high = 122.46
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A40=Ornithine, Orn | B40=120.22 | C40=29.22 | D40=116.93 | E40=75.52–190.39 | F40=108.3 | G40=45.3 | H40=99.74 | I40=43.41–222.56 | J40=65.88 | K40=65.88 | L40=61.28 | M40=27.95–122.46 | N40=80.3 | O40=23.09 | P40=80.239999999999995 | Q40=36.94–131.04 | R40=92.97 | S40=30.32 | T40=89.19 | U40=44.65–167.13" },
+]

@@ -1,7 +1,43 @@
 slug = "apoc3"
 name = "Apolipoprotein C-III"
-loinc = "1877-0"
 category = "lipid"
 unit = "mg/dL"
-description = "Apolipoprotein C-III. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Sex-specific serum apolipoprotein C-III reference intervals from healthy Indian adults."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.7
+high = 14.4
+population = "Healthy Indian adults, overall reference population (age 25-65 years)"
+evidence = "reference-interval-study"
+note = "2.5th and 97.5th percentile limits."
+citations = [
+  { pmid = "16205021", doi = "10.5551/jat.12.251", title = "Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.", url = "https://www.jstage.jst.go.jp/article/jat/12/5/12_5_251/_pdf", locator = "Table 6", quote = "Table 6. Reference Intervals for all analytes: 90 % Confidence Intervals for the 2.5th (Lower Limit) and 97.5th Percentile (Upper Limit) are shown ... Apo C-III Overall 3.7 3.586, 3.861 14.4 14.239, 14.561" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.9
+high = 14.71
+when = { sex = "male" }
+population = "Healthy Indian men, reference population (age 25-65 years)"
+evidence = "reference-interval-study"
+note = "2.5th and 97.5th percentile limits."
+citations = [
+  { pmid = "16205021", doi = "10.5551/jat.12.251", title = "Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.", url = "https://www.jstage.jst.go.jp/article/jat/12/5/12_5_251/_pdf", locator = "Table 6", quote = "Table 6. Reference Intervals for all analytes: 90 % Confidence Intervals for the 2.5th (Lower Limit) and 97.5th Percentile (Upper Limit) are shown ... Apo C-III Overall 3.7 3.586, 3.861 14.4 14.239, 14.561 ... Men 3.9 3.735, 4.065 14.71 14.545, 14.875" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 3.15
+high = 13.1
+when = { sex = "female" }
+population = "Healthy Indian women, reference population (age 25-65 years)"
+evidence = "reference-interval-study"
+note = "2.5th and 97.5th percentile limits."
+citations = [
+  { pmid = "16205021", doi = "10.5551/jat.12.251", title = "Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.", url = "https://www.jstage.jst.go.jp/article/jat/12/5/12_5_251/_pdf", locator = "Table 6", quote = "Table 6. Reference Intervals for all analytes: 90 % Confidence Intervals for the 2.5th (Lower Limit) and 97.5th Percentile (Upper Limit) are shown ... Apo C-III Overall 3.7 3.586, 3.861 14.4 14.239, 14.561 ... Women 3.15 3.005, 3.295 13.1 12.955, 13.245" },
+]

@@ -1,7 +1,43 @@
 slug = "lysine"
 name = "Lysine"
-loinc = "2585-8"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Lysine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma lysine reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 112.14
+high = 306.84
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A6=Lysine, Lys | B6=132.09 | C6=28.87 | D6=130.19999999999999 | E6=81.68–197.18 | F6=153.59 | G6=50.22 | H6=144.77000000000001 | I6=80.59–269.6 | J6=150.86000000000001 | K6=150.86000000000001 | L6=144.91 | M6=65.49–263.46 | N6=199.06 | O6=52.38 | P6=194.94 | Q6=112.14–306.84 | R6=191.6 | S6=45.05 | T6=187.55 | U6=113.88–288.64" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 113.88
+high = 288.64
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A6=Lysine, Lys | B6=132.09 | C6=28.87 | D6=130.19999999999999 | E6=81.68–197.18 | F6=153.59 | G6=50.22 | H6=144.77000000000001 | I6=80.59–269.6 | J6=150.86000000000001 | K6=150.86000000000001 | L6=144.91 | M6=65.49–263.46 | N6=199.06 | O6=52.38 | P6=194.94 | Q6=112.14–306.84 | R6=191.6 | S6=45.05 | T6=187.55 | U6=113.88–288.64" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 65.49
+high = 263.46
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A6=Lysine, Lys | B6=132.09 | C6=28.87 | D6=130.19999999999999 | E6=81.68–197.18 | F6=153.59 | G6=50.22 | H6=144.77000000000001 | I6=80.59–269.6 | J6=150.86000000000001 | K6=150.86000000000001 | L6=144.91 | M6=65.49–263.46 | N6=199.06 | O6=52.38 | P6=194.94 | Q6=112.14–306.84 | R6=191.6 | S6=45.05 | T6=187.55 | U6=113.88–288.64" },
+]

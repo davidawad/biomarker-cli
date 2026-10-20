@@ -3,4 +3,29 @@ name = "Linoleic acid (LA)"
 category = "fatty-acid"
 unit = "%"
 description = "Linoleic acid (18:2n-6), the main dietary omega-6 polyunsaturated fatty acid, reported as a percent of total fatty acids in the blood lipid fraction measured. It reflects intake of vegetable oils; very low values suggest low essential fatty acid status."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 18.44
+high = 20.75
+when = { pregnant = false }
+population = "Healthy non-pregnant North Indian women (n=56)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract" },
+]
+note = "Study-reported 95% reference interval; the source used separate non-pregnant and pregnant reference groups."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 19.51
+high = 21.88
+when = { pregnant = true }
+population = "Healthy pregnant North Indian women (n=108)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "37746532", doi = "10.1007/s12291-022-01071-7", title = "Reference Range of Plasma Fatty Acids in North Indian Pregnant Population.", locator = "Abstract" },
+]
+note = "Study-reported 95% reference interval; the source used separate non-pregnant and pregnant reference groups."

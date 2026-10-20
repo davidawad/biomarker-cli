@@ -4,4 +4,42 @@ category = "amino-acid"
 unit = "µmol/L"
 loinc = "1737-6"
 description = "Alanine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 154.44
+high = 672.26
+when = { age = [3.0, 6.0] }
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4" },
+]
+note = "Nonparametric 2.5th–97.5th percentile interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 195.81
+high = 645.88
+when = { age = [6.0, 12.0] }
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4" },
+]
+note = "Nonparametric 2.5th–97.5th percentile interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 131.01
+high = 606.61
+when = { age = [1.0, 3.0] }
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4" },
+]
+note = "Nonparametric 2.5th–97.5th percentile interval."

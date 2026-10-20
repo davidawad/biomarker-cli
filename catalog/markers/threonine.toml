@@ -4,4 +4,42 @@ category = "amino-acid"
 unit = "µmol/L"
 loinc = "3008-0"
 description = "Threonine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 81.55
+high = 214.84
+when = { age = [3.0, 6.0] }
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4" },
+]
+note = "Nonparametric 2.5th–97.5th percentile interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 82.31
+high = 212.51
+when = { age = [6.0, 12.0] }
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4" },
+]
+note = "Nonparametric 2.5th–97.5th percentile interval."
+
+[[range]]
+set = "clinical"
+kind = "reference"
+low = 43.82
+high = 205
+when = { age = [1.0, 3.0] }
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4" },
+]
+note = "Nonparametric 2.5th–97.5th percentile interval."

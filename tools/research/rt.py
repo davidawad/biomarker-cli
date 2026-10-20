@@ -17,6 +17,8 @@ printing and for verification, so quotes copied from this tool's output match.
 """
 import argparse, fcntl, hashlib, html, json, os, re, subprocess, sys, time, tomllib, unicodedata
 import urllib.parse
+import zipfile
+import xml.etree.ElementTree as ET
 import requests
 
 CACHE = os.environ.get("RT_CACHE", "/work/artifacts/cache")
@@ -141,6 +143,37 @@ def cmd_epmc(a):
               f"{x.get('pmcid','no-PMC')} | OA={x.get('isOpenAccess')}\n   {norm(x.get('title',''))}")
 
 
+def cmd_oa(a):
+    """List OpenAlex OA locations for a PubMed id; rt.py url/grep prints their text."""
+    r = get("https://api.openalex.org/works", {
+        "filter": f"ids.pmid:{a.pmid}",
+        "select": "id,doi,title,open_access,best_oa_location,locations",
+        "per-page": 1,
+    }, kind="web")
+    try:
+        works = r.json().get("results", [])
+    except ValueError:
+        works = []
+    if not works:
+        print(f"no OpenAlex record for PMID {a.pmid}")
+        return
+    w = works[0]
+    doi = (w.get("doi") or "-").removeprefix("https://doi.org/")
+    print(f"PMID {a.pmid} | DOI {doi} | {norm(w.get('title', ''))}")
+    print(f"OA {w.get('open_access', {}).get('oa_status', 'unknown')}")
+    seen = set()
+    for loc in [w.get("best_oa_location")] + (w.get("locations") or []):
+        if not loc:
+            continue
+        landing = loc.get("landing_page_url")
+        pdf = loc.get("pdf_url")
+        for kind, url in (("pdf", pdf), ("landing", landing)):
+            if url and url not in seen:
+                seen.add(url)
+                source = loc.get("source") or {}
+                print(f"{kind} | {source.get('display_name', '-') or '-'} | {url}")
+
+
 def abstract_text(pmid):
     def fetch():
         r = get(EUTILS + "efetch.fcgi", {"db": "pubmed", "id": pmid, "retmode": "xml"})
@@ -207,6 +240,112 @@ def cmd_fulltext(a):
         print(f"{pmc}: {len(t)} chars cached. Use: rt.py grep {a.id} '<regex>'")
 
 
+def cmd_supplement(a):
+    """Fetch PMC supplementary tables and print extracted text for verification."""
+    pmc = pmcid_for(a.id)
+    if not pmc:
+        print("no PMC id for this record")
+        return
+    r = get(f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmc}/fullTextXML", kind="epmc")
+    if r.status_code != 200:
+        print(f"{pmc}: full text XML unavailable (HTTP {r.status_code})")
+        return
+    root = ET.fromstring(r.text)
+    hrefs = []
+    for el in root.iter():
+        if el.tag.rsplit("}", 1)[-1] in ("supplementary-material", "media", "ext-link", "graphic"):
+            for k, v in el.attrib.items():
+                if k.rsplit("}", 1)[-1] == "href" and re.search(r"supp|suppl|table|\.(?:xlsx?|csv|pdf|docx?)", v, re.I):
+                    hrefs.append(v)
+    hrefs.extend(re.findall(r"(?:xlink:href|href)=['\"]([^'\"]*(?:supp|suppl|table)[^'\"]*)['\"]", r.text, re.I))
+    hrefs = list(dict.fromkeys(hrefs))
+    if not hrefs:
+        print(f"{pmc}: no supplementary-material links in Europe PMC XML")
+        return
+    bundle = get(f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmc}/supplementaryFiles", kind="epmc")
+    if bundle.status_code == 200 and zipfile.is_zipfile(__import__("io").BytesIO(bundle.content)):
+        bundle_path = cpath(f"supp-{pmc}.zip")
+        with open(bundle_path, "wb") as f:
+            f.write(bundle.content)
+        text_path = cpath(f"supp-text-{pmc}.txt")
+        with open(text_path, "w", encoding="utf-8") as outf, zipfile.ZipFile(bundle_path) as z:
+            for name in z.namelist():
+                data = z.read(name)
+                ext = os.path.splitext(name)[1].lower()
+                path = cpath(f"supp-{hashlib.sha1((pmc + name).encode()).hexdigest()[:16]}{ext}")
+                with open(path, "wb") as f:
+                    f.write(data)
+                out = extract_supplement(path, ext)
+                if out:
+                    outf.write(f"\n=== {name}\n{out}\n")
+        print(f"{pmc}: {os.path.getsize(text_path)} chars cached; use rt.py grep {pmc} '<regex>'")
+        return
+    for href in hrefs:
+        url = urllib.parse.urljoin(f"https://pmc.ncbi.nlm.nih.gov/articles/{pmc}/", href)
+        try:
+            data = get(url, kind="web", headers={"User-Agent": "Mozilla/5.0"}).content
+        except requests.RequestException as e:
+            print(f"fetch failed: {e}")
+            continue
+        ext = os.path.splitext(urllib.parse.urlparse(url).path)[1].lower()
+        path = cpath(f"supp-{hashlib.sha1(url.encode()).hexdigest()[:16]}{ext}")
+        with open(path, "wb") as f:
+            f.write(data)
+        out = extract_supplement(path, ext)
+        if out is None:
+            print(f"saved {len(data)} bytes; unsupported table format {ext or '(unknown)'}")
+            continue
+        with open(cpath(f"supp-text-{pmc}.txt"), "a", encoding="utf-8") as f:
+            f.write(f"\n=== {url}\n{out}\n")
+    text_path = cpath(f"supp-text-{pmc}.txt")
+    if os.path.exists(text_path):
+        print(f"{pmc}: {os.path.getsize(text_path)} chars cached; use rt.py grep {pmc} '<regex>'")
+
+
+def extract_supplement(path, ext):
+    if open(path, "rb").read(4) == b"%PDF":
+        return subprocess.run(["pdftotext", "-layout", path, "-"], capture_output=True, text=True).stdout
+    if zipfile.is_zipfile(path) and ext in (".xlsx", ".xlsm"):
+        out = []
+        with zipfile.ZipFile(path) as z:
+            shared = []
+            if "xl/sharedStrings.xml" in z.namelist():
+                ss = ET.fromstring(z.read("xl/sharedStrings.xml"))
+                shared = ["".join(t.text or "" for t in si.iter() if t.tag.rsplit("}", 1)[-1] == "t") for si in ss]
+            for name in sorted(n for n in z.namelist() if re.fullmatch(r"xl/worksheets/sheet\d+\.xml", n)):
+                ws = ET.fromstring(z.read(name))
+                out.append(f"Sheet {name}")
+                for row in ws.iter():
+                    if row.tag.rsplit("}", 1)[-1] != "row":
+                        continue
+                    cells = []
+                    for cell in row:
+                        if cell.tag.rsplit("}", 1)[-1] != "c":
+                            continue
+                        val = next((x.text for x in cell if x.tag.rsplit("}", 1)[-1] == "v"), "")
+                        if cell.attrib.get("t") == "s" and val:
+                            val = shared[int(val)]
+                        elif cell.attrib.get("t") == "inlineStr":
+                            val = "".join(x.text or "" for x in cell.iter() if x.tag.rsplit("}", 1)[-1] == "t")
+                        cells.append(f"{cell.attrib.get('r', '')}={val}")
+                    if cells:
+                        out.append(" | ".join(cells))
+        return "\n".join(out)
+    if zipfile.is_zipfile(path) and ext == ".docx":
+        with zipfile.ZipFile(path) as z:
+            root = ET.fromstring(z.read("word/document.xml"))
+        lines = []
+        for para in root.iter():
+            if para.tag.rsplit("}", 1)[-1] == "p":
+                line = "".join(x.text or "" for x in para.iter() if x.tag.rsplit("}", 1)[-1] == "t")
+                if line:
+                    lines.append(line)
+        return "\n".join(lines)
+    if ext in (".csv", ".tsv", ".txt"):
+        return open(path, "rb").read().decode("utf-8", errors="replace")
+    return None
+
+
 def url_text(url):
     h = hashlib.sha1(url.encode()).hexdigest()[:16]
     def fetch():
@@ -234,6 +373,20 @@ def cmd_url(a):
     print(f"{len(t)} chars cached" if t else "fetch failed")
 
 
+def cmd_links(a):
+    """Print links from an accessible landing page to locate repositories' full texts."""
+    r = get(a.url, kind="web", tries=2, headers={"User-Agent": "Mozilla/5.0"}, allow_redirects=True)
+    if r.status_code >= 400:
+        print(f"HTTP {r.status_code} for {a.url}")
+        return
+    x = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", r.text)
+    for m in re.finditer(r"(?is)<a\b([^>]*)>(.*?)</a\s*>", x):
+        href = re.search(r"\bhref=['\"]([^'\"]+)['\"]", m.group(1), re.I)
+        label = norm(re.sub(r"<[^>]+>", " ", m.group(2)))
+        if href:
+            print(f"{label or '(no label)'} | {urllib.parse.urljoin(r.url, html.unescape(href.group(1)))}")
+
+
 def source_texts(ident):
     """All cached/fetchable text for a source id (pmid, PMCid or url)."""
     out = []
@@ -249,6 +402,8 @@ def source_texts(ident):
         pmc, t = fulltext(ident)
         if t:
             out.append((pmc, t))
+        if pmc and os.path.exists(cpath(f"supp-text-{pmc}.txt")):
+            out.append((f"{pmc} supplementary", open(cpath(f"supp-text-{pmc}.txt"), encoding="utf-8").read()))
     return out
 
 
@@ -374,7 +529,7 @@ def check_citations(cits, tag, errs, stats):
         if url:
             if not str(url).startswith("http"):
                 errs.append(f"{ct}: url must be http(s)"); ok = False
-            elif not pmid or not texts:
+            else:
                 t = url_text(url)
                 if t:
                     texts.append(t)
@@ -557,8 +712,11 @@ def main():
     p.add_argument("--sort", default="relevance"); p.set_defaults(f=cmd_search)
     p = sp.add_parser("epmc"); p.add_argument("query"); p.add_argument("-n", type=int, default=10); p.set_defaults(f=cmd_epmc)
     p = sp.add_parser("abstract"); p.add_argument("pmid"); p.set_defaults(f=cmd_abstract)
+    p = sp.add_parser("oa"); p.add_argument("pmid"); p.set_defaults(f=cmd_oa)
     p = sp.add_parser("fulltext"); p.add_argument("id"); p.set_defaults(f=cmd_fulltext)
+    p = sp.add_parser("supplement"); p.add_argument("id"); p.set_defaults(f=cmd_supplement)
     p = sp.add_parser("url"); p.add_argument("url"); p.set_defaults(f=cmd_url)
+    p = sp.add_parser("links"); p.add_argument("url"); p.set_defaults(f=cmd_links)
     p = sp.add_parser("grep"); p.add_argument("id"); p.add_argument("regex"); p.add_argument("-C", type=int, default=250)
     p.add_argument("--max", type=int, default=12); p.set_defaults(f=cmd_grep)
     p = sp.add_parser("show"); p.add_argument("id"); p.add_argument("--start", "--from", type=int, default=0)

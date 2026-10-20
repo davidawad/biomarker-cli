@@ -1,7 +1,43 @@
 slug = "alanine"
 name = "Alanine"
-loinc = "1737-6"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Alanine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma alanine reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 154.44
+high = 672.26
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A16=Alanine, Ala | B16=329.28 | C16=83.61 | D16=319.56 | E16=193.44–506.69 | F16=327.61 | G16=105.75 | H16=308.5 | I16=170.08–572.03 | J16=337.03 | K16=337.03 | L16=321.42 | M16=131.01–606.61 | N16=432.62 | O16=124.84 | P16=432.52 | Q16=154.44–672.26 | R16=432.6 | S16=108.66 | T16=428.5 | U16=195.81–645.88" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 195.81
+high = 645.88
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A16=Alanine, Ala | B16=329.28 | C16=83.61 | D16=319.56 | E16=193.44–506.69 | F16=327.61 | G16=105.75 | H16=308.5 | I16=170.08–572.03 | J16=337.03 | K16=337.03 | L16=321.42 | M16=131.01–606.61 | N16=432.62 | O16=124.84 | P16=432.52 | Q16=154.44–672.26 | R16=432.6 | S16=108.66 | T16=428.5 | U16=195.81–645.88" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 131.01
+high = 606.61
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A16=Alanine, Ala | B16=329.28 | C16=83.61 | D16=319.56 | E16=193.44–506.69 | F16=327.61 | G16=105.75 | H16=308.5 | I16=170.08–572.03 | J16=337.03 | K16=337.03 | L16=321.42 | M16=131.01–606.61 | N16=432.62 | O16=124.84 | P16=432.52 | Q16=154.44–672.26 | R16=432.6 | S16=108.66 | T16=428.5 | U16=195.81–645.88" },
+]

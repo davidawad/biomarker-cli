@@ -1,7 +1,43 @@
 slug = "cysteine"
 name = "Cysteine"
-loinc = "20641-7"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Cysteine. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma cysteine reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 98.3
+high = 289.55
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A21=Cysteine, Cys | B21=114.72 | C21=28.64 | D21=109.63 | E21=71.88–177.63 | F21=157.91 | G21=45.18 | H21=149.04 | I21=92.02–267.41 | J21=152.96 | K21=152.96 | L21=140.71 | M21=84.07–268.37 | N21=173.92 | O21=53.3 | P21=164.96 | Q21=98.3–289.55 | R21=191.99 | S21=48.72 | T21=189.34 | U21=112.17–293.55" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 112.17
+high = 293.55
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A21=Cysteine, Cys | B21=114.72 | C21=28.64 | D21=109.63 | E21=71.88–177.63 | F21=157.91 | G21=45.18 | H21=149.04 | I21=92.02–267.41 | J21=152.96 | K21=152.96 | L21=140.71 | M21=84.07–268.37 | N21=173.92 | O21=53.3 | P21=164.96 | Q21=98.3–289.55 | R21=191.99 | S21=48.72 | T21=189.34 | U21=112.17–293.55" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 84.07
+high = 268.37
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A21=Cysteine, Cys | B21=114.72 | C21=28.64 | D21=109.63 | E21=71.88–177.63 | F21=157.91 | G21=45.18 | H21=149.04 | I21=92.02–267.41 | J21=152.96 | K21=152.96 | L21=140.71 | M21=84.07–268.37 | N21=173.92 | O21=53.3 | P21=164.96 | Q21=98.3–289.55 | R21=191.99 | S21=48.72 | T21=189.34 | U21=112.17–293.55" },
+]

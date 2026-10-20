@@ -1,7 +1,43 @@
 slug = "tryptophan"
 name = "Tryptophan"
-loinc = "3070-0"
 category = "amino-acid"
 unit = "µmol/L"
-description = "Tryptophan. Tracked marker with no verified reference range yet, so values can be stored and charted but are not flagged against a range."
-no_reference = "pending: no verified range yet (see UNCOVERED.md)"
+description = "Age-specific plasma tryptophan reference intervals for healthy Chinese children aged 1 to 12 years, reported in Table S4."
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 39.22
+high = 102.53
+when = {age_min = 3, age_max = 6}
+population = "Healthy Chinese children: Preschool (3 y–6 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "N2=Preschool (3 y–6 y), n = 596 ... A13=Tryptophan, Trp | B13=31.56 | C13=7.82 | D13=30.42 | E13=19.08–48.41 | F13=45.85 | G13=15.14 | H13=42.03 | I13=23.33–84.35 | J13=51.37 | K13=51.37 | L13=49.95 | M13=21.96–95.17 | N13=69.17 | O13=16.3 | P13=68.540000000000006 | Q13=39.22–102.53 | R13=65.78 | S13=13.11 | T13=65.09 | U13=41.39–94.1" },
+]
+
+[[range]]
+set = "reference"
+kind = "reference"
+low = 41.39
+high = 94.1
+when = {age_min = 6, age_max = 12}
+population = "Healthy Chinese children: Child (6 y–12 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "R2=Child (6 y–12 y), n = 1,334 ... A13=Tryptophan, Trp | B13=31.56 | C13=7.82 | D13=30.42 | E13=19.08–48.41 | F13=45.85 | G13=15.14 | H13=42.03 | I13=23.33–84.35 | J13=51.37 | K13=51.37 | L13=49.95 | M13=21.96–95.17 | N13=69.17 | O13=16.3 | P13=68.540000000000006 | Q13=39.22–102.53 | R13=65.78 | S13=13.11 | T13=65.09 | U13=41.39–94.1" },
+]
+[[range]]
+set = "reference"
+kind = "reference"
+low = 21.96
+high = 95.17
+when = {age_min = 1, age_max = 3}
+population = "Healthy Chinese children: Toddler (1 y–3 y)"
+evidence = "reference-interval-study"
+note = "Nonparametric 2.5th–97.5th percentile interval."
+citations = [
+  { pmid = "40469518", title = "Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population", locator = "Table S4", quote = "J2=Toddler (1 y–3 y), n = 305 ... A13=Tryptophan, Trp | B13=31.56 | C13=7.82 | D13=30.42 | E13=19.08–48.41 | F13=45.85 | G13=15.14 | H13=42.03 | I13=23.33–84.35 | J13=51.37 | K13=51.37 | L13=49.95 | M13=21.96–95.17 | N13=69.17 | O13=16.3 | P13=68.540000000000006 | Q13=39.22–102.53 | R13=65.78 | S13=13.11 | T13=65.09 | U13=41.39–94.1" },
+]

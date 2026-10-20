@@ -12,9 +12,13 @@ Apolipoprotein C-III. Tracked marker with no verified reference range yet, so va
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+Bounds in mg/dL. The most specific matching range of each set applies.
 
-No ranges yet.
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | all | 3.7 | 14.4 | reference-interval-study | Healthy Indian adults, overall reference population (age 25-65 years) | [Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.](https://pubmed.ncbi.nlm.nih.gov/16205021/), Table 6 | 2.5th and 97.5th percentile limits. |
+| clinical | reference | male | 3.9 | 14.71 | reference-interval-study | Healthy Indian men, reference population (age 25-65 years) | [Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.](https://pubmed.ncbi.nlm.nih.gov/16205021/), Table 6 | 2.5th and 97.5th percentile limits. |
+| clinical | reference | female | 3.15 | 13.1 | reference-interval-study | Healthy Indian women, reference population (age 25-65 years) | [Lipid, lipoprotein, apolipoprotein and lipoprotein(a) levels: reference intervals in a healthy Indian population.](https://pubmed.ncbi.nlm.nih.gov/16205021/), Table 6 | 2.5th and 97.5th percentile limits. |
 
 ---
 

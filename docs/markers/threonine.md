@@ -12,9 +12,13 @@ Threonine. Tracked marker with no verified reference range yet, so values can be
 
 ## Ranges
 
-No clinical reference range: pending: no verified range yet (see UNCOVERED.md)
+Bounds in µmol/L. The most specific matching range of each set applies.
 
-No ranges yet.
+| Set | Kind | Applies to | Low | High | Evidence | Population | Citations | Note |
+|---|---|---|---|---|---|---|---|---|
+| clinical | reference | age 3-6 | 81.55 | 214.84 | reference-interval-study | Healthy Chinese children: Preschool (3 y–6 y) | [Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population](https://pubmed.ncbi.nlm.nih.gov/40469518/), Table S4 | Nonparametric 2.5th–97.5th percentile interval. |
+| clinical | reference | age 6-12 | 82.31 | 212.51 | reference-interval-study | Healthy Chinese children: Child (6 y–12 y) | [Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population](https://pubmed.ncbi.nlm.nih.gov/40469518/), Table S4 | Nonparametric 2.5th–97.5th percentile interval. |
+| clinical | reference | age 1-3 | 43.82 | 205 | reference-interval-study | Healthy Chinese children: Toddler (1 y–3 y) | [Age-specific reference intervals for plasma amino acids and their associations with nutrient intake in the Chinese pediatric population](https://pubmed.ncbi.nlm.nih.gov/40469518/), Table S4 | Nonparametric 2.5th–97.5th percentile interval. |
 
 ---
 
